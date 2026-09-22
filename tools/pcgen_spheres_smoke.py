@@ -7,6 +7,7 @@ import subprocess
 import tempfile
 
 from spheres import ROOT, DATA, compare_export
+from spheres_progression_fixtures import fixture, expected as progression_expected
 
 PCGEN = ROOT / "vendor/upstream/pcgen-6.08.00RC10"
 JAVA = Path("/home/danbo/.local/lib/jvm/temurin-16.0.2+7/bin/java")
@@ -43,10 +44,7 @@ def validate_selection(log):
         raise ValueError(f"Missing PCGen selection/pool verification; inspect {log}")
 
 
-def smoke(case):
-    if case not in CASES:
-        raise ValueError(f"Unsupported fixture: {case}")
-    cp = classpath()
+def workspace():
     build = ROOT / "build"
     build.mkdir(exist_ok=True)
     # Fresh settings and output prevent an old export from passing a failed run.
@@ -60,19 +58,33 @@ def smoke(case):
         f"pcgen.files.characters={work}\n"
         f"pcgen.files.customPath={work / 'custom'}\n"
         f"pcgen.files.vendordataPath={work / 'vendor'}\n", encoding="utf-8")
+    return work
+
+
+def smoke(case, level=None, casting="INT"):
+    if level is None and case not in CASES:
+        raise ValueError(f"Unsupported fixture: {case}")
+    generated = fixture(level, casting) if level is not None else None
+    cp = classpath()
+    work = workspace()
     output = work / "export.txt"
     log = work / "pcgen.log"
+    character = ROOT / f"testdata/spheres/{case}.pcg"
+    if generated is not None:
+        character = work / "progression.pcg"
+        character.write_text(generated, encoding="utf-8")
     command = [str(JAVA), "--enable-preview", "-Djava.awt.headless=true",
                f"-Dpcgen.config={work}", "-cp", cp, "--source", "16",
                str(ROOT / "tools/PcgenSpheresExport.java"),
-               str(ROOT / f"testdata/spheres/{case}.pcg"),
+               str(character),
                str(DATA / "spheres_export.txt"), str(output), "config.ini"]
     saved = work / "saved.pcg"
     print(f"PCGen output and diagnostic log: {work}", flush=True)
     with log.open("w", encoding="utf-8") as stream:
         subprocess.run([*command, str(saved)], cwd=work, stdin=subprocess.DEVNULL,
                        stdout=stream, stderr=subprocess.STDOUT, timeout=90, check=True)
-    expected = json.loads((ROOT / "testdata/spheres/expected.json").read_text())[case]
+    expected = (progression_expected(level) if level is not None else
+                json.loads((ROOT / "testdata/spheres/expected.json").read_text())[case])
     validate_result(output, log, expected)
     validate_selection(log)
     if not saved.is_file():
@@ -91,9 +103,18 @@ def smoke(case):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("case", choices=[*CASES, "all"])
+    parser.add_argument("case", choices=[*CASES, "all", "progression"])
+    parser.add_argument("--level", type=int, choices=range(1, 21))
+    parser.add_argument("--casting", choices=("INT", "WIS", "CHA"), default="INT")
     args = parser.parse_args()
     try:
+        if args.case == "progression":
+            if args.level is None:
+                raise ValueError("progression requires --level")
+            smoke(f"incanter{args.level}-{args.casting.lower()}18", args.level, args.casting)
+            return
+        if args.level is not None or args.casting != "INT":
+            raise ValueError("--level/--casting apply only to progression")
         for case in CASES if args.case == "all" else (args.case,):
             smoke(case)
     except (ValueError, OSError, subprocess.SubprocessError) as error:

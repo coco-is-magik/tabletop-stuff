@@ -1,0 +1,7 @@
+level=|TOTALLEVELS|
+bab=|VAR.BAB.INTVAL|
+hp=|HP|
+fortitude=|CHECK.FORTITUDE.TOTAL|
+reflex=|CHECK.REFLEX.TOTAL|
+will=|CHECK.WILL.TOTAL|
+ac=|AC.Total|

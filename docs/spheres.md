@@ -1,5 +1,314 @@
 # Spheres PCGen prototype — current handoff
 
+## Current implementation status — 2026-09-22
+
+Current scope remains **Power + Might for normal PF1e games from the Spheres Wiki**.
+Guile, mythic, gestalt, broad upstream PCGen tests, GUI polish, packaging and
+performance work are out of scope for now.
+
+### Incanter status
+
+Implemented and directly exercised through the targeted PCGen controller/export
+path:
+
+- base Incanter chassis and unspecialized level 1-20 progression;
+- Intelligence, Wisdom and Charisma casting-ability choices;
+- magic talent and spell-point progression fixtures;
+- Incanter bonus-feat pool;
+- repeatable Extra Magic Talent and Extra Spell Points support;
+- five-point specialization purchase budget and bonus-feat forfeiture formula;
+- separate active-specialization budget/order model;
+- Master of Mysteries;
+- Channel Energy, positive/negative choice, uses, dice and DC;
+- Lay on Hands, level-2 grant and scaling;
+- Merciful Healer, using PCGen's existing mercy selections and prerequisites;
+- standard Familiar, using PCGen's existing familiar support and master level;
+- Admixture Adept, bonus Admixture talent and admixture pool;
+- 33 Core cleric domain adapters, powers only, no domain spells;
+- 10 Core sorcerer bloodline adapters, powers only, no arcana/spells/bonus feats/class skills;
+- Destruction sphere specialization, including +1 sphere CL and level-gated powers;
+- Sword Birth arena data, enhanced armory budget, trick pool and ten Lingchi-specific tricks.
+
+Incanter is **not complete**. Remaining before claiming completion:
+
+1. **Special familiars** — add choices, prerequisites/costs, master-level scaling and save/reload coverage.
+2. **Remaining sphere specializations** — implement every current wiki sphere specialization after or alongside its underlying sphere data.
+3. **Sphere sub-specializations** — add all sub-specialization selections, exclusivity, prerequisites and level gates.
+4. **Sword Birth ordinary Armorist arsenal tricks** — add the ordinary arsenal tricks usable through Sword Birth, not only Lingchi-specific tricks.
+5. **Sword Birth arena weapon/property selection** — record legal arena weapons/properties, enforce enhancement budgets and avoid applying arena-only properties to normal equipment.
+6. **Non-Core domain and subdomain choices** — add current normal-game options from the wiki corpus; do not grant domain spells unless explicitly granted.
+7. **Non-Core bloodline choices** — add current normal-game options and required subchoices; grant powers only unless explicitly granted.
+8. **Casting traditions integration** — implement traditions, drawbacks and boons needed for legal Incanter builds, including casting ability and resource changes.
+9. **Spheres feat eligibility and grants** — add remaining current Spheres feats, tag valid Incanter bonus-feat choices, and implement persistent grants/prerequisites.
+10. **Archetypes** — add current normal-game Incanter archetypes and class-feature replacements/conflicts.
+11. **Favored class options** — add current Incanter favored-class bonuses and verify per-level effects.
+12. **Specialized character save/reload coverage** — add smoke cases for representative domain, bloodline, Destruction specialization, Sword Birth, familiar, mercy and channel builds.
+13. **Completion audit** — compare data against current wiki page(s), record any intentionally skipped ambiguous/unusable option, then mark complete.
+
+### Conscript status
+
+Conscript is **not implemented**. There is no Conscript class data, practitioner
+progression, combat-talent progression, specialization/customization model, or
+PCGen fixture yet.
+
+### Sphere implementation status
+
+Spheres of Power is represented only by a narrow Destruction slice:
+
+- Destruction Sphere;
+- Searing Blast;
+- Epicenter;
+- Gather Energy;
+- Admixture;
+- prototype Destruction variables/export fields.
+
+All other Power spheres are missing. Destruction itself is incomplete; most blast
+types, blast shapes, advanced talents, drawbacks, prerequisites and detailed
+interactions are not yet implemented.
+
+Spheres of Might spheres are **not implemented**. There is no practitioner engine,
+combat talent pool, martial tradition model, Might sphere data, Conscript class,
+or Might fixture yet.
+
+### Current verified commands
+
+ThinkPad-only checks using the private JDK/toolchain setup documented below:
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_smoke.py all
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py all
+python3 /bigdisk/programming/pathfinder1e/tools/build.py test
+```
+
+Additional targeted Incanter gates currently available:
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py incanter1
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py incanter20
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py specializations3
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py specializations20
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py domains1
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py domains20
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py bloodline1
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py bloodline20
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py destruction1
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py destruction3
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py destruction8
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py destruction20
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py sword1
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py sword5
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py sword20
+```
+
+The combined broad gate command intentionally remains narrow: it covers selection,
+duplicate rejection and core isolation only. It does not imply Incanter completion.
+
+## Destruction specialization and Sword Birth — 2026-09-22
+
+Added Destruction specialization: three-point purchase, two-unit activation,
+automatic base sphere, sphere-only +1 caster level, Intense Magic at 3,
+Penetrating Blast at 8, and Indestructible at 20. Direct PCGen gates passed at
+levels 1, 3, 8 and 20, checking free sphere grants, CL isolation, level gates,
+resource scaling, duplicate rejection and removal. Precision immunity and the
+negative-HP death threshold are included in the capstone description; core
+critical-hit and sneak-attack immunities are automatic grants. The altered death
+threshold is not wired into a general HP/death calculation.
+
+Added Sword Birth purchase/activation, armory arena parameters and action
+progression, enhanced-armory budget, one arsenal-trick choice per five levels,
+and all ten Lingchi-specific tricks. Direct PCGen gates passed at levels 1, 5
+and 20 for budgets, prerequisites, grants, overspending and removal.
+This does NOT yet include the ordinary Armorist arsenal trick catalog or a
+weapon/property selection path for created arena weapons. Arena effects are
+recorded as situational abilities rather than bonuses to unrelated equipment.
+
+Commands (ThinkPad only):
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py destruction1
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py destruction3
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py destruction8
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py destruction20
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py sword1
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py sword5
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py sword20
+```
+
+Incanter is still incomplete: special familiars, other sphere specializations
+and sub-specializations (which need their underlying spheres), ordinary arsenal
+tricks and arena weapon properties, non-Core domain/bloodline choices, traditions,
+feat eligibility, archetypes and favored-class choices. New specialization
+save/reload is not covered by these controller gates. Earlier completion claims
+must not be inferred from passing the narrower prototype tests.
+
+## Incanter domain, bloodline and Admixture increment — 2026-09-22
+
+Added 33 Core domain adapters, ten Core bloodline adapters, and Admixture Adept.
+Adapters reuse vendored abilities without granting domain spells or bloodline
+arcana, spells, bonus feats, or class skills. Domain purchases cost one point;
+bloodlines and Admixture cost two. Each requires a separate activation selection.
+No multiclass implementation is added.
+
+Actual ThinkPad PCGen checks passed for paired Air/Fire domains at levels 1 and
+20: powers, DC/uses, independent level scaling, capstones, duplicate rejection,
+and removal. Aberrant bloodline checks passed at levels 1 and 20: power level
+gates, casting modifier, no prohibited grants, second-bloodline restriction,
+and removal. Admixture checks cover automatic talent grant, pool scaling and
+removal without increasing the ordinary talent budget. Other domain/bloodline
+choices are generated and parsed but their individual powers and companion
+subchoices have NOT all been integration-tested. Specialized save/reload remains
+unverified. This is not full Incanter completion.
+
+Commands (ThinkPad setup only):
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py domains1
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py domains20
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py bloodline1
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py bloodline20
+```
+
+Still missing: non-Core domains/subdomains and bloodlines, special familiars,
+Sword Birth, sphere specializations/sub-specializations, casting traditions,
+remaining feat eligibility, archetypes and favored-class choices. These remain
+implementation work, not completed or silently excluded options.
+
+## Incanter specialization implementation — 2026-09-22
+
+Implemented Channel Energy (positive/negative choice, dice, uses and DC), Lay on
+Hands (level-2 grant and level-scaled healing/uses), Merciful Healer (existing
+PCGen mercy options, level prerequisites and pool), and standard Familiar (existing
+PCGen familiar list/master-level support). Master of Mysteries remains implemented.
+Rules checked against the Ultimate section of the wiki Incanter page on this date.
+
+Specializations now separate level-1 purchase from activation. Purchase spends the
+five-point budget and forfeits bonus feats. Activation requires the corresponding
+purchase and spends from two activation units at level 1, four at 3, six at 5.
+Current one-point specializations use one unit; two-point specializations use two.
+This allows choosing the activation order while preventing simultaneous benefits
+before they unlock. Future three-point sphere/sword specializations must consume
+TWO activation units, not three. No multiclass handling is added.
+
+Compatibility: an older saved Master of Mysteries purchase must now also select
+Active Master of Mysteries to receive its benefits. This deliberately fixes the
+old automatic-activation behavior; no saved file is rewritten automatically.
+
+Actual PCGen gates passed at levels 1, 3 and 20. They cover purchase/activation
+prerequisites, inactive level-1 lay on hands, activation-budget rejection,
+positive/negative channel choices, channel scaling, familiar master levels,
+mercy selection/prerequisite scaling, five-point feat forfeiture and removal.
+Evidence under project build: `pcgen-spheres-915cujeb`, `pcgen-spheres-arjfbhqu`,
+`pcgen-spheres-d2rr2bqp`. New controller tests do not yet certify specialized
+character save/reload or familiar companion-file generation.
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py specializations3
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py specializations20
+```
+
+Incanter is still incomplete: non-Core domains/subdomains and bloodlines,
+special familiars, Sword Birth, sphere specializations/sub-specializations,
+traditions, remaining feat eligibility, archetypes and favored-class choices.
+Existing generic-class feat prerequisites may also need adaptation for Incanter
+grants. These are unfinished, not deliberately skipped spheres.
+
+## Implemented Incanter bonus-feat increment — 2026-09-22
+
+Added the class bonus-feat pool (level 1 and every even level), independently of
+ordinary character feats. Added repeatable Extra Magic Talent and Extra Spell
+Points with actual talent/spell-point grants and removal. The pool admits tagged
+Incanter feats and existing item-creation/metamagic feats; the rest of the eligible
+Spheres feat catalog is still pending. Extra Magic Talent currently requires our
+casting core; Basic Magic Training is not yet implemented.
+
+Added a five-point specialization pool, the cumulative specialization-cost
+bonus-feat forfeiture formula, and Master of Mysteries with daily-round calculation
+and level-dependent rules description. Only this specialization is implemented;
+multiple-specialization activation ordering is still pending. Its selection is
+restricted to level 1; saved selections persist rather than being reselected at
+higher levels. This is not yet a complete specialization system or Incanter.
+
+Rules checked against the current wiki Incanter and Extra Feats pages on this date.
+Targeted actual PCGen gates passed at levels 1 and 20: bonus-pool budgets, no
+ordinary-feat spending, repeatable talent grants, removal/refunds, spell-point
+grants/removal, and level-1 overspend rejection. Level 1 additionally verified
+Master of Mysteries costs two specialization points, forfeits the first bonus
+feat, provides five daily rounds with modifier +4, and restores the feat on removal.
+Evidence under project build: `pcgen-spheres-9jqv4woq`, `pcgen-spheres-27ooyidj`.
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py incanter1
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py incanter20
+```
+
+Remaining Incanter work includes other specializations, their activation ordering,
+traditions, eligible feat coverage, archetypes and favored-class choices. No claim
+that the entire class is complete. Multiclassing remains deferred.
+
+## Authoritative work order — user revision, 2026-09-22
+
+This supersedes earlier implementation-order recommendations in this document
+and the original plan:
+
+1. Finish Incanter completely, including its normal-game class choices and the
+   casting/resource support needed for single-class characters.
+2. Finish Conscript completely, including its normal-game class choices and the
+   martial/resource support needed for single-class characters.
+3. Implement the Power and Might sphere catalogs.
+4. Only then address the remaining classes.
+5. Defer multiclass implementation and verification until every class is implemented.
+
+Guile is excluded. Continue using current/newest normal-game wiki options;
+mythic and gestalt remain excluded. UX, performance work, packaging and broad
+upstream tool repair are not tasks. Implement shared mechanics only as required
+by the current class or sphere, not as a separate generalized-engine project.
+
+If a particular sphere is disproportionately complicated, record its name,
+specific unimplemented mechanics, blocking reason and any partial coverage here,
+then skip it and continue the catalog. A deferred sphere is not complete.
+
+### Deferred spheres
+
+None explicitly deferred yet. Unimplemented catalog entries are not automatically
+classified as deferred; record an entry when a concrete sphere is skipped.
+
+## Current implementation increment — 2026-09-22
+
+Scope is normal-game PF1e Spheres options on the wiki, preferring current/newest
+versions. Mythic, gestalt, UX polish and unrelated tooling remain excluded.
+
+Incanter's unspecialized caster/talent/spell-pool progression now extends through
+level 20. The existing class key is retained for saved-character compatibility.
+The current Ultimate Incanter table and Magic Talents/Spell Pool sections were
+checked at `https://spheresofpower.wikidot.com/incanter` on 2026-09-22.
+This is NOT yet a complete Incanter: bonus-feat choices, specializations,
+traditions and other class options still need implementation.
+
+Added a one-choice Casting Ability pool with Intelligence, Wisdom and Charisma
+options. Existing fixtures without a selection keep their INT fallback. This is
+the ability-choice component, not an implemented casting tradition system.
+
+Actual PCGen exports, talent spending and save/reload passed for level 20/WIS18
+and level 3/CHA18 (with different INT scores to detect accidentally retained INT).
+Evidence: project build directories `pcgen-spheres-6agf405e` and
+`pcgen-spheres-qffw3rjz`. Level 20 exports CL20, 32 talents, 24 spell points and
+Destruction DC24; level 3 exports CL3, 7 talents, 7 spell points and DC15.
+Generated fixtures support every level 1–20 and each mental casting ability;
+that availability is not a claim all 60 combinations were run through PCGen.
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_smoke.py progression --level 20 --casting WIS
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_smoke.py progression --level 3 --casting CHA
+```
+
+Eleven first-party tests and all existing regression suites passed. Selection,
+duplicate and core-isolation gates passed again. ThinkPad setup remains unchanged.
+Next: implement Incanter bonus-feat grants and casting traditions, then remaining
+class options and Destruction content. Multiclass/low/mid-caster models remain
+unimplemented; the expanded high-caster calculation is not proof of those models.
+
+Earlier dated entries below describe previous prototype limitations and evidence.
+
 ## Current workflow: targeted export only (2026-09-22)
 
 Broad upstream `datatest`, `slowtest`, `inttest`, distribution packaging and GUI
@@ -57,15 +366,55 @@ Verified on the ThinkPad on 2026-09-22:
 | incanter1-int7 | 1 | -2 | 1 | 8 | pcgen-spheres-xkqmz06f |
 
 The hand-authored fixtures leave unrelated character choices unfinished. This is
-not a complete Incanter. Interactive prerequisite enforcement, duplicate rejection,
-and core-only isolation still require targeted acceptance checks. Those are next,
-before traditions, martial progression or catalog expansion; broad upstream tests
-remain out of scope. Spheres of Might is not implemented.
+not a complete Incanter. The immediate selection/isolation gates below are now
+complete for this slice; traditions, martial progression and catalog expansion
+remain separate work. Broad upstream tests remain out of scope. Spheres of Might
+is not implemented.
 
-Eight first-party tool tests cover fixture coverage, exact selection evidence,
+Ten first-party tool tests cover gate evidence, isolation comparisons, fixture coverage, exact selection evidence,
 missing/oversized/mismatched-export,
 load-error and unsupported-case rejection coverage. These are separate from the
 actual PCGen smoke result above.
+
+### Immediate gates completed — 2026-09-22, ThinkPad only
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py all
+```
+
+This first-party driver uses the existing PCGen batch loader and the production
+`CharacterAbilities` selection controller used by the character facade, not a
+replacement eligibility implementation or the upstream JUnit harness. The Java
+driver is compiled into the isolated build directory with the private JDK; no
+vendored Java is edited. A recording console delegate captures only expected
+selection rejection messages and verifies their exact PCGen message keys.
+
+Verified gates:
+
+- **Prerequisites:** Searing Blast, Epicenter and Gather Energy are each rejected
+  without Destruction, with zero grants/spending. After buying Destruction, each
+  qualifies, is added successfully, and costs one point. Removing talents refunds
+  points; removing Destruction revokes the prerequisite. A core Fighter cannot
+  select Destruction itself (caster-level prerequisite).
+- **Duplicates:** repeated Destruction, Searing Blast, Epicenter and Gather Energy
+  attempts each produce PCGen's duplicate rejection, with unchanged selection
+  count and spending. Tests deliberately leave points available so lack of points
+  cannot masquerade as duplicate enforcement.
+- **Core isolation:** the same Human Fighter 1 is loaded in separate processes
+  with Core alone and Core plus Spheres. Both exports match the fixed baseline:
+  level 1, BAB 1, HP 12, Fort +4, Reflex +1, Will +0, AC 11. Snapshots of stats,
+  modifiers, save/AC bonuses and feat pools also match. Neither gains Spheres
+  caster level, talents, spell points or the casting-core ability. The augmented
+  run proves the Spheres category was loaded but has zero pool/selected talents.
+
+Initial passing evidence under `/bigdisk/programming/pathfinder1e/build`:
+`pcgen-spheres-eggcfbsx` (selection), `pcgen-spheres-zshi3gef` (Core), and
+`pcgen-spheres-hvstr5wz` (Core + Spheres). Subsequent runs print fresh paths.
+
+Scope: controller-level enforcement without opening GUI windows; not validation
+of deliberately malformed PCG imports. Isolation covers this representative
+core fixture and recorded fields, not every core class or every possible statistic.
+No new game-rule behavior was needed to pass these gates.
 
 ## Contract (2026-09-22)
 

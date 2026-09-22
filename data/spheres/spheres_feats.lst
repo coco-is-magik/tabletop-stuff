@@ -1,0 +1,3 @@
+# Current wiki Extra Feats; casting core is the presently implemented casting feature.
+Extra Magic Talent	CATEGORY:FEAT	TYPE:General.IncanterBonus	PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core	MULT:YES	STACK:YES	CHOOSE:NOCHOICE	BONUS:VAR|SPHERES_MAGIC_TALENTS|1	DESC:Gain one magic talent. Repeated selections each grant another talent.
+Extra Spell Points	CATEGORY:FEAT	TYPE:General.IncanterBonus	PREVARGTEQ:SPHERES_SPELL_POINTS,1	MULT:YES	STACK:YES	CHOOSE:NOCHOICE	BONUS:VAR|SPHERES_SPELL_POINTS|2	DESC:Increase the spell pool by two points per selection.

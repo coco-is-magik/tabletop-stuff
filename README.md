@@ -105,16 +105,23 @@ they are experimental and have not been fitted to Pathfinder character careers.
 ### New phase: Spheres PCGen prototype
 
 The first-party source at `/bigdisk/programming/pathfinder1e/data/spheres`
-begins the data-first Spheres plan with a limited Incanter 1–2/Destruction slice.
+contains an incomplete Incanter/Destruction slice. Incanter now has level 1-20
+base progression, mental casting choices, bonus-feat support, several
+specializations, Core domain/bloodline adapters, Admixture, Destruction
+specialization and Sword Birth data. Conscript and Spheres of Might are not
+implemented. Most Spheres of Power content is still missing.
 On the ThinkPad only, patched offline PCGen source compilation is verified with
 the private JDK at `/home/danbo/.local/lib/jvm/temurin-16.0.2+7`. The targeted
 Incanter 1/INT18, Incanter 2/INT18 and Incanter 1/INT7 fixtures load Core + Spheres,
 verify two spent talents, and match all ten exports before and after PCGen
 save/reload. Run the smoke command with `all` to check all three.
+Targeted prerequisite enforcement, duplicate rejection, and core Fighter isolation
+also pass via PCGen's production selection controller. Run
+`python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py all`.
 Broad upstream tests, GUI and packaging are not
-current gates; do not debug `datatest` to proceed. Spheres of Might content and
-full class support are not implemented yet. The standalone dice-pool tool remains
-unchanged. Scope, exact compile command, acceptance fixtures and next steps:
+current gates; do not debug `datatest` to proceed. The standalone dice-pool tool
+remains unchanged. Current implementation status, exact compile command,
+acceptance fixtures, and the explicit Incanter remaining checklist:
 `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
 
 ```sh

@@ -1,0 +1,4 @@
+# Selection pool grants are attached to the owning specialization, never global characters.
+ABILITYCATEGORY:Incanter Arsenal Trick	CATEGORY:Incanter Arsenal Trick	EDITABLE:YES	EDITPOOL:NO	FRACTIONALPOOL:NO	VISIBLE:QUALIFY	PLURAL:Incanter Arsenal Tricks	DISPLAYLOCATION:Spheres
+ABILITYCATEGORY:Incanter Active Specialization	CATEGORY:Incanter Active Specialization	EDITABLE:YES	EDITPOOL:NO	FRACTIONALPOOL:NO	VISIBLE:QUALIFY	POOL:2*floor((SPHERES_INCANTER_LEVEL+1)/2)	PLURAL:Active Incanter Specializations	DISPLAYLOCATION:Spheres
+ABILITYCATEGORY:Incanter Channel Energy	CATEGORY:Special Ability	TYPE:IncanterChannel	EDITABLE:YES	EDITPOOL:NO	FRACTIONALPOOL:NO	VISIBLE:QUALIFY	PLURAL:Incanter Channel Energy	DISPLAYLOCATION:Spheres

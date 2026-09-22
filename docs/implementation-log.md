@@ -1,5 +1,87 @@
 # Implementation log
 
+## 2026-09-22 — Current Spheres handoff refreshed
+
+Updated `/bigdisk/programming/pathfinder1e/docs/spheres.md` with current status
+for Incanter, Conscript and Power/Might sphere implementation. Added the explicit
+remaining checklist required before Incanter can be called complete. Documentation
+only; no data or tool behavior changed.
+
+## 2026-09-22 — Destruction specialization and Sword Birth data
+
+Added Destruction specialization grants/scaling and Sword Birth arena data,
+enhancement budgets, trick pool and ten Lingchi-specific tricks. Direct PCGen
+gates passed at Destruction levels 1/3/8/20 and Sword Birth levels 1/5/20.
+Two new first-party data-contract tests pass. Full Incanter completion remains
+outstanding, including ordinary arsenal tricks and arena property choices;
+see the current handoff for explicit implementation limits. No upstream changes.
+
+## 2026-09-22 — Incanter Core domains, Core bloodlines and Admixture
+
+Added 33 domain and ten power-only bloodline adapters plus Admixture Adept and
+its bonus talent. PCGen controller checks passed for Air/Fire together and
+Aberrant/Admixture at levels 1 and 20 on the ThinkPad. Generator consistency and
+forbidden-grant regression tests added. No upstream or toolchain changes.
+The full class remains incomplete; see the explicit remaining list in spheres.md.
+
+## 2026-09-22 — Incanter channeling, healing, familiar and activation
+
+Added Channel Energy, Lay on Hands, Merciful Healer and standard Familiar data,
+reusing core mercy and familiar data where applicable. Separated specialization
+purchase from activation, including the existing Master of Mysteries, to enforce
+level-based activation limits. Actual PCGen gates passed at levels 1, 3 and 20.
+Remaining class omissions and the Master of Mysteries compatibility change are
+listed in `/bigdisk/programming/pathfinder1e/docs/spheres.md`. Class is not complete.
+
+## 2026-09-22 — Incanter bonus feats implemented
+
+Implemented class bonus-feat pool, repeatable Extra Magic Talent/Extra Spell Points,
+specialization-cost formula and first specialization (Master of Mysteries).
+Real PCGen controller tests passed at levels 1 and 20, including grant/removal,
+pool isolation and overspend rejection; level 1 tested specialization purchase,
+forfeiture and removal. This is implemented data, not completion of Incanter.
+See `/bigdisk/programming/pathfinder1e/docs/spheres.md` for remaining class work.
+
+## 2026-09-22 — User narrows implementation order
+
+Finish Incanter, then Conscript, then Power/Might spheres, then remaining classes.
+Defer multiclassing until all classes are implemented; exclude Guile. Log and
+skip disproportionately complex spheres rather than blocking catalog progress.
+Updated the authoritative handoff in `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
+This is a scope/order update, not new implemented character mechanics.
+
+## 2026-09-22 — Incanter progression to 20 and mental casting choices
+
+Extended the existing prototype class key to level 20 without changing the
+established high-caster progression formula. Added INT/WIS/CHA selection data
+with an INT compatibility fallback and a single-choice pool. Generated PCG
+fixtures cover levels 1–20 with independent talent-budget table expectations.
+Actual PCGen level20/WIS18 and level3/CHA18 export/save/reload checks passed.
+All three selection/isolation gates passed; 11 unit tests and the existing
+profile/candidate/655 scenario/21,147 regression checks passed. No toolchain or
+upstream Java modifications. Bonus feats, specializations, traditions and the
+remaining Destruction catalog are still missing; this is not class completion.
+
+
+## 2026-09-22 — Immediate Spheres selection/isolation gates complete
+
+Added `/bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py` and a
+first-party Java driver exercising PCGen's actual CharacterAbilities controller.
+All three talents reject missing Destruction and accept its presence; duplicate
+attempts for the sphere and all three talents reject without spending. Removal
+refunds points and revokes prerequisites. The same core Fighter fixture has
+identical checked exports/state with Core alone and with Spheres loaded, gains no
+Spheres resources/abilities and cannot select Destruction. All three gates passed
+on the ThinkPad. No upstream Java, JDK, LST rules or broad tooling changes.
+Exact coverage, evidence and command: `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
+Final gate rerun passed (selection `pcgen-spheres-l2ptitwa`, Core
+`pcgen-spheres-6d6oq67t`, augmented `pcgen-spheres-ej_yya8_`). Ten tool tests,
+package checks and all existing profile/candidate/655 scenario/21,147 regression
+checks passed. The combined smoke rerun hit the outer 120-second command budget
+after passing level-1/INT18; remaining cases were split into individual bounded
+runs and both passed, including save/reload. This was not a reported gate failure.
+
+
 ## 2026-09-22 — Three Spheres fixtures and actual PCGen save/reload
 
 Added level-2/INT18 and level-1/INT7 PCG fixtures and an `all` smoke option.

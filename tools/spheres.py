@@ -21,16 +21,18 @@ def check_package(data=DATA):
             if Path(value).name != value or not value.endswith(".lst"):
                 raise ValueError("unsafe source reference")
             references.append(value)
-    if len(references) != 4 or len(set(references)) != 4:
-        raise ValueError("expected four distinct LST references")
+    if len(references) != 10 or len(set(references)) != 10:
+        raise ValueError("expected ten distinct LST references")
     for name in references:
         if not records(data / name):
             raise ValueError(f"empty source: {name}")
     abilities = records(data / "spheres_destruction.lst")
-    if len(abilities) != 4:
-        raise ValueError("expected sphere and three talents")
+    if len(abilities) != 5:
+        raise ValueError("expected sphere and four talents")
     prerequisite = "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"
-    for line in abilities[1:]:
+    for line in abilities:
+        if line.startswith("Destruction Sphere\t"):
+            continue
         if prerequisite not in line.split("\t"):
             raise ValueError("talent missing base-sphere prerequisite")
     return "PASS: package structure (not PCGen parsing or formula validation)"

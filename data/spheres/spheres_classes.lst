@@ -1,4 +1,5 @@
-# Only the no-specialization, fixed-INT calculation slice; not a complete Incanter.
+# Unspecialized progression through 20; specializations and bonus-feat options remain incomplete.
 # No spell slots: Spheres uses ability pools and shared variables instead.
-CLASS:Incanter (Spheres Prototype)	HD:6	TYPE:Base.PC	MAXLEVEL:2	STARTSKILLPTS:4	CSKILL:Appraise|TYPE=Craft|Fly|TYPE=Knowledge|Linguistics|TYPE=Profession|Spellcraft	BONUS:COMBAT|BASEAB|floor(CL/2)|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|floor(CL/3)	BONUS:SAVE|BASE.Will|2+floor(CL/2)	BONUS:VAR|SPHERES_CASTER_LEVEL,SPHERES_MAGIC_SKILL_BONUS,SPHERES_SPELL_POOL_LEVELS|CL	BONUS:VAR|SPHERES_MAGIC_TALENTS|CL+floor((CL+1)/2)
-1	ABILITY:Special Ability|AUTOMATIC|Spheres Casting Core	AUTO:WEAPONPROF|TYPE=Simple
+CLASS:Incanter (Spheres Prototype)	HD:6	TYPE:Base.PC	MAXLEVEL:20	STARTSKILLPTS:4	CSKILL:Appraise|TYPE=Craft|Fly|TYPE=Knowledge|Linguistics|TYPE=Profession|Spellcraft	BONUS:COMBAT|BASEAB|floor(CL/2)|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude,BASE.Reflex|floor(CL/3)	BONUS:SAVE|BASE.Will|2+floor(CL/2)	BONUS:VAR|SPHERES_CASTER_LEVEL,SPHERES_MAGIC_SKILL_BONUS,SPHERES_SPELL_POOL_LEVELS|CL	BONUS:VAR|SPHERES_MAGIC_TALENTS|CL+floor((CL+1)/2)
+CLASS:Incanter (Spheres Prototype)	DEFINE:SPHERES_INCANTER_LEVEL|0	DEFINE:SPHERES_INCANTER_SPECIALIZATION_POINTS|0	BONUS:VAR|SPHERES_INCANTER_LEVEL|CL
+1	ABILITY:Special Ability|AUTOMATIC|Spheres Casting Core|Incanter Bonus Feats	AUTO:WEAPONPROF|TYPE=Simple
