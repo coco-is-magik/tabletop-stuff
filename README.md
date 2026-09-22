@@ -106,13 +106,20 @@ they are experimental and have not been fitted to Pathfinder character careers.
 
 The first-party source at `/bigdisk/programming/pathfinder1e/data/spheres`
 begins the data-first Spheres plan with a limited Incanter 1–2/Destruction slice.
-It is **not yet validated in PCGen**: the pinned build currently lacks its Java 16
-toolchain. Spheres of Might content and full class support are not implemented yet.
-The standalone dice-pool tool remains unchanged. Scope, acceptance fixtures and
-next steps: `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
+On the ThinkPad only, patched offline PCGen source compilation is verified with
+the private JDK at `/home/danbo/.local/lib/jvm/temurin-16.0.2+7`. The targeted
+Incanter 1/INT18, Incanter 2/INT18 and Incanter 1/INT7 fixtures load Core + Spheres,
+verify two spent talents, and match all ten exports before and after PCGen
+save/reload. Run the smoke command with `all` to check all three.
+Broad upstream tests, GUI and packaging are not
+current gates; do not debug `datatest` to proceed. Spheres of Might content and
+full class support are not implemented yet. The standalone dice-pool tool remains
+unchanged. Scope, exact compile command, acceptance fixtures and next steps:
+`/bigdisk/programming/pathfinder1e/docs/spheres.md`.
 
 ```sh
 python3 /bigdisk/programming/pathfinder1e/tools/spheres.py check
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_smoke.py incanter1-int18
 python3 /bigdisk/programming/pathfinder1e/tools/build.py test
 ```
 

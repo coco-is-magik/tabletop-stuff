@@ -1,15 +1,78 @@
 # Implementation log
 
+## 2026-09-22 — Three Spheres fixtures and actual PCGen save/reload
+
+Added level-2/INT18 and level-1/INT7 PCG fixtures and an `all` smoke option.
+The Java batch bridge now checks that both selected talents exist and consume
+exactly two points, then saves through PCGen. A fresh Java process reloads the
+saved PCG and repeats export and selection checks. All three cases passed on the
+ThinkPad; paths and results are in `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
+No upstream tooling, private JDK, LST rules or dice-pool engine changes.
+This closes calculation-fixture and persistence checks, not the entire Spheres
+plan. Prerequisite/duplicate enforcement and core-only isolation remain next.
+
+## 2026-09-22 — Targeted Spheres export passes; tooling detour stopped
+
+User-approved workflow ignores broad upstream tests/packaging/GUI as gates.
+Added one first-party PCG fixture, Python smoke wrapper and minimal Java batch-API
+bridge. Fixed only direct-path setup issues (CLI output validation, config basename,
+preview path, PCG game-mode name). No upstream source or rules changes.
+Actual PCGen exports matched all ten incanter1-int18 expected values twice; latest
+evidence: `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-xe_b0j3u`.
+Nonzero DEFINE deprecation warnings remain, with no SEVERE/LSTERROR messages.
+Six tool tests passed. The private JDK/download patch are retained, ThinkPad only.
+Current command, limitations and next work: `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
+Do not fix `datatest` next; extend only the targeted fixtures/selection checks.
+
+## 2026-09-22 — ThinkPad test cache recheck; discovery mismatch
+
+Approved offline DataLoadTest retry passed the earlier dependency-resolution
+failure but failed at `:datatest`: no tests found. Test compilation tasks were
+UP-TO-DATE. Compiled DataLoadTest exists and uses Jupiter annotations, while
+`datatest` lacks `useJUnitPlatform()`. Next fix is test discovery configuration,
+not the JDK or additional Gentoo packages. No test cases ran. Full evidence:
+`/bigdisk/programming/pathfinder1e/build/pcgen-datatest-recheck.log`.
+Details and next step: `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
+No upstream code, system setup, JDK or download patch changed in this recheck.
+
+## 2026-09-22 — PCGen data-test harness blocked by test dependencies
+
+Inspected the pinned upstream data-load and character-export test harnesses and
+attempted offline `datatest --tests pcgen.persistence.lst.DataLoadTest` with the
+ThinkPad private JDK and both download tasks excluded. Failed in 25s at
+`:compileSlowtestJava` on missing `:testCompileClasspath` artifacts; no tests ran.
+The eight reported coordinates and exact command are recorded in
+`/bigdisk/programming/pathfinder1e/docs/spheres.md`; full local output is in
+`/bigdisk/programming/pathfinder1e/build/pcgen-datatest.log`. Compilation remains
+verified; this is a separate test dependency gap. Plugin JARs and the JAR task ran
+with duplicate-entry warnings, not a validated distribution. No Spheres data
+changes or integration tests were added, and no online downloads were attempted.
+
+
+## 2026-09-22 — ThinkPad PCGen offline compile verified
+
+Re-ran the patched, compile-only PCGen command with the private ThinkPad JDK at
+`/home/danbo/.local/lib/jvm/temurin-16.0.2+7`, `--offline`, `--no-build-cache`,
+`--rerun-tasks`, explicit `org.gradle.java.installations.paths`, auto-download
+disabled and both eager download tasks excluded (`-x downloadJRE -x downloadJavaFXModules`).
+Observed `BUILD SUCCESSFUL in 43s`; `:copyMasterSheets` and `:compileJava` executed,
+and `compileJava` printed `[--enable-preview]`. This supersedes the earlier Java 16
+toolchain blocker for the ThinkPad only. It does not verify upstream tests,
+application startup, packaging, Spheres data loading, talent selection, save/reload
+or character export. Current details and exact command: `docs/spheres.md`.
+
 ## 2026-09-22 — Spheres phase, first prototype (not accepted integration)
 
 The new user request activates `planning and docs/spheresplan.md` while preserving
 the dice-pool baseline. Added first-party PCGen data under `data/spheres`, an
 export template, hand-calculated expectations and Python package/export checks.
 Four new tool tests and all existing first-party tests passed. No upstream Java
-changes were made. Offline upstream compile failed on missing Java 16 toolchain,
-after plugin configuration progressed. Actual data loading and character exports
-remain unverified; static tests are not a substitute. Full scope, source references,
-limitations and next acceptance steps: `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
+changes were made. At this point, offline upstream compile still failed on the
+missing Java 16 toolchain after plugin configuration progressed; the later
+ThinkPad-only entry above records the compile recovery. Actual data loading and
+character exports remain unverified; static tests are not a substitute. Full
+scope, source references, limitations and next acceptance steps:
+`/bigdisk/programming/pathfinder1e/docs/spheres.md`.
 Spheres of Might content awaits the magic prototype gate in the supplied plan.
 
 
