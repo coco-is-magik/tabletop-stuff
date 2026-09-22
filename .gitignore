@@ -1,0 +1,20 @@
+# Generated first-party output and local reports
+/build/
+/reports/
+*.class
+*.log
+
+# Reproducible upstream extraction and build caches; keep pinned archives/manifests
+/vendor/upstream/
+.gradle/
+
+# Python/editor/OS temporary files
+__pycache__/
+*.py[cod]
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "dependencies": [
+    {
+      "name": "PCGen",
+      "version": "6.08.00RC10",
+      "url": "https://codeload.github.com/PCGen/pcgen/tar.gz/refs/tags/6.08.00RC10",
+      "archive": "pcgen-6.08.00RC10.tar.gz",
+      "sha256": "1ab10b3f939960429cf3b321e4112de1a84317b7f54d0f39f25801522b29dcd1",
+      "status": "source archive vendored; transitive build dependencies not vendored",
+      "ownership": "upstream; do not edit archive contents"
+    }
+  ]
+}
