@@ -14,6 +14,26 @@ Difficulty offsets, bonus profiles and the level-scaled skill DC curve are expli
 experimental assumptions—not measured population averages or universal skill rules.
 The default d10 formula is a candidate, not an approved balanced conversion.
 
+## Accepted dice-pool conversion model
+
+Roll d10s equal to the character's final PF1e modifier, with a minimum of 1 die.
+Each die showing **8+** is one success. Convert AC/DC to required successes with
+`ceil((AC or DC - 8) / 4)`: 8–12 needs 1, 13–16 needs 2, 17–20 needs 3,
+21–24 needs 4, 25–28 needs 5, 29–32 needs 6, 33–36 needs 7, and 37–40 needs 8.
+Example: **+11 vs AC 18** rolls **11d10** and needs **3 successes**.
+
+Expected model shape across the current scenario corpus:
+
+| Profile | Low difficulty | Average | High | Very hard |
+|---|---:|---:|---:|---:|
+| LOW | 40.56% | 11.58% | 1.53% | 0.06% |
+| TYPICAL | 79.99% | 58.38% | 33.71% | 16.79% |
+| HIGH | 92.59% | 81.32% | 61.60% | 40.73% |
+
+This makes investment matter more strongly than d20: weak areas are real weaknesses,
+typical investment has meaningful risk at average difficulty, and high investment
+is reliable without making high or very-hard checks automatic.
+
 ## Run
 
 ### Absolute probability / specialization report

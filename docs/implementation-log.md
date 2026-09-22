@@ -1,5 +1,14 @@
 # Implementation log
 
+
+## 2026-09-22 — README accepted-model summary
+
+Added a concise dedicated README section for the accepted `tn8-8-4` model: roll
+final modifier in d10s, minimum 1 die, 8+ succeeds, AC/DC maps by
+`ceil((AC or DC - 8) / 4)`. The section includes the required-success table and
+the verified aggregate profile/difficulty probabilities from the profile report.
+README was updated after implementation and working-doc updates.
+
 ## 2026-09-22 — Absolute profile diagnostics
 
 Added opt-in `scenarios --report profiles` with absolute probabilities, median,
