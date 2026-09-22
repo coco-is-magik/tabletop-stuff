@@ -6,6 +6,7 @@
 
 # Reproducible upstream extraction and build caches; keep pinned archives/manifests
 /vendor/upstream/
+/vendor/*.tar.gz
 .gradle/
 
 # Python/editor/OS temporary files
