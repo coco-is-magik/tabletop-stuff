@@ -1,0 +1,2 @@
+# Separate selection pool; owning classes contribute through canonical variables.
+ABILITYCATEGORY:Spheres Magic Talent	CATEGORY:Spheres Magic Talent	EDITABLE:YES	EDITPOOL:NO	FRACTIONALPOOL:NO	VISIBLE:QUALIFY	POOL:SPHERES_MAGIC_TALENTS	PLURAL:Magic Talents	DISPLAYLOCATION:Spheres

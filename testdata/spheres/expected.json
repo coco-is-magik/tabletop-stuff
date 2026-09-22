@@ -1,0 +1,17 @@
+{
+  "incanter1-int18": {
+    "magic_talents": 4, "caster_level": 1, "casting_modifier": 4,
+    "magic_skill_bonus": 1, "spell_points": 5, "destruction_cl": 1,
+    "destruction_dc": 14, "blast_dice": 1, "boosted_blast_dice": 2, "blast_range": 25
+  },
+  "incanter2-int18": {
+    "magic_talents": 5, "caster_level": 2, "casting_modifier": 4,
+    "magic_skill_bonus": 2, "spell_points": 6, "destruction_cl": 2,
+    "destruction_dc": 15, "blast_dice": 1, "boosted_blast_dice": 2, "blast_range": 30
+  },
+  "incanter1-int7": {
+    "magic_talents": 4, "caster_level": 1, "casting_modifier": -2,
+    "magic_skill_bonus": 1, "spell_points": 1, "destruction_cl": 1,
+    "destruction_dc": 8, "blast_dice": 1, "boosted_blast_dice": 2, "blast_range": 25
+  }
+}

@@ -102,6 +102,22 @@ they are experimental and have not been fitted to Pathfinder character careers.
 
 ## Dependencies and boundaries
 
+### New phase: Spheres PCGen prototype
+
+The first-party source at `/bigdisk/programming/pathfinder1e/data/spheres`
+begins the data-first Spheres plan with a limited Incanter 1–2/Destruction slice.
+It is **not yet validated in PCGen**: the pinned build currently lacks its Java 16
+toolchain. Spheres of Might content and full class support are not implemented yet.
+The standalone dice-pool tool remains unchanged. Scope, acceptance fixtures and
+next steps: `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/spheres.py check
+python3 /bigdisk/programming/pathfinder1e/tools/build.py test
+```
+
+### Existing comparison-tool baseline
+
 Verified baseline: **655 scenario checks + 21,147 existing regression checks pass**.
 The default model's 660-case MAE is **17.069 percentage points**, so model tuning
 is still needed. The scope, scenario definitions and output contract are locked by

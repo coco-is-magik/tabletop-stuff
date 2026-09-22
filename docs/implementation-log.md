@@ -1,5 +1,17 @@
 # Implementation log
 
+## 2026-09-22 — Spheres phase, first prototype (not accepted integration)
+
+The new user request activates `planning and docs/spheresplan.md` while preserving
+the dice-pool baseline. Added first-party PCGen data under `data/spheres`, an
+export template, hand-calculated expectations and Python package/export checks.
+Four new tool tests and all existing first-party tests passed. No upstream Java
+changes were made. Offline upstream compile failed on missing Java 16 toolchain,
+after plugin configuration progressed. Actual data loading and character exports
+remain unverified; static tests are not a substitute. Full scope, source references,
+limitations and next acceptance steps: `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
+Spheres of Might content awaits the magic prototype gate in the supplied plan.
+
 
 ## 2026-09-22 — README accepted-model summary
 

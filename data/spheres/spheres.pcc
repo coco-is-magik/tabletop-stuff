@@ -1,0 +1,12 @@
+CAMPAIGN:Spheres PF1e - Architecture Prototype
+GAMEMODE:Pathfinder
+GENRE:Fantasy
+BOOKTYPE:Homebrew
+TYPE:Homebrew.SpheresPrototype
+SOURCELONG:Spheres PF1e Architecture Prototype
+SOURCESHORT:SPROT
+INFOTEXT:Experimental Incanter 1-2 and Destruction slice. Load alongside Pathfinder Core Rulebook. Not a complete class or released rules dataset; see docs/spheres.md.
+ABILITYCATEGORY:spheres_categories.lst
+ABILITY:spheres_core.lst
+ABILITY:spheres_destruction.lst
+CLASS:spheres_classes.lst
