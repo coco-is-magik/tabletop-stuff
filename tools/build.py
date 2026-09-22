@@ -24,6 +24,8 @@ def main():
     run(["javac", "--release", "17", "-Xlint:all", "-Werror", "-d", str(CLASSES),
          *map(str, sources)])
     if action == "test":
+        run(["java", "-ea", "-cp", str(CLASSES), "dicepool.ProfileTest"])
+        run(["java", "-ea", "-cp", str(CLASSES), "dicepool.CandidateTest"])
         run(["java", "-ea", "-cp", str(CLASSES), "dicepool.ScenarioTest"])
         run(["java", "-ea", "-cp", str(CLASSES), "dicepool.EngineTest"])
     elif action == "run":

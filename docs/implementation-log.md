@@ -1,5 +1,27 @@
 # Implementation log
 
+## 2026-09-22 — Absolute profile diagnostics
+
+Added opt-in `scenarios --report profiles` with absolute probabilities, median,
+nearest-rank p10/p90, range and d20 context. Existing type/level filters provide
+breakdowns without altering the scenario corpus. No model or profile changes.
+New ProfileTest and all prior suites passed. Ran reports for all three TN8 models;
+inspected TN8-8-4 type/level slices. Findings: pooled means hide declining LOW
+participation with level and major type differences in TYPICAL competence.
+Current handoff and measured tables: `docs/profile-analysis.md`. Investment-tier
+definitions remain unresolved; no speculative target-band acceptance tests added.
+
+## 2026-09-22 — Opt-in TN8 experiment
+
+Added named 1:1 bonus/dice candidates (offset/divisor 7/4, 8/4, 10/5), preserving
+the baseline and five-argument ConversionModel constructor. Minimum dice is now
+explicit configuration; the candidates use the provisional one-die floor.
+Added direction/parity diagnostics without changing the existing CSV schema.
+All candidate tests, 655 scenario checks and 21,147 regression checks passed.
+Executed all three full-corpus reports and the example attack report. None
+consistently achieves the requested curve shape; findings and limitations are in
+`docs/tn8-experiment.md`. No take-10/20 mechanics, cancellations or explosions added.
+
 ## 2026-09-22 — Scope reset: scenario baseline
 
 The user's latest requirement supersedes the PCGen-first plan: the deliverable is

@@ -22,6 +22,9 @@ public final class Main {
             out.println("scenarios [--level 5 | --min-level 1 --max-level 20] [--type ATTACK|SAVE|SKILL]");
             out.println("          [--profile LOW|TYPICAL|HIGH | --bonus 11] [--format table|csv]");
             out.println("          [--ac-spread 3 --dc-spread 5 --skill-base 10]");
+            out.println("          [--report rows|profiles] (profiles: absolute probability distribution across scenarios)");
+            out.println("          [--model baseline|tn8-7-4|tn8-8-4|tn8-10-5] (cannot combine with coefficients)");
+            out.println("          Direct rolled checks only; take-10/take-20 situations excluded.");
             out.println("          accepts the same conversion coefficients as benchmark; defaults are experimental.");
             out.println("match --probability 0.55 [--max-dice 20 --limit 10]");
             out.println("probability|simulate --system d20 --type ATTACK --bonus 12 --dc 24");
@@ -46,7 +49,7 @@ public final class Main {
                     "successes", "iterations", "seed");
             case "benchmark" -> Set.of("type", "dice-offset", "bonus-per-die", "target", "dc-offset", "dc-per-success");
             case "scenarios" -> Set.of("level", "min-level", "max-level", "type", "profile", "bonus", "format",
-                    "ac-spread", "dc-spread", "skill-base", "dice-offset", "bonus-per-die", "target", "dc-offset", "dc-per-success");
+                    "ac-spread", "dc-spread", "skill-base", "dice-offset", "bonus-per-die", "target", "dc-offset", "dc-per-success", "model", "report");
             default -> throw new IllegalArgumentException("unknown command " + args[0]);
         };
         for (String key : options.keySet()) if (!allowed.contains(key))
@@ -56,6 +59,9 @@ public final class Main {
                 if (options.containsKey("level") && (options.containsKey("min-level") || options.containsKey("max-level")))
                     throw new IllegalArgumentException("choose --level or a level range, not both");
                 String format = options.getOrDefault("format", "table");
+                String report = options.getOrDefault("report", "rows");
+                if (!report.equals("rows") && !report.equals("profiles"))
+                    throw new IllegalArgumentException("report must be rows or profiles");
                 if (!format.equals("table") && !format.equals("csv"))
                     throw new IllegalArgumentException("format must be table or csv");
                 int first = integer(options, "level", integer(options, "min-level", 1));
@@ -65,10 +71,20 @@ public final class Main {
                         options.containsKey("type") ? type(options) : null,
                         options.containsKey("profile") ? Scenarios.Profile.valueOf(options.get("profile").toUpperCase(Locale.ROOT)) : null,
                         options.containsKey("bonus") ? Integer.valueOf(options.get("bonus")) : null);
-                var model = new ConversionModel(integer(options, "dice-offset", 5), integer(options, "bonus-per-die", 2),
+                if (options.containsKey("model") && Set.of("dice-offset", "bonus-per-die", "target", "dc-offset", "dc-per-success")
+                        .stream().anyMatch(options::containsKey))
+                    throw new IllegalArgumentException("choose a named model or explicit coefficients, not both");
+                var model = options.containsKey("model") ? ConversionModel.named(options.get("model"))
+                        : new ConversionModel(integer(options, "dice-offset", 5), integer(options, "bonus-per-die", 2),
                         integer(options, "target", 6), integer(options, "dc-offset", 10), integer(options, "dc-per-success", 3));
                 err.println("Scenario settings: " + config);
-                ScenarioReport.write(Scenarios.compare(config, model), model, format.equals("csv"), out, err);
+                var rows = Scenarios.compare(config, model);
+                if (report.equals("profiles")) {
+                    err.println("Model: " + model);
+                    err.println("Direct rolls only. Synthetic bonus profiles are NOT validated investment tiers.");
+                    err.println("All values are percentages; p10/p90 use nearest rank across scenario probabilities, not roll outcomes.");
+                    ProfileReport.write(rows, format.equals("csv"), out);
+                } else ScenarioReport.write(rows, model, format.equals("csv"), out, err);
             }
             case "match" -> {
                 int limit = integer(options, "limit", 10);

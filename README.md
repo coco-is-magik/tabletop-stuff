@@ -16,6 +16,41 @@ The default d10 formula is a candidate, not an approved balanced conversion.
 
 ## Run
 
+### Absolute probability / specialization report
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --model tn8-8-4 --report profiles
+python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --model tn8-8-4 --report profiles --type ATTACK --min-level 16 --max-level 20 --format csv
+```
+
+This opt-in report groups by profile/difficulty and shows absolute mean/median,
+p10/p90 and range, with d20 context. Use type/level filters for detailed slices.
+All values in this report are percentages; percentiles describe variation across
+scenario probabilities, not outcomes of a single roll. Existing row output is unchanged.
+
+The current profiles are synthetic bonus curves, **not validated investment tiers**.
+TN8-8-4 yields LOW/low mean 40.56%, TYPICAL/average 58.38%, HIGH/average 81.32%,
+but these hide substantial type/level differences. Findings and current handoff:
+`/bigdisk/programming/pathfinder1e/docs/profile-analysis.md`.
+No conversion coefficients were changed and no model is declared balanced.
+
+### Candidate and raw-row reports
+
+New opt-in, direct-roll candidates: `--model tn8-7-4`, `tn8-8-4`, or `tn8-10-5`.
+They roll one die per final bonus (provisional minimum one), count 8+, and convert
+DC using the named offset/divisor. Named models cannot be mixed with coefficient
+flags. The original default remains unchanged. Take-10/take-20 contexts are outside
+these experiments; eligibility is assumed, not detected.
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --model tn8-7-4 --level 5 --type ATTACK --bonus 11
+python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --model tn8-8-4 --format csv
+```
+
+Full-corpus findings: `/bigdisk/programming/pathfinder1e/docs/tn8-experiment.md`.
+None consistently achieved the earlier parity/direction objective. Raw-row reports
+retain those diagnostics, now secondary to the absolute specialization analysis above.
+
 Requires Java/Javac 17+ and Python 3.12+. Commands may be run from any directory:
 
 ```sh

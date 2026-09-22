@@ -7,6 +7,11 @@ The original plan and upstream archive are preserved for reference, not prerequi
 
 ## Locked contract
 
+Scope clarification: scenarios represent direct rolls where take 10/20 is
+unavailable. Eligibility is an input assumption, not inferred from character data.
+Opt-in TN8 experiments are documented in `docs/tn8-experiment.md`; the default
+baseline formula and scenario values remain unchanged.
+
 - No character builder, PCGen installation, upstream build, network or third-party
   runtime libraries are required for scenario reports or tests.
 - Exact d20 and binomial probabilities, with existing natural-roll semantics preserved.

@@ -12,6 +12,7 @@ public final class ScenarioReport {
         if (rows.isEmpty()) throw new IllegalArgumentException("no scenarios");
         err.println("PF1e scenarios v1: CR=level; synthetic bonuses and difficulty offsets, not validated characters.");
         err.println("Model: " + model);
+        err.println("Direct rolls only; take-10/take-20 situations excluded. Average parity diagnostic: within 5pp.");
         out.println(csv ? "level,type,profile,difficulty,bonus,ac_or_dc,dice,target,required,d20_probability,pool_probability,delta_pp,error_pp"
                 : "Level Type   Profile Difficulty Bonus AC/DC Pool       D20%    Pool% Delta(pp)");
         for (var row : rows) {
@@ -37,8 +38,18 @@ public final class ScenarioReport {
 
     private static void summarize(String label, List<Scenarios.Row> rows, PrintStream out) {
         var metrics = Benchmark.summarize(rows.stream().map(Scenarios.Row::comparison).toList());
+        long shaped = rows.stream().filter(row -> {
+            double delta = row.comparison().probability() - row.comparison().d20();
+            return switch (row.difficulty()) {
+                case LOW -> delta > 1e-12;
+                case AVERAGE -> Math.abs(delta) <= .05 + 1e-12;
+                case HIGH, VERY_HARD -> delta < -1e-12;
+            };
+        }).count();
+        double signed = rows.stream().mapToDouble(r -> r.comparison().probability() - r.comparison().d20()).average().orElseThrow();
         out.printf(Locale.ROOT, "%s n=%d MAE=%.3fpp RMSE=%.3fpp max=%.3fpp within5pp=%.2f%% dice(avg/p95/max)=%.2f/%d/%d%n",
                 label, metrics.count(), metrics.mae() * 100, metrics.rmse() * 100, metrics.maxError() * 100,
                 metrics.within5() * 100, metrics.averageDice(), metrics.p95Dice(), metrics.maxDice());
+        out.printf(Locale.ROOT, "  meanDelta=%+.3fpp desiredDirectionOrParity=%d/%d%n", signed * 100, shaped, rows.size());
     }
 }
