@@ -1,4 +1,4 @@
-"""ThinkPad-only direct PCGen export check; no Gradle tests or packaging."""
+"""Direct PCGen export check using a pinned local or ThinkPad JDK; no packaging."""
 import argparse
 import json
 import os
@@ -12,13 +12,16 @@ from spheres_progression_fixtures import fixture, expected as progression_expect
 PCGEN = ROOT / "vendor/upstream/pcgen-6.08.00RC10"
 JAVA = Path("/home/danbo/.local/lib/jvm/temurin-16.0.2+7/bin/java")
 CACHE = Path("/home/danbo/.gradle/caches/modules-2/files-2.1/org.openjfx")
+if not JAVA.is_file() and (ROOT / "vendor/jdk16/bin/java").is_file():
+    JAVA = ROOT / "vendor/jdk16/bin/java"
+    CACHE = ROOT / "vendor/gradle-cache/caches/modules-2/files-2.1/org.openjfx"
 CASES = ("incanter1-int18", "incanter2-int18", "incanter1-int7")
 
 
 def classpath():
     jar = PCGEN / "build/libs/pcgen-6.09.06.jar"
     if not JAVA.is_file() or not jar.is_file():
-        raise ValueError("Requires ThinkPad private JDK and existing PCGen JAR")
+        raise ValueError("Requires a pinned Java 16 JDK and built PCGen JAR")
     # PCGen's pinned build names its JAR 6.09.06 despite the source tag RC10.
     jars = [jar]
     for module in ("base", "graphics", "controls", "fxml", "swing", "web"):

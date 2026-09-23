@@ -21,8 +21,15 @@ def check_package(data=DATA):
             if Path(value).name != value or not value.endswith(".lst"):
                 raise ValueError("unsafe source reference")
             references.append(value)
-    if len(references) != 10 or len(set(references)) != 10:
-        raise ValueError("expected ten distinct LST references")
+    required = {
+        "spheres_categories.lst", "spheres_categories_incanter.lst",
+        "spheres_core.lst", "spheres_destruction.lst", "spheres_incanter.lst",
+        "spheres_incanter_sword.lst", "spheres_incanter_favored.lst", "spheres_incanter_domains.lst",
+        "spheres_incanter_bloodlines.lst", "spheres_feats.lst",
+        "spheres_classes.lst",
+    }
+    if len(set(references)) != len(references) or not required.issubset(references):
+        raise ValueError("duplicate or missing required LST reference")
     for name in references:
         if not records(data / name):
             raise ValueError(f"empty source: {name}")

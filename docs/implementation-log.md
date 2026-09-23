@@ -1,5 +1,115 @@
 # Implementation log
 
+## 2026-09-23 — Favored-class regression follow-up
+
+PCGen's `getTotalBonusTo` reports a double; corrected the Aasimar gate's
+Spellcraft baseline declaration and reran its live controller gate. The
+Half-Orc bloodline-strength and Halfling channel-use gates also pass locally.
+The broader PCGen run encountered a startup timeout on its first fixture;
+that run is not acceptance evidence. The remaining class options and
+specialized round-trip checks remain incomplete.
+
+## 2026-09-23 — Sword Birth edition-boundary correction
+
+The Ultimate Armorist explicitly permits repeat Combat Feat trick choices; the
+Lingchi prohibition quoted earlier belongs to its Original section. Restored
+repeatable Combat Feat and added a level-20 two-choice pool gate. Removed
+Finesse, which is only listed in the Original Armorist section.
+
+## 2026-09-23 — Admixture Adept edition-boundary verification
+
+The Ultimate Admixture Adept paragraph grants Admixture without an alternative;
+the already-owned alternative appears in the Original paragraph farther down
+the same wiki page. The existing Ultimate-only data should not import that
+Original rule. This corrects the conflicting intermediate audit note.
+
+## 2026-09-23 — Gnome favored Destruction DC and gate repair
+
+Fixed the PCGen controller gate's Spellcraft baseline type (PCGen reports a
+double) and verified the Aasimar, Tiefling, Elf, Dwarf and Human gates again.
+Added a Destruction-specific Gnome favored-class bonus with a six-selection
+threshold, prerequisite, removal and no general caster-level change. The live
+Gnome gate and specialized PCGen save/reload pass. Other Gnome sphere choices and the remainder of the class
+are not implemented; see `incanter-completion-audit.md`.
+
+## 2026-09-23 — Tiefling favored concentration variable
+
+Added the Ultimate Tiefling +1/2-per-selection favored-class option. Local
+PCGen controller gates check race and favored-class eligibility, fractional
+accumulation, refund and save/reload of a concentration-check variable based
+on caster level and the selected casting ability. PCGen does not yet execute
+Spheres concentration checks using that variable; it is not a certified
+end-to-end concentration feature. Incanter remains incomplete.
+
+## 2026-09-23 — Admixture edition boundary
+
+The Ultimate section grants Admixture without an already-owned replacement;
+the alternative Destruction talent appears in the Original section. Do not
+import the Original alternative into Ultimate. The full pool/use interaction
+still needs acceptance coverage. "Master of Creation" is also the name of a
+level-8 Ultimate Creation specialization power, not a separate Ultimate
+specialization; the Original section must not be used to infer one.
+
+## 2026-09-23 — Aasimar Incanter favored Spellcraft bonus
+
+Added the Ultimate Aasimar +1/2 Spellcraft per favored-class reward, with
+race/favored-class prerequisites and a cumulative bonus derived from the
+selection count. The PCGen `aasimar-favored` gate exercises six selections,
+the bonus at odd and even counts, wrong-race rejection, and removal; the
+`aasimar-favored-save` gate checks the six picks and Spellcraft bonus after
+PCGen saves and reloads the character. The fixture loads PCGen's existing
+Aasimar support campaign; it does not add a
+homebrew Aasimar race. Incanter is not complete.
+
+## 2026-09-23 — Partial favored class bonuses; local PCGen validation
+
+Added Human and Half-Elf Incanter favored class bonus options using the
+existing per-level favored class reward pool. Six selections grant one magic
+talent, and removing selections refunds it. Elf's six selections grant a
+metamagic feat in a separate feat pool; tested the Extend Spell choice and
+its removal without spending a general feat. Separate race gates prevent a
+Half-Elf from taking the Human version despite PCGen matching Human as an
+ancestry. Human, Half-Elf and Elf race gates pass against the locally built
+pinned PCGen JAR; the Human bonus also passes specialized save/reload with
+the additional talent. A Dwarf item-creation feat reward now passes its
+six-selection pool and removal gate, but the actual item-creation feat choice
+is not yet validated: Core feats use spellcaster prerequisites not currently
+mapped to spheres casting. Other favored class bonuses remain unsupported;
+Incanter remains incomplete.
+The full controller gate suite and Sword Birth specialization save/reload
+have passed using the vendored Java 16 runtime and local PCGen build.
+
+## 2026-09-22 — Sword Birth ordinary arsenal trick and PCGen save/reload
+
+Added the ordinary Armorist Combat Feat trick to Sword Birth using its own
+combat-feat pool. Added a contract test and controller gate for the feat
+pool grant, isolation and refund. Built the local pinned PCGen JAR with the
+vendored JDK 16 and ran the Sword Birth gates at levels 1, 5 and 20. A new
+specialized Sword Birth save/reload check verifies active specialization,
+Combat Feat and the chosen Improved Initiative bonus feat survive loading.
+Finesse was checked against the Armorist page but belongs to Original, not
+Ultimate; it was not retained in the Ultimate Sword Birth list.
+The full ordinary Armorist trick catalog is still unsupported.
+
+## 2026-09-22 — Sword Birth Extra Arsenal Trick increment
+
+Added repeatable Extra Arsenal Trick for active Sword Birth from level 5,
+when it first gains the arsenal trick class feature, with one arsenal
+trick pool grant per feat and no Incanter bonus-feat eligibility. Added data
+contract and targeted controller gate for qualification, grant and removal.
+The PCGen sword1, sword5 and sword20 gates now pass locally; the class remains incomplete.
+
+## 2026-09-22 — Incanter completion audit started
+
+Added `docs/incanter-completion-audit.md` to distinguish Ultimate and Original
+wiki rules, enumerate the missing sphere specializations/sub-specializations,
+and establish mechanical plus save/reload completion gates. User confirmed
+that all normal-game Ultimate wiki options, including tagged variants, are in
+scope. Removed the fixed ten-LST package limit so additional Incanter data
+sources can be validated without disabling duplicate/missing-source checks.
+No new Incanter mechanics or PCGen integration claim. Local Python
+checks are not a substitute for the ThinkPad-only PCGen controller gates.
+
 ## 2026-09-22 — Current Spheres handoff refreshed
 
 Updated `/bigdisk/programming/pathfinder1e/docs/spheres.md` with current status
