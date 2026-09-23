@@ -5,8 +5,8 @@
 *.log
 
 # Reproducible upstream extraction and build caches; keep pinned archives/manifests
-/vendor/upstream/
-/vendor/*.tar.gz
+/vendor/*
+!/vendor/manifest.json
 .gradle/
 
 # Python/editor/OS temporary files
