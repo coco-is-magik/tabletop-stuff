@@ -108,17 +108,22 @@ Conscript is also available under the same class-only boundary. Implementation,
 manual external-option limits and real-PCGen checks:
 `/bigdisk/programming/pathfinder1e/docs/conscript-class.md`.
 
-The active deliverable is the Incanter class, not a complete Spheres rules library.
-Class acceptance and commands:
+The thin classes remain separate from sphere catalog completion.
+Incanter class acceptance and commands:
 `/bigdisk/programming/pathfinder1e/docs/incanter-class.md`.
 The extended-package inventory below does not define class completion.
 
 The first-party source at `/bigdisk/programming/pathfinder1e/data/spheres`
-contains an incomplete Incanter/Destruction slice. Incanter now has level 1-20
+contains thin classes and a basic Power/Might catalog. Catalog coverage is 53
+base spheres and 2,330 basic talents; **full talent-specific mechanical automation
+is incomplete**. Supported behavior and remaining requirements:
+`/bigdisk/programming/pathfinder1e/docs/sphere-catalog.md`.
+Incanter has level 1-20
 base progression, mental casting choices, bonus-feat support, several
 specializations, Core domain/bloodline adapters, Admixture, Destruction
-specialization and Sword Birth data. Conscript's thin class is implemented;
-Spheres of Might catalogs are not. Most Spheres of Power content is still missing.
+specialization and Sword Birth data. Conscript's thin class is implemented.
+Manual records remain compatible; catalog descriptions do not imply that every
+listed effect is automated.
 On the ThinkPad only, patched offline PCGen source compilation is verified with
 the private JDK at `/home/danbo/.local/lib/jvm/temurin-16.0.2+7`. The targeted
 Incanter 1/INT18, Incanter 2/INT18 and Incanter 1/INT7 fixtures load Core + Spheres,

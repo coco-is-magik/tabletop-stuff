@@ -1,0 +1,895 @@
+{
+  "url": "https://spheresofpower.wikidot.com/technomancy",
+  "retrieved": "2026-09-24",
+  "sha256": "8f9475b6d4326ec0afa5bacb46ce35de64b6937f6ffc549ea33d4a15ca726471",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "Players Compendium\nSpheres of Influence\n| FoldUnfold Table of Contents Sprite Boost (program) Drain (program) Interfere (program) Transfer (program) Technomancy Talents Compound Hacking Concealed Sprite Copious Charge Gregarious Sprite Instilled Installation [instill] Lingering Sprite Ranged Technomancy [range] Rapid Transfer Reactive Offload Slicer\u2019s Strike [strike] Sprite Legion [mass] Sprite Sustenance Sprite Triangulation Program Talents Analyze (program) Barrier (program) Broadcast (program) Consume Sprite (program) Malfunction (program) Sabotage (program) Advanced Technomancy Talents AI Transformation AI Transformation, Greater Autopilot (program) Charge Vampirism Eternal Sprite Expel AI (program) Glitch Manipulation (program) Table: Armor Glitches Table: Construct Glitches Table: General Glitches Table: Pharmaceutical Glitches Table: Weapon Glitches Glitch-Prone Sprites Power (program) Relic Manipulation Sprite Targeting Technomancy Sphere Feats Artificer\u2019s Healing (Dual Sphere) Digital Admixture (Admixture) Imbued Sprite Program Puppeteer (Dual Sphere) Sacrosanct Firewall (Dual Sphere) Spell Jacker (Dual Sphere) Archetypes Specializing In Technomancy -Technopath Wild Magic Variant Rule: Plentiful Charges\nArcforge Players Compendium $29.99 You may create magical programs which can alter the functions of technology. Constructs and objects are not immune to the effects of this sphere even if the effects require a Fortitude saving throw."
+    },
+    {
+      "level": 2,
+      "heading": "Sprite",
+      "anchor": "toc0",
+      "text": "As a standard action, you may generate a technomagical entity known as a sprite inside a construct, creature with one or more cybernetic components, or technological item you are touching (hereafter referred to as a host). If the host or a creature wielding the host is unwilling, you must succeed at a melee touch attack against the host or the host\u2019s wielder (touching a held object in this way provokes an attack of opportunity). For the purpose of hosting sprites, a technological item is considered to be any Tinker sphere gizmo and any technological item that uses charges and is not a spell trigger or spell completion item (such as an arc rifle). Other items may be considered acceptable hosts at GM discretion.\nA sprite lasts as long as you concentrate, although you may always spend a spell point to allow a sprite to persist for 1 round per caster level without concentration. While a sprite exists within a host, you may have it execute one of the following actions (known as programs) as a free action once per round. If you have a sprite in a host, you are automatically aware of all other sprites within the host. A single host cannot be targeted by the same program more than once per round. A single caster cannot have more than one sprite inside the same host. If a host or its wielder succeeds at a saving throw against a sprite\u2019s abilities, the sprite is destroyed.\nIf a host dies or is destroyed, all sprites inside the host are likewise destroyed.\nWhen a caster first gains the Technomancy sphere, they may have sprites that they create execute the following programs:"
+    },
+    {
+      "level": 4,
+      "heading": "Boost (program)",
+      "anchor": "toc1",
+      "text": "The sprite may cause the first attack made using the host or made by the host this round to deal 1d6 additional points of damage. This bonus damage increases by 1d6 for every 4 caster levels you possess. An attack may only benefit from one instance of this program at a time."
+    },
+    {
+      "level": 4,
+      "heading": "Drain (program)",
+      "anchor": "toc2",
+      "text": "The sprite siphons power from its host, depleting 1 charge if it is an item. The host or the host\u2019s wielder may attempt a Fortitude save to negate the effect. If the host is a construct, it instead takes a -1 penalty on attack and damage rolls for one round, although it may also attempt a Fortitude save to negate this penalty. The penalty and number of charges depleted increase by 1 for every 5 caster levels possessed.\nIf a character capable of draining charges from wands or other items with the Technomancy sphere uses such abilities on a spell engine, the spell engine loses one spell point for every charge that would be drained from it."
+    },
+    {
+      "level": 4,
+      "heading": "Interfere (program)",
+      "anchor": "toc3",
+      "text": "Rather than executing a program, a sprite can negate the action of another sprite inhabiting the same host. A sprite can take this action even if it is not your turn, but if it chooses to interfere with an action it cannot execute other programs (including trying to interfere with other sprites\u2019 actions beyond the first) this turn.\nWhen a sprite attempts to Interfere with another sprites\u2019 program, the interfering sprite\u2019s caster rolls a magic skill check against the MSD of the targeted sprite. On a success, the interfering sprite negates the action of the targeted sprite."
+    },
+    {
+      "level": 4,
+      "heading": "Transfer (program)",
+      "anchor": "toc4",
+      "text": "The sprite moves from the host it currently inhabits to another host within 5 feet."
+    },
+    {
+      "level": 2,
+      "heading": "Technomancy Talents",
+      "anchor": "toc5",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Compound Hacking",
+      "anchor": "toc6",
+      "text": "You may have up to two sprites in a single host, plus an additional sprite for every 5 caster levels you possess."
+    },
+    {
+      "level": 4,
+      "heading": "Concealed Sprite",
+      "anchor": "toc7",
+      "text": "Your sprites are not immediately noticeable to other sprites. When your sprite enters a host, you may roll a magic skill check and compare the result to the MSD of all other sprites in the host. On a success, these other casters are not aware of your sprite. Whenever your sprite executes a program, all other casters with sprites in the host are allowed a magic skill check against your MSD to become aware of your sprite after it executes its program."
+    },
+    {
+      "level": 4,
+      "heading": "Copious Charge",
+      "anchor": "toc8",
+      "text": "When one of your sprites uses Drain, you may spend a spell point to increase the number of charges drained to an amount equal to your caster level. A successful saving throw halves the number of charges drained rather than negating the effect."
+    },
+    {
+      "level": 4,
+      "heading": "Gregarious Sprite",
+      "anchor": "toc9",
+      "text": "Your sprites may Interfere once per round while still being able to execute another program, or may Interfere twice per round rather than executing another program."
+    },
+    {
+      "level": 4,
+      "heading": "Instilled Installation [instill]",
+      "anchor": "toc10",
+      "text": "As a standard action, you may touch a small container of liquid and instill a sprite inside it, which functions as a potion or oil. You must spend a spell point to make the sprite endure without concentration. An instilled liquid remains potent until you rest to regain spell points. If you have equipment on hand (such as an alchemy lab), the cost of bottles and water is considered negligible. You may target food but not an already-magical item, such as a potion. All spell points must be spent and all variables of the sphere effect must be chosen at the time the instilled liquid is created. You cannot instill multiple effects in a single liquid, nor create multiple instilled liquids with a single action."
+    },
+    {
+      "level": 4,
+      "heading": "Lingering Sprite",
+      "anchor": "toc11",
+      "text": "If you spend a spell point to allow a sprite to persist, it lasts for 1 minute per caster level rather than 1 round per caster level. When you create a sprite, the sprite remains for 2 rounds after you stop concentrating."
+    },
+    {
+      "level": 4,
+      "heading": "Ranged Technomancy [range]",
+      "anchor": "toc12",
+      "text": "You may create sprites in hosts within close range instead of touch range and may have your sprites use the Transfer program to move to hosts within close range. Creating a sprite in this way does not require a ranged touch attack to affect an unwilling target. You may take this talent multiple times. Each time it is selected, increase the range by 1 step (close to medium, medium to long)."
+    },
+    {
+      "level": 4,
+      "heading": "Rapid Transfer",
+      "anchor": "toc13",
+      "text": "When one of your sprites uses the Transfer program, it can execute another program during the same turn."
+    },
+    {
+      "level": 4,
+      "heading": "Reactive Offload",
+      "anchor": "toc14",
+      "text": "Whenever a host is destroyed or killed, you can spend an immediate action to have one of your sprites within that host immediately use the Transfer program. If you have the Compound Hacking talent, you may spend a spell point to have any number of your sprites within the host use the Transfer program."
+    },
+    {
+      "level": 4,
+      "heading": "Slicer\u2019s Strike [strike]",
+      "anchor": "toc15",
+      "text": "As a standard action, you may make a single weapon attack in conjunction with generating a sprite inside the target. This casting cannot be reduced below a standard action, and does not provoke attacks of opportunity, unless as usual if making a ranged attack. If the target is struck by the attack, the sprite enters the target (so long as the target is a legal host for the sprite). If using a scatter weapon, the word only applies to a single target, chosen at the time of attack."
+    },
+    {
+      "level": 4,
+      "heading": "Sprite Legion [mass]",
+      "anchor": "toc16",
+      "text": "When you create a sprite, you may spend a spell point to create one additional sprite for every 2 caster levels you possess. All hosts for these sprites must be within range, but each sprite can inhabit different hosts and execute different programs each round. Once created, each sprite is considered a separate sphere effect."
+    },
+    {
+      "level": 4,
+      "heading": "Sprite Sustenance",
+      "anchor": "toc17",
+      "text": "The host of any of your sprites consumes charges at half the normal rate (rounded up). For example, an item that would lose a charge every minute would instead lose a charge every 2 minutes, or a weapon which drains 5 charges with each attack would only drain 3. If the host is a creature, it gains a +1 circumstance bonus on saving throws, +1 for every 6 caster levels you possess. If the host is a Tinker sphere gizmo, any effect from its battery use lasts twice as long."
+    },
+    {
+      "level": 4,
+      "heading": "Sprite Triangulation",
+      "anchor": "toc18",
+      "text": "You automatically know the locations of all of your sprites\u2019 hosts. Any host or host wielder you cannot see still has total concealment (50% miss chance) against you, and you still suffer the normal miss chance when attacking targets that have concealment. You are still denied your Dexterity bonus to her AC against attacks from hosts and host wielders you cannot see."
+    },
+    {
+      "level": 2,
+      "heading": "Program Talents",
+      "anchor": "toc19",
+      "text": "Technomancy talents marked as (program) talents allow the caster\u2019s sprites to execute new programs."
+    },
+    {
+      "level": 4,
+      "heading": "Analyze (program)",
+      "anchor": "toc20",
+      "text": "The sprite evaluates its host, searching for patterns and weaknesses. You gain an insight bonus on all skill checks attempted to interact with the host equal to 1/2 your caster level (minimum 1) for 1 minute. For a construct host, this could mean bonuses to Bluff and Acrobatics checks against the creature. For an item host, this could mean bonuses to Craft checks made to repair it or Disable Device checks to hack it."
+    },
+    {
+      "level": 4,
+      "heading": "Barrier (program)",
+      "anchor": "toc21",
+      "text": "The sprite sets up a barrier against other sprites attempting to enter the host for 1 round. When another sprite attempts to enter a host with a barrier, attempt a magic skill check against the MSD of that sprite. On a success, the transferring sprite fails to enter the host and returns to its previous host (if the sprite did not have a previous host, it is instead destroyed)."
+    },
+    {
+      "level": 4,
+      "heading": "Broadcast (program)",
+      "anchor": "toc22",
+      "text": "The sprite overwrites digital projections of light and sound for 1 round, replacing anything that the host would project or receive. If you target an object, you may have the object project whatever lights and sounds it is normally capable of creating at your discretion, save that the item projects whatever images and sounds you desire (including no image or sound). A creature can attempt a Craft (mechanical) or Spellcraft check (or another check related to the item\u2019s craft at GM discretion) to realize that the broadcast is being magically tampered with, with a DC equal to 10 + your caster level + your casting ability modifier. If two or more casters are trying to control the same broadcasting item, they attempt opposed magic skill checks, the highest result taking control. If the host is a creature that is targeted with this program, it must attempt a Will save against this effect. On a failure, its auditory and visual displays (including those from senses such as blindsight) display whatever you want them to display for 1 round (treat these as illusions that only the affected creature can see). Rather than presenting specific projections, you may choose to make the creature blinded and deafened for 1 round.\nAlternatively, you may gain sensory feedback from the sprite\u2019s host. You can see, hear, and perceive anything that your host could for one round. This typically includes all of the senses of a construct if it is serving as your host, or mechanisms such as audio recording devices, cameras, or computerized scopes in the case of item hosts. A host or its wielder is allowed a Will save to negate this effect."
+    },
+    {
+      "level": 4,
+      "heading": "Consume Sprite (program)",
+      "anchor": "toc23",
+      "text": "When one of your sprites is inhabiting the same host as a sprite created by another caster, your sprite may attempt to consume this other sprite. Roll a magic skill check against the MSD of the targeted sprite. On a success, their sprite is destroyed. If you spend a spell point, the sprite may attempt to consume as many other sprites in its host as you wish, in which case you roll a magic skill check and eliminate every sprite whose MSD you succeed against."
+    },
+    {
+      "level": 4,
+      "heading": "Malfunction (program)",
+      "anchor": "toc24",
+      "text": "The sprite attempts to block the functions of its host. If the host is a technological item, it becomes disrupted for 1 round. If the host is a construct, it becomes dazed for 1 round. A successful Fortitude save by the host or its wielder negates this effect. If you spend a spell point, an item host and its wielder are not allowed a save and a construct host is still staggered for 1 round on a successful save.\nWhile disrupted, the item\u2019s electronic or magical components cannot be activated, although constant effects remain in place (for example, a character would still benefit from the bonuses to AC granted by their armor, but could not activate enhancements such as determination or change functions such as in the case of smart armor. A disrupted vehicle or mech cannot be made to move or act, its controls locking up for the duration of the effect. The disrupted condition can be removed from a piece of equipment with a standard action."
+    },
+    {
+      "level": 4,
+      "heading": "Sabotage (program)",
+      "anchor": "toc25",
+      "text": "The sprite causes a series of mishaps inside its host, damaging it. The host takes 1d6 points of damage per 2 caster levels, with a successful Fortitude save (DC 10 + 1/2 caster level + casting ability modifier) by the host or its wielder negating the damage. If you spend a spell point, the host instead takes 1d6 points of damage per caster level and still takes half damage on a successful saving throw. The sprite is destroyed after dealing damage."
+    },
+    {
+      "level": 2,
+      "heading": "Advanced Technomancy Talents",
+      "anchor": "toc26",
+      "text": "Advanced talents are part of an optional rule and are only available with GM permission."
+    },
+    {
+      "level": 4,
+      "heading": "AI Transformation",
+      "anchor": "toc27",
+      "text": "Prerequisites: Technomancy sphere, caster level 10th.\nIn a process which takes 1 hour and 3 spell points, a willing creature\u2019s psyche, with all of the abilities and experiences that it contains, is transformed into an artificial intelligence and encoded into a storage device. Such a device, such as a compact AI core or robot which your artificial intelligence will inhabit, must be present at the time of casting, as must be the creature from which you are copying the information. An unwilling robot is allowed a Will save to avoid being inhabited and controlled by the new AI. If the robot is successful, you must transfer the new AI to another receptacle or else the talent fails.\nThe AI created by this talent possesses the same Intelligence, Wisdom, and Charisma scores as the creature from which it is made, and possesses all of the base creature\u2019s skills, supernatural abilities, saves, feats, and class features (including the ability to use magic talents). The AI\u2019s CR is equal to the base creature\u2019s effective class level. The AI gains no additional skills, feats, languages, or special abilities from the Artificial Intelligence creature type. The AI is free-willed, and you have no control over its actions. However, being a replication of the mind of another creature, the AI is normally inclined to act in the same way and possess the same alignment as the creature it was created from.\nLike most AIs, those created by this talent lack a physical composition, and cannot act without a host body that they can inhabit. This host must be either a computer system of some sort or a robot the AI is controlling. Once the transfer is completed, the original creature\u2019s mind ceases to function. The creature cannot be raised or resurrected so long as the AI created by this talent exists."
+    },
+    {
+      "level": 4,
+      "heading": "AI Transformation, Greater",
+      "anchor": "toc28",
+      "text": "Prerequisites: Technomancy sphere (AI Transformation (advanced)), caster level 15th.\nWhen using AI Transformation, you may alter its effects in the following ways:\nAI Recreation: If you spend 2 additional spell points, you may use this power to copy an existing AI or create a copy of a creature\u2019s mind, rather than transferring it. The original AI or creature remains in its body or other storage device, with a replica being created in the storage device of your choice within close range. Using the talent in this way requires 15,000 gp worth of expensive mechanical components.\nAI Regeneration: A creature\u2019s not-quite-departed soul is returned to this world to be encoded upon a device. Such a device, such as a storage bay*, compact AI coreTG or robotB6 which your artificial intelligence will inhabit, must be present at the time of this manifestation, as must be the body of the creature from which you are obtaining the information. The creature\u2019s soul becomes an AI, as per the AI Transformation talent. If a creature\u2019s soul is unwilling to become an AI, they are allowed a Will save to prevent the transformation.\nAI Transfer: If you spend 1 additional spell point, you may permanently transfer an AI to the body of a construct or living creature. Both the target and the AI are allowed a Will save to prevent this transfer. The new target acquires the aggregateTG template even if they otherwise could not. Any newly-formed aggregateTG creature suffers 2 permanent negative levels which ignore any immunity the target possesses. These negative levels cannot be cured, but fade at a rate of one every 24 hours."
+    },
+    {
+      "level": 4,
+      "heading": "Autopilot (program)",
+      "anchor": "toc29",
+      "text": "Prerequisites: Technomancy sphere, caster level 10th.\nThe sprite causes its host to perform a single standard or move action of your choice. If two or more of your sprites are inside the host, they can operate together to cause the host to perform a full round\u2019s worth of actions (including a full attack). This program can only be used with hosts that are creatures."
+    },
+    {
+      "level": 4,
+      "heading": "Charge Vampirism",
+      "anchor": "toc30",
+      "text": "Prerequisites: Technomancy sphere (Power (advanced, program)).\nWhenever a sprite uses Drain, one of your sprites increases the number of charges granted by their next use of Power by half the number of charges depleted with Drain (minimum 1) and ignores the material component cost of the next use of Power so long as the total number of charges granted does not exceed the number of charges drained. The effects of this talent do not stack with themself, and the additional charges are lost if none of your sprites use Power within 3 rounds of a sprite using Drain."
+    },
+    {
+      "level": 4,
+      "heading": "Eternal Sprite",
+      "anchor": "toc31",
+      "text": "Prerequisites: Technomancy sphere (Lingering Sprite), caster level 10th.\nWhen creating a sprite, you may spend 2 spell points to increase its duration to permanent."
+    },
+    {
+      "level": 4,
+      "heading": "Expel AI (program)",
+      "anchor": "toc32",
+      "text": "Prerequisites: Technomancy sphere (Consume Sprite), caster level 10th.\nYou may spend a spell point to force a routine or AI out of your sprite\u2019s host. The routine\u2019s crafter or the AI must succeed at a Will save or else be forced out of the host. If there are any other potential hosts for the AI within medium range, the AI may attempt to enter them as normal. If the AI cannot enter any host, it is destroyed."
+    },
+    {
+      "level": 4,
+      "heading": "Glitch Manipulation (program)",
+      "anchor": "toc33",
+      "text": "Prerequisites: Technomancy sphere (Glitch-Prone Sprites (advanced)).\nIf the host is already timeworn, you may treat it as if it was not timeworn for 1 round (if a sprite attempts to add or remove the timeworn condition imposed by another sprite, you and the creator of the other sprite attempt opposed magic skill checks to see which effect occurs). When the glitch table is rolled for the sprite host while this program is active, you may spend 2 spell points as an immediate action to choose the result of the glitch rather than rolling randomly (if multiple casters attempt this on the same item, they roll opposed magic skill checks, with the highest result choosing the glitch result)."
+    },
+    {
+      "level": 5,
+      "heading": "Table: Armor Glitches",
+      "anchor": "toc34",
+      "text": "Glitching armor that loses its ability to function still provides its normal armor bonus to AC, but any charged abilities are suppressed.\n| d% | Glitch\n| 01\u201302 | Armor abilities don\u2019t function. All remaining charges are drained.\n| 03\u201305 | Armor seizes up and abilities don\u2019t function. The wearer is paralyzed for 1 round.\n| 06\u201310 | Armor doesn\u2019t function, but still consumes the normal number of charges.\n| 11\u201318 | Armor doesn\u2019t function, but no charges are lost.\n| 19\u201350 | Armor uses twice as many charges as normal (or expends an extra activation\u2019s worth of charges if already active).\n| 51\u201375 | Armor functions normally.\n| 76\u201380 | Armor functions better than anticipated. Its armor bonus improves by 1 for the duration of this charge.\n| 81\u201390 | Armor functions much better than anticipated. Its armor bonus improves by 2 and it provides moderate fortification for the duration of this charge.\n| 91\u201398 | Armor functions normally; no charges are consumed by this use.\n| 99\u2013100 | Armor functions normally and a power surge restores 1d6 charges to the item (up to but not exceeding its capacity)."
+    },
+    {
+      "level": 5,
+      "heading": "Table: Construct Glitches",
+      "anchor": "toc35",
+      "text": "These glitches should be rolled at the beginning of the construct\u2019s turn each round. | d% | Glitch\n| 01\u201302 | Construct is reduced to half its current hit points (minimum 1)\n| 03\u201305 | Construct is dazed for 1d6 rounds\n| 06\u201310 | Construct is dazed for 1 round\n| 11\u201318 | Construct is staggered for 1 round\n| 19\u201350 | Construct takes a -2 penalty on all d20 rolls for 1 round\n| 51\u201375 | Construct acts normally\n| 76\u201380 | Construct gains an additional move action this turn\n| 81\u201390 | Construct gains a +2 insight bonus to all d20 rolls for 1 round\n| 91\u201398 | Construct maximizes all damage rolls that it makes this round\n| 99\u2013100 | Construct gains temporary hit points equal to 4 times its CR. These temporary hit points last for 1 minute and do not stack with other forms of temporary hit points."
+    },
+    {
+      "level": 5,
+      "heading": "Table: General Glitches",
+      "anchor": "toc36",
+      "text": "| d% | Glitch\n| 01\u201302 | Item does not function. All remaining charges are drained.\n| 03\u201305 | Item does not function, but still consumes the normal number of charges.\n| 06\u201310 | Item does not function, but no charges are lost.\n| 11\u201318 | Item uses twice as many charges as normal and jolts the user for 1d6 points of electricity damage, but otherwise functions normally.\n| 19\u201350 | Item uses twice as many charges as normal, but otherwise functions normally.\n| 51\u201375 | Item functions normally.\n| 76\u201380 | Item functions better than anticipated, and grants a +1 bonus on any skill check attempted with this use.\n| 81\u201390 | Item functions far better than anticipated, and grants a +2 bonus on any skill check attempted with this use.\n| 91\u201398 | Item functions normally and this use does not consume any charges.\n| 99\u2013100 | Item functions normally and a power surge restores 1d6 charges to the item."
+    },
+    {
+      "level": 5,
+      "heading": "Table: Pharmaceutical Glitches",
+      "anchor": "toc37",
+      "text": "These glitches also apply to drugs and medical gear. | d% | Glitch\n| 01\u201302 | Spoiled. Treat as poisoning by dark reaver powder.\n| 03\u201311 | Spoiled. Treat as exposure to red ache.\n| 12\u201320 | Spoiled. Patient is nauseated for 1d6 rounds.\n| 21\u201330 | Spoiled. Patient sickened for 1d6 \u00d7 10 minutes.\n| 31\u201340 | Spoiled. No effect.\n| 41\u201350 | Less potent. Decrease all save DCs by 2. Use minimum values for all random results (such as healing). Decrease durations by 50%.\n| 51\u201360 | Normal effect, but causes 1d4 points of Constitution damage (Fortitude DC 15 half).\n| 61\u201375 | Normal effect, but hallucinogenic (\u20135 penalty on Perception checks and confused for 2d4 rounds, Fortitude DC 15 negates).\n| 76\u201385 | Normal effect.\n| 86\u201395 | More potent. Increase any save DCs by 2. Reroll any result of 1. Increase durations by 100%.\n| 96\u2013100 | Far more potent. As above, but treat as 2 doses."
+    },
+    {
+      "level": 5,
+      "heading": "Table: Weapon Glitches",
+      "anchor": "toc38",
+      "text": "These glitches are triggered every time an attack is made with the weapon. | d% | Glitch\n| 01\u201302 | Weapon does not function. All remaining charges are drained.\n| 03\u201324 | Weapon does not function, but still consumes the normal number of charges.\n| 25\u201339 | Weapon consumes twice as many charges as normal and deals 1d6 points of electricity damage per charge consumed (minimum 1d6) to the user.\n| 40\u201365 | Weapon consumes twice as many charges as normal.\n| 66\u201375 | Weapon functions normally but flashes brightly, blinding the wielder and adjacent creatures for 1 round (Reflex DC 15 negates).\n| 76\u201384 | Weapon functions normally.\n| 85\u201392 | Weapon functions better than anticipated, granting a +2 bonus on attack rolls made with that weapon for 1 round.\n| 93\u201396 | Weapon functions much better than anticipated, granting a +2 bonus on attack and damage rolls made with the weapon.\n| 97\u201398 | Weapon functions normally, and this use does not consume any charges.\n| 99\u2013100 | Weapon functions normally, and a power surge restores 1d6 charges to the item (up to but not exceeding its capacity)."
+    },
+    {
+      "level": 4,
+      "heading": "Glitch-Prone Sprites",
+      "anchor": "toc39",
+      "text": "Prerequisite: Technomancy sphere.\nYou may treat the hosts of any of your sprites as timeworn, causing them to trigger glitches (roll on the Glitch table appropriate to the host to determine the effect of the glitch)."
+    },
+    {
+      "level": 4,
+      "heading": "Power (program)",
+      "anchor": "toc40",
+      "text": "Prerequisite: Technomancy sphere.\nYou may spend a spell point to have the sprite generate a modicum of electricity, granting the host a single charge if it is an item. You may increase the number of charges granted by 1 for every 5 caster levels you possess, but doing so causes all unused charges gained from this program to be lost after 1 round. If the host is a construct, the host gains a +1 circumstance bonus on attack rolls and damage rolls for 1 round. The bonus on attack and damage rolls increases by 1 for every 5 caster levels you possess. If this program is used on a Tinker sphere gizmo, the gizmo gains one free battery use that must be spent within 1 round or else it is lost.\nIf you possess the Copious Charge talent, when one of your sprites uses Power, the host gains 2 charges or battery uses rather than 1.\nUsing this program requires 500 gp worth of diamond dust or similar special material. If you recharge a battery, there is a 20% chance that the battery is destroyed by the attempt. If you restore more charges than the item can hold, the item must succeed at a Fortitude saving throw or take 1d6 points of electricity damage for each excess charge. This program provides no knowledge of how many charges an item can safely hold, but you can choose to bestow fewer charges than the maximum allowed to reduce the risk; you must declare how many charges you are restoring before using this program."
+    },
+    {
+      "level": 4,
+      "heading": "Relic Manipulation",
+      "anchor": "toc41",
+      "text": "Prerequisite: Technomancy sphere.\nYou may treat non-technological magic items as if they were technological items for the purpose of affecting them with sprites and Technomancy talents. Spell trigger items which use charges and have a caster level equal to or lower than your technomancy caster level may be affected using the Drain and Power programs, although such an item may not be affected by the Power program more than once per day."
+    },
+    {
+      "level": 4,
+      "heading": "Sprite Targeting",
+      "anchor": "toc42",
+      "text": "Prerequisites: Technomancy sphere, caster level 5th.\nYou may treat any host for your sprites as if they were always in close range and that you always had line of sight and effect on it for the purpose of being able to target them with sphere effects."
+    },
+    {
+      "level": 1,
+      "heading": "Technomancy Sphere Feats",
+      "anchor": "toc43",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Artificer\u2019s Healing (Dual Sphere)",
+      "anchor": "toc44",
+      "text": "Prerequisites: Life sphere; Life sphere (Esoteric Healing) or Technomancy sphere.\nBenefit: You may use any Life sphere ability which restores hit points to a creature on broken or damaged objects, restoring hit points to them as if they were creatures. If the object has the broken condition, this condition is removed if the object is restored to at least half its original hit points. This ability cannot restore warped or transmuted items, but it can still repair damage done to such items.\nSpecial: This feat is only considered a dual sphere feat if you do not possess the Esoteric Healing talent."
+    },
+    {
+      "level": 4,
+      "heading": "Digital Admixture (Admixture)",
+      "anchor": "toc45",
+      "text": "Prerequisites: Destruction sphere (Admixture), Technomancy sphere.\nBenefit: When using Admixture, you may spend an additional spell point to generate a sprite inside an eligible target damaged by the destructive blast. If you possess Sprite Legion, you may generate sprites in any targets damaged, up to your maximum number from Sprite Legion."
+    },
+    {
+      "level": 4,
+      "heading": "Imbued Sprite",
+      "anchor": "toc46",
+      "text": "Prerequisite: Technomancy sphere.\nBenefit: Whenever you use a sphere effect which summons, creates, or animates a construct, you may create a sprite inside one of these constructs as a free action. If you possess Sprite Legion, you may generate sprites in any number of such targets, up to your maximum number from Sprite Legion."
+    },
+    {
+      "level": 4,
+      "heading": "Program Puppeteer (Dual Sphere)",
+      "anchor": "toc47",
+      "text": "Prerequisites: Mind sphere, Technomancy sphere.\nBenefit: You may treat any construct which is acting as a host of one of your sprites and any AI installed in your sprite\u2019s host as having a living mind for the purpose of being able to affect it with your Mind sphere abilities, ignoring their immunity to mind-affecting effects. In addition, you may create sprites in and move sprites into any creatures which can be affected by your charms. Such creatures may be affected by your sprites as if they were constructs."
+    },
+    {
+      "level": 4,
+      "heading": "Sacrosanct Firewall (Dual Sphere)",
+      "anchor": "toc48",
+      "text": "Prerequisites: Fate sphere (Hallow (word)), Technomancy sphere.\nBenefit: Targets affected by your Hallow (word) cannot have sprites enter them unless you allow those sprites to enter. If the target already contains one or more sprites, the creator of those sprites must succeed at a magic skill check against your MSD in order to execute any programs."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Jacker (Dual Sphere)",
+      "anchor": "toc49",
+      "text": "Prerequisites: Mana sphere, Technomancy sphere.\nBenefit: Whenever you create or move a sprite into a creature, you may create a manabond with the creature as if you had affected them with an expunge or (manipulation). Whenever you create a manabond with a creature, you may move a sprite into them. A sprite may create or concentrate on a manabond between you and a creature that contains it in place of executing a program."
+    },
+    {
+      "level": 1,
+      "heading": "Archetypes Specializing In Technomancy",
+      "anchor": "toc50",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "-Technopath",
+      "anchor": "toc51",
+      "text": "Technopaths are Symbiats who have learned to make use of technological powers."
+    },
+    {
+      "level": 1,
+      "heading": "Wild Magic",
+      "anchor": "toc52",
+      "text": "| d% | Effect\n| 1 | One item per 5 caster levels within close range of the caster is drained of all charges\n| 2 | Wireless signals cease to function anywhere within close range of the caster for 1d4 rounds.\n| 3 | The hosts of all of the caster\u2019s sprites (and their wielders) are staggered for 1d4 rounds (Fortitude save negates)\n| 4 | Every printer, replicator, or other device capable of creating objects or images within close range of the caster begins repeatedly creating images of the caster for 1d4 minutes\n| 5 | All cybernetics within close range of the caster cease functioning for 1d4 rounds (Fortitude save negates). Constructs are not immune to this effect.\n| 6 | Systems lock up, increasing the DCs of any Disable Device checks attempted on objects within close range of the caster by 5 for 1 round.\n| 7 | Loud music begins playing from every device within close range of the caster capable of making noise.\n| 8 | The hosts of all of the caster\u2019s sprites have their movement speeds doubled for 1 round.\n| 9 | The hosts of all of the caster\u2019s sprites cannot attack or be used to attack for 1 round.\n| 10 | All of the caster\u2019s wielded equipment is drained of all charges.\n| 11 | The hosts of all of the caster\u2019s sprites consume twice as many charges with every use for 1 minute.\n| 12 | The hosts of all of the caster\u2019s sprites are only capable of understanding and speaking a single language that the caster knows (chosen at random) for 1 minute.\n| 13 | All electrical lighting within close range of the caster shuts off for 1d4 rounds.\n| 14 | The hosts of all of the caster\u2019s sprites (and anyone wielding them) are repelled from the caster\u2019s square as per a bull rush combat maneuver, using the caster\u2019s MSB + their casting ability score modifier in place of their CMB.\n| 15 | All hosts of the caster\u2019s sprites cause their hosts to shift operating systems, causing all actions that the host takes or that it is utilized for to have a 25% chance of not occurring for 1 round.\n| 16 | All hosts of the caster\u2019s sprites cause their hosts to start leaking fluid, forcing the hosts and their wielders to succeed at a Fortitude save or become sickened for 1d4 rounds. Constructs are not immune to this effect.\n| 17 | One unattended object of Diminutive size or smaller per caster level within close range of the caster becomes animated as per the Animate Object talent of the Enhancement sphere for 1 minute. This object is neutral toward the caster and attempts to flee any conflict, but otherwise meanders aimlessly. The size affected increases by one category per 5 caster levels.\n| 18 | All wireless communicators within close range of the caster begin receiving a constant stream of random visual and auditory messages, becoming nonfunctional for 1d4 rounds.\n| 19 | Everyone within close range of the caster can hear any wirelessly communicated audio transmitted through this range.\n| 20 | The hosts of all the caster\u2019s sprites make an attack against a random target in reach (in the case of a weapon host, use the wielder\u2019s base attack bonus).\n| 21 | The hosts of all of the caster\u2019s sprites shine light as a torch for 1 minute.\n| 22 | All computers within close range of the caster become nonfunctional for 1d4 rounds.\n| 23 | All technological equipment within close range becomes uncooperative for 1 round, requiring anyone who tries to activate them to succeed at a Craft (mechanical) check in order to use it (DC equal to your MSD).\n| 24 | The host of one of the caster\u2019s sprites begins making a horribly grating noise, causing all creatures within close range to be deafened for 1d4 rounds unless they succeed at a Fortitude save. Constructs are not immune to this effect.\n| 25 | The host of one of the caster\u2019s sprites becomes sapient and gains mental ability scores equal to the caster\u2019s mental ability scores. Unless it is a creature, it cannot take actions, but is capable of communicating telepathically with the caster so long as it remains the host for at least one of the caster\u2019s sprites. The host remains sapient until the sprite expires.\n| 26 | Random parts start flying off the hosts of the caster\u2019s sprites, dealing 1d6 piercing, slashing, and bludgeoning damage per 2 caster levels to the target (Fortitude save half) and to all creatures within 30 feet of the host (Reflex save half).\n| 27 | Every electronically locked door, helmet, or other opening within close range immediately opens.\n| 28 | The hosts of the caster\u2019s sprites lose all data stored on it (including memory) for one hour.\n| 29 | The hosts of the caster\u2019s sprites become incredibly magnetic, pulling all metal objects within close range (as well as any creatures wearing them) towards them as per a drag combat maneuver using your MSB + your casting ability score modifier in place of CMB. Targets within range wielding metal weapons are subject to a disarm check using this same modifier.\n| 30 | All hosts of the caster\u2019s sprites are countered by the caster as if the caster possessed the Counterspell and Harmonic Counter feats.\n| 31 | All hosts of the caster\u2019s sprites deal maximum damage on their next attack (or attacks made with them).\n| 32 | One of the caster\u2019s sprites appears in every potential host in close range which does not contain a sprite.\n| 33 | The caster is fatigued.\n| 34 | All technological devices within close range shut down for one round before restarting. Targets and their wielders are allowed a Fortitude saving throw to prevent this.\n| 35 | All cybertech within close range increase any bonuses they grant by 2 for 1d4 rounds.\n| 36 | All technological items within close range of the caster replenish all of their charges.\n| 37 | All intelligent constructs and AIs within close range become hostile to the caster for 1d4 minutes.\n| 38 | All intelligence constructs and AIs within close range become friendly to the caster for 1d4 minutes.\n| 39 | The caster is dazed for 1 round.\n| 40 | Effect receives a -4 penalty to caster level (minimum 1).\n| 41 | All hosts of the caster\u2019s sprites do not consume charges when used for 1 round.\n| 42 | One item which is the host for the caster\u2019s sprites replenishes all of its charges every round for 1 minute per caster level, after which is nonfunctional for 10 minutes per caster level.\n| 43 | A shockwave deals 1 point of electricity damage per caster to all creatures within close range of the caster (Fortitude save half).\n| 44 | All vehicles within close range start to swerve out of control, forcing their drivers or pilots to attempt a Ride, Fly, or Profession check against your MSD or cause their vehicle to move its maximum movement speed in a random direction (skill check depends on the vehicle in question).\n| 45 | The caster\u2019s sprites all execute the Boost program before the effect is resolved.\n| 46 | The casting time decreases by 2 steps.\n| 47 | The next time the caster takes damage before the start of their next turn, they also lose a total number of charges from their equipment equal to the damage taken (allocated as the caster wishes).\n| 48 | On its next turn (or on its wielder\u2019s next turn) every host containing one of the caster\u2019s sprites must perform the same action that it performed in the previous round (Will save negates).\n| 49 | The caster\u2019s sprites cause their hosts to arc with electricity, dealing 1d6 electricity damage for every 3 caster levels to their hosts and anyone touching them (Reflex save for half damage).\n| 50 | The next time the target takes damage, they also lose a total number of charges from their equipment equal to the damage taken (allocated as the caster wishes).\n| 51\n|| | 52 | The caster\u2019s sprites all execute the Boost program before the effect is resolved.\n| 53 | The location of the caster immediately shows up on every visual display within 1 mile.\n| 54 | The caster is nauseated for 1 round.\n| 55 | The caster\u2019s sprites all execute the Obstruct program before the effect is resolved.\n| 56 | All hosts of the caster\u2019s sprites deal minimum damage on their next attack (or attacks made with them).\n| 57 | The casting time increases by 1 step.\n| 58 | All recording devices within close range shut down for 1d4 rounds. This also causes constructs to become blinded and deafened unless they succeed at a Fortitude saving throw. Characters with artificial eyes, ears, or brains are affected as if they were constructs.\n| 59 | Every electronically locked door, helmet, or other opening within close range immediately shuts.\n| 60 | All hosts of the caster\u2019s sprites cannot be used for any purpose that would spend charges for 1d4 rounds.\n| 61 | The caster\u2019s sprites move to random hosts within range, with the caster being unable to determine the location of a sprite until it executes a program.\n| 62 | All technological items within close range of the caster gain 1d6 charges, with charges in excess of the maximum being dispersed.\n| 63 | The caster\u2019s sprites all execute the Sabotage program before the effect is resolved.\n| 64 | The caster gains knowledge of one talent of his choice from this sphere for 1 round.\n| 65 | The caster\u2019s sprites rapidly cool their hosts, dealing 1d6 cold damage for every 3 caster levels to their hosts and anyone touching them.\n| 66 | Security systems on all technological items are scrambled, disabling any locks or encryptions on them for 1d4 minutes.\n| 67 | The caster\u2019s sprites all execute the Power program before the effect is resolved.\n| 68 | Roll twice and take both results. Ignore any results that require rerolls. If both rolls are ignored, there is no effect.\n| 69 | All hosts for the caster\u2019s sprites began vibrating uncontrollably, taking a -2 penalty on attack rolls and AC for 1d4 rounds (or applying such a penalty to their wielder) for 1d6 rounds.\n| 70 | The caster becomes incredibly magnetic, pulling all metal objects within close range (as well as any creatures wearing them) towards it as per a drag combat maneuver using their MSB + their casting ability score modifier in place of CMB. Targets within range wielding metal weapons are subject to a disarm check using the same modifier.\n| 71 | Roll again. If the resulting effect would be centered on the caster, it is instead centered on a random location they are familiar with.\n| 72 | The effect fails and the action is lost. Spell points or spell slots are not lost.\n| 73 | All vehicles and mechs in close range shut down, becoming unable to move for 1 round per caster level.\n| 74 | Any of the caster\u2019s active sprites immediately consume themselves and vanish.\n| 75 | The caster\u2019s surface thoughts are broadcasted on all screens within close range for 1 minute per caster level.\n| 76 | The caster\u2019s sprites all execute the Drain program before the effect is resolved.\n| 77 | The caster is exhausted.\n| 78 | The casting time decreases by 1 step.\n| 79 | The numerical readouts on all electronic measuring devices within medium range of the caster are multiplied by 12 for 1 minute per caster level.\n| 80 | The casting time increases by 2 steps.\n| 81 | All technological items within close range of the caster gain 1d6 charges. If an item would gain charges in excess of its maximum, it causes an explosion which deals 1d6 fire damage per 2 caster levels to every creature within 10 feet of the item (Reflex save half).\n| 82 | The caster\u2019s sprites heat up their hosts, dealing 1d6 fire damage for every 3 caster levels to their hosts and anyone touching them (Fortitude save for half damage).\n| 83 | Any noise the caster makes is broadcasted through all devices within close range of them for 1 minute per caster level.\n| 84 | The caster is stunned for 1 round.\n| 85 | The effect fails, but the action is not lost. Spell points or spell slots spent are lost.\n| 86 | All technological items within close range of the caster are countered by the caster as if the caster possessed the Counterspell and Harmonic Counter* feats.\n| 87 | Effect receives a +2 bonus to caster level.\n| 88 | Roll twice and choose the result. Ignore any results that require rerolls. If both rolls are thus ignored, there is no effect.\n| 89 | All creatures within close range of the caster gain the ability to see the flow of electricity, causing creatures wearing technological armor to gain concealment against affected creatures for 1 minute but granting affected creatures a +5 bonus on Disable Device and Knowledge (engineering) checks.\n| 90 | The hosts of the caster\u2019s sprites are treated as rolling a natural 1 on the next attack roll they make (or that is made with them).\n| 91 | Cheery imagery and upbeat music flood every electronic device within close range, granting all creatures who observe them a +1 morale bonus on the next d20 roll they make before the end of the caster\u2019s next turn.\n| 92 | The caster\u2019s sprites each execute a random program which they are capable of executing.\n| 93 | All data storage devices within close range of the caster randomly exchange all data on them.\n| 94 | The hosts of all of the caster\u2019s sprites change color depending on how many sprites are within them (red if 1, blue if 2, yellow if 3, green if 4 or more).\n| 95 | Roll again on the Universal wild magic tableWM.\n| 96 | The contents of all data storage devices within close range are copied and sent out wirelessly in all directions, arriving in all other storage devices within medium range. The capacity of all data storage devices to hold this data is magically increased for 1 hour per caster level, after which random data is deleted to bring each storage device down to normal capacity.\n| 97 | Strange and grotesque visuals flood every electronic device within close range, forcing all creatures that look at them to become shaken unless they succeed at a Will save.\n| 98 | The caster loses access to this sphere for 1d6 rounds.\n| 99 | Roll again, increasing the range of the effect from close to medium\n| 100 | For 1 hour, the caster gains the ability to perceive the inner workings of all machinery around them, giving them a +10 bonus on Craft (mechanical), Disable Device, and Knowledge (engineering) checks."
+    },
+    {
+      "level": 1,
+      "heading": "Variant Rule: Plentiful Charges",
+      "anchor": "toc53",
+      "text": "Alduric ran his bony fingers over the lightning-spitting firearm on his workbench, gesturing to his apprentice to take a closer look. \u201cReview this item however you like, and you\u2019ll find no trace of magical artifice anywhere in its construction,\u201d Alduric began, \u201cthe heat, the noise, the shocks it unleashes, they are all miracles of this plane and the natural laws we understand. No less deadly or useful, but still our contemporaries call it uncanny.\u201d Alduric sent a cascade of electrical charge from his fingertips, causing the gun to hum to life. \u201cThose fools take what they do not understand and cloak it in ritual and obstruction, as if direct engagement is somehow an anathema.\u201d\nThe magical options for recharging technological equipment are both expensive and risky, requiring expensive material components and having the capacity to accidentally destroy the item they seek to restore. Batteries for technological equipment are likewise scarce and expensive, preventing the widespread use of what should be commonplace consumer equipment. In order to create a setting where charges are a commonplace source of power and technology is well-understood and reliable, the following changes should be implemented for various spells, powers, talents, and items.\nRecharge Abilities: Remove the 500 gp component cost from the recharge spell, psionic recharge power, and Power Technomancy sphere talent. For all of the above abilities, items no longer take damage from gaining excess charges and batteries do not risk being destroyed.\nCheaper Batteries: Battery items cost 1 gp rather than 100 gp and do not risk being destroyed when recharged in a generator. A depleted battery costs only 1 sp rather than 10 gp.\nChecking Charge Conversion: In a setting where charges are plentiful and easy to obtain, the unified energy ability of the psiborg adept, technomancer, and energy sub-specialization incanter may need to be observed with greater scrutiny. While these abilities need not be outright banned, GMs may wish to be vigilant of effects which could grant the character an infinite number of spells, power points, or spell points.\n| FoldUnfold Table of Contents Sprite Boost (program) Drain (program) Interfere (program) Transfer (program) Technomancy Talents Compound Hacking Concealed Sprite Copious Charge Gregarious Sprite Instilled Installation [instill] Lingering Sprite Ranged Technomancy [range] Rapid Transfer Reactive Offload Slicer\u2019s Strike [strike] Sprite Legion [mass] Sprite Sustenance Sprite Triangulation Program Talents Analyze (program) Barrier (program) Broadcast (program) Consume Sprite (program) Malfunction (program) Sabotage (program) Advanced Technomancy Talents AI Transformation AI Transformation, Greater Autopilot (program) Charge Vampirism Eternal Sprite Expel AI (program) Glitch Manipulation (program) Table: Armor Glitches Table: Construct Glitches Table: General Glitches Table: Pharmaceutical Glitches Table: Weapon Glitches Glitch-Prone Sprites Power (program) Relic Manipulation Sprite Targeting Technomancy Sphere Feats Artificer\u2019s Healing (Dual Sphere) Digital Admixture (Admixture) Imbued Sprite Program Puppeteer (Dual Sphere) Sacrosanct Firewall (Dual Sphere) Spell Jacker (Dual Sphere) Archetypes Specializing In Technomancy -Technopath Wild Magic Variant Rule: Plentiful Charges\nArcforge Campaign Setting: Spheres of Influence $9.99 Arcforge Campaign Setting: Spheres Left Behind $9.99 Wiki Note: The Technomancy Sphere was first published in Arcforge Campaign Setting: Spheres of Influence by Legendary Games, making it a 3PP sphere. Since it's a full 3PP sphere, all extra material - including advanced talents, feats, and character options relating to this sphere - is kept on this page. It was further expanded and errata'd in Arcforge Campaign Setting: Spheres Left Behind.\nYou may create magical programs which can alter the functions of technology. Constructs and objects are not immune to the effects of this sphere even if the effects require a Fortitude saving throw."
+    },
+    {
+      "level": 2,
+      "heading": "Sprite",
+      "anchor": "",
+      "text": "As a standard action, you may generate a technomagical entity known as a \u201csprite\u201d inside a construct or technological item within close range (hereafter referred to as a host). A sprite lasts as long as you concentrate, although you may always spend a spell point to allow a sprite to persist for 1 minute per caster level without concentration. While a sprite exists within a host, you may have it execute one of the following actions (known as programs) once per round"
+    },
+    {
+      "level": 4,
+      "heading": "Drain (program)",
+      "anchor": "",
+      "text": "The sprite siphons power from its host, depleting 1 charge if it is an item. The host or the host\u2019s wielder may attempt a fortitude save (DC 10 + 1/2 caster level + casting ability modifier) to negate the effect. If the host is a construct, it instead takes a -1 penalty on attack and damage rolls for one round, although it may also attempt a fortitude save to negate this penalty. The penalty and number of charges drained increase by 1 for every 5 caster levels possessed."
+    },
+    {
+      "level": 5,
+      "heading": "Technomancy and Spell Engines",
+      "anchor": "",
+      "text": "If a character capable of draining charges from wands or other items with the technomancy sphere uses such abilities on a spell engine, the spell engine loses one spell point for every charge that would be drained from it."
+    },
+    {
+      "level": 4,
+      "heading": "Interfere (program)",
+      "anchor": "",
+      "text": "Rather than executing a program, a sprite can negate the action of another sprite inhabiting the same host. A sprite can take this action even if it is not your turn, but if it chooses to interfere on an action it cannot take any other actions (including trying to interfere with other sprite actions beyond the first) this turn. If you have a sprite in a host, you are automatically aware of all other sprites within the host"
+    },
+    {
+      "level": 4,
+      "heading": "Power (program)",
+      "anchor": "",
+      "text": "The sprite generates a modicum of electricity, granting the host a single charge if it is an item. If the host is a construct, the host gains a +1 bonus on attack rolls and damage rolls for 1 round. The number of granted charges as well as the bonus to attack and damage rolls increase by 1 for every 5 caster levels possessed."
+    },
+    {
+      "level": 4,
+      "heading": "Transfer (program)",
+      "anchor": "",
+      "text": "The sprite moves from whatever host it currently inhabits to another host within close range. Talents marked with (program) grant your sprites a new program which they are capable of using each round."
+    },
+    {
+      "level": 2,
+      "heading": "Technomancy Talents",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Charge Vampirism",
+      "anchor": "",
+      "text": "Whenever a sprite uses Drain, one of your sprites increases the number of charges granted by their next use of Power by the number of charges depleted with Drain. The effects of this talent do not stack with themself, and the additional charges are lost if none of your sprites use Power within 1 round of a sprite using Drain."
+    },
+    {
+      "level": 4,
+      "heading": "Compound Hacking [ACS:SLB]",
+      "anchor": "",
+      "text": "Whenever you have multiple sprites inside the same host, the sprites can work together to execute the same program. For every sprite beyond the first \u201caiding\u201d a program, your caster level for the program is treated as 2 higher for the purpose of determining the effects and save DC of the programs."
+    },
+    {
+      "level": 4,
+      "heading": "Concealed Sprite",
+      "anchor": "",
+      "text": "Your sprites are not immediately noticeable to other sprites. When a sprite enters a host, you may roll an MSB check and apply that check to the creators of all other sprites in the host. On a success, these other casters are not aware of your sprite. Whenever your sprite executes a program, all other casters with sprites in the host are allowed an MSB check against you to become aware of your sprite after it executes its program."
+    },
+    {
+      "level": 4,
+      "heading": "Copious Charge",
+      "anchor": "",
+      "text": "When one of your sprites uses Drain or Power, you may spend a spell point to increase the number of charges drained or granted to by amount equal to your caster level. A successful saving throw halves the number of charges drained rather than negating the effect."
+    },
+    {
+      "level": 4,
+      "heading": "Distance Transfer",
+      "anchor": "",
+      "text": "When using transfer or creating a sprite, a sprite can enter a host within Medium range. If you spend a spell point, it can move to a host within long range."
+    },
+    {
+      "level": 4,
+      "heading": "Gregarious Sprite",
+      "anchor": "",
+      "text": "A sprite may Interfere once per round while still being able to execute a program, or may interfere twice per round rather than executing a program. If you spend a spell point, a sprite may interfere any number of times in a round for 1 round but is unable to execute any other programs."
+    },
+    {
+      "level": 4,
+      "heading": "Lingering Sprite [ACS:SLB]",
+      "anchor": "",
+      "text": "If you spend a spell point to allow a sprite to persist, it lasts for 1 hour per caster level rather than 1 minute."
+    },
+    {
+      "level": 4,
+      "heading": "Persistent Sprite",
+      "anchor": "",
+      "text": "When you create a sprite, the sprite remains for 2 rounds after you stop concentrating."
+    },
+    {
+      "level": 4,
+      "heading": "Rapid Transfer",
+      "anchor": "",
+      "text": "When a sprite uses Transfer, it can execute another program during the same turn"
+    },
+    {
+      "level": 4,
+      "heading": "Reactive Sprites",
+      "anchor": "",
+      "text": "Whenever a host is destroyed, you can spend a spell point to have any sprites within move to other hosts within range."
+    },
+    {
+      "level": 4,
+      "heading": "Slicer\u2019s Strike [strike] [ACS:SLB]",
+      "anchor": "",
+      "text": "You may create and deliver sprites via a melee touch attack. As a standard action, you may make a single weapon attack in conjunction with generating a sprite. This casting cannot be reduced below a standard action, and does not provoke attacks of opportunity, unless as usual if making a ranged attack. If the target is struck by the attack, the sprite enters the target (so long as the target is a legal target for the sprite). If using a scatter weapon, the word only applies to a single target, chosen at the time of attack."
+    },
+    {
+      "level": 4,
+      "heading": "Sprite Legion [mass]",
+      "anchor": "",
+      "text": "When creating a sprite, you may create 2 additional sprites for every spell point you spend. All hosts for these sprites must be within range, but each sprite can inhabit different hosts and execute different programs each round.\nWhen you concentrate or spend a spell point to maintain any of the sprites created as part of a single instance of sprite generation, you maintain only one of them. Multiple spell points can be spent in order to maintain multiple sprites, however."
+    },
+    {
+      "level": 4,
+      "heading": "Sprite Sustenance [ACS:SLB]",
+      "anchor": "",
+      "text": "The host of any of your sprites consumes charges at half the normal rate (rounded up). For example, an item that would lose a charge every minute would instead lose a charge every 2 minutes, or a weapon which drains 5 charges with each attack would only drain 3. If the host is a creature, it gains a +1 insight bonus on saving throws, +1 for every 5 caster levels you possess."
+    },
+    {
+      "level": 4,
+      "heading": "Sprite Triangulation",
+      "anchor": "",
+      "text": "You automatically know the locations of all of your sprites\u2019 hosts. Any host or host wielder you cannot see still has total concealment (50% miss chance) against you, and you still suffer the normal miss chance when attacking targets that have concealment. You are still denied your Dexterity bonus to her AC against attacks from hosts and host wielders you cannot see."
+    },
+    {
+      "level": 4,
+      "heading": "Tenacious Sprite",
+      "anchor": "",
+      "text": "When an enemy sprite attempts to Interfere with your sprites\u2019 actions, roll an MSB check against the caster of the enemy sprite. On a success, their sprite fails to interfere with yours."
+    },
+    {
+      "level": 2,
+      "heading": "Program Talents",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Analyze (program)",
+      "anchor": "",
+      "text": "The sprite evaluates its host, searching for patterns and weaknesses. You gain a bonus on all skill checks made to interact with the host equal to half your caster level (minimum 1) for 1 round. For a construct host, this could mean bonuses to bluff and acrobatics checks against the creature. For an item host, this could mean bonuses to Engineering checks made to repair it or Computers checks to hack it."
+    },
+    {
+      "level": 4,
+      "heading": "Boost (program)",
+      "anchor": "",
+      "text": "The sprite may cause all attacks made using the host or made by the host to deal 1d6 additional points of damage for one round. This bonus damage increases by 1d6 for every 5 caster levels you possess."
+    },
+    {
+      "level": 4,
+      "heading": "Broadcast (program) [ACS:SLB]",
+      "anchor": "",
+      "text": "The sprite overwrites digital projections of light and sound for 1 round, replacing anything that the host would project or recieve. If you target an object, you may have the object project whatever lights and sounds it is normally capable of creating at your discretion, save that the item projects whatever images and sounds you desire (including no image or sound). A creature can make an Engineering or Knowledge (engineering) check to realize that the broadcast is being magically tampered with, with a DC equal to your MSD. If two or more casters are trying to control the same broadcasting item, they make opposed MSB checks, the highest result taking control.\nIf the host is a creature that is targeted with this program, it must make a Will save against this effect. On a failure, it\u2019s auditory and visual displays (including those from senses such as blindsight) display whatever you want them to display for 1 round (treat these as illusions that only the affected creature can see). Alternatively, you may choose to make the creature blinded and deafened for 1 round."
+    },
+    {
+      "level": 4,
+      "heading": "Consume Sprite (program)",
+      "anchor": "",
+      "text": "When one of your sprites is inhabiting the same host as a sprite created by another caster, it may attempt to consume this sprite. Roll an MSB check and apply that check to the creator of the targeted sprite. On a success, their sprite is destroyed. If you spend a spell point, the sprite may attempt to consume as many other sprites in its host as you wish, in which case you roll an MSB check and eliminate the sprites of every caster you succeed against."
+    },
+    {
+      "level": 4,
+      "heading": "Control (program) [ACS:SLB]",
+      "anchor": "",
+      "text": "You manipulate the host as if you had affected it with the remote control tech sphere gadget. The saving throw DC is equal to the DC of your technomancy sphere abilities. If the item is not a gadget, consult the tech sphere for possible examples of what effects might occur if it is manipulated in this way (for example, mechanical arms may be affected as per the additional arms gadget of the tech sphere)."
+    },
+    {
+      "level": 4,
+      "heading": "Digital Perception (program) [ACS:SLB]",
+      "anchor": "",
+      "text": "You gain sensory feedback from the sprite host. You can see, hear, and perceive anything that your host could for one round. This typically includes all of the senses of a construct if it is serving as your host, or mechanisms such as audio recording devices, cameras, or computerized scopes in the case of item hosts. A host or its wielder is allowed a will save to negate this effect."
+    },
+    {
+      "level": 4,
+      "heading": "Disable (program) [ACS:SLB]",
+      "anchor": "",
+      "text": "The sprite\u2019s host becomes the disrupted condition for one round. The host or its wielder is allowed a fortitude save to negate this effect. Constructs are not immune to this effect."
+    },
+    {
+      "level": 4,
+      "heading": "Glitch Manipulation (program) [ACS:SLB]",
+      "anchor": "",
+      "text": "You may treat a sprite host as if it were timeworn, causing it to trigger glitches for one round (roll on the Glitch table appropriate to the host to determine the effect of the glitch). If the host is already timeworn, you may treat it as if it wasn\u2019t timeworn for 1 round (if a sprite attempts to add or remove the timeworn condition imposed by another sprite, the caster must make an MSB check opposed by the MSD of the original sprite\u2019s caster). When the glitch table is rolled for your sprite host, you may spend a spell point as an immediate action to choose the result of the glitch rather than rolling randomly (if multiple casters attempt this on the same item, they roll opposed MSB checks, with the highest result choosing the glitch result)."
+    },
+    {
+      "level": 5,
+      "heading": "Table: Armor Glitches",
+      "anchor": "",
+      "text": "Glitching armor that loses its ability to function still provides its normal armor bonus to AC, but any charged abilities are suppressed.\n| d% | Glitch\n| 01\u201302 | Armor abilities don\u2019t function. All remaining charges are drained.\n| 03\u201305 | Armor seizes up and abilities don\u2019t function. The wearer is paralyzed for 1 round.\n| 06\u201310 | Armor doesn\u2019t function, but still consumes the normal number of charges.\n| 11\u201318 | Armor doesn\u2019t function, but no charges are lost.\n| 19\u201350 | Armor uses twice as many charges as normal (or expends an extra activation\u2019s worth of charges if already active).\n| 51\u201375 | Armor functions normally.\n| 76\u201380 | Armor functions better than anticipated. Its armor bonus improves by 1 for the duration of this charge.\n| 81\u201390 | Armor functions much better than anticipated. Its armor bonus improves by 2 and it provides moderate fortification for the duration of this charge.\n| 91\u201398 | Armor functions normally; no charges are consumed by this use.\n| 99\u2013100 | Armor functions normally and a power surge restores 1d6 charges to the item (up to but not exceeding its capacity)."
+    },
+    {
+      "level": 5,
+      "heading": "Table: Construct Glitches",
+      "anchor": "",
+      "text": "These glitches should be rolled at the beginning of the construct\u2019s turn each round. | d% | Glitch\n| 01\u201302 | Construct is reduced to half its current hit points (minimum 1)\n| 03\u201305 | Construct is dazed for 1d6 rounds\n| 06\u201310 | Construct is dazed for 1 round\n| 11\u201318 | Construct is staggered for 1 round\n| 19\u201350 | Construct takes a -2 penalty on all d20 rolls for 1 round\n| 51\u201375 | Construct acts normally\n| 76\u201380 | Construct gains an additional move action this turn\n| 81\u201390 | Construct gains a +2 insight bonus to all d20 rolls for 1 round\n| 91\u201398 | Construct maximizes all damage rolls that it makes this round\n| 99\u2013100 | Construct gains temporary hit points equal to 4 times its CR. These temporary hit points last for 1 minute and do not stack with other forms of temporary hit points."
+    },
+    {
+      "level": 5,
+      "heading": "Table: General Glitches",
+      "anchor": "",
+      "text": "| d% | Glitch\n| 01\u201302 | Item does not function. All remaining charges are drained.\n| 03\u201305 | Item does not function, but still consumes the normal number of charges.\n| 06\u201310 | Item does not function, but no charges are lost.\n| 11\u201318 | Item uses twice as many charges as normal and jolts the user for 1d6 points of electricity damage, but otherwise functions normally.\n| 19\u201350 | Item uses twice as many charges as normal, but otherwise functions normally.\n| 51\u201375 | Item functions normally.\n| 76\u201380 | Item functions better than anticipated, and grants a +1 bonus on any skill check attempted with this use.\n| 81\u201390 | Item functions far better than anticipated, and grants a +2 bonus on any skill check attempted with this use.\n| 91\u201398 | Item functions normally and this use does not consume any charges.\n| 99\u2013100 | Item functions normally and a power surge restores 1d6 charges to the item."
+    },
+    {
+      "level": 5,
+      "heading": "Table: Pharmaceutical Glitches",
+      "anchor": "",
+      "text": "These glitches also apply to drugs and medical gear. | d% | Glitch\n| 01\u201302 | Spoiled. Treat as poisoning by dark reaver powder.\n| 03\u201311 | Spoiled. Treat as exposure to red ache.\n| 12\u201320 | Spoiled. Patient is nauseated for 1d6 rounds.\n| 21\u201330 | Spoiled. Patient sickened for 1d6 \u00d7 10 minutes.\n| 31\u201340 | Spoiled. No effect.\n| 41\u201350 | Less potent. Decrease all save DCs by 2. Use minimum values for all random results (such as healing). Decrease durations by 50%.\n| 51\u201360 | Normal effect, but causes 1d4 points of Constitution damage (Fortitude DC 15 half).\n| 61\u201375 | Normal effect, but hallucinogenic (\u20135 penalty on Perception checks and confused for 2d4 rounds, Fortitude DC 15 negates).\n| 76\u201385 | Normal effect.\n| 86\u201395 | More potent. Increase any save DCs by 2. Reroll any result of 1. Increase durations by 100%.\n| 96\u2013100 | Far more potent. As above, but treat as 2 doses."
+    },
+    {
+      "level": 5,
+      "heading": "Table: Weapon Glitches",
+      "anchor": "",
+      "text": "These glitches are triggered every time an attack is made with the weapon. | d% | Glitch\n| 01\u201302 | Weapon does not function. All remaining charges are drained.\n| 03\u201324 | Weapon does not function, but still consumes the normal number of charges.\n| 25\u201339 | Weapon consumes twice as many charges as normal and deals 1d6 points of electricity damage per charge consumed (minimum 1d6) to the user.\n| 40\u201365 | Weapon consumes twice as many charges as normal.\n| 66\u201375 | Weapon functions normally but flashes brightly, blinding the wielder and adjacent creatures for 1 round (Reflex DC 15 negates).\n| 76\u201384 | Weapon functions normally.\n| 85\u201392 | Weapon functions better than anticipated, granting a +2 bonus on attack rolls made with that weapon for 1 round.\n| 93\u201396 | Weapon functions much better than anticipated, granting a +2 bonus on attack and damage rolls made with the weapon.\n| 97\u201398 | Weapon functions normally, and this use does not consume any charges.\n| 99\u2013100 | Weapon functions normally, and a power surge restores 1d6 charges to the item (up to but not exceeding its capacity)."
+    },
+    {
+      "level": 4,
+      "heading": "Malfunction (program)",
+      "anchor": "",
+      "text": "The sprite attempts to block the functions of its host. If the host is a technological item, it ceases to function for 1 round (as if it had no charges). If the host is a construct, it becomes dazed for 1 round. A successful fortitude save (DC 10 + 1/2 caster level + casting ability modifier) by the host or its wielder negates this effect. If you spend a spell point, an item host and its wielder are not allowed a save and a construct host is still staggered for 1 round on a successful save."
+    },
+    {
+      "level": 4,
+      "heading": "Obstruct (program)",
+      "anchor": "",
+      "text": "The sprite sets up a barrier against other sprites attempting to enter for 1 round. When another sprite attempts to enter a host with a barrier, attempt an MSB check against the caster of that sprite. On a success, the sprite fails to enter the host and returns to its previous host (if the sprite did not have a previous host, it is instead destroyed)"
+    },
+    {
+      "level": 4,
+      "heading": "Sabotage (program)",
+      "anchor": "",
+      "text": "The sprite causes a series of mishaps inside its host, damaging it. The host takes 1d6 points of damage per 2 caster levels, with a successful fortitude save (DC 10 + 1/2 caster level + casting ability modifier) by the host or its wielder negating the damage. If you spend a spell point, the host instead takes 1d6 points of damage per caster level and still takes half damage on a successful saving throw."
+    },
+    {
+      "level": 2,
+      "heading": "Alternate Divination",
+      "anchor": "",
+      "text": "If a character possesses both the divination and technomancy spheres, they may divine for the following information"
+    },
+    {
+      "level": 4,
+      "heading": "Divine Techonology",
+      "anchor": "",
+      "text": "You may divine the presence of advanced technologies or technological creatures. If divining technology, you detect the location of all technological equipment within medium range as well how many sprites are contained within each object. If divining for technological creatures, the ability functions as divine undead, save that rather than undead it divines technological constructs and creatures with cybernetic enhancements."
+    },
+    {
+      "level": 2,
+      "heading": "Incanter Sphere Specialization",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Technomancy",
+      "anchor": "",
+      "text": "Warning Sprite (Su): At 1st level, you gain a +1 insight bonus to AC against attacks made by any creature or any weapon that is a host for your sprites. This bonus increases by 1 at 5th level and ever 5 levels thereafter, to a maximum of +5 at 20th level.\nIrrepressible Sprites (Su): At 3rd level, your sprites become more difficult to interfere with. Whenever a sprite would interfere with the function of one of your sprites, you may attempt a magic skill bonus check against the MSD of the creator of the interfering sprite. On a success, the sprite cannot interfere with your sprite\u2019s action. At 20th level, you automatically succeed at these checks.\nUnified Energy (Su): At 8th level, you gain the ability to power your sphere abilities. As part of using an ability that would require the expenditure of spell points, you may substitute charges from a technological item you are holding for spell points at a rate of 5 charges per spell point. Charges bestowed upon an item as a result of a sphere ability cannot be used for this ability. The unified energy ability does not function with charges taken from items of the Tech sphere."
+    },
+    {
+      "level": 2,
+      "heading": "Prodigy Imbue Sequence",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Technomancy",
+      "anchor": "",
+      "text": "Program Slice (imbue): Every time the prodigy hits with an attack, she may generate a single sprite which enters the target or one of the target\u2019s pieces of equipment. This sprite lasts until the combo is finished and cannot transfer to another host.\nSystem Overload (finish): As a standard action, the prodigy may generate a number of sprites equal to the number of links in her sequence. These sprites last for one round and cannot be concentrated on."
+    },
+    {
+      "level": 1,
+      "heading": "Technomancy Advanced Talents",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "AI Transformation",
+      "anchor": "",
+      "text": "Prerequisite: Technomancy sphere, 10th caster level or higher\nIn a process which takes 1 hour and 2 spell points, a willing creature\u2019s psyche, with all of the abilities and experiences that it contains, is transformed into an artificial intelligence and encoded into a storage device. Such a device, such as a compact AI core or robot which your artificial intelligence will inhabit, must be present at the time of casting, as must be the creature from which you are copying the information. An unwilling robot is allowed a will save (DC 10 + 1/2 caster level + casting ability modifier) to avoid being taken over by the new AI.\nThe AI created by this talent possesses the same intelligence, wisdom, and charisma scores as the creature from which it is made, and possesses all of the base creature\u2019s skills, supernatural abilities, saves, feats, and class features (including the ability to manifest powers). The AI\u2019s CR is equal to the base creature\u2019s effective class level. The AI gains no additional skills, feats, languages, or special abilities from the Artificial Intelligence creature type. The AI is free-willed, and you have no control over its actions. However, being a replication of the mind of another creature, the AI is normally inclined to act in the same way and possess the same alignment as the creature it was created from.\nLike most AIs, those created by this power lack a physical composition, and cannot act without a host body that they can inhabit. This host must be either a computer system of some sort or a robot the AI is controlling.\nOnce the transfer is completed, the original creature\u2019s mind ceases to function. The creature cannot be raised or resurrected so long as the AI created by this power exists."
+    },
+    {
+      "level": 4,
+      "heading": "AI Transformation, Greater",
+      "anchor": "",
+      "text": "Prerequisite: Technomancy sphere, AI Transformation, 15th caster level or higher\nWhen using AI Transformation, you may alter its effects in the following ways:\nIf you spend 2 additional spell points, the original creature\u2019s mind does not cease to function, effectively creating an AI replica of the original target.\nIf you spend 1 additional spell point, you may transform the mind of a deceased creature into an AI. The body from which the mind is being transferred must have a reasonably intact brain in order to be affected.\nIf you spend 1 additional spell point, you can create an AI inside a host which already has an AI within it, effectively merging the two AIs into a single consciousness. The composite AI has the higher of the two Intelligence, Wisdom, and Charisma scores of its component AIs, and retains the special abilities of both. Either AI can attempt a will save (DC 10 + 1/2 caster level + casting ability modifier) to negate the merging"
+    },
+    {
+      "level": 4,
+      "heading": "Autopilot (program)",
+      "anchor": "",
+      "text": "Prerequisite: Technomancy Sphere, 10th caster level or higher\nThe sprite gains the ability to control a mech or vehicle that is its host. The sprite causes the mech or vehicle to perform a single standard or move action. If two sprites are operating inside the host, they can operate together to cause the host to perform a full round\u2019s worth of actions (including a full attack). If the vehicle or mech is being controlled by another, they are allowed a reflex save (DC 10 + 1/2 caster level + casting ability modifier) to negate the forced action."
+    },
+    {
+      "level": 4,
+      "heading": "Eternal Sprite",
+      "anchor": "",
+      "text": "Prerequisite: Technomancy sphere, Persistent Sprite, 10th caster level or higher.\nWhen creating a sprite, you may spend 2 spell points to increase its duration to permanent."
+    },
+    {
+      "level": 4,
+      "heading": "Expel AI (program)",
+      "anchor": "",
+      "text": "Prerequisite: Technomancy sphere, Consume Sprite, 10th caster level or higher.\nThe sprite attempts to force an AI out of their shared host. The AI must succeed at a will save (DC 10 + 1/2 caster level + casting ability modifier) or else be forced out of the host. If there are any other potential hosts for the AI within medium range, the AI may attempt to enter them as normal. If the AI cannot enter any host, it is destroyed. This program requires the caster to spend a spell point"
+    },
+    {
+      "level": 4,
+      "heading": "Relic Manipulation [ACS:SLB]",
+      "anchor": "",
+      "text": "You may treat non-technological magic items as if they were technological items for the purpose of affecting them with sprites and technomancy talents."
+    },
+    {
+      "level": 4,
+      "heading": "Technomantic Astronavigation [ACS:SLB]",
+      "anchor": "",
+      "text": "You are able to utilize your sprites to benefit your starship in starship combat. By spending a spell point, you may either increase the bonus granted by your starship computer on all checks by 1 or allow your starship computer to affect one additional roll this round. At caster level 10th, you may either increase the bonus granted by your starship computer on all checks by 2, allow your starship computer to affect two additional rolls this round, or increase the bonus granted by 1 while also allowing the computer to affect an additional roll this round."
+    },
+    {
+      "level": 1,
+      "heading": "New General Drawbacks",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Exposed Matrix",
+      "anchor": "",
+      "text": "Your magic takes the form of visible constructs around your body which can be targeted for attack. For every spell you have active, a matrix of energy forms somewhere on your body that has a number of hit points equal to your caster level and can be targeted by sunder attempts. A creature can identify the spell effects corresponding to each matrix with a successful spellcraft check (DC 10 + 1/2 your caster level). If a matrix is sundered, the corresponding spell effect immediately ends."
+    },
+    {
+      "level": 4,
+      "heading": "Incompatible Energies",
+      "anchor": "",
+      "text": "Your technology-fueled abilities mean that you cannot obstruct magic in the way most others can. You automatically fail at attempts made to dispel or counterspell the abilities of casters who do not possess the Techno-Miraculous boon unless you possess the Harmonic Counter feat. You must possess the Techno-Miraculous boon to select this drawback."
+    },
+    {
+      "level": 1,
+      "heading": "New Casting Boons",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Techno-Miraculous",
+      "anchor": "",
+      "text": "Your abilities are not grounded in the volatile whims of magic but rather in a separate but similarly-powerful realm of physical laws. Those who do not understand the mechanics of your powers are helpless to resist them. Casters automatically fail any attempts to counterspell or dispel your abilities unless they possess this boon, the Technomancy sphere, or the Harmonic Counter feat."
+    },
+    {
+      "level": 1,
+      "heading": "New Sphere-Specific Drawbacks",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Machine Gremlin [ACS:SLB]",
+      "anchor": "",
+      "text": "Your sprites cannot be used to enhance machinery. You cannot use the power program with your sprites."
+    },
+    {
+      "level": 4,
+      "heading": "Outmoded Encroachment [ACS:SLB]",
+      "anchor": "",
+      "text": "The hazardous effects of your sprites are stopped by commonplace countermeasures. You cannot use the drain and interfere programs with your sprites."
+    },
+    {
+      "level": 4,
+      "heading": "Relic Wielder [ACS:SLB]",
+      "anchor": "",
+      "text": "Your ability to interfere with magical equipment does not extend to technological devices. You cannot use your Technomancy sphere abilities to affect technological items. You mus select the Relic Manipulation advanced talent with this drawback."
+    },
+    {
+      "level": 4,
+      "heading": "Singular Focus [ACS:SLB]",
+      "anchor": "",
+      "text": "Your ability to focus on your sprites is limited. You may only have one sprite in existence at a time."
+    },
+    {
+      "level": 4,
+      "heading": "Volatile Sprites [ACS:SLB]",
+      "anchor": "",
+      "text": "Your sprites cause machines to act erratically. Whenever someone attempts to use a piece of equipment that contains one or more of your sprites, the equipment triggers a glitch as if it was timeworn (see the tables below for timeworn technology glitches)."
+    },
+    {
+      "level": 1,
+      "heading": "Technomancy Talent-based Item CreationUSOP",
+      "anchor": "",
+      "text": "Sprite Range: close Duration: 1 round/caster level.\nEffect: Creates a sprite inside the target which can use the drain, interfere, power, or transfer programs\nComplexity\nGreater Technomancy: To add the effects of a Technomancy sphere talent, increase the complexity by +1 per talent. If a talent would normally cost extra spell points, increase the complexity by an additional +1 per spell point required.\nProgram: You may add additional programs gained through (program) talents to those that the sprite can execute, increasing complexity by 1 for every program added."
+    },
+    {
+      "level": 1,
+      "heading": "New Martial Talents",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "Equipment Sphere",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Heavy Weapon Training (Discipline)",
+      "anchor": "",
+      "text": "You gain proficiency with all heavy weapons."
+    },
+    {
+      "level": 1,
+      "heading": "Feats",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Artificer\u2019s Healing (Dual Sphere)",
+      "anchor": "",
+      "text": "You restore \u201clife\u201d to your damaged devices Prerequisites: Life SphereSOP, Technomancy Sphere\nBenefit: You may use any Life Sphere ability which restores hit points to a creature on broken or damaged objects, restoring hit points to them as if they were creatures. If the object has the broken condition, this condition is removed if the object is restored to at least half its original hit points. This ability cannot restore warped or transmuted items, but it can still repair damage done to such items."
+    },
+    {
+      "level": 4,
+      "heading": "Hard-Wired Sprite (Champion) [ACS:SLB]",
+      "anchor": "",
+      "text": "Your gadget possess of a spark of your magical affinity\nPrerequisites: Tech Sphere, Technomancy Sphere, at least one (gadget) talent\nBenefit: One gadget that your create (excluding permanent gadgets and augment grafts) contains a sprite with a permanent duration that cannot be transferred. This sprite replenishes itself after 1 minute if it is dispelled or destroyed. You may change which gadget is affected by this feat in a process that takes 1 hour.\nSpecial: You may take this feat multiple times. Each time, you may select an additional gadget."
+    },
+    {
+      "level": 4,
+      "heading": "Harmonic Counter",
+      "anchor": "",
+      "text": "Miracles both magical and mechanical buckle before your might\nPrerequisite: CounterspellSoP\nBenefit: You can attempt to use any of your Counterspell feats on technological equipment as if it were magical equipment. Treat a technological item\u2019s MSD as if it were 11+the item\u2019s level or the item\u2019s craft DC -5."
+    },
+    {
+      "level": 4,
+      "heading": "Heavy Wielding",
+      "anchor": "",
+      "text": "You\u2019ve learned how to handle some rather impressive armaments\nPrerequisites: Strength 15\nBenefit: You may wield a two-handed weapon of your size as if it were a one-handed weapon. If you do, you take a -2 penalty to attack rolls with the weapon."
+    },
+    {
+      "level": 4,
+      "heading": "Program Puppeteer (Dual Sphere)",
+      "anchor": "",
+      "text": "Your sprites enable you to manipulate artificial minds Prerequisites: Mind SphereSOP, Technomancy Sphere\nBenefit: You may treat any construct which is acting as a host of one of your sprites as having a living mind for the purpose of being able to affect it with your Mind Sphere abilities, ignoring their immunity to mind-affecting effects. In addition, you can place sprites in living, intelligent creatures as if they were constructs."
+    },
+    {
+      "level": 4,
+      "heading": "Sacrosanct Firewall (Dual Sphere) [ACS:SLB]",
+      "anchor": "",
+      "text": "Your magical protections shield your equipment from tampering\nPrerequisites: Fate Sphere, Technomancy Sphere, hallow word\nBenefit: Targets affected by your hallow word cannot have sprites enter them so long as the sprite originates from a creature who possesses your opposed alignment. If the target is already under the influence of such an effect, the target is allowed to make a Will saving throw against the sprite. Success means the sprite cannot use any programs for the duration of this word, but resumes when this word expires."
+    },
+    {
+      "level": 4,
+      "heading": "Sprite Coordination (Champion) [ACS:SLB]",
+      "anchor": "",
+      "text": "Your sprites give you magical connection to your machines\nPrerequisites: Tech Sphere, Technomancy Sphere, at least one (gadget) talent\nBenefit: You treat any of your gadgets that contain one of your sprites as if they are always within signal range."
+    },
+    {
+      "level": 4,
+      "heading": "Sprite Targeting",
+      "anchor": "",
+      "text": "Your sprites allow you to hone in on any target [ACS:SLB]\nPrerequisites: Technomancy Sphere, MSB 10 or higher\nBenefit: You may treat any host for your sprites as if was always in close range and that you always had line of sight and effect on it for the purpose of being able to target it with sphere effects."
+    },
+    {
+      "level": 1,
+      "heading": "Casting Traditions",
+      "anchor": "",
+      "text": "The following casting traditionsSoP and mixed traditionsCotS have been implemented to accommodate some of the more unusual types of magic in advanced settings and to offer distinct flavor to the magical and martial abilities of characters of various nationalities. Note that not all characters of this nationality are required to possess these traditions, and indeed not all spellcasters or soldiers who fight in these nations\u2019 armies will use these specific styles. Rather, many of these traditions are intended to embody the values and philosophies of these groups in times of conflict."
+    },
+    {
+      "level": 4,
+      "heading": "Akashic",
+      "anchor": "",
+      "text": "Many traditional mages would balk at the idea of calling Akasha a form of magic, but this unique tradition of technological armament has certainly become a potent force for reshaping reality. Powered by a complex arsenal of cybernetics and a keen understanding of machinery, Akasha has become a favored weapon for those who lack the faith for magic or those who desire to found their world-manipulating abilities on a well-understood base of information.\nDrawbacks: Exposed Matrix, Incompatible Energies\nBoons: Techno-Miraculous"
+    },
+    {
+      "level": 4,
+      "heading": "Ashfielder",
+      "anchor": "",
+      "text": "Martial Training: Equipment: Armored Defense, Craftsman (any one)\nAthletics Sphere\nScout Sphere\nBonus Sphere: Life\nDrawbacks: Unnatural Remedy (Life)"
+    },
+    {
+      "level": 4,
+      "heading": "Balyn",
+      "anchor": "",
+      "text": "Martial Training: Equipment: Mechanical Savant\nScoundrel Sphere\nScout Sphere\nTrap Sphere\nBonus Sphere: Alteration\nDrawback: Unnatural Transformation (Alteration, Cybernetics)"
+    },
+    {
+      "level": 4,
+      "heading": "Cidali",
+      "anchor": "",
+      "text": "Martial Training: Equipment: Firearm Training\nAthletics Sphere\nScout Sphere\nWarleader Sphere\nDrawbacks: Skilled Casting (Culture, Diplomacy, or Mysticism), Witchmarked\nBoons: Metamagic Expert"
+    },
+    {
+      "level": 4,
+      "heading": "Eigenel",
+      "anchor": "",
+      "text": "Martial Training: Equipment: Arcane Armor,\nPikeman\u2019s Training\nSpear Dancer\nShield Sphere\nDrawbacks: Draining Casting, Galvanized\nBoons: Fortified Casting"
+    },
+    {
+      "level": 4,
+      "heading": "Estarian",
+      "anchor": "",
+      "text": "Martial Training: Equipment: Elvish Heritage\nAlchemy Sphere (Formulae Package)\nDuelist Sphere\nTrap Sphere\nDrawbacks: Extended Casting\nBoons: Easy Focus"
+    },
+    {
+      "level": 4,
+      "heading": "Freemen",
+      "anchor": "",
+      "text": "Martial Training: Equipment: Peasant Training\nAthletics Sphere\nBarroom Sphere\nGuardian Sphere\nBonus Sphere: Alteration\nDrawback: Lycanthropic (Alteration)"
+    },
+    {
+      "level": 4,
+      "heading": "Maritoni",
+      "anchor": "",
+      "text": "Martial Training: Equipment: Armor Training x2\nTrap Sphere\nBonus Feats: Spell Trap\nBonus Sphere: Death\nDrawbacks: Deathful Touch (Death), Prepared Caster, Witchmarked\nBoon: Embodiment (undead, human, or construct)"
+    },
+    {
+      "level": 4,
+      "heading": "Qlippoth Psionics",
+      "anchor": "",
+      "text": "Drawbacks: Magical Signs, Incompatible Energies\nBoons: Techno-Miraculous"
+    },
+    {
+      "level": 4,
+      "heading": "Sajac",
+      "anchor": "",
+      "text": "Martial Training: Equipment: Armor Training Firearm Training, Heavy Weapon Training\nVariable: Barrage or Guardian Sphere\nBonus Sphere: War\nDrawbacks: Inspirational Caster"
+    },
+    {
+      "level": 4,
+      "heading": "Tauruni",
+      "anchor": "",
+      "text": "Martial Training: Equipment: Armor Training, Heavy Weapon Training\nGladiator Sphere\nVariable: Guardian Sphere or Berserker Sphere\nBonus Magic Talent: Protection Sphere\nDrawbacks: Aligned Protection (Law or Evil), Draining Casting, Magical Signs\nBoons: Deathful Magic"
+    },
+    {
+      "level": 4,
+      "heading": "Valtrossi",
+      "anchor": "",
+      "text": "Martial Training: Equipment: Armor Training\nVariable: Any one Equipment Talent that you meet the prerequisites for\nBeastmastery Sphere\nVariable: Berserker Sphere or Warleader Sphere\nDrawbacks: Galvanized, Wild Magic\nBoon: Empowered Abilities"
+    },
+    {
+      "level": 1,
+      "heading": "Archetypes Specializing In Technomancy",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "-Technopath",
+      "anchor": "",
+      "text": "Technopaths are Symbiats who have learned to make use of technological powers."
+    },
+    {
+      "level": 1,
+      "heading": "Wild Magic",
+      "anchor": "",
+      "text": "| d% | Effect\n| 1 | One item per 5 caster levels within close range of the caster is drained of all charges\n| 2 | Wireless signals cease to function anywhere within close range of the caster for 1d4 rounds.\n| 3 | The hosts of all of the caster\u2019s sprites (and their wielders) are staggered for 1d4 rounds (Fortitude save negates)\n| 4 | Every printer, replicator, or other device capable of creating objects or images within close range of the caster begins repeatedly creating images of the caster for 1d4 minutes\n| 5 | All cybernetics within close range of the caster cease functioning for 1d4 rounds (fortitude save negates) Constructs are not immune to this effect.\n| 6 | Systems lock up, increasing the DCs of any Computers or Disable Device checks made on objects within close range of the caster by 5 for 1 round.\n| 7 | Loud music begins playing from every device within close range of the caster capable of making noise.\n| 8 | The hosts of all of the caster\u2019s sprites have their movement speeds doubled for 1 round\n| 9 | The hosts of all of the caster\u2019s sprites cannot attack or be used to attack for 1 round\n| 10 | All of the caster\u2019s wielded equipment is drained of all charges\n| 11 | The hosts of all of the caster\u2019s sprites consume twice as many charges with every use for 1 minute\n| 12 | The hosts of all of the caster\u2019s sprites are only capable of understanding and speaking a single language that the caster knows (chosen at random) for 1 minute\n| 13 | All electrical lighting within close range of the caster shuts off for 1d4 rounds\n| 14 | The hosts of all of the caster\u2019s sprites (and anyone wielding them) are repelled from the caster\u2019s square as per a bull rush combat maneuver, using the caster\u2019s MSB + their casting ability score modifier in place of their CMB.\n| 15 | All hosts of the caster\u2019s sprites cause their hosts to shift in operating system, causing all actions that it takes or that it is utilized for to have 25% chance of not occuring for 1 round.\n| 16 | All hosts of the caster\u2019s sprites cause their hosts to start leaking fluid, forcing the hosts and their wielders to make a fortitude save or become sickened for 1d4 rounds. Constructs are not immune to this effect.\n| 17 | One unattended object of Diminutive size or smaller per caster level within close range of the caster become animated as per the Animate Object talent of the Enhancement sphere for 1 minute. This object is neutral toward the caster and attempt to flee any conflict, but otherwise meanders aimlessly. The size affected increases by one category per 5 caster levels.\n| 18 | All wireless communicators within close range of caster begin receiving a constant stream of random visual and auditory messages.\n| 19 | Everyone within close range of the caster can hear any wirelessly communicated audio transmitted through this range\n| 20 | Every host containing one of the caster\u2019s sprites makes an attack against a random target in reach (in the case of a weapon host, use the wielder\u2019s base attack bonus).\n| 21 | The hosts of all of the caster\u2019s sprites shine light as a torch for 1 minute\n| 22 | One security system on all computers within close range of the caster is disabled\n| 23 | All technological equipment within close range becomes uncooperative for 1 round, requiring anyone who tries to activate them to make a Craft (mechanical) or Engineering check in order to use it (DC equal to your MSD)\n| 24 | The host of one of the caster\u2019s sprites begins making a horribly grating noise, causing all creatures within close range to make a fortitude save or be deafened for 1d4 rounds. Constructs are not immune to this effect.\n| 25 | The host of one of the caster\u2019s sprites becomes sentient and gains mental ability scores equal to the caster\u2019s. Unless it is a creature, it cannot take actions, but is capable of communicating telepathically with the caster so long as it remains the host for at least one of the caster\u2019s sprites.\n| 26 | Random parts start flying off the target of the effect, dealing 1d6 piercing, slashing, and bludgeoning damage per 2 caster levels to the target (Fortitude save half) and to all creatures within 30 feet of the targe (Reflex save half).\n| 27 | Every electronically locked door, helmet, or other opening within close range immediately opens.\n| 28 | One random host of the caster\u2019s sprites loses all data stored on it (including memory) for one hour\n| 29 | The host of one of the caster\u2019s sprites becomes incredibly magnetic, pulling all metal objects within close range (as well as any creatures wearing them) towards it as per a drag combat maneuver using your MSB + your casting ability score modifier in place of CMB. Targets within range wielding metal weapons are subject to a disarm check using this same modifier\n| 30 | All hosts of the caster\u2019s sprites are countered by the caster as if the caster possessed the counterspell and harmonic counter feats\n| 31 | All hosts of the caster\u2019s sprites inflict maximum damage on their next attack (or attacks made with them)\n| 32 | One of the caster\u2019s sprites appears in every potential host in close range which does not contain a sprite.\n| 33 | The caster is fatigued.\n| 34 | All technological devices within close range shut down for one round before restarting. Targets and their wielders are allowed\n| 35 | All cybernetics within close range increase any bonuses they grant by 2 for 1d4 rounds\n| 36 | All technological items within close range of the caster replenish all of their charges\n| 37 | All intelligent constructs and AIs within close range become hostile to the caster for 1d4 minutes\n| 38 | All intelligence constructs and AIs within close range become friendly to the caster for 1d4 minutes\n| 39 | The caster is dazed for 1 round.\n| 40 | Effect receives a -4 penalty to caster level (minimum 1).\n| 41 | All hosts of the caster\u2019s sprites do not consume charges when used for 1 round\n| 42 | One item which is the host for the caster\u2019s sprites replenishes all of its charges every round for 1 minute per caster level, after which is nonfunctional for 10 minutes per caster level\n| 43 | A shockwave deals 1 point of electricity damage per caster to all creatures within close range of the caster (Fortitude save half)\n| 44 | All vehicles within close range start to swerve out of control, forcing their drivers or pilots to make a ride, fly, piloting, or profession check against your MSD or cause their vehicle to move in a random direction (skill check depends on the vehicle in question)\n| 45 | The caster\u2019s sprites all execute the boost program before the effect is resolved\n| 46 | The casting time decreases by 2 steps.\n| 47 | The next time the caster takes damage, they also lose a total number of charges from their equipment equal to the damage taken (allocated as the caster wishes)\n| 48 | On its next turn (or on its wielder\u2019s next turn) every host containing one of the caster\u2019s sprites must perform the same action that it performed in the previous round (Will save negates)\n| 49 | The caster\u2019s sprites cause their hosts to arc with electricity, dealing 1d6 electricity damage for every 3 caster levels to their hosts and anyone touching them (Reflex save for half damage).\n| 50 | The next time the target takes damage, they also lose a total number of charges from their equipment equal to the damage taken (allocated as the caster wishes)\n| 51 | One data storage device within close range copies and transmits all of its data to all other storage devices within close range.\n| 52 | The caster\u2019s sprites all execute the boost program before the effect is resolved\n| 53 | The location of the caster immediately shows up on every visual display within 1 mile\n| 54 | The caster is nauseated for 1 round.\n| 55 | The caster\u2019s sprites all execute the obstruct program before the effect is resolved\n| 56 | All hosts of the caster\u2019s sprites inflict minimum damage on their next attack (or attacks made with them)\n| 57 | The casting time increases by 1 step.\n| 58 | All recording devices within close range shut down for 1d4 rounds. This also causes constructs to become blinded and deafened unless they succeed at a saving throw. Characters with artificial eyes, ears, or brains are affected as if they were constructs.\n| 59 | Every electronically locked door, helmet, or other opening within close range immediately shuts.\n| 60 | All hosts of the caster\u2019s sprites cannot be used for any purpose that would drain charges for 1d4 rounds\n| 61 | The caster\u2019s sprites all move to one of the caster\u2019s pieces of equipment before the effect is resolved.\n| 62 | All technological items within close range of the caster gain 1d6 charges, with charges in excess of the maximum being dispersed.\n| 63 | The caster\u2019s sprites all execute the sabotage program before the effect is resolved\n| 64 | The caster gains knowledge of one talent of his choice from this sphere for 1 round.\n| 65 | The caster\u2019s sprites rapidly cool their hosts, dealing 1d6 cold damage for every 3 caster levels to their hosts and anyone touching them.\n| 66 | Security systems on all technological items are scrambled, disabling any locks or encryptions on them for 1d4 minutes\n| 67 | The caster\u2019s sprites all execute the power program before the effect is resolved\n| 68 | Roll twice and take both results. Ignore any results that require rerolls. If both rolls are ignored, there is no effect.\n| 69 | All hosts for the caster\u2019s sprites began vibrating uncontrollably, taking a -2 penalty on attack rolls and AC for 1d4 rounds (or applying such a penalty to their wielder)\n| 70 | The caster becomes incredibly magnetic, pulling all metal objects within close range (as well as any creatures wearing them) towards it as per a drag combat maneuver using your MSB + their casting ability score modifier in place of CMB. Targets within range wielding metal weapons are subject to a disarm check using the same modifier\n| 71 | Roll again. If the resulting effect would be centered on the caster, it is instead centered on a random location they are familiar with.\n| 72 | The effect fails and the action is lost. Spell points or spell slots are not lost.\n| 73 | All vehicles in close range shut down for a round, becoming unable to move.\n| 74 | The caster\u2019s sprites start consuming themselves and each other, reducing the number of sprites in each host by 1\n| 75 | The caster\u2019s surface thoughts are broadcasted onto all computer monitors within close range for 1 minute per caster level\n| 76 | The caster\u2019s sprites all execute the drain program before the effect is resolved\n| 77 | The caster is exhausted.\n| 78 | The casting time decreases by 1 step.\n| 79 | The numerical readouts on all electronic measuring devices within close range of the caster are multiplied by 12 for 1 minute per caster level.\n| 80 | The casting time increases by 2 steps.\n| 81 | All technological items within close range of the caster gain 1d6 charges. If an item would gain charges in excess of its maximum, it causes an explosion which deals 1d6 fire damage per 2 caster levels to every creature within 10 feet of the item (Reflex save half)\n| 82 | The caster\u2019s sprites heat up their hosts, dealing 1d6 fire damage for every 3 caster levels to their hosts and anyone touching them (Fortitude save for half damage).\n| 83 | Any noise the target makes is broadcasted through all devices within close range of them.\n| 84 | The caster is stunned for 1 round.\n| 85 | The effect fails, but the action is not lost. Spell points or spell slots spent are lost.\n| 86 | All technological items within close range of the caster are countered by the caster as if the caster possessed the counterspell, counterspell mastery, harmonic counter, and improved counterspell feats\n| 87 | Effect receives a +2 bonus to caster level.\n| 88 | Roll twice and choose the result. Ignore any results that require rerolls. If both rolls thus ignored, there is no effect.\n| 89 | All creatures within close range of the caster gain the ability to see the flow of electricity, granting concealment to all creatures wearing technological equipment\n| 90 | The host of one of the caster\u2019s sprites is treated as rolling a natural 1 on the next attack roll it makes (or that is made with it).\n| 91 | Cheery imagery and upbeat music flood every electronic device within close range, granting all creatures who observe them a +1 morale bonus on the next D20 roll they make\n| 92 | The caster\u2019s sprites duplicate themselves, creating an additional sprite in every host which houses at least one.\n| 93 | All data storage devices within close range of the caster randomly exchange all data on them\n| 94 | The hosts of all of the caster\u2019s sprites change color depending on how many sprites are within them (red if 1, blue if 2, yellow if 3, green if 4 or more)\n| 95 | Roll again on the Universal wild magic tableWM.\n| 96 | The contents of all data storage devices within close range is copied and sent out wirelessly in all directions.\n| 97 | Strange and grotesque visuals flood every electronic device within close range, forcing all creatures that look at them to become shaken unless they succeed at a Will save\n| 98 | The caster loses access to this sphere for 1d6 rounds.\n| 99 | Roll again, increasing the range of the effect from close to medium\n| 100 | For 1 hour, the caster gains the ability to perceive the inner workings of all machinery around them, giving them a +10 bonus on Computers, Craft (mechanical), Disable Device, Engineering, and Knowledge (engineering) checks.\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

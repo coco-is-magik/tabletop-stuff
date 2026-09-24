@@ -1,0 +1,361 @@
+{
+  "url": "https://spheresofpower.wikidot.com/berserker",
+  "retrieved": "2026-09-24",
+  "sha256": "a8c5b41e1f9c31f9ee56db3efa11440664241012454c424a52b7511b014ae575",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Berserking Brutal Strike Berserker Talents Advancing Carnage Barbaric Throw [Apoc] Beat Down Bloody Counter Break Dancing [Jester's HB] Deathless Decapitate Extended Exertion Greater Sunder Monumental Might (utility) [LotS] Reaper\u2019s Momentum Sanguine Invigoration Savage Shatter Earth Sword Eater (stance) [Youxia HB] Adrenaline Talents Absolute Determination (adrenaline) [Alienist HB] Dreadnought (adrenaline) [Conq. HB] Executioner (adrenaline) [Conq. HB] Juggernaut (adrenaline) [Conq. HB] Marauder (adrenaline) [Conq. HB] Promethean (adrenaline) [RW HB] Specter (adrenaline) [Conq. HB] Exertion Talents Agonizing Bruise (exertion) [DRS] Bell-Ringer (exertion) Bone-Breaker (exertion) Breakdown Beatdown (exertion) [LG] Cast-Crusher (exertion) [LG] Flesh Carver (exertion) [Conq. HB] Heart Crusher (exertion) [CrimDan] Heavy Swing (exertion) Leg-Smasher (exertion) Mage Masher (exertion) Shieldbreaker (exertion) Shrapnel (exertion) Legendary Talents Alter Terrain Atavism (adrenaline) [Apoc] Fight to the End [SM\u2014] Flaming R\u00edastrad [High. HB] Genie\u2019s Wrath (exertion) [RW HB] Plane Carver [SM\u2014] Relentless Carnage [LG] Rift Strike Rift Strike, Universal [RW HB] Ruinous Tread Spell Sunder (exertion) Spiteful Finish [SM\u2014] Warp Spasm [High. HB] Berserker Sphere Class Options Archetypes Berserker (Barbarian) Darkness Defender (Sentinel) Skaldic Poet (Skald)\nSpheres of Might $19.99 The Conqueror's Handbook $4.99 Berserkers are indomitable warriors with boundless reservoirs of endurance and unmatched destructive potential. Practitioners of the Berserker sphere gain the following abilities:"
+    },
+    {
+      "level": 2,
+      "heading": "Berserking",
+      "anchor": "toc0",
+      "text": "As a free action at the start of each turn, you may choose to take a -2 penalty to AC in exchange for 3 temporary hit points. The penalty and the temporary hit points end at the start of your next turn. For every point of base attack bonus you have, the granted temporary hit points increase by 1.\nSee Adrenaline talents, below, for alternative benefits to gaining temporary hit points while berserking.\nWiki Note: Temporary hit points from different sources stack. This means you can use Berserking and still benefit from other sources of temporary hit points."
+    },
+    {
+      "level": 2,
+      "heading": "Brutal Strike",
+      "anchor": "toc1",
+      "text": "As a special attack action, you may make a melee attack against a target. Creatures damaged by a brutal strike gain the battered condition until the end of your next turn. You may expend martial focus to have the attack deal additional damage equal to twice your base attack bonus.\nEach brutal strike may be modified by a single (exertion) talent."
+    },
+    {
+      "level": 1,
+      "heading": "Berserker Talents",
+      "anchor": "toc2",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Advancing Carnage",
+      "anchor": "toc3",
+      "text": "Whenever you make a melee attack using the attack action, you may choose to take a -2 penalty on all attack rolls made that round. If your attack hits, you may make an additional attack as a free action against a creature that is adjacent to the first and also within your reach. If this additional attack hits, you may make another additional attack against a new target adjacent to the struck target. You may continue attacking targets adjacent to your most recent struck target as long as you still have a valid target for this ability, but you cannot attack the same creature twice. The number of additional attacks made with this ability cannot exceed 1/2 your base attack bonus (minimum 1).\nYou can take this talent a second time, allowing you to take a single 5-ft. step as a free action after making an attack when using this ability. If doing so places a creature within your threatened area, that creature becomes a legal target for your additional attack(s) as long as it meets all the other prerequisites. Your movement with this talent cannot exceed your move speed. Associated Feats: Cleave, Great Cleave, Cleave Through when taken twice."
+    },
+    {
+      "level": 4,
+      "heading": "Barbaric Throw [Apoc]",
+      "anchor": "toc4",
+      "text": "You can use brutal strike with thrown weapons. Additionally, throwing two-handed weapons no longer takes a full-round action, instead taking the same time as any other thrown weapon attack. When you expend your martial focus as part of a brutal strike, you can treat any melee weapon wielded by you that you\u2019re proficient with as a thrown weapon with a range increment of 10 feet for that action. Associated Feats: Throw Anything, Two-Handed Thrower"
+    },
+    {
+      "level": 4,
+      "heading": "Beat Down",
+      "anchor": "toc5",
+      "text": "When you inflict the battered condition with a brutal strike, the condition lasts for an additional number of rounds equal to your practitioner modifier (minimum 1)."
+    },
+    {
+      "level": 4,
+      "heading": "Bloody Counter",
+      "anchor": "toc6",
+      "text": "As an immediate action, when a creature targets you with a melee attack, before the attack roll is made you may allow the attack to automatically strike you (although the roll is still made to determine if the attack threatens a critical hit). After the damage is determined, you may make a brutal strike targeting that creature as a free action that may be taken even when it isn\u2019t your turn, if it is in range. If the creature attacking you is battered, you may resolve your attack action prior to their attack being resolved."
+    },
+    {
+      "level": 4,
+      "heading": "Break Dancing [Jester's HB]",
+      "anchor": "toc7",
+      "text": "After making a sunder attempt, you may attempt an Acrobatics or Perform (dance) check as a swift action with a DC equal to the target of your sunder\u2019s CMD. If you succeed, you may move up to half your speed. This movement does not provoke attacks of opportunity. If you succeed at this check by 10 or more, your sweet moves restore your martial focus."
+    },
+    {
+      "level": 4,
+      "heading": "Deathless",
+      "anchor": "toc8",
+      "text": "As long as you have martial focus, the number of hit points you can be reduced to below 0 without dying is doubled and you may choose to act as if you were disabled, rather than dying. You must make this decision as soon as you are reduced to negative hit points (even if it isn\u2019t your turn). If you do not choose to act as if you were disabled, you immediately fall unconscious.\nWhen using this talent, you are staggered. You can take a move action without further injuring yourself, but if you perform any standard action (or any other action deemed as strenuous, including some swift actions, such as casting a quickened spell) you take 1 point of damage after completing the act. If your negative hit points are equal to or greater than twice your Constitution score, you immediately die. Associated Feat: Diehard."
+    },
+    {
+      "level": 4,
+      "heading": "Decapitate",
+      "anchor": "toc9",
+      "text": "You do not provoke attacks of opportunity when delivering a coup de grace. As long as you have martial focus, you may deliver a coup de grace as a standard action."
+    },
+    {
+      "level": 4,
+      "heading": "Extended Exertion",
+      "anchor": "toc10",
+      "text": "You may increase the time required to use brutal strike to a full-round action to apply two (exertion) talents to it. This attack still counts as an attack action."
+    },
+    {
+      "level": 4,
+      "heading": "Greater Sunder",
+      "anchor": "toc11",
+      "text": "You gain a +1 competence bonus to your sunder combat maneuver checks, as well as to your CMD vs. that maneuver. For every 4 points of base attack bonus you have, this bonus increases by +1. This bonus does not stack with the bonus to this maneuver provided by the Improved or Greater Sunder feats. Associated Feat: Improved Sunder."
+    },
+    {
+      "level": 4,
+      "heading": "Monumental Might (utility) [LotS]",
+      "anchor": "toc12",
+      "text": "Add your base attack bonus to the Appraise and Sense Motive DCs required to evaluate your prowess or sense your emotions (new universal skill use from Spheres of Guile) and to opposed Bluff and Intimidate checks made to resist such attempts."
+    },
+    {
+      "level": 4,
+      "heading": "Reaper\u2019s Momentum",
+      "anchor": "toc13",
+      "text": "As long as you have martial focus, whenever you reduce a creature to 0 hit points or fewer with a melee or thrown weapon attack, you may immediately make a bonus attack against another creature with a melee or thrown weapon. If you are capable of drawing a weapon as a free action, you may draw such a weapon as part of making this attack. You may only make one extra attack per round with this talent, increasing by 1 time per round at 7 base attack bonus and 14 base attack bonus. Associated Feat: Cleaving Finish."
+    },
+    {
+      "level": 4,
+      "heading": "Sanguine Invigoration",
+      "anchor": "toc14",
+      "text": "As long as you have martial focus, whenever you reduce a creature to 0 hit points or fewer with a melee or thrown weapon attack, you gain temporary hit points equal to your base attack bonus for 1 round. The creature must have a CR of at least half your character level (rounded down, minimum 1/2). These temporary hit points stack with those granted by the base sphere. Whenever this ability would be triggered, you may expend your martial focus as an immediate action to remove the fatigued condition, or lessen the exhausted condition to fatigued."
+    },
+    {
+      "level": 4,
+      "heading": "Savage",
+      "anchor": "toc15",
+      "text": "Whenever you reduce a creature to 0 hit points or less with a melee or thrown weapon attack, you may spend an immediate action to regain martial focus. The creature must have a CR of at least half your character level (rounded down, minimum 1/2)."
+    },
+    {
+      "level": 4,
+      "heading": "Shatter Earth",
+      "anchor": "toc16",
+      "text": "You may attack the ground around you with a savage blow. You may make a brutal strike against the corner of a square within your reach as a full-round action. You may reduce this to a standard action by expending martial focus. This attack automatically hits and deals damage normally. If you manage to deal more damage than the floor\u2019s hardness, you cause a 5 ft. radius, 10 ft. cone, or 15 ft. line (your choice) to become difficult terrain. Radius\u2019 increase by 5 ft. per 10 base attack bonus, cones by 5 ft. per 5 base attack bonus, and lines by 10 ft. per 5 base attack bonus. A square can be cleared as a standard action (provoking an attack of opportunity) or repaired with a spell or effect such as the mending spell or the repair ability of the Creation sphere to no longer be difficult terrain.\nCreatures within the affected area become battered for 1 round. If a creature is already battered, it must make a Reflex save or be knocked prone.\nIf your attack is enough to destroy the floor, you may activate the Shrapnel talent, if you possess it. If the floor has a set thickness (for example, attacking the floor on a building\u2019s second story), destroying the floor eliminates the targeted area, opening a hole. If attacking a floor with no set thickness (for example, the ground outside), treat the floor as being 1 ft. thick when determining its hp, and if destroyed, the difficult terrain cannot be cleared away unless the ground is repaired. You may choose to leave the floor at 1 hit point instead of destroying it."
+    },
+    {
+      "level": 4,
+      "heading": "Sword Eater (stance) [Youxia HB]",
+      "anchor": "toc17",
+      "text": "While in this stance, when a creature targets you with a manufactured melee weapon attack, you may attempt to sunder the weapon used to make the attack as an attack of opportunity after it resolves. If the creature attacking you is battered, you may resolve your sunder attempt prior to their attack being resolved."
+    },
+    {
+      "level": 1,
+      "heading": "Adrenaline Talents",
+      "anchor": "toc18",
+      "text": "While berserking, instead of gaining temporary hit points, you may choose to benefit from one (adrenaline) talent. You must choose which (adrenaline) talent to use at the start of each turn, if any, and may only use one (adrenaline) talent each round. You still take a -2 penalty to AC as normal and any benefits you gain end at the start of your next turn. Some (adrenaline) talents require you to expend martial focus as part of the same action as berserking and must be expended each round you choose to use it. (Note: You may retain the temporary hit points if you take the True Rage (combat) feat. See Practitioner Feats for this option.)"
+    },
+    {
+      "level": 4,
+      "heading": "Absolute Determination (adrenaline) [Alienist HB]",
+      "anchor": "toc19",
+      "text": "No doubt stops your onslaught. You gain a +1 bonus on saving throws against mind-affecting effects and the DC to Intimidate you, increasing by +1 for every 6 base attack bonus you possess. Whenever you would attempt a save against a mind-affecting effect, you may roll twice, taking the better result.\nIn addition, you may expend martial focus as an immediate action to attempt a save against a mind-affecting effect (using the effect\u2019s original DC) or reduce your current level of fear by 1 step (panicked to frightened, frightened to shaken, shaken to not affected by a fear effect). You may only attempt a new save against a specific mind-affecting effect (for example, a specific instance of charm) once per day."
+    },
+    {
+      "level": 4,
+      "heading": "Dreadnought (adrenaline) [Conq. HB]",
+      "anchor": "toc20",
+      "text": "You are inevitable. You gain a +1 bonus on saving throws and to your CMD against effects that would slow or impair your movement (such as entangled, grappled, paralyzed, staggered, or other similar effects), increasing by +1 for every 4 base attack bonus you possess. Whenever you would attempt a save against an effect that would slow or immobilize you, you may roll twice, taking the better result.\nIn addition, once per round, you may expend martial focus as an immediate action to attempt a save against an effect which has slowed or impaired your movement, or make a combat maneuver or other appropriate check to escape a grapple, Lancer impale, or other similar effect."
+    },
+    {
+      "level": 4,
+      "heading": "Executioner (adrenaline) [Conq. HB]",
+      "anchor": "toc21",
+      "text": "You must expend martial focus each round you start berserking to use this talent. Once per round, you may choose to roll an attack roll twice, taking the better result. You must decide to use this before the roll is made. You may use this talent an additional time each round for every 10 base attack bonus you possess."
+    },
+    {
+      "level": 4,
+      "heading": "Juggernaut (adrenaline) [Conq. HB]",
+      "anchor": "toc22",
+      "text": "You barrel across the cluttered battlefield more easily than others. You ignore difficult terrain when you charge, run, or withdraw. You can also charge through squares that contain allies. When using the charge action, you do not take a penalty to your AC and increase the bonus on attack rolls and bull rush combat maneuvers at the end of a charge by 1, increasing by +1 for every 10 base attack bonus you possess."
+    },
+    {
+      "level": 4,
+      "heading": "Marauder (adrenaline) [Conq. HB]",
+      "anchor": "toc23",
+      "text": "Your body pushes itself further, allowing you to move faster than you normally could. You gain a +5 feet circumstance bonus on all forms of movement (such as land, climb, burrow, fly, or swim), increasing by +5 feet for every 4 points of base attack bonus you have. In addition, you gain a competence bonus on all Acrobatics, Climb, Fly, and Swim checks equal to half your base attack bonus (minimum 1)."
+    },
+    {
+      "level": 4,
+      "heading": "Promethean (adrenaline) [RW HB]",
+      "anchor": "toc24",
+      "text": "You are no stranger to the elements you walk through. Each time you use this adrenaline, choose acid, cold, electricity, fire, or sonic. You gain energy resistance equal to 5 + 1/2 your base attack bonus against the chosen energy type. This energy resistance stacks with other forms of energy resistance. If you expend your martial focus when you start berserking using this talent, increase the energy resistance granted to 10 + your base attack bonus.\nWhenever the energy resistance granted by this (adrenaline) would prevent or reduce energy damage you take, you may spend an immediate action to regain martial focus."
+    },
+    {
+      "level": 4,
+      "heading": "Specter (adrenaline) [Conq. HB]",
+      "anchor": "toc25",
+      "text": "You close in on foes with an unnerving alacrity. You must expend martial focus each round you start berserking to use this talent. At the start of your turn, you may designate one foe within 20 feet that is not adjacent to you, increasing by +5 feet for every 4 points of base attack bonus you possess. Your movement does not provoke attacks of opportunity from that foe as long as you end your movement adjacent to that foe. In addition, you gain a +2 dodge bonus to your AC against all attacks of opportunity that you provoke, not just against those that are caused when you move out of or within a threatened area, increasing by +1 for every 4 points of base attack bonus you possess."
+    },
+    {
+      "level": 1,
+      "heading": "Exertion Talents",
+      "anchor": "toc26",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Agonizing Bruise (exertion) [DRS]",
+      "anchor": "toc27",
+      "text": "Source: Diamond Spheres: Erudition & Esoterica\nFor as long as the creature damaged by your brutal strike remains battered, the creature gains a weakness against the same damage type of the weapon that dealt the brutal strike (or one of them if it dealt multiple types of damage, chosen when you use this ability) equal to 2 + 1 per 3 points of base attack bonus you possess. This is a pain effect.\n+ Rule Reminder\u2014Damage Weakness - Hide Rule Reminder\u2014Damage Weakness Some abilities may grant the user or a target a weakness to a certain damage type. Unlike vulnerability, a weakness to a damage type always has a value (fire weakness 3 for example).\nWhenever a creature suffers damage with the same type as a weakness that they are suffering from, the damage is increased by the value of the weakness. For example, if you had acid weakness 5 and were about to suffer 16 acid damage, you would instead suffer 21 acid damage.\nIf you are suffering from more than one weakness to the same damage type, only the highest is applied. A damage weakness is applied before resistances and vulnerabilities\u2014any ability that would identify or affect a damage vulnerability does the same for a damage weakness."
+    },
+    {
+      "level": 4,
+      "heading": "Bell-Ringer (exertion)",
+      "anchor": "toc28",
+      "text": "Creature damaged by your brutal strike take a -1 penalty on concentration checks and Will saves for as long as the creature is battered. This penalty increases by -1 at base attack bonus +4 and every 4 points of base attack bonus thereafter. This penalty does not stack with other uses of the same talent."
+    },
+    {
+      "level": 4,
+      "heading": "Bone-Breaker (exertion)",
+      "anchor": "toc29",
+      "text": "The creature damaged by your brutal strike takes a -1 penalty on all attack and damage rolls for as long as it is battered. This penalty increases by -1 for every 4 points of base attack bonus you possess. Multiple uses of this talent do not stack."
+    },
+    {
+      "level": 4,
+      "heading": "Breakdown Beatdown (exertion) [LG]",
+      "anchor": "toc30",
+      "text": "Source: Arcforge Players Compendium\nItems damaged by your brutal strike become disrupted for as long as a creature would become battered by the brutal strike. While disrupted, the item\u2019s electronic or magical components cannot be activated, although constant effects remain in place (for example, a character would still benefit from the bonuses to AC granted by their armor, but could not activate enhancements such as determination or armor upgrades such as a forcepack. A disrupted vehicle or mech cannot be made to move or act, its controls locking up for the duration of the effect. The disrupted condition can be removed from a piece of equipment with a standard action.\nAt base attack bonus +10, the time required to remove the disrupted condition increases from a standard action to a full-round action."
+    },
+    {
+      "level": 4,
+      "heading": "Cast-Crusher (exertion) [LG]",
+      "anchor": "toc31",
+      "text": "Source: Arcforge Players Compendium\nCreatures damaged by your brutal strike take a -1 penalty on caster level for as long as the creature is battered. This penalty increases by -1 at base attack bonus +4 and every 4 points of base attack bonus thereafter. This penalty does not stack with other uses of the same talent."
+    },
+    {
+      "level": 4,
+      "heading": "Flesh Carver (exertion) [Conq. HB]",
+      "anchor": "toc32",
+      "text": "Your weapons rend through flesh, sinew, and bone alike. The creature damaged by your brutal strike has their damage reduction reduced by an amount equal to 1/2 your base attack bonus (minimum 1). This reduction lasts for as long as the target has the battered condition. This reduction does not stack with itself.\nThe benefits of this talent are halved (minimum 1) when applied to damage reduction that cannot be overcome or is overcome only by epic weapons (such as DR 3/\u2013 or DR 20/epic).\nSpecial: If you possess mythic ranks, the benefits of this talent are no longer halved against DR/epic."
+    },
+    {
+      "level": 4,
+      "heading": "Heart Crusher (exertion) [CrimDan]",
+      "anchor": "toc33",
+      "text": "The creature damaged by your brutal strike suffers a -1 penalty on all Fortitude saves for as long as the creature is battered. This penalty increases by -1 for every 4 points of base attack bonus you possess. This penalty does not stack with other uses of the same talent. If the target was battered when struck, they additionally reduce all temporary hit points and healing they receive by 50% for as long as they are battered (Will negates). This does not affect healing gained from fast healing or regeneration."
+    },
+    {
+      "level": 4,
+      "heading": "Heavy Swing (exertion)",
+      "anchor": "toc34",
+      "text": "Creature damaged by your brutal strike must succeed on a Fortitude save or be staggered for 1 round plus 1 round per 4 base attack bonus. If the target is battered, it is instead staggered for 1 round on a successful save, or dazed for 1 round then staggered as normal on a failed save. If the target failed the Fortitude save, for the duration of the staggered condition, it also counts the damage from the attack as ongoing damage for the purpose of concentration checks. Creatures immune to the dazed condition are instead staggered for the round they would have been dazed."
+    },
+    {
+      "level": 4,
+      "heading": "Leg-Smasher (exertion)",
+      "anchor": "toc35",
+      "text": "Creature damaged by your brutal strike take a -1 penalty on AC and Reflex saves for as long as the creature is battered. This penalty increases by -1 at base attack bonus +4 and every 4 points of base attack bonus thereafter. This penalty does not stack with other uses of the same talent."
+    },
+    {
+      "level": 4,
+      "heading": "Mage Masher (exertion)",
+      "anchor": "toc36",
+      "text": "Whenever you destroy a magic wand, staff, rod, scroll, or similar magic item held by an enemy with a sunder attempt as part of a brutal strike, if the item is destroyed, any excess damage is applied to the item\u2019s wielder. No damage is transferred if you decide to leave the item with 1 hit point. When targeting a battered creature, you may roll the sunder check twice and take the best result. In addition, you gain a competence bonus equal to 1/2 your base attack bonus on any Reflex saving throws made as a result of the item\u2019s destruction (such as when destroying a staff of power)."
+    },
+    {
+      "level": 4,
+      "heading": "Shieldbreaker (exertion)",
+      "anchor": "toc37",
+      "text": "When you make a sunder attempt against a piece of armor, a shield, or a manufactured weapon with a brutal strike, you may ignore a number of points of the item\u2019s hardness equal to your base attack bonus. If the item is destroyed, any excess damage is applied to the item\u2019s wielder. No damage is transferred if you decide to leave the item with 1 hit point. When targeting a battered creature, you may roll the sunder check twice and take the best result."
+    },
+    {
+      "level": 4,
+      "heading": "Shrapnel (exertion)",
+      "anchor": "toc38",
+      "text": "When you attack an unattended object with a brutal strike, if you destroy the object, you may send fragments of it flying in a cone dealing damage to any creature in an area based on its size. Small or smaller objects create a 10 ft. cone and the size of the cone increases by 5 ft. for every size category above Small. This shrapnel does 1d6 points of bludgeoning, piercing, and slashing damage dealt by the same material or materials that the object was primarily composed of. This damage increases by 1d6 at +3 base attack bonus and every 2 points of base attack bonus thereafter. The damage also increases by 1d6 for every 5 points of hardness the object possessed, to a maximum increase of 10d6 additional damage. Creatures that take damage are also battered. A Reflex save halves this damage and prevents the battered condition. A battered creature must roll twice and take the worse result on their Reflex save."
+    },
+    {
+      "level": 1,
+      "heading": "Legendary Talents",
+      "anchor": "toc39",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Alter Terrain",
+      "anchor": "toc40",
+      "text": "Prerequisites: Berserker sphere, Shatter Earth, base attack bonus +7.\nWhen using the Shatter Earth talent, if you deal enough damage to reduce the ground to 0 hp, you may create a 5 ft. deep hole in the ground in the affected squares. If you so choose, you may also raise the terrain by 5 ft. in all squares adjacent to the affected squares. Targets standing in spaces that become a 5 ft hole must pass a Reflex save or fall prone."
+    },
+    {
+      "level": 4,
+      "heading": "Atavism (adrenaline) [Apoc]",
+      "anchor": "toc41",
+      "text": "Source: Spheres Apocrypha: The Inheritor and Improved Atavism Heritages\nErrata: Originally printed in The Conqueror\u2019s Handbook, the Atavism (adrenaline) allows characters to channel their latent primordial or primal heritage. This release updates the Atavism (adrenaline) by introducing heritages, a creature type with associated benefits when using this talent, while adjusting some of the interactions the talent originally offered. The new text for the Atavism talent reads as follows:\nPrerequisites: Berserker sphere (berserking).\nYour berserking calls to your ancestral heritage or primal nature. Choose one heritage creature type (see Table: Atavism Heritages). While using this (adrenaline), you are treated as having your heritage\u2019s creature type in addition to your original creature type whenever it would be advantageous (such as a non-humanoid using the humanoid heritage to be affected by an enlarge person spell).\nIn addition, you gain a morale bonus equal to your practitioner modifier on checks made with one of your heritage\u2019s associated skills, choosing one associated skill each time you use this talent.\nSee Table: Atavism Heritages for more details. When you stop using this talent, all effects which could not target or affect your normal creature type or subtype end immediately (including instantaneous effects).\nSpecial: You may take this talent multiple times, each time choosing a new heritage. You may only use one heritage at a time.\nTable: Atavism Heritages | Heritage Creature Type | Heritage Associated Skills | Suggested Heritage Thematics\n| Aberration | Acrobatics, Climb, Fly, or Swim | Aboleth, naga, otyugh\n| Animal | Handle Animal or Survival | Bear, lion, snake\n| Construct | Disable Device or Knowledge (engineering) | Android, golem, robot\n| Dragon | Intimidate or Fly | Dragon, linnorm, wyvern\n| Fey | Bluff or Knowledge (nature) | Dryad, norn, sprite\n| Humanoid | Diplomacy or Ride | Human, giant\n| Magical beast | Survival or Stealth | Hydra, phoenix\n| Monstrous humanoid | Perception or Survival | Harpy, lamia, minotaur\n| Ooze | Climb or Escape Artist | Artist Slime, mold, shoggoth\n| Outsider | Sense Motive or Spellcraft | Angel, elemental, rakshasa\n| Plant | Perception or Stealth | Ghoran, treant\n| Undead | Intimidate or Sense Motive | Ghoul, vampire, wight\n| Vermin | Acrobatics or Stealth | Ant, crab, rat"
+    },
+    {
+      "level": 4,
+      "heading": "Fight to the End [SM\u2014]",
+      "anchor": "toc42",
+      "text": "Source: Baron\u2019s Imposing Mausoleum\nPrerequisites: Berserker Sphere (Deathless)\nWhen you are disabled, you are not staggered, though performing standard actions still deals 1 point of damage to you. Associated Feat: Deathless Initiate"
+    },
+    {
+      "level": 4,
+      "heading": "Flaming R\u00edastrad [High. HB]",
+      "anchor": "toc43",
+      "text": "Prerequisite: Berserker sphere.\nYou are not subject to fatigue or exhaustion that is the result of taking damage from environmental heat. In addition, while berserking or using the rage class feature, your body puts off an aura of heat affecting all creatures and objects within reach (including yourself). Each round that you continue berserking or raging, the heat severity level in the affected area increases by 1 step (maximum heat severity 4 + 1 step per 7 points of base attack bonus). Any round that you are not berserking or raging, the heat severity level in the affected area decreases by 1 step, until it has reached normal heat levels. For the purpose of control weather, you are considered to have a magic skill bonus equal to your base attack bonus."
+    },
+    {
+      "level": 4,
+      "heading": "Genie\u2019s Wrath (exertion) [RW HB]",
+      "anchor": "toc44",
+      "text": "Prerequisites: Berserker sphere, Elemental Might, base attack bonus +5.\nYou gain the following (exertion) options which may only be used when you use the Elemental Might feat to change your brutal strike\u2019s additional damage to energy damage. Each (exertion) may only be chosen with the matching chosen energy type:\nDjinn\u2019s Crackling Blow (electricity): Your brutal strike violently channels electricity through the target\u2019s body, jolting their body. A creature damaged by your brutal strike must succeed at a Fortitude save or drop all held items (as though stunned). If the target of your brutal strike was battered before being damaged by your brutal strike, the target also provokes an attack of opportunity from you and your allies.\nEfreeti\u2019s Arcing Flame (fire): Your brutal strike is a destructive whirl of brilliant flames and smoldering ash. After successfully damaging a creature with your brutal strike, you may choose any number of creatures within your threatened area other than the initial target to also suffer your brutal strike\u2019s additional damage (Reflex half). If the target of your brutal strike was battered before being damaged by your brutal strike, the target must succeed at a Reflex save or be blinded for 1 round.\nMarid\u2019s Whirlpool Strike (cold): Your brutal strike envelops the target in swirling, frigid water. A creature damaged by your brutal strike treats other creatures as though they had partial concealment (20% miss chance) for as long as the creature is battered. If the target of your brutal strike was battered before being damaged by your brutal strike, you may move the target into any unoccupied square inside your threatened area (Reflex negates). This movement does not provoke an attack of opportunity and is treated as a reposition combat maneuver performed as a free action. This movement may place the target into a dangerous space (including into the air).\nShaitan\u2019s Eroding Assault (acid): Your brutal strike is a resolute blow which shakes the target\u2019s foundation. A creature damaged by your brutal strike treats any enemy\u2019s threatened area as difficult terrain for as long as the creature is battered. Damage dealt by a brutal strike augmented with this (exertion) ignores an amount of hardness equal to your base attack bonus. If the target of your brutal strike was battered before being damaged by your brutal strike, your brutal strike also ignores an amount of damage reduction equal to your base attack bonus.\nThis talent and the (exertion) options are supernatural abilities."
+    },
+    {
+      "level": 4,
+      "heading": "Plane Carver [SM\u2014]",
+      "anchor": "toc45",
+      "text": "Source: Baron\u2019s Imposing Mausoleum\nPrerequisites: Berserker sphere (Rift Strike (legendary), Shatter Earth), base attack bonus +11.\nWhen you use the Shatter Earth talent, if your attack is enough to destroy the floor, you may cause the entire area of your Shatter Earth effect to open up as the portal to any location you could open a portal to using Rift Strike. If you possess the Universal Rift Strike talent, you may spend martial focus to open the portal to anywhere you could open a portal to using Universal Rift Strike.\nAfter using this talent, you become exhausted as normal after using the Rift Strike talent."
+    },
+    {
+      "level": 4,
+      "heading": "Relentless Carnage [LG]",
+      "anchor": "toc46",
+      "text": "Source: Arcforge Players Compendium\nPrerequisites: Berserker sphere (Advancing Carnage x2), base attack bonus +10.\nWhen you use Advancing Carnage, additional targets do not need to be adjacent to each other and the maximum number of additional attacks made with this ability increases to your base attack bonus (minimum 1)."
+    },
+    {
+      "level": 4,
+      "heading": "Rift Strike",
+      "anchor": "toc47",
+      "text": "Prerequisites: Berserker sphere, base attack bonus +11.\nYou unleash a powerful roar and swing a weapon with such extreme ferocity that you tear the very fabric of space and time, opening up a rift to another location. As a full-round action that provokes attacks of opportunity, you open up a rift to another location which may be as distant as 100 miles per point of base attack bonus you possess. Interplanar travel is not possible. You can bring along objects as long as their weight doesn\u2019t exceed your maximum load. You may also bring one additional willing Medium or smaller creature (carrying gear or objects up to its maximum load) or its equivalent per three points of base attack bonus you possess. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you. You must have some clear idea of the location and layout of the destination; if you have not been to the desired destination before you do not arrive at the exact location, instead creating a rift to a location within 1d20 miles of the desired point.\nYou are exhausted for 1 hour after using this ability, and are fatigued as normal thereafter. You incur these penalties even if you are immune to the exhausted and fatigued conditions, and the exhausted condition cannot be removed before its duration is up. You may attempt to use this ability while exhausted or fatigued, but doing so incurs a 50% chance that the ability fails to work; regardless of whether you succeed at this attempt, you suffer 1d6 points of Constitution damage and the duration of the exhausted condition caused by using this ability is doubled. This is a supernatural effect."
+    },
+    {
+      "level": 4,
+      "heading": "Rift Strike, Universal [RW HB]",
+      "anchor": "toc48",
+      "text": "Prerequisites: Berserker sphere (Rift Strike (legendary)), base attack bonus +17.\nYou may expend your martial focus whenever you use your Berserker sphere Rift Strike talent. If you do, your Rift Strike\u2019s maximum range becomes unlimited, allowing you to even teleport between planets, and may be used for interplanar travel, allowing you to teleport to alternate dimensions or planes. You must know the plane or planet you are trying to reach, as well as where within or on that planet you would like to appear.\nIf you do not know a specific location to appear on that plane or planet, you may still use Rift Strike to travel there, but you may appear anywhere on that plane.\nYou may not use this talent to travel between a plane or planet if you are fatigued or exhausted.\nNote: A private or secret plane or demiplane may not be traveled to using this talent unless you possess permission from the plane\u2019s creator or owner, an appropriate tuning fork or key, or other object which anchors or strongly originates from that plane (subject to GM discretion)."
+    },
+    {
+      "level": 4,
+      "heading": "Ruinous Tread",
+      "anchor": "toc49",
+      "text": "Prerequisites: Berserker sphere, Shatter Earth.\nYou may choose to break the ground as you move. Whenever you leave a square, you may choose to make that square difficult terrain. Your base attack bonus must be greater than the hardness of the surface to use this ability. This difficult terrain remains until it is cleared as a standard action (clearing 1 square within the creature\u2019s reach, provoking an attack of opportunity) or repaired with a spell or effect such as the mending spell or the repair ability of the Creation sphere."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Sunder (exertion)",
+      "anchor": "toc50",
+      "text": "Prerequisites: Berserker sphere, base attack bonus +6.\nYou may attempt to sunder an ongoing spell effect by succeeding at a special sunder combat maneuver attempt. For any effect that is not already on a creature, you must make a sunder combat maneuver attempt against a CMD of 15 plus the effect\u2019s caster level. To sunder an effect on a creature, you must succeed at a normal sunder combat maneuver against the creature\u2019s CMD +5, ignoring any miss chance caused by a spell or spell-like ability. If successful, you suppress the effect for 1 round, or 2 rounds if you exceeded the CMD by 5 to 9. If you exceed the CMD by 10 or more, the effect is dispelled."
+    },
+    {
+      "level": 4,
+      "heading": "Spiteful Finish [SM\u2014]",
+      "anchor": "toc51",
+      "text": "Source: Baron\u2019s Imposing Mausoleum\nPrerequisites: Berserker Sphere (Bloody Counter or Sword Eater)\nWhenever you make an attack triggered by Bloody Counter or Sword Eater, you may resolve the attack even if the triggering effect would kill you or otherwise prevent you from attacking. If you would be killed or rendered unconscious by the triggering effect, any successful attack you make with Bloody Counter or Sword Eater automatically threatens a critical hit."
+    },
+    {
+      "level": 4,
+      "heading": "Warp Spasm [High. HB]",
+      "anchor": "toc52",
+      "text": "Prerequisites: Berserker sphere, base attack bonus +5.\nWhile berserking or using the rage class feature, your anatomy becomes aberrant and horrid, making it difficult, if not impossible, to be affected by critical hits or precision damage. There is a 25% chance that you negate any critical hits or precision damage used against you. At +10 base attack bonus and every 5 base attack bonus thereafter, the percentage increases by 25% (maximum 100%)."
+    },
+    {
+      "level": 1,
+      "heading": "Berserker Sphere Class Options",
+      "anchor": "toc53",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "Archetypes",
+      "anchor": "toc54",
+      "text": ""
+    },
+    {
+      "level": 3,
+      "heading": "Berserker (Barbarian)",
+      "anchor": "toc55",
+      "text": "Berserkers are fierce warriors, possessed of implacable strength."
+    },
+    {
+      "level": 3,
+      "heading": "Darkness Defender (Sentinel)",
+      "anchor": "toc56",
+      "text": "Darkness Defenders trade their ability to avoid blows for strength enduring them, eventually learning to get stronger when hit."
+    },
+    {
+      "level": 3,
+      "heading": "Skaldic Poet (Skald)",
+      "anchor": "toc57",
+      "text": "These skalds, known commonly as skaldic poets, make up for their lack of magic with their unrelenting bravery and strength, in addition to their ability to instill these qualities to their allies.\n| Spheres of Might by Drop Dead Studios\n| Using Spheres of Might\n| Classes\n| Armiger | Blacksmith | Commander | Conscript | Scholar | Sentinel | Striker | Technician\n| Prestige Classes\n| Aeronaut Captain\n| Spheres\n| Alchemy | Athletics | Barrage | Barroom | Beastmastery | Berserker | Boxing | Brute\n| Dual Wielding | Duelist | Equipment | Fencing | Gladiator | Guardian | Lancer | Leadership\n| Open Hand | Scoundrel | Scout | Shield | Sniper | Tech | Trap | Warleader\n| Wrestling | | Pilot (3PP) |\n| Rules\n| About Legendary Talents | Martial Traditions | Martial Packages | Practitioner Feats\n| Practitioner Traits | Practitioner FCB's | Practitioner Bestiary | Associated Feats & Skills\n| Ultimate Engineering (Tinker) | Starfinder Conversion [3pp]\n| Get Spheres of Might on DriveThruRPG\n| Mythic Spheres of Might\n| Ultimate Engineering\n| The Conqueror's Handbook | The General's Handbook\n| The Highlander's Handbook | The Inventor's Handbook\n| The Inventor's Handbook 2 | The Jester's Handbook\n| Woodfaring Adventures | The Youxia's Handbook\n| Spheres Apocrypha\n| Alch. Formulae | Alch. Poisons | Alch. Poisons 2 | Armor Talents\n| Astrologian Archetype | Debilitating Talents | Pugilists | Racial\n| Ranged | Swashbucklers | Tandem | Tricks & Traps"
+    }
+  ]
+}

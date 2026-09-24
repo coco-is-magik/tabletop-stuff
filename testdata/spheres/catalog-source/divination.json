@@ -1,0 +1,1435 @@
+{
+  "url": "https://spheresofpower.wikidot.com/divination",
+  "retrieved": "2026-09-24",
+  "sha256": "0fcfeedee595a4c3648a1f4041cdbd6a85ae4671aa9f5e40edb15aa1046cf387",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Divine Alternate Divinations Alteration Blood Conjuration Creation Dark Death Destruction Enhancement Fallen Fey Fate Illusion Life Light Mana Mind Nature Protection Technomancy [LG] Telekinesis Time War Warp Weather Sense Read Magic Divination Talent Types Divination Talents Alarm [utility] [Gravecaller's HB] Expanded Divinations Fast Divinations Grant Divination Greater Divine [range] Instill Divination [instill] Lingering Divination Pressuring Divinations [utility] [SM\u2014] Revealing Strike [strike] [3PP] Divine Talents Augury (divine) [utility] Detect Secrets (divine) [utility] Detect Spellcaster (divine) Detect Thoughts (divine) [utility] Divine Biohazard (divine) [Alienist HB] Divine Capability (divine) [utility] [SM\u2014] Divine Future (divine) Divine Information (divine) [utility] Divine Relationships (divine) [utility] [3PP] Divine Treasure (divine) [utility] [Alienist HB] Dowsing (divine) [utility] Object Reading (divine) [utility] Sensory Overload (divine) Viewing (divine) [utility] Witness The City (divine) [utility] Sense Talents Battlefield Sense (sense) Blindfolded Oracle (sense) Detect Scrying (sense) Discern Individual (sense) Foreshadow (sense) Ghost Sight (sense) Logos (sense) [Origin] Nature Sense (sense) Prescience (sense) Prying Sight (sense) [BaP] Scent (sense) See Hazard (sense) Sense Magic (sense) Sense Presence (sense) [Alienist HB] Shared Perception (sense) Sniper\u2019s Eye (sense) Tremorsense (sense) Unhooded Sight (sense) Advanced Divination Talents Alternate Divinations, Advanced (sense) [Origin] Arc of Change [utility] [SM\u2014] Assurance of the Future [SM\u2014] Cartographer\u2019s Divinations (divine) [utility] [RW HB] Divine Chart Lay of the Land Pathfinder Detect Patronage (utility) [LG] Discern Location (divine) [utility] Divine Identity (divine) [utility] Divine Knowledge (divine) [utility] Expansive Vision Eye in the Sky [3PP] Eyes Of The Cabal [BaP] Greater Scrying (divine) [utility] Hear Name (sense) [utility] [DbH] Mechanical Counterintelligence [LG] Otherworldly Viewing [LG] Penetrating Divination Power Of The Name [utility] [DbH] Read Omens (divine) [utility] Remote Casting (divine) [Alienist HB] Scrying [utility] Sense Observation (sense) [Alienist HB] Sensitive Divinations [EO3] Soulbroker\u2019s Sight [utility] [SM\u2014] Speak And I Listen [DbH] Trapfinding (sense) True Perception (sense) [Origin] Unobscured Vision (sense) Divination Sphere Feats Analyze Caster (Dual Sphere) [Archmagi's HB] Arcing Strike (Combat) Area Bypass [3PP] Aura Engineering (Dual Sphere) Destiny Reader (Dual Sphere) [SM\u2014] Divining Beacon (Dual Sphere) Elemental Eye (Dual Sphere) [SM\u2014] Ensouled Vision [Gravecaller's HB] Explanatory Illusion (Dual Sphere) [3PP] Eyes Of Battle (Dual Sphere) [Alienist HB] Practiced Seer Precogniscent Protection (Combat) Precogniscent Resistance (Combat) Precogniscent Smite (Combat) Projected Presence (Dual Sphere) [SM\u2014] Scholar Of Past And Future [BaP] Survey of your Realm (Dual Sphere) [DbH] Tabulated Mind Totemic Radar (Dual Sphere) [Alienist HB] Watchful Manipulator (Dual Sphere) [LG] Wise to the Fates (Dual Sphere) [SM\u2014] Archetypes Specializing in Divination Astrologian [CS] Blind Swordsman Eldritch Cultist Psychic Medium Psyforensic Treasure Seeker Visionary Visionary General [CS] Wild Magic Wild Magic Generator Wild Magic Table\nUltimate\nOriginal\nUltimate Spheres of Power $29.99 You can predict the future and gain information not available to the usual 5 senses."
+    },
+    {
+      "level": 2,
+      "heading": "Divine",
+      "anchor": "toc0",
+      "text": "You may divine to gain information. To divine, you must spend 1 minute meditating, although you may spend a spell point to decrease this time to a single standard action. Divining always has a duration of concentration, but you must spend a full-round action concentrating (you can take no other action except free actions); you are flat-footed while concentrating on divining. Divining reveals information from sources within medium range of you as an emanation; it reveals information each round the effect it is maintained. Divining can penetrate most barriers, but 3 feet of wood or dirt, 1 foot of stone, 1 inch of common metal, or a thin sheet of lead blocks it.\nWhen you gain the Divination sphere, you gain the ability to divine for magical auras, learning their strength and location. You do not know the exact caster level of an item or spell, but you may sense the aura\u2019s general strength according to the chart below. To determine the spell school or sphere of the effect, you must succeed at a Knowledge (arcana) check with a DC equal to 15 + 1/2 the caster level.\nTable: Aura Strength | Caster Level | Aura Strength\n| 1-5 | Faint\n| 6-11 | Moderate\n| 12-20 | Strong\n| 21+ | Overwhelming\nA magical aura lingers after its original source dissipates (in the case of spells and sphere effects) or is destroyed (in the case of a magic item). In such a case, divining reveals an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:\nTable: Lingering Aura | Original Strength | Duration of Lingering Aura\n| Faint | 1d6 rounds\n| Moderate | 1d6 minutes\n| Strong | 1d6 x 10 minutes\n| Overwhelming | 1d6 days\nWhen using Spellcraft to identify the properties of a magic item or ongoing effect, you may use divine in place of the detect magic spell. Outsiders and elementals are not magical in and of themselves, but if they are summoned, the conjuration effect registers.\nOverwhelming Auras: Whenever an individual divines or senses an aura whose strength is overwhelming, from a source whose Hit Dice or caster level is equal to or greater than the caster's character level + 10, that individual becomes stunned for 1 round."
+    },
+    {
+      "level": 2,
+      "heading": "Alternate Divinations",
+      "anchor": "toc1",
+      "text": "If you possess certain other spheres, you may divine for information other than magical auras. These alternate divinations are detailed below."
+    },
+    {
+      "level": 3,
+      "heading": "Alteration",
+      "anchor": "toc2",
+      "text": "Divine Shapechanger: You may divine for creatures with the shapechanger subtype. The strength of a shapechanger aura is determined according to Table: Shapechanger. If a creature is not a shapechanger but is under the effect of a shapeshift Alteration sphere (or similar) ability, it shows up with a dim aura.\nTable: Shapechanger | HD | Strength | Lingering Aura Duration\n| Under a polymorph effect | Dim | 1 round\n| 1 or lower | Faint | 1d6 rounds\n| 2-4 | Moderate | 1d6 minutes\n| 5-10 | Strong | 1d6 x 10 minutes\n| 11+ | Overwhelming | 1d6 days"
+    },
+    {
+      "level": 3,
+      "heading": "Blood",
+      "anchor": "toc3",
+      "text": "Divine Bleeding: You may divine the location of any creature that has taken bleed damage in the last 10 minutes per caster level or that is under half its maximum hit points. Creatures immune to bleed damage cannot be detected with this divination."
+    },
+    {
+      "level": 3,
+      "heading": "Conjuration",
+      "anchor": "toc4",
+      "text": "Divine Unnaturals: You may divine the presence of outsiders and aberrations. In all other ways, this functions as divining for shapeshifters."
+    },
+    {
+      "level": 3,
+      "heading": "Creation",
+      "anchor": "toc5",
+      "text": "Divine Components: You may divine for a material of which you can create using the Creation sphere."
+    },
+    {
+      "level": 3,
+      "heading": "Dark",
+      "anchor": "toc6",
+      "text": "Divine Dark: You may divine the light levels of the surrounding area within range. When using this alternate divination, you may spend an additional spell point to also divine the location and size of shadows cast by creatures or objects. You do not gain additional information, such as whether the shadow was cast by a creature or an object, or the size of said creatures or objects.\nDivine Shadow: You may divine the presence of creatures or objects native to the Plane of Shadow. In all other ways, this functions as divining for shapeshifters. Shadowstuff, such as that created from the fey adept class or those with the sphere-specific drawback Limited Creation (shadowstuff) count as originating from the Plane of Shadow for the purpose of this divination."
+    },
+    {
+      "level": 3,
+      "heading": "Death",
+      "anchor": "toc7",
+      "text": "Divine Undead: You may divine for undead creatures. In all other ways, this functions as divining for shapeshifters."
+    },
+    {
+      "level": 3,
+      "heading": "Destruction",
+      "anchor": "toc8",
+      "text": "Divine Hostility: You may divine whenever a creature or an object within range takes hit point damage. In addition, you gain knowledge as to the amount and type of damage dealt and from what direction the damage was dealt from. If the source of the damage is inside the area of your divine effect, you also learn what square the source occupied."
+    },
+    {
+      "level": 3,
+      "heading": "Enhancement",
+      "anchor": "toc9",
+      "text": "Divine Enhancement: You may divine what short-term effects creatures you have pinpointed are undergoing. You may divine all creatures you can see within range and determine which (if any) are benefiting from temporary bonuses, and the sources of the bonuses be they magical, alchemical, supernatural, etc."
+    },
+    {
+      "level": 3,
+      "heading": "Fallen Fey",
+      "anchor": "toc10",
+      "text": "Detect Faetouched: You may divine the location of any creature that possesses the elf, fey, gnome, sidheir, or similar types or subtypes. In all other ways, this functions as divining for shapeshifters."
+    },
+    {
+      "level": 3,
+      "heading": "Fate",
+      "anchor": "toc11",
+      "text": "Detect Loyalties: You may divine the top three general things that matter most to the creatures you can see within range. Examples of base loyalties may include but are not limited to: Country, Faith, Family, Power, and Self. Subcategories for base loyalties may also exist where appropriate such as Self (survival) or Self (perfection), but they are generally not revealed with Detect Loyalties. While you do not learn specific details such as proper names of the associated loyalties, you do acquire the order in which the loyalties stand.\nFor example, a paladin might have loyalties of Country, Power, and Self, but would not reveal the particular country they are loyal to or the particular power they serve. Mindless creatures might have only 1 loyalty such as Self (survival), whereas creatures with low animal-like intelligence might only have 2 loyalties such as Family (pack) and Self (survival). Only the top three loyalties are revealed, even if they have more.\nWhen you divine for loyalties, you may name a specific motivation. If you do, you detect whether creatures in range possess that motivation and whether it is a minor or major motivation. [Errata'd by LotS]\nDivine Alignment: You may divine for a specific part of the alignment spectrum: evil, good, lawful, or chaotic. The strength of these auras are determined according to Chart: Alignment.\nTraps, poisons, and other potential perils have no alignment. Creatures with aligned intents (killing in anger, aiding those in need for their own sakes, etc.) may temporarily detect according to their actions.\nChart: Alignment | | Aura Power\n| Creature/Object | None | Faint | Moderate | Strong | Overwhelming\n| Aligned Creature^ (HD) | 4 or lower | 5-10 | 11-25 | 26-50 | 51 or higher\n| Aligned Undead (HD) | - | 2 or lower | 3-8 | 9-20 | 21 or higher\n| Aligned Outsider (HD) | - | 1 or lower | 2-4 | 5-10 | 11 or higher\n| Cleric^^ or paladin of an aligned deity (class levels) | - | 1 | 2-4 | 5-10 | 11 or higher\n| Aligned magic item or spell (caster level) | 5 or lower | 6-10 | 11-15 | 16-20 | 21 or higher\n^ Except for undead and outsider, which have their own entries on the table. ^^ Some characters who are not clerics may radiate an aura of equivalent power. The class description will indicate whether this applies.\nDivine Faith: [LG] You may divine the presence of creatures reverent to a specific deity, faith, cause, or community. The creature\u2019s personal interpretation of its beliefs determines whether or not it is of a specific faith\u2014hence heretics and splinter cultists of a deity still count as worshipers of that deity. Furthermore, since the spell picks up a creature\u2019s current beliefs and feelings, a creature actively pretending to be a member of the same faith also appears to the spell to be a member. Thus, this divination is still useful in locating potential hidden members of the same faith among the general populace, but on its own, it does not weed out spies.\nSource: Arcforge Players Compendium\nDivine Fate: You may divine the alignment auras of creatures you can see within range. Such creatures emit a colored aura depending upon what alignments or loyalties you share with them. Creatures that share the same moral alignment (good/neutral/evil) emit a red aura. Creatures that share the same ethical alignment (lawful/neutral/chaotic) emit a blue aura. Creatures that share a primary base loyalty (see Detect Loyalties) emit a yellow aura. Creatures that share multiple colors have their colors combined, i.e. a creature that shares the primary base loyalty of family and the ethical alignment of chaos will emit a green aura. Creatures that share all three primary colors (red, blue, and yellow) emit a glowing white aura. Refer to Table: Divine Fate below for more information on how colored auras combine. Creatures that do not share any alignment or loyalties do not emit any aura that you can see.\nTable: Divine Fate | Primary Colors | Secondary/Combination Color\n| Blue and red | Purple\n| Blue and yellow | Green\n| Red and yellow | Orange\n| Blue, red, and yellow | White"
+    },
+    {
+      "level": 3,
+      "heading": "Illusion",
+      "anchor": "toc12",
+      "text": "Divine Illusions: You may divine for illusions. This grants you a free Will save or Perception check (in the case of illusionary disguises or invisibility) against any illusions or invisibility within the area."
+    },
+    {
+      "level": 3,
+      "heading": "Life",
+      "anchor": "toc13",
+      "text": "Divine Life: You may divine the wound thresholds and conditions of seen living creatures. In addition to learning the creature\u2019s wound status, you also learn which creatures, if any, are afflicted with a disease. The strength of Divine Life\u2019s aura reveals a creature\u2019s current wound threshold and condition according to Chart: Divine Life.\nChart: Divine Life | Aura Strength | Wound Threshold | Current Hit Points\n| None | Dead | Dead\n| Dim | Disabled | 0 or fewer hit points remaining.\n| Faint | Critical | Less than 25% of full normal hit points remaining.\n| Moderate | Wounded | 25% to 50% of full normal hit points remaining.\n| Strong | Grazed | 50% to 75% of full normal hit points remaining.\n| Overwhelming | Healthy | Has at least 75% of full normal hit points"
+    },
+    {
+      "level": 3,
+      "heading": "Light",
+      "anchor": "toc14",
+      "text": "Ultravision: You may divine to give yourself an added level of perception. Once per round you may attempt a Perception check as a free action (normally a move action) with a circumstance bonus to Perception checks equal to your caster level."
+    },
+    {
+      "level": 3,
+      "heading": "Mana",
+      "anchor": "toc15",
+      "text": "Divine Mana Capacity: If you possess the Mana sphere, you may divine for the amount of spell points a creature has. Each round while divining for mana capacity, you may choose one creature you can see within range each round to learn their current amount of real spell points, temporary spell points (as well as when they end), and maximum spell point pool capacity."
+    },
+    {
+      "level": 3,
+      "heading": "Mind",
+      "anchor": "toc16",
+      "text": "Divine Cares Given [Jester's HB]: You may divine for a specific subject of interest, chosen when you divine. This is similar to reading the surface thoughts of nearby creatures, but only locates creatures with strong opinions about a specific topic or subject chosen when you divine, such as politics, war, entertainment, or professional associations. Creatures may have a positive, negative, or uninterested opinion regarding a subject. Only creatures with a positive or negative opinion are located. This effect does not discern what opinion each located creature may hold, only that the creature has an opinion.\nFor example, divining about a specific criminal organization, both members of the organization and opposing factions may hold strong feelings, positive or negative. Unconcerned or uninvolved individuals would not be located by the effect, and a located creature\u2019s precise opinion is not made known to you.\nDivine Charm: You may divine for the presence of charm, compulsion, possession, and Mind sphere effects. You do not need to attempt a Knowledge (arcana) check to identify the school or sphere of these abilities."
+    },
+    {
+      "level": 3,
+      "heading": "Nature",
+      "anchor": "toc17",
+      "text": "Divine Elements: You may divine for the elements, depending on which packages you possess.\nIf you possess the (air) package, you may divine and identify the presence of breathable air, and toxic gases or vapor (or lack thereof if in a vacuum).\nIf you possess the (earth) package you may divine and identify the presence of dirt, gems, sand, and stone.\nIf you possess the (fire) package you may divine the presence and strength of fires.\nIf you possess the (metal) package, you may divine and identify the presence of ore deposits and metals.\nIf you possess the (plant) package you may divine the location of plantlife and plant creatures. In all other ways, this functions as divining for shapeshifters.\nIf you possess a Nature (spirit) talent, you may divine the location of animal creatures. In all other ways, this functions as divining for shapeshifters.\nIf you possess the (water) package you may divine the location and size of bodies of water."
+    },
+    {
+      "level": 3,
+      "heading": "Protection",
+      "anchor": "toc18",
+      "text": "Divine Protection: You may divine all creatures you have pinpointed within range and determine which of those creatures have the lowest and highest armor class. Alternatively, you may divine the lowest and highest saving throw each of these creatures has. You do not however determine the values for any of these attributes."
+    },
+    {
+      "level": 3,
+      "heading": "Technomancy [LG]",
+      "anchor": "toc19",
+      "text": "Source: Arcforge Players Compendium\nDivine Technology: You may divine the presence of advanced technologies and technological creatures. You detect the location of all technological equipment within medium range as well how many sprites are contained within each object. After one round of observation, you also learn how many charges are in each object, how many batteries are attached to each object, if they are connected to another power source, and signature strength (as per Table: Mechanism Signature Strength).\nFor the purpose of detecting technological creatures, the ability functions as divine shapechanger, save that rather than shapechangers it divines technological constructs and creatures with cybernetic enhancements."
+    },
+    {
+      "level": 3,
+      "heading": "Telekinesis",
+      "anchor": "toc20",
+      "text": "Divine Density: You may divine the density and weight of nearby objects and creatures that you can see. Utilize the following chart when determining density:\nChart: Divine Density | Density | Example | Aura Strength\n| Weightless | Balsa wood, feathers, shredded paper | Faint\n| Light | Charcoal, cork, darkwood, flour, hay, snow | Moderate\n| Dense | Flesh, iron, mithral, sand, soil, stone, water, wood | Strong\n| Superdense | Adamantine, lead, gold, silver | Overwhelming\nDivine Force: You may divine the presence or absence of creatures with the incorporeal subtype. For the purpose of this ability, creatures such as unseen servant and other similar creatures of force are considered to have the incorporeal subtype. This ability will not reveal the general location or direction in which the incorporeal creatures are, it will, however, give you knowledge of the incorporeal creature\u2019s aura utilizing the same table as divining for shapeshifters."
+    },
+    {
+      "level": 3,
+      "heading": "Time",
+      "anchor": "toc21",
+      "text": "Divine Date: [LG] You may divine the current date and time for any date-keeping system you know of.\nSource: Arcforge Players Compendium\nDivine Time: You may divine the events that happened within range. You can only divine what occurred up to 1 hour per caster level in the past. When you divine time you are only given the following details: The number of creatures that were in the area, their size, how long they remained in the area, and any movements they made while in the area. In addition, if objects were left unattended or unattended objects were moved during this time, you learn the size and vague shape of such objects.\nDivine Time Traveler: [LG] You may divine whether any objects or creatures you can perceive within range have traveled through time in a significant way (an alternate \u201cstripe\u201d of time resulting from an inconsequential form of time travel such as using a Shadowbore or teleportation effect for superluminal travel does not count). You determine how far each object or creature has traveled from its past or future to reach its current location in time.\nSource: Arcforge Players Compendium"
+    },
+    {
+      "level": 3,
+      "heading": "War",
+      "anchor": "toc22",
+      "text": "Divine Allegiance: You may target an individual within range which allows you to divine through mud, blood, sweat, and wear or tear upon cloth or armor as if such was not there, revealing any colors, patterns, or insignia it may have previously bore. In addition, other creatures within range of the target glows with a particular aura allowing the caster to know who they openly allied with and who are not. Creatures under the affect of mind-affecting effects (such as charms and compulsions) are shown to be loyal to their controller and their allies. This does not properly function on those who are using subterfuge or are pretending to be on someone\u2019s side, as it will present them as who they pretend to side with. Once each round as a free action while maintaining concentration on this effect, you may target a different individual within range with this divine ability."
+    },
+    {
+      "level": 3,
+      "heading": "Warp",
+      "anchor": "toc23",
+      "text": "Divine Timeline: [LG] You may divine which timeline you are currently in from among alternate timelines which you know exist. This timeline may be designated by a specific title which means something to you (such as \u201cTimeline H-34\u201d) or by certain events which distinguish it from other known timelines you know of (such as \u201cThe timeline where Horace became the Duke of Elber in the year 304\u201d).\nAlternatively, you may divine the timeline of origin for creatures you can perceive within range, learning which alternate timelines these targets originally come from using the same parameters as determining your current timeline. If you are not aware of the timeline that a target came from, this divination provides a new name and distinguishing detail for this new timeline.\nSource: Arcforge Players Compendium\nDivine Warp: You may divine the presence of portals, rifts (including extradimensional spaces), and teleportation circles, both active and inactive within range. If you perceived a target teleport within the last hour, this also reveals to you the general direction and distance of their teleportation. If the creature teleports to a different plane, you immediately learn this, but you do not learn to what plane the creature teleported unless your caster level is at least 10. Should you find yourself on that plane before the hour is up, you can divine their general direction and distance."
+    },
+    {
+      "level": 3,
+      "heading": "Weather",
+      "anchor": "toc24",
+      "text": "Divine Weather: You may divine the weather at your location for the next 24 hours, providing you with advance warning of storms, tornadoes, and so on. This reveals only the weather that would arise naturally and does not take into account any magical occurrences that might change the weather."
+    },
+    {
+      "level": 2,
+      "heading": "Sense",
+      "anchor": "toc25",
+      "text": "As a standard action, you may grant yourself paranormal senses for 1 hour/caster level. When you gain the Divination sphere, you gain the following sense."
+    },
+    {
+      "level": 4,
+      "heading": "Read Magic",
+      "anchor": "toc26",
+      "text": "You may spend a spell point to gain a sense that allows you to decipher all magical writings, such as those found in books, scrolls, on weapons, or in other places intelligible to you. This does not invoke the magic contained in the writing, although it may do so in the case of a cursed or trapped scroll. Furthermore, once you have read a magical inscription through this ability, you are thereafter able to read that particular writing even without this sense. You can read at the rate of one page (250 words) per minute. You can identify glyphs, runes, and symbol spells with a Spellcraft check (DC 10 + 1/2 caster level)."
+    },
+    {
+      "level": 3,
+      "heading": "Divination Talent Types",
+      "anchor": "toc27",
+      "text": "Some talents are marked (divine). These grant you different things you may divine for in place of magic.\nSome talents are marked (sense). These talents grant you additional senses you may grant."
+    },
+    {
+      "level": 2,
+      "heading": "Divination Talents",
+      "anchor": "toc28",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Alarm [utility] [Gravecaller's HB]",
+      "anchor": "toc29",
+      "text": "When you divine, instead of concentrating on the effect, you may spend an additional spell point to create an immobile sensor within your Divination sphere range which lasts for 10 minutes per caster level or 1 hour per caster level if you spend an additional spell point. This sensor can be detected as though it were a scrying sensor (Perception DC 20 + caster level) and dispelled.\nWhen you create a sensor, you may choose to either divine for creatures, detecting any creature which enters the sensor\u2019s range, or divine with a (divine) effect which locates information in an area (such as the base Divination sphere effect, the Divine Undead alternate divination, or the Detect Spellcaster talent, but not the Ultravision alternate divination or the Augury talent).\nThe sensor constantly divines the area for the chosen information as though you were divining, and the sensor\u2019s ability to divine is modified by any effects that alter your divine ability (such as the Limited Penetration or Shaped Divination drawbacks would affect the alarm\u2019s ability to penetrate materials or require you to choose a direction in a cone or line when creating the alarm). The sensor does not pinpoint or reveal the location of something it divines, but otherwise reveals the presence, number, and power of each detected piece of chosen information (such as revealing the presence, number, and power of all fey with Detect Faetouched, but not their location).\nOptionally, when creating a sensor, you may choose to set any combination of an audible alarm, a mental alarm, or a password.\nAn audible alarm produces a gentle sound, centered on the sensor\u2019s location, whenever the sensor detects something, such as a chime or bell. This sound can be heard within the sensor\u2019s range, but can be muffled by walls and doors, reducing the range of the sound by 10 feet for each interposing door or wall. Silence effects can muffle this sound.\nA mental alarm alerts you with a mental \u201cping\u201d whenever the sensor detects something and you are within 1 mile of the sensor. This ping can awaken you from sleep, but otherwise does not disturb concentration. Silence effects cannot muffle this ping.\nA password is a phrase chosen when creating a sensor with this talent. Any creature who speaks the password out loud when entering the sensor\u2019s range is not detected by the sensor."
+    },
+    {
+      "level": 4,
+      "heading": "Expanded Divinations",
+      "anchor": "toc30",
+      "text": "Pick any three alternate divinations which you do not currently possess. You gain access to those alternate divinations as if you possessed the requisite spheres. If the alternate divination has an additional prerequisite such as the Nature sphere\u2019s Divine Elements, you pick which one you gain access to upon acquiring it. This talent may be taken multiple times. Each time you may pick three alternate divinations which you do not possess."
+    },
+    {
+      "level": 4,
+      "heading": "Fast Divinations",
+      "anchor": "toc31",
+      "text": "Divining takes 1 round instead of 1 minute to perform without a spell point."
+    },
+    {
+      "level": 4,
+      "heading": "Grant Divination",
+      "anchor": "toc32",
+      "text": "You may grant your senses to a touched target instead of only yourself. You may also spend a spell point to grant a divine ability to a touched target. The touched target must concentrate to maintain the divine ability."
+    },
+    {
+      "level": 4,
+      "heading": "Greater Divine [range]",
+      "anchor": "toc33",
+      "text": "Your divine ability works out to long range instead of medium range."
+    },
+    {
+      "level": 4,
+      "heading": "Instill Divination [instill]",
+      "anchor": "toc34",
+      "text": "As a standard action you may touch a small container of liquid and instill a sense inside it, or spend a spell point to instill a divine ability inside it. This liquid functions as a potion or oil.\nIf you do not have the ability to grant divine or sense effects to other creatures, the instilled liquid is only usable by you. An instilled liquid remains potent until you rest to regain spell points. If you have equipment on hand (such as an alchemy lab), the cost of bottles and water is considered negligible.\nYou may target food but not an already-magical item, such as a potion. All spell points must be spent and all variables of the sphere effect must be chosen at the time the instilled liquid is created. You cannot instill multiple effects in a single liquid, nor create multiple instilled liquids with a single action."
+    },
+    {
+      "level": 4,
+      "heading": "Lingering Divination",
+      "anchor": "toc35",
+      "text": "When you divine, the ability lasts 2 rounds after you stop concentrating."
+    },
+    {
+      "level": 4,
+      "heading": "Pressuring Divinations [utility] [SM\u2014]",
+      "anchor": "toc36",
+      "text": "Source: Baron\u2019s Secluded Library\nYou treat any creature that has failed a Will save against one of your ongoing divinations as uncertain for the purpose of being able to make Sense Motive checks against them (you can attempt a Sense Motive check to sense their goal, sense their emotion, or get a hunch as an immediate action each time that the disoriented creature attempts a language-dependent skill check or use a language-dependent skill talent). You may spend a spell point to attempt a Sense Motive check as a free action rather than an immediate action against a creature you have successfully divined in this way."
+    },
+    {
+      "level": 4,
+      "heading": "Revealing Strike [strike] [3PP]",
+      "anchor": "toc37",
+      "text": "Source: Expanded Spheres: Baron's Lost Apocrypha\nAs a standard action, you may make a single weapon attack in conjunction with using a [divine] or [sense] effect. This casting cannot be reduced below a standard action, and does not provoke attacks of opportunity, unless as usual if making a ranged attack. If the target is struck by the attack, it is also affected by the [divine] or [sense]. An unwilling target is allowed a Will save to negate [divine] or [sense] if a saving throw is not normally allowed. If using a scatter weapon, the [divine] or [sense] only applies to a single target, chosen at the time of attack. In addition, when you successfully hit a target with a weapon attack made as a standard action, you may spend a spell point as an immediate action to divine the target. A divine effect cast using this talent must be one which gathers information about a creature, such as divining to gain information with the Divination sphere base sphere effect or (divine) talents such as Detect Spellcaster or Detect Thoughts."
+    },
+    {
+      "level": 2,
+      "heading": "Divine Talents",
+      "anchor": "toc38",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Augury (divine) [utility]",
+      "anchor": "toc39",
+      "text": "You may spend a spell point to divine whether a particular action will bring good or bad results for you in the immediate future.\nThe base chance for receiving a meaningful reply is 70% + 1% per caster level, to a maximum of 90%; this roll is made secretly.\nA question may be so straightforward that a successful result is automatic, or so vague as to have no chance of success. If the augury succeeds, you get one of four results:\nWeal (if the action will probably bring good results).\nWoe (for bad results).\nWeal and woe (for both).\nNothing (for actions that do not have especially good or bad results).\nIf the check fails, you get the \u201cnothing\u201d result. A caster who gets the \u201cnothing\u201d result has no way to tell whether it was the consequence of a failed or successful augury.\nThe augury can see into the future up to one hour per caster level, so anything that might happen after that does not affect the result. Thus, the result might not take into account the long-term consequences of a contemplated action. All auguries cast by the same person, in the same day about the same topic, use the same die result as the first casting."
+    },
+    {
+      "level": 4,
+      "heading": "Detect Secrets (divine) [utility]",
+      "anchor": "toc40",
+      "text": "You may spend a spell point to divine for things expressly designed to be hidden. This includes secret doors, hidden caches, and secret compartments. Not only does this detect the presence of such secrets, but it also gives you knowledge of their trigger mechanisms. This only detects doors, passages, and openings specifically designed to avoid detection."
+    },
+    {
+      "level": 4,
+      "heading": "Detect Spellcaster (divine)",
+      "anchor": "toc41",
+      "text": "You may spend a spell point to divine the spellcasting capabilities of a creature you can see within range, utilizing the chart below. Targeted individuals who only have extraordinary and supernatural abilities show up as having no spellcasting aura, whereas those who have spherecasting, spells, or spell-like abilities show an aura depending on the highest effective spell level of an ability they can use. As always, treat a spherecaster\u2019s caster level divided by 2 as their effective spell level. You may also attempt a Spellcraft check to discover the caster\u2019s casting tradition, even if they have not produced any magical effects for you to observe.\nMulticlass core spellcasting classes only reveal as the highest aura between the two. Spherecasters with varying caster levels depending on spheres show auras according to their current highest sphere casting ability. If you are participating in a setting with other forms of magic or spellcasting systems, they are detected as appropriate.\nChart: Detect Spellcaster | Class Example | Highest Effective Spell Level | Aura Strength\n| Core human fighter | Only natural, (Ex), or (Su) abilities | None\n| Armorist (CL 1) | Level 0-1 spells | Dim\n| Hedgewitch (CL 5) | Level 2-3 spells | Faint\n| Mageknight (CL 10) | Level 4-5 spells | Moderate\n| Eliciter (CL 14) | Level 6-7 spells | Strong\n| Fey adept (CL 18) | Level 8 or higher spells | Overwhelming"
+    },
+    {
+      "level": 4,
+      "heading": "Detect Thoughts (divine) [utility]",
+      "anchor": "toc42",
+      "text": "You may divine the emotions of creatures you can see within range (Will negates), and you gain a circumstance bonus to Sense Motive checks equal to 1/2 your caster level vs. creatures you have thus successfully divined. You do not know the motivation or source behind why a creature is feeling the emotion. If you spend an additional spell point, you divine not only the emotions of those within range, but also the surface thoughts (Will negates).\nAddendum: [SM\u2014] Source: Baron\u2019s Imposing Mausoleum\nYou may select this talent a second time, in which case you also learn both the most pressing desire and most pressing anxiety of any creature you learn the surface thoughts of. You also know if each of the revealed surface thoughts, anxiety, and desire are tied to a major or minor motivation."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Biohazard (divine) [Alienist HB]",
+      "anchor": "toc43",
+      "text": "You may divine the presence of any diseases, poisons, or radiation within range. You determine whether any creature, object, or area has been poisoned, is poisonous, carries any sort of disease or infestation, or possesses any abilities which can inflict the sickened or nauseated conditions. You can determine the exact type of poison with a DC 20 Wisdom check. A character with the Craft (alchemy) skill may try a DC 20 Craft (alchemy) check if the Wisdom check fails, or may try the Craft (alchemy) check prior to the Wisdom check. If there is a disease present, you know what disease it is and its effects. You gain an insight bonus on Heal checks equal to half your caster level to treat a disease you divine with this sphere effect."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Capability (divine) [utility] [SM\u2014]",
+      "anchor": "toc44",
+      "text": "Source: Baron\u2019s Secluded Library\nYou divine the skill and understanding of creatures you can see within range, allowing you to use Assess Proficiency on them even if they do not take an action and even if you have not observed them for three rounds (Will negates). You gain a circumstance bonus to skill checks made to assess proficiency or to identify feats, talents, and class features equal to 1/2 your caster level vs. creatures you have thus successfully divined."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Future (divine)",
+      "anchor": "toc45",
+      "text": "You may divine for a glimpse of the future, giving yourself insight into the happenings of that day. At any time during that day, you may add an insight bonus equal to 1d4 + 1 per 5 caster levels to one attack roll, skill check, saving throw, ability check, initiative roll, or combat maneuver roll you are about to make.\nAs an immediate action, you may instead grant this benefit to an ally who can both see and hear you. You may take this talent multiple times, to a maximum of 5 times. You can only have one use of this ability waiting to be used at a time per time you have taken this talent. Every time you divine for the future, you regain all your uses of this ability for that day."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Information (divine) [utility]",
+      "anchor": "toc46",
+      "text": "You may spend a spell point to divine for information. This grants you the ability to reroll a failed Knowledge check (or to attempt a Knowledge check untrained), with an insight bonus equal to 1/2 your caster level. You may only divine for information once per Knowledge check."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Relationships (divine) [utility] [3PP]",
+      "anchor": "toc47",
+      "text": "Source: Baron's Hallowed Archive\nYou can determine whether or not two or more creatures have any sort of relationship. The amount of information gleaned depends on how long you study a particular area or set of subjects.\n1st round: Whether or not the subjects share any sort of interpersonal relationship (be it a friendship, romance, or blood relation).\n2nd round: Number of related subjects and their general relationships to one another. The types of relationship divined by this talent are generally divided between blood, friendship, professional, familial, and romantic, although other terminology may be utilized based on setting at GM discretion. For example, divining a couple would reveal a romantic relationship while divining a parent and their biological child would reveal both a blood and familial relationship.\n3rd round: Precise relationship between subjects in the area. In the above examples, this divination would clarify that the couple are committed lovers and that the family is parent and child. A target\u2019s Will save prevents you from determining its exact relationship with another creature, and only one subject needs to succeed at this save to prevent you from determining its relationship with another creature. (So, for instance, if two brothers are in the area and one succeeds at his Will save, you could tell that they are siblings, but could not distinguish whether they are full- or half-siblings.)\nAlthough this talent can discern blood relations and personal relationships between people, it cannot divine legal associations and would have no way of determining constructs such as marriage, parental rights, or the legitimacy of children."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Treasure (divine) [utility] [Alienist HB]",
+      "anchor": "toc48",
+      "text": "You may divine the presence of valuable items within range. Items exude an aura depending on their gold piece value and collections of material (such as piles of gold coins, a bushel of exotic fruit, or chests full of gemstones) radiate their auras as a single aura. You gain an insight bonus on Appraise checks equal to half your caster level to discern the value of objects you divine with this sphere effect. Utilize the following chart when determining value:\nTable: Divine Treasure values and auras | Value | Examples | Aura\n| Inconsequential (10 gp or less) | Commonplace clothing and goods, simple tools and weapons | Faint\n| Valuable (11-999 gp) | Armor, expensive clothing, jewelry | Moderate\n| Incredibly valuable (1,000-9,999 gp) | Magic items, finely-crafted jewelry | Strong\n| Extremely valuable (10,000 gp or more) | Powerful magic items, exotic relics | Overwhelming"
+    },
+    {
+      "level": 4,
+      "heading": "Dowsing (divine) [utility]",
+      "anchor": "toc49",
+      "text": "You may spend a spell point to divine the location of a creature or object within range. This may be a specific creature or object or a kind of creature or object, but either way you must have a clear mental image of the creature or object to divine for it (thus, you could not divine broadly for traps, creatures of a broad creature type, etc.). If divining for a kind of creature or object, you only locate the closest item of that kind. This method of using divine is not blocked by wood or stone, but is still blocked by lead."
+    },
+    {
+      "level": 4,
+      "heading": "Object Reading (divine) [utility]",
+      "anchor": "toc50",
+      "text": "You may perform psychometry on a target object you touch gaining information about its history or previous owners, including its creator. In addition to the information you acquire below, you gain a circumstance bonus to Appraise checks with that object equal to 1/2 your caster level for as long as you continue to divine the object. For every 1 minute you divine the object you gain one additional piece of information found in the following order: Last owner\u2019s race, last owner\u2019s gender, last owner\u2019s age, last owner\u2019s alignment, how the last owner lost or gained the object. Upon learning this last piece of information, you may spend a spell point, if you do you begin to learn information on the owner before the last at the same rate in the same order. Should object reading be interrupted for 2 or more consecutive rounds, you must start again at the beginning unless you spend 1 spell point per past owner."
+    },
+    {
+      "level": 4,
+      "heading": "Sensory Overload (divine)",
+      "anchor": "toc51",
+      "text": "You may spend a spell point and target a creature you can see within range; instead of gaining information, you instead flood all of its senses (and temporarily granting senses that it does not normally have) to overload it with information. The target cannot take any actions, not even walking, and is considered flat-footed. When first casting Sensory Overload and at the end of each round that you continue to concentrate on the effect, the targeted creature takes your caster level in nonlethal damage (Fortitude negates), and may attempt to end Sensory Overload with a Will save. Creatures that are mindless are particularly vulnerable to this effect and take a -2 penalty on their saves."
+    },
+    {
+      "level": 4,
+      "heading": "Viewing (divine) [utility]",
+      "anchor": "toc52",
+      "text": "You may spend a spell point to divine, transferring your point of view to any point within range. You may see and hear from this location. This method of using divine is not blocked by wood or stone, but is still blocked by lead. However, the locale must be known\u2014a place familiar to you, or an obvious one such as a distance and direction. Once you have selected the locale, the sensor does not move, but you can rotate it in all directions to view the area as desired, in all ways as if you were standing where your sensor is located. This ability creates a scrying sensor, which can be detected (Perception DC 20 + caster level) and dispelled."
+    },
+    {
+      "level": 4,
+      "heading": "Witness The City (divine) [utility]",
+      "anchor": "toc53",
+      "text": "You may spend a spell point to see, hear, smell, feel, and even taste a torrent of past scenes and pieces of conversations related to anything in a settlement you are currently in. At the end of each of your turns for the duration of this divination, attempt a single Diplomacy check to gather information as though you had spent 1d4 hours talking to local people, without having to use an action to do so. Multiple Diplomacy checks made to gather information on the same topic always grants the same information as the first check. You can use your Perception bonus in place of your Diplomacy bonus if you so wish, but with a -5 penalty.\nNote: Settlements range in population size from fewer than 20 (thorp) to greater than 25,000 (metropolis). In order to maintain the balance of this talent, it is suggested that when working with particularly large settlements that GMs restrict the use of the talent to districts of the settlement."
+    },
+    {
+      "level": 2,
+      "heading": "Sense Talents",
+      "anchor": "toc54",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Battlefield Sense (sense)",
+      "anchor": "toc55",
+      "text": "You may spend a spell point to grant yourself greater perception. You can no longer be flanked, except by a creature with 4 more rogue levels than your caster level."
+    },
+    {
+      "level": 4,
+      "heading": "Blindfolded Oracle (sense)",
+      "anchor": "toc56",
+      "text": "You may spend a spell point to grant yourself blindsense to a range of close. You must close your eyes to use this ability. For the purpose of this ability, opening or closing your eyes is a free action you may take once per round. You may spend an additional spell point to upgrade this ability to blindsight."
+    },
+    {
+      "level": 4,
+      "heading": "Detect Scrying (sense)",
+      "anchor": "toc57",
+      "text": "You may spend a spell point to detect the scryings of others. Any attempt to scry or divine on a location or creature within close range of you (unless you purposefully lower this defense) becomes impossible unless the caster succeeds in a magic skill check against you. In addition, you sense if any creature within range is using the divine ability or a divination spell, as well as the location of any sensors in the area (such as with the Viewing talent or the clairaudience/clairvoyance spell). You become aware of any attempt to scry on you, such as with a divination (scrying) school spell or the Scrying advanced Divination talent. If these spells and effects originate within your sense\u2019s area, you immediately know their location. Otherwise, if you match or exceed the other caster in an opposed magic skill check, you gain a visual image of the diviner and know their direction and distance from you. You may suppress or resume this sense as a free action."
+    },
+    {
+      "level": 4,
+      "heading": "Discern Individual (sense)",
+      "anchor": "toc58",
+      "text": "You may spend a spell point to gain a sense granting an insight bonus to monster lore equal to 1/2 your caster level (minimum 1). You may attempt monster lore checks untrained."
+    },
+    {
+      "level": 4,
+      "heading": "Foreshadow (sense)",
+      "anchor": "toc59",
+      "text": "You may spend a spell point to gain a sense that warns you of impending danger. You are not flat-footed during the surprise round or the first round of combat before you act, and gain a +1 dodge bonus to AC, and a +2 bonus to Reflex saves and initiative checks. These bonuses increase by 1 for every 10 caster levels possessed.\nNormal: You are flat-footed until you have acted once in the initiative order."
+    },
+    {
+      "level": 4,
+      "heading": "Ghost Sight (sense)",
+      "anchor": "toc60",
+      "text": "You may spend a spell point to gain a sense that adds your caster level to Perception checks made to notice invisible or ethereal creatures. If you succeed at this check, the creature\u2019s outline becomes visible to you. This negates both the usual penalties you would suffer attacking an invisible creature, and the bonuses the creature would normally gain against you. This continues until you lose line of sight to the creature, in which case you must succeed at a new Perception check to see them."
+    },
+    {
+      "level": 4,
+      "heading": "Logos (sense) [Origin]",
+      "anchor": "toc61",
+      "text": "You may spend a spell point to understand all spoken and written words, regardless of language. You may spend an additional spell point to also be understood by any creature with a language. You do not learn the creature\u2019s language, but instead every creature hears you speak in whatever language is most comfortable for it.\nWhile this sense is active, you may understand languages even if you lack the senses to normally interpret them. For example, a blind character can use this sense to \u201cread\u201d written language by touching it or a deaf character can use it to read the lips of any creature they can perceive."
+    },
+    {
+      "level": 4,
+      "heading": "Nature Sense (sense)",
+      "anchor": "toc62",
+      "text": "You may spend a spell point as a standard action to gain a special sense that grants you a +1 bonus on Knowledge (nature) and Survival checks. This bonus increases by +1 every 5 caster levels. You may dismiss this sense at any time as an immediate action to reroll any failed Survival check avoiding natural hazards or getting lost, gaining a bonus to the roll equal to that granted by Nature Sense. This stacks with any class features with the same name."
+    },
+    {
+      "level": 4,
+      "heading": "Prescience (sense)",
+      "anchor": "toc63",
+      "text": "You may spend a spell point to gain a special sense granting a +1 insight bonus to attack rolls. This bonus increases by +1 every 10 caster levels. In addition, you may dismiss this sense before making an attack or combat maneuver to instead gain an insight bonus of 10 + 1/2 your caster level to the roll as a free action."
+    },
+    {
+      "level": 4,
+      "heading": "Prying Sight (sense) [BaP]",
+      "anchor": "toc64",
+      "text": "You may spend a spell point and target a creature within close range, allowing you to borrow the target\u2019s vision as though it were your own. An unwilling creature may attempt a Will saving throw to negate this effect. At any time during this effect, as long as the target is within long range, you may concentrate on this effect as a move action and perceive that creature\u2019s surroundings as if you were standing where that creature was, granting you the ability to see, smell, hear and otherwise perceive things as though you were the target. A target is not made aware when you perceive the target\u2019s surroundings using their senses."
+    },
+    {
+      "level": 4,
+      "heading": "Scent (sense)",
+      "anchor": "toc65",
+      "text": "You may spend a spell point to gain scent. You may spend an additional spell point to upgrade this ability to keen scent (which functions both inside and outside of water)."
+    },
+    {
+      "level": 4,
+      "heading": "See Hazard (sense)",
+      "anchor": "toc66",
+      "text": "You may spend a spell point to gain a free Perception check to notice traps and hazards when you are within 10 ft of them, be they mechanical (trip wires, dart throwers, etc.) magical (rune spells, sigils, etc.) or natural (quick sand, pit falls, etc.). This does not give you insight into disabling such traps or hazards."
+    },
+    {
+      "level": 4,
+      "heading": "Sense Magic (sense)",
+      "anchor": "toc67",
+      "text": "You may spend 2 spell points to grant yourself the ability to sense magic, as if using your basic divine ability as a constant ability, but only to a distance of close."
+    },
+    {
+      "level": 4,
+      "heading": "Sense Presence (sense) [Alienist HB]",
+      "anchor": "toc68",
+      "text": "You may spend 1 spell point and select a kind of creature, material, or other effect that you could divine for or that you could distinguish using divine (for example, if you possess Divine Alignment, you could select all creatures of a specific alignment). You automatically detect the presence of entities of the specified kind within the range of your divine. This does not tell you the exact location of such entities, just whether or not any are within the area. You may change the type of creature, material, or effect whose presence you are sensing with this talent as a full-round action."
+    },
+    {
+      "level": 4,
+      "heading": "Shared Perception (sense)",
+      "anchor": "toc69",
+      "text": "You may spend 2 spell points, instead of 1, to grant a special sense to two touched creatures. The maximum number of targets increase by +1 per 5 caster levels. As long as the targets remain within long range of each other, the first target shares perception with the second, and vice versa. This grants the targets the ability to see, smell, hear, etc. whatever the other targets do. This sense, while not requiring line of sight, is blocked by dense materials just like the divine ability. Once created, each character is considered to be under a unique sense effect."
+    },
+    {
+      "level": 4,
+      "heading": "Sniper\u2019s Eye (sense)",
+      "anchor": "toc70",
+      "text": "You may spend a spell point to gain a sense that reduces the distance-based DC adjustment for Perception checks by an amount equal to your caster level. (For example, if the DC would normally increase by 10 due to being 100 feet away and you have caster level of 3, the DC increase would only be by 7.) While this sense is active, you also reduce environmental and range increment-based penalties to your ranged attack rolls by an amount equal to half your caster level. This can only ever reduce penalties, and can never grant a bonus."
+    },
+    {
+      "level": 4,
+      "heading": "Tremorsense (sense)",
+      "anchor": "toc71",
+      "text": "You may spend a spell point to gain the tremorsense ability with a range of close. You gain sensitivity to vibrations in the ground allowing you to automatically pinpoint the location of anything that is in contact with the ground; or if underwater, you can instead pinpoint the location of creatures moving through the water."
+    },
+    {
+      "level": 4,
+      "heading": "Unhooded Sight (sense)",
+      "anchor": "toc72",
+      "text": "You may spend a spell point to gain a sense that grants you a bonus equal to 1/2 your caster level (minimum 1) to all Will saves, Perception checks, or magic skill checks made to disbelieve an illusion."
+    },
+    {
+      "level": 2,
+      "heading": "Advanced Divination Talents",
+      "anchor": "toc73",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Alternate Divinations, Advanced (sense) [Origin]",
+      "anchor": "toc74",
+      "text": "Prerequisites: Divination sphere, caster level 1st.\nLike alternate divinations, this advanced talent grants additional divinations depending upon what other spheres you know. Unlike alternate divinations, however, this advanced talent grants new sense abilities instead of divine abilities.\nCreation: Material Sense: You may spend 2 spell points to gain material sense, automatically detecting the presence of a single material you could create or alter within close range as if you could see it (the material is chosen when you cast this sense). A character can use material sense to distinguish color or visual contrast so long as the distinct components are perceptible if one can only see the specific materials sensed (for example, a character who selects ink with material sense could read documents written in ink but could not see goldfoil illuminations). However, the character is not subject to gaze attacks, blinding, or visual effects when perceiving a target with only this sense. A character can detect creatures who have the material as part of their body but does need line of effect to detect objects made of the material. Material Sense can be foiled by illusions with the Manipulate Aura talent.\nDark: See in Darkness: You may spend 2 spell points to gain the see in darkness ability. The creature can see perfectly in all darkness, including magical darkness that otherwise might obstruct darkvision.\nDeath: Spirit Sense: You may spend a spell point to gain the spirit sense ability, which allows you to know when immortal or deathless beings are nearby. You automatically sense the presence of undead; fey; outsiders; and astral, ethereal, or incorporeal creatures within close range, as if you could see them. A character cannot use spirit sense to distinguish color or visual contrast and is not subject to gaze attacks, blinding, or visual effects when perceiving a target with only this sense. A character cannot perceive noncreature nonliving material using spirit sense but does need line of effect to detect creatures. Spirit sense can be foiled by illusions with the Manipulate Aura talent.\nLife: Lifesense: You may spend 2 spell points to gain lifesense, automatically detecting the life force of beings within close range as if you could see them. A character cannot use lifesense to distinguish color or visual contrast and is not subject to gaze attacks, blinding, or visual effects when perceiving a target with only this sense. A character cannot perceive nonliving material or nonliving creatures (such as constructs or undead) using lifesense, but does need line of effect to detect creatures. Lifesense can be foiled by illusions with the Manipulate Aura talent.\nMind: Thoughtsense: You may spend a spell point to gain the thoughtsense ability. You automatically detect and locate conscious creatures within close range who you could target with your Mind sphere abilities as if you could see them.\nIf you spend an additional spell point, you may detect and locate all types of conscious creatures, not just those that you could affect with mind-affecting effects. Nondetection, Unplottable, and similar effects block thoughtsense.\nThoughtsense can distinguish between sentient (Intelligence 3 or greater) and nonsentient (Intelligence 1\u20132) creatures, but otherwise provides no information about the creatures it detects. Creatures lacking an Intelligence score, or with a score less than 1, cannot be detected or located with thoughtsense unless you have selected that creature\u2019s type with the Recondite Stimuli talent. A character cannot use thoughtsense to distinguish color or visual contrast and is not subject to gaze attacks, blinding, or visual effects when perceiving a target with only this sense. A character cannot perceive nonliving material using thoughtsense, but does need line of effect to detect creatures. Thoughtsense can be foiled by illusions with the Implausible Deniability feat.\nTelekinesis: Touchsight: You may spend 2 spell points to gain the touchsight ability. You gain the ability to \u201cfeel\u201d your surroundings even when your sight would otherwise be obscured by your physical environment. Your touchsight field emanates from you out to close range. You ignore invisibility, darkness, and concealment, though you must have line of effect to a creature or an object to discern it. You automatically detect and pinpoint all creatures within close range as if you could see them. In many circumstances, comparing your regular senses to what you learn with touchsight is enough to tell you the difference between visible, invisible, hiding, and concealed creatures. A character cannot use touchsight to distinguish color or visual contrast and is not subject to gaze attacks, blinding, or visual effects when perceiving a target with only this sense. Touchsight can be foiled by illusions with the Illusionary Touch talent.\nWeather: Storm Vision: You may spend a spell point to gain a special sense granting the ability to negate any concealment, miss chance, and penalties to Perception directly caused by weather such as rain or fog (be they magical or natural)."
+    },
+    {
+      "level": 4,
+      "heading": "Arc of Change [utility] [SM\u2014]",
+      "anchor": "toc75",
+      "text": "Source: Baron\u2019s Secluded Library\nPrerequisites: Divination Sphere, Time Sphere\nWhenever you divine a target for some manner of quality, you know if that quality has changed within the last hour per caster level (for example, if you use Divine Life, you can tell if a creature acquired an injury or disease within this timeframe). If you observe the target for at least 3 rounds, you learn the exact moment or moments that their statuses changed within the timeframe.\nIf you spend an additional spell point, the period of time you can evaluate increases from one hour to one day per caster level. At caster level 10th, it improves to 1 year per caster level."
+    },
+    {
+      "level": 4,
+      "heading": "Assurance of the Future [SM\u2014]",
+      "anchor": "toc76",
+      "text": "Source: Baron\u2019s Secluded Library\nPrerequisites: Divination Sphere (Divine Future)\nWhenever a creature rolls one of your divine future dice, they gain temporary hit points equal to the result until the end of their next turn. In addition, they may add the result to the next damage roll they make before the start of their next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Cartographer\u2019s Divinations (divine) [utility] [RW HB]",
+      "anchor": "toc77",
+      "text": "Great diviners often learn a number of wide-reaching but imprecise tools which can map entire regions and battlefields, grant precise directions, and learn about the terrain.\nPrerequisites: Divination sphere, caster level 5th.\nYou gain a number of new (divine) abilities. The abilities granted by this talent are improved if you possess certain alternate divinations. These additional options are noted as expanded options. If you possess the Divination sphere Greater Divine talent, the range of the sphere effects granted by this advanced talent increase by 1 step (1 mile to 10 miles per caster level, 10 miles to 100 miles per caster level)."
+    },
+    {
+      "level": 5,
+      "heading": "Divine Chart",
+      "anchor": "toc78",
+      "text": "You may spend 2 spell points to divine a location within 1 mile per caster level, granting you vision of the specified location in up to a 1,000-foot radius as though viewed with a map. You gain accurate knowledge of the terrain and topography, including buildings and other structures, although fine topographical features or concealed or hidden locations are not revealed. In addition, all normally visible creatures are located, but no identifying characteristics of those creatures are known, appearing as an indistinct speck. This effect does not reveal invisible or incorporeal creatures or give any information about the interiors of locations (such as buildings or caves). Only information as viewed from above is made known to the caster.\nExpanded Options:\nIf you possess the Divine Allegiance alternate divination, obvious war camps and contingents of troops are also made known to the caster with a symbol of their banner (if they openly carry such a symbol).\nIf you possess the Divine Illusions or Divine Force alternate divinations, the locations of invisible or incorporeal creatures are located respectively, as though detecting a normal creature.\nIf you possess the Divine Warp alternate divination, the locations of extraplanar gates, teleportation circles, and other permanent magical teleportation effects are made known to the caster (although where they connect to is not revealed).\nThis sphere effect is instantaneous and does not adjust for changes that occur after this effect is cast. When casting this sphere effect, a blank piece of parchment or other reasonably flat surface may be used as an optional focus component, the divined information is scribed as a readable map. Alternatively, a sufficiently large table with a malleable substance (such as clay or sand) or bowl of water or other liquid may be used to instead create a still model of the divined area, which crumbles if the table or bowl is disturbed."
+    },
+    {
+      "level": 5,
+      "heading": "Lay of the Land",
+      "anchor": "toc79",
+      "text": "You may spend 2 spell points to divine the surrounding lands within up to 10 miles per caster level, extending underground and through objects without hindrance (unless you possess the Divination sphere Limited Penetration sphere-specific drawback). You instantly learn 2 facts + 1 fact per 4 caster levels about any of the following information pertaining to the surrounding lands: terrain, plantlife, minerals, bodies of water, people and civilizations, animal populations, the presence of powerful and unnatural creatures, supernatural phenomenon and landmarks (such as ley lines, fairy rings, extraplanar portals, etc.), or even the general state of the natural area.\nExpanded Options:\nIf you possess the Divine Elements alternate divination, you may learn 1 additional fact about any element you could divine information for (such as air or water quality, active fires, etc.).\nIf you possess the Divine Warp alternate divination, when you learn a fact about a nearby supernatural phenomenon, if that supernatural phenomenon is connected to another location by a permanent teleportation effect, you learn the type of plane or location it connects to (such as geographical traits, if the same plane, or planar traits if extraplanar).\nIf you possess the Divine Weather alternate divination, you may learn 1 additional fact about the weather in the area, including past weather patterns or an accurate forecast of the natural weather for the next day per caster level. This fact is only accurate to naturally occurring weather, not any magical occurrences which could change the weather.\nThis sphere effect provides facts and information which can pertain to any relevant information about the surrounding lands, subject to GM discretion, but should generally be limited to the topography, natural features, and overall qualities about such information (such as total population numbers, locations of major natural bodies, categories of and presence of plant life or minerals, including rare resources, general locations of animals or unnatural creatures, etc.). This sphere effect does not provide precise information about the nature of communities, signs of civilization, or constructed locations, but may reveal their general locations (such as knowing there is something man-made and constructed located inside a mountain, but not being aware of the nature of the construction, such as being a dungeon, shrine, or tower)."
+    },
+    {
+      "level": 5,
+      "heading": "Pathfinder",
+      "anchor": "toc80",
+      "text": "You may spend 2 spell points to divine the shortest, most direct physical route to a prominent and specific destination, such as a castle, city, lake, crypt, or dungeon. The destination can be outdoors or underground as long as it is prominent. If no specific destination is named (such as \u201ca nearby lake\u201d or \u201cthe nearest city\u201d, instead of \u201cFort Lotheed\u201d), this sphere effect locates the nearest destination which meets the description (subject to GM discretion). This sphere effect has no maximum range, but is limited to a destination on the same plane as the caster. This sphere effect is blocked by effects which protect against scrying and other forms of divination (such as not locating a dungeon which is warded against divination effects).\nExpanded Options:\nIf you possess the Divine Warp alternate divination, you may designate an extraplanar gate, teleportation circle, and other permanent magical teleportation effect leading to a specific plane as your destination. If no such effect exists, this ability fails and grants no directions.\nFor 1 day per caster level, the caster gains knowledge of the destination\u2019s general location and the destination\u2019s distance and direction from the caster. In addition, the caster gains a supernatural sense for any actions which must be taken to reach that destination (such as which corridor in a cavern to take). This sphere effect otherwise functions as the find the path spell for the purposes of interactions with the maze spell.\nPathfinder Example: The caster could not specify a specific cabin or home, but could specify the specific logging camp where the structure is located (such as \u201cThe Maple Forest Logging Camp\u201d). Subject to GM discretion, sufficiently prominent individual buildings (such as landmarks or a noble\u2019s mansion) may qualify as a prominent destination if it is notable or unique to the location.\n[[/div]]"
+    },
+    {
+      "level": 4,
+      "heading": "Detect Patronage (utility) [LG]",
+      "anchor": "toc81",
+      "text": "Source: Arcforge Players Compendium\nPrerequisites: Divination sphere (Detect Spellcaster (divine)).\nWhen you scan creatures with Detect Spellcaster, you may divine whether any targets in the area draw magical power from otherworldly forces, be they gods, beliefs, planes, or specific cosmic patrons. For each target in the area, you identify the names of any forces granting the character power and may attempt appropriate Knowledge checks to identify them (typically Knowledge (religion) or Knowledge (planes)). If you are using the Distinct Magic Types variant rule, you also know the precise types of magic the target is capable of using.\nAuthor's Note: In games that use Oaths, this can be used to detect a creature's Oath Boons as if they were class features."
+    },
+    {
+      "level": 4,
+      "heading": "Discern Location (divine) [utility]",
+      "anchor": "toc82",
+      "text": "Prerequisites: Divination sphere (Dowsing (divine), Greater Divine [range]), caster level 15th.\nYou may spend 3 spell points to divine the location of any one creature or object. To find a creature, you must have seen the creature or have some item that once belonged to it. To find an object, you must have touched it at least once.\nDiscern Location has no maximum range and circumvents normal means of protection from scrying or other means of nondetection. Indeed, nothing short of a mind blank spell, the Unplottable advanced Protection talent, or the direct intervention of a deity keeps you from learning the exact location of the targeted individual or object. You learn the name of the creature or object\u2019s location (place, name, business name, building name, or the like), community, county (or similar political division), country, continent, and the plane of existence where the target lies."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Identity (divine) [utility]",
+      "anchor": "toc83",
+      "text": "Prerequisites: Divination sphere (Discern Individual (sense)), caster level 1st.\nYou may divine the presence of individual auras. When divining in a location, you sense which creatures have recently been in that area. This does not reveal any information about those creatures other than the strength of their aura, but each aura possesses a unique signature; if you sense the same creature more than once, you can easily connect that they are the same creature.\nTable: Divine Identity | Hit Dice | Aura Strength | Aura Duration\n| 1-4 | Dim | 1 round\n| 5-8 | Faint | 1d6 rounds\n| 9-12 | Moderate | 1d6 minutes\n| 13-16 | Strong | 1d6x10 minutes\n| 17+ | Overwhelming | 1d6 days\nIt is also possible for someone to adopt an alias, as the same aura is detected multiple places, but may be more difficult to identify as the same person. If you possess a secret identity, such as with the vigilante class or in another way with GM approval, your secret identity and primary identity will detect as different people.\nVigilantes, Fugitives, and Divine Identity: While it is very easy to identify lower level creatures individually, their auras do not last very long, which is why many petty thieves can go undetected, even in settlements that have access to this ability. However, thieves of great skill or renown can quickly become easy to spot, becoming celebrities in their own right as their deeds are easily identified, even if they themselves are difficult to capture."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Knowledge (divine) [utility]",
+      "anchor": "toc84",
+      "text": "Prerequisites: Divination sphere (Read Omens (advanced, divine)), caster level 10th.\nYou may spend 3 spell points to divine for knowledge, delving the universe for the answer to a specific question. Delving in this manner is not an exact practice, and the only answers you may receive are \u2018yes\u2019, \u2018no\u2019, \u2018unclear\u2019, or \u2018unknown\u2019. You have a 50% chance + 1% per caster level of gaining a true answer. A failed roll produces an \u2018unknown\u2019 answer, while a roll of 90% or higher produces a lie. If you use this ability to ask the same question twice, the same answer repeats.\nNote: GMs are fully encouraged to use their own numbers and methods for determining when true, untrue, or unknown answers are gained. A caster divining knowledge could be asking friendly gods, bargaining with the Fates, reading the tablets of life, or using any number of alternate methods for gaining knowledge. As such, the specifics of this ability can vary widely between campaigns\u2014friendly gods may always answer truthfully, while Fates may require specific bargains to be made in exchange for knowledge. It is always possible that the source of information being asked simply does not know the answers to certain questions."
+    },
+    {
+      "level": 4,
+      "heading": "Expansive Vision",
+      "anchor": "toc85",
+      "text": "Prerequisites: Divination sphere, caster level 10th.\nYou may spend an additional spell point to increase the range of a sense from close range to medium range, or medium range to long range. This advanced talent may be taken up-to two times, increasing the range by two steps instead of one."
+    },
+    {
+      "level": 4,
+      "heading": "Eye in the Sky [3PP]",
+      "anchor": "toc86",
+      "text": "Prerequisites: Divination Sphere (Viewing)\nYou may create a scrying sensor which floats directly above you at any height within range and moves with you. You can see and hear from this location at the same time that you can see and hear from your normal location. When viewing through this scrying sensor, you do not take penalties to Perception checks for distance.\nSource: Card Casting 3: Volatile Variance"
+    },
+    {
+      "level": 4,
+      "heading": "Eyes Of The Cabal [BaP]",
+      "anchor": "toc87",
+      "text": "Prerequisites: Divination sphere (Prying Sight (sense)), caster level 5th.\nThe duration of the Prying Sight talent increases from 1 hour per caster level to 1 day per caster level and you may concentrate on a target under the effects of prying sight no matter how far away they are, as long as they are on the same plane as you.\nWhile concentrating as a move action on a target under the effects of prying sight, you may target another creature within close range of the target as a free action and transfer this sphere effect to the creature, treating that creature as the new target of this effect. The duration of this effect is shared between targets, and successfully transferring this effect to a new target ends this effect on the previous target. An unwilling target may attempt a Will saving throw to negate this effect, and a creature who succeeds at their saving throw cannot be targeted in this way again for 24 hours. Unlike other sphere effects, an unwilling target is not made aware when they succeed at a saving throw against this effect.\nIf you spend two additional spell points when casting prying sight, you no longer transfer the effects of prying sight to a new target, and instead copy the effect onto the new target, treating both targets as being under the effects of the same prying sight. There is no limit to the number of creatures you may copy the effects of prying sight onto, but the duration of the effect is still shared between targets, and ends for all affected targets when the effect\u2019s duration expires. However, copying prying sight onto new targets treats each copy as a separate sphere effect. If a copy of prying sight ends early or is dispelled for one target, it does not end for all affected targets."
+    },
+    {
+      "level": 4,
+      "heading": "Greater Scrying (divine) [utility]",
+      "anchor": "toc88",
+      "text": "Prerequisites: Divination sphere (Greater Divine [range], Scrying (advanced), Viewing (divine)), caster level 15th.\nWhen using the Scrying advanced talent, you may spend an additional spell point to decrease the action needed to concentrate on the effect by 1 step (normally a full-round action to a standard). In addition, you may move your sensor without following a target with a speed of 150 feet once each round as a free action."
+    },
+    {
+      "level": 4,
+      "heading": "Hear Name (sense) [utility] [DbH]",
+      "anchor": "toc89",
+      "text": "Prerequisites: Divination sphere, caster level 5th.\nYou may spend a spell point to hear your name or another specific phrase of your choice whenever it is mentioned. When you activate this sense, designate a word, phrase, or name. If a creature within 1 mile per caster level of you uses that word, phrase, or name to refer to you or an action in relation to you (such as attacking your base or intent to find something that belongs to you), you immediately hear the rest of the sentence in which they used the word, phrase, or name. You may dismiss this sense to learn the speaker\u2019s name, appearance, and location."
+    },
+    {
+      "level": 4,
+      "heading": "Mechanical Counterintelligence [LG]",
+      "anchor": "toc90",
+      "text": "Source: Arcforge Players Compendium\nPrerequisites: Divination sphere (Detect Scrying (sense)).\nFor the purpose of your Detect Scrying talent, any cameras, recording devices, radar scans, artificial eyes, or other means of remotely observing an area by technological means are considered magical sensors. You may attempt a magic skill check against creatures trying to observe you as normal, using the observer\u2019s gizmo penetration modifier, or CR as their effective MSB."
+    },
+    {
+      "level": 4,
+      "heading": "Otherworldly Viewing [LG]",
+      "anchor": "toc91",
+      "text": "Source: Arcforge Players Compendium\nPrerequisites: Divination sphere (Greater Divine [range], Viewing (divine)), caster level 10th.\nYou may use the Viewing talent to look into other planes, with the viewing sensor appearing in a location corresponding to your location in your current plane. If you possess the Cartographer\u2019s Divination, Eyes Of The Cabal, or Sense Observation talents, these talents now work across planes. Other talents may also be improved in this way at GM discretion."
+    },
+    {
+      "level": 4,
+      "heading": "Penetrating Divination",
+      "anchor": "toc92",
+      "text": "Prerequisites: Divination sphere, caster level 1st.\nWhen using Divination sphere talents or abilities, any divine or sense abilities normally blocked by dense substances, can now penetrate 15 feet of wood or dirt, 5 feet of stone, 6 inches of common metal, or a half inch of lead. You may take this advanced talent a second time increasing the thickness you can penetrate to 30 feet of wood or dirt, 10 feet of stone, 1 foot of common metal, or an inch of lead."
+    },
+    {
+      "level": 4,
+      "heading": "Power Of The Name [utility] [DbH]",
+      "anchor": "toc93",
+      "text": "Prerequisites: Divination sphere (Hear Name (advanced)), caster level 10th.\nThe range of Hear Name improves to unlimited and can even function across planes. In addition, you no longer need to dismiss this sense to learn the speaker\u2019s name, appearance, and location."
+    },
+    {
+      "level": 4,
+      "heading": "Read Omens (divine) [utility]",
+      "anchor": "toc94",
+      "text": "Prerequisites: Divination sphere, caster level 5th.\nYou may spend 2 spell points to divine for knowledge of the future. You gain useful advice in reply to one question regarding a specific goal, event, or activity to occur within 1 week. This advice could be a useful phrase or a cryptic omen or rhyme. If you do not act on the information, the conditions may change so that the information is no longer useful. The base chance for a correct divination is 70% + 1% per caster level, to a maximum of 90%. If the die roll fails, you receive no information and know the attempt failed, unless specific magic yielding false information is at work. Multiple divinations about the same topic by the same caster use the same dice result as the first attempt and yield the same answer each time."
+    },
+    {
+      "level": 4,
+      "heading": "Remote Casting (divine) [Alienist HB]",
+      "anchor": "toc95",
+      "text": "Prerequisites: Divination sphere (Viewing (divine)), caster level 5th.\nYou may spend 1 spell point to cast one magic sphere effect through your viewing viewpoint, using it as your location for the purpose of determining line of sight, line of effect, and range. If an ability requires a successful melee or ranged touch attack, use your normal bonuses for these attacks. You must pay for the spell point cost of the magic sphere effect as normal. Casting a magic sphere effect in this way immediately ends the viewing or scrying effect you are using - the scrying effect remains until the spell you cast is resolved, after which it ends."
+    },
+    {
+      "level": 4,
+      "heading": "Scrying [utility]",
+      "anchor": "toc96",
+      "text": "Prerequisites: Divination sphere (Greater Divine [range], Viewing (divine)), caster level 10th.\nYou may spend 2 spell points and 1 hour to observe a creature or object as if using the Viewing talent, but over any distance. If targeting a creature, the target is allowed a Will save to resist being viewed, which is subject to the following modifiers depending on your knowledge and connection to the desired creature. Creatures or objects on a different plane receive an extra +5 bonus to their Will save. If viewing an object, the object may attempt a save (if intelligent), or any creature holding the object, or that could be considered to \u2018possess\u2019 the object is allowed to attempt this save on its behalf. If no such creature is available, assume a default Will save of 15.\nTable: Familiarity (Scrying) | Knowledge | Will Save Modifier\n| None^ | +10\n| Secondhand (you have heard of the subject) | +5\n| Firsthand (you have met the subject) | +0\n| Familiar (you know the subject well) | -5\n^You must have some sort of connection (see below) to a creature of which you have no knowledge\nTable: Connection (Scrying) | Connection | Will Save Modifier\n| Likeness or picture | -2\n| You have one of the creature\u2019s possessions, or have a person present who once owned the object | -4\n| You possess a piece of the subject (body part, lock of hair, broken fragment, etc.) | -10\nIf the save fails, you can see and hear the subject and its surroundings (approximately 10 feet in all directions of the subject) as if you were present. If the saving throw succeeds, you cannot scry on the target again for 24 hours. If the subject moves, the sensor follows at a speed of up to 150 feet."
+    },
+    {
+      "level": 4,
+      "heading": "Sense Observation (sense) [Alienist HB]",
+      "anchor": "toc97",
+      "text": "Prerequisites: Divination sphere (Detect Scrying (sense)).\nYou may spend 1 spell point to detect any awareness of your presence. You know when any creatures are aware of your presence or when they are looking at you or a representation of you. If you have familiar knowledge of a subject, you know when that creature is thinking of you. You know the number of creatures that are observing you and what senses each creature is using to observe you (including indirect means such as scrying or cameras). This does not discern the identity of these beings, just the knowledge that you are being observed. This effect applies only to creatures which are on the same plane as you. If you sense that a creature senses you, you are considered to have secondhand knowledge of that creature for the purpose of scrying on it."
+    },
+    {
+      "level": 4,
+      "heading": "Sensitive Divinations [EO3]",
+      "anchor": "toc98",
+      "text": "Prerequisites: Divination sphere, caster level 1st.\nWhenever you would divine for magic auras, you can detect the lingering aura for up to 1 day per caster level you possess, regardless of the aura\u2019s original strength. The effects of this talent also benefit Alternate Divinations that have a strength or duration of a lingering aura (such as Divine Shapechanger or Divine Alignment)."
+    },
+    {
+      "level": 4,
+      "heading": "Soulbroker\u2019s Sight [utility] [SM\u2014]",
+      "anchor": "toc99",
+      "text": "Source: Baron\u2019s Secluded Library\nPrerequisites: Divination Sphere (divine treasure), Fate sphere\nAny creature you divine radiates an aura as if it were treasure observed with divine treasure. The monetary value of a creature is equal to that of the Soul Gem that would be created from its soul using the Create Soul Gem talent. This effect also reveals the names of any other creatures, gods, or locations which may have a claim on the creature\u2019s soul as well as any subordinates that are magical bonded to the creature (such as familiars, animal companions, and Conjuration Sphere companions)."
+    },
+    {
+      "level": 4,
+      "heading": "Speak And I Listen [DbH]",
+      "anchor": "toc100",
+      "text": "Prerequisites: Divination sphere (Hear Name (advanced)); Divination sphere (Greater Divine [range], Viewing (divine), Scrying (advanced)) or Warp sphere (Distant Teleport, Unseeing Teleport, True Teleport); caster level 10th.\nWhenever you learn the name, appearance and location of a creature through Hear Name or Power Of The Name, you may spend a spell point to use Scrying to spy on the creature or try to teleport to their location as an immediate action. This is restricted by the normal range limitations for these abilities and costs spell points as normal in addition to the one spent to use this talent."
+    },
+    {
+      "level": 4,
+      "heading": "Trapfinding (sense)",
+      "anchor": "toc101",
+      "text": "Prerequisites: Divination sphere (See Hazard (sense)), caster level 1st.\nYou may spend a spell point to gain a special sense that lets you add 1/2 your caster level to Perception checks made to locate traps and to Disable Device checks (minimum +1). In addition, you may disable magic traps as a rogue."
+    },
+    {
+      "level": 4,
+      "heading": "True Perception (sense) [Origin]",
+      "anchor": "toc102",
+      "text": "Prerequisites: Divination sphere (Ghost Sight (sense), Unhooded Sight (sense)), caster level 10th.\nYou may spend 2 spell points to gain the ability to perceive all things as they actually are for 1 minute per caster level using either sight, sound, touch, or taste/odor. If you choose sight, you see through normal and magical darkness, notice secret doors hidden by magic, see the exact locations of creatures or objects under blur or displacement effects, see invisible creatures or objects normally, see through illusions, and see the true form of polymorphed, changed, or transmuted things.\nFurther, you can focus your vision to see into the Ethereal Plane (but not into extradimensional spaces). If you choose sound, you can hear through soundless environments and magical silence, hear the exact locations of creatures or objects under blur or displacement effects, hear creatures or objects rendered inaudible by illusions, and automatically discern when a sound is illusory. If you choose touch or taste/odor (the latter two being a single sense), you discern when such sensations are illusory and can sense through such illusions. The range of true perception conferred is 120 feet.\nThis ability does not grant the ability to perceive through solid objects and does not negate concealment, including that caused by fog and the like. True Perception does not help the viewer see through mundane disguises, spot creatures who are simply hiding, or notice secret doors hidden by mundane means. In addition, these senses do not work in conjunction with other viewing magic, such as Scrying or Viewing Divination talents.\nTrue Perception now replaces the older True Seeing talent."
+    },
+    {
+      "level": 4,
+      "heading": "Unobscured Vision (sense)",
+      "anchor": "toc103",
+      "text": "Prerequisites: Divination sphere (Ghost Sight (sense)), caster level 10th.\nYou may spend 3 spell points to gain a special sense that grants the ability to see into and through solid matter within close range, with the viewer seeing as if he were looking at something in normal light even if there is no illumination. Unobscured Vision, despite the name, can be blocked by dense materials as if it were a divine talent or ability."
+    },
+    {
+      "level": 1,
+      "heading": "Divination Sphere Feats",
+      "anchor": "toc104",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Analyze Caster (Dual Sphere) [Archmagi's HB]",
+      "anchor": "toc105",
+      "text": "Prerequisites: Mana sphere, Divination sphere (Detect Spellcaster (divine)), caster level 9th.\nBenefit: You shorten the casting time of the Detect Spellcaster (divine) talent to 1 round (or one move action, if you possess Fast Divination) and do not need to spend a spell point to use it. Additionally, you gain a +5 bonus to your Spellcraft check when determining a creature\u2019s casting tradition this way. If you successfully determine the creature\u2019s casting tradition, you can spend a spell point to deeply analyze that caster, allowing you to learn all base magic spheres possessed by the spherecaster, as well as their current and maximum spell points, casting ability modifier, and caster levels with each sphere they possess. At 15th caster level, you may also select a single sphere you know they possess: you learn all magic talents they possess in that sphere.\nIf the target is a spellcaster and utilizes spell lists and spell slots, when deeply analyzing the caster you instead learn the highest spell level they are capable of casting, which spell list they draw their spells from, and whether they prepare their spells or cast them spontaneously. At 15th caster level, you may also select a single spell level to learn all spells they have prepared, or in the case of spontaneous casters all spells they know, of that spell level.\nWhenever you use a (manipulation) or (expunge) talent on a creature successfully, you may spend a spell point as a free action to analyze that creature as if using the Detect Spellcaster (divine) talent."
+    },
+    {
+      "level": 4,
+      "heading": "Arcing Strike (Combat)",
+      "anchor": "toc106",
+      "text": "Prerequisites: Destruction sphere (Guided Strike (blast shape)), caster level 11th.\nBenefit: You may spend a spell point to make your destructive blast fly in an erratic path, unerringly striking your target no matter what lies between you. Your destructive blast ignores the AC bonus granted to targets by anything less than total cover, and the miss chance granted to targets by anything less than total concealment. Total cover and total concealment provide their normal benefits against your ranged attacks.\nSpecial: If you possess the Divination sphere Viewing talent, you can use Arcing Strike to strike any target that you can see that is within range of both your destructive blast and your divination, as long as it is not inside a completely enclosed space (GM\u2019s discretion)."
+    },
+    {
+      "level": 4,
+      "heading": "Area Bypass [3PP]",
+      "anchor": "toc107",
+      "text": "Source: Baron\u2019s Glorious Arena\nPrerequisites: Divination Sphere, War Sphere (any momentum talent)\nBenefits: Whenever an ally moves through the area of effect of a sphere effect you have successfully identified, they may spend a number of momentum points equal to 1 + the number of spell points spent on the sphere effect. If they do, you may attempt an MSB check against the sphere effect\u2019s MSD, with the moving creature ignoring the sphere effect until the end of their movement on a success."
+    },
+    {
+      "level": 4,
+      "heading": "Aura Engineering (Dual Sphere)",
+      "anchor": "toc108",
+      "text": "Prerequisites: Divination sphere, Illusion sphere (Deceive Dweomer, Manipulate Aura (sensory, magic)).\nBenefit: You may attempt Use Magic Device checks on any object within close range using the greater caster level of your Divination or Illusion spheres. Additionally you may take 10 or 20 on Use Magic Device checks and apply the bonus granted from the Deceive Dweomer trick to all Use Magic Device checks. This is a supernatural ability and attended or intelligent objects are allowed a Will save as if this was an Illusion (glamer) to negate the effect but you may use your Divination caster level to determine the DC if it is higher."
+    },
+    {
+      "level": 4,
+      "heading": "Destiny Reader (Dual Sphere) [SM\u2014]",
+      "anchor": "toc109",
+      "text": "Source: Baron\u2019s Uncanny Gateway\nPrerequisites: Divination Sphere (augury or divine future), Fate Sphere\nBenefits: If you possess any motif talents, you may discharge a motif as part of using Augury to increase your base and maximum chance of gleaning correct or useful information by 10% or as part of applying the bonus to Divine Future to not consume the bonus, allowing it to be used again.\nIf you possess the ability to use any word or consecration, you may use a single word or consecration on yourself as part of the action to use Augury or Divine Future, spending spell points as normal."
+    },
+    {
+      "level": 4,
+      "heading": "Divining Beacon (Dual Sphere)",
+      "anchor": "toc110",
+      "text": "Prerequisites: Divination sphere, Warp sphere (Teleport Beacon (space)).\nBenefit: You may create teleport beacons that you can sense, giving you impressions of everything that happens around them. You know the size and movement of anything in a 10- foot radius around a beacon created this way. In addition, you may divine to see and hear from the location of such a teleport beacon as if you were standing in its position, regardless of your distance from it. Using divine in this way creates a scrying sensor which can be detected with a Perception check (DC 20 + caster level), but can only be dispelled by dispelling the teleport beacon."
+    },
+    {
+      "level": 4,
+      "heading": "Elemental Eye (Dual Sphere) [SM\u2014]",
+      "anchor": "toc111",
+      "text": "Source: Baron\u2019s Uncanny Gateway\nPrerequisites: Divination Sphere (viewing), Nature Sphere\nBenefits: When you create a viewing sensor, you may reduce the spell point cost of the effect by 1 to restrict the appearance of the viewing sensor to a specific element whose package you possess within range. The sensor appears attached to the nearest body of that element within close range of the target or area and of at least tiny size (such as a puddle for water, an open flame for fire, or a stone wall for earth) and cannot move beyond that body (though it can move freely within the flame, puddle, or wall). In the case of the air element, your sensor must appear in a space with air but with no other objects or creatures larger than tiny size within 30 feet. If the body is destroyed or reduced below tiny size, the sensor ends."
+    },
+    {
+      "level": 4,
+      "heading": "Ensouled Vision [Gravecaller's HB]",
+      "anchor": "toc112",
+      "text": "Prerequisites: Divination sphere, bound nexus class feature.\nBenefit: You can share perception with your souls, allowing you to see, smell, hear, etc. as though you were in that soul\u2019s space.\nWhenever you divine to gain information in an area (such as with the base Divination sphere effect, alternate divinations, or the Detect Spellcaster or Detect Thoughts talents but not the Augury or Divine Future talents), you may expend a soul to instead create a bound sensor, attaching the divine effect to the bound sensor. A bound sensor is a soul which constantly divines the area around it in a close range, informing you of anything that would be detected by it. The bound sensor lasts 10 minutes per level in the class that grants you the bound nexus class feature. The bound sensor can move as if it were a soul but, unlike a regular soul, can be given a route or area to patrol, allowing you to sleep or rest without needing to direct the soul to move each round.\nIf you possess the Divination sphere Alarm talent, the bound sensor instead lasts for 1 hour per level and can be augmented as though it were created with the Alarm talent, allowing you to set an audible or mental alarm or a password. In addition, you may change the attached divine effect on the bound sensor by divining again."
+    },
+    {
+      "level": 4,
+      "heading": "Explanatory Illusion (Dual Sphere) [3PP]",
+      "anchor": "toc113",
+      "text": "Source: Expanded Spheres: Baron's Lost Apocrypha\nPrerequisites: Divination Sphere, Illusion Sphere\nBenefit: As a free action whenever you are observing a target or location using your divine ability, you may create an illusory representation of anything that you can perceive using your divine abilities. For example, when divining for alignment you may surround all creatures within your divine area with auras of light or floating signs indicating their alignment or may create an illusory replica of everything you can see when using viewing. These illusions last for the duration of the divine ability, though you may spend a spell point to make them last for an additional minute per caster level afterwards. These illusions are considered tricks and do not cost spell points."
+    },
+    {
+      "level": 4,
+      "heading": "Eyes Of Battle (Dual Sphere) [Alienist HB]",
+      "anchor": "toc114",
+      "text": "Prerequisites: Divination sphere, War sphere\nBenefit: Whenever you would use a (divine) talent that targets a space or creature within the area of one of your totems, you may reduce the casting time by 1 step, to a minimum of a swift action."
+    },
+    {
+      "level": 4,
+      "heading": "Practiced Seer",
+      "anchor": "toc115",
+      "text": "Prerequisite: Divination sphere.\nBenefit: You may use your magic skill bonus or caster level, whichever is higher for the purposes of determining the duration of Divination (sense) talents or abilities."
+    },
+    {
+      "level": 4,
+      "heading": "Precogniscent Protection (Combat)",
+      "anchor": "toc116",
+      "text": "Prerequisites: Divination sphere (one or more (sense) talents or abilities).\nBenefit: You gain an insight bonus to armor class equal to the number of senses from the Divination sphere you have active (maximum 1 + 1 per 5 Hit Dice). In addition, you may as an immediate action spend a spell point and dismiss a sense you have active to cause a critical hit against you to become a regular hit instead."
+    },
+    {
+      "level": 4,
+      "heading": "Precogniscent Resistance (Combat)",
+      "anchor": "toc117",
+      "text": "Prerequisites: Divination sphere (one or more (sense) talents or abilities).\nBenefit: You gain a resistance bonus to saves equal to the number of senses from the Divination sphere you have active (maximum 1 + 1 per 4 Hit Dice). In addition, you may as an immediate action spend a spell point and dismiss a sense you have active to reroll a saving throw you have failed."
+    },
+    {
+      "level": 4,
+      "heading": "Precogniscent Smite (Combat)",
+      "anchor": "toc118",
+      "text": "Prerequisites: Divination sphere (one or more (sense) talents or abilities).\nBenefit: You gain an insight bonus to attack and damage equal to the number of senses from the Divination sphere you currently have active (maximum 1 + 1 per 5 Hit Dice). You may as an immediate action spend a spell point and dismiss a sense you have active to ignore a percentage of miss chance (maximum 5% + 5% per 5 Hit Dice) for 1 round."
+    },
+    {
+      "level": 4,
+      "heading": "Projected Presence (Dual Sphere) [SM\u2014]",
+      "anchor": "toc119",
+      "text": "Source: Baron\u2019s Uncanny Gateway\nPrerequisites: Divination Sphere (Viewing), Illusion Sphere\nBenefits: Whenever you create a viewing sensor, you may have it take any form that you could create with an illusion. While in this form, the viewing sensor can move at the same rate the illusion can move and is capable of creating any sensations you could create with your illusions (for example, if you have the Illusory Sound talent, the viewing sensor could speak)."
+    },
+    {
+      "level": 4,
+      "heading": "Scholar Of Past And Future [BaP]",
+      "anchor": "toc120",
+      "text": "Prerequisites: Knowledge (history) 1 rank, Divination sphere.\nBenefit: You get a +2 bonus on all Knowledge (history) checks. If you have 10 or more ranks in Knowledge (history), this bonus increases to +4.\nIn addition, you gain a bonus to your caster level equal to 1/2 the number of ranks you have in the Knowledge (history) skill, rounded up, when determining the effects of your divine ability. This can not increase your caster level above your Hit Dice."
+    },
+    {
+      "level": 4,
+      "heading": "Survey of your Realm (Dual Sphere) [DbH]",
+      "anchor": "toc121",
+      "text": "When you create a realm, you are sure to keep a close eye on it.\nPrerequisites: Divination sphere (Viewing), Warp sphere (Extradimensional Room).\nBenefit: So long as your Extradimensional Room exists, you may keep a constant viewing sensor placed in any location in the room. This sensor lasts for the duration of your room, does not cost spell points, and may be moved to any other location in your Extradimensional Room as a free action once per round. You may perceive what this sensor perceives simultaneously with whatever you perceive. If this sensor is dismissed, dispelled, or would otherwise end, you may reform it as a standard action.\nAs a free action once per round, you may have this sensor touch an unattended object or willing creature it is adjacent to. Until the end of your next turn, you are considered to be touching (but not wielding) that object or creature."
+    },
+    {
+      "level": 4,
+      "heading": "Tabulated Mind",
+      "anchor": "toc122",
+      "text": "Prerequisite: Divination sphere.\nBenefit: When you concentrate to maintain a divine effect, you are no longer considered flat-footed due to maintaining concentration, and may also take swift or immediate actions during the same action. In addition, as a free action you may spend a spell point to reduce the concentration action for divine effects by 1 step for 1 round per caster level, thus reducing a normally full-round action into a standard action, and also allowing for additional move actions to be performed. If you also possess the boon Easy Focus, you reduce instead the concentration action without spending a spell point to a standard action, allowing for additional move actions, and with spending spell points from 1 full-round action to 1 move action, allowing for additional standard actions.\nNormal: Concentrating on a divine effect is usually a fullround action, while also preventing any other standard, move, immediate and swift actions, and granting the flat-footed condition."
+    },
+    {
+      "level": 4,
+      "heading": "Totemic Radar (Dual Sphere) [Alienist HB]",
+      "anchor": "toc123",
+      "text": "Prerequisites: Divination sphere (Blindfolded Oracle (sense)), War sphere.\nBenefit: When you close your eyes to use Blindfolded Oracle while within the area of your totem, you may choose to have your blindsense extend to the entire area of the totem rather than close range. When used in this way, your blindsense stops at the edge of your totem\u2019s area."
+    },
+    {
+      "level": 4,
+      "heading": "Watchful Manipulator (Dual Sphere) [LG]",
+      "anchor": "toc124",
+      "text": "Source: Arcforge Players Compendium\nPrerequisites: Divination sphere (Prying Sight (sense)), Mind sphere.\nBenefit: When a creature fails a saving throw against your charm, you may spend a spell point to also target them with the Prying Sight (sense) talent to perceive through their senses. This (sense) lasts for the duration of the charm."
+    },
+    {
+      "level": 4,
+      "heading": "Wise to the Fates (Dual Sphere) [SM\u2014]",
+      "anchor": "toc125",
+      "text": "Source: Baron\u2019s Uncanny Gateway\nPrerequisites: Divination Sphere, Fate Sphere\nBenefits: Whenever you would discharge a (motif) talent, you may choose to end a single (sense) talent on yourself rather than ending the (motif). You gain the benefits of discharging as normal."
+    },
+    {
+      "level": 1,
+      "heading": "Archetypes Specializing in Divination",
+      "anchor": "toc126",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "Astrologian [CS]",
+      "anchor": "toc127",
+      "text": "Astrologians command the power of the constellations to strike down their foes."
+    },
+    {
+      "level": 2,
+      "heading": "Blind Swordsman",
+      "anchor": "toc128",
+      "text": "The Blind Swordsman is a Samurai who has traded their sight for the ability to fight while blind - and get added benefits while doing so."
+    },
+    {
+      "level": 2,
+      "heading": "Eldritch Cultist",
+      "anchor": "toc129",
+      "text": "The Eldritch Cultist is a Thaumaturge whose focus on knowledge leads to both power and confusion."
+    },
+    {
+      "level": 2,
+      "heading": "Psychic Medium",
+      "anchor": "toc130",
+      "text": "The Psychic Medium is a Medium who trades access to two of their spirits for a Spherecaster spirit and proficiency at divining for information."
+    },
+    {
+      "level": 2,
+      "heading": "Psyforensic",
+      "anchor": "toc131",
+      "text": "The Psyforensic is an Investigator that can consult the spirits for information hidden to others."
+    },
+    {
+      "level": 2,
+      "heading": "Treasure Seeker",
+      "anchor": "toc132",
+      "text": "The Treasure Seeker is an Unchained Rogue who gains access to a small selection of talents."
+    },
+    {
+      "level": 2,
+      "heading": "Visionary",
+      "anchor": "toc133",
+      "text": "A Visionary is a Medium who can channel the power of spirits to divine in different ways or augment the senses of allies."
+    },
+    {
+      "level": 2,
+      "heading": "Visionary General [CS]",
+      "anchor": "toc134",
+      "text": "Visionary Generals are Commanders can use the Divination sphere to augment their battlefield commands."
+    },
+    {
+      "level": 1,
+      "heading": "Wild Magic",
+      "anchor": "toc135",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Wild Magic Generator",
+      "anchor": "toc136",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Wild Magic Table",
+      "anchor": "toc137",
+      "text": "| d100 | Result\n| 1 | For 10 minutes per caster level, the caster is plagued by meaningless, trivial, and mundane visions of the history of one object he touches each round.\n| 2 | For 1 round per caster level, the caster is blinded and deafened.\n| 3 | For 1 hour per caster level, the target is plagued by vague, indecipherable visions of the future, imposing a -1 penalty on concentration checks. This penalty increases by 1 every 5 caster levels. For divine effects without a target, choose a random creature within the area of the effect.\n| 4 | All creatures within medium range of the caster must succeed on a Will save or lose the ability to speak and understand their native languages (those granted by race) for 10 minutes per caster level.\n| 5 | For 1 minute per caster level, the caster becomes unable to perceive hostile creatures. This effect ends after taking damage from a creature the caster could not perceive due to this effect.\n| 6 | The caster gains insight into the future and may negate one attack against him within the next hour as an immediate action.\n| 7 | For 1 minute per caster level, the caster increases all distance penalties on Perception checks by caster level, but gains a circumstance bonus on saving throws against effects with the (light) and (sonic) descriptors equal to 1/2 caster level (minimum 1).\n| 8 | The caster is dazed for 1 round as he receives a vision of the nearest unattended magical item worth at least 100 gp per caster level. The caster learns the approximate direction and distance to this item.\n| 9 | The caster takes a number of points of ability damage to his casting attribute equal to the effect\u2019s caster level/4 (minimum 1) even if he would normally be immune to ability damage.\n| 10 | The caster gains knowledge of one talent of his choice from this sphere for 1 round.\n| 11 | For 1 minute per caster level, the caster is mute.\n| 12 | For 10 minutes per caster level, all insight bonuses active on the caster are instead treated as penalties.\n| 13 | For 1 minute per caster level, to the caster\u2019s perception, all sources of iron within long range shed light as a torch.\n| 14 | (Combat) For 1 round per caster level, all creatures within medium range of the caster are aware of the status of all other creatures within that area per the Divine Life ability.\n| 15 | The caster gains an augury regarding his next intended action. The result is opposite the truth (weal or woe).\n| 16 | (Combat) The caster is stunned for 1 round.\n| 17 | For 1d6 rounds, all hostile creatures within close range of the caster are flat-footed from the end of their turn until the start of their next turn.\n| 18 | The caster is assaulted with impressions of events past and future and is dazed for 1 round. These impressions grant a +4 insight bonus on any Knowledge checks made regarding events that transpired within long range made within the next hour.\n| 19 | For 1 minute per caster level, the caster may only communicate in cryptic rhyme and poetry. Even when writing, words must be communicated in verse.\n| 20 | The effect fails, but the action is not lost. Spell points or spell slots spent are lost.\n| 21 | (Combat) For 1d6 rounds, the caster is blinded but catches glimpses of the near future. The caster does not suffer a penalty to initiative or AC from this condition and gains the benefits of uncanny dodge for the duration of the effect.\n| 22 | For 1 minute per caster level, the caster gains the scent ability, but takes a -4 penalty on saves against effects that cause the sickened or nauseated conditions.\n| 23 | The caster is fatigued.\n| 24 | (Combat) The caster is stunned for 1 round, overwhelmed by sensory input that grants no information.\n| 25 | For 10 minutes per caster level, the caster\u2019s senses function normally, except he is unable to perceive creatures within 20 feet.\n| 26 | All creatures within close range must succeed on a Fortitude save or be blinded for 1 round per caster level.\n| 27 | All creatures within 5 ft. plus 5 ft. per 5 caster levels of the caster must succeed on a Will save or be assaulted with impressions of events past and future and be dazed for 1 round. These impressions grant a +4 insight bonus on any Knowledge checks made regarding events that transpired within long range made within the next hour.\n| 28 | The casting time decreases by 2 steps.\n| 29 | Roll twice and take both results. Ignore any results that require rerolls. If both rolls thus ignored, there is no effect.\n| 30 | Roll again on the Universal wild magic table.\n| 31 | (Combat) The caster perceives translucent images of every creature that has ever died in the area, granting all creatures partial concealment against the caster for 1d6 rounds.\n| 32 | (Combat) For 1d6 rounds, psychic pulses emanate from the caster. To cast or concentrate on any spells or sphere abilities, all non-mindless creatures within medium range must succeed on a concentration check against a DC of 10 + 1/2 caster level of the spell or sphere ability being cast.\n| 33 | The caster is blinded for 1 round per caster level.\n| 34 | The caster receives a vision of being slain by the nearest hostile (or likely to become hostile) creature. If the caster encounters that creature during the next 1 hour per caster level, the caster is frightened for 1 round and flees the creature as best he is able.\n| 35 | For 1 minute per caster level, the caster\u2019s allies becomes unable to perceive the caster.\n| 36 | For 1 hour per caster level, the caster gives an aura of all alignments, creature types, creature subtypes, and hit point totals.\n| 37 | For 10 minutes per caster level, all creatures within long range of the caster subtract 1/2 caster level (minimum 1) from their Hit Dice to determine the strength of their auras. Results of 0 or lower suppress the aura.\n| 38 | The spell point cost of the effect decreases by 1. If the effect did not require any spell points, the caster instead gains 1 temporary spell point that expires at the end of his next turn.\n| 39 | The casting time increases by 1 step.\n| 40 | All creatures within close range of the caster must succeed on a Will save or be blinded and deafened for 1d6 rounds.\n| 41 | (Combat) For 1d6 rounds, all creatures within close range of the caster the caster are flat-footed from the end of their turn until the start of their next turn.\n| 42 | (Combat) For 1d6 rounds, all allied creatures within close range of the caster the caster are flat-footed from the end of their turn until the start of their next turn.\n| 43 | All creatures within close range of the caster must succeed on a Will save or be blinded, deafened, and mute for 1d6 rounds.\n| 44 | For 1 minute per caster level, all the caster\u2019s senses act as if the caster was in the space of his nearest ally rather than his own. If the ally does not have line of sight to the caster, the caster is treated as being blind.\n| 45 | The caster gains insight into the future and may negate one attack against him within the next hour as an immediate action, but is blinded for 1 round after using this ability.\n| 46 | Effect receives a -4 penalty to caster level (minimum 1).\n| 47 | As an instantaneous effect, the caster gains knowledge of the location and quantity of all food (as determined by the caster\u2019s race) within divination range.\n| 48 | For 10 minutes per caster level, the caster believes that he gains an innate knowledge of the direction to the nearest source of potable water larger than 1 cubic foot. This belief is incorrect, giving a result opposite the actual location of such a source.\n| 49 | The effect fails and the action is lost. Spell points or spell slots are not lost.\n| 50 | For 1 minute per caster level, the caster may only communicate via obtuse poetry in dactylic hexameter. Even if they share a language, those listening must succeed a Linguistics check with a DC equal to the caster\u2019s save DC in order to understand him.\n| 51 | For 1 minute per caster level, all hostile creatures within long range of the caster gain the benefit of any special senses (blindsight, darkvision, tremorsense, etc.) the caster possesses (whether naturally, from items, or from ongoing effects) but lose the benefit of any they would normally possess.\n| 52 | For 10 minutes per caster level, all creatures within long range of the caster add 1/2 caster level (minimum 1) to their Hit Dice to determine the strength of their auras.\n| 53 | For 1 minute per caster level, all creatures within long range of the caster gain the benefit of any special senses (blindsight, darkvision, tremorsense, etc.) the caster possesses (whether naturally, from items, or from ongoing effects) but lose the benefit of any they would normally possess.\n| 54 | The casting time increases by 2 steps.\n| 55 | The effect fails and the action is lost. Spell points or spell slots are lost.\n| 56 | The caster receives a vision of being slain by the nearest hostile (or likely to become hostile) creature. If the caster encounters that creature during the next 1 hour per caster level, the caster must succeed on a Fortitude save or be stunned for 1 round.\n| 57 | The caster loses knowledge of any of the talents used in the effect (but not the base sphere) for the length of the effect (minimum 1 round).\n| 58 | The caster becomes aware of how many words have been spoken in the past 24 hours by all creatures within long range.\n| 59 | The spell point cost of the effect increases by 1d4. If the caster does not have enough spell points, he is instead dazed until the end of his next turn.\n| 60 | For 1 hour per caster level, the caster is plagued by vague, indecipherable visions of the future, imposing a -1 penalty on concentration checks. This penalty increases by 1 every 5 caster levels.\n| 61 | (Combat) The caster is nauseated for 1 round.\n| 62 | For 1 minute per caster level, the caster receives flashes of the future, granting a +2 insight bonus to AC and attack rolls. This bonus increases by 1 for every 10 caster levels.\n| 63 | The caster receives a vision of a trusted ally stealing from him. For the next 24 hours, the caster takes all reasonable precautions to prevent allies from robbing him and does not treat that ally as an ally for the purpose of free movement and flanking.\n| 64 | The spell point cost of the effect increases by 1. If the caster does not have enough spell points, he is instead staggered until the end of his next turn.\n| 65 | The caster gains instantaneous knowledge of the number of seconds until the next solar eclipse and feels compelled to immediately record this number, which requires writing implements and 1d6 full-round actions. This compulsion overrides all other concerns except personal safety and does not end until the compulsion is satisfied.\n| 66 | For 1 minute per caster level, to the caster\u2019s perception, all sources of water within long range shed light as a torch. Water contained in living bodies does not glow.\n| 67 | The casting time decreases by 1 step.\n| 68 | For 1 minute per caster level, all allied creatures within long range of the caster gain the benefit of any special senses (blindsight, darkvision, tremorsense, etc.) the caster possesses (whether naturally, from items, or from ongoing effects) but lose the benefit of any they would normally possess.\n| 69 | The caster is exhausted.\n| 70 | (Combat) For 1 round per caster level, the caster receives false flashes of the future, imposing a -2 penalty to AC and attack rolls. This penalty increases by 1 for every 10 caster levels.\n| 71 | For 1 minute per caster level, creature\u2019s hostile to the caster within medium range become unable to perceive the caster. This effect ends for each individual creature after taking damage from a creature that could not be perceived due to this effect.\n| 72 | (Combat) For 1d6 rounds, the caster is flat-footed from the end of his turn until the start of his next turn.\n| 73 | The caster gains an augury regarding his next intended action. The result is accurate (weal or woe).\n| 74 | For 1 minute per caster level, the caster\u2019s allies within medium range become unable to perceive hostile creatures. This effect ends for each individual creature after taking damage from a creature that could not be perceived due to this effect.\n| 75 | For 10 minutes per caster level, the caster gains an innate knowledge of the direction to the nearest source of potable water larger than 1 cubic foot.\n| 76 | The caster is convinced that hostile creatures appropriate to the area are within long range and takes appropriate action. This lasts for 10 minutes per caster level.\n| 77 | The caster loses access to this sphere for 1d6 rounds.\n| 78 | Roll twice and choose the result. Ignore any results that require rerolls. If both rolls thus ignored, there is no effect.\n| 79 | For 10 minutes per caster level, physic pulses emanate from the caster. All non-mindless creatures within medium range may pinpoint the caster\u2019s square as a free action.\n| 80 | As an instantaneous effect, the caster becomes aware of the location and quantity of all books, scrolls, and other written documents within divination range.\n| 81 | The caster takes 1d4 points of Constitution damage even if he would normally be immune to ability damage. Creatures without a Constitution score instead take Charisma damage.\n| 82 | (Combat) All creatures act in the reverse order of their initiative for 1d6 rounds. Affected creatures cannot take the delay action.\n| 83 | For 1 minute per caster level, the caster reduces all distance penalties on Perception checks by caster level, but takes a penalty on saving throws against effects with the (light) and (sonic) descriptors equal to 1/2 caster level (minimum 1).\n| 84 | For 1 minute per caster level, the caster is unable to perceive creatures of his own creature type.\n| 85 | For 1 minute per caster level, the caster gains tremorsense out to 30 feet.\n| 86 | For 1 hour, the caster feels the pain of a blow before it lands, unconsciously flinching away. This grants a +1 dodge bonus to AC and Reflex saves but imposes a -1 penalty on attack rolls and Strength- and Dexterity-based skill checks.\n| 87 | The caster takes untyped nonlethal damage equal to caster level. This damage does not force concentration checks to cast or maintain sphere effects or spells.\n| 88 | For 1 minute per caster level, the caster can speak and write only meaningless gibberish.\n| 89 | For 1 hour per caster level, the caster loses the ability to speak and understand his native language(s) (those granted by race).\n| 90 | For 1 minute per caster level, creature\u2019s hostile to the caster within medium range become unable to perceive the caster or his allies. This effect ends for each individual creature after taking damage from a creature that could not be perceived due to this effect.\n| 91 | Effect receives a +2 bonus to caster level.\n| 92 | The caster is dazed for 1 round as he receives a vision of the most recent violent death of a humanoid within 1 mile per caster level. The caster learns the approximate direction and distance to the place this occurred.\n| 93 | The caster\u2019s mind is flooded with information. All Knowledge checks made in the next 10 minutes per caster level receive an insight bonus equal to caster level but require a full-round action to make.\n| 94 | (Combat) The caster is dazed for 1 round.\n| 95 | For 1 minute per caster level, the caster becomes unable to perceive his allies.\n| 96 | All creatures within close range of the caster must succeed on a Will save or be blinded for 1d6 rounds.\n| 97 | For 1 minute per caster level, all creatures within close range of the caster may choose to share the caster\u2019s sensory information as a free action. Any creature using this ability is flat-footed until the start of their next turn.\n| 98 | The caster is dazed for 1 round and shaken for 1 round per caster level as he receives a vision of the nearest hostile (or likely to become hostile) creature. The caster learns the approximate direction and distance to this creature.\n| 99 | For 1 minute per caster level, the caster is deafened.\n| 100 | The caster is assaulted by horrific visions of the past, nauseating him for 1 round. These visions grant a +4 bonus on Knowledge checks regarding the history of the caster\u2019s current location.\nSpheres of Power $19.99 The Diviner's Handbook $4.99 You can predict the future and gain information not available to the usual 5 senses."
+    },
+    {
+      "level": 1,
+      "heading": "Divine [Core]",
+      "anchor": "",
+      "text": "You may divine to gain information. To divine, you must spend 10 minutes meditating, although you may spend a spell point to decrease this time to a single standard action. Divining always has a duration of concentration, but you must spend a full-round action concentrating (you can take no other action, not even walking); you are flat-footed while divining.\nWhen you divine, you detect the strength and location of all magical auras within Medium range. You do not know the exact caster level of an item or spell, but you may sense the aura\u2019s general strength according to the chart below. To determine the spell school or sphere of the effect, you must pass a Knowledge (arcana) check with a DC equal to 15 + 1/2 the caster level.\nTable: Aura Strength | Caster Level | Aura Strength\n| 1-5 | Faint\n| 6-11 | Moderate\n| 12-20 | Strong\n| 20+ | Overwhelming\nA magical aura lingers after its original source dissipates (in the case of a spells and sphere effects) or is destroyed (in the case of a magic item). In such a case, divining reveals an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:\nTable: Lingering Aura | Original Strength | Duration of Lingering Aura\n| Faint | 1d6 Rounds\n| Moderate | 1d6 Minutes\n| Strong | 1d6 x 10 Minutes\n| Overwhelming | 1d6 Days\nWhen using Spellcraft to identify the properties of a magic item, you may use divine in place of the detect magic spell. Outsiders and elementals are not magical in and of themselves, but if they are summoned, the conjuration effect registers. Divining can penetrate most barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it."
+    },
+    {
+      "level": 2,
+      "heading": "Alternate Divinations",
+      "anchor": "",
+      "text": "If you possess certain other spheres, you may divine for information other than magical auras. These alternate divinations are detailed below."
+    },
+    {
+      "level": 3,
+      "heading": "Alteration",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Shapechanger",
+      "anchor": "",
+      "text": "If you possess the Alteration sphere, you may divine for creatures with the shapechanger type. The strength of a shapechanger aura is determined according to Chart: Shapechanger. If a creature is not a shapechanger, but is under the effect of a Shapeshift Alteration sphere (or similar) ability, it shows up with a dim aura.\nChart: Shapechanger | HD | Strength | Lingering Aura Duration\n| Under the effects of Shapeshift | Dim | 1 round\n| 1 or lower | Faint | 1d6 rounds\n| 2-4 | Moderate | 1d6 minutes\n| 5-10 | Strong | 1d6 x 10 minutes\n| 11+ | Overwhelming | 1d6 days"
+    },
+    {
+      "level": 3,
+      "heading": "Bear",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Bears",
+      "anchor": "",
+      "text": "If you possess the Bear sphere, you may divine for the presence of bears, as well as edible plants, animals, and other edible substances such as honey."
+    },
+    {
+      "level": 3,
+      "heading": "Blood",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Bleeding",
+      "anchor": "",
+      "text": "If you possess the Blood sphere, you may divine the location of any creature that has taken bleed damage in the last 10 minutes per caster level or that is under half its maximum hit points. Creatures immune to bleed damage cannot be detected with this divination."
+    },
+    {
+      "level": 3,
+      "heading": "Conjuration",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Unnaturals [Core]",
+      "anchor": "",
+      "text": "If you possess the Conjuration Sphere, you may divine the presence of outsiders and aberrations. In all other ways, this functions as divining for undead."
+    },
+    {
+      "level": 3,
+      "heading": "Creation",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Components",
+      "anchor": "",
+      "text": "If you possess the Creation sphere, you may divine for a material of which you can create using the Creation sphere. Alternatively if presented with individual components, you can divine what the combined product was or could produce, effectively granting you a circumstance bonus to your choice of knowledge (engineering) or craft (any one) equal to 1/2 your caster level (minimum 1) on related checks, this bonus lasts for as long as you concentrate + 1 hour thereafter."
+    },
+    {
+      "level": 3,
+      "heading": "Dark",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Dark",
+      "anchor": "",
+      "text": "If you possess the Dark sphere, you may divine the surrounding area at a medium range (100 ft + 10 ft per caster level). While under the effects of divine dark, you may see clearly in all forms of darkness, even magical darkness as if having the see in darkness ability."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Shadow",
+      "anchor": "",
+      "text": "If you possess the Dark sphere, you may divine the presence of creatures or objects native to the Plane of Shadow. When divining the presence of such creatures refer to Chart: Animals and Plants to determine the strength of the creature\u2019s aura. Shadowstuff, such as that created from the fey adept class or those with the sphere specific drawback: Limited creation, shadowstuff count as originating from the plane of shadow for the purpose of this divination."
+    },
+    {
+      "level": 3,
+      "heading": "Death",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Undead [Core]",
+      "anchor": "",
+      "text": "If you possess the Death sphere, you may divine for undead creatures. The strength of an undead aura is determined according to Chart: Undead.\nChart: Undead | HD | Strength | Lingering Aura Duration\n| 1 or lower | Faint | 1d6 Rounds\n| 2-4 | Moderate | 1d6 Minutes\n| 5-10 | Strong | 1d6 x 10 Minutes\n| 11 or higher | Overwhelming | 1d6 Days"
+    },
+    {
+      "level": 3,
+      "heading": "Destruction",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Hostility",
+      "anchor": "",
+      "text": "If you have the Destruction sphere, you may divine whenever a creature or an object within medium range takes hit point damage. In addition to you gain knowledge as to the amount and type of damage dealt and from what direction the damage was dealt from. If the source of the damage in inside the area of your divine effect, you also learn what square the source occupied."
+    },
+    {
+      "level": 3,
+      "heading": "Enhancement",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Enhancement",
+      "anchor": "",
+      "text": "Instead of using your divine ability to detect magic in general, instead you focus in on specifically what short-term effects creatures you have pinpointed are undergoing. If you possess the Enhancement sphere, you may divine all creatures you can see within range and determine which (if any) are benefiting from temporary bonuses, and the sources of the bonuses be they magical, alchemical, supernatural, etc."
+    },
+    {
+      "level": 3,
+      "heading": "Fallen Fey",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Detect Faetouched",
+      "anchor": "",
+      "text": "If you possess the Fallen Fey sphere, you may divine the location of any creature that possesses the elf, fey, gnome, or sidheir types or subtypes."
+    },
+    {
+      "level": 3,
+      "heading": "Fate",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Detect Loyalties",
+      "anchor": "",
+      "text": "If you possess the Fate sphere, you may divine the top three general things matter most to the creatures you can see within range. Examples of base loyalties may include but are not limited to: Country, Faith, Family, Power, and Self. Subcategories for base loyalties may also exist where appropriate such as Self (survival) or Self (perfection). While you do not learn specific details such as proper names of the associated loyalties, you do acquire the order in which the loyalties stand. Mindless creatures might have only 1 loyalty such as Self (survival), whereas creatures with low animal-like intelligence might only have 2 loyalties such as Family (pack) and Self (survival). Only the top three loyalties are revealed, even if they have more."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Alignment [Core]",
+      "anchor": "",
+      "text": "If you possess the Fate sphere, you may divine for a specific part of the alignment spectrum: evil, good, lawful, or chaotic. The strength of these auras are determined according to Chart: Alignment.\nTraps, poisons, and other potential perils have no alignment. Creatures with aligned intents (killing in anger, aiding those in need for their own sakes, etc.) may temporarily detect according to their actions.\n| Creature/Object | Aura Power | | | |\n| | None | Faint | Moderate | Strong | Overwhelming\n| Aligned Creature1 (HD) | 4 or lower | 5-10 | 11-25 | 26-50 | 51 or higher\n| Aligned Undead (HD) | - | 2 or lower | 3-8 | 9-20 | 21 or higher\n| Aligned Outsider (HD) | - | 1 or lower | 2-4 | 5-10 | 11 or higher\n| Cleric or Paladin of an Aligned Deity2 (class levels) | - | 1 | 2-4 | 5-10 | 11 or higher\n| Aligned Magic Item or Spell (Caster Level) | 5 or lower | 6-10 | 11-15 | 16-20 | 21 or higher\n1 Except for Undead and Outsider, which have their own entries on the table. 2 Some characters who are not clerics may radiate an aura of equivalent power. The class description will indicate whether this applies."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Fate",
+      "anchor": "",
+      "text": "If you possess the Fate sphere, you may divine the alignment auras of creatures you can see within medium range of you. Such creatures emit a colored aura depending upon what alignments or loyalties you share with them. Creatures that share the same moral alignment (Good/Neutral/Evil) emit a red aura. Creatures that share the same ethical alignment (Law/Neutral/Chaos) emit a blue aura. Creatures that share a primary base loyalty (see divine loyalties) emit a yellow aura. Creatures that share multiple colors have their colors combined, i.e. a creature that shares the primary base loyalty of family and the ethical alignment of chaos will emit a green aura. Creatures that share all three primary colors (Red, Blue, and Yellow) emit a glowing white aura. Refer to Chart: Divine Fate below for more information on how colored auras combine. Creatures that do not share any alignment or loyalties do not emit any aura that you can see.\nChart: Divine Fate | Primary Colors | Secondary/Combination Color\n| Blue and Red | Purple\n| Blue and Yellow | Green\n| Red and Yellow | Orange\n| Blue, Red, and Yellow | White"
+    },
+    {
+      "level": 3,
+      "heading": "Illusion",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Illusions [Core]",
+      "anchor": "",
+      "text": "If you possess the Illusion Sphere, you may divine for illusions. This grants you a free Will save or Perception check (in the case of illusionary disguises or invisibility) against any illusions or invisibility within the area."
+    },
+    {
+      "level": 3,
+      "heading": "Life",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Life [Core]",
+      "anchor": "",
+      "text": "If you possess the Life sphere, you may divine the location of nearby living creatures. These creatures do not have auras; you instead determine their condition according to the list below:\nNormal: Has at least 90% of full normal hit points, free of disease.\nFair: 30% to 90% of full normal hit points remaining.\nPoor: Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.\nWeak: 0 or fewer hit points remaining, afflicted with a disease that has reduced an ability score to 5 or less, or crippled."
+    },
+    {
+      "level": 3,
+      "heading": "Light",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Ultravision (divine)",
+      "anchor": "",
+      "text": "If you possess the Light sphere, you may divine with an added level of perception. You gain a bonus to perception checks equal to your caster level. In addition, once per round you may make a Perception check as a free action (normally a move action)."
+    },
+    {
+      "level": 3,
+      "heading": "Mind",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Charm [Core]",
+      "anchor": "",
+      "text": "If you possess the Mind sphere, you may divine for the presence of charm, compulsion, possession, and mind sphere effects. You do not need to make a Knowledge (arcana) check to identify the school or sphere of these abilities."
+    },
+    {
+      "level": 3,
+      "heading": "Nature",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Elements [Core]",
+      "anchor": "",
+      "text": "If you possess the Nature sphere, you may divine for the elements.\nIf you possess the Air package, you may divine and identify the presence of breathable air, and toxic gases or vapor (or lack thereof if in a vacuum).\nIf you possess the Earth package you may divine and identify the presence of dirt, gems, sand, and stone.\nIf you possess the Fire package you may divine the presence and strength of fires.\nIf you possess the Metal package, you may divine and identify the presence of ore deposits and metals.\nIf you possess the Plant package you may divine the location of plantlife and plant creatures.\nIf you possess a Nature (Spirit) talent, you may divine the location of animal creatures.\nIf you possess the Water package you may divine the location and size of bodies of water.\nChart: Animals and Plants | HD | Strength | Lingering Aura Duration\n| 1 or lower | Faint | 1d6 rounds\n| 2-4 | Moderate | 1d6 minutes\n| 5-10 | Strong | 1d6 x10 minutes\n| 11+ | Overwhelming | 1d6 days\nNote: This is an update from the Diviner's Handbook and differs slightly from the original version in the main Spheres of Power book."
+    },
+    {
+      "level": 3,
+      "heading": "Protection",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Protection (divine)",
+      "anchor": "",
+      "text": "If you possess the Protection sphere, you may divine all creatures you have pinpointed within range and determine which of those creatures have the lowest and highest armor class. Alternatively, you may divine the lowest and highest saving throw each of these creatures has. You do not however determine the values for any of these attributes."
+    },
+    {
+      "level": 3,
+      "heading": "Telekinesis",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Density",
+      "anchor": "",
+      "text": "If you possess the Telekinesis sphere, you may divine the density and weight of nearby objects and creatures that you can see. Utilize the following chart when determining density:\nChart: Divine Density | Density | Example | Aura Strength\n| Weightless | Balsa wood, feathers, shredded paper | Faint\n| Light | Charcoal, cork, darkwood, flour, hay, snow | Moderate\n| Dense | Flesh, iron, mithral, sand, soil, stone, water, wood | Strong\n| Superdense | Adamantine, lead, gold, silver | Overwhelming"
+    },
+    {
+      "level": 4,
+      "heading": "Divine Force",
+      "anchor": "",
+      "text": "If you possess the Telekinesis sphere, you may divine the presence or absence of creatures with the incorporeal subtype. For the purpose of this ability, creatures such as unseen servant and other similar creatures of force are considered to have the incorporeal subtype. This ability will not not reveal the general location or direction in which the incorporeal creatures are, it will however give you knowledge of the incorporeal creature\u2019s aura utilizing the same table as chart: animals and plants."
+    },
+    {
+      "level": 3,
+      "heading": "Time",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Time",
+      "anchor": "",
+      "text": "If you possess the Time sphere, you may divine the events that happened within medium range (100 ft + 10 ft per caster level). You can only divine what occurred up to 1 hour per caster level ago. When you divine time you are only given the following details: The number of creatures that were in the area, their size, how long they remained in the area, and any movements they made while in the area. In addition, if objects were left unattended or unattended objects were moved during this time, you learn the size and vague shape of such objects."
+    },
+    {
+      "level": 3,
+      "heading": "War",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Allegiance",
+      "anchor": "",
+      "text": "If you possess the War sphere, you may target an individual within medium range which allows you to divine through mud, blood, sweat, and wear or tear upon cloth or armor as if such was not there, revealing any colors, patterns, or insignia it may have previously bore. In addition, other creatures within range of the target glows with a particular aura allowing the caster to know who they openly allied with and who are not. Creatures under the affect of mind-affecting effects (such as charms and compulsions) are shown to be loyal to their controller and their allies. This does not properly function on those who are using subterfuge or are pretending to be on someone\u2019s side, as it will present them as who they pretend to side with. Once each round as a free action while maintaining concentration on this effect, you may target a different individual within range with this divination ability."
+    },
+    {
+      "level": 3,
+      "heading": "Warp",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Warp",
+      "anchor": "",
+      "text": "If you possess the Warp sphere, you may divine the presence of portals, rifts (including extradimensional spaces), and teleportation circles, both active and inactive within medium range. In addition, when identifying the properties of portals, you gain a circumstance bonus to Knowledge (planes) checks equal to 1/2 your caster level (minimum +1)."
+    },
+    {
+      "level": 3,
+      "heading": "Weather",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Divine Weather [Core]",
+      "anchor": "",
+      "text": "If you possess the Weather sphere, you may divine the weather at your location for the next 24 hours, providing you with advance warning of storms, tornadoes, and so on. This reveals only the weather that would arise naturally and does not take into account any magical occurrences that might change the weather.\nSome talents are marked (divine). These talents give you additional things you may divine for other than magical auras. Only one such talent can be applied to an individual use of divine."
+    },
+    {
+      "level": 2,
+      "heading": "Additional Rules",
+      "anchor": "",
+      "text": "No action: While the divine ability specifies no other action can be taken, this applies specifically to full-round actions, standard actions, move actions, swift actions, and immediate actions. Free actions are still usable.\nEmanation: The divine ability is an emanation, meaning the divination will gather information on targets within the area at the completion of casting, as well as targets who enter the area while the effect is still active.\nOverwhelming Auras: Whenever an individual divines or senses an aura whose strength is overwhelming, from a source whose HD or CL is equal to or greater than the caster\u2019s character level + 10, that individual become stunned for 1 round."
+    },
+    {
+      "level": 1,
+      "heading": "Sense [Core]",
+      "anchor": "",
+      "text": "As a standard action, you may grant yourself paranormal senses for 1 hour/level. When you gain the Divination sphere, you gain the following sense."
+    },
+    {
+      "level": 4,
+      "heading": "Read Magic [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to gain a sense that allows you to decipher all magical writings, such as those found in books, scrolls, on weapons, or in other places intelligible to you. This does not invoke the magic contained in the writing, although it may do so in the case of a cursed or trapped scroll. Furthermore, once you have read a magical inscription through this ability, you are thereafter able to read that particular writing even without this sense. You can read at the rate of one page (250 words) per minute. You can identify glyphs, runes, and symbol spells with a Spellcraft check (DC 10 + 1/2 caster level).\nSome talents are marked (sense). These talents grant you additional senses you may bestow upon yourself. There is no limit to the number of different senses you may have active at a time."
+    },
+    {
+      "level": 1,
+      "heading": "Divination Talents",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Expanded Divinations",
+      "anchor": "",
+      "text": "Pick any three alternate divinations which you do not currently possess. You gain access to those alternate divinations as if you possessed the requisite spheres. If the alternate divination has an additional prerequisite such as the Nature sphere\u2019s Divine Elements, you pick which one you gain access to upon acquiring it. This talent may be taken multiple times, each time you may pick three alternate divinations which you do not possess."
+    },
+    {
+      "level": 4,
+      "heading": "Fast Divinations [Core]",
+      "anchor": "",
+      "text": "Divining takes 1 minute instead of 10 minutes (without a spell point). You may take this talent two times decreasing the time it takes to divine down to 1 round instead. This is an alteration of the Fast Divinations talent found in Spheres of Power, pg 28.\nWiki Note: The original version of this had the following text: Divining takes 1 minute instead of 10 minutes."
+    },
+    {
+      "level": 4,
+      "heading": "Grant Sense [Core]",
+      "anchor": "",
+      "text": "You may grant your senses to a touched target instead of only yourself."
+    },
+    {
+      "level": 4,
+      "heading": "Greater Divine [Core]",
+      "anchor": "",
+      "text": "Your divine ability works out to Long range instead of Medium range."
+    },
+    {
+      "level": 4,
+      "heading": "Lingering Divination",
+      "anchor": "",
+      "text": "When you divine, the ability lasts 2 rounds after you stop concentrating."
+    },
+    {
+      "level": 4,
+      "heading": "Sensory Overload",
+      "anchor": "",
+      "text": "As a full-round concentration effect, you may spend a spell point and target a creature you can see within range, causing all of its senses (and temporarily granting senses that it does not normally have) to overload with information. Both the caster and creatures under the effect of Sensory Overload cannot take any actions, not even walking, and are considered flat-footed. When first casting Sensory Overload and at the end of each round that you continue to concentrate on the effect, the targeted creature takes your caster level in nonlethal damage (fort save negates), and may attempt to end Sensory Overload with a Will save. Creatures that are mindless are particularly vulnerable to this effect and take a -2 penalty on their saves."
+    },
+    {
+      "level": 4,
+      "heading": "Widen Sight",
+      "anchor": "",
+      "text": "You may increase the range of any sense abilities from a static number such as 30 ft to a range of close (25 ft + 5 ft per 2 CL)."
+    },
+    {
+      "level": 1,
+      "heading": "Divine Talents",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Augury (divine)",
+      "anchor": "",
+      "text": "You may spend a spell point to divine whether a particular action will bring good or bad results for you in the immediate future.\nThe base chance for receiving a meaningful reply is 70% + 1% per caster level, to a maximum of 90%; this roll is made secretly.\nA question may be so straightforward that a successful result is automatic, or so vague as to have no chance of success. If the augury succeeds, you get one of four results:\nWeal (if the action will probably bring good results).\nWoe (for bad results).\nWeal and woe (for both).\nNothing (for actions that don\u2019t have especially good or bad results).\nIf the check fails, you get the \u201cnothing\u201d result. A caster who gets the \u201cnothing\u201d result has no way to tell whether it was the consequence of a failed or successful augury.\nThe augury can see into the future up to one hour per caster level, so anything that might happen after that does not affect the result. Thus, the result might not take into account the long-term consequences of a contemplated action. All auguries cast by the same person, in the same day about the same topic, use the same die result as the first casting."
+    },
+    {
+      "level": 4,
+      "heading": "Detect Secrets (divine) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to divine for things expressly designed to be hidden. This includes secret doors, hidden caches, and secret compartments. Not only does this detect the presence of such secrets, but it also gives you knowledge of their trigger mechanisms. This only detects doors, passages, and openings specifically designed to avoid detection."
+    },
+    {
+      "level": 4,
+      "heading": "Detect Spellcaster (divine)",
+      "anchor": "",
+      "text": "You may spend a spell point to divine the spellcasting capabilities of a creature you can see within range, utilizing the chart below. Targeted individuals who only have extraordinary and supernatural abilities show up as having no spellcasting aura, whereas those who have sphere casting, spells, or spell-like abilities show an aura depending on the highest effective spell level of an ability they can use. As always, treat a spherecaster\u2019s caster level divided by 2 as their effective spell level.\nYou may spend an additional spell point to upgrade this ability to learn additional information about those within range such as type of spellcasting such as arcane, divine, psychic, etc. (creatures with innate spellcasting, such a dragons show up as racial spellcasting). If the target includes spherecasters with named casting traditions (i.e. Divine Petitioner, Druidic, or Traditional Magic), you gain that knowledge as well.\nMulticlass core spellcasting classes only reveal as the highest aura between the two. Spherecasters with varying caster levels depending on spheres show auras according to their current highest sphere casting ability. If you are participating in a setting with other forms of magic or spellcasting systems, they are detected as appropriate.\nDetect Spellcaster | Class Example | Highest Effective Spell Level | Aura Strength\n| Core Human Fighter | Only natural, (Ex), or (Su) abilities | None\n| Armorist (CL 1) | Level 0-1 spells | Dim\n| Hedgewitch (CL 5) | Level 2-3 spells | Faint\n| Mageknight (CL 10) | Level 4-5 spells | Moderate\n| Eliciter (CL 14) | Level 6-7 spells | Strong\n| Fey Adept (CL 18) | Level 8 or higher spells | Overwhelming"
+    },
+    {
+      "level": 4,
+      "heading": "Detect Teleportation (divine)",
+      "anchor": "",
+      "text": "You may divine the general direction and distance where a creature you saw has teleported in the last 10 minutes, +1 minute per caster level. If the creature teleports to a different plane, you immediately learn this, but you do not learn to what plane the creature teleported."
+    },
+    {
+      "level": 4,
+      "heading": "Detect Thoughts (divine)",
+      "anchor": "",
+      "text": "You may divine the emotions of creatures you can see within range (Will save negates), you also gain a circumstance to Sense Motive checks equal to 1/2 your caster level. You do not know the motivation or source behind why a creature is feeling the emotion. If a creature\u2019s emotion changes while they are within range during Detect Thoughts, you immediately know. If you spend an additional spell point, you divine not only the emotions of those within range, but also the surface thoughts (Will save negates). For a list of emotions, refer to the eliciter class.\n| Sample Emotions\n| Anger\n| Fear\n| Joy\n| Sadness\n| Disgust\n| Shame\n| Love"
+    },
+    {
+      "level": 4,
+      "heading": "Divine Future (divine) [Core]",
+      "anchor": "",
+      "text": "You may divine for a glimpse of the future, giving yourself insight into the happenings of that day. At any time during that day, you may add an insight bonus equal to 1d4 +1 per 5 caster levels to one attack roll, skill check, saving throw, ability check, or combat maneuver roll you are about to make. It can also apply to initiative rolls. As an immediate action, you may grant this benefit to an ally who can both see and hear you. You can only have one use of this ability waiting to be used at a time. You may take this talent multiple times, to a maximum of 5 times. Every time you gain this talent beyond the first, you may use this ability an additional time during that day. Every time you divine for the future, you regain all your uses of this ability for that day."
+    },
+    {
+      "level": 4,
+      "heading": "Divine Information (divine) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to divine for information. This grants you the ability to reroll a failed Knowledge check (or to make a Knowledge check untrained), with an insight bonus equal to 1/2 your caster level. You may only divine for information once per Knowledge check."
+    },
+    {
+      "level": 4,
+      "heading": "Dowsing (divine) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to divine the location of a creature or object within range. This may be a specific creature or object or a kind of creature or object, but either way you must have a clear mental image of the creature or object to divine for it (thus, you could not divine broadly for traps, creatures of a broad creature type, etc.). If divining for a kind of creature or object, you only locate the closest item of that kind. This method of using divine is not blocked by wood or stone, but is still blocked by lead."
+    },
+    {
+      "level": 4,
+      "heading": "Object Reading (divine)",
+      "anchor": "",
+      "text": "You may perform psychometry on a target object you touch gaining information about its history or previous owners. In addition to the information you acquire below, you gain a circumstance bonus to appraise checks with that object equal to 1/2 your caster level for as long as you continue to divine the object. For every 1 minute you divine the object you gain one additional piece of information found in the following order: Last owner\u2019s race, last owner\u2019s gender, last owner\u2019s age, last owner\u2019s alignment, how the last owner lost or gained the object. Upon learning this last piece of information, you may spend a spell point, if you do you begin to learn information on the owner before the last at the same rate in the same order. Should object reading be interrupted for 2 or more consecutive rounds, you must start again at the beginning unless you spend 1 spell point per past owner."
+    },
+    {
+      "level": 4,
+      "heading": "Viewing (divine) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to divine, transferring your point of view to any point within range. You may see and hear from this location. You do not need line of sight or line of effect, but the locale must be known\u2014a place familiar to you, or an obvious one such as a distance and direction. Once you have selected the locale, the sensor doesn\u2019t move, but you can rotate it in all directions to view the area as desired, in all ways as if you were standing where your sensor is located. This ability creates a scrying sensor, which can be detected (Perception DC 20 + caster level) and dispelled."
+    },
+    {
+      "level": 4,
+      "heading": "Witness the City (divine)",
+      "anchor": "",
+      "text": "You may spend a spell point to see, hear, smell, feel, and even taste a torrent of past scenes and pieces of conversations related to anything in a settlement you are currently in. At the end of each of your turns for the duration of this divination, make a single Diplomacy check to gather information as though you had spent 1d4 hours talking to local people, without having to use an action to do so. Multiple Diplomacy checks made to gather information on the same topic always grants the same information as the first check. You can use your Perception bonus in place of your Diplomacy bonus if you so wish. However, you can only make a number of such checks equal to 1/2 your caster level (minimum 1) each time you use this talent.\nNote: Settlements range in population size from fewer than 20 (thorp) to greater than 25,000 (metropolis). In order to maintain the balance of this talent, it is suggested that when working with particularly large settlements that GMs restrict the use of the talent to districts of the settlement."
+    },
+    {
+      "level": 1,
+      "heading": "Sense Talents",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Battlefield Sense (sense) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to grant yourself greater perception. You can no longer be flanked, except by a creature with 4 more rogue levels than your caster level."
+    },
+    {
+      "level": 4,
+      "heading": "Blindfolded Oracle (sense) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to grant yourself Blindsense 30 ft. You must close your eyes to use this ability. For the purpose of this ability, opening and closing your eyes is a free action you may take once per round. You may spend an additional spell point to upgrade this ability to Blindsight."
+    },
+    {
+      "level": 4,
+      "heading": "Detect Scrying (sense) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to detect the scryings of others. Any attempt to scry or divine on a location or creature within 30 ft of you (unless you purposefully lower this defense) becomes impossible unless the caster succeeds in a magic skill check against you. In addition, you sense if any creature within range is using the divine ability or a divination spell, as well as the location of any sensors in the area (such as with the viewing talent or the clairaudience/clairvoyance spell). You become aware of any attempt to scry on you, such as with a divination (scrying) school spell or the scrying advanced divination talent. If these spells and effects originate within your sense\u2019s area, you immediately know their location. Otherwise, if you match or exceed the other caster in an opposed magic skill check, you gain a visual image of the diviner and know their direction and distance from you. You may suppress or resume this sense as a free action."
+    },
+    {
+      "level": 4,
+      "heading": "Discern Individual (sense)",
+      "anchor": "",
+      "text": "You may spend a spell point to gain a sense granting an insight bonus to Monster Lore checks equal to 1/2 your caster level (minimum 1). You may make Monster Lore checks untrained."
+    },
+    {
+      "level": 4,
+      "heading": "Foreshadow (sense) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to gain a sense that warns you of impending danger. You are not flat-footed during the surprise round, and gain a +1 dodge bonus to AC, and a +2 bonus to Reflex saves and Initiative checks. These bonuses increase by 1 for every 10 caster levels possessed."
+    },
+    {
+      "level": 4,
+      "heading": "Ghost Sight (sense) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to gain a sense that adds your caster level to Perception checks made to notice invisible or ethereal creatures. If you succeed at this check, the creature\u2019s outline becomes visible to you. This negates both the usual penalties you would suffer attacking an invisible creature, and the bonuses the creature would normally gain against you. This continues until you lose line of sight to the creature, in which case you must succeed at a new Perception check to see them."
+    },
+    {
+      "level": 4,
+      "heading": "Logos (sense) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to understand all spoken and written words, regardless of language. You may spend an additional spell point to also be understood by any creature with a language. You do not learn the creature\u2019s language, but instead every creature hears you speak in whatever language is most comfortable for it."
+    },
+    {
+      "level": 4,
+      "heading": "Nature Sense (sense)",
+      "anchor": "",
+      "text": "You may as a standard action to gain a special sense that grants you a +1 bonus on Knowledge (nature) and Survival checks. This bonus increases by +1 every 5 Caster Levels. You may dismiss this sense at any time as an immediate action to reroll any failed survival check avoiding natural hazards or getting lost, gaining a bonus to the roll equal to that granted by Nature Sense. This stacks with any class features with the same name."
+    },
+    {
+      "level": 4,
+      "heading": "Prescience (sense)",
+      "anchor": "",
+      "text": "You may spend a spell point to gain a special sense granting a +1 insight bonus to attack and combat maneuver rolls. This bonus increases by +1 every 5 caster levels. In addition, you may dismiss this sense before making an attack or combat maneuver to instead gain an insight bonus of 10 + 1/2 your caster level to the roll as a free action."
+    },
+    {
+      "level": 4,
+      "heading": "Scent (sense)",
+      "anchor": "",
+      "text": "You may spend a spell point to gain the scent sense with a range of 30 ft. You may spend an additional spell point to upgrade this ability to keen scent (except that they both function in or outside of water); While using keen scent, you can notice other creatures by scent at a range of 180 ft and can detect blood at ranges of up to a mile. The ranges of both scent and keen scent half against creatures downwind or downstream of you, and double while upwind or upstream of you."
+    },
+    {
+      "level": 4,
+      "heading": "See Hazard (sense) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to gain a free Perception check to notice traps and hazards when you are within 10 ft of them, be they mechanical (trip wires, dart throwers, etc.) magical (rune spells, sigils, etc.) or natural (quick sand, pit falls, etc.). This does not give you insight into disabling such traps or hazards."
+    },
+    {
+      "level": 4,
+      "heading": "Sense Magic (sense) [Core]",
+      "anchor": "",
+      "text": "You may spend 2 spell points to grant yourself the ability to sense magic, as if using your basic divine ability as a constant ability, but only to a distance of 30 ft."
+    },
+    {
+      "level": 4,
+      "heading": "Shared Perception (sense)",
+      "anchor": "",
+      "text": "You may spend 2 spell points, instead of 1, to grant a special sense to two target creatures within range of touch. The maximum number of targets increase by +1 per 5 caster levels. As long as the targets remain within long range (400 ft + 40 ft per caster level) of each other, the first target shares perception with the second, and vice versa. This grants the targets the ability to see, smell, hear, etc. whatever the other targets do. This sense, while not requiring line of sight, does requires line of effect, and is blocked by dense materials as if it were a divine talent or ability."
+    },
+    {
+      "level": 4,
+      "heading": "Sniper\u2019s Eye (sense)",
+      "anchor": "",
+      "text": "You may spend a spell point to gain a sense that reduces the distance-based DC adjustment for Perception checks by an amount equal to your caster level. For example, if the DC would normally increase by 10 due to being 100 feet away and you have caster level 3rd, the DC increases only by 7.\nWhile this sense is active, you also reduce environmental- and range increment-based penalties to your ranged attack rolls by an amount equal to half your caster level. This can only ever reduce penalties, and can never grant a bonus."
+    },
+    {
+      "level": 4,
+      "heading": "Tremorsense (sense)",
+      "anchor": "",
+      "text": "You may spend a spell point to gain the tremorsense ability with a range of 30 ft. You gain sensitivity to vibrations in the ground allowing you to automatically pinpoint the location of anything that is in contact with the ground; or if underwater, you can instead pinpoint the location of creatures moving through the water."
+    },
+    {
+      "level": 4,
+      "heading": "True Sight (sense) [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to gain a sense that grants you a bonus equal to 1/2 your caster level (minimum: 1) to all Will saves against illusions."
+    },
+    {
+      "level": 1,
+      "heading": "Old Divination Feats",
+      "anchor": "",
+      "text": "Click the header above to visit the Sphere-Focused Feats page. This section includes feats that directly improve or rely upon this sphere."
+    },
+    {
+      "level": 1,
+      "heading": "Old Advanced Divination Talents",
+      "anchor": "",
+      "text": "Click the header above to visit the Advanced Talents page. This page includes talents that are more powerful than the ones presented on this page - but remember, Advanced Talents are only available with GM permission."
+    },
+    {
+      "level": 1,
+      "heading": "Old Divination Drawbacks",
+      "anchor": "",
+      "text": "Click the header above to see the Sphere-Specific Drawbacks for this sphere. If you're using the optional Casting Tradition rules, Drawbacks allow you to acquire one or more bonus talents in a sphere in exchange for a limit on using this sphere."
+    },
+    {
+      "level": 1,
+      "heading": "Archetypes Specializing in Divination",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "-Old Blind Swordsman",
+      "anchor": "",
+      "text": "The Blind Swordsman is a Samurai who has traded their sight for the ability to fight while blind - and get added benefits while doing so."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Eldritch Cultist",
+      "anchor": "",
+      "text": "The Eldritch Cultist is a Thaumaturge whose focus on knowledge leads to both power and confusion."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Psychic Medium",
+      "anchor": "",
+      "text": "The Psychic Medium is a Medium who trades access to two of their spirits for a Spherecaster spirit and proficiency at divining for information."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Psyforensic",
+      "anchor": "",
+      "text": "The Psyforensic is an Investigator that can consult the spirits for information hidden to others."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Treasure Seeker",
+      "anchor": "",
+      "text": "The Treasure Seeker is an Unchained Rogue who gains access to a small selection of talents.\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

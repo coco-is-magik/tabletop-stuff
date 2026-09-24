@@ -1,0 +1,20 @@
+{
+  "Berserker Sphere": ["DEFINE:SPHERES_BERSERKER_TEMP_HP|3+BAB", "DEFINE:SPHERES_BRUTAL_STRIKE_DAMAGE|2*BAB"],
+  "Guardian Sphere": ["DEFINE:SPHERES_DELAYED_DAMAGE|3*BAB"],
+  "Fencing Sphere": ["DEFINE:SPHERES_FATAL_THRUST_DICE|1+floor(BAB/5)"],
+  "Barrage Sphere": ["VFEAT:Point-Blank Shot", "DEFINE:SPHERES_BARRAGE_FOCUSED_ATTACKS|2+max(0,floor((BAB-1)/5))"],
+  "Sniper Sphere": ["VFEAT:Precise Shot", "DEFINE:SPHERES_DEADLY_SHOT_DICE|1+floor(BAB/4)"],
+  "Boxing Sphere": ["VFEAT:Improved Unarmed Strike", "DEFINE:SPHERES_COUNTER_PUNCH_BONUS|2+2*floor(BAB/4)"],
+  "Brute Sphere": ["VFEAT:Improved Unarmed Strike"],
+  "Open Hand Sphere": ["VFEAT:Improved Unarmed Strike"],
+  "Wrestling Sphere": ["VFEAT:Improved Unarmed Strike"],
+  "Duelist Sphere": ["DEFINE:SPHERES_DUELIST_BLEED|1+floor(BAB/3)"],
+  "Shield Sphere": ["DEFINE:SPHERES_ACTIVE_DEFENSE|2+floor(BAB/4)"],
+  "Life Sphere": ["DEFINE:SPHERES_LIFE_CURE_DICE|1", "DEFINE:SPHERES_LIFE_CURE_BONUS|SPHERES_CL_LIFE"],
+  "Life - Deeper Healing": ["BONUS:VAR|SPHERES_LIFE_CURE_DICE|1+floor(SPHERES_CL_LIFE/5)"],
+  "Life - Restore Health": ["BONUS:VAR|SPHERES_LIFE_CURE_BONUS|SPHERES_CL_LIFE"],
+  "Scout - Great Senses": ["BONUS:SKILLRANK|Perception|min(TL,5*SPHERES_SCOUT_TALENTS)|TYPE=SpheresTraining"],
+  "Scout - Honed Sense": ["VISION:Scent (30')"],
+  "Equipment - Shield Training": ["ABILITY:Internal|AUTOMATIC|Shield Prof|Shield Prof ~ Tower"],
+  "Equipment - Finesse Fighting": ["VFEAT:Weapon Finesse"]
+}

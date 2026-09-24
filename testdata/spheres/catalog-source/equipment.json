@@ -1,0 +1,109 @@
+{
+  "url": "https://spheresofpower.wikidot.com/equipment",
+  "retrieved": "2026-09-24",
+  "sha256": "540f50b4d5f7ac368a05ffd3fa6c041501701837cb6ebaf3153e7c13d87d4272",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Gear Kit, Academy Kit, Lycanthrope Hunter\u2019s Buildings Lightning Rod Storm Shelter Vehicles Skyrider Planar Power Components Brimstone Briquette [RW HB] Inversion Prism [RW HB] Iridium Jellenate [RW HB] Living Mossrock [RW HB] Lodestone Geode [RW HB] Mother Pearlite [RW HB] Warding Agate [RW HB]\nThis page includes basic equipment and gear, as well as packs and kits that characters can purchase."
+    },
+    {
+      "level": 1,
+      "heading": "Gear",
+      "anchor": "toc0",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Kit, Academy",
+      "anchor": "toc1",
+      "text": "Price 30 gp; Weight 15 lbs\nWhile not mandatory, most junior students receive in their acceptance letter a list of recommended items, most commonly referred to as the Academy Kit. GM\u2019s are encouraged to include other additional options to the kit, as they deem fit. This kit includes ink, an inkpen, a spell component pouch, scholar\u2019s outfit (3), parchment (50).\nFor an additional 10 gp, this kit may include any one of the following:\nAlchemical Focus: iron pot\nAnimal Focus: cat, owl, or toad\nArcane Focus: ring, staff, or wand\nArtifice Focus: artisan\u2019s tools\nBardic Focus: common musical instrument (2)\nDivine Focus: holy symbol (iron)\nPlant Focus: tiny planter\nPsionic Focus: dull grey ioun stone\nPsychic Focus: harrow deck or scrying mirror\nScholar Focus: blank formula book, ritual book, or spellbook"
+    },
+    {
+      "level": 4,
+      "heading": "Kit, Lycanthrope Hunter\u2019s",
+      "anchor": "toc2",
+      "text": "Price 80 gp; Weight 4 lbs.\nThis sturdy leather case straps to the waist or thigh, or can be slung over a shoulder. It consists of a leather pouch, 5 doses of wolfsbane, 5 doses of weapon blanche (silver), 1 dose of deodorizing agent, and an alchemical silver dagger."
+    },
+    {
+      "level": 1,
+      "heading": "Buildings",
+      "anchor": "toc3",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Lightning Rod",
+      "anchor": "toc4",
+      "text": "Price 50 gp; Weight 2 lb.\nA lightning rod protects a permanent structure anchored to the ground from lightning. The structure becomes completely immune to electricity damage and any lightning bolts (whether from natural or magical storms, but not directly from spells or sphere abilities such as lightning bolt or destructive blast) that would strike within 25 ft. of the structure have a 50% chance of instead striking the building and thus having no effect. Exceptionally large structures (larger than 60 ft. on any side) may require more than one lightning rod to protect them."
+    },
+    {
+      "level": 4,
+      "heading": "Storm Shelter",
+      "anchor": "toc5",
+      "text": "Price 50 gp + the cost of excavating and furnishing the shelter; Weight \u2013.\nA storm shelter is a below-ground space with special reinforcement and doors that protect the inhabitants of the surrounding building even if the entire structure is destroyed. The entire shelter must be below ground, there cannot be windows, and the door must be flush with the surface, but otherwise the inside may be as simple or elaborate as desired. The shelter and its door never take damage from weather effects.\nSpecial: Above-ground storm shelters can be constructed, but these cost 100 gp per 10-ft. cube and only take half damage from weather effects instead of none. This takes place before applying hardness and stacks with the normal halving of energy damage for being an object."
+    },
+    {
+      "level": 1,
+      "heading": "Vehicles",
+      "anchor": "toc6",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Skyrider",
+      "anchor": "toc7",
+      "text": "A Skyrider is an enormous and elaborate hang glider that often sees use in sky-bound societies; while a common hanglider is designed to comfortably fly from high ground to low ground, a skyrider is designed to start in the air, then return to the air when it is finished. A skyrider makes use of some magic to make it lighter, and is covered and has room for carrying some cargo and passengers, but not many.\nA skyrider falls one altitude band every round if it is moving at a speed slower than 6, and can only climb at a speed of 8 or higher. As such, skyriders are usually used by those who have access to weather magic, or those who naturally live at high enough altitudes that winds never truly stop; a skyrider requires winds of severity level 3 or higher to be able to climb to higher altitudes.\nLarge Cloth Air Vehicle (aerodynamic, covered) Space 1 vehicle space; Cost 740 gp Size 1.5 Hardpoints; Hull 0.5 Hardpoint\nDefense Sails 8 AC (+5 Dodge, -1 Size); 30 hp, Hardness 0 Hull 8 AC (+5 Dodge, -1 Size); 22 hp, Hardness 5\nOffense Attack ram (3d8) CMB +1; CMD 11 Speed 5 (w/ wind: +1 per severity level) Acceleration 3 Maneuverability Good\nDrive Propulsion Silk Sails (1 Hardpoint, 30 hp); Power 2 (w/ wind: +1/2 per severity level) Mass 1/2 Hardpoint; Weight 0 Controlling Device None Driving Space Any Required Crew 1 (pilot)\nLoad Equipment Weight 0 tons Light Load less than 0.5 tons Medium Load 0.5 to 1.24 tons Heavy Load 1.25 to 2.5 tons\nRooms Cargo Bay (1/2 Hardpoint, uncovered, 5 tons)\nEquipment Magical Dirigible (1/2 Hardpoint)\nSpeed Notes In general, the feet per round speed for a ship is 30 feet x its speed.\nMiles per hour is 3.5 x speed of the ship\nMiles per 8 hours is 28 x speed of the ship.\nMiles per 24 hours is 84 x speed of the ship."
+    },
+    {
+      "level": 1,
+      "heading": "Planar Power Components",
+      "anchor": "toc8",
+      "text": "Whether excavated, purified, or procured through other means, distant worlds and strange planes are often the home of new materials, many of which are useful for magic. Alchemical power components were first introduced in Pathfinder Player Companion: Adventurer\u2019s Armory and planar power components were introduced in Pathfinder Player Companion: Plane-Hopper\u2019s Handbook. Planar power components are treated as alchemical reagents which amplify magical effects.\nThe Realmwalker\u2019s Handbook introduces a number of new planar power components which can be used for either classic spellcasting or spherecasting. Planar power components function similarly to alchemical reagents, with a few notable alterations.\nA planar power component can be used as a consumable, additional material component or as a reusable focus when casting a spell or sphere effect, as though the caster were using the Material Casting or Focus Casting general casting drawbacks. Using a planar power component does not increase a spell or sphere effect\u2019s casting time, even if it would add a metamagic feat\u2019s effects. A planar power component\u2019s effects do not stack with either themselves or one another. As such, only a single planar power component can be included when casting a spell or sphere effect.\nEach planar power component notes the type of spells and sphere effects it is usable with, the number required when used as a material component (noted as \u201cdoses\u201d) or as an additional focus (noted as \u201cfocus\u201d), and the effects of the component when used.\nPlanar Component Foci as Crafted Equipment: When a caster makes frequent use of planar power components as foci for their magics, it is common for to affix or craft the components into a held, slotted, or otherwise worn item, such as lining the head of a caster\u2019s staff or creating a simple broach or ring, to be used as the focus. Integrating a planar power component into an item does not cost any additional gold or resources (beyond the base item) and requires a number of doses of the planar power component sufficient to be used as a focus. If the resulting item is heavily composed of or incorporates the component in a more permanent manner, such as crafting the base of an amulet out of the material rather than just socketing it or reforging a sword\u2019s hilt out of the material, it may require a craftsman to safely craft the item, usually with a DC 15 Craft check of the appropriate kind and a few hours. The same check may be made to safely remove the components from the item, reclaiming the power components without destroying or harming the original item. There is no penalty for a failed check."
+    },
+    {
+      "level": 4,
+      "heading": "Brimstone Briquette [RW HB]",
+      "anchor": "toc9",
+      "text": "Price 60 gp; Weight \u2013\nA compact cluster of the infernal, everburning stone has been extinguished and refined into a potent fuel source for both ovens and stoves as well as incendiary magics.\nPower Component Doses 1 (60 gp); Focus 10 (600 gp); Spells spells which cause targets to catch fire\nEffect When you use a brimstone briquette as a material component or focus for a spell or sphere effect which causes affected targets to catch fire, increase the burning damage dealt each round to a burning target by +2 and the Reflex save to extinguish the flames by +1."
+    },
+    {
+      "level": 4,
+      "heading": "Inversion Prism [RW HB]",
+      "anchor": "toc10",
+      "text": "Price 75 gp; Weight \u2013\nThis wavy, translucent prism of glass-like stone seems to block light coming in from one side, but not the other. Its energies like the sparse portals which exist between positive and negative- aligned planes.\nPower Component Doses 1 (75 gp); Focus 30 (2,250 gp); Spells dark or light spells\nEffect When you use an inversion prism as a material component or focus for a spell or sphere effect with the dark or light descriptor, increase the DC of that spell or sphere effect\u2019s saving throws by +1."
+    },
+    {
+      "level": 4,
+      "heading": "Iridium Jellenate [RW HB]",
+      "anchor": "toc11",
+      "text": "Price 100 gp; Weight \u2013\nIridium jellenate is a condensed, metallised substance which, over time, hardens to be one of the most dense and sturdy materials on an earth-aligned plane. It is a popular but expensive material to line building foundations with to ensure they can survive seismic activity.\nPower Component Doses 1 (100 gp); Focus 10 (1,000 gp); Spells object-creating spells\nEffect When you use iridium jellenate as a material component or focus for a spell or sphere effect which creates one or more objects with hit points (such as from the creation subschool or Creation sphere), increase the hardness of each created object by +1 (an object without hardness is treated as having hardness 0 for this purpose).\nNote: Other spell and sphere effects which create tangible objects or structures may qualify for this planar power component, such as a wall of ice spell or a Protection sphere barrier."
+    },
+    {
+      "level": 4,
+      "heading": "Living Mossrock [RW HB]",
+      "anchor": "toc12",
+      "text": "Price 50 gp; Weight \u2013\nA living mossrock is a strange, thrumming stone which seems to teem with vibrant, lush moss to the touch which are commonly found in areas with strong fey presence.\nPower Component Doses 1 (50 gp); Focus 20 (1,000 gp); Spells polymorph spells or Fallen Fey sphere effects\nEffect When you use a living mossrock as a material component or focus for a spell or sphere effect with the polymorph descriptor or a Fallen Fey sphere effect, treat the spell or sphere effect\u2019s caster level as if it were 1 higher for the purposes of duration."
+    },
+    {
+      "level": 4,
+      "heading": "Lodestone Geode [RW HB]",
+      "anchor": "toc13",
+      "text": "Price 50 gp; Weight \u2013\nThis geode is a lattice of ultra-dense magnetic minerals which forms in deep caverns found on earth-aligned planes.\nPower Component Doses 1 (50 gp); Focus 15 (750 gp); Spells spells which perform combat maneuvers\nEffect When you use a lodestone geode as a material component or focus for a spell or sphere effect which performs a combat maneuver against affected targets, you gain a +2 bonus on that combat maneuver.\nExample: A combat maneuver performed with the Telekinesis sphere Telekinetic Maneuvers talent or the Nature sphere Manipulate Nature wave sphere effect would gain a +2 bonus on the performed combat maneuver. Spells such as hydraulic push would gain a +2 bonus on the resulting bull rush combat maneuver."
+    },
+    {
+      "level": 4,
+      "heading": "Mother Pearlite [RW HB]",
+      "anchor": "toc14",
+      "text": "Price 300 gp; Weight \u2013\nMother pearlite is a unique geological formation formed from the condensate shells which slowly break down at the bottom of water-aligned magic lakes, rivers, and seabeds.\nPower Component Doses 1 (300 gp); Focus 5 (1,500 gp); Spells any\nEffect When you use a mother pearlite as a material component or focus for any spell or sphere effect, that spell or sphere effect is affected as per the Aquatic Spell metamagic feat (this does not increase the spell slot or spell points required for that effect). However, the spell or sphere effect\u2019s caster level is treated as 1 lower for the purposes of duration and range (minimum caster level 1)."
+    },
+    {
+      "level": 4,
+      "heading": "Warding Agate [RW HB]",
+      "anchor": "toc15",
+      "text": "Price 75 gp; Weight \u2013\nThe many twinkling layers of this gemstone mimics the great wards and barriers of illustrious mage citadels, a natural formation that mirrors magic innovations.\nPower Component Doses 1 (75 gp); Focus 15 (1,125 gp); Spells spells which grants an armor, deflection, natural armor, or shield bonus to AC\nEffect When you use a warding agate as a material component or focus for a spell or sphere effect that grants the target an armor, deflection, natural armor, or shield bonus to AC, each affected target gains 5 temporary hit points which last for the effect\u2019s duration. A warding agate\u2019s effects also apply to effects which indirectly improve the target\u2019s armor, deflection, natural armor, or shield bonus to AC (such as using the Enhancement sphere enhance ability to improve a target\u2019s armor enhancement bonus).\nNote: Temporary hit points granted by a warding agate are considered to be from the same source and do not stack with itself (such as a recipient of two spells which would grant temporary hit points only receiving temporary hit points once).\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

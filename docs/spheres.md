@@ -1,5 +1,13 @@
 # Spheres PCGen prototype — current handoff
 
+## Basic sphere catalog — 2026-09-24
+
+Power/Might catalog records now cover 53 base spheres and 2,330 basic talents.
+This supersedes the older statements below that no combat catalog exists.
+Full talent-specific mechanical automation is **not complete**. Exact supported
+behavior, verification and remaining requirements:
+`/bigdisk/programming/pathfinder1e/docs/sphere-catalog.md`.
+
 ## Conscript class-only implementation — 2026-09-23
 
 Conscript now has its thin class data and dedicated PCGen acceptance runner.

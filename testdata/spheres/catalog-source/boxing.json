@@ -1,0 +1,289 @@
+{
+  "url": "https://spheresofpower.wikidot.com/boxing",
+  "retrieved": "2026-09-24",
+  "sha256": "d2d4da442ba7da85b25013e0480ff9e01c89da8d09a76b26e3603002d79066db",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Counter Punch Unarmed Combatants Table: Practitioner Unarmed Damage Boxing Talents Corkscrew Set Up Cross Counter Dug In Blow Elongated Step (stance) [3PP] Extra Trigger [3PP] Floating Butterfly (stance) [Youxia HB] Gazelle Punch Hair Trigger [Apoc] Headfake Heavy Counter KO Focus Overhead Smash Passive Fist [Jester's HB] Prizefighter [Apoc] Punishing Cross [Youxia HB] Raging Bull Read the Rhythm [utility] Rope A Dope Shadowboxing [utility] Shoulder Roll Sucker Punch Tight Guard Violent Pressure Counter Talents Clinch (counter) Disarming Jab (counter) [Apoc] Dizzying Maul (counter) [Apoc] Forceful Smash (counter) [3PP] Haymaker (counter) Jolt Counter (counter) Launching Uppercut (counter) Liver Shot (counter) Loopy Blow (counter) [3PP] Knuckle Crusher (counter) [3PP] Terrifying Hook (counter) Winding Blow (counter) [EO3] Legendary Talents Chasing Assault Cutting Comeback (counter) Intense Conditioning (counter) Reflecting Palm [Youxia HB] Wiggling Kitten, Lunging Lion (stance) [Catgirl HB]\nSpheres of Might $19.99 Boxers specialize in fighting with their fists, using their punches and upper bodies to batter their way across the battlefield. Boxing practitioners are unarmed fighters who deal additional damage with their unarmed strikes as described in the unarmed strike practitioner table. Associated Feat: Improved Unarmed Strike. All practitioners of the Boxing sphere gain the following ability:"
+    },
+    {
+      "level": 2,
+      "heading": "Counter Punch",
+      "anchor": "toc0",
+      "text": "You may ready an action to make an attack with a light melee weapon against the next enemy who makes a non-maneuver melee attack roll against you before the beginning of your next turn; this attack is treated as an attack action for the purposes of talents as well as the Vital Strike feat and occurs before the attack that triggers it, gaining a +2 competence bonus to damage rolls. For every 4 points of base attack bonus you possess, this bonus increases by +2. Using this ability does not change your place in the initiative order.\nYou can apply a single talent with the (counter) tag to a counter punch.\nWhenever you ready a counter punch, you can decide on an additional trigger for your prepared attack from the following list; if the trigger is met, the readied attack qualifies as a counter punch (if an action would also provoke an attack of opportunity, you may choose in which order you wish to resolve your attacks):\nA hostile creature making an attack roll, other than as part of a combat maneuver\nA hostile creature attempting a combat maneuver\nA hostile creature moving from their square\nA hostile creature using a spell or a spell-like ability\nA hostile creature drawing a weapon\nA hostile creature speaking\nFor every 5 points of base attack bonus you possess, you may select an additional trigger from this list."
+    },
+    {
+      "level": 4,
+      "heading": "Unarmed Combatants",
+      "anchor": "toc1",
+      "text": "Practitioners who train in certain spheres focused on unarmed combat, such as Boxing, deal additional damage with their unarmed strikes based on the total number of unarmed spheres and talents they possess, as shown in the following table. Practitioners from a class that already grants an unarmed damage progression, such as the brawler or monk, may treat their unarmed strike as one size category larger if they have 3 or more talents in an unarmed combat sphere, but receive no further benefits. In addition, any practitioner with at least 1 talent in an unarmed sphere gains the benefits of the Improved Unarmed Strike feat."
+    },
+    {
+      "level": 4,
+      "heading": "Table: Practitioner Unarmed Damage",
+      "anchor": "toc2",
+      "text": "| Level | Damage (Small Practitioner) | Damage (Medium Practitioner) | Damage (Large Practitioner)\n| 1-3 talents | 1d3 | 1d4 | 1d6\n| 4-7 talents | 1d4 | 1d6 | 1d8\n| 8-11 talents | 1d6 | 1d8 | 2d6\n| 12-15 talents | 1d8 | 2d6 | 3d6\n| 16-19 talents | 2d6 | 2d8 | 3d8\n| 20+ talents | 2d8 | 2d10 | 4d8"
+    },
+    {
+      "level": 1,
+      "heading": "Boxing Talents",
+      "anchor": "toc3",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Corkscrew Set Up",
+      "anchor": "toc4",
+      "text": "As a part of readying an action to perform a counter punch, you can make an attack roll against one creature within your reach. If this attack hits, it deals no damage, but until the start of your next turn, the target of this attack can move only in such a way that the space it occupies is adjacent to you after their movement. Alternatively, it can attempt a combat maneuver check (against your CMD) on their turn as a swift action to ignore this talent\u2019s effect. If your base attack bonus is +10 or higher, this attack deals damage equal to your practitioner modifier + your base attack bonus instead of no damage."
+    },
+    {
+      "level": 4,
+      "heading": "Cross Counter",
+      "anchor": "toc5",
+      "text": "Whenever a creature within your reach makes an attack of opportunity against you, you can expend your martial focus as an immediate action to make an attack against them dealing damage as normal; if your attack is successful, the creature must roll their attack roll twice, taking the worse result."
+    },
+    {
+      "level": 4,
+      "heading": "Dug In Blow",
+      "anchor": "toc6",
+      "text": "Whenever you successfully make an attack with your counter punch, you gain DR 2/- until the beginning of your next turn, although this damage reduction is lost if you move more than 5 ft. during your turn. For every 3 points of base attack bonus you possess, this damage reduction increases by 1."
+    },
+    {
+      "level": 4,
+      "heading": "Elongated Step (stance) [3PP]",
+      "anchor": "toc7",
+      "text": "At the start of your turn, you can spend a swift action to use this talent. When you do, until the beginning of your next turn whenever you use your counter punch ability, you increase your reach by 5 feet for attacks made with your counter punch. At +10 base attack bonus, you instead increase your reach by 10 feet. If you expend your martial focus while activating this talent, it instead lasts a number of rounds equal to your practitioner modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Trigger [3PP]",
+      "anchor": "toc8",
+      "text": "You can select an additional trigger for your counter punch ability. If you would be able to gain a new trigger due to increasing your base attack bonus, you can choose to retrain this talent into another boxing talent of your choice."
+    },
+    {
+      "level": 4,
+      "heading": "Floating Butterfly (stance) [Youxia HB]",
+      "anchor": "toc9",
+      "text": "While in this stance, whenever you ready a counter punch, you may choose to forgo the competence bonus to your counter punch\u2019s damage roll in order to gain a dodge bonus to AC equal to half the bonus damage until the beginning of your next turn. Additionally, whenever you are targeted with a melee attack while benefiting from this dodge bonus, you may expend an attack of opportunity to make a 5-foot step immediately after the attack resolves."
+    },
+    {
+      "level": 4,
+      "heading": "Gazelle Punch",
+      "anchor": "toc10",
+      "text": "Whenever you ready a counter punch, you treat your reach as though it was 5 ft. further for the purposes of being able to make a counter punch. If the triggering action was taken by a creature that is outside of your normal reach, you may move to a square that places the creature within your reach (this movement does provoke attacks of opportunity) before making the attack. At +10 base attack bonus, your effective reach increases by an additional 5 ft. (up to your speed)."
+    },
+    {
+      "level": 4,
+      "heading": "Hair Trigger [Apoc]",
+      "anchor": "toc11",
+      "text": "You can use counter punch with ranged attacks, except that instead of readying an action to make an attack against the next enemy who makes a melee attack roll against you before the beginning of your next round, you ready an action to make an attack against the next enemy who makes an attack roll within your first range increment before the beginning of your next round. You may select additional triggers for counter punch as normal, except that they must be within your first range increment in order to trigger your counter punch."
+    },
+    {
+      "level": 4,
+      "heading": "Headfake",
+      "anchor": "toc12",
+      "text": "As long as you have martial focus, whenever a creature attempts to make an attack of opportunity against you, they must roll their attack roll twice, taking the worse result. Creatures capable of making multiple attacks of opportunity per round may instead expend two attacks of opportunity instead of one to make an attack of opportunity as normal."
+    },
+    {
+      "level": 4,
+      "heading": "Heavy Counter",
+      "anchor": "toc13",
+      "text": "You may use a counter punch with a one or two-handed melee weapon."
+    },
+    {
+      "level": 4,
+      "heading": "KO Focus",
+      "anchor": "toc14",
+      "text": "Whenever you successfully deal damage to a target with your counter punch, you may spend an immediate action to regain your martial focus. The creature must have a CR of at least half your character level (rounded down, minimum 1/2)."
+    },
+    {
+      "level": 4,
+      "heading": "Overhead Smash",
+      "anchor": "toc15",
+      "text": "As long as you have martial focus, whenever you use your counter punch, you may spend an immediate action before the attack roll to roll your attack roll and damage roll twice, taking whichever set of results you desire."
+    },
+    {
+      "level": 4,
+      "heading": "Passive Fist [Jester's HB]",
+      "anchor": "toc16",
+      "text": "As long as you have a readied action to perform a counter punch, you may abandon your readied action as a free action (even if it is not your turn) and regain martial focus. Abandoning a readied action with this talent does not grant you additional actions.\nIn addition, you may forgo selecting an additional trigger in favor of self defense. For each additional trigger you forgo selecting when readying your counter punch, you gain a +1 circumstance bonus to your armor class until the start of your next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Prizefighter [Apoc]",
+      "anchor": "toc17",
+      "text": "Source: Spheres Apocrypha: Pugilists\nWhen you ready a counter punch, you can decide on an additional trigger for your prepared attack.\nIn addition, you gain the following new triggers to choose from when you ready a counter punch:\nA hostile creature fails a saving throw\nA hostile creature attempts a skill check\nA hostile creature expends martial focus\nA hostile creature uses a supernatural ability as a standard action"
+    },
+    {
+      "level": 4,
+      "heading": "Punishing Cross [Youxia HB]",
+      "anchor": "toc18",
+      "text": "Whenever you take damage from a melee attack, you can expend your martial focus as an immediate action. If you do, you take half of the damage you normally would. The creature who struck you must succeed at a Reflex save or take half of the damage you would have taken."
+    },
+    {
+      "level": 4,
+      "heading": "Raging Bull",
+      "anchor": "toc19",
+      "text": "Whenever you ready a counter punch, you can instead ready a charge, although you may only move up to your speed with this charge (the attack granted by this charge is still treated as an attack action). Associated Feat: Rhino Charge.\nAuthor's Note: Abilities that multiply damage dealt on a charge, such as the Spirited Charge feat or wielding a lance while making a mounted charge, may not be used with this talent."
+    },
+    {
+      "level": 4,
+      "heading": "Read the Rhythm [utility]",
+      "anchor": "toc20",
+      "text": "As a move action, you can select one creature within 40 ft. of yourself; you gain a +2 competence bonus on all opposed skill checks you make against that creature for 1 minute. You can only gain this bonus against a single creature at a time, and you can only use this talent against a particular creature once per day. For every 4 points of base attack bonus you possess, this bonus increases by +2."
+    },
+    {
+      "level": 4,
+      "heading": "Rope A Dope",
+      "anchor": "toc21",
+      "text": "Once per round, when a creature makes a melee attack against you, you may spend an immediate action to force them to make a Fortitude save at the end of their turn or be fatigued for 1 round; in addition, the creature takes a -2 penalty to this saving throw for each attack they make that round. This fatigue last for 1 additional round for each 4 points of base attack bonus you possess. If your base attack bonus is +10 or higher, that creature is instead exhausted instead of fatigued."
+    },
+    {
+      "level": 4,
+      "heading": "Shadowboxing [utility]",
+      "anchor": "toc22",
+      "text": "You can use your total Perform (dance) bonus in place of your Acrobatics or Intimidate bonuses. Any creature which watches you make a Perform (dance) check outside of combat must make a Will save (using the result of your Perform (dance) check to determine the save DC) or be fascinated for up to 1 minute. Once a creature has been affected by this talent, they cannot be affected by it again for 1 day."
+    },
+    {
+      "level": 4,
+      "heading": "Shoulder Roll",
+      "anchor": "toc23",
+      "text": "Once per round when a creature declares a melee attack against you, you may spend an attack of opportunity to add a +1 dodge bonus to your AC against that attack. This bonus increases by +1 for every 4 points of base attack bonus you possess. If the attack misses you, you may immediately make an attack against that creature with a light weapon. If you possess the Heavy Counter talent, you may instead make this attack with a one or two-handed weapon."
+    },
+    {
+      "level": 4,
+      "heading": "Sucker Punch",
+      "anchor": "toc24",
+      "text": "Whenever you make an attack of opportunity with a weapon with which you could use to make a counter punch, once per round you may expend your martial focus to treat that attack of opportunity as though it was a counter punch. If you use this talent, you become staggered for 1 round."
+    },
+    {
+      "level": 4,
+      "heading": "Tight Guard",
+      "anchor": "toc25",
+      "text": "Whenever you ready an action, take a total defense action, or use the attack action to attack with a light weapon, you gain a +1 shield bonus to your armor class and combat maneuver defense until the start of your next turn. For every 4 points of base attack bonus you possess, this shield bonus and bonus to your combat maneuver defense increases by 1."
+    },
+    {
+      "level": 4,
+      "heading": "Violent Pressure",
+      "anchor": "toc26",
+      "text": "Whenever you ready a counter punch, you may spend a swift action to select one creature within 30 ft. of yourself; that creature must make a successful Will save or be shaken for 1 round. For every 5 points of base attack bonus you possess, the duration of this condition increase by 1 round. You may only target an individual creature once per day with this talent."
+    },
+    {
+      "level": 1,
+      "heading": "Counter Talents",
+      "anchor": "toc27",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Clinch (counter)",
+      "anchor": "toc28",
+      "text": "Whenever you successfully attack with your counter punch, you may attempt to grapple that creature as a free action (even if it is not your turn) that does not provoke attacks of opportunity."
+    },
+    {
+      "level": 4,
+      "heading": "Disarming Jab (counter) [Apoc]",
+      "anchor": "toc29",
+      "text": "Source: Spheres Apocrypha: Pugilists\nWhenever you successfully attack with your counter punch, you can make a disarm attempt against the target as a free action which does not provoke attacks of opportunity. If you successfully disarm the target, you may automatically pick up the item dropped if you have an empty hand, even if you used a weapon to disarm the target.\nIn addition, you gain the following new triggers to choose from when you ready a counter punch:\nA hostile creature uses a consumable item (e.g. a potion, Alchemy sphere formulae, etc.)\nA hostile creature activates a magic item (e.g. a wand, spell engine, etc.)\nNormal: When you successfully disarm your opponent without using a weapon, you may automatically pick up the item dropped."
+    },
+    {
+      "level": 4,
+      "heading": "Dizzying Maul (counter) [Apoc]",
+      "anchor": "toc30",
+      "text": "Source: Spheres Apocrypha: Pugilists\nWhenever you successfully attack with your counter punch, you throw the target off balance. If the target attempts to move greater than half its speed during its next turn, the target must succeed at an Acrobatics check with a DC equal to your Boxing sphere DC or fall prone.\nIn addition, you gain the following new trigger to choose from when you ready a counter punch:\nA hostile creature falls prone"
+    },
+    {
+      "level": 4,
+      "heading": "Forceful Smash (counter) [3PP]",
+      "anchor": "toc31",
+      "text": "Whenever you successfully attack with your counter punch, you can make a bull rush attempt against the target as a free action which does not provoke attacks of opportunity. You can choose to move along with the target as a free action, although this movement provokes an attack of opportunity, and you must end this movement adjacent to the creature. At base attack bonus +10, the target falls prone at the end of this movement."
+    },
+    {
+      "level": 4,
+      "heading": "Haymaker (counter)",
+      "anchor": "toc32",
+      "text": "Whenever you attack with a counter punch, you may aim for the target\u2019s mouth or equivalent orifice impeding their ability to speak. If your attack is successful the target must succeed on a concentration check to cast any spell with a verbal or equivalent component, adding 1/4 your base attack bonus (minimum 1) to the DC of the check. This effect can be ended as a standard action by a Heal check with a DC equal to the concentration DC, or when the target receives at least 1 point of magical healing."
+    },
+    {
+      "level": 4,
+      "heading": "Jolt Counter (counter)",
+      "anchor": "toc33",
+      "text": "Whenever you attempt to attack a creature with your counter punch, you may expend your martial focus as a free action that can be taken even when it is not your turn to treat the target of your attack as being flat-footed until the end of that turn and give the creature the battered condition until the end of your next turn on a successful hit."
+    },
+    {
+      "level": 4,
+      "heading": "Launching Uppercut (counter)",
+      "anchor": "toc34",
+      "text": "Whenever you successfully attack with your counter punch, you may expend your martial focus to attempt a bull rush against the creature as a free action even while it is not your turn without provoking an attack of opportunity. A successful bull rush forces the creature an additional 5 ft. further than normal, and you may choose to force the creature to move vertically rather than horizontally (this movement does not provoke attacks of opportunity). If you choose to force the creature vertically, that creature begins to descend on the end of their current turn (creatures that can fly may attempt to do so); upon landing, they must make a successful Reflex save or fall prone, taking falling damage as appropriate (on a successful Reflex save, they take 1/2 the total amount of falling damage and do not fall prone).\nYou may use this talent on a willing ally other than yourself without expending your martial focus, dealing no damage to them and automatically hitting them. A willing ally treats their CMD as 10, adjusted for size. Willing allies can control their descent as though they could glide (until they reach the same elevation at which they started, falling as normal after that) and make an attack at any point during their descent; for every 10 ft. your ally descends before making this attack, they gain a +2 circumstance bonus to its damage roll. For every 4 points of base attack bonus you possess, you may launch a creature 10 ft. further into the air."
+    },
+    {
+      "level": 4,
+      "heading": "Liver Shot (counter)",
+      "anchor": "toc35",
+      "text": "Whenever you successfully make an attack with your counter punch, you may force the creature hit by your counter punch to make a successful Fortitude save or be sickened and have all of their movement speeds reduced by 1/2 for 1 round. For every 5 points of base attack bonus you possess, the duration of this talent is increased by 1 round."
+    },
+    {
+      "level": 4,
+      "heading": "Loopy Blow (counter) [3PP]",
+      "anchor": "toc36",
+      "text": "Whenever you successfully attack with your counter punch, the target must make a successful Will saving throw or be treated as though under the effects of a confusion spell for 1 round. If the target is battered, they must roll twice on the confusion table, taking the higher result. At base attack bonus +10, this talent lasts for an additional round."
+    },
+    {
+      "level": 4,
+      "heading": "Knuckle Crusher (counter) [3PP]",
+      "anchor": "toc37",
+      "text": "Whenever you successfully attack with your counter punch, all natural attacks the target possesses (including unarmed strikes) take a -2 penalty to damage rolls for 1 round. For every +4 points of base attack bonus you possess, penalty lasts for an additional round. At base attack bonus +10, this penalty increases to -5 and the target also takes a -1 penalty to attack rolls with natural attacks."
+    },
+    {
+      "level": 4,
+      "heading": "Terrifying Hook (counter)",
+      "anchor": "toc38",
+      "text": "Whenever you use your counter punch, you can make an Intimidate check to demoralize that creature as a free action, even when it isn\u2019t your turn."
+    },
+    {
+      "level": 4,
+      "heading": "Winding Blow (counter) [EO3]",
+      "anchor": "toc39",
+      "text": "Whenever you successfully attack with your counter punch, you may force the creature to succeed at a Fortitude save or be unable to make attacks of opportunities for 1 round, and have all the air forced from their lungs, reducing the amount of time they can hold their breath to 1 round, for a number of rounds equal to 1/2 your base attack bonus (minimum 1 round). This effect can be ended early by using the Restore Capacity function of the Life sphere."
+    },
+    {
+      "level": 1,
+      "heading": "Legendary Talents",
+      "anchor": "toc40",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Chasing Assault",
+      "anchor": "toc41",
+      "text": "Prerequisites: Boxing sphere, counter punch ability, Launching Uppercut.\nWhenever you launch a hostile creature into the air with your Launching Uppercut talent, you may make an Acrobatics check to jump into the air next to them as an immediate action (this movement does not provoke attacks of opportunity). If you manage to jump at least as high as the target was launched, you may make an attack of opportunity against that creature, knocking them back to the ground immediately where they suffer falling damage and are not allowed a saving throw to avoid falling prone.\nYou descend back to the ground at the end of the target\u2019s turn, and do not suffer falling damage for the distance you jumped."
+    },
+    {
+      "level": 4,
+      "heading": "Cutting Comeback (counter)",
+      "anchor": "toc42",
+      "text": "Prerequisites: Boxing sphere, counter punch ability, Diplomacy or Intimidate or Bluff 5 ranks.\nYour comebacks are so potent they can literally cause targets pain. You may ready the demoralization action from the Intimidate skill, a shout from the Warleader sphere that affects enemies, or (if you possess Verbal Feint from the Fencing sphere) a feint, as if they were counter punches. If successful, one afflicted target of your choice within 30 ft. of you suffers twice the bonus damage from your counter punch as nonlethal damage in addition to the effects of the readied action itself. This is a language-based, mind-altering effect."
+    },
+    {
+      "level": 4,
+      "heading": "Intense Conditioning (counter)",
+      "anchor": "toc43",
+      "text": "Prerequisites: Boxing sphere, counter punch ability, base attack bonus +5.\nWhenever you land a successful counter punch, you may expend your martial focus as a free action to make the creature damaged by your counter punch make a Will save; if this save is unsuccessful, for 1 minute, whenever the creature attempts the action which triggered your counter punch, they must make a successful Will save or lose that action. This is a mind-affecting effect."
+    },
+    {
+      "level": 4,
+      "heading": "Reflecting Palm [Youxia HB]",
+      "anchor": "toc44",
+      "text": "Prerequisites: Boxing sphere (Punishing Cross), base attack bonus +10.\nWhen using Punishing Cross, if the creature who struck you fails their Reflex save, they take all the damage you normally would while you take no damage from the attack."
+    },
+    {
+      "level": 4,
+      "heading": "Wiggling Kitten, Lunging Lion (stance) [Catgirl HB]",
+      "anchor": "toc45",
+      "text": "Prerequisites: Acrobatics 3 ranks, Athletics sphere ((leap) package), Boxing sphere (Gazelle Punch).\nWhile in this stance, as part of readying a counterpunch, you may attempt an Acrobatics check to jump (DC 10 + distance traveled), moving in a straight line up to that distance (half distance for vertical movement). A jump made this way cannot exceed your land speed.\nIn addition, while in this stance, the effective reach granted by the Gazelle Punch talent increases an additional +5 feet + 5 feet per 5 base attack bonus you possess (up to your speed).\nExample: While in this stance, you ready a counterpunch and roll an Acrobatics check to jump. With a result of 31, you jump up to 20 feet; this jump does not count against your normal movement, and you could have moved normally before readying the counterpunch and making this jump.\n| Spheres of Might by Drop Dead Studios\n| Using Spheres of Might\n| Classes\n| Armiger | Blacksmith | Commander | Conscript | Scholar | Sentinel | Striker | Technician\n| Prestige Classes\n| Aeronaut Captain\n| Spheres\n| Alchemy | Athletics | Barrage | Barroom | Beastmastery | Berserker | Boxing | Brute\n| Dual Wielding | Duelist | Equipment | Fencing | Gladiator | Guardian | Lancer | Leadership\n| Open Hand | Scoundrel | Scout | Shield | Sniper | Tech | Trap | Warleader\n| Wrestling | | Pilot (3PP) |\n| Rules\n| About Legendary Talents | Martial Traditions | Martial Packages | Practitioner Feats\n| Practitioner Traits | Practitioner FCB's | Practitioner Bestiary | Associated Feats & Skills\n| Ultimate Engineering (Tinker) | Starfinder Conversion [3pp]\n| Get Spheres of Might on DriveThruRPG\n| Mythic Spheres of Might\n| Ultimate Engineering\n| The Conqueror's Handbook | The General's Handbook\n| The Highlander's Handbook | The Inventor's Handbook\n| The Inventor's Handbook 2 | The Jester's Handbook\n| Woodfaring Adventures | The Youxia's Handbook\n| Spheres Apocrypha\n| Alch. Formulae | Alch. Poisons | Alch. Poisons 2 | Armor Talents\n| Astrologian Archetype | Debilitating Talents | Pugilists | Racial\n| Ranged | Swashbucklers | Tandem | Tricks & Traps"
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "url": "https://spheresofpower.wikidot.com/barrage",
+  "retrieved": "2026-09-24",
+  "sha256": "f4e1ea5700287386419f5f0a745b865f4bb304427a905649c980b178215567f1",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Melee Archer Barrage Barrage Talents 100,000 Arrows (stance) [Youxia HB] Augmented Grip Battlefield Scavenger Blitz Focus Blowback Barrage Close Combat Specialist Intercepting Shot Mobile Focus Shove And Shoot [Apoc] Spinning Shot Unbalancing Combination Vigilant Sharpshooter Walking Fire Blitz Talents Arrow Split (blitz) Distracting Shot (blitz) Double Tap (blitz) [Jester's HB] Hammering Shots (blitz) Herding Fusillade (blitz) [DRS] Pinning Punishment (blitz) Redirection (blitz) Suppressing Fire (blitz) Warning Shot (blitz) [DRS] Legendary Talents Ceaseless Ammo Cone Of Death Death Blossom [Youxia HB] Stair Shot [utility]\nSpheres of Might $19.99 Diamond Spheres: Hustle & Bustle $6.99 Barrage practitioners specialize in using ranged weapons to make fast shots, often from the middle of the melee itself. All practitioners of the Barrage sphere gain the following abilities:"
+    },
+    {
+      "level": 1,
+      "heading": "Melee Archer",
+      "anchor": "toc0",
+      "text": "You gain a +1 bonus on attack and damage rolls with ranged weapons at ranges of up to 30 ft. Associated Feat: Point-Blank Shot."
+    },
+    {
+      "level": 1,
+      "heading": "Barrage",
+      "anchor": "toc1",
+      "text": "As a special attack action, you may make two ranged attacks at your full base attack bonus -2. Beginning at 6 base attack bonus, you may expend your martial focus to make an additional extra attack, increasing the penalty to all your attacks from -2 to -4. For every 5 points of base attack bonus you possess beyond 6, when expending your martial focus you may increase this penalty by an additional -2 to make an additional extra attack.\nSome talents are marked (blitz). You may apply a maximum of one (blitz) per extra attack to a barrage, but only if the barrage meets the prerequisites, including that attack (for example, if a (blitz) requires a target be struck twice, you can only apply that (blitz) to a target that has been struck twice. If he is struck a third time, you could apply a second (blitz) that requires at least two attacks to that target). Associated Feat: Rapid Shot\nWiki Note: You do not need to expend martial focus to apply a (blitz). You cannot apply a (blitz) to the first attack you make in a barrage, but can to each additional attack, including the second attack."
+    },
+    {
+      "level": 1,
+      "heading": "Barrage Talents",
+      "anchor": "toc2",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "100,000 Arrows (stance) [Youxia HB]",
+      "anchor": "toc3",
+      "text": "While in this stance, whenever you use the barrage action you can expend twice the number of thrown weapons or ammunition for each ranged attack while taking a -2 penalty to those attack rolls. If you do, striking a target for the first time in the barrage counts as striking a target twice with the same barrage for the purposes of barrage talents."
+    },
+    {
+      "level": 4,
+      "heading": "Augmented Grip",
+      "anchor": "toc4",
+      "text": "You have mastered how to hold multiple pieces of ammunition in one hand for faster reloading and more accurate barrages. You may reduce your attack penalty by 1 when using the barrage ability. At +10 base attack bonus, you further reduce the penalty when using the barrage ability by 1. In addition, so long as you have martial focus, you do not provoke an attack of opportunity for reloading a ranged weapon."
+    },
+    {
+      "level": 4,
+      "heading": "Battlefield Scavenger",
+      "anchor": "toc5",
+      "text": "When collecting non-firearm ammunition after it has been used in combat, you have a 85% chance of retrieving the ammo in good condition such that it can be used again, rather than 50%. You may draw a thrown weapon or a piece of non-firearm ammunition from the environment or a dead creature as part of the same action used to make a ranged attack with it.\nYou may attempt to extract thrown weapons or non-firearm ammunition from a living creature as well, but doing so requires you to make a steal combat maneuver. If successful, you may extract as many thrown weapons or pieces of non-firearm ammunition as you desire from the target creature, up to the total amount present. If the steal was performed as a standard action, you may use the ammunition to make an attack action as part of the same standard action used to perform the steal combat maneuver.\nWhen extracting weapons or ammunition from a target in this fashion, that target suffers 1 point of bleed damage per piece of ammunition extracted. This bleed damage stacks with itself."
+    },
+    {
+      "level": 4,
+      "heading": "Blitz Focus",
+      "anchor": "toc6",
+      "text": "Whenever you hit with at least two attacks while making a barrage, you may regain your martial focus as an immediate action."
+    },
+    {
+      "level": 4,
+      "heading": "Blowback Barrage",
+      "anchor": "toc7",
+      "text": "When you strike the same target at least twice with your barrage, the creature who was struck by these attacks must make a successful Reflex save or be pushed backwards 5 ft. per shot beyond the first. If this movement would force a creature into a solid object, they instead fall prone."
+    },
+    {
+      "level": 4,
+      "heading": "Close Combat Specialist",
+      "anchor": "toc8",
+      "text": "When you have martial focus, you do not provoke an attack of opportunity when making a ranged attack. If you possess the Vigilant Sharpshooter talent, you may flank targets in your threatened area with your ranged weapons."
+    },
+    {
+      "level": 4,
+      "heading": "Intercepting Shot",
+      "anchor": "toc9",
+      "text": "As a readied action, you may attempt to shoot down a ranged attack. This does not work against unusually massive ranged weapons (such as boulders or ballista bolts, unless you are also using a massive projectile, such as a boulder or siege weapon ammunition of no more than 1 size smaller), natural attacks, or ranged attacks generated by spell effects. Make a ranged attack. If your attack roll is higher than the attack roll of the ranged attack you are intercepting, their attack is negated. You suffer a -4 penalty to this attack roll for every size category larger than you the attacker is.\nIf you possess the Vigilant Sharpshooter talent, you may use an attack of opportunity to make an intercepting shot against a ranged attack that crosses through your threatened area."
+    },
+    {
+      "level": 4,
+      "heading": "Mobile Focus",
+      "anchor": "toc10",
+      "text": "Whenever you move at least 10 ft. but no more than half your total speed using a move action on your turn, you regain your martial focus."
+    },
+    {
+      "level": 4,
+      "heading": "Shove And Shoot [Apoc]",
+      "anchor": "toc11",
+      "text": "When you make a barrage special attack action, you may forgo making your first ranged attack and instead make a Bull Rush combat maneuver as a free action against a creature within your natural reach. This does not provoke an attack of opportunity. Your barrage penalty to attack rolls also applies to your CMB with this combat maneuver. Associated Feat: Stabbing Shot."
+    },
+    {
+      "level": 4,
+      "heading": "Spinning Shot",
+      "anchor": "toc12",
+      "text": "When performing a barrage, you may make an additional extra attack. However, all of your attacks made as part of this barrage must target different creatures. At 10 base attack bonus, you may make a second additional attack as part of this barrage."
+    },
+    {
+      "level": 4,
+      "heading": "Unbalancing Combination",
+      "anchor": "toc13",
+      "text": "Whenever you successfully strike the same creature twice during a barrage, that creature is battered for 1 round. This is increased by 1 round for every additional successful attack."
+    },
+    {
+      "level": 4,
+      "heading": "Vigilant Sharpshooter",
+      "anchor": "toc14",
+      "text": "As long as you have martial focus, you threaten all squares within 5 ft. of yourself with your ranged or thrown weapon. When making an attack of opportunity with a ranged weapon, you do not provoke an attack of opportunity with your ranged attack.\nYou may take this talent a total of twice. If taken a second time, increase the distance that you threaten by +5 ft. Associated Feat: Snap Shot, Improved Snap Shot if taken twice."
+    },
+    {
+      "level": 4,
+      "heading": "Walking Fire",
+      "anchor": "toc15",
+      "text": "When attacking the same target multiple times during a barrage, each attack after the first gains a cumulative +1 bonus against that target (for example, the second attack would gain a +1 bonus, the third would gain a +2 bonus, etc.). This cannot exceed the penalty to attack applied by the barrage itself."
+    },
+    {
+      "level": 1,
+      "heading": "Blitz Talents",
+      "anchor": "toc16",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Arrow Split (blitz)",
+      "anchor": "toc17",
+      "text": "You are accurate enough to follow one shot with another, striking the same spot for greater damage. If you strike a target twice during a barrage, only apply its damage reduction or hardness once, rather than individually to each attack. This stacks with each additional shot given this (blitz). In addition, your attacks deal full damage if the target is an object, rather than half."
+    },
+    {
+      "level": 4,
+      "heading": "Distracting Shot (blitz)",
+      "anchor": "toc18",
+      "text": "You may intentionally miss with your extra attack in order to manipulate your opponent\u2019s movements. Rather than make this extra attack, you instead may make a feint check at range against your target before making any other attacks as part of the barrage, including with the original attack action. If successful, the target loses its Dexterity bonus to AC against your next attack, and you may force the target to take a 5-foot step that does not provoke an attack of opportunity in any direction that does not place it in a spot that is intrinsically dangerous."
+    },
+    {
+      "level": 4,
+      "heading": "Double Tap (blitz) [Jester's HB]",
+      "anchor": "toc19",
+      "text": "You fire an additional piece of ammunition, striking the target twice as hard where they've already been damaged. When a target is struck by an additional attack modified by this (blitz), the target also takes an additional +1 precision damage for each attack that previously damaged that target as part of this barrage. This additional damage increases by +1 for every 7 base attack bonus you possess. A character with 14 BAB would deal +3 damage on the second successful attack, then +6, +9, and so on.\nYou expend an additional piece of ammunition when using this (blitz)."
+    },
+    {
+      "level": 4,
+      "heading": "Hammering Shots (blitz)",
+      "anchor": "toc20",
+      "text": "When striking a target twice with the same barrage, the target has their initiative check reduced by -5 when determining when they act in this combat, changing that creature\u2019s order in initiative for a number of rounds equal to your practitioner modifier. If the creature hasn\u2019t made an initiative check yet, their initiative roll takes this penalty as long as this initiative check is made within 1 minute. This (blitz) does not stack with itself."
+    },
+    {
+      "level": 4,
+      "heading": "Herding Fusillade (blitz) [DRS]",
+      "anchor": "toc21",
+      "text": "Source: Diamond Spheres: Hustle & Bustle\nYou can replace one additional attack in your barrage to instead cause your target to become harried until the start of your next turn. While harried, you always threaten the square(s) that the target is occupying for as long as they remain within your weapon\u2019s first range increment. You may only make attacks of opportunity against a target threatened in this way with ranged weapons."
+    },
+    {
+      "level": 4,
+      "heading": "Pinning Punishment (blitz)",
+      "anchor": "toc22",
+      "text": "When striking a target twice with the same barrage, that creature must make a successful Reflex save or have all movement speeds they possess reduced to 0. This only works when using arrows, bolts, or other similar ammunition, and does not affect creatures that are not adjacent to the floor, a wall, or another solid object which they could be pinned to. The creature cannot move while affected in this way, unless they spend a standard action to remove the arrows first, or else break them through sundering or in some other fashion. The creature may attempt to simply rip themselves free as part of a move action made to move by passing a Strength or Escape Artist check with a DC equal to your Barrage DC, and the target gains 1d6 bleed."
+    },
+    {
+      "level": 4,
+      "heading": "Redirection (blitz)",
+      "anchor": "toc23",
+      "text": "When making a barrage, you may use an extra attack to strike one of your other attacks, changing its course mid-flight. Rather than making this extra attack, another of your attacks may instead change course once, allowing you to strike around corners, bypass cover, or perform other, similar feats."
+    },
+    {
+      "level": 4,
+      "heading": "Suppressing Fire (blitz)",
+      "anchor": "toc24",
+      "text": "When performing a barrage, you may make 2 extra attacks instead of one, but must target the same creature with both of these extra attacks. However, your shots are wild, and the target can easily duck, causing both of your extra attacks to miss. However, doing so causes the target to have its movement speed reduced by half and to suffer a -3 penalty to Perception checks and to all attack rolls until the end of their next round, -1 for each additional extra attack augmented with the suppressing fire (blitz) that targets this creature. The target can choose not to avoid these attacks, in which case you may roll the attacks as normal, and the target doesn\u2019t suffer the penalties."
+    },
+    {
+      "level": 4,
+      "heading": "Warning Shot (blitz) [DRS]",
+      "anchor": "toc25",
+      "text": "Source: Diamond Spheres: Hustle & Bustle\nYou can replace one additional attack in your barrage to instead make an Intimidate check to demoralize the attacked creature or pose a menace before making any other attacks as part of the barrage. If such a demoralize attempt is successful, the creature must also succeed at a Will saving throw or have their speed reduced to 0 until the end of their next turn\u2014this is a fear effect."
+    },
+    {
+      "level": 1,
+      "heading": "Legendary Talents",
+      "anchor": "toc26",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Ceaseless Ammo",
+      "anchor": "toc27",
+      "text": "Prerequisite: Barrage sphere.\nSo long as you have at least 10 pieces of ammunition of a particular non-magical type, you may fire as many pieces of that ammunition as you desire without actually expending your ammunition.\nWhen the combat is finished, you cannot retrieve more pieces of ammunition than you had before the combat began; you always end the combat with the same amount of ammunition you started with. This is a supernatural effect."
+    },
+    {
+      "level": 4,
+      "heading": "Cone Of Death",
+      "anchor": "toc28",
+      "text": "Prerequisite: Barrage sphere, base attack bonus +5.\nYou may expend your martial focus as a full-round action to make a special barrage. You forgo your ability to add (blitz) talents and instead make a single attack against every creature within a close range (25 ft. +5 ft. per 2 base attack bonus) cone. Roll a single attack and apply it to every creature within range, dealing damage to any creature you successfully strike. This may affect swarms that are usually immune to weapon damage.\nYou may take this talent a total of three times, up to once per 5 base attack bonus you possess. If taken twice, increase the size of the effect to a medium (100 ft. + 10 ft. per base attack bonus) range cone. If taken three times, increase the size of the effect to a long range (400 ft. + 40 ft. per base attack bonus) cone.\nUsing Cone of Death is the equivalent of making 10 attacks with ranged or thrown weapons; if you do not have enough ammunition or are incapable of reloading your weapon or drawing weapons as a free action, you cannot use Cone of Death. Special abilities, features, or other enhancements (special ammunition, enhancement bonuses, etc.) only apply to Cone of Death if all 10 ranged or thrown attacks would be augmented by them."
+    },
+    {
+      "level": 4,
+      "heading": "Death Blossom [Youxia HB]",
+      "anchor": "toc29",
+      "text": "Prerequisites: Barrage sphere (Cone Of Death), base attack bonus +5.\nWhen using Cone Of Death, you may change the area affected from a cone into a burst centered on you with the same range. You are excluded from the targeting of Death Blossom."
+    },
+    {
+      "level": 4,
+      "heading": "Stair Shot [utility]",
+      "anchor": "toc30",
+      "text": "Prerequisite: Barrage sphere.\nAs an attack action, you may expend 10 pieces of ammunition from a ranged weapon to create a staircase of arrows/bolts. There must be a wall, cliff, or another suitable mostly-vertical surface for you to use when creating a staircase of arrows, and the staircase cannot extend more than 5 ft. per point of base attack bonus you possess, but you may choose its shape (going straight across, or up or down as desired, but no steeper than 45 degrees either direction). You may expend your martial focus to perform this maneuver as an immediate action, such as to build a platform to stop someone from falling.\nThis only functions with weapons that fire arrows, bolts, or other appropriate ammunition, and that you may reload as a free action.\n| Spheres of Might by Drop Dead Studios\n| Using Spheres of Might\n| Classes\n| Armiger | Blacksmith | Commander | Conscript | Scholar | Sentinel | Striker | Technician\n| Prestige Classes\n| Aeronaut Captain\n| Spheres\n| Alchemy | Athletics | Barrage | Barroom | Beastmastery | Berserker | Boxing | Brute\n| Dual Wielding | Duelist | Equipment | Fencing | Gladiator | Guardian | Lancer | Leadership\n| Open Hand | Scoundrel | Scout | Shield | Sniper | Tech | Trap | Warleader\n| Wrestling | | Pilot (3PP) |\n| Rules\n| About Legendary Talents | Martial Traditions | Martial Packages | Practitioner Feats\n| Practitioner Traits | Practitioner FCB's | Practitioner Bestiary | Associated Feats & Skills\n| Ultimate Engineering (Tinker) | Starfinder Conversion [3pp]\n| Get Spheres of Might on DriveThruRPG\n| Mythic Spheres of Might\n| Ultimate Engineering\n| The Conqueror's Handbook | The General's Handbook\n| The Highlander's Handbook | The Inventor's Handbook\n| The Inventor's Handbook 2 | The Jester's Handbook\n| Woodfaring Adventures | The Youxia's Handbook\n| Spheres Apocrypha\n| Alch. Formulae | Alch. Poisons | Alch. Poisons 2 | Armor Talents\n| Astrologian Archetype | Debilitating Talents | Pugilists | Racial\n| Ranged | Swashbucklers | Tandem | Tricks & Traps"
+    }
+  ]
+}
