@@ -1,0 +1,355 @@
+{
+  "url": "https://spheresofpower.wikidot.com/skybourne-feats",
+  "retrieved": "2026-09-24",
+  "sha256": "ab6cbb94138264e7658d043cea5d5455e64748128355fc7bd776c6c04202791f",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Abundant Adrenaline (Combat, Racial) Airborne Aethermancer (Combat, Racial) Alraun Nose (General, Racial) Armored Flight (Combat, Racial) Calculated Shot (Combat) Cauldron of Venom (Combat, Racial) Cecaelia Burst (General, Racial) Cherufe Chomp (Combat, Racial) Cherufe Sweep (Combat) Climbing Claws (General, Racial) Commanding Presence (General) Cuazaj Breath (Combat, Racial) Cuazaj Breath, Expanded (Combat, Racial) Cuazaj Breath, Greater (Combat, Racial) Elemental Heart (General, Racial) Elemental Rebirth (General, Racial) Elemental Touch (Combat, Racial) Emergency Repair (General) Extra Planar Balancer (General, Racial) Extra Venom (General, Racial) Fey Interference (General, Racial) Feylignment (General, Racial) Flexible Tail (Combat) Focused Miasma (General, Racial) Forest Roots (General, Racial) Greater Created (General, Racial) Hardened Shell (Combat, Racial) Improved Ink Jet (General, Racial) Jumbled Organs (General) Linguistic Mastery (General, Racial) Living Accumulator (Combat, Racial) Master Engineer (General) Mixed Toxicity (Combat, Racial) Planar Strike (Combat, Racial) Planar Swing (General, Racial) Poison Spitter (Combat, Racial) Poisonous Ink (General, Racial) Practiced Claws (Combat, Racial) Razor Beak (Combat, Racial) Razor Talons (Combat, Racial) Real Flight (General, Racial) Ritual Expert (General) Ritual Master (General) Spell Dabbler (General) Spell Adept (General) Siege Engineer (Combat) Steel Skeleton (Combat, Racial) Strengthened Arms (General) Tactile Density (Combat, Racial) Talented Leaper (General, Racial) Tentacle Adept (Combat) Tentacle Grappler (Combat) Tentacle Master (Combat) Tentacle Novice (Combat, Style) Unreasonable Coordination (Combat) Vegetalker (General, Racial) Vined Limbs (Combat, Racial)\nPlayer's Guide to Skybourne\nSource: The Player's Guide to Skybourne\nThese feats are designed mainly for use with the Sphere Races in games set in the Skybourne setting. Most (although not all) of these are racial feats that will augment those races."
+    },
+    {
+      "level": 4,
+      "heading": "Abundant Adrenaline (Combat, Racial)",
+      "anchor": "toc0",
+      "text": "The designs of your creators left your adrenal glands on overdrive, granting you incredible swiftness for a short period of time.\nPrerequisites: Construct type or subtype, character level 3rd.\nBenefit: Once per hour, you can take an extra swift action for two turns, but for the next three turns afterward you receive no swift actions. You cannot use any extra swift actions to cast spells.\nSpecial: You may take this feat a total of twice. When taken a second time, once per hour you can take an extra standard action for two turns, but for the next three turns afterward you receive no standard actions. You cannot use any extra standard actions to cast spells."
+    },
+    {
+      "level": 4,
+      "heading": "Airborne Aethermancer (Combat, Racial)",
+      "anchor": "toc1",
+      "text": "You were not just born to be in the air, but to possess a mastery of it that enhances magic you cast while in flight.\nPrerequisites: Draconic subtype, breezeflight, character level 3rd.\nBenefit: When using breezeflight and casting a spell or using a sphere ability that deals acid or lightning damage, your caster level increases by 1."
+    },
+    {
+      "level": 4,
+      "heading": "Alraun Nose (General, Racial)",
+      "anchor": "toc2",
+      "text": "Your sense of smell is even more developed, allowing you to pick out many more odors than just the smell of blood.\nPrerequisites: Plant subtype, blood sense racial trait.\nBenefit: You gain the scent ability."
+    },
+    {
+      "level": 4,
+      "heading": "Armored Flight (Combat, Racial)",
+      "anchor": "toc3",
+      "text": "You have long practiced the ability to fly with greater loads.\nPrerequisite: Fenghaung subtype, fly speed.\nBenefit: You can now fly in medium or heavy armor, or while encumbered."
+    },
+    {
+      "level": 4,
+      "heading": "Calculated Shot (Combat)",
+      "anchor": "toc4",
+      "text": "Attack smarter, not harder.\nPrerequisite: Intelligence 13, Point-Blank Shot, Precise Shot, Focused Shot.\nBenefit: You may use Focused Shot with any ranged weapon, not just bows or crossbows. You gain a +2 bonus to attack and damage rolls when using Focused Shot."
+    },
+    {
+      "level": 4,
+      "heading": "Cauldron of Venom (Combat, Racial)",
+      "anchor": "toc5",
+      "text": "You\u2019ve carefully developed your poison for greater versatility.\nPrerequisites: Poison Spitter, poison eater alraun, character level 7th.\nBenefit: You can change your poison\u2019s type (from injury to contact, ingested, or inhaled) by expending twice as many of your daily uses as normal. When used as an inhalation poison, your poison fills one adjacent 5-ft.-square for a number of rounds equal to half your hit dice, affecting the first creature to enter that square.\nNormal: Alraun poison is an injury poison."
+    },
+    {
+      "level": 4,
+      "heading": "Cecaelia Burst (General, Racial)",
+      "anchor": "toc6",
+      "text": "When the time to withdraw into the depths comes, you are able to retreat with preternatural quickness.\nPrerequisites: Cecaelia subtype, character level 3rd.\nBenefit: You are able to swim 150 ft backward as a full-round action, as the jet universal monster ability. You must move in a straight line while jetting, but your movement does not provoke attacks of opportunity."
+    },
+    {
+      "level": 4,
+      "heading": "Cherufe Chomp (Combat, Racial)",
+      "anchor": "toc7",
+      "text": "The strength of your jaws is uncanny and once you sink your teeth in you can hold on like a steel vice.\nPrerequisites: Cherufe (zavr subtype), base attack bonus +9.\nBenefit: You may make a free grapple combat maneuver check that does not provoke attacks of opportunity when you hit with your bite attack."
+    },
+    {
+      "level": 4,
+      "heading": "Cherufe Sweep (Combat)",
+      "anchor": "toc8",
+      "text": "With lightning reflexes, you sweep your tail against an opponent that has left them exposed, knocking them down.\nPrerequisites: Tail natural attack, base attack bonus +6.\nBenefit: When using your tail to make an attack of opportunity, you may make a free trip combat maneuver that does not provoke attacks of opportunity against a target if you successfully hit it.\nSpecial: If you possess the Improved Trip feat or are otherwise unable to provoke an attack of opportunity when making a trip attempt, you gain a +2 bonus to your CMB with this trip attempt."
+    },
+    {
+      "level": 4,
+      "heading": "Climbing Claws (General, Racial)",
+      "anchor": "toc9",
+      "text": "Less rude than shoving them into living things, but still less refined than most would prefer, your sharp claws make fine climbing tools.\nPrerequisite: Tatulani subtype, secondary arms racial trait, claws racial trait.\nBenefit: You gain a +2 racial bonus to Climb checks per free hand. If all four hands are free, you gain a 15 ft. climb speed as well."
+    },
+    {
+      "level": 4,
+      "heading": "Commanding Presence (General)",
+      "anchor": "toc10",
+      "text": "Prerequisites: 3rd level.\nBenefit: A creature with this feat can command two crews at once rather than just one. Both crews must still be able to see or hear this creature to gain the benefits of having him as their commanding officer."
+    },
+    {
+      "level": 4,
+      "heading": "Cuazaj Breath (Combat, Racial)",
+      "anchor": "toc11",
+      "text": "Prerequisites: Draconic subtype, cuazaj lightning racial trait.\nBenefit: Your cuazaj lightning breath weapon improves, dealing 1d6 damage per 2 character levels."
+    },
+    {
+      "level": 4,
+      "heading": "Cuazaj Breath, Expanded (Combat, Racial)",
+      "anchor": "toc12",
+      "text": "Prerequisites: Draconic subtype, cuazaj lightning racial trait, Cuazaj Breath.\nBenefit: Your cuazaj lightning breath weapon double in size, affecting a 30-ft cone.\nSpecial: You may take this feat a total of twice. If taken twice, your breath weapon becomes a 60-ft cone."
+    },
+    {
+      "level": 4,
+      "heading": "Cuazaj Breath, Greater (Combat, Racial)",
+      "anchor": "toc13",
+      "text": "Prerequisites: Draconic subtype, cuazaj lightning racial trait, Cuazaj Breath.\nBenefit: You may use your cuazaj lightning breath weapon once every 1d4 rounds."
+    },
+    {
+      "level": 4,
+      "heading": "Elemental Heart (General, Racial)",
+      "anchor": "toc14",
+      "text": "Your attachment to the forces of flame deepens with your power.\nPrerequisite: Fenghaung subtype, energy resistance.\nBenefit: Increase the energy resistance given by your elemental nature by an amount equal to your character level."
+    },
+    {
+      "level": 4,
+      "heading": "Elemental Rebirth (General, Racial)",
+      "anchor": "toc15",
+      "text": "Like the phoenixes of legend, you are difficult to keep down.\nPrerequisite: Fenghaung subtype, energy resistance, Elemental Heart, character level 12th\nBenefit: If your body is immersed in the element you have resistance to via the elemental nature racial trait within a day of your death, you are revived as per raise dead, gaining two permanent negative levels as normal. If you are slain by this element, this ability activates automatically in 1d4 rounds."
+    },
+    {
+      "level": 4,
+      "heading": "Elemental Touch (Combat, Racial)",
+      "anchor": "toc16",
+      "text": "The elemental energies within you can escape through your attacks, helping express your fury.\nPrerequisite: Fenghaung subtype, energy resistance.\nBenefit: When attacking with a natural or manufactured melee weapon, you deal 1d6 damage of fire or cold damage as appropriate. This does not stack with weapon qualities such as flaming or frost."
+    },
+    {
+      "level": 4,
+      "heading": "Emergency Repair (General)",
+      "anchor": "toc17",
+      "text": "Desperate times call for desperate measures. A working device can save your life.\nPrerequisite: Technological racial trait.\nBenefit: As a full-round action, you may quickly jury-rig a repair on a destroyed object, elevating it to functional with the broken condition for 1d6 minutes. Any given item can only be so repaired once before real work has to be done to coax it back to life. Any additional damage will immediately destroy the item again. This does not restore magic to a destroyed magic item. Alternately, you may use this feat to remove the broken condition from an object for 1d6 minutes, but again, only once per object."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Planar Balancer (General, Racial)",
+      "anchor": "toc18",
+      "text": "Prerequisites: Fey type or subtype, planar balancer racial trait.\nBenefit: You may use your planar balancer ability an additional 3 rounds per day."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Venom (General, Racial)",
+      "anchor": "toc19",
+      "text": "Prerequisites: Poison eater alraun.\nBenefit: You may use your venom an additional 2 times per day."
+    },
+    {
+      "level": 4,
+      "heading": "Fey Interference (General, Racial)",
+      "anchor": "toc20",
+      "text": "When you deem it so, you can grace the Material Realm with the briefest touch of the meddling Fey Lords.\nPrerequisites: Fey type or subtype.\nBenefit: A number of times per day equal to 1/2 your hit dice, you can spend an immediate action to force a creature within 30 ft. to reroll a natural 20. They may roll twice and take the better result."
+    },
+    {
+      "level": 4,
+      "heading": "Feylignment (General, Racial)",
+      "anchor": "toc21",
+      "text": "Using the gifts of your fey bloodline you can hide the true nature of your soul.\nPrerequisites: Fey type or subtype.\nBenefit: By spending an immediate action, you may change your alignment to appear to be within one step of what it truly is for one minute. This changes the way your alignment interacts with spells, magic items, and other effects. Performing any action related to your actual alignment immediately ends this effect (for example, a Neutral Evil sidhier could use this ability to change his alignment to True Neutral to avoid being detected as Evil by a paladin nor targeted by the paladin\u2019s smite. However, if the Neutral Evil sidhier should attack the paladin, his allies, an innocent or perform any other Evil act, the benefit of Feylignment would immediately end)."
+    },
+    {
+      "level": 4,
+      "heading": "Flexible Tail (Combat)",
+      "anchor": "toc22",
+      "text": "Prerequisites: Tail natural attack, base attack bonus +6.\nBenefit: You may use your tail as a normal natural attack, and are no longer limited to only using it to make attacks of opportunity."
+    },
+    {
+      "level": 4,
+      "heading": "Focused Miasma (General, Racial)",
+      "anchor": "toc23",
+      "text": "By focusing your naturally disruptive odor you are able to sap another creature of its willpower.\nPrerequisites: Fermon alraun, odor of susceptibility.\nBenefit: By spending a standard action to suppress your odor of susceptibility (provoking attacks of opportunity), you can narrow its effects into a miasma that targets only one creature within 20 feet, increasing its penalty to -2 while it is within this range. This is a mind-affecting effect and creatures that do not need to breathe are immune to its effects. Deactivating focused miasma is a swift action."
+    },
+    {
+      "level": 4,
+      "heading": "Forest Roots (General, Racial)",
+      "anchor": "toc24",
+      "text": "Focusing deeply and setting yourself down into the dirt, you can use the woods around you to sense the world at range.\nPrerequisites: Plant type or subtype, Vegetalker.\nBenefit: While on a ground with soil such as the forest floor or swamp terrains, you can spend a full-round action that provokes attacks of opportunity to designate a 50 ft. radius area centered within Medium range (100 ft. + 10 ft. per level). You may detect objects within this area, as if using tremorsense. The point you designate must be within the same forest or swamp terrain. While using Forest Roots, you are denied your Dexterity bonus to armor class and cannot take a 5-foot step."
+    },
+    {
+      "level": 4,
+      "heading": "Greater Created (General, Racial)",
+      "anchor": "toc25",
+      "text": "Your creators invested greatly into your creation.\nPrerequisites: Construct subtype.\nBenefit: You receive 1 creation point.\nSpecial: You may only take this feat at character creation."
+    },
+    {
+      "level": 4,
+      "heading": "Hardened Shell (Combat, Racial)",
+      "anchor": "toc26",
+      "text": "Your carapace has weathered an unfortunate number of blows.\nPrerequisite: Tatulani subtype.\nBenefit: You gain a +1 natural armor bonus."
+    },
+    {
+      "level": 4,
+      "heading": "Improved Ink Jet (General, Racial)",
+      "anchor": "toc27",
+      "text": "Over time you\u2019ve carefully tended your ink glands to produce far more than they normally would.\nPrerequisites: Cecaelia subtype, ink jet racial ability.\nBenefit: You may use your ink jet racial ability once per hour rather than once per day."
+    },
+    {
+      "level": 4,
+      "heading": "Jumbled Organs (General)",
+      "anchor": "toc28",
+      "text": "The general placement of your organs often baffles your foes, making you even more unique when compared to your bizarre peers.\nPrerequisites: Construct type or subtype.\nBenefit: Your natural fortification improves by 10%."
+    },
+    {
+      "level": 4,
+      "heading": "Linguistic Mastery (General, Racial)",
+      "anchor": "toc29",
+      "text": "Some believe that to know your potential foe is to have won before the battle begins.\nPrerequisite: Tatulani subtype.\nBenefit: You gain a +2 bonus to Linguistics checks. Every rank of Linguistics gives two languages instead of one. You immediately gain one language per rank of linguistics you had before gaining this feat."
+    },
+    {
+      "level": 4,
+      "heading": "Living Accumulator (Combat, Racial)",
+      "anchor": "toc30",
+      "text": "By focusing and unleashing your innate electrical powers, you can charge the remains of your kin with lightning.\nPrerequisites: Draconic subtype, Constitution 13+.\nBenefit: You can naturally charge a cuazite weapon with electricity as a swift action a number of times per day equal to your Constitution modifier.\nSpecial: If you have the cuazaj assault racial ability, you can instead increase the additional damage of a cuazite weapon to +1d8 electricity damage a number of times per day equal to your Constitution modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Master Engineer (General)",
+      "anchor": "toc31",
+      "text": "When you learn the ins and outs of an engine, you can coax more from it than another engineer could.\nPrerequisites: Profession (engineer) 5 ranks.\nBenefit: When you serve as a ship\u2019s engineer for at least 1 week, you can coax greater feats than normal from that ship\u2019s engine. When pushing an engine, its power increases by 75%. When overloading the engine, its power increases by 150%. When successfully aiding the pilot, you grant them an additional +2 bonus to their piloting checks."
+    },
+    {
+      "level": 4,
+      "heading": "Mixed Toxicity (Combat, Racial)",
+      "anchor": "toc32",
+      "text": "You are not only nourished by drinking poisons other than your own, your venom becomes more potent as well.\nPrerequisites: Poison eater alraun.\nBenefit: After ingesting a poison other than your own, the DC of your poison is increased by +2 for each 500 gp of its value (minimum +1) the next time you use your poison."
+    },
+    {
+      "level": 4,
+      "heading": "Planar Strike (Combat, Racial)",
+      "anchor": "toc33",
+      "text": "You can swing your blade with so murderous an intent that it cleaves between dimensions.\nPrerequisites: Fey type or subtype, planar balancer racial trait, Arcane Strike, caster level 5th.\nBenefit: When using Arcane Strike, your empowered weapons also gain the ghost touch enhancement for that round."
+    },
+    {
+      "level": 4,
+      "heading": "Planar Swing (General, Racial)",
+      "anchor": "toc34",
+      "text": "Using your miraculous ability to create a static point between dimensions, you can temporarily bend gravity to swing yourself upward.\nPrerequisites: Fey type or subtype, planar balancer racial trait.\nBenefit: As a swift action, you may expend a round of your planar balancer racial ability to make an Acrobatics check to jump, moving a number of feet equal to your check in any direction with a top height equal to 1/4 your check as normal. This is in addition to other movement taken during the round, and provokes attacks of opportunity as normal. This jump may be taken in the middle of a standard jump, increasing the height and distance of that jump, as well as allowing you to change direction in mid-air (in essence, allowing you to \u2018jump\u2019 in the middle of a jump)."
+    },
+    {
+      "level": 4,
+      "heading": "Poison Spitter (Combat, Racial)",
+      "anchor": "toc35",
+      "text": "Flexing glands near your jaw, you can spit your poison directly at enemies in a foul corrosive mixture.\nPrerequisites: Poison eater alraun.\nBenefit: You can spit your poison as a ranged touch attack with a range increment of 10 feet. On a successful hit, it deals 1 acid damage and delivers your poison. Spitting poison in this fashion is considered a ranged weapon for the purpose of feats and making multiple attacks per round."
+    },
+    {
+      "level": 4,
+      "heading": "Poisonous Ink (General, Racial)",
+      "anchor": "toc36",
+      "text": "The ink you produce in quantity can do more than blind opponents, sometimes sickening or even killing foes.\nPrerequisites: Cecaelia subtype, Improved Ink Jet.\nBenefit: In addition to blindness for 1 minute, your ink jet becomes poisonous.\nInk jet\u2014contact; save Fort DC 10 + 1/2 cecaelia\u2019s hit dice + cecaelia\u2019s Constitution modifier; frequency 1/round for 6 rounds; effect 1d2 Con, cure 2 saves."
+    },
+    {
+      "level": 4,
+      "heading": "Practiced Claws (Combat, Racial)",
+      "anchor": "toc37",
+      "text": "Working on your coordination and your martial technique, you are able to use your secondary limbs to strike more rapidly.\nPrerequisite: Tatulani subtype, secondary arms racial trait, Strengthened Arms, base attack bonus +4.\nBenefit: Your secondary arms gain secondary claw attacks that deal 1d4 damage each. Secondary natural attacks are made with a -5 penalty to attack, and only add half your Strength modifier to damage."
+    },
+    {
+      "level": 4,
+      "heading": "Razor Beak (Combat, Racial)",
+      "anchor": "toc38",
+      "text": "Your beak isn\u2019t just for speaking and grasping, but for defense as well.\nPrerequisite: Fenghuang subtype.\nBenefit: You gain a bite attack that deals standard damage for your size (1d6 medium, 1d4 small)."
+    },
+    {
+      "level": 4,
+      "heading": "Razor Talons (Combat, Racial)",
+      "anchor": "toc39",
+      "text": "Though not built for fine manipulation, your talons can serve well enough as a last line of defense.\nPrerequisite: Fenghuang subtype.\nBenefit: You gain two talon attacks that deal standard damage for your size (1d4 at medium). These are primary attacks that may only be taken while airborn."
+    },
+    {
+      "level": 4,
+      "heading": "Real Flight (General, Racial)",
+      "anchor": "toc40",
+      "text": "Flying comes as naturally to you as breathing and your airborne talents are often the source of great envy among your peers.\nPrerequisites: Draconic subtype, breezeflight, character level 5th.\nBenefit: When using breezeflight, you become weightless instead of half-weight. The penalties to CMB and CMD increases to -4, and you gain a fly speed of 30 ft with average maneuverability instead of making an Acrobatics check."
+    },
+    {
+      "level": 4,
+      "heading": "Ritual Expert (General)",
+      "anchor": "toc41",
+      "text": "You have learned much of ritual magic, and can call upon a wider variety as your needs dictate.\nPrerequisites: Caster level 1.\nBenefit: You may use any ritual under your magic type (arcane, divine, psychic), not only those tied to your specific tradition."
+    },
+    {
+      "level": 4,
+      "heading": "Ritual Master (General)",
+      "anchor": "toc42",
+      "text": "Your skill with ritual magic is unparalleled.\nPrerequisites: Caster level 1, spherecaster (Spheres of Power).\nBenefit: You may use your MSB in place of your caster level when using rituals."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Dabbler (General)",
+      "anchor": "toc43",
+      "text": "You have learned to hold rituals in your memory to a minor degree.\nPrerequisites: Spherecaster (Spheres of Power).\nBenefit: You may choose one ritual per day you may use up to the highest level you may cast. By spending 15 minutes preparing beforehand, you may cast this ritual once as a spellcaster at any point during that day. This may also be a lower-level ritual augmented by any metamagic feats you possess, so long as its effective level does not exceed that which you can cast. All drawbacks of your tradition still apply, and the spell may be augmented by any tradition boons you possess. Rather than a material cost, (unless the spell has costly material components already listed), you must spend a number of spell points at the time you prepare the ritual dependent on the level of the ritual in question: 0-2: 1 spell point, 3-5: 2 spell points, 6-8: 3 spell points, 9: 4 spell points."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Adept (General)",
+      "anchor": "toc44",
+      "text": "Your ability to use rituals has grown to great power.\nPrerequisites: Spell Dabbler, spherecaster (Spheres of Power).\nBenefit: When using your Spell Dabbler feat, you may increase the preparation time to 1 hour to prepare as many rituals as you desire, spending spell points for each prepared ritual. You cannot prepare more than 4 rituals of any individual level in this manner."
+    },
+    {
+      "level": 4,
+      "heading": "Siege Engineer (Combat)",
+      "anchor": "toc45",
+      "text": "Your skill with large weapons is great.\nPrerequisites: Proficiency with at least 1 siege engine.\nBenefit: You are considered proficient with all siege engines, and no longer suffer a chance of misfire when rolling a 1 with a siege engine."
+    },
+    {
+      "level": 4,
+      "heading": "Steel Skeleton (Combat, Racial)",
+      "anchor": "toc46",
+      "text": "A solid frame can easily make the difference in a fight, and few are as firm bodied as you are\u2014welded steel bars are hidden throughout your body, making you extraordinarily tough.\nPrerequisites: Construct type or subtype.\nBenefit: All of your movement speeds are reduced by -5 ft. and your weight doubles, but you gain a +1 natural armor bonus to AC, +1 racial bonus to CMB and CMD, and treat your Strength attribute as 2 points higher when determining carrying capacity or making a Strength-based ability or skill check (though not when making attack rolls or weapon damage rolls)."
+    },
+    {
+      "level": 4,
+      "heading": "Strengthened Arms (General)",
+      "anchor": "toc47",
+      "text": "Prerequisites: Secondary arms racial trait.\nBenefit: Your secondary arms are as powerful as regular arms. You may use your secondary arms to hold shields, fulfill somatic requirements, or make attacks (although this does not grant you additional attacks or actions per round). When wielding a weapon in two hands, add 1.5 times your Strength modifier to damage instead of 1 or .5 times your Strength modifier. When wielding a weapon in all 4 hands, add 2 times your Strength modifier to damage instead of 1.5 times your Strength modifier.\nSpecial: Taking this feat qualifies a tatulani to take the Unreasonable Coordination feat."
+    },
+    {
+      "level": 4,
+      "heading": "Tactile Density (Combat, Racial)",
+      "anchor": "toc48",
+      "text": "Like a spirit of the wind, you deftly cut through the air with unmatched grace.\nPrerequisites: Draconic subtype, Real Flight.\nBenefit: You no longer suffer any penalties to CMB or CMD while using breezeflight."
+    },
+    {
+      "level": 4,
+      "heading": "Talented Leaper (General, Racial)",
+      "anchor": "toc49",
+      "text": "Your uncannily strong legs can send you soaring through the air.\nPrerequisites: Cherufe subtype.\nBenefit: When calculating how high you can jump with your Acrobatics skill, divide your Acrobatics roll by 2 instead of 4. If you gain a similar ability from another source (such as the primordial leaper barbarian archetype), you may instead use your Acrobatics check to determine the height of your jump without dividing at all. This still does not allow you to exceed your movement for the round with the height or length of your jump."
+    },
+    {
+      "level": 4,
+      "heading": "Tentacle Adept (Combat)",
+      "anchor": "toc50",
+      "text": "Hard training and dedication have taught you how to make the best use out of your tentacles, twisting, turning, pirouetting, and bending to strike opponents from farther away than they suspect.\nPrerequisites: Base attack bonus +5 or monk 3, Tentacle Novice, Improved Unarmed Strike.\nBenefit: Increase the reach of any attacks you make with your tentacles by +5 feet."
+    },
+    {
+      "level": 4,
+      "heading": "Tentacle Grappler (Combat)",
+      "anchor": "toc51",
+      "text": "Enemies quickly learn to fear your tentacles\u2014 even being grazed by your many appendages can lead to a quick death.\nPrerequisites: Tentacle Master, Tentacle Adept, Tentacle Novice, Improved Unarmed Strike.\nBenefit: Once per round when you successfully attack a target with your tentacles, you may make a grapple combat maneuver against that target as a free action. This does not provoke an attack of opportunity.\nNormal: Making a grapple combat maneuver check is a standard action.\nSpecial: Though this has a stance feat as a requirement, Tentacle Grappler is not a stance feat."
+    },
+    {
+      "level": 4,
+      "heading": "Tentacle Master (Combat)",
+      "anchor": "toc52",
+      "text": "You are truly a paragon of cecaelia combat prowess, able to strike opponents as soundly with a tentacle as any weapon.\nPrerequisites: Tentacle Adept, Tentacle Novice, Improved Unarmed Strike.\nBenefit: You gain a +1 racial bonus to attack rolls and damage rolls made with your tentacles."
+    },
+    {
+      "level": 4,
+      "heading": "Tentacle Novice (Combat, Style)",
+      "anchor": "toc53",
+      "text": "You\u2019ve developed greater control over your tentacles, allowing you to move your center of gravity around to overturn opponents.\nPrerequisites: Two or more tentacles, base attack bonus +2 or monk 1, Improved Unarmed Strike.\nBenefit: You gain a +2 racial bonus to CMD to resist grapple checks and gain a +1 racial bonus to CMB when making a grapple or trip check. You may use your tentacles to make unarmed strikes."
+    },
+    {
+      "level": 4,
+      "heading": "Unreasonable Coordination (Combat)",
+      "anchor": "toc54",
+      "text": "Those extra arms are not just for display. A little practice and dedication and you can get them all moving independently.\nPrerequisite: Three or more arms, base attack bonus +6, Dexterity 13, Two-Weapon Fighting.\nBenefit: When two-weapon fighting, you may treat an additional hand as an off-hand, allowing you to make an additional off-hand attack with that hand whenever you make a usual off-hand attack.\nSpecial: You may take this feat a number of times equal to the number of arms you possess beyond two. A tatulani must possess the Strengthened Arms feat to gain this feat."
+    },
+    {
+      "level": 4,
+      "heading": "Vegetalker (General, Racial)",
+      "anchor": "toc55",
+      "text": "The forests of Khrone speak to you as plainly as any other living creature.\nPrerequisites: Plant type or subtype.\nBenefit: You may speak with plants, as if constantly under the effects of a speak with plants spell or the Speak with Plants Nature talent, with a caster level equal to your hit dice."
+    },
+    {
+      "level": 4,
+      "heading": "Vined Limbs (Combat, Racial)",
+      "anchor": "toc56",
+      "text": "Your control over the woven vines extending from your body is extreme, and when wrapped around your arm can be quite dangerous.\nPrerequisites: Draide alraun\nBenefit: Your reach when making melee touch attacks is increased by +5 feet.\nSpecial: You may take this feat a total of twice. When taken a second time, your normal reach is increased by +5 ft., and you may make touch attacks at +5 ft beyond that."
+    }
+  ]
+}

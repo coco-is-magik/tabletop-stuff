@@ -118,6 +118,9 @@ contains thin classes and a basic Power/Might catalog. Catalog coverage is 53
 base spheres and 2,330 basic talents; **full talent-specific mechanical automation
 is incomplete**. Supported behavior and remaining requirements:
 `/bigdisk/programming/pathfinder1e/docs/sphere-catalog.md`.
+Power/Might feat records and selected mechanics are also available. This is not
+complete feat automation; unresolved prerequisites require explicit adjudication.
+Coverage, tests and limitations: `/bigdisk/programming/pathfinder1e/docs/spheres-feats.md`.
 Incanter has level 1-20
 base progression, mental casting choices, bonus-feat support, several
 specializations, Core domain/bloodline adapters, Admixture, Destruction

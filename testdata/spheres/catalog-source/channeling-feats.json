@@ -1,0 +1,91 @@
+{
+  "url": "https://spheresofpower.wikidot.com/channeling-feats",
+  "retrieved": "2026-09-24",
+  "sha256": "e8edf1d241a70af9336d8925971cdf19719781a1c96af5d44aa3183f4e8ebfb4",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Blessing/Blight Mastery (Channeling) Blessing/Blight Versatility (Channeling) Buffeting Channel (Channeling) [SM\u2014] Channel Destruction (Channeling) Channel Life (Channeling) Channel Luck (Chance, Channeling) Channel Resolve (Channeling) Channeled Detonation (Channeling) [Gravecaller's HB] Defiler\u2019s Channel (Channeling, Defiler, Drawback) [Cata. HB] Energized Appeasement (Channeling) [DbH] Improved Channel Smite (Channeling) (Combat) [SM\u2014] Pulsing Channel (Channeling) [SM\u2014] Totemic Channeling (Channeling)\nUltimate\nUltimate Spheres of Power $29.99"
+    },
+    {
+      "level": 3,
+      "heading": "Blessing/Blight Mastery (Channeling)",
+      "anchor": "toc0",
+      "text": "Prerequisites: Blessing/blight class feature, channel energy class feature.\nBenefit: When you channel energy, you may spend an additional use of channel energy to apply a blessing or blight to one creature that was affected by your channeling. This creature is allowed a saving throw as usual, if they would normally be granted one."
+    },
+    {
+      "level": 3,
+      "heading": "Blessing/Blight Versatility (Channeling)",
+      "anchor": "toc1",
+      "text": "Prerequisites: Versatile Channeler, blessing/blight class feature, channel energy class feature.\nBenefit: If you can apply blessings to targets, you may now also apply blights, treating your soul weaver level as being effectively 2 levels lower for this purpose.\nIf you can apply blights to targets, you may now also apply blessing, treating your soul weaver level as being effectively 2 levels lower for this purpose."
+    },
+    {
+      "level": 3,
+      "heading": "Buffeting Channel (Channeling) [SM\u2014]",
+      "anchor": "toc2",
+      "text": "Source: Baron\u2019s Secluded Library\nPrerequisites: Channel Energy\nBenefits: You may force creatures to make a Fortitude save to resist the effects of your channel energy rather than a Will save. Undead are not immune to channeled energy that allows a Fortitude save."
+    },
+    {
+      "level": 3,
+      "heading": "Channel Destruction (Channeling)",
+      "anchor": "toc3",
+      "text": "Prerequisites: Destruction sphere, channel energy class feature.\nBenefit: You may imbue your channel energy with a blast type talent. This channeled energy may only be used to harm, but affects all creatures in the area, not just living or undead. The channeled energy does its normal number of damage dice of a die size and damage type corresponding to the chosen blast type. Additional effects apply as usual for the chosen blast type.\nIf more than one blast type is known, a different blast type may be selected each time channel energy is used. For example, a 5th level soul weaver with this feat and the Crystal Blast talent could channel energy, dealing 3d4 piercing damage as well as the effects of Crystal Blast in the normal area and with the normal DC of her channel energy. If, for example, she also possesses the Searing Blast talent, the next round she can channel energy, dealing 3d8 fire damage.\nIf the (blast type) talent chosen has additional spell point costs, an additional use of channel energy must be used in place of each spell point required. You may spend a spell point to increase the damage to one die per level in the class that grants channel energy that you possess."
+    },
+    {
+      "level": 3,
+      "heading": "Channel Life (Channeling)",
+      "anchor": "toc4",
+      "text": "Prerequisites: Life sphere, channel energy class feature.\nBenefit: You may channel energy and augment it with your Life sphere abilities. You must spend the normal spell point cost of the ability, but may target any creature that is affected by your channel energy, even if they would normally be out of range of your ability. If combined with Mass Healing, you may affect every creature affected by your channel energy."
+    },
+    {
+      "level": 3,
+      "heading": "Channel Luck (Chance, Channeling)",
+      "anchor": "toc5",
+      "text": "Prerequisite: Channel energy.\nBenefit: When you channel energy, you may spend a kismet point to grant all creatures affected a luck bonus (if they were healed) or a luck penalty (if they were harmed and failed their save) to their next saving throw equal to the number of dice of your channel energy ability. This bonus lasts at most 1 minute for each die of your channel energy ability."
+    },
+    {
+      "level": 3,
+      "heading": "Channel Resolve (Channeling)",
+      "anchor": "toc6",
+      "text": "Prerequisite: Channel energy class feature.\nBenefit: When you channel energy, instead of its normal effects, you may instead grant those within range a single attack. These attacks are made immediately in initiative order. Each attack receives a bonus to damage equal to the number of dice you would have rolled for your channel energy."
+    },
+    {
+      "level": 3,
+      "heading": "Channeled Detonation (Channeling) [Gravecaller's HB]",
+      "anchor": "toc7",
+      "text": "You can overcharge your connection with your undead using your channel energy ability.\nPrerequisites: Death sphere, ability to channel negative energy, caster level 5th.\nBenefit: You can spend a use of your channel energy ability as a standard action to detonate a mindless undead you control within 30 feet, destroying it, but causing your channel energy to burst outwards from its location; your channel deals (or heals, as appropriate) 1 additional point of damage per Hit Die of the undead sacrificed. You can activate this ability as an immediate action whenever a mindless undead you control within 30 feet is reduced to 0 hit points by spending a spell point (and a use of channel energy, as normal).\nIf you possess the Master\u2019s Presence (dominion) talent, you may use your dominion range when determining if an undead you control is within range for this feat."
+    },
+    {
+      "level": 3,
+      "heading": "Defiler\u2019s Channel (Channeling, Defiler, Drawback) [Cata. HB]",
+      "anchor": "toc8",
+      "text": "You draw life energy directly from your environment.\nPrerequisites: Terrain Casting drawback, channel energy 3d6.\nBenefit: Whenever you channel energy, you may drain an area of its nutrients as per the Terrain Casting drawback. If you do, the number of dice used with your channel energy increases by 2.\nFour Defiler Feats: The number of dice increases by 4 rather than 2."
+    },
+    {
+      "level": 3,
+      "heading": "Energized Appeasement (Channeling) [DbH]",
+      "anchor": "toc9",
+      "text": "The powers of the beyond are sufficient to appease the bound force within.\nPrerequisite: Spirit class feature.\nBenefit: When your spirit would gain a point of influence over you, you may spend two uses of channel energy in place of allowing the spirit to gain that point of influence. In addition, when you would spend a use of channel energy, you may instead allow your spirit to gain a point of influence over you."
+    },
+    {
+      "level": 3,
+      "heading": "Improved Channel Smite (Channeling) (Combat) [SM\u2014]",
+      "anchor": "toc10",
+      "text": "Source: Baron\u2019s Secluded Library\nPrerequisites: Channel Smite\nBenefit: When you use Channel Smite, the benefits of the feat apply to one additional attack made before the end of your next turn. In addition, whenever you use Channel Smite, you can activate the ability as an immediate action after you roll for a melee attack but before the result is revealed."
+    },
+    {
+      "level": 3,
+      "heading": "Pulsing Channel (Channeling) [SM\u2014]",
+      "anchor": "toc11",
+      "text": "Source: Baron\u2019s Secluded Library\nPrerequisites: Channel Energy 4d6\nBenefits: You may spend 2 uses of channel energy as a standard action to create a pulsing channel for 1 minute. While pulsing channel is active, you may channel energy as a free action, save that the range is reduced to 10 feet and the channel energy dice are halved and rounded down (using 2d6 in place of 4d6 or 5d6). You cannot attach any additional feats or sphere effects to these channel energy uses save for effects that alter the effect\u2019s targeting (such as Selective Channeling, Alignment Channel, and Elemental Channel)."
+    },
+    {
+      "level": 3,
+      "heading": "Totemic Channeling (Channeling)",
+      "anchor": "toc12",
+      "text": "Prerequisites: War sphere, channel energy class feature.\nBenefit: When you use your channel energy feature, instead of affecting everyone in a specific radius, you may spend a spell point to have it affect all allies or all enemies in a totem you control. You do not need to be within the chosen totem.\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

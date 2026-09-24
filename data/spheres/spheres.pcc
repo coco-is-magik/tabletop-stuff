@@ -16,6 +16,9 @@ ABILITY:spheres_incanter_favored.lst
 ABILITY:spheres_incanter_domains.lst
 ABILITY:spheres_incanter_bloodlines.lst
 ABILITY:spheres_feats.lst
+ABILITY:spheres_feat_catalog.lst
+ABILITY:spheres_feat_adjudication.lst
+ABILITYCATEGORY:spheres_categories_feats.lst
 CLASS:spheres_classes.lst
 CLASS:spheres_conscript_class.lst
 ABILITYCATEGORY:spheres_categories_conscript.lst

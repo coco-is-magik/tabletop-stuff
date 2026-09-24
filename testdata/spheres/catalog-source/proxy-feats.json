@@ -1,0 +1,163 @@
+{
+  "url": "https://spheresofpower.wikidot.com/proxy-feats",
+  "retrieved": "2026-09-24",
+  "sha256": "6e975f3303a1755a5735c67273b7546857fb693894a040344582a73765607fc1",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Defensive Proxies (Proxy) Maintain Proxy (Proxy) Mystic Choreography (Drawback, Proxy) Mystic Generosity (Proxy) Proxy Counterspell (Proxy) Proxy Network (Proxy) Spell Proxy (Proxy) Spell Proxy, Extended (Proxy) Spell Proxy, Improved (Proxy) Spreading Magic (Proxy) Suffer By Proxy (Drawback, Proxy) Tactical Proxies (Proxy)\nUltimate\nOriginal\nUltimate Spheres of Power $29.99 Proxy feats represent an enhanced ability to manipulate and take advantage of the Create Proxy enhancement, which by default is granted by the Spell Proxy feat. Unless otherwise stated, these feats only apply to Create Proxy effects that you created yourself, and only affect creatures under the effects of Create Proxy who are within 30 feet. Generally, using a proxy feat immediately ends the Create Proxy effect for that creature. An incanter may select proxy feats as bonus feats."
+    },
+    {
+      "level": 3,
+      "heading": "Defensive Proxies (Proxy)",
+      "anchor": "toc0",
+      "text": "Prerequisites: Enhancement sphere, Circle Casting, Spell Proxy.\nBenefit: Whenever you fail a saving throw against a sphere effect, any creature within that is currently under the effects of Create Proxy may spend an immediate action to allow you to reroll your saving throw. Doing so causes Create Proxy to immediately end for that creature."
+    },
+    {
+      "level": 3,
+      "heading": "Maintain Proxy (Proxy)",
+      "anchor": "toc1",
+      "text": "Prerequisites: Enhancement sphere, Circle Casting, at least one Proxy feat.\nBenefit: Whenever one of your Create Proxy effects would end due to a Proxy feat, you may spend 1 spell point to prevent it from ending prematurely."
+    },
+    {
+      "level": 3,
+      "heading": "Mystic Choreography (Drawback, Proxy)",
+      "anchor": "toc2",
+      "text": "Prerequisites: Enhancement sphere; at least one of the Skilled Casting, Somatic Casting, or Verbal Casting drawbacks; Circle Casting, Spell Proxy.\nBenefit: Whenever you use a sphere ability, any creature currently under the effects of Create Proxy may take an immediate action to perform one of your required components for you. As long as that creature meets the criteria for the drawback in question, you may ignore it for the purposes of that sphere ability. Regardless of whether or not this attempt is successful, the Create Proxy effect ends immediately."
+    },
+    {
+      "level": 3,
+      "heading": "Mystic Generosity (Proxy)",
+      "anchor": "toc3",
+      "text": "Prerequisites: Enhancement sphere, Circle Casting, Spell Proxy.\nBenefit: Whenever you use Create Proxy on a creature, you may spend a spell point to grant them the Basic Magic Training feat as a bonus feat while they are under the effects of that enhancement. The sphere they gain access to must be one that you also have access to.\nSpecial: If the target of Create Proxy does not meet the prerequisites for Basic Magic Training, they gain Extra Magic Talent as a bonus feat instead. The bonus talent they gain must be one that you also possess."
+    },
+    {
+      "level": 3,
+      "heading": "Proxy Counterspell (Proxy)",
+      "anchor": "toc4",
+      "text": "Prerequisites: Enhancement sphere, Circle Casting, Counterspell, Spell Proxy.\nBenefit: Whenever you use Counterspell, any creature under the effects of Create Proxy may spend an immediate action to allow you to end an additional effect. Doing so causes Create Proxy to end immediately for that creature."
+    },
+    {
+      "level": 3,
+      "heading": "Proxy Network (Proxy)",
+      "anchor": "toc5",
+      "text": "Prerequisites: Enhancement sphere, Circle Casting, Spell Proxy.\nBenefit: Whenever you use a sphere effect with a range of touch, you may choose to have it originate from a creature under the effects of Create Proxy instead of yourself. Doing so causes Create Proxy to end immediately."
+    },
+    {
+      "level": 3,
+      "heading": "Spell Proxy (Proxy)",
+      "anchor": "toc6",
+      "text": "Prerequisites: Enhancement sphere, Circle Casting.\nBenefit: You gain access to an additional enhancement, which you may use normally:\nCreate Proxy: You may enhance creatures, allowing them to act as aiding casters as if they themselves possessed the Circle Casting feat. They do not need to have any magic talents or a spell pool to do so.\nSpecial: You may incorporate Create Proxy into a spell as if it were an Enhancement talent. You may not take Spell Proxy if you have the Personal Magics drawback."
+    },
+    {
+      "level": 3,
+      "heading": "Spell Proxy, Extended (Proxy)",
+      "anchor": "toc7",
+      "text": "Prerequisites: Enhancement sphere, Circle Casting, at least one Proxy feat.\nBenefit: The benefits of your proxy feats apply to creatures within 60 feet.\nNormal: Proxy feats only apply to creatures within 30 feet."
+    },
+    {
+      "level": 3,
+      "heading": "Spell Proxy, Improved (Proxy)",
+      "anchor": "toc8",
+      "text": "Prerequisites: Enhancement sphere, Circle Casting, Spell Proxy.\nBenefit: Whenever you use Create Proxy, you may also transfer the concentration to maintain one sphere effect to the targets. If they possess spell points of their own, they may spend them in your place to have the effect continue without concentration."
+    },
+    {
+      "level": 3,
+      "heading": "Spreading Magic (Proxy)",
+      "anchor": "toc9",
+      "text": "Prerequisites: Enhancement sphere, Circle Casting, Spell Proxy.\nBenefit: Whenever you use a sphere ability that targets a creature, a creature under the effects of Create Proxy may choose to become an additional target if they are also within range. Doing so causes Create Proxy to end immediately for that creature."
+    },
+    {
+      "level": 3,
+      "heading": "Suffer By Proxy (Drawback, Proxy)",
+      "anchor": "toc10",
+      "text": "Prerequisites: Enhancement sphere, Draining Casting drawback, Circle Casting, Spell Proxy.\nBenefit: Whenever you use a sphere ability, you may choose to have a creature under the effects of Create Proxy suffer the nonlethal damage for you. The creature must be within the range of one of your Proxy feats, and must not be immune to nonlethal damage. You cannot choose to split up the nonlethal damage; all of it must be dealt to a single creature."
+    },
+    {
+      "level": 3,
+      "heading": "Tactical Proxies (Proxy)",
+      "anchor": "toc11",
+      "text": "Prerequisites: Enhancement sphere, Circle Casting, Spell Proxy, any one teamwork feat.\nBenefit: You may treat any creature under the effects of Create Proxy as if they shared all of your teamwork feats. They do not gain the benefits of your teamwork feats unless they actually have it themselves.\nSpecial: If you also have Improved Spell Proxy, you may choose to grant them the benefits of one of your teamwork feats instead of transferring concentration.\nProxy feats represent an enhanced ability to manipulate and take advantage of the Create Proxy enhancement, which by default is granted by the Spell Proxy feat. Unless otherwise stated, these feats only apply to Create Proxy effects that you created yourself, and only affect creatures under the effects of Create Proxy who are within 30 ft. Generally, using a proxy feat immediately ends the Create Proxy effect for that creature. An Incanter may select proxy feats as bonus feats."
+    },
+    {
+      "level": 4,
+      "heading": "Defensive Proxies (Proxy)",
+      "anchor": "",
+      "text": "Prerequisites: Spell Proxy.\nBenefit: Whenever you fail a saving throw against a sphere effect, any creature within that is currently under the effects of Create Proxy may spend an immediate action to allow you to reroll your saving throw. Doing so causes Create Proxy to immediately end for that creature."
+    },
+    {
+      "level": 4,
+      "heading": "Link Fate (Proxy)",
+      "anchor": "",
+      "text": "Prerequisites: Spell Proxy.\nBenefit: Whenever you are targeted by a word, you may take an immediate action to have it affect a creature under the effects of Create Proxy instead. Doing so causes Create Proxy to end immediately for that creature."
+    },
+    {
+      "level": 4,
+      "heading": "Maintain Proxy",
+      "anchor": "",
+      "text": "Prerequisites: At least one Proxy feat.\nBenefit: Whenever one of your Create Proxy effects would end due to a Proxy feat, you may spend 1 spell point to prevent it from ending prematurely."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Choreography (Drawback, Proxy)",
+      "anchor": "",
+      "text": "Prerequisites: Spell Proxy, at least one of Skilled Casting, Somatic Casting, or Verbal Casting.\nBenefit: Whenever you use a sphere ability, any creature currently under the effects of Create Proxy may take an immediate action to perform one of your required components for you. As long as that creature meets the criteria for the drawback in question, you may ignore it for the purposes of that sphere ability. Regardless of whether or not this attempt is successful, the Create Proxy effect ends immediately."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Generosity",
+      "anchor": "",
+      "text": "Prerequisites: Spell Proxy.\nBenefit: Whenever you use Create Proxy on a creature, you may spend a spell point to grant them the Basic Magical Training feat as a bonus feat while they are under the effects of that enhancement. The sphere they gain access to must be one that you also have access to.\nSpecial: If the target of Create Proxy doesn\u2019t meet the prerequisites for Basic Magical Training, they gain Extra Magic Talent as a bonus feat instead. The bonus talent they gain must be one that you also possess."
+    },
+    {
+      "level": 4,
+      "heading": "Proxy Counterspell (Proxy)",
+      "anchor": "",
+      "text": "Prerequisites: Counterspell, Spell Proxy.\nBenefit: Whenever you use Counterspell, any creature under the effects of Create Proxy may spend an immediate action to allow you to end an additional effect. Doing so causes Create Proxy to end immediately for that creature."
+    },
+    {
+      "level": 4,
+      "heading": "Proxy Network (Proxy)",
+      "anchor": "",
+      "text": "Prerequisites: Spell Proxy.\nBenefit: Whenever you use a sphere effect with a range of touch, you may choose to have it originate from a creature under the effects of Create Proxy instead of yourself. Doing so causes Create Proxy to end immediately."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Proxy",
+      "anchor": "",
+      "text": "Prerequisites: Circle Casting, access to the Enhancement sphere.\nBenefit: You gain access to an additional enhancement, which you may use normally:\nCreate Proxy: You may enhance creatures, allowing them to act as aiding casters as if they themselves possessed the Circle Casting feat. They do not need to have any magic talents or a spell pool to do so.\nSpecial: You may incorporate Create Proxy into a spell as if it were an Enhancement talent. You may not take Spell Proxy if you have the Personal Magics drawback."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Proxy, Extended",
+      "anchor": "",
+      "text": "Prerequisites: At least one Proxy feat.\nBenefit: The benefits of your Proxy feats apply to creatures within 60 ft.\nNormal: Proxy feats only apply to creatures within 30 ft."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Proxy, Improved",
+      "anchor": "",
+      "text": "Prerequisites: Spell Proxy.\nBenefit: Whenever you use Create Proxy, you may also transfer the concentration to maintain one sphere effect to the targets. If they possess spell points of their own, they may spend them in your place to have the effect continue without concentration."
+    },
+    {
+      "level": 4,
+      "heading": "Spreading Magic (Proxy)",
+      "anchor": "",
+      "text": "Prerequisites: Spell Proxy.\nBenefit: Whenever you use a sphere ability that targets a creature, a creature under the effects of Create Proxy may choose to become an additional target if they are also within range. Doing so causes Create Proxy to end immediately for that creature."
+    },
+    {
+      "level": 4,
+      "heading": "Suffer By Proxy (Drawback)",
+      "anchor": "",
+      "text": "Prerequisites: Draining Casting, Spell Proxy.\nBenefit: Whenever you use a sphere ability, you may choose to have a creature under the effects of Create Proxy suffer the nonlethal damage for you. The creature must be within the range of one of your Proxy feats, and must not be immune to nonlethal damage. You cannot choose to split up the nonlethal damage; all of it must be dealt to a single creature."
+    },
+    {
+      "level": 4,
+      "heading": "Tactical Proxies",
+      "anchor": "",
+      "text": "Prerequisites: Spell Proxy, any one Teamwork feat.\nBenefit: You may treat any creature under the effects of Create Proxy as if they shared all of your Teamwork feats. They do not gain the benefits of your Teamwork feats unless they actually have it themselves.\nSpecial: If you also have Improved Spell Proxy, you may choose to grant them the benefits of one of your Teamwork feats instead of transferring concentration.\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

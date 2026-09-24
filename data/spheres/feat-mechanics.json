@@ -1,0 +1,46 @@
+{
+  "Basic Magic Training": {
+    "prerequisites": ["!PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"],
+    "tags": [
+      "DEFINE:SPHERES_INCANTER_LEVEL|0",
+      "ABILITY:Special Ability|AUTOMATIC|Spheres Casting Core",
+      "BONUS:VAR|SPHERES_CASTER_LEVEL,SPHERES_MAGIC_SKILL_BONUS|1|PREVAREQ:SPHERES_INCANTER_LEVEL,0",
+      "BONUS:VAR|SPHERES_MAGIC_TALENTS|-2|PREVAREQ:SPHERES_INCANTER_LEVEL,0",
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1-max(1,SPHERES_SPELL_POOL_LEVELS+SPHERES_CASTING_ABILITY)|PREVAREQ:SPHERES_INCANTER_LEVEL,0",
+      "BONUS:ABILITYPOOL|Spheres Basic Magic Sphere|1|PREVAREQ:SPHERES_INCANTER_LEVEL,0"
+    ]
+  },
+  "Advanced Magic Training": {
+    "prerequisites": ["PREMULT:1,[PREFEAT:1,Basic Magic Training],[PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core]"],
+    "tags": [
+      "BONUS:VAR|SPHERES_CASTER_LEVEL|max(0,floor((TL-SPHERES_INCANTER_LEVEL)/2)-max(0,1-SPHERES_INCANTER_LEVEL))",
+      "BONUS:VAR|SPHERES_MAGIC_SKILL_BONUS|max(0,TL-SPHERES_INCANTER_LEVEL-max(0,1-SPHERES_INCANTER_LEVEL))",
+      "BONUS:VAR|SPHERES_SPELL_POINTS|max(0,SPHERES_CASTING_ABILITY-1)|PREVAREQ:SPHERES_INCANTER_LEVEL,0"
+    ]
+  },
+  "Great Focus": {
+    "prerequisites": ["PREABILITY:2,CATEGORY=Spheres Combat Talent,TYPE.SpheresBaseSphere", "PREATT:6"],
+    "tags": ["DEFINE:SPHERES_MARTIAL_FOCUS_CAPACITY|2"]
+  },
+  "Deadly Targeting": {
+    "tags": ["DEFINE:SPHERES_DESTRUCTIVE_BLAST_THREAT_MIN|19"]
+  },
+  "Deadened Flesh": {
+    "tags": ["BONUS:VAR|SPHERES_SPELL_POINTS|1"]
+  },
+  "Numb Mind": {
+    "tags": ["BONUS:VAR|SPHERES_SPELL_POINTS|1"]
+  },
+  "Counterspell": {
+    "prerequisites": ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core", "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,5"],
+    "tags": ["DEFINE:SPHERES_COUNTERSPELL_RANGE|100+10*SPHERES_CASTER_LEVEL"]
+  },
+  "Improved Counterspell": {
+    "prerequisites": ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core", "PREFEAT:1,Counterspell", "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,10"],
+    "tags": ["DEFINE:SPHERES_COUNTERSPELL_ADDITIONAL_EFFECTS|floor(SPHERES_CASTER_LEVEL/5)"]
+  },
+  "Greater Counterspell": {
+    "prerequisites": ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core", "PREFEAT:2,Counterspell,Improved Counterspell (Spheres)", "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,15"],
+    "tags": ["DEFINE:SPHERES_COUNTERSPELL_BURST_RADIUS|40"]
+  }
+}

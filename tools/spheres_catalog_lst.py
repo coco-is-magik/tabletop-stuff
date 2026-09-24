@@ -83,6 +83,9 @@ def build():
         if row["system"] == "power" and slug != "destruction":
             base_tags.extend(["DEFINE:SPHERES_CL_" + ident.upper() + "|SPHERES_CASTER_LEVEL",
                 "DEFINE:SPHERES_DC_" + ident.upper() + "|10+floor(SPHERES_CL_" + ident.upper() + "/2)+SPHERES_CASTING_ABILITY"])
+        if row["system"] == "might":
+            base_tags.extend(["DEFINE:SPHERES_BAB_" + ident.upper() + "|BAB",
+                "DEFINE:SPHERES_DC_" + ident.upper() + "|10+floor(SPHERES_BAB_" + ident.upper() + "/2)+SPHERES_PRACTITIONER_MOD"])
         if slug in SKILLS:
             base_tags.append("BONUS:SKILLRANK|" + SKILLS[slug] + "|min(TL,5*" + prefix + "_TALENTS)|TYPE=SpheresTraining")
         if slug == "equipment-sphere":
@@ -109,7 +112,8 @@ def build():
                 if skill:
                     package_tags.append("BONUS:SKILLRANK|" + skill + "|min(TL,5*" + prefix + "_TALENTS)|TYPE=SpheresTraining")
                 packages.append("\t".join(package_tags))
-        base_tags += overrides.get(base, [])
+        base_tags += [re.sub(r"\bBAB\b", "SPHERES_BAB_" + ident.upper(), tag)
+                      if row["system"] == "might" else tag for tag in overrides.get(base, [])]
         base_tags += ["DESC:" + text(row["base"]) + " Automation is partial; consult docs/sphere-catalog.md. Unautomated rules must be applied manually.",
                       "SOURCEPAGE:" + row["url"]]
         if slug != "destruction":

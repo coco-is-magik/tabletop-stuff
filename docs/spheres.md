@@ -1,5 +1,12 @@
 # Spheres PCGen prototype — current handoff
 
+## Feat catalog — 2026-09-24
+
+1,201 source feat names are inventoried, with selected mechanical implementations
+and fail-closed qualification for unsupported prerequisite clauses. This is not
+completion of all feat mechanics. Details and live-controller commands:
+`/bigdisk/programming/pathfinder1e/docs/spheres-feats.md`.
+
 ## Basic sphere catalog — 2026-09-24
 
 Power/Might catalog records now cover 53 base spheres and 2,330 basic talents.

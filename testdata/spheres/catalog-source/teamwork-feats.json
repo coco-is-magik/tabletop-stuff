@@ -1,0 +1,67 @@
+{
+  "url": "https://spheresofpower.wikidot.com/teamwork-feats",
+  "retrieved": "2026-09-24",
+  "sha256": "5e5aa7a25ce720211d36a05856cf0557ed8c57afad1723efc3059e10c08f8cd0",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Cooperative Mind (Teamwork) Cooperative Reanimate (Teamwork) Cumulative Nimbus (Teamwork) Ready Initiation (Champion, Combat, Teamwork) [S&P] Twilight Adept (Teamwork)\nUltimate\nOriginal\nUltimate Spheres of Power $29.99 Teamwork feats are special in that they generally require at least two characters to know them in order to take effect, although some classes have abilities that make them easier to use."
+    },
+    {
+      "level": 3,
+      "heading": "Cooperative Mind (Teamwork)",
+      "anchor": "toc0",
+      "text": "Prerequisites: Must have been subject to the Fusion advanced talent, character level 5th.\nBenefit: When under the effects of the Fusion advanced talent with another creature that possesses this feat, you may act together more efficiently. You may choose to cooperate, allowing each creature to use the body to take a standard action. This consumes the amalgamated body\u2019s full-round action, but leaves each mind with their normal move and swift actions.\nThis allows both creatures to supply verbal or somatic spell components, allows either creature to make attacks of opportunity, grants each creature access to combat feats and combat talents known by the other, and allows you to choose which mind is targeted by effects requiring a Will save until the start of your next turn."
+    },
+    {
+      "level": 3,
+      "heading": "Cooperative Reanimate (Teamwork)",
+      "anchor": "toc1",
+      "text": "Undead you and your allies create resonate with each of your souls.\nPrerequisite: Death sphere.\nBenefit: You may give simple commands to undead under the control of an ally who also possesses this feat; if they receive conflicting orders, they act under their controller\u2019s orders.\nIn addition, if at any time you would fall unconscious or be dropped to 0 hit points or less, you may choose to transfer any undead you have control over to another ally with this teamwork feat for 1 minute (or their normal maximum duration, whichever is shorter). Transferred undead may be returned to their owner during this time period as a move action, but can never be transferred to a third ally. After the duration expires, they are considered under your ally\u2019s control and count towards your ally\u2019s maximum Hit Dice total of undead they can have reanimated at once."
+    },
+    {
+      "level": 3,
+      "heading": "Cumulative Nimbus (Teamwork)",
+      "anchor": "toc2",
+      "text": "Prerequisites: Weather sphere (any (shroud) talent), magic skill bonus +5.\nBenefit: When a creature is under the effect of shrouds produced by multiple casters with this feat, any saving throws against one of these shrouds is made against the highest DC of any such shroud. Shrouds produced by casters without this feat are unaffected and other shrouds cannot use their DC."
+    },
+    {
+      "level": 3,
+      "heading": "Ready Initiation (Champion, Combat, Teamwork) [S&P]",
+      "anchor": "toc3",
+      "text": "When one of your allies primes a technique, you respond immediately.\nPrerequisite: Knowledge of at least one technique.\nBenefit: When multiple characters with this feat work together to initiate a multi-character technique, the technique is performed on the highest of the participants\u2019 initiative counts rather than the lowest. All participants have their actions for the turn moved up to the initiative count where the technique is performed."
+    },
+    {
+      "level": 3,
+      "heading": "Twilight Adept (Teamwork)",
+      "anchor": "toc4",
+      "text": "Prerequisite: Dark sphere or Light sphere.\nBenefit: Your Dark sphere talents or abilities continue to function in areas where you or someone else with the Twilight Adept feat cast a Light sphere talent or ability. Your Light sphere talents or abilities continue to function in areas where you or someone else with the Twilight Adept feat cast a Dark sphere talent or ability. The MSD to dispel a Light or Dark sphere effect overlapping in this way is increased by +2. You may choose to have your Dark and Light sphere talents or abilities interact normally if you wish. The light level in overlapping areas defaults to the ambient lighting conditions.\nNormal: If a Light sphere effect interacts with a darkness effect (such as from the Dark sphere) or vice versa, the creator of the second effect must succeed at a magic skill check against the creator of the first effect.\nTeamwork feats are special in that they generally require at least two characters to know them in order to take effect, although some classes have abilities that make them easier to use."
+    },
+    {
+      "level": 4,
+      "heading": "Cooperative Mind (Teamwork)",
+      "anchor": "",
+      "text": "Prerequisites: Must have been subject to the Fusion advanced talent, 5th character level or higher.\nBenefit: When under the effects of the Fusion advanced talent with another creature that possesses this feat, you may act together more efficiently. You may choose to cooperate, allowing each creature to use the body to take a standard action. This consumes the amalgamated body\u2019s full round action, but leaves each mind with their normal move and swift actions. This allows both creatures to supply verbal or somatic spell components, allows either creature to make attacks of opportunity, grants each creature access to combat feats known by the other, and allows the you to choose which mind is targeted by effects requiring a Will save until the start of your next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Cooperative Reanimate (Teamwork)",
+      "anchor": "",
+      "text": "Undead you and your allies create resonate with each of your souls.\nPrerequisites: Death sphere.\nBenefit: You may give simple commands to undead under the control of an ally who also possesses this feat; if they receive conflicting orders, they act under their controller\u2019s orders. In addition, if at any time you would fall unconscious or be dropped to 0 hit points or less, you may choose to transfer any undead you have control over to another ally with this teamwork feat for 1 minute (or their normal maximum duration, whichever is shorter). Transferred undead may be returned to their owner during this time period as a move action, but can never be transferred to a third ally. After the duration expires, they count towards your ally\u2019s maximum Hit Dice total of undead they can have reanimated at once instead of yours."
+    },
+    {
+      "level": 4,
+      "heading": "Cumulative Nimbus (teamwork)",
+      "anchor": "",
+      "text": "Prerequisites: At least one (shroud), magic skill bonus 5 or higher.\nBenefit: When a creature is under the effect of shrouds produced by multiple casters with this feat, any saving throws against one of these shrouds is made against the highest DC of any such shroud. Shrouds produced by casters without this feat are unaffected and other shrouds cannot use their DC."
+    },
+    {
+      "level": 4,
+      "heading": "Twilight Adept (Teamwork)",
+      "anchor": "",
+      "text": "Prerequisite: Dark or Light sphere.\nBenefit: Your Dark sphere talents or abilities continue to function in areas where you or someone else with the Twilight Adept feat cast a Light sphere talent or ability. Your Light sphere talents or abilities continue to function in areas where you or you or someone else with the Twilight Adept feat cast a Dark sphere talent or ability. The MSD to dispel a Light or Dark sphere effect overlapping in this way is increased by +2. You may choose to have your Dark and Light sphere talents or abilities interact normally if you wish. The light level in overlapping areas defaults to the ambient lighting conditions.\nNormal: If a Light sphere effect interacts with a darkness effect (such as from the Dark sphere), the creator of the Light sphere effect must pass a magic skill check against the creator of the darkness effect.\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

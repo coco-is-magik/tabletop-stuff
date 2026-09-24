@@ -1,0 +1,157 @@
+{
+  "url": "https://spheresofpower.wikidot.com/surreal-feats",
+  "retrieved": "2026-09-24",
+  "sha256": "64d44d6017857013ad212811e87993831107fdb2cd9b263c5468830e64bb482b",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Emulation Expert (Surreal) Entranced in Unreality (Surreal) [SM\u2014] Gather Shadowstuff (Surreal) Greater Shadowmark (Surreal) Gulf in Reality (Surreal) [SM\u2014] Shadow Magic (Surreal) Shadow Shield (Surreal) Shadow Shield, Improved (Surreal) Shadowblast (Surreal) Shadowstuff Armament (Surreal) Shadowy Slay (Surreal) Surreal Strike (Surreal) Violent Shadow (Surreal)\nUltimate\nOriginal\nUltimate Spheres of Power $29.99 Surreal feats are feats that use or rely upon the irrational and unpredictable substance known as shadowstuff. All surreal feats are spell-like abilities that are treated as (figment, shadow) illusions for the purposes of interacting with other effects. Characters with the Shadow Infusion talent or the create reality class feature may spend spell points in place of shadow points to activate abilities granted by surreal feats. The first time you gain a surreal feat you also gain a shadow pool as the fey adept class feature, except it only contains a number of shadow points equal to the total number of surreal feats you possess. This stacks with any other shadow points.\nWiki Note: Many surreal feats require the shadowmark class feature. The Surreal Strike (surreal) feat grants this feature."
+    },
+    {
+      "level": 3,
+      "heading": "Emulation Expert (Surreal)",
+      "anchor": "toc0",
+      "text": "Prerequisites: Illusion sphere (Manipulate Aura (sensory, magic)); Illusion sphere (Shadow Infusion) or shadow pool; Shadow Magic or create reality class feature.\nBenefit: When using the Shadow Magic feat or create reality class feature to duplicate effects from another sphere, you may spend a shadow point to treat the effect as both from the Illusion sphere and the sphere it is mimicking. This allows you to apply bonuses from items, class features, talents or feats that benefit that sphere as well as the Illusion sphere.\nThis feat does not allow you to apply the caster level bonus from staves for two different spheres. For example, when using create reality or Shadow Magic to produce a destructive blast, you may apply Destruction talents you possess and apply the caster level bonus from either a staff of Destruction or Illusion, apply bonus damage from elementalist energy specialization class feature and treat both your fey adept and elementalist levels as full caster levels for calculating the caster level."
+    },
+    {
+      "level": 3,
+      "heading": "Entranced in Unreality (Surreal) [SM\u2014]",
+      "anchor": "toc1",
+      "text": "Source: Baron\u2019s Secluded Library\nBenefits: For every minor severance you possess, you gain one additional shadow point. For every greater severance you possess, you instead gain three additional shadow points."
+    },
+    {
+      "level": 3,
+      "heading": "Gather Shadowstuff (Surreal)",
+      "anchor": "toc2",
+      "text": "Prerequisite: Shadowmark class feature.\nBenefit: In place of spending a shadow point you may use shadowmark as a full-round action."
+    },
+    {
+      "level": 3,
+      "heading": "Greater Shadowmark (Surreal)",
+      "anchor": "toc3",
+      "text": "Prerequisite: Shadowmark 1d6.\nBenefit: Your shadowmark deals d8s for damage instead of d6s."
+    },
+    {
+      "level": 3,
+      "heading": "Gulf in Reality (Surreal) [SM\u2014]",
+      "anchor": "toc4",
+      "text": "Source: Baron\u2019s Secluded Library\nPrerequisites: Illusion Sphere (Selective Illusions, Suppression)\nBenefits: When you create a glamer over a creature, you may spend a shadow point to make a creature or object that is also affected by your glamer become unreal to the glamered creature. The effects of unreality depend on what senses you suppress, as detailed below.\nSight: The glamered creature and unreal target cannot see each other and are immune to any visual-based effects the other creates.\nSound: The glamered creature and unreal target cannot hear each other and are immune to any sonic or language-dependent effects the other creates.\nTouch: The glamered creature and the unreal target can move freely through each other unimpeded. Nonmagical attacks made by either creature cannot harm the other and magical attacks deal half damage to the other.\nOdor: The glamered and unreal creature cannot smell or taste each other and are immune to any scent-based effects the other creates.\nMagical Auras: Any effects created by the glamered creature and unreal target which would not be affected by the other suppressions have a 5% chance per caster level not to affect the other (maximum 100%).\nThe glamered creature and the unreal creature can affect each other normally through intermediaries. For instance, while the unreal creature would be immune to the direct effects of a geomancy effect, if the spell caused a room\u2019s ceiling to collapse, the unreal creature would not be immune to the effects of the collapse."
+    },
+    {
+      "level": 3,
+      "heading": "Shadow Magic (Surreal)",
+      "anchor": "toc5",
+      "text": "Prerequisites: Illusion sphere (Shadow Infusion) or shadow pool.\nBenefit: You may mimic other spheres of magic by shaping shadowstuff. As a free action, you may spend 1 shadow point to grant yourself a temporary magic sphere or talent you do not possess from the following list: Alteration, Conjuration, Creation, Dark, Death, Destruction, Enhancement, Light, Nature, Protection or Weather sphere for 1 minute. For every 5 surreal feats you possess, you may grant yourself an additional temporary talent from the chosen sphere. You must still meet any prerequisites that the talents possess. When gaining multiple talents with this feat, you may use a talent gained this way as a prerequisite for other gained talents.\nAny sphere talents or abilities gained from this feat are treated as if they were from the Illusion sphere and possess the shadow descriptor. Shadow magic, by its nature, has a very real effect even if disbelieved, although usually a reduced one. Unless stated otherwise, objects created as shadow illusions are made of shadowstuff (stable), and creatures have 1/5th their normal hit points.\nThe effective caster level of effects created using this feat is equal to your caster level in the Illusion sphere -2 (minimum 1). You may not have more than one sphere effect active at a time from the spheres granted from this feat. A second use of this feat immediately ends the duration of the previous use."
+    },
+    {
+      "level": 3,
+      "heading": "Shadow Shield (Surreal)",
+      "anchor": "toc6",
+      "text": "Benefit: You may, as a swift action, spend a shadow point to create a protective layer of shadowstuff around a creature or object within 25 feet + 5 feet per 2 character level. This grants 1d4 temporary hit points for every character level you possess. Any creature that has at least 1 temporary hit point granted by your shadow shield also gains damage reduction 1/-. This damage reduction improves by an additional 1 per 5 character levels you possess. These temporary hit points last 1 minute."
+    },
+    {
+      "level": 3,
+      "heading": "Shadow Shield, Improved (Surreal)",
+      "anchor": "toc7",
+      "text": "Prerequisite: Shadow Shield.\nBenefit: Improve the temporary hit points granted by your shadow shield to 1d4+1 per character level. Instead of providing DR/-, the shadow shield reduces all hit point damage from all sources by the same amount."
+    },
+    {
+      "level": 3,
+      "heading": "Shadowblast (Surreal)",
+      "anchor": "toc8",
+      "text": "Prerequisite: Shadowmark class feature.\nBenefit: When using your shadowmark, you may spend an extra shadow point to change the effect from a ranged touch attack into a close-ranged cone. All creatures within this area are allowed a Reflex save for half damage. If they succeed at this Reflex save, they do not suffer the penalty to Will saves."
+    },
+    {
+      "level": 3,
+      "heading": "Shadowstuff Armament (Surreal)",
+      "anchor": "toc9",
+      "text": "Benefit: As a move action or a free action with the expenditure of a shadow point, you may create and instantaneously equip a non-magical version of a weapon, piece of ammunition, light armor, or light shield you are proficient with out of stable shadowstuff. In the case of exotic weapons, you must have studied a pre-existing version of the weapon for at least 1 week. This object dissipates one round after you are no longer in contact with it or if you use this feat a second time. Creating ammunition using this feat may be done as part of the same action required to load a weapon instead of a move action without having to spend a shadow point.\nSpecial: You may create an additional simultaneous object with a single use of this feat per 5 character levels."
+    },
+    {
+      "level": 3,
+      "heading": "Shadowy Slay (Surreal)",
+      "anchor": "toc10",
+      "text": "Benefit: Any time you deal damage to a creature from an illusion source you may spend a shadow point to allow the creature to be briefly attacked through its shadow. Any attack made against the target may resolve as a touch attack. This effect lasts 1 minute or until the creature is hit by a touch attack."
+    },
+    {
+      "level": 3,
+      "heading": "Surreal Strike (Surreal)",
+      "anchor": "toc11",
+      "text": "Benefit: You gain shadowmark as the fey adept class feature, but use your character level -4 (minimum 1) as your fey adept level for the purposes of determining damage and Will save penalties."
+    },
+    {
+      "level": 3,
+      "heading": "Violent Shadow (Surreal)",
+      "anchor": "toc12",
+      "text": "Prerequisites: Shadowmark 3d6, shadow pool.\nBenefit: You may spend a shadow point as a full-round action to make a single attack with your shadowmark. Rather than a ranged touch attack, treat your shadowmark as a melee touch attack with a 10-foot reach. Regardless of if your attack hits or not, you may make attacks of opportunity as melee touch attacks with a 10-foot reach with your shadowmark without additional expenditure of points from your shadow pool until the beginning of your next turn. If you have multiple attacks from a high base attack bonus or effects such as haste you can (as part of the full-round action) make as many attacks with your violent shadow as your base attack bonus allows.\nSurreal feats are feats that use or rely upon the irrational and unpredictable substance known as shadowstuff. All surreal feats are spell-like abilities that are treated as (figment, shadow) illusions for the purposes of interacting with other effects. Characters with the Shadow Infusion talent or the create reality class feature may spend spell points in place of shadow points to activate abilities granted by surreal feats.\nThe first time you gain a surreal feat you also gain a shadow pool as the fey adept class feature, except it only contains a number of shadow points equal to the total number of surreal feats you possess. This stacks with any other shadow points."
+    },
+    {
+      "level": 4,
+      "heading": "Emulation Expert (Surreal)",
+      "anchor": "",
+      "text": "Prerequisites: Manipulate Aura and either Shadow Magic or create reality.\nBenefit: When using the Shadow Magic feat or create reality class feature to duplicate effects from another sphere, you may spend a shadow point to treat the effect as both from the Illusion sphere and the sphere it is mimicking. This allows you to apply bonuses from items, class features, talents or feats that benefit that sphere as well as the Illusion sphere.\nThis feat does not allow you to apply the caster level bonus from staves for two different spheres.\nFor example, when using create reality or Shadow Magic to produce a destructive blast, you may apply Destruction talents you possess and apply the caster level bonus from either a staff of Destruction or Illusion, apply bonus damage from elementalist energy specialization class feature and treat both your fey adept and elementalist levels as full caster levels for calculating the caster level."
+    },
+    {
+      "level": 4,
+      "heading": "Gather Shadowstuff (Surreal)",
+      "anchor": "",
+      "text": "Prerequisites: Shadowmark\nBenefit: In place of spending a shadow point you may use shadowmark as a full-round action."
+    },
+    {
+      "level": 4,
+      "heading": "Scathing Shadowmark (Surreal)",
+      "anchor": "",
+      "text": "Prerequisites: Shadowmark.\nBenefit: Your shadowmark causes an additional -1 penalty to Will saves that stacks with the normal penalty caused by shadowmark.\nOnce per round as a free action, you may spend a shadow point to increase the Will save penalty of all creatures currently suffering from your shadowmark by an additional -1 for one round."
+    },
+    {
+      "level": 4,
+      "heading": "Shadow Magic (Surreal)",
+      "anchor": "",
+      "text": "Prerequisites: Illusion sphere and either Shadow Infusion or a shadow pool.\nBenefit: You may mimic other spheres of magic by shaping shadowstuff. As a free action, you may spend 1 shadow point to grant yourself the benefit of any one magic sphere or talent you don\u2019t possess from the following list: Alteration, Conjuration, Creation, Dark, Death, Destruction, Enhancement, Light, Nature, Protection or Weather sphere until the beginning of your next turn.\nFor every 5 surreal feats you possess, you may grant yourself an additional talent from the chosen sphere. You must still meet any prerequisites that the talents possess. When gaining multiple talents with this feat, you may use a talent gained this way as a prerequisite for other gained talents. Any sphere talents or abilities gained from this feat are cast as if from the Illusion sphere and possess the shadow descriptor. The effective caster level of effects created using this feat is equal to your caster level in the Illusion sphere -2 (minimum 1). You may not have more than one sphere effect active at a time from the spheres granted from this feat. A second use of this feat immediately ends the duration of the previous use.\nShadow magic, by its nature, has a very real effect even if disbelieved, although usually a reduced one. Shadow magic is a descriptor applied to abilities such as create reality or the Shadow Infusion talent. Unless stated otherwise, objects created as shadow illusions are made of shadowstuff (stable), and creatures have 1/5th their normal hit points."
+    },
+    {
+      "level": 4,
+      "heading": "Shadowstuff Armament (Combat) (Surreal)",
+      "anchor": "",
+      "text": "Benefit: You may, as a free action, spend a shadow point to create and instantaneously equip any weapon, piece of ammunition, light armor, or light shield you are proficient with out of stable shadowstuff. This object dissipates one round after you are no longer in contact with it or if you use this feat a second time. You may spend a move action in place of a shadow point to activate this feat. Creating ammunition using this feat may be done as part of the same action required to load a weapon instead of a move action without having to spend a shadow point.\nSpecial: You may create an additional simultaneous object with a single use of this feat per 5 character levels.\nErrata: This feat only allows for the creation of non-magical equipment."
+    },
+    {
+      "level": 4,
+      "heading": "Shadow Shield (Surreal)",
+      "anchor": "",
+      "text": "Benefit: You may, as a swift action, spend a shadow point to create a protective layer of shadowstuff around a creature or object within 25 ft. + 5 ft. per 2 character level. This grants 1d4 temporary hit points for every character level you possess. Any creature that has at least 1 temporary hit point granted by your shadow shield also gains damage reduction 1/-. This damage reduction improves by an additional 1 per 5 character levels you possess. These temporary hit points last 1 minute and stack with all other temporary hit points except those granted by this feat."
+    },
+    {
+      "level": 4,
+      "heading": "Shadow Shield, Improved (Surreal)",
+      "anchor": "",
+      "text": "Prerequisites: Shadow Shield.\nBenefit: Improve the temporary hit points granted by your shadow shield to 1d4+1 per character level. Instead of providing DR/-, the shadow shield reduces all hit point damage from all sources by the same amount."
+    },
+    {
+      "level": 4,
+      "heading": "Shadowy Reach (Surreal)",
+      "anchor": "",
+      "text": "Prerequisites: Shadowmark.\nBenefit: Increase the range of your shadowmark ability to Medium range. This feat may be taken twice. If taken a second time, increase the range from Medium to Long. In addition, you may spend a shadow point to double the range of your shadowmark."
+    },
+    {
+      "level": 4,
+      "heading": "Shadowy Slay (Surreal)",
+      "anchor": "",
+      "text": "Benefit: Any time you deal damage to a creature from an illusion source you may spend a shadow point to allow the creature to be briefly attacked through its shadow. Any attack made against the target may resolve as a touch attack. This effect lasts 1 minute or until the creature is hit by a touch attack."
+    },
+    {
+      "level": 4,
+      "heading": "Surreal Strike (Surreal)",
+      "anchor": "",
+      "text": "Benefit: You gain shadowmark as the fey adept class feature, but use your character level -4 (minimum 1) as your fey adept level for the purposes of determining damage and Will save penalties."
+    },
+    {
+      "level": 4,
+      "heading": "Violent Shadow (Surreal)",
+      "anchor": "",
+      "text": "Prerequisites: Shadowmark 3d6, shadow pool.\nBenefit: You may spend a shadow point as a full-round action to make a single attack with your shadowmark. Rather than a ranged touch attack, treat your shadowmark as a melee touch attack with a 10-ft. reach. Regardless of if your attack hits or not, you may make attacks of opportunity as melee touch attacks with a 10-ft. reach with your shadowmark without additional expenditure of points from your shadow pool until the beginning of your next turn. If you have multiple attacks from high base attack bonus or effects such as haste you can (as part of the full-round action) make as many attacks with your violent shadow as your base attack bonus allows.\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

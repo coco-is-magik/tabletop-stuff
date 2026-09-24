@@ -1,0 +1,37 @@
+{
+  "url": "https://spheresofpower.wikidot.com/ritual-feats",
+  "retrieved": "2026-09-24",
+  "sha256": "92b4092a2aaa4d9f61b8aa6ec1bd8d506dddf675ce43ebf177fc79bcd21dbbf7",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Ritual Caster [Core] Ritual Master [Core] Spell Adept Spell Dabbler\nRitual feats focus on the use of Rituals, an optional subsystem. These feats are not required for using rituals in the first place - instead, they make it easier to learn and use them."
+    },
+    {
+      "level": 4,
+      "heading": "Ritual Caster [Core]",
+      "anchor": "toc0",
+      "text": "Prerequisite: Casting class feature.\nBenefit: You may use a ritual, even if you do not possess that ritual\u2019s base sphere (see Rituals). If you also possess the Craft Rituals item creation feat, you still cannot research a ritual unless you meet all of its prerequisites."
+    },
+    {
+      "level": 4,
+      "heading": "Ritual Master [Core]",
+      "anchor": "toc1",
+      "text": "Prerequisites: Casting class feature, Ritual Caster.\nBenefit: You may use your MSB in place of your caster level when using rituals."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Adept",
+      "anchor": "toc2",
+      "text": "Your ability to use rituals has grown to great power.\nPrerequisites: Spell Dabbler, spherecaster\nBenefit: When using your Spell Dabbler feat, you may increase the preparation time to 1 hour to prepare as many rituals as you desire, spending spell points for each prepared ritual. You cannot prepare more than 4 rituals of any individual level in this manner."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Dabbler",
+      "anchor": "toc3",
+      "text": "You have learned to hold rituals in your memory to a minor degree.\nPrerequisites: Spherecaster\nBenefit: You may choose one ritual per day you may use up to the highest level you may cast. By spending 15 minutes preparing beforehand, you may cast this ritual once as a spellcaster at any point during that day. This may also be a lower-level ritual augmented by any metamagic feats you possess, so long as its effective level does not exceed that which you can cast. All drawbacks of your tradition still apply, and the spell may be augmented by any tradition boons you possess. Rather than a material cost, (unless the spell has costly material components already listed), you must spend a number of spell points at the time you prepare the ritual dependent on the level of the ritual in question: 0-2: 1 spell point, 3-5: 2 spell points, 6-8: 3 spell points, 9: 4 spell points.\nNote: Ritualized spells that are prepared using the Spell Dabbler feat are cast as spells, usually reducing both their casting time and material cost. For example, animal messenger, a ritualized spell, prepared with the Spell Dabbler feat would have its casting time reduced from 10 minutes (the ritual's casting time) to 1 minute (the spell's casting time).\nWiki Note: Many rituals have listed costs. However, these \"costly\" components are regular material costs if they match the price by level on the Material Cost & Casting Time table. Spell Dabbler allows you to bypass these costs. If a ritual has an expensive component that doesn't match its price by level, Spell Dabbler does not allow you to bypass it. For example, the Unseen Servant, Bound ritual has a costly component that does not match its price by level, so you cannot bypass it with Spell Dabbler.\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

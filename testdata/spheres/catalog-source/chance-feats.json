@@ -1,0 +1,97 @@
+{
+  "url": "https://spheresofpower.wikidot.com/chance-feats",
+  "retrieved": "2026-09-24",
+  "sha256": "e6006e42356bae1a6cb931941bdb72ca133f9fd227136a3c7616bbb114f5eee6",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Channel Luck (Chance, Channeling) Defy Fate (Chance) Karmic Healing (Chance) Lucky Streak (Chance) Roll Redemption (Chance) [SM\u2014] So Close, Yet So Far (Chance) [SM\u2014] Surge of Fortune (Chance) Weighted Dice (Chance)\nUltimate\nOriginal\nUltimate Spheres of Power $29.99 The force of kismet is mostly the domain of ordained hunters and lucky bastards, but it is possible for others to tap into its abilities. Chance feats grant kismet and a way to use it. When you first take a chance feat, you gain a kismet pool if you did not otherwise have one. You gain one kismet point at the beginning of each day, and this is also your maximum kismet. You regain kismet when you roll a natural 1 on an attack roll or saving throw, subject to the same limitations as an ordained hunter. If you already have a kismet pool, you gain 1 extra kismet point at the beginning of each day and your maximum kismet increases by 1 for every chance feat you possess."
+    },
+    {
+      "level": 3,
+      "heading": "Channel Luck (Chance, Channeling)",
+      "anchor": "toc0",
+      "text": "Prerequisite: Channel energy.\nBenefit: When you channel energy, you may spend a kismet point to grant all creatures affected a luck bonus (if they were healed) or a luck penalty (if they were harmed and failed their save) to their next saving throw equal to the number of dice of your channel energy ability. This bonus lasts at most 1 minute for each die of your channel energy ability."
+    },
+    {
+      "level": 3,
+      "heading": "Defy Fate (Chance)",
+      "anchor": "toc1",
+      "text": "Prerequisite: Kismet pool.\nBenefit: As long as you have at least one kismet point remaining you automatically succeed on Constitution checks to stabilize and may roll saving throws against effects that would kill you outright (but not that would kill you through damage or other effects) twice and take the better result."
+    },
+    {
+      "level": 3,
+      "heading": "Karmic Healing (Chance)",
+      "anchor": "toc2",
+      "text": "Benefit: When you heal another creature\u2019s hit points, whether using the Life sphere or another ability, you may spend a kismet point to regain an equal number of your own."
+    },
+    {
+      "level": 3,
+      "heading": "Lucky Streak (Chance)",
+      "anchor": "toc3",
+      "text": "Benefit: When you successfully confirm a critical hit, you may spend a kismet point to make an extra attack at your highest base attack bonus as an immediate action. If this attack hits, increase its critical threat range by +1. This bonus is applied after abilities such Improved Critical or the keen weapon special ability and cannot be doubled."
+    },
+    {
+      "level": 3,
+      "heading": "Roll Redemption (Chance) [SM\u2014]",
+      "anchor": "toc4",
+      "text": "Source: Baron\u2019s Imposing Mausoleum\nPrerequisite: Kismet pool. Benefit: Whenever you gain a kismet point as a result of a die roll, you may indicate the die that was used to gain the kismet point (placing the specific die within a dice jail, dice chair, or other novelty item is optional). When a kismet point is used, your next die roll made with the point\u2019s corresponding die before the end of your next turn gains a +1 bonus."
+    },
+    {
+      "level": 3,
+      "heading": "So Close, Yet So Far (Chance) [SM\u2014]",
+      "anchor": "toc5",
+      "text": "Source: Baron\u2019s Imposing Mausoleum\nPrerequisite: Kismet pool. Benefit: Whenever you fail a roll eligible to grant your kismet by exactly 1 (for example, an attack roll that is just 1 short of the target\u2019s AC), you gain a point of kismet as if you had rolled a natural 1 on the roll. You know when you fail an eligible roll by exactly 1."
+    },
+    {
+      "level": 3,
+      "heading": "Surge of Fortune (Chance)",
+      "anchor": "toc6",
+      "text": "Benefit: When you roll a natural 15 or above on a skill check or ability check (including if you take 20), you may spend a kismet point to gain a +7 luck bonus to the roll."
+    },
+    {
+      "level": 3,
+      "heading": "Weighted Dice (Chance)",
+      "anchor": "toc7",
+      "text": "Benefit: You may spend a kismet point to roll a d6 as a free action. At any time until you next regain kismet you may spend an immediate action to add the result of one of those die rolls to any attack roll, damage roll, or CMB, skill, or ability check. You may decide to use this after you roll but before you know the result. You may only have one use of Weighted Dice active at a time, and once you have used a die roll, it is expended.\nThe force of kismet is mostly the domain of ordained hunters and lucky bastards, but it is possible for others to tap into its abilities. Chance feats grant kismet and a way to use it.\nWhen you first take a chance feat, you gain a kismet pool if you did not otherwise have one. You gain one kismet point at the beginning of each day, and this is also your maximum kismet. You regain kismet when you roll a natural 1 on an attack roll or saving throw, subject to the same limitations as an ordained hunter. If you already have a kismet pool, you gain 1 extra kismet point at the beginning of each day and your maximum kismet increases by 1 for every chance feat you possess."
+    },
+    {
+      "level": 4,
+      "heading": "Channel Luck (Chance, Channeling)",
+      "anchor": "",
+      "text": "Prerequisites: Channel energy.\nBenefit: When you channel energy, you may spend a kismet point to grant all creatures affected a luck bonus (if they were healed) or a luck penalty (if they were harmed and failed their save) to their next saving throw equal to the number of dice of your channel energy ability. This bonus lasts at most 1 minute for each die of your channel energy ability."
+    },
+    {
+      "level": 4,
+      "heading": "Defy Fate (Chance)",
+      "anchor": "",
+      "text": "Prerequisites: Kismet pool.\nBenefit: As long as you have at least one kismet point remaining you automatically succeed on Constitution checks to stabilize and may roll saving throws against effects that would kill you outright (but not that would kill you through damage or other effects) twice and take the better result."
+    },
+    {
+      "level": 4,
+      "heading": "Karmic Healing (Chance)",
+      "anchor": "",
+      "text": "Benefit: When you heal another creature\u2019s hit points, whether using the Life sphere or another ability, you may spend a kismet point to regain an equal number of your own."
+    },
+    {
+      "level": 4,
+      "heading": "Lucky Streak (Chance)",
+      "anchor": "",
+      "text": "Benefit: When you successfully confirm a critical hit, you may spend a kismet point to make an extra attack at your highest base attack bonus as an immediate action. If this attack hits, increase its critical threat range by +1. This bonus is applied after abilities such Improved Critical or the keen weapon property and cannot be doubled."
+    },
+    {
+      "level": 4,
+      "heading": "Surge of Fortune (Chance)",
+      "anchor": "",
+      "text": "Benefit: When you roll a natural 15 or above on a skill check or ability check (including if you take 20), you may spend a kismet point to gain a +7 luck bonus to the roll."
+    },
+    {
+      "level": 4,
+      "heading": "Weighted Dice (Chance)",
+      "anchor": "",
+      "text": "Benefit: You may spend a kismet point to roll a d6. At any time until you next regain kismet you may spend an immediate action to add the result of one of those die rolls to any attack roll, damage roll, or CMB, skill, or ability check. You may decide to use this after you roll but before you know the result. Once you have used a die roll it is expended; you cannot use it again.\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

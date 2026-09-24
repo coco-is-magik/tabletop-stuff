@@ -1,0 +1,109 @@
+{
+  "url": "https://spheresofpower.wikidot.com/purring-feats",
+  "retrieved": "2026-09-24",
+  "sha256": "f1d06036644cbd39bc3360f8798c308c72d9e9390eba348e22f0beb5bbfb30ad",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Purring Feat Mechanics Powerful Purring Qualifying for Purring Feats Selecting Purring Feats with Class Features Purring Feats Calming (Purring) Charming (Purring) Cooperating (Purring) Distracting (Purring) Helping (Purring) Improving (Purring) Rumbling (Purring) Soothing (Purring) Stalking (Purring) Warming (Purring) Wiggling (Purring)\nThe Catgirl Handbook\nThe Catgirl Handbook $4.99 Catfolk display much of their mood through purring \u2013 affection, calming, comfort, content, happiness, hunger, and even stress. Purring is often associated with positive social situations, such as general friendliness with those they trust, grooming themselves or their children, nursing, and when content and relaxing. Purring feats are not exclusive to catfolk and may be taken by creatures of any race or type. Non-catfolk could hum, lullaby, or produce any number of other similar mannerisms to produce the effects of a purring feat."
+    },
+    {
+      "level": 4,
+      "heading": "Purring Feat Mechanics",
+      "anchor": "toc0",
+      "text": "A character with a purring feat gains the ability to purr, granting certain effects depending on the purring being used. Purring is an extraordinary ability which does not provoke attacks of opportunity.\nPurring is a physical action and may be performed so long as the character is not paralyzed or otherwise incapable of taking physical actions. Purring is conveyed by both touch and sound and is therefore not suppressed by silence and functions normally for a deafened creature. Purring does not interfere with a character\u2019s normal capabilities (e.g. purring does not interfere with a character using Stealth to hide or the character\u2019s ability to speak).\nA character with a purring feat may begin purring as a swift action, and may maintain their purring each round as a free action. Switching to a new purring requires a new swift action, including switching to the same purring but with a different selection. Only a single purring effect may be used at a time. There is no limit to how long a character can purr each day. While purring, the purring character gains an aura with a 5-foot radius, granting the benefits of each purring feat in use to each valid creature, including the purring character."
+    },
+    {
+      "level": 4,
+      "heading": "Powerful Purring",
+      "anchor": "toc1",
+      "text": "As a character gains additional purring feats, the character\u2019s ability to purr increases:\nPurr Louder: For every 2 purring feats a character possesses, the character\u2019s purring aura\u2019s radius increases by +5 feet.\nComplex Purring: For every two purring feats a character possesses past the 1st, whenever that character begins purring, they may select an additional, different purring feat to use simultaneously. A purring feat may not be used multiple times simultaneously even if the feat could make multiple selections. For example, a character with 3 purring feats could use a second purring simultaneously, 5 feats could use a third purring simultaneously, etc.\nSome purring feats gain additional effects if you possess 4 or more purring feats, denoted as \u201cPowerful Purring\u201d as part of their entry."
+    },
+    {
+      "level": 4,
+      "heading": "Qualifying for Purring Feats",
+      "anchor": "toc2",
+      "text": "Purring feats may be freely selected by creatures with 2 or less Intelligence (such as an animal companion). Creatures with higher intelligence may also select purring feats as long as they meet any other requirements."
+    },
+    {
+      "level": 4,
+      "heading": "Selecting Purring Feats with Class Features",
+      "anchor": "toc3",
+      "text": "Many classes may select a purring feat with their appropriate class features (subject to GM discretion). Suggestions of appropriate class features include but are not limited to alchemist discoveries, armorist arsenal tricks, blacksmith smithing insights, hedgewitch secrets, investigator talents, magus arcana, rogue talents, shaman and witch hexes, wraith haunts, etc."
+    },
+    {
+      "level": 1,
+      "heading": "Purring Feats",
+      "anchor": "toc4",
+      "text": ""
+    },
+    {
+      "level": 3,
+      "heading": "Calming (Purring)",
+      "anchor": "toc5",
+      "text": "Benefits: While using the calming purr, you and allies within your purring aura gain a +2 bonus on saving throws against mind-affecting effects and to the DC to Intimidate them. Each creature benefiting from the calming purr may spend a move action to lessen the severity of any fear effect they are subject to (panicked to frightened to shaken to unaffected). Each creature may only benefit from this feat to lessen a fear effect once per round; a creature may take an action to lessen a fear effect even if they would be required to run from the source of their fear first.\nPowerful Purring: Creatures benefiting from the calming purring may lessen the severity of a fear effect as a free action and may reduce cowering to panicked. A creature benefiting from the calming purring rolls twice and takes the better result when attempting a saving throw which the calming purr grants a bonus against."
+    },
+    {
+      "level": 3,
+      "heading": "Charming (Purring)",
+      "anchor": "toc6",
+      "text": "Benefits: While using the charming purr, enemies within your purring aura suffer a -1 penalty on saving throws made against charm and compulsion effects you create. In addition, you gain a +2 bonus on skill checks made to improve the attitude of a creature within your purring aura (such as using Diplomacy or Intimidate).\nPowerful Purring: The charming purr\u2019s penalty and bonus increase to -2 and +6 respectively."
+    },
+    {
+      "level": 3,
+      "heading": "Cooperating (Purring)",
+      "anchor": "toc7",
+      "text": "Prerequisite: Any one teamwork feat.\nBenefits: Whenever you begin using the cooperating purr, choose one teamwork feat you possess. While using the cooperating purr, whenever an ally begins their turn within your purring aura, that ally gains the chosen teamwork feat for 1 round. You may share a teamwork feat this way even if your allies could not normally qualify for it.\nPowerful Purring: Whenever you begin using the cooperating purr, instead of choosing a teamwork feat you possess, you may instead use any teamwork feat you meet the prerequisites for, temporarily gaining that teamwork feat as a bonus feat and granting it to allies which begin their turn within your purring aura. You may choose a different teamwork feat to temporarily gain each time you begin using the cooperating purr."
+    },
+    {
+      "level": 3,
+      "heading": "Distracting (Purring)",
+      "anchor": "toc8",
+      "text": "Prerequisite: Bluff 3 ranks.\nBenefits: While using the distracting purr, you gain a +2 bonus on Bluff checks made to feint enemies within your purring aura. If an enemy within your purring aura would be denied their Dexterity bonus to their AC or you flank the enemy, you gain a +2 bonus on damage rolls against that enemy.\nPowerful Purring: Allies within your purring aura also gain the benefits of your distracting purr against enemies."
+    },
+    {
+      "level": 3,
+      "heading": "Helping (Purring)",
+      "anchor": "toc9",
+      "text": "Benefits: While using the helping purr, whenever an ally within your purring aura would perform an attack roll or skill check, you may use the aid another action to improve that ally\u2019s attack roll or skill check as a free action that can be taken even when it is not your turn. You may only use the aid another action this way once per round and may aid a creature this way even if you normally could not (such as not threatening the attacking creature, etc.).\nPowerful Purring: While using the helping purr, whenever you use the aid another action, you grant the assisted creature a number of temporary hit points equal to 1/2 your character level which last for 1 minute."
+    },
+    {
+      "level": 3,
+      "heading": "Improving (Purring)",
+      "anchor": "toc10",
+      "text": "Prerequisite: Enhancement sphere.\nBenefits: Whenever you begin using the improving purr, choose one enhance sphere effect you or your equipment are currently under the effects of. While using the improving purr, whenever an ally begins their turn within your purring aura, that ally gains the benefits of the chosen enhance sphere effect for 1 round.\nIf the chosen enhance sphere effect would target a piece of equipment, that ally must choose which piece of equipment under their possession is enhanced; an enhance effect shared this way must be able to target that creature or held piece of equipment normally (such as sharing the Enhance Equipment (enhance) with an ally\u2019s natural attack requires you to possess the Natural Enhancement talent). The chosen enhance sphere effect\u2019s duration is not extended by this ability; you may not use the improving purr if you are not benefiting from an enhance sphere effect.\nPowerful Purring: Whenever a creature benefits from the improving purr, that creature retains the benefits of the chosen enhance talent for an additional round."
+    },
+    {
+      "level": 3,
+      "heading": "Rumbling (Purring)",
+      "anchor": "toc11",
+      "text": "Not fueled by some independent emotion or habit, the cat simply purrs harder. Somehow.\nPrerequisite: 3 purring feats.\nBenefits: This feat doesn\u2019t grant a new purring option and instead is treated as possessing 1 additional purring feat when determining your purring abilities (including range, number of simultaneous purrs, etc.).\nSpecial: This feat may be selected multiple times."
+    },
+    {
+      "level": 3,
+      "heading": "Soothing (Purring)",
+      "anchor": "toc12",
+      "text": "Benefits: While using the soothing purr, you and allies within your purring aura gain a +2 bonus on saving throws made against pain effects. This bonus also applies on skill checks, saving throws, and ability checks made against an ongoing effect, but not the initial check to avoid the effect (such as a saving throw to stop being on fire or a Strength check to break out of an icy prison spell).\nPowerful Purring: Whenever a creature benefiting from the soothing purr would receive healing, increase the healing received by half your character level. This increased healing has no effect on effects such as fast healing, regeneration, and other similar effects."
+    },
+    {
+      "level": 3,
+      "heading": "Stalking (Purring)",
+      "anchor": "toc13",
+      "text": "Benefit: While using stalking purr, you and your allies gain the benefits of partial cover while adjacent to another creature. In addition, while using the stalking purr, an ally who begins their turn in your purring aura may move at full speed using the Stealth skill without penalty.\nPowerful Purring: While using the stalking purr, an ally who begins their turn in your purring aura gains concealment (20% miss chance) for 1 round. This concealment is lost after an attack misses due to this concealment. Concealment granted by this ability is not sufficient enough to allow a creature to use the Stealth skill to hide while observed.\nAuthor's Note: The benefits of partial cover granted by this purring ability only grants the +2 bonus to AC and +1 bonus to Reflex saving throws. The partial cover granted by this purring does not grant the ability to make Stealth checks or avoid provoking attacks of opportunity."
+    },
+    {
+      "level": 3,
+      "heading": "Warming (Purring)",
+      "anchor": "toc14",
+      "text": "Benefits: While using the warming purr, you and allies within your purring aura gain 5 cold resistance. In addition, each creature benefiting from the warming purr deals an additional +1d6 fire damage on their first successful attack made each round. This attack must be one made with a manufactured weapon, natural attack, or unarmed strike.\nPowerful Purring: The cold resistance granted by the warming purring increases to 15 and the additional fire damage increases to +2d6."
+    },
+    {
+      "level": 3,
+      "heading": "Wiggling (Purring)",
+      "anchor": "toc15",
+      "text": "Benefits: While using the wiggling purr, you and allies within your purring aura gain a +2 dodge bonus to AC against attacks of opportunity and Escape Artist checks. Whenever an enemy\u2019s attack of opportunity misses a creature benefiting from the wiggling purr, that enemy provokes an attack of opportunity from you. Each enemy may only provoke an attack of opportunity this way once per round.\nPowerful Purring: While using the wiggling purr, you gain the compression ability.\nNote: You may not use this feat to take an attack of opportunity in conjunction with (deflect) talents or any other ability that would grant you an attack or combat maneuver due to a missed attack.\n| Champions of the Spheres by Drop Dead Studios\n| Classes\n| Bravo | Crimson Dancer | Dissident | Dragoon\n| Mountebank | Necros | Prodigy | Reaper\n| Sage | Theorist | Troubadour | Warden\n| Rules\n| Champion Feats | Unified Traditions | Champion FCBs |\n| Get Champions Of The Spheres\n| Get Mythic Champions of the Spheres\n| Get Legends of the Spheres\n| Get Study and Practice\n| The Crimson Dancer | The Realmwalker's Handbook\n| The Warden | Spheres Apocrypha: Sidhe Outcasts\n| The Cataclysm Handbook | The Gravecaller's Handbook\n| Get the Lost Champions Bundle\n| LC: Dragoon | LC: Mountebank | LC: Necros | LC: Reaper\n| Spheres of Might by Drop Dead Studios\n| Using Spheres of Might\n| Classes\n| Armiger | Blacksmith | Commander | Conscript | Scholar | Sentinel | Striker | Technician\n| Prestige Classes\n| Aeronaut Captain\n| Spheres\n| Alchemy | Athletics | Barrage | Barroom | Beastmastery | Berserker | Boxing | Brute\n| Dual Wielding | Duelist | Equipment | Fencing | Gladiator | Guardian | Lancer | Leadership\n| Open Hand | Scoundrel | Scout | Shield | Sniper | Tech | Trap | Warleader\n| Wrestling | | Pilot (3PP) |\n| Rules\n| About Legendary Talents | Martial Traditions | Martial Packages | Practitioner Feats\n| Practitioner Traits | Practitioner FCB's | Practitioner Bestiary | Associated Feats & Skills\n| Ultimate Engineering (Tinker) | Starfinder Conversion [3pp]\n| Get Spheres of Might on DriveThruRPG\n| Mythic Spheres of Might\n| Ultimate Engineering\n| The Conqueror's Handbook | The General's Handbook\n| The Highlander's Handbook | The Inventor's Handbook\n| The Inventor's Handbook 2 | The Jester's Handbook\n| Woodfaring Adventures | The Youxia's Handbook\n| Spheres Apocrypha\n| Alch. Formulae | Alch. Poisons | Alch. Poisons 2 | Armor Talents\n| Astrologian Archetype | Debilitating Talents | Pugilists | Racial\n| Ranged | Swashbucklers | Tandem | Tricks & Traps\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}
