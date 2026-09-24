@@ -1,11 +1,23 @@
-# Incanter completion audit (in progress)
+# Historical extended-option inventory — not the class completion contract
+
+## Scope superseded on 2026-09-23
+
+The user explicitly replaced the broad inventory below with **thin Incanter class
+completion**: levels 1–20, casting ability/resources, talent and feat progression,
+specialization purchase/activation accounting, class grants, removal and save/reload.
+The current acceptance contract is in `/bigdisk/programming/pathfinder1e/docs/incanter-class.md`.
+
+Everything below is historical reference, **not an implementation backlog or a
+completion prerequisite**. Do not resume sphere catalogs, domain/bloodline catalogs,
+favored-race catalogs, companions, archetypes, traditions or third-party variants
+without a separate request. Existing optional data stays in place for compatibility.
 
 Source: https://spheresofpower.wikidot.com/incanter, Ultimate tab, inspected
 2026-09-22. The page also contains **Original** rules; do not combine the two
 versions. Existing coverage is documented in [spheres.md](spheres.md). This
 inventory is not a claim that the class or the linked sphere catalogs are done.
 
-## Completion contract
+## Superseded extended-source contract
 
 - Scope: normal, single-class Pathfinder 1e Incanter using Ultimate Spheres of
   Power. No Guile, mythic, gestalt, or multiclass support in this milestone.
@@ -78,12 +90,12 @@ An inert base-sphere marker is not enough to certify an Incanter build.
 | --- | --- | --- |
 | Casting traditions, drawbacks, boons | Missing | Single authoritative casting ability, legal tradition choices, effects on talents/spell points, incompatible-choice rejection and reload. |
 | Spheres feats | Extra Magic Talent and Extra Spell Points; Extra Arsenal Trick controller gates pass locally | Inventory eligible casting, drawback, proxy and theurge feats; prerequisites, repeated selections, persistent grants and bonus-feat pool isolation. |
-| Favored class bonuses | Human and Half-Elf 1/6 talent, Elf 1/6 metamagic feat, Aasimar 1/2 Spellcraft, Tiefling 1/2 concentration-variable, Gnome's Destruction-specific 1/6 DC, Half-orc's Aberrant bloodline strength and Halfling's Channel Energy uses have controller gates; Human, Aasimar, Tiefling, Gnome, Half-orc and Halfling also have save/reload gates. Dwarf 1/6 item-creation feat pool has a gate but actual Core feat eligibility is not verified. | Ultimate also lists Alraun (Mind talent), Cecaelia (water talent), Cherufe (fire talent), Created (Creation Craft checks), Goblin (sphere CL and wild-magic risk), Leshy (plant talent), Merfolk (lingering effects), Orc (domain or specialization ability uses), Sidhier (Fallen Fey DC), and Skinwalker (Alteration DC). Complete Gnome's per-sphere choices, Half-orc's other bloodlines and Halfling's other eligible abilities. Tiefling's check variable still needs integration with an actual concentration-check execution path. Audit race data and implement effects, fractional accumulation, per-sphere/per-ability choices, and save/reload. |
+| Favored class bonuses | Human and Half-Elf 1/6 talent, Elf 1/6 metamagic feat, Aasimar 1/2 Spellcraft, Tiefling 1/2 concentration-variable, Gnome's Destruction-specific 1/6 DC, Half-orc's Aberrant bloodline strength, Halfling's Channel Energy and Movement Burst uses, and Orc's Destruction Movement Burst uses have controller gates; Human, Aasimar, Tiefling, Gnome, Half-orc, both Halfling choices and Orc Movement Burst also have save/reload gates. Dwarf 1/6 item-creation feat pool has a gate but actual Core feat eligibility is not verified. | Ultimate also lists Alraun (Mind talent), Cecaelia (water talent), Cherufe (fire talent), Created (Creation Craft checks), Goblin (sphere CL and wild-magic risk), Leshy (plant talent), Merfolk (lingering effects), Sidhier (Fallen Fey DC), and Skinwalker (Alteration DC). Complete Gnome's per-sphere choices, Half-orc's other bloodlines, Halfling's other eligible abilities and Orc's remaining domain/specialization abilities. Tiefling's check variable still needs integration with an actual concentration-check execution path. Audit race data and implement effects, fractional accumulation, per-sphere/per-ability choices, and save/reload. |
 | Archetypes | Missing | Audit Ultimate-page archetypes, their source tags, replaced features and mutual conflicts; do not reuse Original-only archetypes. |
 | Incanter-specific feat | Missing | Audit Hybridized Specialty and its prerequisites and effects. |
 | Listed class equipment | Missing | Inventory tagged items separately for the full source package; equipment is not an Incanter class-feature completion prerequisite. |
 | Full sphere effects | Destruction slice only | Provide real prerequisite spheres/talents needed by each supported specialization, not just a name and a description. Full Power catalog is a separate later milestone, but legal Incanter options cannot be certified without their needed sphere effects. |
-| Specialized save/reload | Unspecialized fixtures, Sword Birth (Combat Feat), Human favored talent, Aasimar Spellcraft, Tiefling concentration-variable and Gnome Destruction DC round trips | Domain, bloodline, channel/mercy, both special familiars, remaining Sword Birth choices, specializations/sub-specializations, tradition, other feats, other favored class and archetype builds. |
+| Specialized save/reload | Unspecialized fixtures, Sword Birth (Combat Feat), domain, Core bloodline, channel/mercy, Human favored talent, Aasimar Spellcraft, Tiefling concentration-variable, Gnome Destruction DC, Half-orc Aberrant strength, Halfling Channel Energy/Movement Burst and Orc Movement Burst round trips | Both special familiars, remaining Sword Birth choices, specializations/sub-specializations, tradition, other feats, other favored class and archetype builds. |
 
 ## Execution and evidence order
 
@@ -108,14 +120,15 @@ behavior or character mechanics.
 The currently selectable and controller-tested entries are Aasimar, Dwarf
 (pool only, not a selectable item-creation feat), Elf, Gnome (Destruction DC
 only), Half-elf, Half-orc (Aberrant bloodline only), Halfling (Channel Energy
-only), Human, and Tiefling (calculated variable only;
-concentration-check integration unverified).
+and Destruction Movement Burst only), Human, Orc (Destruction Movement Burst
+only), and Tiefling (calculated variable only; concentration-check integration
+unverified).
 The other published Ultimate entries remain missing: Alraun (Mind talent),
 Cecaelia (water talent), Cherufe (fire talent), Created (Creation-sphere
 Craft bonus), Gnome (remaining chosen-sphere DCs), Goblin (chosen-sphere CL and
-wild-magic chance), Half-orc (other bloodline powers/DC validation), Halfling (other chosen
-3 + CAM/day ability uses), Leshy (plant talent), Merfolk (chosen-sphere
-duration), Orc (domain or specialization ability uses), Sidhier (Fallen Fey
+wild-magic chance), Half-orc (other bloodline powers/DC validation), Halfling
+(other chosen 3 + CAM/day ability uses), Leshy (plant talent), Merfolk (chosen-sphere
+duration), Orc (other domain or specialization ability uses), Sidhier (Fallen Fey
 DC), and Skinwalker (Alteration DC). These are **not**
 covered by the existing favored-class gates. Multiple entries depend on
 missing sphere mechanics; do not mark them complete merely by tracking a

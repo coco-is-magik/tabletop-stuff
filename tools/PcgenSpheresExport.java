@@ -21,10 +21,12 @@ class PcgenSpheresExport {
             }
             var spent = character.getTotalAbilityPool(category)
                     .subtract(character.getAvailableAbilityPool(category));
-            if (spent.compareTo(java.math.BigDecimal.valueOf(2)) != 0) {
-                throw new IllegalStateException("Expected two spent talents, got " + spent);
+            boolean freeDestruction = args.length == 5 && ("halfling-burst-save".equals(args[4])
+                    || "orc-burst-save".equals(args[4]));
+            if (spent.compareTo(java.math.BigDecimal.valueOf(freeDestruction ? 1 : 2)) != 0) {
+                throw new IllegalStateException("Unexpected spent talents: " + spent);
             }
-            System.out.println("SPHERES_SELECTION_OK: Destruction Sphere, Searing Blast; spent=2");
+            System.out.println("SPHERES_SELECTION_OK: Destruction Sphere, Searing Blast; spent=" + spent.intValue());
             if (args.length == 5 && "sword-save".equals(args[4])) {
                 var active = game.getAbilityCategory("Incanter Active Specialization");
                 var tricks = game.getAbilityCategory("Incanter Arsenal Trick");
@@ -81,6 +83,41 @@ class PcgenSpheresExport {
                             + " polarity=" + character.hasAbilityKeyed(channel, "Incanter Positive Channel"));
                 }
                 System.out.println("SPHERES_SPECIALIZATION_OK: halfling-favored-save");
+            } else if (args.length == 5 && "halfling-burst-save".equals(args[4])) {
+                var active = game.getAbilityCategory("Incanter Active Specialization");
+                var special = game.getAbilityCategory("Special Ability");
+                if (character.getVariableValue("SPHERES_INCANTER_HALFLING_BURST_COUNT", "").intValue() != 6
+                        || !character.hasAbilityKeyed(active, "Active Sphere Specialization (Destruction)")
+                        || !character.hasAbilityKeyed(special, "Incanter Movement Burst")
+                        || character.getVariableValue("SPHERES_MOVEMENT_BURST_FAVORED_USES", "").intValue() != 3
+                        || character.getVariableValue("SPHERES_MOVEMENT_BURST_USES", "").intValue() != 10) {
+                    throw new IllegalStateException("Halfling Movement Burst reward was not restored");
+                }
+                System.out.println("SPHERES_SPECIALIZATION_OK: halfling-burst-save");
+            } else if (args.length == 5 && "orc-burst-save".equals(args[4])) {
+                var active = game.getAbilityCategory("Incanter Active Specialization");
+                var special = game.getAbilityCategory("Special Ability");
+                if (character.getVariableValue("SPHERES_INCANTER_ORC_BURST_COUNT", "").intValue() != 6
+                        || !character.hasAbilityKeyed(active, "Active Sphere Specialization (Destruction)")
+                        || !character.hasAbilityKeyed(special, "Incanter Movement Burst")
+                        || character.getVariableValue("SPHERES_MOVEMENT_BURST_FAVORED_USES", "").intValue() != 3
+                        || character.getVariableValue("SPHERES_MOVEMENT_BURST_USES", "").intValue() != 9) {
+                    throw new IllegalStateException("Orc Movement Burst reward was not restored: count="
+                            + character.getVariableValue("SPHERES_INCANTER_ORC_BURST_COUNT", "")
+                            + " favored=" + character.getVariableValue("SPHERES_MOVEMENT_BURST_FAVORED_USES", "")
+                            + " uses=" + character.getVariableValue("SPHERES_MOVEMENT_BURST_USES", ""));
+                }
+                System.out.println("SPHERES_SPECIALIZATION_OK: orc-burst-save");
+            } else if (args.length == 5 && "orc-air-favored-save".equals(args[4])) {
+                var active = game.getAbilityCategory("Incanter Active Specialization");
+                var special = game.getAbilityCategory("Special Ability");
+                if (!character.hasAbilityKeyed(active, "Active Cleric Domain (Air)")
+                        || !character.hasAbilityKeyed(special, "Domain Power ~ Lightning Arc")
+                        || character.getVariableValue("SPHERES_INCANTER_ORC_AIR_COUNT", "").intValue() != 6
+                        || character.getVariableValue("LightningArcTimes", "").intValue() != 9) {
+                    throw new IllegalStateException("Orc Air domain favored uses were not restored");
+                }
+                System.out.println("SPHERES_SPECIALIZATION_OK: orc-air-favored-save");
             } else if (args.length == 5 && "healer-save".equals(args[4])) {
                 var active = game.getAbilityCategory("Incanter Active Specialization");
                 var special = game.getAbilityCategory("Special Ability");

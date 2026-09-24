@@ -1,6 +1,23 @@
 # Spheres PCGen prototype — current handoff
 
-## Current implementation status — 2026-09-23
+## Conscript class-only implementation — 2026-09-23
+
+Conscript now has its thin class data and dedicated PCGen acceptance runner.
+Scope, tested features and explicit manual boundaries:
+`/bigdisk/programming/pathfinder1e/docs/conscript-class.md`.
+No combat sphere catalog or unrelated subsystem was added.
+
+## Active milestone: thin Incanter class only — 2026-09-23
+
+The class contract and bounded acceptance commands are in
+`/bigdisk/programming/pathfinder1e/docs/incanter-class.md`.
+Levels, casting resources, talent/feat pools, specialization accounting, class
+grants, removal and save/reload are the finish line. Full spheres, domains,
+bloodlines, favored-class catalogs, companions, traditions and archetypes are not.
+Existing optional data is preserved, not expanded. The older broad checklist below
+is historical inventory and is explicitly superseded, not work to resume.
+
+## Historical extended-package status — superseded scope
 
 Current scope remains **Power + Might for normal PF1e games from the Spheres Wiki**.
 Guile, mythic, gestalt, broad upstream PCGen tests, GUI polish, packaging and
@@ -28,9 +45,10 @@ path:
 - 10 Core sorcerer bloodline adapters, powers only, no arcana/spells/bonus feats/class skills;
 - Destruction sphere specialization, including +1 sphere CL and level-gated powers;
 - Sword Birth arena data, enhanced armory budget, trick pool, ten Lingchi-specific tricks, ordinary Combat Feat arsenal trick, and repeatable Extra Arsenal Trick feat (PCGen gates at levels 1, 5 and 20, plus specialized save/reload);
-- Human and Half-Elf favored class magic talent options (six selections per talent; controller gates and removal, plus Human save/reload); Elf favored class metamagic feat (six selections per feat, choice, removal); Aasimar favored class Spellcraft bonus (two selections per +1, controller gate and save/reload); Tiefling favored concentration variable (two selections per +1, controller gate and save/reload; not wired to an actual concentration-check action); Gnome's Destruction-specific DC bonus (six selections per +1, gate and save/reload); Half-Orc's Aberrant bloodline-strength bonus (five selections per +1, gate and save/reload); Halfling's Channel Energy use bonus (two selections per +1, gate and save/reload). Dwarf item creation reward has a tested pool, but no validated eligible crafting feat choice.
+- Human and Half-Elf favored class magic talent options (six selections per talent; controller gates and removal, plus Human save/reload); Elf favored class metamagic feat (six selections per feat, choice, removal); Aasimar favored class Spellcraft bonus (two selections per +1, controller gate and save/reload); Tiefling favored concentration variable (two selections per +1, controller gate and save/reload; not wired to an actual concentration-check action); Gnome's Destruction-specific DC bonus (six selections per +1, gate and save/reload); Half-Orc's Aberrant bloodline-strength bonus (five selections per +1, gate and save/reload); Halfling's Channel Energy and Destruction Movement Burst use bonuses (two selections per +1, separate controller, removal and save/reload gates); Orc's Destruction Movement Burst use bonus (two selections per +1, controller, removal and save/reload gates). Dwarf item creation reward has a tested pool, but no validated eligible crafting feat choice.
 
-Incanter is **not complete**. Remaining before claiming completion:
+The extended source package is **not complete**. The following historical list is
+**not required for thin Incanter class completion**:
 
 The option-by-option completion contract, Ultimate-vs-Original boundary and
 dependency inventory are tracked in [incanter-completion-audit.md](incanter-completion-audit.md).
@@ -45,15 +63,14 @@ dependency inventory are tracked in [incanter-completion-audit.md](incanter-comp
 8. **Casting traditions integration** — implement traditions, drawbacks and boons needed for legal Incanter builds, including casting ability and resource changes.
 9. **Spheres feat eligibility and grants** — add remaining current Spheres feats, tag valid Incanter bonus-feat choices, and implement persistent grants/prerequisites.
 10. **Archetypes** — add current normal-game Incanter archetypes and class-feature replacements/conflicts.
-11. **Favored class options** — add remaining Incanter favored-class bonuses and verify per-level effects and reload; Human, Half-Elf, Elf, Dwarf (pool only), Aasimar, Tiefling (variable only), Gnome (Destruction only), Half-Orc (Aberrant bloodline only) and Halfling (Channel Energy only) choices have targeted controller gates.
+11. **Favored class options** — add remaining Incanter favored-class bonuses and verify per-level effects and reload; Human, Half-Elf, Elf, Dwarf (pool only), Aasimar, Tiefling (variable only), Gnome (Destruction only), Half-Orc (Aberrant bloodline only), Halfling (Channel Energy and Movement Burst only) and Orc (Destruction Movement Burst only) choices have targeted controller gates.
 12. **Specialized character save/reload coverage** — existing Sword Birth, domain, Core bloodline, mercy/channel and selected favored-class builds have gates; add special familiar, other sphere specialization, traditions, archetypes and remaining choices.
 13. **Completion audit** — compare data against current wiki page(s), record any intentionally skipped ambiguous/unusable option, then mark complete.
 
 ### Conscript status
 
-Conscript is **not implemented**. There is no Conscript class data, practitioner
-progression, combat-talent progression, specialization/customization model, or
-PCGen fixture yet.
+This historical missing-class status is superseded by the thin Conscript class
+implementation documented above. Full Spheres of Might content remains outside scope.
 
 ### Sphere implementation status
 

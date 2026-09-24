@@ -5,7 +5,7 @@ BOOKTYPE:Homebrew
 TYPE:Homebrew.SpheresPrototype
 SOURCELONG:Spheres PF1e Architecture Prototype
 SOURCESHORT:SPROT
-INFOTEXT:Experimental Incanter 1-20 progression and Destruction slice. Load alongside Pathfinder Core Rulebook. Not a complete class or released rules dataset; see docs/spheres.md.
+INFOTEXT:Thin Incanter and Conscript classes, plus existing optional Spheres data. Load alongside Pathfinder Core Rulebook. External sphere catalogs are incomplete; see docs/incanter-class.md and docs/conscript-class.md for supported and manual behavior.
 ABILITYCATEGORY:spheres_categories.lst
 ABILITYCATEGORY:spheres_categories_incanter.lst
 ABILITY:spheres_core.lst
@@ -17,3 +17,6 @@ ABILITY:spheres_incanter_domains.lst
 ABILITY:spheres_incanter_bloodlines.lst
 ABILITY:spheres_feats.lst
 CLASS:spheres_classes.lst
+CLASS:spheres_conscript_class.lst
+ABILITYCATEGORY:spheres_categories_conscript.lst
+ABILITY:spheres_conscript.lst

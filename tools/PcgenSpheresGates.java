@@ -138,7 +138,8 @@ class PcgenSpheresGates {
         } else {
             require(category == null, "Core-only run unexpectedly loaded Spheres category");
         }
-        for (var name : List.of("SPHERES_CASTER_LEVEL", "SPHERES_MAGIC_TALENTS", "SPHERES_SPELL_POINTS")) {
+        for (var name : List.of("SPHERES_CASTER_LEVEL", "SPHERES_MAGIC_TALENTS", "SPHERES_SPELL_POINTS",
+                "SPHERES_COMBAT_TALENTS", "SPHERES_CONSCRIPT_LEVEL", "SPHERES_CONSCRIPT_BONUS_FEATS")) {
             require(pc.getVariableValue(name, "").intValue() == 0, "Core character gained " + name);
         }
         require(!pc.hasAbilityKeyed(SettingsHandler.getGameAsProperty().get().getAbilityCategory("Special Ability"),
@@ -776,6 +777,96 @@ class PcgenSpheresGates {
         }
     }
 
+    static void favoredBurst(PlayerCharacter pc, boolean save, boolean orc) {
+        var game = SettingsHandler.getGameAsProperty().get();
+        var favored = game.getAbilityCategory("Favored Class");
+        var rewards = game.getAbilityCategory("Favored Class Bonus");
+        var active = game.getAbilityCategory("Incanter Active Specialization");
+        var facade = CharacterManager.getCharacters().iterator().next();
+        var messages = new Messages();
+        var controller = new CharacterAbilities(pc, messages, facade.getDataSet(), new TodoManager());
+        try {
+            var reward = ability(rewards, orc ? "Incanter Orc Movement Burst Uses" : "Incanter Halfling Movement Burst Uses");
+            require(!reward.qualifies(pc, reward), "Burst reward available before favored class");
+            controller.addAbility(favored, ability(favored, "Incanter (Spheres Prototype)"));
+            require(messages.errors.isEmpty(), "Could not favor Incanter");
+            var wrongRace = ability(rewards, orc ? "Incanter Halfling Movement Burst Uses" : "Incanter Orc Movement Burst Uses");
+            require(!wrongRace.qualifies(pc, wrongRace), "Other race's Burst reward qualified");
+            require(!reward.qualifies(pc, reward), "Burst reward available without Destruction specialization");
+            var activation = ability(active, "Active Sphere Specialization (Destruction)");
+            controller.addAbility(active, activation);
+            require(messages.errors.isEmpty(), "Destruction activation rejected");
+            require(reward.qualifies(pc, reward), "Burst reward unavailable after activation");
+            int baseline = pc.getVariableValue("SPHERES_MOVEMENT_BURST_USES", "").intValue();
+            int channel = pc.getVariableValue("SPHERES_CHANNEL_USES", "").intValue();
+            for (int i = 1; i <= 6; i++) {
+                controller.addAbility(rewards, reward);
+                require(messages.errors.isEmpty(), "Burst reward rejected");
+                require(pc.getVariableValue("SPHERES_MOVEMENT_BURST_USES", "").intValue() == baseline + i / 2,
+                        "Burst daily uses incorrect after selection");
+                require(pc.getVariableValue("SPHERES_CHANNEL_USES", "").intValue() == channel,
+                        "Burst reward changed channel daily uses");
+            }
+            if (save) {
+                System.out.println("SPHERES_GATES_OK: " + (orc ? "orc" : "halfling") + "-burst-save");
+                return;
+            }
+            for (int i = 5; i >= 0; i--) {
+                controller.removeAbility(rewards, reward);
+                require(pc.getVariableValue("SPHERES_MOVEMENT_BURST_USES", "").intValue() == baseline + i / 2,
+                        "Burst daily uses incorrect after removal");
+            }
+            controller.removeAbility(active, activation);
+            require(!reward.qualifies(pc, reward), "Burst reward available after removing activation");
+            System.out.println("SPHERES_GATES_OK: " + (orc ? "orc" : "halfling") + "-burst");
+        } finally {
+            controller.closeCharacter();
+        }
+    }
+
+    static void orcAirFavored(PlayerCharacter pc, boolean save) {
+        var game = SettingsHandler.getGameAsProperty().get();
+        var favored = game.getAbilityCategory("Favored Class");
+        var rewards = game.getAbilityCategory("Favored Class Bonus");
+        var active = game.getAbilityCategory("Incanter Active Specialization");
+        var special = game.getAbilityCategory("Special Ability");
+        var facade = CharacterManager.getCharacters().iterator().next();
+        var messages = new Messages();
+        var controller = new CharacterAbilities(pc, messages, facade.getDataSet(), new TodoManager());
+        try {
+            var reward = ability(rewards, "Incanter Orc Lightning Arc Uses");
+            require(!reward.qualifies(pc, reward), "Air reward available before favored class");
+            controller.addAbility(favored, ability(favored, "Incanter (Spheres Prototype)"));
+            require(!reward.qualifies(pc, reward), "Air reward available before domain activation");
+            controller.addAbility(active, ability(active, "Active Cleric Domain (Air)"));
+            require(messages.errors.isEmpty(), "Could not activate Air domain");
+            require(pc.hasAbilityKeyed(special, "Domain Power ~ Lightning Arc"), "Air power not granted");
+            require(reward.qualifies(pc, reward), "Air reward unavailable after activation");
+            int baseline = pc.getVariableValue("LightningArcTimes", "").intValue();
+            int burst = pc.getVariableValue("SPHERES_MOVEMENT_BURST_FAVORED_USES", "").intValue();
+            for (int i = 1; i <= 6; i++) {
+                controller.addAbility(rewards, reward);
+                require(messages.errors.isEmpty(), "Air reward rejected");
+                require(pc.getVariableValue("LightningArcTimes", "").intValue() == baseline + i / 2,
+                        "Lightning Arc uses did not accumulate fractionally");
+                require(pc.getVariableValue("SPHERES_MOVEMENT_BURST_FAVORED_USES", "").intValue() == burst,
+                        "Air reward changed Movement Burst");
+            }
+            if (!save) {
+                for (int i = 5; i >= 0; i--) {
+                    controller.removeAbility(rewards, reward);
+                    require(pc.getVariableValue("LightningArcTimes", "").intValue() == baseline + i / 2,
+                            "Lightning Arc uses did not refund");
+                }
+                controller.removeAbility(active, ability(active, "Active Cleric Domain (Air)"));
+                require(!reward.qualifies(pc, reward), "Air reward qualified after removing domain");
+            }
+            System.out.println("SPHERES_GATES_OK: orc-air-favored" + (save ? "-save" : ""));
+        } finally {
+            controller.closeCharacter();
+        }
+    }
+
     static void gnomeFavored(PlayerCharacter pc, boolean save) {
         var game = SettingsHandler.getGameAsProperty().get();
         var favored = game.getAbilityCategory("Favored Class");
@@ -906,11 +997,81 @@ class PcgenSpheresGates {
         }
     }
 
+    // Thin class acceptance: no sphere, domain, bloodline or companion catalog required.
+    static void classContract(PlayerCharacter pc, boolean reload) {
+        var game = SettingsHandler.getGameAsProperty().get();
+        var bonus = game.getAbilityCategory("Incanter Bonus Feat");
+        var specs = game.getAbilityCategory("Incanter Specialization");
+        var active = game.getAbilityCategory("Incanter Active Specialization");
+        var magic = game.getAbilityCategory("Spheres Magic Talent");
+        int level = pc.getTotalLevels();
+        int points = pc.getVariableValue("SPHERES_INCANTER_SPECIALIZATION_POINTS", "").intValue();
+        int[][] lost = {{}, {1, 10, 20}, {1, 6, 10, 14, 20},
+                {1, 2, 6, 10, 14, 18, 20}, {1, 2, 6, 8, 10, 14, 16, 18, 20},
+                {1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20}};
+        int feats = 1 + level / 2;
+        for (int threshold : lost[points]) {
+            if (level >= threshold) feats--;
+        }
+        require(pc.getTotalAbilityPool(bonus).intValue() == feats, "Class forfeiture table mismatch");
+        require(pc.getAvailableAbilityPool(specs).intValue() == 5 - points, "Class purchase budget mismatch");
+        require(pc.getTotalAbilityPool(active).intValue() == 2 * ((level + 1) / 2), "Activation progression mismatch");
+        for (String variable : List.of("SPHERES_INCANTER_LEVEL", "SPHERES_CASTER_LEVEL", "SPHERES_MAGIC_SKILL_BONUS")) {
+            require(pc.getVariableValue(variable, "").intValue() == level, variable);
+        }
+        require(pc.getVariableValue("SPHERES_CASTING_ABILITY", "").intValue() == 4, "Casting choice not restored");
+        var facade = CharacterManager.getCharacters().iterator().next();
+        var messages = new Messages();
+        var controller = new CharacterAbilities(pc, messages, facade.getDataSet(), new TodoManager());
+        try {
+            var talent = ability(AbilityCategory.FEAT, "Extra Magic Talent");
+            var spellPoints = ability(AbilityCategory.FEAT, "Extra Spell Points");
+            var mysteries = ability(active, "Active Master of Mysteries");
+            boolean ownsMysteries = pc.hasAbilityKeyed(specs, "Master of Mysteries");
+            var generalFeats = pc.getAvailableAbilityPool(AbilityCategory.FEAT);
+            if (!reload) {
+                require(pc.getAvailableAbilityPool(bonus).intValue() == feats, "Fresh bonus pool already spent");
+                if (feats > 0) controller.addAbility(bonus, talent);
+                if (feats > 1) controller.addAbility(bonus, spellPoints);
+                if (ownsMysteries) controller.addAbility(active, mysteries);
+            }
+            require(messages.errors.isEmpty(), "Class selections rejected");
+            require(pc.getTotalAbilityPool(magic).intValue() == 2 + level + (level + 1) / 2 + (feats > 0 ? 1 : 0),
+                    "Class talent progression or saved bonus feat mismatch");
+            require(pc.getVariableValue("SPHERES_SPELL_POINTS", "").intValue() == level + 4 + (feats > 1 ? 2 : 0),
+                    "Class spell pool or saved bonus feat mismatch");
+            require(pc.getAvailableAbilityPool(bonus).intValue() == Math.max(0, feats - 2), "Saved bonus feat spending mismatch");
+            require(pc.getAvailableAbilityPool(AbilityCategory.FEAT).equals(generalFeats), "Class feat leaked into general pool");
+            require(pc.hasAbilityKeyed(active, "Active Master of Mysteries") == ownsMysteries, "Class grant not restored");
+            if (ownsMysteries) {
+                require(pc.getVariableValue("SPHERES_MYSTERIES_ROUNDS", "").intValue() == level + 4, "Class feature resource mismatch");
+            }
+            if (reload) {
+                if (ownsMysteries) controller.removeAbility(active, mysteries);
+                if (feats > 0) controller.removeAbility(bonus, talent);
+                if (feats > 1) controller.removeAbility(bonus, spellPoints);
+                for (String name : List.of("Familiar", "Master of Mysteries", "Channel Energy", "Sphere Specialization (Destruction)")) {
+                    if (pc.hasAbilityKeyed(specs, name)) controller.removeAbility(specs, ability(specs, name));
+                }
+                require(pc.getAvailableAbilityPool(specs).intValue() == 5, "Purchase refund failed after reload");
+                require(pc.getAvailableAbilityPool(bonus).intValue() == 1 + level / 2, "Forfeiture refund failed after reload");
+                require(pc.getTotalAbilityPool(magic).intValue() == 2 + level + (level + 1) / 2, "Talent refund failed after reload");
+                require(pc.getVariableValue("SPHERES_SPELL_POINTS", "").intValue() == level + 4, "Spell pool refund failed after reload");
+                require(pc.getVariableValue("SPHERES_MYSTERIES_ROUNDS", "").intValue() == 0, "Removed feature retained resources");
+            }
+            System.out.println("SPHERES_GATES_OK: class-" + (reload ? "reload" : "save"));
+        } finally {
+            controller.closeCharacter();
+        }
+    }
+
     public static void main(String[] args) throws Exception {
-        require(args.length == 5 || (args.length == 6 && (args[4].equals("sword-save")
+        require(args.length == 5 || (args.length == 6 && (args[4].equals("class-save") || args[4].equals("sword-save")
                 || args[4].equals("human-favored-save") || args[4].equals("aasimar-favored-save")
                 || args[4].equals("tiefling-favored-save") || args[4].equals("gnome-favored-save")
-                || args[4].equals("halfling-favored-save") || args[4].equals("domains-save")
+                || args[4].equals("halfling-favored-save") || args[4].equals("halfling-burst-save")
+                || args[4].equals("orc-burst-save") || args[4].equals("orc-air-favored-save")
+                || args[4].equals("domains-save")
                 || args[4].equals("bloodline-save") || args[4].equals("healer-save")
                 || args[4].equals("half-orc-favored-save"))),
                 "character template output config gate [save] required");
@@ -919,6 +1080,8 @@ class PcgenSpheresGates {
         require(Globals.getPCList().size() == 1, "Expected one character");
         var pc = Globals.getPCList().get(0);
         switch (args[4]) {
+            case "class-save": classContract(pc, false); break;
+            case "class-reload": classContract(pc, true); break;
             case "selection": selection(pc); break;
             case "incanter1": incanter(pc, 1); break;
             case "incanter20": incanter(pc, 20); break;
@@ -953,14 +1116,22 @@ class PcgenSpheresGates {
             case "gnome-favored-save": gnomeFavored(pc, true); break;
             case "halfling-favored": halflingFavored(pc, false); break;
             case "halfling-favored-save": halflingFavored(pc, true); break;
+            case "halfling-burst": favoredBurst(pc, false, false); break;
+            case "halfling-burst-save": favoredBurst(pc, true, false); break;
+            case "orc-burst": favoredBurst(pc, false, true); break;
+            case "orc-burst-save": favoredBurst(pc, true, true); break;
+            case "orc-air-favored": orcAirFavored(pc, false); break;
+            case "orc-air-favored-save": orcAirFavored(pc, true); break;
             case "human-favored-save": talentFavored(pc, false, true); break;
             case "core-only": core(pc, Path.of(args[2] + ".snapshot"), false); break;
             case "core-with-spheres": core(pc, Path.of(args[2] + ".snapshot"), true); break;
             default: throw new IllegalArgumentException("Unknown gate: " + args[4]);
         }
-        if (args[4].equals("sword-save") || args[4].equals("human-favored-save")
+        if (args[4].equals("class-save") || args[4].equals("sword-save") || args[4].equals("human-favored-save")
                 || args[4].equals("aasimar-favored-save") || args[4].equals("tiefling-favored-save")
                 || args[4].equals("gnome-favored-save") || args[4].equals("halfling-favored-save")
+                || args[4].equals("halfling-burst-save") || args[4].equals("orc-burst-save")
+                || args[4].equals("orc-air-favored-save")
                 || args[4].equals("domains-save") || args[4].equals("bloodline-save")
                 || args[4].equals("healer-save") || args[4].equals("half-orc-favored-save")) {
             require(args.length == 6, "Specialized character save path required");

@@ -27,6 +27,7 @@ def check_package(data=DATA):
         "spheres_incanter_sword.lst", "spheres_incanter_favored.lst", "spheres_incanter_domains.lst",
         "spheres_incanter_bloodlines.lst", "spheres_feats.lst",
         "spheres_classes.lst",
+        "spheres_conscript_class.lst", "spheres_categories_conscript.lst", "spheres_conscript.lst",
     }
     if len(set(references)) != len(references) or not required.issubset(references):
         raise ValueError("duplicate or missing required LST reference")

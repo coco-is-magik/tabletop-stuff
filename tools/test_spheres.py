@@ -11,9 +11,41 @@ from pcgen_spheres_gates import FEATURE_GATES, compare_core, run_gate, validate_
 from spheres_progression_fixtures import fixture, expected as progression_expected, TALENTS
 from spheres_incanter_domains import render as render_domains, OUTPUT as DOMAIN_OUTPUT
 from spheres_incanter_bloodlines import render as render_bloodlines, OUTPUT as BLOODLINE_OUTPUT
+from pcgen_incanter_class import class_fixture, expected_chassis, validate_chassis, PURCHASES
 
 
 class SpheresToolTest(unittest.TestCase):
+    def test_incanter_chassis_and_casting_selection(self):
+        text = (DATA / "spheres_classes.lst").read_text()
+        for tag in ("HD:6", "MAXLEVEL:20", "STARTSKILLPTS:4",
+                    "CSKILL:Appraise|TYPE=Craft|Fly|TYPE=Knowledge|Linguistics|TYPE=Profession|Spellcraft",
+                    "AUTO:WEAPONPROF|TYPE=Simple"):
+            self.assertIn(tag, text)
+        self.assertNotIn("AUTO:ARMORPROF", text)
+        categories = (DATA / "spheres_categories.lst").read_text()
+        self.assertIn("POOL:min(1,SPHERES_SPELL_POOL_LEVELS)", categories)
+        core = (DATA / "spheres_core.lst").read_text()
+        self.assertIn("DEFINE:SPHERES_CASTING_ABILITY|INT", core)
+        self.assertIn("BONUS:VAR|SPHERES_CASTING_ABILITY|WIS-INT", core)
+        self.assertIn("BONUS:VAR|SPHERES_CASTING_ABILITY|CHA-INT", core)
+
+    def test_thin_class_acceptance_contract(self):
+        self.assertEqual(len(PURCHASES), 6)
+        for level in range(1, 21):
+            for casting in ("INT", "WIS", "CHA"):
+                for points in range(6):
+                    text = class_fixture(level, casting, points)
+                    self.assertEqual(text.count("ABILITY:Incanter Specialization|"), len(PURCHASES[points]))
+                    self.assertNotIn("KEY:Sorcerer Bloodline", text)
+                expected = expected_chassis(level, casting)
+                validate_chassis("\n".join(f"{key}={value:+d}" for key, value in expected.items()), expected)
+        for args in ((0, "INT", 0), (21, "INT", 0), (1, "STR", 0), (1, "INT", -1), (1, "INT", 6)):
+            with self.assertRaises(ValueError):
+                class_fixture(*args)
+        for invalid in ("", "level=+1\nlevel=+1", "level=|TOTALLEVELS|", "level=+2"):
+            with self.assertRaises(ValueError):
+                validate_chassis(invalid, {"level": 1})
+
     def test_ultimate_admixture_does_not_import_original_alternative(self):
         audit = (ROOT / "docs/incanter-completion-audit.md").read_text()
         self.assertIn("already-owned alternative occurs only in Original", audit)
@@ -39,6 +71,41 @@ class SpheresToolTest(unittest.TestCase):
         self.assertIn("BONUS:VAR|SPHERES_CHANNEL_FAVORED_USES|floor(SPHERES_INCANTER_HALFLING_CHANNEL_COUNT/2)", text)
         channel = (DATA / "spheres_incanter.lst").read_text()
         self.assertEqual(channel.count("BONUS:VAR|SPHERES_CHANNEL_USES|3+SPHERES_CASTING_ABILITY+SPHERES_CHANNEL_FAVORED_USES"), 2)
+
+    def test_halfling_favored_movement_burst_is_independent_of_channel(self):
+        text = (DATA / "spheres_incanter_favored.lst").read_text()
+        burst = next(line for line in text.splitlines() if line.startswith("Incanter Halfling Movement Burst Uses\t"))
+        self.assertIn("PRERACE:1,Halfling", burst)
+        self.assertIn("PREVARGTEQ:SPHERES_INCANTER_FAVORED,1", burst)
+        self.assertIn("PREABILITY:1,CATEGORY=Special Ability,Incanter Movement Burst", burst)
+        self.assertIn("BONUS:VAR|SPHERES_INCANTER_HALFLING_BURST_COUNT|1", burst)
+        self.assertIn("DEFINE:SPHERES_INCANTER_HALFLING_BURST_COUNT|0", text)
+        self.assertIn("BONUS:VAR|SPHERES_MOVEMENT_BURST_FAVORED_USES|floor(SPHERES_INCANTER_HALFLING_BURST_COUNT/2)", text)
+        movement = next(line for line in (DATA / "spheres_incanter.lst").read_text().splitlines()
+                        if line.startswith("Incanter Movement Burst\t"))
+        self.assertIn("DEFINE:SPHERES_MOVEMENT_BURST_FAVORED_USES|0", movement)
+        self.assertIn("BONUS:VAR|SPHERES_MOVEMENT_BURST_USES|3+SPHERES_CASTING_ABILITY+SPHERES_MOVEMENT_BURST_FAVORED_USES", movement)
+        self.assertNotIn("SPHERES_CHANNEL_FAVORED_USES", movement)
+
+    def test_orc_favored_movement_burst_requires_specialization_ability(self):
+        text = (DATA / "spheres_incanter_favored.lst").read_text()
+        reward = next(line for line in text.splitlines() if line.startswith("Incanter Orc Movement Burst Uses\t"))
+        self.assertIn("PRERACE:1,Orc", reward)
+        self.assertIn("PREVARGTEQ:SPHERES_INCANTER_FAVORED,1", reward)
+        self.assertIn("PREABILITY:1,CATEGORY=Special Ability,Incanter Movement Burst", reward)
+        self.assertIn("BONUS:VAR|SPHERES_INCANTER_ORC_BURST_COUNT|1", reward)
+        self.assertIn("DEFINE:SPHERES_INCANTER_ORC_BURST_COUNT|0", text)
+        self.assertIn("BONUS:VAR|SPHERES_MOVEMENT_BURST_FAVORED_USES|floor(SPHERES_INCANTER_ORC_BURST_COUNT/2)", text)
+
+    def test_orc_air_domain_reward_is_independent_of_movement_burst(self):
+        text = (DATA / "spheres_incanter_favored.lst").read_text()
+        reward = next(line for line in text.splitlines() if line.startswith("Incanter Orc Lightning Arc Uses\t"))
+        self.assertIn("PRERACE:1,Orc", reward)
+        self.assertIn("PREABILITY:1,CATEGORY=Special Ability,Domain Power ~ Lightning Arc", reward)
+        self.assertIn("BONUS:VAR|SPHERES_INCANTER_ORC_AIR_COUNT|1", reward)
+        self.assertIn("BONUS:VAR|LightningArcTimes|floor(SPHERES_INCANTER_ORC_AIR_COUNT/2)", text)
+        self.assertIn("Incanter Air Domain Favored Uses", (DATA / "spheres_classes.lst").read_text())
+        self.assertNotIn("SPHERES_INCANTER_ORC_BURST_COUNT", reward)
 
     def test_human_favored_class_bonus_counts_once_per_six(self):
         text = (DATA / "spheres_incanter_favored.lst").read_text()
@@ -104,7 +171,7 @@ class SpheresToolTest(unittest.TestCase):
             "incanter1", "incanter20", "specializations3", "specializations20",
             "domains1", "domains20", "domains-save", "bloodline1", "bloodline20", "bloodline-save", "healer-save",
             "destruction1", "destruction3", "destruction8", "destruction20",
-            "sword1", "sword5", "sword20", "sword-save", "human-favored", "half-elf-favored", "human-favored-save", "elf-favored", "dwarf-favored", "aasimar-favored", "aasimar-favored-save", "tiefling-favored", "tiefling-favored-save", "gnome-favored", "gnome-favored-save", "halfling-favored", "halfling-favored-save", "half-orc-favored", "half-orc-favored-save",
+            "sword1", "sword5", "sword20", "sword-save", "human-favored", "half-elf-favored", "human-favored-save", "elf-favored", "dwarf-favored", "aasimar-favored", "aasimar-favored-save", "tiefling-favored", "tiefling-favored-save", "gnome-favored", "gnome-favored-save", "halfling-favored", "halfling-favored-save", "halfling-burst", "halfling-burst-save", "orc-burst", "orc-burst-save", "orc-air-favored", "orc-air-favored-save", "half-orc-favored", "half-orc-favored-save",
         ))
 
     def test_local_pcgen_runtime_fallback(self):

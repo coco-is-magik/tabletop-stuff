@@ -102,14 +102,23 @@ they are experimental and have not been fitted to Pathfinder character careers.
 
 ## Dependencies and boundaries
 
-### New phase: Spheres PCGen prototype
+### Incanter class — thin scope
+
+Conscript is also available under the same class-only boundary. Implementation,
+manual external-option limits and real-PCGen checks:
+`/bigdisk/programming/pathfinder1e/docs/conscript-class.md`.
+
+The active deliverable is the Incanter class, not a complete Spheres rules library.
+Class acceptance and commands:
+`/bigdisk/programming/pathfinder1e/docs/incanter-class.md`.
+The extended-package inventory below does not define class completion.
 
 The first-party source at `/bigdisk/programming/pathfinder1e/data/spheres`
 contains an incomplete Incanter/Destruction slice. Incanter now has level 1-20
 base progression, mental casting choices, bonus-feat support, several
 specializations, Core domain/bloodline adapters, Admixture, Destruction
-specialization and Sword Birth data. Conscript and Spheres of Might are not
-implemented. Most Spheres of Power content is still missing.
+specialization and Sword Birth data. Conscript's thin class is implemented;
+Spheres of Might catalogs are not. Most Spheres of Power content is still missing.
 On the ThinkPad only, patched offline PCGen source compilation is verified with
 the private JDK at `/home/danbo/.local/lib/jvm/temurin-16.0.2+7`. The targeted
 Incanter 1/INT18, Incanter 2/INT18 and Incanter 1/INT7 fixtures load Core + Spheres,
@@ -121,7 +130,7 @@ also pass via PCGen's production selection controller. Run
 Broad upstream tests, GUI and packaging are not
 current gates; do not debug `datatest` to proceed. The standalone dice-pool tool
 remains unchanged. Current implementation status, exact compile command,
-acceptance fixtures, and the explicit Incanter remaining checklist:
+acceptance fixtures, and historical extended-package inventory:
 `/bigdisk/programming/pathfinder1e/docs/spheres.md`.
 
 ```sh

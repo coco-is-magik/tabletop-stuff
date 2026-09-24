@@ -9,7 +9,7 @@ FEATURE_GATES = (
     "incanter1", "incanter20", "specializations3", "specializations20",
     "domains1", "domains20", "domains-save", "bloodline1", "bloodline20", "bloodline-save", "healer-save",
     "destruction1", "destruction3", "destruction8", "destruction20",
-    "sword1", "sword5", "sword20", "sword-save", "human-favored", "half-elf-favored", "human-favored-save", "elf-favored", "dwarf-favored", "aasimar-favored", "aasimar-favored-save", "tiefling-favored", "tiefling-favored-save", "gnome-favored", "gnome-favored-save", "halfling-favored", "halfling-favored-save", "half-orc-favored", "half-orc-favored-save",
+    "sword1", "sword5", "sword20", "sword-save", "human-favored", "half-elf-favored", "human-favored-save", "elf-favored", "dwarf-favored", "aasimar-favored", "aasimar-favored-save", "tiefling-favored", "tiefling-favored-save", "gnome-favored", "gnome-favored-save", "halfling-favored", "halfling-favored-save", "halfling-burst", "halfling-burst-save", "orc-burst", "orc-burst-save", "orc-air-favored", "orc-air-favored-save", "half-orc-favored", "half-orc-favored-save",
 )
 
 
@@ -40,7 +40,7 @@ def run_gate(gate):
     work = workspace()
     fixture = ROOT / "testdata/spheres/incanter1-int18.pcg"
     template = ROOT / "data/spheres/spheres_export.txt"
-    if gate in ("human-favored", "half-elf-favored", "human-favored-save", "elf-favored", "dwarf-favored", "aasimar-favored", "aasimar-favored-save", "tiefling-favored", "tiefling-favored-save", "gnome-favored", "gnome-favored-save", "halfling-favored", "halfling-favored-save", "half-orc-favored", "half-orc-favored-save"):
+    if gate in ("human-favored", "half-elf-favored", "human-favored-save", "elf-favored", "dwarf-favored", "aasimar-favored", "aasimar-favored-save", "tiefling-favored", "tiefling-favored-save", "gnome-favored", "gnome-favored-save", "halfling-favored", "halfling-favored-save", "halfling-burst", "halfling-burst-save", "orc-burst", "orc-burst-save", "orc-air-favored", "orc-air-favored-save", "half-orc-favored", "half-orc-favored-save"):
         fixture = work / f"{gate}.pcg"
         text = progression_fixture(6)
         if gate == "half-elf-favored":
@@ -50,9 +50,18 @@ def run_gate(gate):
             text += "ABILITY:Incanter Specialization|TYPE:NORMAL|CATEGORY:Incanter Specialization|KEY:Sorcerer Bloodline (Aberrant)\n"
         if gate == "elf-favored":
             text = text.replace("RACE:Human\n", "RACE:Elf\n")
-        if gate in ("halfling-favored", "halfling-favored-save"):
+        if gate in ("halfling-favored", "halfling-favored-save", "halfling-burst", "halfling-burst-save"):
             text = text.replace("RACE:Human\n", "RACE:Halfling\n")
-            text += "ABILITY:Incanter Specialization|TYPE:NORMAL|CATEGORY:Incanter Specialization|KEY:Channel Energy\n"
+            text += ("ABILITY:Incanter Specialization|TYPE:NORMAL|CATEGORY:Incanter Specialization|KEY:"
+                     + ("Sphere Specialization (Destruction)" if gate.startswith("halfling-burst") else "Channel Energy") + "\n")
+        if gate in ("orc-burst", "orc-burst-save"):
+            text = text.replace("RACE:Human\n", "RACE:Orc\n")
+            text = text.replace("CAMPAIGN:Core Rulebook|", "CAMPAIGN:support ~ orc race|CAMPAIGN:Core Rulebook|")
+            text += "ABILITY:Incanter Specialization|TYPE:NORMAL|CATEGORY:Incanter Specialization|KEY:Sphere Specialization (Destruction)\n"
+        if gate in ("orc-air-favored", "orc-air-favored-save"):
+            text = text.replace("RACE:Human\n", "RACE:Orc\n")
+            text = text.replace("CAMPAIGN:Core Rulebook|", "CAMPAIGN:support ~ orc race|CAMPAIGN:Core Rulebook|")
+            text += "ABILITY:Incanter Specialization|TYPE:NORMAL|CATEGORY:Incanter Specialization|KEY:Cleric Domain (Air)\n"
         if gate == "dwarf-favored":
             text = text.replace("RACE:Human\n", "RACE:Dwarf\n")
         if gate in ("gnome-favored", "gnome-favored-save"):
@@ -130,14 +139,14 @@ def run_gate(gate):
                f"-Dpcgen.config={work}", "-cp", cp + ":" + str(work),
                "pcgen.gui2.facade.PcgenSpheresGates", str(fixture),
                str(template), str(output), "config.ini", gate]
-    if gate in ("sword-save", "human-favored-save", "aasimar-favored-save", "tiefling-favored-save", "gnome-favored-save", "halfling-favored-save", "domains-save", "bloodline-save", "healer-save", "half-orc-favored-save"):
+    if gate in ("sword-save", "human-favored-save", "aasimar-favored-save", "tiefling-favored-save", "gnome-favored-save", "halfling-favored-save", "halfling-burst-save", "orc-burst-save", "orc-air-favored-save", "domains-save", "bloodline-save", "healer-save", "half-orc-favored-save"):
         command.append(str(work / "saved.pcg"))
     print(f"PCGen {gate} evidence: {work}", flush=True)
     with log.open("a", encoding="utf-8") as stream:
         subprocess.run(command, cwd=work, stdin=subprocess.DEVNULL,
                        stdout=stream, stderr=subprocess.STDOUT, timeout=90, check=True)
     validate_gate(log, gate)
-    if gate in ("sword-save", "human-favored-save", "aasimar-favored-save", "tiefling-favored-save", "gnome-favored-save", "halfling-favored-save", "domains-save", "bloodline-save", "healer-save", "half-orc-favored-save"):
+    if gate in ("sword-save", "human-favored-save", "aasimar-favored-save", "tiefling-favored-save", "gnome-favored-save", "halfling-favored-save", "halfling-burst-save", "orc-burst-save", "orc-air-favored-save", "domains-save", "bloodline-save", "healer-save", "half-orc-favored-save"):
         saved = work / "saved.pcg"
         if not saved.is_file():
             raise ValueError(f"PCGen did not save specialized {gate} character")
@@ -163,8 +172,26 @@ def run_gate(gate):
             expected_values["spell_points"] += 1
         if gate == "gnome-favored-save":
             expected_values["destruction_dc"] += 1
+        if gate in ("halfling-burst-save", "orc-burst-save"):
+            expected_values["destruction_cl"] += 1
+            expected_values["blast_dice"] += 1
+            expected_values["boosted_blast_dice"] += 1
+        if gate == "orc-burst-save":
+            # The vendored Orc's Intelligence penalty reduces this fixture's
+            # casting modifier; the favored reward itself changes only uses.
+            expected_values["casting_modifier"] -= 1
+            expected_values["destruction_dc"] -= 1
+            expected_values["spell_points"] -= 1
+        if gate == "orc-air-favored-save":
+            expected_values["casting_modifier"] -= 1
+            expected_values["destruction_dc"] -= 1
+            expected_values["spell_points"] -= 1
         validate_result(reloaded, reload_log, expected_values)
-        validate_selection(reload_log)
+        if gate in ("halfling-burst-save", "orc-burst-save"):
+            if "SPHERES_SELECTION_OK: Destruction Sphere, Searing Blast; spent=1" not in reload_log.read_text(encoding="utf-8"):
+                raise ValueError("Free Destruction sphere was not restored")
+        else:
+            validate_selection(reload_log)
         if f"SPHERES_SPECIALIZATION_OK: {gate}" not in reload_log.read_text(encoding="utf-8"):
             raise ValueError("Missing specialized save/reload evidence")
     return output
@@ -196,6 +223,15 @@ def main():
         if args.gate == "halfling-favored-save":
             run_gate(args.gate)
             print("PASS: Halfling channel energy favored uses survive save/reload")
+        if args.gate in ("halfling-burst", "halfling-burst-save"):
+            run_gate(args.gate)
+            print(f"PASS: {args.gate} Movement Burst favored uses")
+        if args.gate in ("orc-burst", "orc-burst-save"):
+            run_gate(args.gate)
+            print(f"PASS: {args.gate} Movement Burst favored uses")
+        if args.gate in ("orc-air-favored", "orc-air-favored-save"):
+            run_gate(args.gate)
+            print(f"PASS: {args.gate} Lightning Arc favored uses")
         if args.gate == "aasimar-favored":
             run_gate(args.gate)
             print("PASS: Aasimar favored Spellcraft bonus, race restriction and removal")

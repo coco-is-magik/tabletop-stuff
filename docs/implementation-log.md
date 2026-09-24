@@ -1,5 +1,49 @@
 # Implementation log
 
+## 2026-09-23 — Thin Conscript class
+
+Added separate Conscript class/categories/features to the existing campaign,
+without changing Incanter data. Added class skills and practitioner choices,
+talent/feat progression, specialization forfeiture and ten bounded specialization
+implementations. External talents/traditions/sphere specializations are explicitly
+manual records, not claimed sphere automation. Added PCGen controller round-trip
+and refund coverage and all-level Python fixture tests. Exact evidence and limits:
+`/bigdisk/programming/pathfinder1e/docs/conscript-class.md`.
+
+## 2026-09-23 — Thin Incanter class completion
+
+Superseded the extended-source completion contract with the user's class-only
+scope. Preserved existing class/campaign keys and optional data. No new spheres,
+domains, bloodlines, favored-race options or external subsystems were added.
+Existing class data already supplies the thin chassis; added a dedicated real-PCGen
+acceptance runner for BAB/saves, casting/resource progression, all six specialization
+budget tiers, bonus feat effects, class grants, save/reload and post-reload refunds.
+Verified levels 1/5/10/20 across INT/WIS/CHA and budgets 0–5, plus existing feat,
+specialization, low-INT and Core isolation gates. Exact cases and timeout exclusions:
+`/bigdisk/programming/pathfinder1e/docs/incanter-class.md`.
+
+## 2026-09-23 — Orc Movement Burst favored choice
+
+Added the Orc favored-class choice for the Destruction specialization's
+Movement Burst, distinct from Halfling's choice. Two selections add one daily
+use; eligibility requires the Orc race and the granted ability. Controller
+gates cover prerequisites, race isolation, accumulation and removal; a
+save/reload gate checks six selections, three added uses and the free
+Destruction sphere. The Orc fixture's Intelligence penalty reduces its casting
+modifier, spell points and Destruction DC independently of this reward.
+Other eligible Orc specialization and domain abilities remain unimplemented.
+
+## 2026-09-23 — Halfling Movement Burst favored choice
+
+Added a separate Halfling favored-class reward for the Destruction specialization's
+Movement Burst (3 + casting modifier uses/day). Two selections add one use; the
+reward requires the granted ability and does not change Channel Energy uses.
+PCGen controller gates verify availability, fractional accumulation, removal and
+Channel Energy isolation; a specialized character save/reload gate verifies the
+chosen ability, six reward selections, three extra uses and the free Destruction
+sphere. The existing Channel Energy choice and Destruction gate remain unchanged.
+Other eligible Halfling abilities and the remainder of Incanter are incomplete.
+
 ## 2026-09-23 — Favored-class regression follow-up
 
 PCGen's `getTotalBonusTo` reports a double; corrected the Aasimar gate's
