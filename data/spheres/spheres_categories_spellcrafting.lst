@@ -1,0 +1,3 @@
+# Ultimate Spellcrafting: learned spells do not require the creation feat.
+ABILITYCATEGORY:Spheres Spell Repertoire	CATEGORY:Spheres Spell Repertoire	EDITABLE:YES	EDITPOOL:NO	FRACTIONALPOOL:NO	VISIBLE:QUALIFY	POOL:max(0,SPHERES_CASTING_ABILITY)	PLURAL:Spell Repertoire	DISPLAYLOCATION:Spheres
+ABILITYCATEGORY:Spheres Spell Acquisition	CATEGORY:Spheres Spell Acquisition	EDITABLE:YES	EDITPOOL:NO	FRACTIONALPOOL:NO	VISIBLE:QUALIFY	POOL:0	PLURAL:Completed Spell Learning or Research	DISPLAYLOCATION:Spheres

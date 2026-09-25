@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "spells": [
+    {
+      "name": "Restoring Shield",
+      "base_sphere": "Protection",
+      "components": [
+        {"kind": "sphere", "key": "Protection Sphere", "effect": "Deflection aegis", "spell_points": 1},
+        {"kind": "sphere", "key": "Life Sphere", "effect": "Cure", "spell_points": 1}
+      ],
+      "changes": ["additional_effect"],
+      "duration_cost_adjustment": 0,
+      "review": "Published Ultimate example. Full-round action, touch, no save, spell resistance applies. Research takes two days in the published example. Acquisition still requires GM approval and completed downtime.",
+      "effect": "Apply a Deflection aegis for 10 minutes per base caster level and cure the target once when applied. Resolve both sphere effects at the table."
+    }
+  ]
+}

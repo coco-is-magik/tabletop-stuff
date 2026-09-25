@@ -9,6 +9,9 @@ INFOTEXT:Power and Might base classes with source-table progressions and partial
 ABILITYCATEGORY:spheres_categories.lst
 ABILITYCATEGORY:spheres_categories_incanter.lst
 ABILITY:spheres_core.lst
+ABILITYCATEGORY:spheres_categories_spellcrafting.lst
+ABILITY:spheres_spellcrafting_feats.lst
+ABILITY:spheres_custom_spells.lst
 ABILITYCATEGORY:spheres_categories_traditions.lst
 ABILITY:spheres_traditions.lst
 ABILITYCATEGORY:spheres_categories_traits.lst

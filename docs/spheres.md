@@ -1,5 +1,13 @@
 # Spheres PCGen prototype — current handoff
 
+## Spellcrafting — 2026-09-25
+
+An initial custom-spell recipe compiler, acquisition/repertoire records and
+Spellcrafting feat chain are present. This is partial support, not complete
+Spellcrafting automation. See
+`/nas/contents/Projects/Programming Projects/Java/tabletop-stuff/docs/spheres-spellcrafting.md`
+for supported checks, usage and live PCGen verification results.
+
 ## Base classes — 2026-09-24
 
 Incanter and Conscript retain their thin-class contracts. Elementalist remains
