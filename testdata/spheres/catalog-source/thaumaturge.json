@@ -1,0 +1,733 @@
+{
+  "url": "https://spheresofpower.wikidot.com/thaumaturge",
+  "retrieved": "2026-09-24",
+  "sha256": "52a5f9d7b8cb076c414ad611a8bfef03ec318c125d95faf728803d57d0a783d9",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Class Features Weapon and Armor Training Casting Spell Pool Magic Talents Forbidden Lore Invocations Lingering Blessing Lingering Pain Meditation Empowered Attack Empowered Defense Channel Punishment Defensive Invocation Item Lore Soulfire Empowered Resistance Flexible Caster Rebuke Death Occult Knowledge Bonus Feats Master Invoker Favored Class Bonuses Thaumaturge Feats Extra Invocations Extra Magic Talent Extra Spell Points Forbidden Totem Master Artisan Master Of Cosmos Master Of Death Master Of Faerie Occult Aptitude [SM\u2014] Occult Savant Moderated Invocation [3PP] Sphere Focus Tainted Manabond [Alienist HB] Totem Of The Darkest Aberration Totem Of The Deepest Curse Archetypes Devourer Ebonmage [DRS] Eldritch Cultist Experimentalist Gambler [CS/3PP] Genius Knight of Willpower Martial Thaumaturge [CS] Pact Master Pactmage Savant Soulfire Master Unseen Horror Void Gazer Wild Mage DRS Thaumaturge Class Features [DRS] Class Equipment Invoker\u2019s Crystal [TS:WAT] Scroll Of Lost Lore [TS:WAT]\nUltimate\nOriginal\nUltimate Spheres of Power $29.99 The Thaumaturge is willing to go places most other casters wouldn\u2019t dare to tread. Their agreements give them access to ancient and forbidden knowledge, and they\u2019re capable of using it to great effect. Each Thaumaturge chooses their own pursuit, and they often specialize in a handful of potent powers. Role: A thaumaturge is a focused caster, often choosing at most one or two specialty spheres and using those specialties in ways no other caster could.\nAlignment: Any\nHit Die: d8\nStarting Wealth: 3d6 x 10 gp (average 105 gp). In addition, each character begins play with an outfit worth 10 gp or less.\nClass Skills: The thaumaturge\u2019s class skills are Craft (Int), Diplomacy (Cha), Disguise (Cha), Fly (Dex), Heal (Wis), Intimidate (Cha), Knowledge (all) (Int), Linguistics (Int), Perform (Cha), Profession (Wis), Sense Motive (Wis), Spellcraft (Int), Use Magic Device (Cha).\nSkill Ranks Per Level: 4 + Int modifier."
+    },
+    {
+      "level": 1,
+      "heading": "Class Features",
+      "anchor": "toc0",
+      "text": "Table: The Thaumaturge | Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Caster Level | Magic Talents\n| 1st | +0 | +0 | +0 | +2 | Casting, forbidden lore (+2), invocations, spell pool | +1 | 0 (+2)\n| 2nd | +1 | +0 | +0 | +3 | Occult knowledge +1 | +2 | 1\n| 3rd | +2 | +1 | +1 | +3 | Invocations | +3 | 1\n| 4th | +3 | +1 | +1 | +4 | Bonus feat | +4 | 2\n| 5th | +3 | +1 | +1 | +4 | Forbidden lore (+3) | +5 | 2\n| 6th | +4 | +2 | +2 | +5 | Occult knowledge +2 | +6 | 3\n| 7th | +5 | +2 | +2 | +5 | Invocations | +7 | 3\n| 8th | +6/+1 | +2 | +2 | +6 | Bonus feat | +8 | 4\n| 9th | +6/+1 | +3 | +3 | +6 | Forbidden lore (+4) | +9 | 4\n| 10th | +7/+2 | +3 | +3 | +7 | Occult knowledge +3 | +10 | 5\n| 11th | +8/+3 | +3 | +3 | +7 | Invocations | +11 | 5\n| 12th | +9/+4 | +4 | +4 | +8 | Bonus feat | +12 | 6\n| 13th | +9/+4 | +4 | +4 | +8 | Forbidden lore (+5) | +13 | 6\n| 14th | +10/+5 | +4 | +4 | +9 | Occult knowledge +4 | +14 | 7\n| 15th | +11/+6/+1 | +5 | +5 | +9 | Invocations | +15 | 7\n| 16th | +12/+7/+2 | +5 | +5 | +10 | Bonus feat | +16 | 8\n| 17th | +12/+7/+2 | +5 | +5 | +10 | Forbidden lore (+6) | +17 | 8\n| 18th | +13/+8/+3 | +6 | +6 | +11 | Occult knowledge +5 | +18 | 9\n| 19th | +14/+9/+4 | +6 | +6 | +11 | Invocations | +19 | 9\n| 20th | +15/+10/+5 | +6 | +6 | +12 | Bonus feat, master invoker | +20 | 10"
+    },
+    {
+      "level": 2,
+      "heading": "Weapon and Armor Training",
+      "anchor": "toc1",
+      "text": "A thaumaturge is proficient with all simple weapons and light armor."
+    },
+    {
+      "level": 2,
+      "heading": "Casting",
+      "anchor": "toc2",
+      "text": "A thaumaturge may combine spheres and talents to create magical effects. A thaumaturge is considered a High-Caster. (Note: All casters gain 2 bonus talents and a casting tradition the first time they gain the casting class feature.)"
+    },
+    {
+      "level": 2,
+      "heading": "Spell Pool",
+      "anchor": "toc3",
+      "text": "A thaumaturge gains a small reservoir of energy he can call on to create truly wondrous effects, called a spell pool. This pool contains a number of spell points equal to his class level + his casting ability modifier (minimum 1). This pool replenishes once per day after roughly 8 hours of rest."
+    },
+    {
+      "level": 2,
+      "heading": "Magic Talents",
+      "anchor": "toc4",
+      "text": "A thaumaturge gains a magic talent at 2nd level and every 2 levels thereafter, according to Table: The Thaumaturge."
+    },
+    {
+      "level": 2,
+      "heading": "Forbidden Lore",
+      "anchor": "toc5",
+      "text": "Thaumaturges use bargains, secrets, and dangerous magical practices to push their casting to greater heights than their more careful contemporaries achieve. A thaumaturge may, as part of the action required to use a spell or sphere effect, increase his caster level by 2 for that effect.\nThis applies to variables dependent on a particular casting of an effect (damage, duration, number of targets etc.), but it does not apply to the caster\u2019s total caster level with that sphere (i.e., it does not determine the strength of a companion from the Conjuration sphere, nor to the total number of Hit Dice of reanimated creatures that may be controlled through the Death sphere). This bonus increases by +1 at 5th level, and by an additional +1 for every 4 levels thereafter to a maximum of +6 at 17th level.\nWhenever a thaumaturge uses forbidden lore to enhance their magic, there is a 15% chance the thaumaturge will suffer backlash; the spell or sphere effect does not manifest, and any spell slot or spell points spent are lost. In addition, the thaumaturge suffers a -1 penalty to attack rolls, saving throws, skill checks, and to their effective caster level (minimum 1), which lasts until he rests to regain spell points. This penalty is cumulative; every time the thaumaturge suffers backlash in a day, these penalties increase by 1."
+    },
+    {
+      "level": 2,
+      "heading": "Invocations",
+      "anchor": "toc6",
+      "text": "Thaumaturges control power in its purest form; whether through bargains with outsiders, the summoning of primal spirits, or simply an untamable spark in their soul, a thaumaturge can invoke a limited amount of truly wondrous power.\nA thaumaturge may use invocations a number of times per day equal to his casting ability modifier + 1/2 his class level, which refreshes when he rests to regain spell points. Whenever an invocation calls for a saving throw, the DC is equal to 10 + 1/2 his thaumaturge\u2019s level + his thaumaturge\u2019s casting ability modifier. A thaumaturge may only use invocations of his level or lower. Using an invocation is a free action that may be taken even when it is not the thaumaturge\u2019s turn, but the thaumaturge cannot use multiple invocations as part of the same saving throw, check, or use of forbidden lore."
+    },
+    {
+      "level": 4,
+      "heading": "Lingering Blessing",
+      "anchor": "toc7",
+      "text": "At 1st level, when using forbidden lore to augment a spell or sphere effect, the thaumaturge may use an invocation to cause the affected targets to gain 1 temporary hit point per thaumaturge level for 1 round per thaumaturge level."
+    },
+    {
+      "level": 4,
+      "heading": "Lingering Pain",
+      "anchor": "toc8",
+      "text": "At 1st level, when using forbidden lore to augment a spell or sphere effect, the thaumaturge may use an invocation to cause the affected targets to become sickened for 1 round (Fortitude negates)."
+    },
+    {
+      "level": 4,
+      "heading": "Meditation",
+      "anchor": "toc9",
+      "text": "At 1st level, the thaumaturge may reroll a failed Knowledge check. The thaumaturge may only use this ability once for any given Knowledge check."
+    },
+    {
+      "level": 4,
+      "heading": "Empowered Attack",
+      "anchor": "toc10",
+      "text": "At 3rd level, when using forbidden lore to augment a spell or sphere effect, the thaumaturge may use an invocation to grant himself a bonus to attack rolls equal to his forbidden lore bonus for a number of rounds equal to his casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Empowered Defense",
+      "anchor": "toc11",
+      "text": "At 3rd level, when using forbidden lore to augment a spell or sphere effect, the thaumaturge may use an invocation to grant himself a dodge bonus to AC equal to his forbidden lore bonus for a number of rounds equal to his casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Channel Punishment",
+      "anchor": "toc12",
+      "text": "At 7th level, if the thaumaturge suffers backlash when using forbidden lore, he may use an invocation to pass the penalty off to another creature within 30 feet. If that creature is unwilling, they are allowed a Will save to negate this effect. On a successful save, the thaumaturge suffers the effect of the backlash as normal."
+    },
+    {
+      "level": 4,
+      "heading": "Defensive Invocation",
+      "anchor": "toc13",
+      "text": "At 7th level, before attempting a saving throw, the thaumaturge may use an invocation to add his forbidden lore bonus to the roll."
+    },
+    {
+      "level": 4,
+      "heading": "Item Lore",
+      "anchor": "toc14",
+      "text": "At 11th level, the thaumaturge may use an invocation to add his forbidden lore bonus to the caster level of a spell-completion or spell-trigger magic item he is wielding for 1 round. This bonus only functions while the item is being wielded by the thaumaturge."
+    },
+    {
+      "level": 4,
+      "heading": "Soulfire",
+      "anchor": "toc15",
+      "text": "At 11th level, when the thaumaturge suffers backlash from using forbidden lore, he may use an invocation to empower himself. He gains a bonus to attack rolls, saving throws, and a dodge bonus to AC equal to his forbidden lore bonus for a number of rounds equal to his casting ability modifier. This does not negate the penalty gained through the backlash itself."
+    },
+    {
+      "level": 4,
+      "heading": "Empowered Resistance",
+      "anchor": "toc16",
+      "text": "At 15th level, if the thaumaturge succeeds at a saving throw against an attack that has a reduced effect on a successful save, he may use an invocation to negate the effect entirely."
+    },
+    {
+      "level": 4,
+      "heading": "Flexible Caster",
+      "anchor": "toc17",
+      "text": "At 15th level, the thaumaturge may use an invocation to gain use of a single magic talent of his choice for 1 minute. He must meet the prerequisites (if any) and he can gain a base sphere he does not already possess with this ability. A thaumaturge may only have one use of flexible caster active at any one time; using this invocation again replaces the previous use."
+    },
+    {
+      "level": 4,
+      "heading": "Rebuke Death",
+      "anchor": "toc18",
+      "text": "At 19th level, when the thaumaturge is reduced to 0 hit points or fewer, the thaumaturge may use two of his remaining invocations to instead be reduced to 1 hit point. Effects that kill the thaumaturge outright without dealing hit point damage are not affected by this ability."
+    },
+    {
+      "level": 2,
+      "heading": "Occult Knowledge",
+      "anchor": "toc19",
+      "text": "At 2nd level, a thaumaturge gains a +1 bonus to all Knowledge checks, Spellcraft checks, and Use Magic Device checks. This bonus increases by 1 for every 4 additional thaumaturge levels possessed, to a maximum of +5 at 18th level."
+    },
+    {
+      "level": 2,
+      "heading": "Bonus Feats",
+      "anchor": "toc20",
+      "text": "At 4th level and every 4 levels thereafter, a thaumaturge gains a bonus feat. This may be spent to gain an extra magic talent, or any feat which has casting as a prerequisite (item creation feats, metamagic feats, Sphere Focus, Circle Casting, etc.)."
+    },
+    {
+      "level": 2,
+      "heading": "Master Invoker",
+      "anchor": "toc21",
+      "text": "At 20th level, the thaumaturge selects two invocations other than rebuke death; he may use these invocations at will without using one of his invocations per day."
+    },
+    {
+      "level": 1,
+      "heading": "Favored Class Bonuses",
+      "anchor": "toc22",
+      "text": "Aasimar: Increase the temporary hit points granted by lingering blessing by +1/2.\nAlraun: +1/6 to forbidden lore (or similar ability) bonus when using the Mind sphere.\nCecaelia: +1/6 to forbidden lore (or similar ability) bonus when using the (water) package of the Nature sphere.\nCherufe: +1/8 forbidden lore (or similar ability) bonus when casting sphere effects with the fire descriptor. (Note: All Nature sphere (fire) geomancing abilities have the fire descriptor.)\nCreated: +1/6 to forbidden lore (or similar ability) bonus when using the Creation sphere.\nCuazaj: +1/8 forbidden lore (or similar ability) bonus when casting sphere effects with the electricity descriptor.\nDwarf: Increase the duration of empowered defense by 1/4 of a round.\nElf: +1/6 bonus to the thaumaturge\u2019s occult knowledge bonuses.\nFenghuang: +1/8 forbidden lore (or similar ability) bonus when using the Weather sphere.\nGnome: Reduce the thaumaturge\u2019s forbidden lore backlash percent chance by 1/4 of a percent.\nGoblin: Gain +1/4 of a spell point.\nHalf-elf: Gain +1/6 of a bonus magic talent.\nHalf-orc: Increase the duration of empowered defense by 1/4 of a round.\nHalfling: Gain +1/4 of a daily use of invocations.\nHuman: Increase the thaumaturge\u2019s forbidden lore bonus by +1/8, but increase the backlash percentage chance by 5% for every 8 times this is gained.\nLeshy: +1/8 forbidden lore (or similar ability) bonus when using the (plantlife) package of the Nature sphere.\nMerfolk: Increase the save DCs of the thaumaturge\u2019s invocations by +1/6.\nOrc: Whenever the thaumaturge uses the Nature sphere to deal damage (for example, increasing a fire\u2019s size or using a tree to pummel a target), increase the damage dealt by +1/2.\nSidhier: +1/8 forbidden lore (or similar ability) bonus when using the Fallen Fey sphere.\nSkinwalker: +1/8 to forbidden lore (or similar ability) bonus when using the Alteration sphere.\nTiefling: Increase the duration of the lingering pain invocation by 1/4 of a round."
+    },
+    {
+      "level": 1,
+      "heading": "Thaumaturge Feats",
+      "anchor": "toc23",
+      "text": "The following feats are particularly appropriate or useful for thaumaturges."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Invocations",
+      "anchor": "toc24",
+      "text": "Prerequisite: Invocations class feature.\nBenefit: Increase the number of times per day you may use invocations by 2. You may take this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Magic Talent",
+      "anchor": "toc25",
+      "text": "Prerequisite: Basic Magic Training or casting class feature.\nBenefit: Gain an additional sphere or a talent from a sphere you possess. You may take this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Spell Points",
+      "anchor": "toc26",
+      "text": "Prerequisite: Spell pool.\nBenefit: Your spell pool total increases by 2. You may gain this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Forbidden Totem",
+      "anchor": "toc27",
+      "text": "Prerequisites: War sphere, forbidden lore class feature.\nBenefit: Whenever you successfully use forbidden lore with a totem, all allies within the totem receive a morale bonus equal to your base forbidden lore bonus to one of the following, chosen by you when you create the totem: attack rolls, damage rolls, AC, saving throws, ability checks, skill checks, magic skill checks, or CMB and CMD. Bonuses to your forbidden lore bonus do not increase this bonus. Multiple totems can give allies multiple bonuses, but two similar bonuses do not stack."
+    },
+    {
+      "level": 4,
+      "heading": "Master Artisan",
+      "anchor": "toc28",
+      "text": "Prerequisites: Forbidden lore class feature, any item creation feat.\nBenefit: Choose one item creation feat that you possess. Add your forbidden lore bonus to your caster level or MSB when meeting prerequisites or determining how powerful of an enchantment you may place upon an item."
+    },
+    {
+      "level": 4,
+      "heading": "Master Of Cosmos",
+      "anchor": "toc29",
+      "text": "Prerequisites: Conjuration sphere, forbidden lore class feature.\nBenefit: Your companions gain a circumstance bonus to attack rolls and skill checks equal to your forbidden lore bonus."
+    },
+    {
+      "level": 4,
+      "heading": "Master Of Death",
+      "anchor": "toc30",
+      "text": "Prerequisites: Death sphere, forbidden lore class feature.\nBenefit: Add your forbidden lore bonus to your caster level when determining the number and power of undead creatures you may control at any one time through the Death sphere."
+    },
+    {
+      "level": 4,
+      "heading": "Master Of Faerie",
+      "anchor": "toc31",
+      "text": "Prerequisites: Fallen Fey sphere (Summon Fairy (fey-blessing)), forbidden lore class feature.\nBenefit: Add your forbidden lore bonus to your caster level when determining the total Hit Dice of fey creatures you may have summoned at one time."
+    },
+    {
+      "level": 4,
+      "heading": "Occult Aptitude [SM\u2014]",
+      "anchor": "toc32",
+      "text": "Source: Baron\u2019s Uncanny Gateway\nYou are exceptionally skilled at prying into dangerous or forbidden information. Prerequisites: Knowledge (arcana) 3 ranks, Knowledge (dungeoneering) 3 ranks, or Knowledge (planes) 3 ranks; Study sphere.\nBenefits: You can begin a theory as a free action whenever you successfully identify the effects of a curse or identify a creature as an aberration. If you do so, the theory begins with one notion.\nYou add the following methods of gaining a notion to your theories: +You or an ally successfully uses an Occult Skill Unlock to find information about the subject of your theory. +The subject of your theory causes a creature you perceive (including yourself) to take strain damage.\nYou add the following breakthroughs to your theories:\nBreakthrough: When you would take strain damage or ability damage to one of your mental ability scores, you can spend any amount of notions to reduce the amount of damage taken by 1 per notion spent (to a minimum of 0).\nBreakthrough: Whenever you cast a spellcrafted spell or technique that you do not meet the prerequisites for, you may spend any number of notions. For every notion spent, the chance of a mishap is reduced by 5% to a minimum of 0%.\nBreakthrough: Whenever you would suffer backlash from the forbidden lore class feature or a similar thaumaturge class feature, you may spend 3 notions to negate the backlash."
+    },
+    {
+      "level": 4,
+      "heading": "Occult Savant",
+      "anchor": "toc33",
+      "text": "Prerequisites: Spellcraft 10 ranks, Use Magic Device 10 ranks or any Knowledge skill 10 ranks; occult knowledge class feature.\nBenefit: You may take 10 with any Knowledge, Spellcraft, or Use Magic Device check, regardless of stress or other situations where taking 10 would otherwise be impossible."
+    },
+    {
+      "level": 4,
+      "heading": "Moderated Invocation [3PP]",
+      "anchor": "toc34",
+      "text": "Source: Expanded Spheres: Baron's Lost Apocrypha\nPrerequisites: Forbidden Lore or Strain class feature\nBenefit: When you use Forbidden Lore or strain, you may choose to gain a smaller bonus than normal from these class features, to a minimum of +1 to caster level or base attack bonus.\nWhenever you use Forbidden Lore and the sum of your normal caster level (before applying implement bonuses and any other temporary CL increases) and your forbidden lore bonus would not exceed your character level +\u00bd your maximum forbidden lore bonus, you do not have any chance of backlash on the forbidden lore use. Whenever you use Strain and your total base attack bonus does not exceed your character level +\u00bd your maximum strain bonus, you do not become fatigued."
+    },
+    {
+      "level": 4,
+      "heading": "Sphere Focus",
+      "anchor": "toc35",
+      "text": "Prerequisite: Casting class feature.\nBenefit: Choose a sphere. You gain a +1 bonus to saving throw DCs for all abilities from that sphere. You may take this feat multiple times. The effects do not stack. Each time it is gained, apply this benefit to a different sphere."
+    },
+    {
+      "level": 4,
+      "heading": "Tainted Manabond [Alienist HB]",
+      "anchor": "toc36",
+      "text": "Prerequisites: Mana sphere, forbidden lore class feature.\nBenefit: You may create a tainted manabond as a manabond. When an ally that you have a tainted manabond with uses a sphere ability, you may allow them to benefit from your forbidden lore class feature as a free action even if it is not your turn. A creature may refuse this benefit if they so wish. If backlash occurs, it affects only you, but the ability still fails if triggering backlash would cause it to fail. A sphere ability can only benefit from forbidden lore once."
+    },
+    {
+      "level": 4,
+      "heading": "Totem Of The Darkest Aberration",
+      "anchor": "toc37",
+      "text": "Prerequisites: War sphere, forbidden lore class feature.\nBenefit: You must spend a spell point to create a totem of the darkest aberration. When an ally within this totem uses a sphere ability, you may use an immediate action to allow them to benefit from your forbidden lore class feature. If backlash occurs, it affects only you, but the ability still fails. A sphere ability can only benefit from forbidden lore once."
+    },
+    {
+      "level": 4,
+      "heading": "Totem Of The Deepest Curse",
+      "anchor": "toc38",
+      "text": "Prerequisites: War sphere, forbidden lore class feature.\nBenefit: You must spend 2 spell points to create a totem of the deepest curse. The area of this totem is desecrated with the aberrations you commune with. Enemies within this totem suffer the effects you currently suffer from due to any backlash you have accumulated."
+    },
+    {
+      "level": 1,
+      "heading": "Archetypes",
+      "anchor": "toc39",
+      "text": "The following are archetypes that thaumaturges can take."
+    },
+    {
+      "level": 2,
+      "heading": "Devourer",
+      "anchor": "toc40",
+      "text": "Devourers can use their forbidden lore immediately after consuming power from enemies, but suffer a greater chance of backlash the rest of the time."
+    },
+    {
+      "level": 2,
+      "heading": "Ebonmage [DRS]",
+      "anchor": "toc41",
+      "text": "An ebonmage is talented perfection, warlocks and magi which reach into the darkness of this world to wield for their own. This archetype uses the Polished Dark sphere rework."
+    },
+    {
+      "level": 2,
+      "heading": "Eldritch Cultist",
+      "anchor": "toc42",
+      "text": "Eldritch cultists may become confused by their knowledge, but also gain the Divination sphere."
+    },
+    {
+      "level": 2,
+      "heading": "Experimentalist",
+      "anchor": "toc43",
+      "text": "Experimentalists can create useful alchemic brews using their forbidden alchemy."
+    },
+    {
+      "level": 2,
+      "heading": "Gambler [CS/3PP]",
+      "anchor": "toc44",
+      "text": "The Gambler is a martial combatant with a focus on chance."
+    },
+    {
+      "level": 2,
+      "heading": "Genius",
+      "anchor": "toc45",
+      "text": "Geniuses are particularly adept at using skills, along with a small amount of martial ability. Though officially an archetype, it is presented as a class due to the significant number of changes to the entire class."
+    },
+    {
+      "level": 2,
+      "heading": "Knight of Willpower",
+      "anchor": "toc46",
+      "text": "Knights of willpower can receive a truly incredible boost to their power, but also have a great chance of backlash."
+    },
+    {
+      "level": 2,
+      "heading": "Martial Thaumaturge [CS]",
+      "anchor": "toc47",
+      "text": "Martial thaumaturges can access the combat spheres, although they're not as focused on it as Savants."
+    },
+    {
+      "level": 2,
+      "heading": "Pact Master",
+      "anchor": "toc48",
+      "text": "Pact masters can summon a powerful companion to aid them."
+    },
+    {
+      "level": 2,
+      "heading": "Pactmage",
+      "anchor": "toc49",
+      "text": "Pactmages form bargains and agreements with powerful creatures or outsiders."
+    },
+    {
+      "level": 2,
+      "heading": "Savant",
+      "anchor": "toc50",
+      "text": "The Savant is the martial version of the Thaumaturge. Though officially an archetype, it is presented as a class on its own page because it is different on almost every level."
+    },
+    {
+      "level": 2,
+      "heading": "Soulfire Master",
+      "anchor": "toc51",
+      "text": "Soulfire masters can burn their own endurance to cast powerful magics."
+    },
+    {
+      "level": 2,
+      "heading": "Unseen Horror",
+      "anchor": "toc52",
+      "text": "Unseen horrors can control invisible, mindless forces."
+    },
+    {
+      "level": 2,
+      "heading": "Void Gazer",
+      "anchor": "toc53",
+      "text": "Void gazers can use the Dark sphere to cloud the sight of foes."
+    },
+    {
+      "level": 2,
+      "heading": "Wild Mage",
+      "anchor": "toc54",
+      "text": "The Wild Mage realizes that raw magic is difficult to control without risk - so they throw caution to the wind in return for pure power."
+    },
+    {
+      "level": 2,
+      "heading": "DRS Thaumaturge Class Features [DRS]",
+      "anchor": "toc55",
+      "text": "This page contains new or alternative class features for thaumaturge published by DRS."
+    },
+    {
+      "level": 1,
+      "heading": "Class Equipment",
+      "anchor": "toc56",
+      "text": "The following magical items are especially appropriate for thaumaturges. The savant archetype is functionally its own class, so magical items for the savant are included on its page instead."
+    },
+    {
+      "level": 4,
+      "heading": "Invoker\u2019s Crystal [TS:WAT]",
+      "anchor": "toc57",
+      "text": "Aura moderate Universal; CL 9th Slot none; Price 15,000 gp; Weight 1/2 lbs.\nThese crystals come in countless combinations of colors and shapes, but each glows from within with a faint light that illuminates the user\u2019s square to dim light if it is darker in their square. Any magical darkness effect (or similar power) automatically succeeds in snuffing this light, but the crystal\u2019s light can only be covered by other effects, not permanently extinguished, as long as the crystal itself exists. When a creature with the invocations class feature fails at something they used an invocation on (such as failing a saving throw after using defensive invocation on it), an invoker\u2019s crystal gains one charge. The GM is the final arbiter of what counts as failure. A creature with the invocations class feature can expend five charges from an invoker\u2019s crystal when they use an invocation to double the bonus for that invocation. This works on invocations that have variable, numeric benefits, but not on those with fixed effects (such as empowered resistance). An invoker\u2019s crystal can store up to 9 charges.\nConstruction Requirements Craft Apparatus, Mana sphere, creator must have the invocations class feature; Cost 7,500 gp"
+    },
+    {
+      "level": 4,
+      "heading": "Scroll Of Lost Lore [TS:WAT]",
+      "anchor": "toc58",
+      "text": "Aura moderate Divination; CL 7th Slot none; Price 9,000 gp; Weight 2 lbs.\nThis tightly-wrapped scroll comes in a case of cold iron decorated with delicate silver filigree. When a creature with the occult knowledge class feature carries this scroll, it whispers into their thoughts and allows them to take 10 on all Knowledge and Spellcraft checks, even during times they would not normally be able to.\nConstruction Requirements Craft Apparatus, Divination sphere, creator must have the occult knowledge class feature; Cost 4,500 gp\nSpheres of Power $19.99 The Thaumaturge is willing to go places most other casters wouldn't dare to tread. Their agreements give them access to ancient and forbidden knowledge, and they're capable of using it to great effect. Each Thaumaturge chooses their own pursuit, and they often specialize in a handful of potent powers. Role: A thaumaturge is a focused caster, often choosing at most one or two specialties, but using those specialties in ways no other caster could. A thaumaturge\u2019s role depends on what spheres and talents he chooses, and as such a thaumaturge could deal damage, heal allies, or manipulate enemies with equal ability.\nAlignment: Any\nHit Die: d8\nStarting Wealth: 3d6 x 10 gp (average 105 gp). In addition, each character begins play with an outfit worth 10 gp or less.\nClass Skills: The thaumaturge\u2019s class skills are Craft (Int), Disguise (Cha), Diplomacy (Cha), Fly (Int), Heal (Wis), Intimidate (Cha), Knowledge (all; Int), Linguistics (Int), Perform (Cha), Profession (Wis), Sense Motive (Wis), Spellcraft (Int), Use Magic Device (Cha).\nSkill Ranks Per Level: 4 + Int modifier."
+    },
+    {
+      "level": 1,
+      "heading": "Class Features",
+      "anchor": "",
+      "text": "Table: The Thaumaturge | Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Caster Level | Magic Talents\n| 1 | 0 | +0 | +0 | +2 | Forbidden lore (+2), invocations | +1 | 0 (+2)\n| 2 | +1 | +0 | +0 | +3 | Occult knowledge +1 | +2 | 1\n| 3 | +2 | +1 | +1 | +3 | Invocations | +3 | 1\n| 4 | +3 | +1 | +1 | +4 | Bonus feat | +4 | 2\n| 5 | +3 | +1 | +1 | +4 | Forbidden lore (+3) | +5 | 2\n| 6 | +4 | +2 | +2 | +5 | Occult knowledge +2 | +6 | 3\n| 7 | +5 | +2 | +2 | +5 | Invocations | +7 | 3\n| 8 | +6/+1 | +2 | +2 | +6 | Bonus feat | +8 | 4\n| 9 | +6/+1 | +3 | +3 | +6 | Forbidden lore (+4) | +9 | 4\n| 10 | +7/+2 | +3 | +3 | +7 | Occult knowledge +3 | +10 | 5\n| 11 | +8/+3 | +3 | +3 | +7 | Invocations | +11 | 5\n| 12 | +9/+4 | +4 | +4 | +8 | Bonus feat | +12 | 6\n| 13 | +9/+4 | +4 | +4 | +8 | Forbidden lore (+5) | +13 | 6\n| 14 | +10/+5 | +4 | +4 | +9 | Occult knowledge +4 | +14 | 7\n| 15 | +11/+6/+1 | +5 | +5 | +9 | Invocations | +15 | 7\n| 16 | +12/+7/+2 | +5 | +5 | +10 | Bonus feat | +16 | 8\n| 17 | +12/+7/+2 | +5 | +5 | +10 | Forbidden lore (+6) | +17 | 8\n| 18 | +13/+8/+3 | +6 | +6 | +11 | Occult knowledge +5 | +18 | 9\n| 19 | +14/+9/+4 | +6 | +6 | +11 | Invocations | +19 | 9\n| 20 | +15/+10/+5 | +6 | +6 | +12 | Bonus feat, master invoker | +20 | 10"
+    },
+    {
+      "level": 2,
+      "heading": "Weapon and Armor Training",
+      "anchor": "",
+      "text": "A thaumaturge is proficient with all simple weapons and light armor."
+    },
+    {
+      "level": 2,
+      "heading": "Casting",
+      "anchor": "",
+      "text": "A thaumaturge may combine spheres and talents to create magical effects. A thaumaturge is considered a High-Caster. He may use either Intelligence, Wisdom, or Charisma as his casting ability modifier and must make this choice at 1st level. Once made, this choice cannot be changed. (Note: All casters gain 2 bonus talents and may select a casting tradition the first time they gain the casting class feature.)"
+    },
+    {
+      "level": 2,
+      "heading": "Spell Pool",
+      "anchor": "",
+      "text": "A thaumaturge gains a small reservoir of energy he can call on to create truly wondrous effects, called a spell pool. This pool contains a number of spell points equal to his level + his casting ability modifier (minimum: 1). This pool replenishes once per day after roughly 8 hours of rest."
+    },
+    {
+      "level": 2,
+      "heading": "Magic Talents",
+      "anchor": "",
+      "text": "A thaumaturge gains a magic talent at 2nd level and every 2 levels thereafter, according to Table: Thaumaturge."
+    },
+    {
+      "level": 2,
+      "heading": "Forbidden Lore",
+      "anchor": "",
+      "text": "Thaumaturges use bargains, secrets, and dangerous magical practices to push their casting to greater heights than their more careful contemporaries achieve. A thaumaturge may, as part of the action required to use a spell or sphere effect, increase his caster level by 2 for that effect. This applies to variables dependent on a particular casting of an effect (damage, duration, number of targets etc.), but it does not apply to the caster\u2019s total caster level with that sphere (i.e., it does not determine the strength of a companion from the Conjuration sphere, nor to the total number of HD of reanimated creatures that may be controlled through the Death sphere). This bonus increases by +1 at 5th level, and by an additional +1 for every 4 levels thereafter to a maximum of +6 at 17th level.\nWhenever a thaumaturge uses forbidden lore to enhance their magic, there is a 15% chance the thaumaturge will suffer backlash; the spell or sphere effect does not manifest, and any spell slot or spell points spent are lost. In addition, the thaumaturge suffers a -1 penalty to attack rolls, saving throws, skill checks, and to their effective caster level (minimum: 1), which lasts until he rests to regain spell points. This penalty is cumulative; every time the thaumaturge suffers backlash in a day, these penalties increase by 1."
+    },
+    {
+      "level": 2,
+      "heading": "Invocations",
+      "anchor": "",
+      "text": "Thaumaturges control power in its purest form; whether through bargains with outsiders, the summoning of primal spirits, or simply an untamable spark in their soul, a thaumaturge can invoke a limited amount of truly wondrous power.\nA thaumaturge may use invocations a number of times per day equal to his casting ability modifier, which refreshes when he rests to regain spell points. Whenever an invocation calls for a saving throw, the DC is equal to 10 + 1/2 the thaumaturge\u2019s level + the thaumaturge\u2019s casting ability modifier. A thaumaturge may only use invocations of his level or lower. Using an invocation is a free action that may be taken even when it isn't the Thaumaturge's turn."
+    },
+    {
+      "level": 4,
+      "heading": "Meditation",
+      "anchor": "",
+      "text": "At 1st level, the thaumaturge may reroll a failed Knowledge check. The thaumaturge may only use this ability once for any given Knowledge check."
+    },
+    {
+      "level": 4,
+      "heading": "Lingering Pain",
+      "anchor": "",
+      "text": "At 1st level, when using forbidden lore to augment a spell or sphere effect, the thaumaturge may use an invocation to cause the affected targets to become sickened for 1 round (Fortitude negates)."
+    },
+    {
+      "level": 4,
+      "heading": "Lingering Blessing",
+      "anchor": "",
+      "text": "At 1st level, when using forbidden lore to augment a spell or sphere effect, the thaumaturge may use an invocation to cause the affected targets to gain 1 temporary hit point per thaumaturge level. These temporary hit points stack with any the target already possesses, and last for 1 round."
+    },
+    {
+      "level": 4,
+      "heading": "Empowered Defense",
+      "anchor": "",
+      "text": "At 3rd level, when using forbidden lore to augment a spell or sphere effect, the thaumaturge may use an invocation to grant himself a dodge bonus to AC equal to his forbidden lore bonus for a number of rounds equal to his casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Empowered Attack",
+      "anchor": "",
+      "text": "At 3rd level, when using forbidden lore to augment a spell or sphere effect, the thaumaturge may use an invocation to grant himself a bonus to attack rolls equal to his forbidden lore bonus for a number of rounds equal to his casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Channel Punishment",
+      "anchor": "",
+      "text": "At 7th level, if the thaumaturge suffers backlash when using forbidden lore, he may use an invocation to pass the penalty off to another creature within 30 ft. If that creature is unwilling, they are allowed a Will save to negate this effect. On a successful save, the thaumaturge suffers the effect of the backlash as normal."
+    },
+    {
+      "level": 4,
+      "heading": "Defensive Invocation",
+      "anchor": "",
+      "text": "At 7th level, before making a saving throw, the thaumaturge may use an invocation to add his forbidden lore bonus to the roll."
+    },
+    {
+      "level": 4,
+      "heading": "Soulfire",
+      "anchor": "",
+      "text": "At 11th level, when the thaumaturge suffers backlash from using forbidden lore, he may use an invocation to empower himself. He gains a bonus to attack rolls, saving throws, and a dodge bonus to AC equal to his forbidden lore bonus for a number of rounds equal to his casting ability modifier. This does not negate the penalty gained through the backlash itself."
+    },
+    {
+      "level": 4,
+      "heading": "Item Lore",
+      "anchor": "",
+      "text": "At 11th level, the thaumaturge may use an invocation to add his forbidden lore bonus to the caster level of a spell-completion or spell-trigger magic item he is wielding for 1 round. This bonus only functions while the item is being wielded by the thaumaturge."
+    },
+    {
+      "level": 4,
+      "heading": "Empowered Resistance",
+      "anchor": "",
+      "text": "At 15th level, if the thaumaturge successfully makes a saving throw against an attack that has a reduced effect on a successful save, he may use an invocation to negate the effect entirely."
+    },
+    {
+      "level": 4,
+      "heading": "Flexible Caster",
+      "anchor": "",
+      "text": "At 15th level, the thaumaturge may use an invocation to gain use of a single magic talent of his choice for 1 minute. A thaumaturge may only have one use of flexible caster active at any one time; using this invocation again replaces the previous use."
+    },
+    {
+      "level": 4,
+      "heading": "Rebuke Death",
+      "anchor": "",
+      "text": "At 19th level, when the thaumaturge is reduced to 0 hit points or fewer, the thaumaturge may use all his remaining invocations to instead be reduced to 1 hit point. Effects that kill the thaumaturge outright without dealing hit point damage are not affected by this ability."
+    },
+    {
+      "level": 2,
+      "heading": "Occult Knowledge",
+      "anchor": "",
+      "text": "At 2nd level, a thaumaturge gains a +1 bonus to all Knowledge checks, Spellcraft checks, and Use Magic Device checks. This bonus increases by 1 for every 4 additional thaumaturge levels possessed, to a maximum of +5 at 18th level."
+    },
+    {
+      "level": 2,
+      "heading": "Bonus Feats",
+      "anchor": "",
+      "text": "At 4th level and every 4 levels thereafter, a thaumaturge gains a bonus feat. This may be spent to gain an extra magic talent, or any feat which has casting as a prerequisite (Craft Item feats, Metamagic feats, Sphere Focus, Circle Casting, etc.)."
+    },
+    {
+      "level": 2,
+      "heading": "Master Invoker",
+      "anchor": "",
+      "text": "At 20th level, the thaumaturge selects two invocations other than rebuke death; he may use these invocations at will without using one of his invocations per day."
+    },
+    {
+      "level": 1,
+      "heading": "Feats",
+      "anchor": "",
+      "text": "The following feats are particularly relevant or appropriate for Thaumaturges."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Invocations [Core]",
+      "anchor": "",
+      "text": "Prerequisite: Invocations class feature.\nBenefit: Increase the number of times per day you may use Invocations by 2. You may take this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Magic Talent [Core]",
+      "anchor": "",
+      "text": "Prerequisite: Basic Magic Training or Casting class feature.\nBenefit: Gain an additional sphere or a talent from a sphere you possess. You may take this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Spell Points [Core]",
+      "anchor": "",
+      "text": "Prerequisite: Spell Pool.\nBenefit: Your spell pool total increases by 2. You may gain this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Unseen Augmentation (Unseen Horror only)",
+      "anchor": "",
+      "text": "Prerequisites: Unseen Forces class feature\nBenefit: You gain an additional unseen augmentation for which you qualify. You may take this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Forbidden Totem",
+      "anchor": "",
+      "text": "Prerequisites: War sphere, forbidden lore class feature.\nBenefit: Whenever you successfully use forbidden lore with a totem, all allies within the totem receive a morale bonus equal to your base forbidden lore bonus to one of the following, chosen by you when you create the totem: attack rolls, damage rolls, AC, saving throws, skill checks, magic skill checks, or CMB and CMD. Bonuses to your forbidden lore bonus do not increase this bonus. Multiple totems can give allies multiple bonuses, but two similar bonuses do not stack."
+    },
+    {
+      "level": 4,
+      "heading": "Master Artisan [Core]",
+      "anchor": "",
+      "text": "Prerequisites: Forbidden lore class feature, at least 1 item creation feat.\nBenefit: Choose one item creation feat that you possess. Add your forbidden lore bonus to your caster level when determining how powerful of an enchantment you may place upon an item."
+    },
+    {
+      "level": 4,
+      "heading": "Master of Blood",
+      "anchor": "",
+      "text": "Prerequisites: Forbidden lore class feature, Extract Blood Construct.\nBenefit: Add your forbidden lore bonus to your caster level when determining the number of Hit Dice of blood constructs you may control at any one time through the Extract Blood Construct talent. Blood constructs created this way gain a bonus to natural attack damage equal to your forbidden lore bonus."
+    },
+    {
+      "level": 4,
+      "heading": "Master of Cosmos [Core]",
+      "anchor": "",
+      "text": "Prerequisites: Forbidden lore class feature, Conjuration sphere.\nBenefit: Your companions gain a circumstance bonus to attack rolls and skill checks equal to your forbidden lore bonus."
+    },
+    {
+      "level": 4,
+      "heading": "Master of Death [Core]",
+      "anchor": "",
+      "text": "Prerequisites: Forbidden lore class feature, Death sphere.\nBenefit: Add your forbidden lore bonus to your caster level when determining the number of undead creatures you may control at any one time through the Death sphere."
+    },
+    {
+      "level": 4,
+      "heading": "Master of Faerie [Fey HB]",
+      "anchor": "",
+      "text": "Prerequisites: Fallen Fey sphere, Summon Fairy, forbidden lore class feature.\nBenefit: Add your forbidden lore bonus to your caster level when determining the total Hit Dice of fey creatures you may have summoned at one time."
+    },
+    {
+      "level": 4,
+      "heading": "Occult Savant [Core]",
+      "anchor": "",
+      "text": "Prerequisites: Occult Knowledge class feature, Spellcraft, Use Magic Device, or any Knowledge skill 10 ranks.\nBenefit: You may take 10 with any Knowledge, Spellcraft, or Use Magic Device check, regardless of stress or other situations where taking 10 would otherwise be impossible."
+    },
+    {
+      "level": 4,
+      "heading": "Totem of the Darkest Aberration",
+      "anchor": "",
+      "text": "Prerequisites: War sphere, forbidden lore class feature.\nBenefit: You must spend a spell point to create a totem of the darkest aberration. When an ally within this totem uses a sphere ability, you may use an immediate action to allow them to benefit from your forbidden lore class feature. If backlash occurs, it affects only you, but the ability still fails. A sphere ability can only benefit from forbidden lore once."
+    },
+    {
+      "level": 4,
+      "heading": "Totem of the Deepest Curse",
+      "anchor": "",
+      "text": "Prerequisites: War sphere, forbidden lore class feature.\nBenefit: You must spend a spell point to create a totem of the deepest curse. The area of this totem is desecrated with the aberrations you commune with. Enemies within this totem must make a Will save or they suffer the effects you currently suffer from due to any backlash you have accumulated."
+    },
+    {
+      "level": 1,
+      "heading": "Favored Class Bonuses",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Aasimar",
+      "anchor": "",
+      "text": "Increase the temporary hit points granted by Lingering Blessing by +1/2."
+    },
+    {
+      "level": 4,
+      "heading": "Dwarf",
+      "anchor": "",
+      "text": "Increase the duration of Empowered Defense by 1/4th of a round."
+    },
+    {
+      "level": 4,
+      "heading": "Elf",
+      "anchor": "",
+      "text": "+1/6 bonus to the thaumaturge\u2019s Occult Knowledge bonuses."
+    },
+    {
+      "level": 4,
+      "heading": "Gnome",
+      "anchor": "",
+      "text": "Reduce the thaumaturge\u2019s Forbidden Lore backlash percent chance by 1/4th of a percent."
+    },
+    {
+      "level": 4,
+      "heading": "Goblin",
+      "anchor": "",
+      "text": "Gain +1/4th of a spell point."
+    },
+    {
+      "level": 4,
+      "heading": "Half-Elf",
+      "anchor": "",
+      "text": "Gain +1/6th of a bonus magic talent."
+    },
+    {
+      "level": 4,
+      "heading": "Half-orc",
+      "anchor": "",
+      "text": "Increase the duration of Empowered Offense by 1/4th of a round."
+    },
+    {
+      "level": 4,
+      "heading": "Halfling",
+      "anchor": "",
+      "text": "Gain +1/4th of a daily use of Invocations."
+    },
+    {
+      "level": 4,
+      "heading": "Human",
+      "anchor": "",
+      "text": "Increase the thaumaturge\u2019s Forbidden Lore bonus by +1/8, but increase the backlash percentage chance by 5% for every 8 times this is gained."
+    },
+    {
+      "level": 4,
+      "heading": "Merfolk",
+      "anchor": "",
+      "text": "Increase the save DCs of the thaumaturge\u2019s Invocations by +1/6."
+    },
+    {
+      "level": 4,
+      "heading": "Orc",
+      "anchor": "",
+      "text": "Whenever the thaumaturge uses the Nature sphere to deal damage (for example, increasing a fire\u2019s size or using a tree to pummel a target), increase the damage dealt by +1/2."
+    },
+    {
+      "level": 4,
+      "heading": "Tiefling",
+      "anchor": "",
+      "text": "Increase the duration of the Lingering Pain Invocation by 1/4th of a round."
+    },
+    {
+      "level": 1,
+      "heading": "Archetypes",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "-Old Devourer",
+      "anchor": "",
+      "text": "A devourer has a higher chance of a backlash from using their Forbidden Lore skill during normal times, but can use it with no chance of backlash at all after they steal some of a foe's energy."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Eldritch Cultist",
+      "anchor": "",
+      "text": "The Eldritch Cultist has no chance of losing their magic, but may become confused as their minds tap into dangerous knowledge. They also gain some talent with Divination to help them understand more of the world around them."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Experimentalist",
+      "anchor": "",
+      "text": "The experimentalist exchanges their forbidden knowledge for the secrets of alchemy, as well as the ability to gain power from consuming parts of other creatures. (Alternate options are available for those concerned about the morality of this.)"
+    },
+    {
+      "level": 2,
+      "heading": "-Old Knight of Willpower",
+      "anchor": "",
+      "text": "Knights of Willpower focus on creating items through sheer force of will, and are particularly specialized in the Creation, Light, and Telekinesis spheres."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Pactmage",
+      "anchor": "",
+      "text": "The Pactmage has a partnership with some kind of outsider, which grants them unique invocations in return for the loss of their occult knowledge."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Pact Master",
+      "anchor": "",
+      "text": "The Pact Master trades most of their casting power for the ability to call and control extraplanar creatures."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Savant [Core]",
+      "anchor": "",
+      "text": "The Savant is a martial practitioner that trades their casting abilities for a more direct way of harming their foes."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Soulfire Master",
+      "anchor": "",
+      "text": "The Soulfire Master accepts damage to their vitality to ensure their spells finish correctly, eventually growing more adept at doing so."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Unseen Horror",
+      "anchor": "",
+      "text": "The Unseen Horror is the master of a lurking force that hovers around them, and they can eventually learn to improve its powers so it can help them in new ways."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Void Gazer",
+      "anchor": "",
+      "text": "The Void Gazer gains mastery of the Dark sphere, though at the cost of some of their sight."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Wild Mage",
+      "anchor": "",
+      "text": "The Wild Mage realizes that raw magic is difficult to control without risk - so they throw caution to the wind in return for pure power.\nArchetype Compatibility | | Weapon & Armor Proficiencies | Magic Talents | Forbidden Lore | Invocations | Occult Knowledge | Bonus Feats | Master Invoker\n| Devourer | | | M | | | |\n| Eldritch Cultist | | | M | | | |\n| Experimentalist | | M | X | X | X | M |\n| Pactmage | | | | | X | |\n| Savant | M | X | X | X | X | X | X\n| Soulfire Master | | | M1 | | | M |\n| Unseen Horror | | | | | | M |\n| Void Gazer | | | M | M | | |\nGuide: M = Modifies, X = Replaces, Blank = No Change 1: Unlike most modifications made by archetypes, the change made by the Soulfire Master to its Forbidden Lore feature does stack with other archetypes that change the backlash risk.\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

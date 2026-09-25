@@ -1,0 +1,8 @@
+{
+  "Combat Healer": ["CSKILL:Heal"],
+  "Maneuver Trained": ["BONUS:COMBAT|CMB|1|TYPE=Trait"],
+  "Bountiful Charm": ["CSKILL:Diplomacy"],
+  "Scarred by War": ["CSKILL:Intimidate"],
+  "Impersonator": ["CSKILL:Bluff"],
+  "Guardian Of The Real": ["CSKILL:Knowledge (Planes)"]
+}

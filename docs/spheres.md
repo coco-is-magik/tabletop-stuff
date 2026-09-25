@@ -1,5 +1,22 @@
 # Spheres PCGen prototype — current handoff
 
+## Base classes — 2026-09-24
+
+Incanter and Conscript retain their thin-class contracts. Elementalist remains
+**partial**; see `/bigdisk/programming/pathfinder1e/docs/elementalist-class.md`.
+The remaining 17 Power/Might base classes now have source-table level 1–20
+records and limited class-specific choice support. They are **not** full
+mechanical implementations: see `/bigdisk/programming/pathfinder1e/docs/spheres-classes.md`
+for tested behavior and the substantial manual adjudication boundary. Do not
+treat source descriptions or free-text slots as automated combat mechanics.
+
+## Custom traditions — 2026-09-24
+
+Custom casting and martial tradition builders now have selectable records; supported
+choices and manual boundaries are documented in
+`/bigdisk/programming/pathfinder1e/docs/spheres-traditions.md`.
+They are not a complete tradition catalog or an enforcement engine.
+
 ## Feat catalog — 2026-09-24
 
 1,201 source feat names are inventoried, with selected mechanical implementations
@@ -548,8 +565,11 @@ unverified until run separately.
 3. Build human prototype Incanters at levels 1 and 2 with final INT 18, then a
    level-1 case with final INT 7. Use ordinary progression rules, no equipment,
    traits, specializations, or external CL bonuses. Select Destruction first.
+
    Verify the other three talents are unavailable without it, become selectable
    with it, cost one each, and cannot be selected twice. Check pool remaining.
+   Selectable Spheres character traits are documented separately in
+   `docs/spheres-traits.md` (partial automation and manual approvals).
 4. Save/reload and export through `spheres_export.txt`. Compare to the corresponding
    case in `/bigdisk/programming/pathfinder1e/testdata/spheres/expected.json` using
    the first-party verifier. The export exposes total talent budget, not remaining

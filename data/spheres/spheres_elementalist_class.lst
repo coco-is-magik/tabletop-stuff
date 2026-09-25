@@ -1,0 +1,10 @@
+# Elementalist: https://spheresofpower.wikidot.com/elementalist (2026-09-24).
+CLASS:Elementalist	HD:8	TYPE:Base.PC	MAXLEVEL:20	STARTSKILLPTS:4	CSKILL:Acrobatics|Bluff|Climb|TYPE=Craft|Escape Artist|Fly|Intimidate|Knowledge (Arcana)|Knowledge (Nature)|Knowledge (Planes)|Perception|TYPE=Profession|Spellcraft|Stealth|Survival|Swim	BONUS:COMBAT|BASEAB|floor(CL*3/4)|TYPE=Base.REPLACE	BONUS:SAVE|BASE.Fortitude,BASE.Reflex,BASE.Will|2+floor(CL/2)	DEFINE:SPHERES_ELEMENTALIST_LEVEL|0	BONUS:VAR|SPHERES_ELEMENTALIST_LEVEL|CL	BONUS:VAR|SPHERES_CASTER_LEVEL,SPHERES_MAGIC_SKILL_BONUS|floor(CL*3/4)	BONUS:VAR|SPHERES_SPELL_POOL_LEVELS|CL	BONUS:VAR|SPHERES_MAGIC_TALENTS|floor(CL*3/4)
+1	ABILITY:Special Ability|AUTOMATIC|Spheres Casting Core|Elementalist Weave Energy|Elementalist Favored Class	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|Weapon Prof ~ Martial|Armor Prof ~ Light
+2	ABILITY:Special Ability|AUTOMATIC|Evasion|Elementalist Combat Feats
+3	ABILITY:Special Ability|AUTOMATIC|Elementalist Favored Element Choices
+4	ABILITY:Special Ability|AUTOMATIC|Elementalist Dodge Bonus
+5	ABILITY:Special Ability|AUTOMATIC|Elementalist Defense
+7	ABILITY:Special Ability|AUTOMATIC|Elementalist Movement Choices
+11	ABILITY:Special Ability|AUTOMATIC|Improved Evasion
+20	ABILITY:Special Ability|AUTOMATIC|Elementalist Energy Body

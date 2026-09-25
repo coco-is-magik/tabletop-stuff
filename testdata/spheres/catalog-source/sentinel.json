@@ -1,0 +1,259 @@
+{
+  "url": "https://spheresofpower.wikidot.com/sentinel",
+  "retrieved": "2026-09-24",
+  "sha256": "2633c9cd0a36d514e9f2a17d3b2ee870f85a50da7ca94b12535a4ad236cd57f4",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Class Abilities Combat Training Defender\u2019s Soul Guardian Challenge (Ex) Sentinel\u2019s Reserve (Ex) Wise Reflexes (Ex) Guard Wall (Ex) Dedicated Defense (Ex) Second Wind (Ex) Sentinel\u2019s Imposition (Ex) Opportunistic Offense (Ex) Counter Critical (Ex) Defender\u2019s Determination (Ex) Deathless Challenge (Ex) Stalwart (Ex) Empowering Challenge (Ex) Sentinel\u2019s Wrath (Ex) Sentinel\u2019s Poise (Ex) Eternal Challenge (Ex) Instant Challenge (Ex) Diamond Aegis (Ex) Sentinel\u2019s Surge (Ex) Invincible Soul (Ex) Final Challenge (Ex) Feats Protective Reserve Archetypes Adamant Guardian Darkness Defender Darkthrone [DRS] Dimensional Defender Garrison Iron Revenant [DRS] Laughing Hyena Paragon Vanguard Sentinel [LG] Favored Class Bonuses Class Equipment Bracers Of Vigilance [TS:WAT] Sash Of Everlasting Passion [TS:WAT] Shield Expander [TS:WAT]\nSpheres of Might $19.99 \u201cMy will cannot break, but your body can.\u201d A sentinel is a warrior of steel and determination, using their iron will and training to withstand blows that would crush weaker warriors. Masters of defense, sentinels live to hold the line, guarding others against fatal blows while delivering punishment all her own. To a sentinel, there is nothing stronger than a warrior and their armor, forming a bond that can weather magical assaults and impossible odds regardless of what stands in their way. The might of a sentinel is not to be underestimated, as they are the pillars upon which armies are built.\nStarting Wealth: 5d6 \u00d7 10 gp (average 175 gp). In addition, each character begins play with an outfit worth 10 gp or less.\nStarting Age: Self-taught\nRole: A sentinel stands in the thick of battle, absorbing punishment and defending those weaker than herself.\nAlignment: Any\nHit Die: d12\nClass Skills: The Sentinel\u2019s class skills are Bluff (Cha), Climb (Str), Craft (Int), Diplomacy (Cha), Handle Animal (Cha), Heal (Wis), Intimidate (Cha), Knowledge (nobility) (Int), Perception (Wis), Profession (Wis), Ride (Dex), Sense Motive (Wis), and Swim (Str).\nSkill Ranks Per Level: 4 + Int modifier.\nProficiencies: Sentinels are proficient with simple weapons, as well as light armor and bucklers. In addition, if this is this character\u2019s first level in any class, they may select a martial tradition of their choice."
+    },
+    {
+      "level": 1,
+      "heading": "Class Abilities",
+      "anchor": "toc0",
+      "text": "Table: Sentinel | Class Level | Base Attack Bonus | Fort Save | Reflex Save | Will Save | Special | Combat Talents\n| 1 | +1 | +2 | +0 | +2 | Combat training, defender\u2019s soul, guardian challenge, sentinel\u2019s reserve, wise reflexes | 1\n| 2 | +2 | +3 | +0 | +3 | Dedicated defense, guard wall | 2\n| 3 | +3 | +3 | +1 | +3 | Second wind | 3\n| 4 | +4 | +4 | +1 | +4 | Sentinel\u2019s imposition | 4\n| 5 | +5 | +4 | +1 | +4 | Opportunistic offense | 5\n| 6 | +6/+1 | +5 | +2 | +5 | Counter Critical, dedicated defense | 6\n| 7 | +7/+2 | +5 | +2 | +5 | Defender\u2019s determination | 7\n| 8 | +8/+3 | +6 | +2 | +6 | Deathless challenge | 8\n| 9 | +9/+4 | +6 | +3 | +6 | Stalwart | 9\n| 10 | +10/+5 | +7 | +3 | +7 | Dedicated defense | 10\n| 11 | +11/+6/+1 | +7 | +3 | +7 | Empowering challenge | 11\n| 12 | +12/+7/+2 | +8 | +4 | +8 | Sentinel\u2019s wrath | 12\n| 13 | +13/+8/+3 | +8 | +4 | +8 | Sentinel\u2019s poise | 13\n| 14 | +14/+9/+4 | +9 | +4 | +9 | Dedicated defense, eternal challenge | 14\n| 15 | +15/+10/+5 | +9 | +5 | +9 | Instant challenge | 15\n| 16 | +16/+11/+6/+1 | +10 | +5 | +10 | Diamond aegis | 16\n| 17 | +17/+12/+7/+2 | +10 | +5 | +10 | Sentinel\u2019s surge | 17\n| 18 | +18/+13/+8/+3 | +11 | +6 | +11 | Dedicated defense | 18\n| 19 | +19/+14/+9/+4 | +11 | +6 | +11 | Invincible soul | 19\n| 20 | +20/+15/+10/+5 | +12 | +6 | +12 | Final challenge | 20"
+    },
+    {
+      "level": 2,
+      "heading": "Combat Training",
+      "anchor": "toc1",
+      "text": "A sentinel may combine combat spheres and talents to create powerful martial techniques. Sentinels are considered Expert practitioners and use Wisdom as their practitioner modifier."
+    },
+    {
+      "level": 2,
+      "heading": "Defender\u2019s Soul",
+      "anchor": "toc2",
+      "text": "A sentinel gains the Guardian sphere as a bonus sphere, although she must select the challenge package. If she already possesses the Guardian sphere challenge package, she instead gains a Guardian talent for which she qualifies."
+    },
+    {
+      "level": 2,
+      "heading": "Guardian Challenge (Ex)",
+      "anchor": "toc3",
+      "text": "At 1st level, whenever a sentinel uses the challenge ability of the Guardian sphere, for the duration of the challenge she gains a +1 bonus to attack and damage rolls against a challenged creature. At 5th level and every four levels thereafter, these bonuses increase by +1, to a maximum of +5 at 17th level."
+    },
+    {
+      "level": 2,
+      "heading": "Sentinel\u2019s Reserve (Ex)",
+      "anchor": "toc4",
+      "text": "Each day, a sentinel gains a number of reserve points equal to 1/2 her sentinel level + her Wisdom modifier (minimum 1). She can spend a reserve point as a swift action to gain an amount of temporary hit points equal to two times her base attack bonus + her Wisdom modifier; these temporary hit points last for 1 minute or until lost, whichever comes first. She regains reserve points after resting for 8 hours, although she may only regain reserve points once every 24 hours."
+    },
+    {
+      "level": 2,
+      "heading": "Wise Reflexes (Ex)",
+      "anchor": "toc5",
+      "text": "A sentinel can use her Wisdom modifier in place of her Dexterity when determining her initiative and Reflex save bonus, although this bonus cannot exceed her class level."
+    },
+    {
+      "level": 2,
+      "heading": "Guard Wall (Ex)",
+      "anchor": "toc6",
+      "text": "At 2nd level, whenever a sentinel ends her turn without moving more than 5 ft., she gains a +2 circumstance bonus to her CMD. At 12th level, this bonus increases to +4."
+    },
+    {
+      "level": 2,
+      "heading": "Dedicated Defense (Ex)",
+      "anchor": "toc7",
+      "text": "At 2nd level, a sentinel\u2019s devotion begins to manifest in a more powerful fashion, granting her DR 1/- (this damage reduction stacks with similar damage reduction, such as that granted by wearing adamantine armor or the barbarian class feature). At 6th level and every four levels afterwards, this damage reduction is increased by 1."
+    },
+    {
+      "level": 2,
+      "heading": "Second Wind (Ex)",
+      "anchor": "toc8",
+      "text": "At 3rd level, a sentinel can choose to spend a reserve point as a swift action; if she does so, she heals 1d6 hit points of damage for every two sentinel levels she possesses + her Wisdom modifier; this healing cannot raise a sentinel\u2019s hit points beyond 1/2 of their maximum amount. She can reduce this healing by half to also regain her martial focus, but she must decide to do so before rolling to determine how much she would be healed."
+    },
+    {
+      "level": 2,
+      "heading": "Sentinel\u2019s Imposition (Ex)",
+      "anchor": "toc9",
+      "text": "At 4th level, whenever a creature that has been challenged by the sentinel makes an attack that does not include the sentinel as a target, they provoke an attack of opportunity from her."
+    },
+    {
+      "level": 2,
+      "heading": "Opportunistic Offense (Ex)",
+      "anchor": "toc10",
+      "text": "At 5th level, once per round when the sentinel makes an attack of opportunity, she can treat it as an attack action for the purpose of which talents she can apply to the attack."
+    },
+    {
+      "level": 2,
+      "heading": "Counter Critical (Ex)",
+      "anchor": "toc11",
+      "text": "At 6th level, whenever a critical hit is confirmed against the sentinel, she can expend her martial focus as a free action which can be taken even when it is not her turn to make an opposed attack roll. If the sentinel\u2019s attack roll is higher than the confirmation roll for the critical hit, the critical hit instead deals normal damage. A helpless sentinel cannot use this ability."
+    },
+    {
+      "level": 2,
+      "heading": "Defender\u2019s Determination (Ex)",
+      "anchor": "toc12",
+      "text": "At 7th level, whenever a sentinel uses her second wind, she can also ignore the following conditions for 1 minute: blinded, deafened, entangled, fatigued, sickened, shaken, or staggered. Once a specific instance of a condition has been ignored by this ability, it cannot be ignored again for 24 hours, or until she has rested for 8 hours (whichever comes first). She can also spend an additional point of reserve while using her second wind to ignore the normal limitations on how much she can heal with it."
+    },
+    {
+      "level": 2,
+      "heading": "Deathless Challenge (Ex)",
+      "anchor": "toc13",
+      "text": "At 8th level, as long as the sentinel has an active challenge, whenever her hit points are 0 or lower but she is not dead, she automatically stabilizes and can act as though she was disabled instead of dying. While disabled, she is not staggered, although she still takes 1 damage for making a standard action. The sentinel adds her Wisdom score to her Constitution when determining her death threshold, even while not making a challenge."
+    },
+    {
+      "level": 2,
+      "heading": "Stalwart (Ex)",
+      "anchor": "toc14",
+      "text": "At 9th level, a sentinel can use mental and physical resiliency to avoid certain attacks. If she makes a Fortitude or Will saving throw against an attack that has a reduced effect on a successful save, she instead avoids the effect entirely. A helpless sentinel does not gain the benefit of the stalwart ability."
+    },
+    {
+      "level": 2,
+      "heading": "Empowering Challenge (Ex)",
+      "anchor": "toc15",
+      "text": "At 11th level, whenever a sentinel reduces the target of her challenge to 0 or fewer hit points, she gains temporary hit points equal to her sentinel level + her Wisdom modifier which last for 1 minute or until lost, whichever comes first. If the target of her challenge has fewer Hit Dice than half of her class level, this ability does not activate."
+    },
+    {
+      "level": 2,
+      "heading": "Sentinel\u2019s Wrath (Ex)",
+      "anchor": "toc16",
+      "text": "At 12th level, whenever a sentinel makes an attack action against a creature she has challenged, she rolls damage twice and chooses whichever result she desires."
+    },
+    {
+      "level": 2,
+      "heading": "Sentinel\u2019s Poise (Ex)",
+      "anchor": "toc17",
+      "text": "At 13th level, whenever the sentinel uses her second wind, she can also ignore the following conditions: dazed, exhausted, frightened, nauseated, paralyzed, or stunned (if a condition would cause the sentinel to be unable to act, as long as she can take purely mental actions, she can use her second wind)."
+    },
+    {
+      "level": 2,
+      "heading": "Eternal Challenge (Ex)",
+      "anchor": "toc18",
+      "text": "At 14th level, whenever the sentinel has an active challenge and her hit points are 0 or lower but she is not dead, she is no longer disabled. As long as she is below 0 hit points, she gains fast healing equal to her Wisdom modifier."
+    },
+    {
+      "level": 2,
+      "heading": "Instant Challenge (Ex)",
+      "anchor": "toc19",
+      "text": "At 15th level, if the target of the sentinel\u2019s challenge is reduced to 0 or fewer hit points, she can challenge another creature as a free action (even when it isn't her turn)."
+    },
+    {
+      "level": 2,
+      "heading": "Diamond Aegis (Ex)",
+      "anchor": "toc20",
+      "text": "At 16th level, whenever the sentinel fails a saving throw, she can spend a reserve point as a free action, even if it is not her turn."
+    },
+    {
+      "level": 2,
+      "heading": "Sentinel\u2019s Surge (Ex)",
+      "anchor": "toc21",
+      "text": "At 17th level, whenever a sentinel reduces the target of her challenge to 0 or fewer hit points, she is treated as though she used her second wind. If the target of her challenge has less Hit Dice than half of her sentinel level, this ability does not activate."
+    },
+    {
+      "level": 2,
+      "heading": "Invincible Soul (Ex)",
+      "anchor": "toc22",
+      "text": "At 19th level, any damage reduction the sentinel possesses is doubled against attacks made by creatures under the effects of her challenge and the sentinel is immune to critical hits and sneak attack from the target of her challenge."
+    },
+    {
+      "level": 2,
+      "heading": "Final Challenge (Ex)",
+      "anchor": "toc23",
+      "text": "At 20th level, a sentinel cannot die while she has an active challenge against a creature she considers an enemy, regardless of her hit points. She can still be killed by death effects and other similar abilities, and if she would die due to her hit points being too low, she dies immediately if she has no active challenges for one turn."
+    },
+    {
+      "level": 1,
+      "heading": "Feats",
+      "anchor": "toc24",
+      "text": "The following feats are especially helpful or appropriate for Sentinels."
+    },
+    {
+      "level": 4,
+      "heading": "Protective Reserve",
+      "anchor": "toc25",
+      "text": "Prerequisites: Sentinel\u2019s reserve class feature.\nBenefit: Choose an (aegis) talent from the Protection sphere. You may create that aegis as a supernatural ability, but only on yourself, using points from your reserve in place of spell points. For the purpose of this aegis, your caster level is equal to your sentinel level, and your casting ability is the ability used to determine your reserve points. You may acquire this feat multiple times, choosing a different (aegis) talent each time."
+    },
+    {
+      "level": 1,
+      "heading": "Archetypes",
+      "anchor": "toc26",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "Adamant Guardian",
+      "anchor": "toc27",
+      "text": "Adamant Guardians focus on protecting their allies even more than most sentinels do, and emphasize patrolling an area over challenging specific foes."
+    },
+    {
+      "level": 2,
+      "heading": "Darkness Defender",
+      "anchor": "toc28",
+      "text": "Darkness Defenders trade their ability to avoid blows for strength enduring them, eventually learning to get stronger when hit."
+    },
+    {
+      "level": 2,
+      "heading": "Darkthrone [DRS]",
+      "anchor": "toc29",
+      "text": "The Darkthrone is empowers themselves with their monument of night, a testament to their reign over darkness. This archetype uses the Polished Dark sphere rework."
+    },
+    {
+      "level": 2,
+      "heading": "Dimensional Defender",
+      "anchor": "toc30",
+      "text": "The Dimensional Defender is an expert at warping around the battlefield to protect their allies."
+    },
+    {
+      "level": 2,
+      "heading": "Garrison",
+      "anchor": "toc31",
+      "text": "Garrisons are Sentinels who use the Leadership sphere to create military jurisdictions and protect those within them."
+    },
+    {
+      "level": 2,
+      "heading": "Iron Revenant [DRS]",
+      "anchor": "toc32",
+      "text": "An Iron Revenant is a relentless hunter, made even more determined through the technology that sustains them."
+    },
+    {
+      "level": 2,
+      "heading": "Laughing Hyena",
+      "anchor": "toc33",
+      "text": "Laughing hyenas aim to defeat foes both physically and emotionally."
+    },
+    {
+      "level": 2,
+      "heading": "Paragon",
+      "anchor": "toc34",
+      "text": "Paragons represent one of the four major universal ideals (good, evil, law, or chaos) and specialize in opposing the opposite ideal."
+    },
+    {
+      "level": 2,
+      "heading": "Vanguard Sentinel [LG]",
+      "anchor": "toc35",
+      "text": "Vanguards draw upon supernatural forces to enhance their defensive abilities, magically storing and redirecting kinetic energy to shield their allies and themselves."
+    },
+    {
+      "level": 1,
+      "heading": "Favored Class Bonuses",
+      "anchor": "toc36",
+      "text": "Aasimar: Increase one energy resistance granted by your race by +1/3.\nDwarf: Gain +1/4 of an additional attack of opportunity per round.\nElf: Reduce the armor check penalty of any armor you wear by 1/4 point.\nFenghuang: +1 fire resistance. This stacks with resistance gained from other sources.\nGnome: Add +1 to your CMD when resisting a disarm or sunder maneuver.\nGoblin: Gain +1 to your CMD against bull rush, drag, or reposition combat maneuvers.\nHalfling: Deal +1/3 damage to creatures challenged with the Guardian sphere ability if they are 2 or more sizes larger than you.\nHobgoblin: Add +1/4 to your natural armor bonus.\nHuman: Increase the total number of negative hit points you can reach before dying by 2.\nOrc: Gain +1/4 bonus to Fortitude saves.\nTiefling: Add +1/3 to one energy resistance granted by your race."
+    },
+    {
+      "level": 1,
+      "heading": "Class Equipment",
+      "anchor": "toc37",
+      "text": "The following magical items are especially appropriate for sentinels."
+    },
+    {
+      "level": 4,
+      "heading": "Bracers Of Vigilance [TS:WAT]",
+      "anchor": "toc38",
+      "text": "Aura moderate Protection; CL 6th Slot wrists; Price 8,000 gp; Weight 2 lbs.\nThese metal bracers seem to guide the user\u2019s hands. While worn by a creature with the guard wall class feature, allies within that creature\u2019s reach also gain the benefits of their guard wall. This item\u2019s effects never stack with itself. A creature cannot benefit from more than one guard wall class feature\u2019s bonuses at a time.\nConstruction Requirements Craft Apparatus, Protection sphere, creator must have the guard wall class feature; Cost 4,000 gp"
+    },
+    {
+      "level": 4,
+      "heading": "Sash Of Everlasting Passion [TS:WAT]",
+      "anchor": "toc39",
+      "text": "Aura moderate Life; CL 6th Slot body; Price 20,000; Weight 3 lbs.\nThis colorful sash is easy to wear around the body, over or under the wearer\u2019s armor. A creature with the second wind class feature who is wearing this item can spend two reserve points as a swift action to heal 1d6 hit points per 2 levels they have in the class granting the second wind class feature. The user also heals an additional 50% of the healing rolled and regains martial focus when healing in that way. This does not allow a creature to regain martial focus more often than they normally could.\nConstruction Requirements Craft Apparatus, Life sphere, creator must have the second wind class feature; Cost 10,000 gp"
+    },
+    {
+      "level": 4,
+      "heading": "Shield Expander [TS:WAT]",
+      "anchor": "toc40",
+      "text": "Aura moderate Light; CL 5th Slot special, see text; Price 20,000 gp; Weight 1 lb.\nThis gleaming white crystal can be set into any shield except a buckler as a full-round action, or removed with the same action. While functioning, it projects an aura around the shield to visibly increase its size (although this does not change the shield\u2019s category or weight, aside from this item\u2019s own weight). This increased size gives the user partial cover against attacks from one direction (chosen at the end of the wielder\u2019s round). When a creature wielding a shield enhanced with a shield expander uses the Perfect Redirection legendary Shield talent, they may also deflect massive weapons like ballista bolts, boulders, and siege weapons. However, such attacks can only be redirected to targets within 5 feet.\nConstruction Requirements Smith Magical Weapons And Armor, Light sphere (Encompassing Light (light)); Cost 10,000 gp\n| Spheres of Might by Drop Dead Studios\n| Using Spheres of Might\n| Classes\n| Armiger | Blacksmith | Commander | Conscript | Scholar | Sentinel | Striker | Technician\n| Prestige Classes\n| Aeronaut Captain\n| Spheres\n| Alchemy | Athletics | Barrage | Barroom | Beastmastery | Berserker | Boxing | Brute\n| Dual Wielding | Duelist | Equipment | Fencing | Gladiator | Guardian | Lancer | Leadership\n| Open Hand | Scoundrel | Scout | Shield | Sniper | Tech | Trap | Warleader\n| Wrestling | | Pilot (3PP) |\n| Rules\n| About Legendary Talents | Martial Traditions | Martial Packages | Practitioner Feats\n| Practitioner Traits | Practitioner FCB's | Practitioner Bestiary | Associated Feats & Skills\n| Ultimate Engineering (Tinker) | Starfinder Conversion [3pp]\n| Get Spheres of Might on DriveThruRPG\n| Mythic Spheres of Might\n| Ultimate Engineering\n| The Conqueror's Handbook | The General's Handbook\n| The Highlander's Handbook | The Inventor's Handbook\n| The Inventor's Handbook 2 | The Jester's Handbook\n| Woodfaring Adventures | The Youxia's Handbook\n| Spheres Apocrypha\n| Alch. Formulae | Alch. Poisons | Alch. Poisons 2 | Armor Talents\n| Astrologian Archetype | Debilitating Talents | Pugilists | Racial\n| Ranged | Swashbucklers | Tandem | Tricks & Traps\n| Champions of the Spheres by Drop Dead Studios\n| Classes\n| Bravo | Crimson Dancer | Dissident | Dragoon\n| Mountebank | Necros | Prodigy | Reaper\n| Sage | Theorist | Troubadour | Warden\n| Rules\n| Champion Feats | Unified Traditions | Champion FCBs |\n| Get Champions Of The Spheres\n| Get Mythic Champions of the Spheres\n| Get Legends of the Spheres\n| Get Study and Practice\n| The Crimson Dancer | The Realmwalker's Handbook\n| The Warden | Spheres Apocrypha: Sidhe Outcasts\n| The Cataclysm Handbook | The Gravecaller's Handbook\n| Get the Lost Champions Bundle\n| LC: Dragoon | LC: Mountebank | LC: Necros | LC: Reaper"
+    }
+  ]
+}

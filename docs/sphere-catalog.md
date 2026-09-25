@@ -38,8 +38,9 @@ implemented.** Full rules descriptions must not be mistaken for automation.
 - All free grants, subchoices, package edge cases and special repeat conditions.
 - Companion/gizmo/veil character-building choices and derived statistics where
   required; tactical resolution remains outside PCGen.
-- Real tradition grants and class sphere-specialization integration from the
-  approved plan. Existing manual class records have not been replaced.
+- Complete tradition grants and class sphere-specialization integration from
+  the approved plan. A partial custom tradition builder exists separately;
+  existing manual class records have not been replaced.
 - Runtime tests for those mechanics. Testing one ordinary talent per sphere is
   not certification of every talent.
 

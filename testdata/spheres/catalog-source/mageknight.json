@@ -1,0 +1,1387 @@
+{
+  "url": "https://spheresofpower.wikidot.com/mageknight",
+  "retrieved": "2026-09-24",
+  "sha256": "a4af457eb1926481b702ace113829b4562fd243a7b201c5d9ca58cae6f830af5",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Class Features Weapon and Armor Proficiency Casting Spell Pool Magic Talents Resist Magic (Ex) Mystic Combat (Su) Absorb Ailment [CrimDan] Arcane Weapon Focus (Su) Aura of Chaos [WM] Banishing Strike (Su) Black Dog Companion (requires mageknight 4, 1 talent with the curse descriptor) Bleeding Wounds (Su) Bloodlust (Su) Breach Resistance (Su) [Alienist HB] Champion [CotS] Chivalry (requires resist magic, War sphere) Collapse Armor (Su) Combat Talent [CotS] Curse of Chaos [WM] Elemental Defense (requires mystic defense) Enchanted Touch (Su) Enhanced Physicality (Su) Ensorcelled Defenses (Su) Form-Breaker (Su) Graft Weapon (Su) Great Fall Greater Combatant High Jump Honed Shadowblade (requires shadowblade) Hunter\u2019s Mark (Su) (requires marked) Imbued Weapon (Su) Invisibility Karmic Invigoration (Su) (requires Life sphere, marked) Lingering Pain Magic Power Mage\u2019s Charge Mark of Pain (requires marked) Martial Tactics (Ex) Mounted Combatant Mystic Adaptation Mystic Maneuver Mystic Celerity Mystic Command [Gen. HB] Mystic Might Mystic Reaping (requires mageknight 6) [Gravecaller's HB] Penetrating Blow Quickened Reflexes Raging Combatant Relentless Pursuit (requires marked) Resilience of Soul Ritual Tracker (Su) Self-Reliance (Ex) (requires Life sphere) Shadowblade Shared Marking (requires marked, War sphere) Shifted Karma (Su) (requires marked) Shining Armor (Su) Signature Scar (Su) Spell Mirror (requires mageknight 10, spell shield) [WM] Spell Shield [WM] Strategic Planning (requires War sphere) Sunder The Veil Sustain Swift Combatant Unbreakable Veil Piercer (Su) Vengeful Ward Against Magic (Sp) (requires Protection sphere, resist magic) Weirding Adept Weirding Initiate Weirding Master Whirl of Blows (requires mageknight 6) Stalwart (Ex) Marked (Su) Mystic Defense (Su) Draw Power (Su) Spell Critical (Su) Spellsword Favored Class Bonuses Mageknight Feats Extra Magic Talent Extra Mystic Combat Extra Spell Points Improved Spell Combat (Combat) Sphere Focus Archetypes Broadcast Blade Divine Lariat Doomblade Dragoon Dread Crusader Dustbringer Grim Disciple Herculean Scion Kinetic Scourge Knightknight Knight-Summoner Marshal Controller [CS] Martial Mageknight [CS] Plaguebringer Resizer Sun Warrior Utterdark Champion Wardmage Warrior of Holy Light Class Equipment Mystic Stone [TS:WAT] Permanent Indicator [TS:WAT] Talisman Of Defiance [TS:WAT]\nUltimate\nOriginal\nUltimate Spheres of Power $29.99 The mageknight is a warrior who mixes magic and blade in the heat of combat. Unlike the armorist, who focuses on calling forth weapons, the mageknight prefers to enhance their weapons with a wide variety of magical tricks. Mageknights aren\u2019t limited in their choice of sphere, so they tend to come up with unique combinations that suit their personal style. Role: The mageknight combines magic and martial power to become a powerful combatant.\nAlignment: Any\nHit Die: d10\nStarting Wealth: 5d6 x 10 gp (average 175 gp). In addition, each character begins play with an outfit worth 10 gp or less.\nClass Skills: The mageknight\u2019s class skills are Acrobatics (Dex), Climb (Str), Craft (Int), Diplomacy (Cha), Handle Animal (Cha), Knowledge (arcana) (Int), Knowledge (nature) (Int), Knowledge (nobility) (Int), Knowledge (planes) (Int), Knowledge (religion) (Int), Profession (Wis), Ride (Dex), Spellcraft (Int), Survival (Wis), and Swim (Str).\nSkill Ranks Per Level: 4 + Int modifier."
+    },
+    {
+      "level": 1,
+      "heading": "Class Features",
+      "anchor": "toc0",
+      "text": "Table: The Mageknight | Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Caster Level | Magic Talents\n| 1st | +1 | +2 | +0 | +2 | Bonus talent, casting, resist magic (+1), spell pool | +0 (1) | 0 (+2)\n| 2nd | +2 | +3 | +0 | +3 | Mystic combat | +1 | 1\n| 3rd | +3 | +3 | +1 | +3 | Stalwart | +1 | 1\n| 4th | +4 | +4 | +1 | +4 | Mystic combat | +2 | 2\n| 5th | +5 | +4 | +1 | +4 | Resist magic (+2) | +2 | 2\n| 6th | +6/+1 | +5 | +2 | +5 | Mystic combat | +3 | 3\n| 7th | +7/+2 | +5 | +2 | +5 | Marked | +3 | 3\n| 8th | +8/+3 | +6 | +2 | +6 | Mystic combat | +4 | 4\n| 9th | +9/+4 | +6 | +3 | +6 | Resist magic (+3) | +4 | 4\n| 10th | +10/+5 | +7 | +3 | +7 | Mystic combat | +5 | 5\n| 11th | +11/+6/+1 | +7 | +3 | +7 | Mystic defense | +5 | 5\n| 12th | +12/+7/+2 | +8 | +4 | +8 | Mystic combat | +6 | 6\n| 13th | +13/+8/+3 | +8 | +4 | +8 | Resist magic (+4) | +6 | 6\n| 14th | +14/+9/+4 | +9 | +4 | +9 | Mystic combat | +7 | 7\n| 15th | +15/+10/+5 | +9 | +5 | +9 | Draw power | +7 | 7\n| 16th | +16/+11/+6/+1 | +10 | +5 | +10 | Mystic combat | +8 | 8\n| 17th | +17/+12/+7/+2 | +10 | +5 | +10 | Resist magic (+5) | +8 | 8\n| 18th | +18/+13/+8/+3 | +11 | +6 | +11 | Mystic combat | +9 | 9\n| 19th | +19/+14/+9/+4 | +11 | +6 | +11 | Spell critical | +9 | 9\n| 20th | +20/+15/+10/+5 | +12 | +6 | +12 | Mystic combat, spellsword | +10 | 10"
+    },
+    {
+      "level": 2,
+      "heading": "Weapon and Armor Proficiency",
+      "anchor": "toc1",
+      "text": "A mageknight is proficient with all simple and martial weapons, light armor, medium armor, and shields (except tower shields)."
+    },
+    {
+      "level": 2,
+      "heading": "Casting",
+      "anchor": "toc2",
+      "text": "A mageknight may combine spheres and talents to create magical effects. A mageknight is considered a Low- Caster. (Note: All casters gain 2 bonus talents and a casting tradition the first time they gain the casting class feature.)"
+    },
+    {
+      "level": 2,
+      "heading": "Spell Pool",
+      "anchor": "toc3",
+      "text": "A mageknight gains a small reservoir of energy she can call on to create truly wondrous effects, called a spell pool. This pool contains a number of spell points equal to her class level + her casting ability modifier (minimum 1). This pool replenishes once per day after roughly 8 hours of rest."
+    },
+    {
+      "level": 2,
+      "heading": "Magic Talents",
+      "anchor": "toc4",
+      "text": "A mageknight gains a magic talent at every even level, according to Table: The Mageknight. The mageknight also gains a bonus magic talent at 1st level."
+    },
+    {
+      "level": 2,
+      "heading": "Resist Magic (Ex)",
+      "anchor": "toc5",
+      "text": "A mageknight gains a natural resistance to magic as she focuses on its use in combat. A mageknight gains a +1 bonus to all saving throws against spells, spell-like abilities, and magic sphere effects. This bonus increases by an additional +1 for every 4 levels thereafter, to a maximum of +5 at 17th level."
+    },
+    {
+      "level": 2,
+      "heading": "Mystic Combat (Su)",
+      "anchor": "toc6",
+      "text": "At 2nd level and every 2 levels thereafter, a mageknight gains a new way to enhance her physical abilities through magic.\nEach time she gains mystic combat, she chooses and gains one of the following abilities."
+    },
+    {
+      "level": 4,
+      "heading": "Absorb Ailment [CrimDan]",
+      "anchor": "toc7",
+      "text": "The mageknight may touch a diseased creature as a standard action to drain them of their ailments. If the creature is suffering from any diseases, she may attempt a magic skill check against the DC of that disease. For each plague feat she possesses, she gains a +1 bonus on this magic skill check. Success denotes that she rips the disease from their body, and places it into hers, and begins suffering from the effects of the disease as normal.\nIf she possesses the Pathological Host feat, she may spend a spell point to become the host of a disease she removed successfully this way, as per the feat.\nIf she possesses the Life sphere, she may activate the cure or restore ability on the creature she touched as part of the same action. She must spend any spell points required by those abilities as normal."
+    },
+    {
+      "level": 4,
+      "heading": "Arcane Weapon Focus (Su)",
+      "anchor": "toc8",
+      "text": "The mageknight may spend a spell point as a swift action to deal damage with her attacks as if she had the warpriest\u2019s sacred weapon class feature with all her weapons, treating her mageknight level as her warpriest level. This works for melee weapons, ranged weapons, and unarmed attacks. This effect lasts a number of rounds equal to her casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Aura of Chaos [WM]",
+      "anchor": "toc9",
+      "text": "As a swift action, you may spend a spell point to emit an aura out to 20 ft. that increases the wild magic chance of all effects originating from hostile creatures by 50% for a number of rounds equal to your casting ability modifier. Affected creatures are unaware of this penalty."
+    },
+    {
+      "level": 4,
+      "heading": "Banishing Strike (Su)",
+      "anchor": "toc10",
+      "text": "Whenever the mageknight strikes an extraplanar creature with a weapon attack, she may spend a spell point as an immediate action to attempt to break the bonds that bind it to this plane. The extraplanar creature must make a Will save (DC 10 + 1/2 her mageknight level + casting ability modifier) or be sent back to its home plane. On a successful save the creature is still staggered for 1d4 rounds. The banished creature can be resummoned as normal."
+    },
+    {
+      "level": 4,
+      "heading": "Black Dog Companion (requires mageknight 4, 1 talent with the curse descriptor)",
+      "anchor": "toc11",
+      "text": "The mageknight gains an animal companion, treating her mageknight level -3 as her effective druid level. This stacks normally with other druid levels.\nAdditionally, the mageknight may take a lesser c\u00f9-s\u00ecth as their companion. This functions as a wolf animal companion, except that it has an Intelligence score of 10 and the mageknight may spend a spell point as an immediate action on her lesser c\u00f9-s\u00ecth\u2019s turn to allow it to use its baleful howl special attack as a standard action, with a DC equal to 10 + 1/2 its Hit Dice + her casting ability modifier.\nBaleful Howl (Su) As a standard action, the c\u00f9-s\u00ecth can release a howl of ill omen. All enemies within 60 feet take a -4 penalty to saves against curse and death effects and against the c\u00f9-s\u00ecth\u2019s soul shepherd ability, as well as a -4 penalty to AC. These penalties last for 5 rounds. These penalties are reduced to -1 and last only a single round with a successful Will save. This is a sonic curse effect."
+    },
+    {
+      "level": 4,
+      "heading": "Bleeding Wounds (Su)",
+      "anchor": "toc12",
+      "text": "The mageknight may spend a spell point as a swift action to inflict bleed damage equal to 1/2 her mageknight level (minimum 1) with every attack for a number of rounds equal to her casting ability modifier. Bleed damage does not stack."
+    },
+    {
+      "level": 4,
+      "heading": "Bloodlust (Su)",
+      "anchor": "toc13",
+      "text": "The mageknight may spend a spell point as a swift action to increase her damage dealt to creatures depending on how many times she has hit them. For 1 round per level, whenever she successfully strikes an opponent with a weapon or natural attack, she gains a cumulative +1 bonus on future damage rolls, to a maximum equal to her class level. If she misses with an attack, the bonus to damage decreases by 1 (minimum 0)."
+    },
+    {
+      "level": 4,
+      "heading": "Breach Resistance (Su) [Alienist HB]",
+      "anchor": "toc14",
+      "text": "Once per round, when you successfully hit a creature with an attack, you may reduce any spell resistance they possess by 1 for 1 minute per mageknight level. This penalty stacks with itself. At 10th level and every 10 levels thereafter, the spell resistance reduction on each attack increases by 1."
+    },
+    {
+      "level": 4,
+      "heading": "Champion [CotS]",
+      "anchor": "toc15",
+      "text": "The mageknight gains a Champion feat of her choice as a bonus feat (see Champion Feats). She must meet the prerequisites of the feat. This mystic combat can be gained multiple times."
+    },
+    {
+      "level": 4,
+      "heading": "Chivalry (requires resist magic, War sphere)",
+      "anchor": "toc16",
+      "text": "Allies the mageknight shares a mandate with benefit from her resist magic class feature. She may spend a spell point to create a totem that allows allies to benefit from her resist magic class feature."
+    },
+    {
+      "level": 4,
+      "heading": "Collapse Armor (Su)",
+      "anchor": "toc17",
+      "text": "The mageknight can treat any armor she wears as having the collapsible special ability, except that she may collapse or recall the armor as a swift action instead of a full-round action, and she may choose which piece the armor collapses into each time she uses this ability. This allows the mageknight to wear multiple suits of armor and allows her to collapse one and recall another as part of the same action, though it does not allow her to benefit from more than one suit at a time. She may spend a spell point to collapse or recall her armor as a free action instead of a swift action."
+    },
+    {
+      "level": 4,
+      "heading": "Combat Talent [CotS]",
+      "anchor": "toc18",
+      "text": "You gain a bonus combat talent. This mystic combat may be taken more than once, granting an additional talent each time."
+    },
+    {
+      "level": 4,
+      "heading": "Curse of Chaos [WM]",
+      "anchor": "toc19",
+      "text": "As a swift action, you may spend a spell point to charge your next attack with disruptive energies. The next creature you deal damage to with a manufactured or natural weapon attack before the start of your next turn increases its wild magic chance by 100% for a number of rounds equal to your casting ability modifier. Affected creatures are unaware of this penalty."
+    },
+    {
+      "level": 4,
+      "heading": "Elemental Defense (requires mystic defense)",
+      "anchor": "toc20",
+      "text": "The mageknight\u2019s mystic defense class feature also gives her resistance to acid, cold, electricity, and fire damage equal to the damage reduction mystic defense grants."
+    },
+    {
+      "level": 4,
+      "heading": "Enchanted Touch (Su)",
+      "anchor": "toc21",
+      "text": "The mageknight may spend a spell point as a swift action to grant enhancement bonuses to all attacks she makes for 1 round per mageknight level. Her unarmed strikes, natural attacks, and wielded weapons gain a +1 enhancement bonus which does not stack with any enhancement bonus her weapons already possess. This bonus increases by +1 for every 5 mageknight levels she possesses, to a maximum of +5 at 20th level."
+    },
+    {
+      "level": 4,
+      "heading": "Enhanced Physicality (Su)",
+      "anchor": "toc22",
+      "text": "The mageknight may spend a spell point to reroll an Acrobatics, Climb, Fly, or Swim check she just made with a bonus to her roll equal to 1/2 her mageknight level (minimum 1). She must take the second roll, even if it is worse."
+    },
+    {
+      "level": 4,
+      "heading": "Ensorcelled Defenses (Su)",
+      "anchor": "toc23",
+      "text": "As a swift action, the mageknight may spend a spell point to charge her armor and shield with energy, partially transforming them into fields of force that protect her. For a number of minutes equal to her casting ability modifier, her armor and shield bonuses (and any enhancement bonuses they have) become force effects and apply to her touch AC."
+    },
+    {
+      "level": 4,
+      "heading": "Form-Breaker (Su)",
+      "anchor": "toc24",
+      "text": "The mageknight may spend a spell point as a swift action to empower her next attack with magical energies disruptive to shapechangers. If the attack successfully strikes a creature under a polymorph effect (such as shapeshift, beast shape spells, polymorph, or change shape), she may attempt a magical skill check against the effect\u2019s MSD. She gains a +4 bonus on this check. If successful, the polymorph effect immediately ends and the target cannot benefit from polymorph effects for a number of rounds equal to her CAM."
+    },
+    {
+      "level": 4,
+      "heading": "Graft Weapon (Su)",
+      "anchor": "toc25",
+      "text": "The mageknight may spend 1 minute to graft a weapon to one of her limbs capable of wielding a weapon as per the Graft Weapon trait of the Morphic Weapon Alteration talent. This graft persists until the weapon is removed as a standard action."
+    },
+    {
+      "level": 4,
+      "heading": "Great Fall",
+      "anchor": "toc26",
+      "text": "When falling, the mageknight treats the distance fallen as being 10 feet shorter per mageknight level when determining the amount of damage she sustains. At 20th level, she may fall any distance without taking damage."
+    },
+    {
+      "level": 4,
+      "heading": "Greater Combatant",
+      "anchor": "toc27",
+      "text": "The mageknight gains a combat or champion feat. She must meet the prerequisites of the feat. This mystic combat may be taken multiple times. Each time, it grants the mageknight a new combat or champion feat."
+    },
+    {
+      "level": 4,
+      "heading": "High Jump",
+      "anchor": "toc28",
+      "text": "The mageknight may add her level to all Acrobatics checks made to jump, both for vertical jumps and horizontal jumps. In addition, she always counts as having a running start when attempting jump checks using Acrobatics. By spending 1 spell point as a swift action, she may gain a +20 bonus on Acrobatics checks made to jump for 1 round."
+    },
+    {
+      "level": 4,
+      "heading": "Honed Shadowblade (requires shadowblade)",
+      "anchor": "toc29",
+      "text": "Objects created with the mageknight\u2019s Shadowstuff Armament feat act as if she had the Surreinforcement feat. Treat her mageknight level as Illusion caster level for calculating its effects for her shadowstuff armaments. This stacks normally with caster levels gained from other sources. Once per round as a free action she may cause a creature damaged by one of her weapons created or enhanced by her shadowblade mystic combat to suffer a -1 circumstance penalty to all Perception checks and Will saves against illusions for one minute. This penalty stacks with itself up to 5 times."
+    },
+    {
+      "level": 4,
+      "heading": "Hunter\u2019s Mark (Su) (requires marked)",
+      "anchor": "toc30",
+      "text": "The mageknight can sense any creature she has left a magical mark on using her marked ability. She always knows the direction and distance to them and what plane they are currently on.\nAs a full-round action she may spend a spell point to teleport herself to a square adjacent to a marked creature regardless of their distance from her, though she cannot travel between planes this way."
+    },
+    {
+      "level": 4,
+      "heading": "Imbued Weapon (Su)",
+      "anchor": "toc31",
+      "text": "As a swift action, the mageknight may spend a spell point to charge a weapon she is holding with magical energy for a number of minutes equal to her casting ability modifier. While the weapon is charged, the mageknight may add her casting ability modifier instead of her Dexterity or Strength modifier to attack rolls and damage rolls with this weapon.\nIf the weapon is a melee weapon, she may use the weapon as a thrown weapon with an increment of 20 feet. The weapon keeps its own damage and critical hit characteristics, and is not considered an improvised weapon.\nWhen an imbued weapon is used as a thrown weapon, the weapon teleports back to her hand at the end of her turn, or the beginning of her next turn if used outside her turn. When an imbued weapon is a ranged weapon, then making ranged attacks with the weapon does not draw attacks of opportunity."
+    },
+    {
+      "level": 4,
+      "heading": "Invisibility",
+      "anchor": "toc32",
+      "text": "As a swift action, the mageknight may spend a spell point to gain the invisible condition for 1 round per mageknight level, or until she performs an offensive action against a foe."
+    },
+    {
+      "level": 4,
+      "heading": "Karmic Invigoration (Su) (requires Life sphere, marked)",
+      "anchor": "toc33",
+      "text": "As a swift action, the mageknight may infuse her marked target with an aura of positive energy. Until the end of her next turn, whenever an ally hits the target, she may invigorate the ally as a free action, even if they are not in range of her invigorate ability or if it is not her turn."
+    },
+    {
+      "level": 4,
+      "heading": "Lingering Pain",
+      "anchor": "toc34",
+      "text": "As an immediate action after successfully dealing damage to an opponent, the mageknight may spend a spell point to cause that damage to be considered continuous damage for the purpose of concentration checks made by the target prior to the beginning of the mageknight\u2019s next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Magic Power",
+      "anchor": "toc35",
+      "text": "The mageknight gains a magic talent for which she qualifies. This mystic combat can be taken multiple times. Each time it is taken, she gains a new magic talent."
+    },
+    {
+      "level": 4,
+      "heading": "Mage\u2019s Charge",
+      "anchor": "toc36",
+      "text": "When making a charge, the mageknight may spend a spell point as a free action to add her mageknight level as a bonus to her first attack roll and damage roll. This damage is considered precision damage and is not multiplied on a critical hit or by similar effects, such as a lance or the Spirited Charge feat."
+    },
+    {
+      "level": 4,
+      "heading": "Mark of Pain (requires marked)",
+      "anchor": "toc37",
+      "text": "Whenever the mageknight marks a target, she may also spend a spell point to lower their damage reduction and energy resistance against her attacks by her mageknight level. This condition lasts as long as the mark does."
+    },
+    {
+      "level": 4,
+      "heading": "Martial Tactics (Ex)",
+      "anchor": "toc38",
+      "text": "The mageknight may spend a spell point as a swift action to gain the benefits of one teamwork feat. She must meet all the feat\u2019s prerequisites. All of her allies are treated as if they possessed the same teamwork feat for the purpose of determining whether she receives a bonus from the teamwork feat acquired. Her allies do not receive any bonuses from these feats unless they actually possess the feats themselves.\nHer allies\u2019 positioning and actions must still meet the prerequisites listed in the teamwork feat for her to receive the listed bonus. She keeps the feat for a number of minutes equal to her casting ability modifier, or until she spends another spell point to acquire another feat."
+    },
+    {
+      "level": 4,
+      "heading": "Mounted Combatant",
+      "anchor": "toc39",
+      "text": "When using any mystic combat ability, the mageknight may spend an additional spell point to extend the benefit of that ability to her mount as well."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Adaptation",
+      "anchor": "toc40",
+      "text": "The mageknight may spend a spell point as a swift action to gain the benefits of one combat feat of her choice for a number of minutes equal to her casting ability modifier.\nShe must meet all of this feat\u2019s prerequisites. At 7th level, she may gain the benefits of two combat feats of her choice whenever she uses this ability, and one may be used to meet the prerequisites of the other. At 14th level, she gains the benefits of three combat feats of her choice. Multiple uses of this ability do not stack, only the most recent use applies. If a combat feat has a limited number of daily uses (such as Stunning Fist), any uses of that combat feat while using this ability counts towards that feat\u2019s daily limit."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Maneuver",
+      "anchor": "toc41",
+      "text": "The mageknight may spend a spell point to perform any combat maneuver as a swift action that does not provoke an attack of opportunity, with a bonus to her CMB equal to 1/2 her mageknight level (minimum 1)."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Celerity",
+      "anchor": "toc42",
+      "text": "Once per round, when using any ability gained through the mystic combat class feature, the mageknight may spend an extra spell point to decrease that ability\u2019s required action by one step: standard actions become move actions, swift actions become free actions, etc. This cannot reduce an immediate action."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Command [Gen. HB]",
+      "anchor": "toc43",
+      "text": "The mageknight may spend a spell point as a swift action to share one teamwork feat she possesses with all allied creatures within close range (25 feet + 5 feet per 2 class levels) for 1 minute per level or until she uses this ability again."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Might",
+      "anchor": "toc44",
+      "text": "As a swift action, the mageknight may spend a spell point to increase her size category to Large for a number of minutes equal to her casting ability modifier, as if using the Size Change Alteration talent."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Reaping (requires mageknight 6) [Gravecaller's HB]",
+      "anchor": "toc45",
+      "text": "The knight\u2019s blade drinks in magic as it does life. Whenever the mageknight reduces a creature to 0 or fewer hit points, she gains 2 temporary spell points which last for 1 minute (see the Mana sphere for rules on temporary spell points). Creatures with fewer Hit Dice than half the mageknight\u2019s character level do not grant temporary spell points.\nIf the mageknight possesses the resist magic class feature, the bonus from her resist magic ability applies to all death and negative energy effects, even if they are not spells, spell-like abilities, or magic sphere effects."
+    },
+    {
+      "level": 4,
+      "heading": "Penetrating Blow",
+      "anchor": "toc46",
+      "text": "The mageknight may spend a spell point as a swift action to cause all her attacks to be resolved as touch attacks until the end of her turn."
+    },
+    {
+      "level": 4,
+      "heading": "Quickened Reflexes",
+      "anchor": "toc47",
+      "text": "The mageknight may spend a spell point as a swift action to gain a dodge bonus to AC equal to half her mageknight level (minimum 1) for a number of rounds equal to her casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Raging Combatant",
+      "anchor": "toc48",
+      "text": "As a swift action, the mageknight may spend a spell point to enter a rage for 1 round per mageknight level. This is similar to a barbarian\u2019s rage, granting a +4 morale bonus to Strength and Constitution, a +2 morale bonus to Will saves, and suffering a -2 penalty to AC. She is under the same restrictions with skills, spells, and sphere abilities as a barbarian, but she may use mystic combat abilities as normal. She is fatigued afterward as a barbarian. She may end a rage prematurely as a free action."
+    },
+    {
+      "level": 4,
+      "heading": "Relentless Pursuit (requires marked)",
+      "anchor": "toc49",
+      "text": "The mageknight may spend a spell point as a swift action to make a single weapon attack against an enemy she has marked. This attack is made at her highest base attack bonus, and receives a circumstance bonus to damage equal to her mageknight level."
+    },
+    {
+      "level": 4,
+      "heading": "Resilience of Soul",
+      "anchor": "toc50",
+      "text": "As an immediate action, the mageknight may spend a spell point to reroll a saving throw she just failed. She must take the second result, even if it is worse."
+    },
+    {
+      "level": 4,
+      "heading": "Ritual Tracker (Su)",
+      "anchor": "toc51",
+      "text": "The mageknight can track creatures by observing the omens and mystic signs that subtly mark their passing. She can use Spellcraft instead of Survival to both find and follow tracks, using the same DCs listed under the Survival skill. In addition, she can track creatures that leave no tracks, such as flying and swimming creatures, and creatures using trackless step or pass without trace, taking a -5 penalty to her check for each such effect they benefit from. Finally, if she finds or follows tracks where someone has teleported or moved between planes, she may attempt a Spellcraft or Survival check against a DC equal to their MSD to determine their destination.\nWith a successful check she learns the direction of their destination and whether the distance to that destination is near (less than 1 mile), moderate (1 mile to 10 miles) or far (greater than 10 miles); if they moved between planes she instead learns what plane they moved to."
+    },
+    {
+      "level": 4,
+      "heading": "Self-Reliance (Ex) (requires Life sphere)",
+      "anchor": "toc52",
+      "text": "Whenever the mageknight invigorates or cures herself with the Life sphere, she may use her class level as her caster level. This stacks normally with caster levels gained from other sources."
+    },
+    {
+      "level": 4,
+      "heading": "Shadowblade",
+      "anchor": "toc53",
+      "text": "The mageknight gains the Shadowstuff Armament feat. Additionally, she may spend a spell point as a free action to add the shadow wake special ability to a weapon for 1 round per mageknight level."
+    },
+    {
+      "level": 4,
+      "heading": "Shared Marking (requires marked, War sphere)",
+      "anchor": "toc54",
+      "text": "When the mageknight marks a target, allies she shares a mandate with gain the same static benefits from the mark that she does. This does not give her ally abilities that trigger from her mark, such as relentless pursuit."
+    },
+    {
+      "level": 4,
+      "heading": "Shifted Karma (Su) (requires marked)",
+      "anchor": "toc55",
+      "text": "Whenever the mageknight hits an enemy she has marked with a melee weapon or natural weapon, she may give the target a -4 penalty to attack and AC against creatures other than herself. This penalty lasts until the beginning of her next turn, or she may spend a spell point to make it last for 1 minute. This ability ends immediately if the mark ends, or if the target successfully hits her with a melee attack."
+    },
+    {
+      "level": 4,
+      "heading": "Shining Armor (Su)",
+      "anchor": "toc56",
+      "text": "The mageknight may spend a spell point as a swift action to cause her armor to give off a slight glow as it becomes partially translucent. While in this state, she takes no armor check penalties for wearing the armor, nor does she take any penalties to her speed from wearing armor, and her Dexterity bonus to AC is unlimited. This lasts a number of minutes equal to her casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Signature Scar (Su)",
+      "anchor": "toc57",
+      "text": "When the mageknight damages an enemy with a melee weapon or natural weapon, she may spend a spell point as a free action to give them a scar. The target may attempt a Fortitude save against a DC equal to 10 + 1/2 her mageknight level plus her casting ability modifier to avoid the scar. Any hit points regained by a scarred enemy are instead diverted to the mageknight unless she is already at her full hit point total. The scar fades away after 1 minute."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Mirror (requires mageknight 10, spell shield) [WM]",
+      "anchor": "toc58",
+      "text": "When a spell or sphere effect that has the mageknight as a target is negated by her spell shield, the effect is turned back upon its caster as if the caster was the original target. Use her own attack modifiers if an attack roll is required."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Shield [WM]",
+      "anchor": "toc59",
+      "text": "As an immediate action, the mageknight may spend a spell point to grant herself spell resistance equal to 15 + her mageknight level until the start of her next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Strategic Planning (requires War sphere)",
+      "anchor": "toc60",
+      "text": "At the beginning of the day, choose a (mandate) talent or (totem) talent the mageknight qualifies for. She gains that mandate or totem talent for the duration of the day. At any time during the day, she may change her choice by meditating for 10 minutes."
+    },
+    {
+      "level": 4,
+      "heading": "Sunder The Veil",
+      "anchor": "toc61",
+      "text": "The mageknight gains the Pierce The Veil feat. She needs not meet its prerequisites. Additionally, she may spend a spell point as a free action to add the skeptical weapon enhancement to a weapon for 1 round per mageknight level."
+    },
+    {
+      "level": 4,
+      "heading": "Sustain",
+      "anchor": "toc62",
+      "text": "The mageknight may spend a spell point as an immediate action to grant herself temporary hit points equal to twice her mageknight level + her casting ability modifier that lasts 1 minute. This can keep her from dying."
+    },
+    {
+      "level": 4,
+      "heading": "Swift Combatant",
+      "anchor": "toc63",
+      "text": "The mageknight may spend a spell point as a free action to move up to 30 feet. This movement provokes attacks of opportunity as normal."
+    },
+    {
+      "level": 4,
+      "heading": "Unbreakable",
+      "anchor": "toc64",
+      "text": "The mageknight may spend a spell point as a swift action to grant herself DR/- equal to her mageknight level for a number of rounds equal to her casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Veil Piercer (Su)",
+      "anchor": "toc65",
+      "text": "The mageknight\u2019s magic allows her to interact with other dimensions. She may choose to touch and interact with ethereal and incorporeal creatures and objects as if they were solid. She may choose to have her attacks and effects count as magical for the purpose of affecting incorporeal creatures. If she does, her damage is not halved against them, and effects that do not cause damage are not subject to the standard 50% chance of failure. In addition, she may inflict critical hits and precision damage on incorporeal creatures as if using a ghost touch weapon. This does not allow her to automatically perceive anything ethereal or invisible."
+    },
+    {
+      "level": 4,
+      "heading": "Vengeful",
+      "anchor": "toc66",
+      "text": "If a creature strikes the mageknight and is within her threatened area, she may spend a spell point as an immediate action to make a single attack against that creature at her highest base attack bonus."
+    },
+    {
+      "level": 4,
+      "heading": "Ward Against Magic (Sp) (requires Protection sphere, resist magic)",
+      "anchor": "toc67",
+      "text": "The mageknight may create a ward that duplicates the effects of her resist magic class feature for all within. She may also create an aegis that duplicates the effects of her resist magic class feature for any creature that bears it. The bonus from her resist magic ability can not stack with itself this way."
+    },
+    {
+      "level": 4,
+      "heading": "Weirding Adept",
+      "anchor": "toc68",
+      "text": "The mageknight gains the Mage Feint Illusion talent and the Weird Motion combat feat. She needs not meet their prerequisites if she possesses the weirding initiate mystic combat. Treat her mageknight levels as High-Caster levels when using the Mage Feint talent."
+    },
+    {
+      "level": 4,
+      "heading": "Weirding Initiate",
+      "anchor": "toc69",
+      "text": "The mageknight gain the Weird Defense combat feat. She needs not meet its prerequisites."
+    },
+    {
+      "level": 4,
+      "heading": "Weirding Master",
+      "anchor": "toc70",
+      "text": "The mageknight gains the Decoy Illusion talent and the Weird Assault combat feat. She needs not meet their prerequisites if she possesses the weirding adept mystic combat."
+    },
+    {
+      "level": 4,
+      "heading": "Whirl of Blows (requires mageknight 6)",
+      "anchor": "toc71",
+      "text": "The mageknight gains the Whirlwind Attack feat, even if she does not meet the prerequisites."
+    },
+    {
+      "level": 2,
+      "heading": "Stalwart (Ex)",
+      "anchor": "toc72",
+      "text": "At 3rd level, a mageknight can use mental and physical resiliency to avoid certain attacks. If she succeeds at a Fortitude or Will saving throw against an attack that has a reduced effect on a successful save, she instead avoids the effect entirely. A helpless mageknight does not gain the benefit of the stalwart ability."
+    },
+    {
+      "level": 2,
+      "heading": "Marked (Su)",
+      "anchor": "toc73",
+      "text": "At 7th level, a mageknight who successfully deals damage with a weapon or natural attack to a target may, as a swift action, leave a magical mark on that target. The target suffers a -2 penalty to saving throws against the spells, spelllike abilities, and sphere abilities of the mageknight, and the mageknight gains a +2 bonus to saving throws against the spells, spell-like abilities, and sphere abilities of the target. This mark lasts for 1 minute. The mageknight may not have more than 1 mark active at a time; giving a second mark causes the first to be dismissed."
+    },
+    {
+      "level": 2,
+      "heading": "Mystic Defense (Su)",
+      "anchor": "toc74",
+      "text": "At 11th level, a mageknight gains resistance to magical damage. This functions as damage reduction, except it only applies to damage sustained from spells, spell-like abilities, and sphere abilities. This only affects abilities that allow spell resistance. This damage reduction is equal to 1/2 the mageknight\u2019s class level. This does not apply to damage from magic weapons."
+    },
+    {
+      "level": 2,
+      "heading": "Draw Power (Su)",
+      "anchor": "toc75",
+      "text": "At 15th level, whenever the mageknight successfully confirms a critical hit, she gains 1 temporary spell point which lasts until the end of her next turn. This increases to 2 spell points with a x3 critical weapon, or 3 spell points with an x4 critical weapon."
+    },
+    {
+      "level": 2,
+      "heading": "Spell Critical (Su)",
+      "anchor": "toc76",
+      "text": "At 19th level, whenever a mageknight successfully confirms a critical hit, she can use a sphere ability as an immediate action. The sphere ability must include the target of the attack as one of its targets or in its area of effect. Using this sphere ability does not provoke an attack of opportunity."
+    },
+    {
+      "level": 2,
+      "heading": "Spellsword",
+      "anchor": "toc77",
+      "text": "At 20th level the mageknight may effortlessly combine magic and combat. Choose two mystic combat abilities that cost a spell point to use. She may use these abilities without spending a spell point."
+    },
+    {
+      "level": 1,
+      "heading": "Favored Class Bonuses",
+      "anchor": "toc78",
+      "text": "Aasimar: Gain a +1/6 bonus to all saving throws made against effects originating from outsiders.\nDwarf: +1/6 bonus to all saving throws vs. magic. This stacks with the resist magic class feature.\nElf: +1/2 to all Acrobatics checks made to avoid attacks of opportunity, and to Escape Artist checks made to escape a grapple.\nGnome: Increase the bonuses and penalties bestowed by the mageknight\u2019s marked ability by +1/8.\nGoblin: Gain a +1 foot increase to the mageknight\u2019s base move speed. In combat, this only has an effect for every five increases to the movement\u2019s speed.\nHalf-elf: Choose a single mystic combat with a duration measured in rounds. Increase the duration of that mystic combat by 1/2 a round (maximum 4 rounds per mystic combat). This may be taken and applied to different mystic combats.\nHalf-orc: Gain +1/6 of a bonus combat feat.\nHalfling: Gain +1/6 of a mystic combat.\nHuman: Gain +1/6 of a bonus magic talent.\nMerfolk: Gain +1 foot to the mageknight\u2019s land base movement. In combat, this only has an effect for every five increases to the movement\u2019s speed.\nOrc: Increase the mageknight\u2019s effective level by +1/5 when determining the potency of mystic combat abilities.\nSkinwalker: +1/4 CL with the shapeshift ability of the Alteration sphere when using it on only yourself. This stacks normally with caster levels gained from other sources.\nTiefling: Gain a +1/6 bonus to attack rolls made against outsiders."
+    },
+    {
+      "level": 1,
+      "heading": "Mageknight Feats",
+      "anchor": "toc79",
+      "text": "The following feats are particularly appropriate or useful for mageknights."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Magic Talent",
+      "anchor": "toc80",
+      "text": "Prerequisite: Basic Magic Training or casting class feature.\nBenefit: Gain an additional sphere or a talent from a sphere you possess. You may take this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Mystic Combat",
+      "anchor": "toc81",
+      "text": "Prerequisite: Mystic combat class feature.\nBenefit: Gain an extra mystic combat ability for which you qualify. You may gain this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Spell Points",
+      "anchor": "toc82",
+      "text": "Prerequisite: Spell pool.\nBenefit: Your spell pool total increases by 2. You may gain this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Improved Spell Combat (Combat)",
+      "anchor": "toc83",
+      "text": "Prerequisites: Casting class feature; any talent with the strike descriptor.\nBenefit: When activating a magic sphere talent with the strike descriptor, you may spend a spell point to instead use the sphere effect in conjunction with making a full attack. The magic sphere effect is delivered through the first successful attack made as part of that full attack routine; if no attack is successful, no creature is targeted with the magic sphere effect and any spell points spent are wasted."
+    },
+    {
+      "level": 4,
+      "heading": "Sphere Focus",
+      "anchor": "toc84",
+      "text": "Prerequisite: Casting class feature.\nBenefit: Choose a sphere. You gain a +1 bonus to saving throw DCs for all abilities from that sphere. You may take this feat multiple times. The effects do not stack. Each time it is gained, apply this benefit to a different sphere."
+    },
+    {
+      "level": 1,
+      "heading": "Archetypes",
+      "anchor": "toc85",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "Broadcast Blade",
+      "anchor": "toc86",
+      "text": "Broadcast blades can use the power of the Warp sphere to attack a broader area."
+    },
+    {
+      "level": 2,
+      "heading": "Divine Lariat",
+      "anchor": "toc87",
+      "text": "Divine Lariats are masters of a magical lasso."
+    },
+    {
+      "level": 2,
+      "heading": "Doomblade",
+      "anchor": "toc88",
+      "text": "Doomblades can create a destructive blast in the shape of a weapon and make attacks with it."
+    },
+    {
+      "level": 2,
+      "heading": "Dragoon",
+      "anchor": "toc89",
+      "text": "Dragoons ride trusty steeds into battle."
+    },
+    {
+      "level": 2,
+      "heading": "Dread Crusader",
+      "anchor": "toc90",
+      "text": "Dread crusaders use the power of Death through their deathly weapons."
+    },
+    {
+      "level": 2,
+      "heading": "Dustbringer",
+      "anchor": "toc91",
+      "text": "Dustbringers are particularly efficient at destroying things with their bare hands."
+    },
+    {
+      "level": 2,
+      "heading": "Grim Disciple",
+      "anchor": "toc92",
+      "text": "Grim disciples can use the powers of Fate to haunt their enemies."
+    },
+    {
+      "level": 2,
+      "heading": "Herculean Scion",
+      "anchor": "toc93",
+      "text": "Herculean scions use their divine heritage to fuel their tremendous powers."
+    },
+    {
+      "level": 2,
+      "heading": "Kinetic Scourge",
+      "anchor": "toc94",
+      "text": "Kinetic scourges use energy tethers to link to their foes and perform a variety of combat techniques."
+    },
+    {
+      "level": 2,
+      "heading": "Knightknight",
+      "anchor": "toc95",
+      "text": "Truly a paragon of martial prowess, the knightknight reigns over the battlefield as lord and conqueror without the need for pitiful magic. Knightknights are often knights."
+    },
+    {
+      "level": 2,
+      "heading": "Knight-Summoner",
+      "anchor": "toc96",
+      "text": "Knight-summoners can summon special, powerful mounts to aid them in battle."
+    },
+    {
+      "level": 2,
+      "heading": "Marshal Controller [CS]",
+      "anchor": "toc97",
+      "text": "Marshal controllers are champions who can create powerful wards and patrol the battlefield to impose their own rules upon it."
+    },
+    {
+      "level": 2,
+      "heading": "Martial Mageknight [CS]",
+      "anchor": "toc98",
+      "text": "The Martial Mageknight has learned to blend martial and magic talents to create a more distinctive style."
+    },
+    {
+      "level": 2,
+      "heading": "Plaguebringer",
+      "anchor": "toc99",
+      "text": "Plaguebringers are masters of disease and ailments."
+    },
+    {
+      "level": 2,
+      "heading": "Resizer",
+      "anchor": "toc100",
+      "text": "Resizers are capable of growing and shrinking at-will."
+    },
+    {
+      "level": 2,
+      "heading": "Sun Warrior",
+      "anchor": "toc101",
+      "text": "Sun warriors are masters of the Light sphere and can use the Glory talent in ways no others can."
+    },
+    {
+      "level": 2,
+      "heading": "Utterdark Champion",
+      "anchor": "toc102",
+      "text": "Utterdark champions are evil warriors who use the Dark sphere to envelop and terrify their foes."
+    },
+    {
+      "level": 2,
+      "heading": "Wardmage",
+      "anchor": "toc103",
+      "text": "Wardmages can create mystic wards to intercept attacks."
+    },
+    {
+      "level": 2,
+      "heading": "Warrior of Holy Light",
+      "anchor": "toc104",
+      "text": "Warriors of holy light are divine warriors who use Light to smite their foes."
+    },
+    {
+      "level": 1,
+      "heading": "Class Equipment",
+      "anchor": "toc105",
+      "text": "The following magical items are especially appropriate for mageknights."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Stone [TS:WAT]",
+      "anchor": "toc106",
+      "text": "Aura faint Mana; CL 5th Slot slotless; Price 15,000 gp; Weight 2 lbs.\nThis stone crackles with magical energies. When carried by a creature with the mystic combat class feature, a mystic stone provides the benefits of one mageknight mystic combat, chosen when this item is created. A creature can only benefit from one mystic stone at a time, and does not benefit from any mystic combats they do not meet the prerequisites for. Changing which mystic stone grants power to the user requires eight hours.\nConstruction Requirements Craft Apparatus, Mana sphere, creator must know the mystic combat being used; Cost 7,500 gp"
+    },
+    {
+      "level": 4,
+      "heading": "Permanent Indicator [TS:WAT]",
+      "anchor": "toc107",
+      "text": "Aura moderate Illusion; CL 6th Slot none; Price 18,000 gp; Weight 1/2 lbs.\nThis slender tube has an enchantment on one end, allowing it to be used for writing like a quill (except that it does not require ink). A creature can hold and use the permanent indicator while using the marked class feature; if they do so, they may expend one additional spell point when using marked to increase the duration of their mark to one hour. Taking out this item, using it, and putting it away again can be done as part of using the marked class feature as long as a creature is carrying it in a reasonably accessible location.\nConstruction Requirements Craft Apparatus, Illusion sphere, creator must have the marked class feature; Cost 9,000 gp"
+    },
+    {
+      "level": 4,
+      "heading": "Talisman Of Defiance [TS:WAT]",
+      "anchor": "toc108",
+      "text": "Aura moderate Protection; CL 8th Slot neck; Price 20,000 gp; Weight 1 lb.\nThis slender talisman features a five-pointed star that represents five basic elements of magic surrounded by a circle representing the power of mortal will. When a creature wearing this talisman attempts a saving throw that would benefit from the resist magic class feature, they may spend an immediate action to double the bonus granted by the resist magic class feature after seeing their roll. Doing so reduces the benefit of the resist magic class feature to 0 for 1 minute; this also disables any other abilities that rely on resist magic, such as some mystic combats, until the ability regains its strength. A creature cannot benefit from more than one of these talismans at a time.\nConstruction Requirements Craft Apparatus, Protection sphere, creator must have the resist magic class feature; Cost 10,000 gp\nSpheres of Power $19.99 The Mageknight is a warrior who mixes magic and blade in the heat of combat. Unlike the Armorist, who focuses on calling forth weapons, the Mageknight prefers to enhance their weapons with a wide variety of magical tricks. Mageknights aren't limited in their choice of Spheres, so they tend to come up with unique combinations that suit their personal style. Alignment: Any\nHit Die: d10\nStarting Wealth: 5d6 x 10 gp (average 175 gp). In addition, each character begins play with an outfit worth 10 gp or less.\nClass Skills: The mageknight\u2019s class skills are Acrobatics (Dex), Climb (Str), Craft (Int), Diplomacy (Cha), Handle Animal (Cha), Knowledge (Arcana; Int), Knowledge (Nature; Int), Knowledge (Nobility; Int), Knowledge (Planes; Int), Knowledge (Religion; Int), Profession (Wis), Ride (Dex), Spellcraft (Int), Survival (Wis), and Swim (Str).\nSkill Ranks Per Level: 2 + Int modifier."
+    },
+    {
+      "level": 1,
+      "heading": "Class Features",
+      "anchor": "",
+      "text": "Table: The Mageknight | Level | Base Attack Bonus | Fort Save | Ref Save | Will Save | Special | Caster Level | Magic Talents\n| 1st | +1 | +2 | +0 | +2 | Casting, resist magic (+1), spell pool | +0 (1) | 1 (+2)\n| 2nd | +2 | +3 | +0 | +3 | Mystic combat | +1 | 2\n| 3rd | +3 | +3 | +1 | +3 | Stalwart | +1 | 2\n| 4th | +4 | +4 | +1 | +4 | Combat feat | +2 | 3\n| 5th | +5 | +4 | +1 | +4 | Resist magic (+2) | +2 | 3\n| 6th | +6/+1 | +5 | +2 | +5 | Mystic combat | +3 | 4\n| 7th | +7/+2 | +5 | +2 | +5 | Marked | +3 | 4\n| 8th | +8/+3 | +6 | +2 | +6 | Combat feat | +4 | 5\n| 9th | +9/+4 | +6 | +3 | +6 | Resist magic (+3) | +4 | 5\n| 10th | +10/+5 | +7 | +3 | +7 | Mystic combat | +5 | 6\n| 11th | +11/+6/+1 | +7 | +3 | +7 | Mystic defense | +5 | 6\n| 12th | +12/+7/+2 | +8 | +4 | +8 | Combat feat | +6 | 7\n| 13th | +13/+8/+3 | +8 | +4 | +8 | Resist magic (+4) | +6 | 7\n| 14th | +14/+9/+4 | +9 | +4 | +9 | Mystic combat | +7 | 8\n| 15th | +15/+10/+5 | +9 | +5 | +9 | Draw power | +7 | 8\n| 16th | +16/+11/+6/+1 | +10 | +5 | +10 | Combat feat | +8 | 9\n| 17th | +17/+12/+7/+2 | +10 | +5 | +10 | Resist magic (+5) | +8 | 9\n| 18th | +18/+13/+8/+3 | +11 | +6 | +11 | Mystic combat | +9 | 10\n| 19th | +19/+14/+9/+4 | +11 | +6 | +11 | Spell critical | +9 | 10\n| 20th | +20/+15/+10/+5 | +12 | +6 | +12 | Combat feat, spellsword | +10 | 11"
+    },
+    {
+      "level": 2,
+      "heading": "Weapon and Armor Proficiency",
+      "anchor": "",
+      "text": "A mageknight is proficient with all simple and martial weapons, light armor, medium armor, and shields (except tower shields)."
+    },
+    {
+      "level": 2,
+      "heading": "Casting",
+      "anchor": "",
+      "text": "A mageknight may combine spheres and talents to create magical effects. A mageknight is considered a Low-Caster. She may use either Intelligence, Wisdom, or Charisma as her casting ability modifier and must make this choice at 1st level. Once made, this choice cannot be changed. (Note: All casters gain 2 bonus talents and may select a casting tradition the first time they gain the casting class feature.)"
+    },
+    {
+      "level": 2,
+      "heading": "Spell Pool",
+      "anchor": "",
+      "text": "A mageknight gains a small reservoir of energy she can call on to create truly wondrous effects, called a spell pool. This pool contains a number of spell points equal to her level + her casting ability modifier (minimum: 1). This pool replenishes once per day after roughly 8 hours of rest."
+    },
+    {
+      "level": 2,
+      "heading": "Magic Talents",
+      "anchor": "",
+      "text": "A mageknight gains a magic talent at 1st level, 2nd level, and again at every even level thereafter, according to Table: Mageknight."
+    },
+    {
+      "level": 2,
+      "heading": "Resist Magic (Ex)",
+      "anchor": "",
+      "text": "A mageknight gains a natural resistance to magic as she focuses on its use in combat. A mageknight gains a +1 bonus to all saving throws against magic, spells, spell-like abilities, and sphere effects. This bonus increases by an additional +1 for every 4 levels thereafter, to a maximum of +5 at 17th level."
+    },
+    {
+      "level": 2,
+      "heading": "Mystic Combat (Su)",
+      "anchor": "",
+      "text": "At 2nd level and every 4 levels thereafter, a mageknight gains a new way to enhance her physical abilities through magic.\nEach time she gains mystic combat, she chooses and gains one of the following abilities."
+    },
+    {
+      "level": 4,
+      "heading": "Arcane Strike [Core]",
+      "anchor": "",
+      "text": "You gain the Arcane Strike feat, and treat your mageknight level as your caster level when determining its effects."
+    },
+    {
+      "level": 4,
+      "heading": "Arcane Weapon Focus (Su)",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to deal damage with your attacks as if you had the warpriest\u2019s sacred weapon class feature with all your weapons, treating your class level as your warpriest level. This works for both melee and ranged weapons, and unarmed attacks. This effect lasts a number of rounds equal to your casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Aura of Chaos",
+      "anchor": "",
+      "text": "As a swift action, you may spend a spell point to emit an aura out to 20 ft. that increases the wild magic chance of all effects originating from hostile creatures by 50% for a number of rounds equal to your casting ability modifier. Affected creatures are unaware of this penalty."
+    },
+    {
+      "level": 4,
+      "heading": "Banishing Strike (Su)",
+      "anchor": "",
+      "text": "As a swift action, you may spend a spell point to charge a wielded weapon with magical energies disruptive to the bonds that hold extraplanar creatures present. The next summoned or called creature or non-native outsider you deal damage to with a manufactured or natural weapon attack before the start of your next turn must make a Will save (DC 10 + 1/2 mageknight level + casting ability modifier) or be sent back to its home plane. Conjuration sphere companions dismissed this way can be summoned again as normal. The creature is staggered for 1d4 rounds on a successful save."
+    },
+    {
+      "level": 4,
+      "heading": "Black Dog Companion (Requires Level 4, 1 talent with the Curse descriptor)",
+      "anchor": "",
+      "text": "You gain a lesser c\u00f9-s\u00ecth as a companion (see the Sphere Bestiary). This functions as a wolf animal companion with an effective druid level of your mageknight level \u20133, except that it has an Intelligence score of 10 and you may spend a spell point as an immediate action on your companion\u2019s turn to allow it to use its Baleful Howl special attack as a standard action, with a DC equal to 10 + 1/2 its Hit Dice + your casting ability modifier. If you already have such a companion or else later gain a companion through another source (such as the Animal domain, divine bond, hunter\u2019s bond, mount, or nature bond class features), the effective druid level granted by this mystic combat stacks with that granted by other sources.\nBaleful Howl (Su): As a standard action, the c\u00f9-s\u00ecth can release a howl of ill omen. All enemies within 60 ft. take a -4 penalty to saves against curse and death effects and against the c\u00f9-s\u00ecth\u2019s Soul Shepherd ability, as well as a -4 penalty to AC. These penalties last for 5 rounds. These penalties are reduced to -1 and last only a single round with a successful Will save (DC 23). This is a sonic curse effect. Note that the DC 23 is from the ability in the bestiary. The DC of a c\u00f9-s\u00ecth companion's baleful howl is determined by the Mageknight's level and Charisma."
+    },
+    {
+      "level": 4,
+      "heading": "Bleeding Wounds [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to inflict bleed damage equal to 1/2 your mageknight level (minimum: 1) with every attack for a number of rounds equal to your casting ability modifier. Bleed damage does not stack."
+    },
+    {
+      "level": 4,
+      "heading": "Bloodlust [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point as a standard action to increase your damage dealt to creatures depending on how many times you\u2019ve hit them. For 1 round per level, whenever you successfully strike an opponent with a weapon or natural attack, you gain a cumulative +1 bonus on future damage rolls, to a maximum equal to your class level. If you miss with an attack, the bonus to damage for all opponents resets to +0."
+    },
+    {
+      "level": 4,
+      "heading": "Burgeoning Reflexes",
+      "anchor": "",
+      "text": "Whenever you confirm a critical threat against an opponent, you gain 1 additional attack of opportunity that can be taken at any time before the start of your next turn. In addition, you gain a +2 competence bonus on attack rolls made as part of an attack of opportunity."
+    },
+    {
+      "level": 4,
+      "heading": "Champion [CS]",
+      "anchor": "",
+      "text": "The mageknight gains a Champion feat of her choice as a bonus feat. She must meet the prerequisites of the feat. This mystic combat can be gained multiple times."
+    },
+    {
+      "level": 4,
+      "heading": "Chivalry (Requires Resist Magic class feature, War sphere)",
+      "anchor": "",
+      "text": "Allies you share a mandate with benefit from your resist magic class feature. You may spend a spell point to create a totem that allows allies to benefit from your resist magic class feature."
+    },
+    {
+      "level": 4,
+      "heading": "Chronomantic Strike",
+      "anchor": "",
+      "text": "You gain the Time sphere as a bonus talent (or one talent from the Time sphere if you already possess it). Whenever you successfully damage a creature with an attack made using the attack action, you may spend a swift action to subject the target to the effects of one alter time ability you know, paying any costs as normal; if the talent requires a melee or ranged touch attack, you are treated as having already successfully made this attack when activating this ability. This must be an alter time effect capable of targeting a creature and cannot be an effect that affects an area."
+    },
+    {
+      "level": 4,
+      "heading": "Collapse Armor (Su)",
+      "anchor": "",
+      "text": "You can treat any armor you wear as having the collapsible special ability, except that you may collapse or recall the armor as a swift action instead of a full-round action, and you may choose which piece the armor collapses into each time you use this ability. You may spend a spell point to collapse or recall your armor as a free action instead of a swift action."
+    },
+    {
+      "level": 4,
+      "heading": "Combat Talent [CS]",
+      "anchor": "",
+      "text": "You gain a bonus combat talent. This mystic combat may be taken more than once, granting an additional talent each time."
+    },
+    {
+      "level": 4,
+      "heading": "Curse of Chaos",
+      "anchor": "",
+      "text": "As a swift action, you may spend a spell point to charge your next attack with disruptive energies. The next creature you deal damage to with a manufactured or natural weapon attack before the start of your next turn increases its wild magic chance by 100% for a number of rounds equal to your casting ability modifier. Affected creatures are unaware of this penalty."
+    },
+    {
+      "level": 4,
+      "heading": "Elemental Defense (requires Mystic Defense class feature)",
+      "anchor": "",
+      "text": "Your mystic defense class feature also gives you resistance to acid, cold, electricity, fire, and sonic damage. Source: The Abjurer's Handbook"
+    },
+    {
+      "level": 4,
+      "heading": "Enchanted Touch [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point as a standard action to grant enhancement bonuses to all attacks you make for 1 round per level. Your unarmed strikes, natural attacks, and wielded weapons gain a +1 enhancement bonus which does not stack with any enhancement bonus your weapons already possess. This bonus increases by +1 for every 5 levels you possess, to a maximum of +5 at 20th level."
+    },
+    {
+      "level": 4,
+      "heading": "Enhanced Physicality [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point to reroll an Acrobatics, Climb, Fly, or Swim check you just made with a bonus to your roll equal to 1/2 your mageknight level (minimum: 1). You must take the second roll, even if it is worse."
+    },
+    {
+      "level": 4,
+      "heading": "Ensorcelled Defenses (Su)",
+      "anchor": "",
+      "text": "As a swift action, you may spend a spell point to charge your armor and shield with energy, partially transforming them into fields of force that protect you. For a number of rounds equal to your casting ability modifier, your armor and shield bonuses (and any enhancement bonuses they have) become force effects and apply to your touch AC. Source: The Abjurer's Handbook"
+    },
+    {
+      "level": 4,
+      "heading": "Form-Breaker (Su)",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to empower your next attack with magical energies disruptive to shapechangers. If the attack successfully strikes a creature under a polymorph effect (such as shapeshift, beast shape, polymorph, or change shape), make an MSB check against the effect\u2019s MSD. You gain a +4 bonus on this check. If successful, the polymorph effect immediately ends and the target cannot benefit from polymorph effects for a number of rounds equal to your CAM."
+    },
+    {
+      "level": 4,
+      "heading": "Graft Weapon (Su)",
+      "anchor": "",
+      "text": "You may spend a spell point and 1 minute to graft a weapon to a limb capable of wielding a weapon as per the Graft Weapon trait of the Morphic Weapon (Alteration) talent. This graft persists until the weapon is removed as a standard action."
+    },
+    {
+      "level": 4,
+      "heading": "Great Fall [Core]",
+      "anchor": "",
+      "text": "When falling, you treat the distance fallen as being 10 ft shorter per mageknight level when determining the amount of damage you sustain. At 20th level, you may fall any distance without taking damage."
+    },
+    {
+      "level": 4,
+      "heading": "High Jump [Core]",
+      "anchor": "",
+      "text": "You may add your level to all Acrobatics checks made to jump, both for vertical jumps and horizontal jumps. In addition, you always counts as having a running start when making jump checks using Acrobatics. By spending 1 spell point as a swift action, you may gain a +20 bonus on Acrobatics checks made to jump for 1 round."
+    },
+    {
+      "level": 4,
+      "heading": "Honed Shadowblade (Requires Shadowblade)",
+      "anchor": "",
+      "text": "Objects created with your Shadowstuff Armament feat act as if you had the Surreinforcement feat (see Dual Sphere Feats). Treat your mageknight levels as Illusion caster levels for calculating its effects for your shadowstuff armaments. Once per round as a free action you may cause a creature damaged by one of your weapons created or enhanced by your shadowblade mystic combat to suffer a -1 circumstance penalty to all Perception checks and Will saves against illusions for one minute. This penalty stacks with itself up to 5 times."
+    },
+    {
+      "level": 4,
+      "heading": "Hunter\u2019s Mark (Su) (Requires Marked)",
+      "anchor": "",
+      "text": "You can sense any creature you\u2019ve left a magical mark on using your marked ability. You always know the direction and distance to them and what plane they are currently on. As a full-round action you may spend a spell point to teleport yourself to a square adjacent to a marked creature regardless of their distance from you, though you cannot travel between planes this way."
+    },
+    {
+      "level": 4,
+      "heading": "Imbued Weapon (Su)",
+      "anchor": "",
+      "text": "As a swift action, you may spend a spell point to charge a melee weapon you are holding with magical energy. It remains charged for a number of minutes equal to your casting ability modifier. You can add your casting ability modifier instead of your Dexterity or Strength modifier to attack rolls when wielding this weapon.\nIf the weapon is a melee weapon, you may use the weapon as a thrown weapon with an increment of 20 ft. The weapon keeps its own damage and critical hit characteristics, and is not considered an improvised weapon.\nWhen an imbued weapon is used as a thrown weapon, the weapon teleports back to your hand at the end of your turn, or the beginning of your next turn if used outside your turn. When an imbued weapon is a ranged weapon, then making ranged attacks with the weapon does not draw attacks of opportunity."
+    },
+    {
+      "level": 4,
+      "heading": "Instinct for War (Requires War sphere)",
+      "anchor": "",
+      "text": "Totems you create use your class level instead of your caster level to determine their effects, but not their size or duration. This stacks normally with caster levels from other classes."
+    },
+    {
+      "level": 4,
+      "heading": "Invisibility [Core]",
+      "anchor": "",
+      "text": "As a swift action, you may spend a spell point to become invisible for 1 round per mageknight level, or until you target a foe with an attack or magic."
+    },
+    {
+      "level": 4,
+      "heading": "Karmic Invigoration (Su) (Requires Life sphere, Marked class feature)",
+      "anchor": "",
+      "text": "As a swift action, you may infuse your marked target with a aura of positive energy. Until the end of your next turn, whenever an ally hits the target, you may invigorate the ally as a free action, even if they are not in range of your invigorate ability or if it is not your turn."
+    },
+    {
+      "level": 4,
+      "heading": "Lingering Pain [Core]",
+      "anchor": "",
+      "text": "As an immediate action after successfully dealing damage to an opponent, you may spend a spell point to cause that damage to be considered continuous damage for the purpose of concentration checks made by the target prior to the beginning of your next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Mage\u2019s Charge [Core]",
+      "anchor": "",
+      "text": "When making a charge, you may spend a spell point as a free action to add your mageknight level as a bonus to your attack roll."
+    },
+    {
+      "level": 4,
+      "heading": "Mark of Pain (Requires Marked class feature)",
+      "anchor": "",
+      "text": "Whenever you mark a target, you may also spend a spell point to lower their damage reduction and energy resistance against your attacks by your mageknight level. This condition lasts as long as the mark does."
+    },
+    {
+      "level": 4,
+      "heading": "Martial Adaptation (Ex)",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to gain the benefits of one teamwork feat. You must meet all the feat\u2019s prerequisites. All of your allies are treated as if they possessed the same teamwork feat for the purpose of determining whether you receive a bonus from the teamwork feat acquired. Your allies do not receive any bonuses from these feats unless they actually possess the feats themselves. Your allies\u2019 positioning and actions must still meet the prerequisites listed in the teamwork feat for you to receive the listed bonus. You keep the feat for a number of minutes equal to your casting ability modifier, or until you spend another spell point to acquire a different feat."
+    },
+    {
+      "level": 4,
+      "heading": "Mounted Combatant [Core]",
+      "anchor": "",
+      "text": "When using any mystic combat ability, you may spend an additional spell point to extend the benefit of that ability to your mount as well."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Adaption [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to gain the benefits of one combat feat of your choice for a number of rounds equal to your casting ability modifier. You must meet all of this feat\u2019s prerequisites. At 7th level, you may gain the benefits of two combat feats of your choice whenever you use this ability. At 14th level, you gain the benefits of three combat feats of your choice. Multiple uses of this ability do not stack, only the most recent use applies. If a combat feat has a limited number of daily uses (such as Stunning Fist), any uses of that combat feat while using this ability counts towards that feat\u2019s daily limit."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Aegis (Sp) (requires Protection sphere)",
+      "anchor": "",
+      "text": "When you create an aegis on yourself, you may use your mageknight class level in place of your caster level. In addition, if you use a (succor) talent to sacrifice an aegis you created that you bear, you may use your class level as your caster level. This stacks normally with caster levels from other sources. Source: The Abjurer's Handbook"
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Command",
+      "anchor": "",
+      "text": "The mageknight may spend a spell point as a swift action to share one teamwork feat she possesses with all allied creatures within close range (25 feet + 5 feet per 2 class levels) for 1 minute per level or until she uses this ability again."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Maneuver [Core]",
+      "anchor": "",
+      "text": "Select one combat maneuver. You may spend a spell point to perform this maneuver as a swift action that does not provoke an attack of opportunity, with a bonus to your CMB equal to 1/2 your mageknight level (minimum: 1). You may select this mystic combat multiple times. Each time it is selected, choose a different maneuver."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Might [Core]",
+      "anchor": "",
+      "text": "As a swift action, you may spend a spell point to increase your size category to Large for a number of rounds equal to your casting ability modifier. You gain a +4 size bonus to Strength and suffer a -2 penalty to Dexterity while enlarged in this fashion."
+    },
+    {
+      "level": 4,
+      "heading": "Penetrating Blow [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to cause all your attacks to be resolved as touch attacks until the end of your turn."
+    },
+    {
+      "level": 4,
+      "heading": "Quickened Reflexes [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to gain a dodge bonus to AC equal to half your mageknight level (minimum: 1) for a number of rounds equal to your casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Raging Combatant [Core]",
+      "anchor": "",
+      "text": "As a standard action, you may spend a spell point to enter a rage for 1 round per level. This is similar to a barbarian\u2019s rage, granting a +4 morale bonus to Strength and Constitution, a +2 morale bonus to Will saves, and suffering a -2 penalty to AC. You are under the same restrictions with skills, spells, and sphere abilities as a barbarian, but you may use mystic combat abilities as normal. You are fatigued afterward as a barbarian. You may end a rage prematurely as a free action."
+    },
+    {
+      "level": 4,
+      "heading": "Relentless Pursuit (Requires Marked class feature)",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to make a single manufactured or natural weapon attack against an enemy you have marked. This attack is made at your highest base attack bonus, and receives a circumstance bonus to damage equal to your mageknight level."
+    },
+    {
+      "level": 4,
+      "heading": "Resilience of Soul [Core]",
+      "anchor": "",
+      "text": "As an immediate action, you may spend a spell point to reroll a saving throw you just failed. You must take the second result, even if it is worse."
+    },
+    {
+      "level": 4,
+      "heading": "Ritual Tracker (Su)",
+      "anchor": "",
+      "text": "You can track creatures by observing the omens and mystic signs that subtly mark their passing. You can use Spellcraft instead of Survival to both find and follow tracks, using the same DCs listed under the Survival skill. In addition, you can track creatures that leave no tracks, such as flying and swimming creatures, and creatures using trackless step or pass without trace, taking a -5 penalty to your check for each such effect they benefit from. Finally, if you find or follow tracks where someone has teleported or moved between planes, you may make a Spellcraft or Survival check against a DC equal to their MSD to determine their destination. With a successful check you learn the direction of their destination and whether the distance to that destination is near (less than 1 mile), moderate (1 mile to 10 miles) or far (greater than 10 miles); if they moved between planes you instead learn what plane they moved to."
+    },
+    {
+      "level": 4,
+      "heading": "Self-Reliance (Ex) (Requires Life sphere)",
+      "anchor": "",
+      "text": "Whenever you invigorate or cure yourself with the Life sphere, you may use your class level as your caster level. This stacks with other caster levels normally."
+    },
+    {
+      "level": 4,
+      "heading": "Shadowblade",
+      "anchor": "",
+      "text": "Gain the Shadowstuff Armament feat. Additionally, you may spend a spell point as a free action to add the shadow wake weapon enhancement to a weapon for 1 round per mageknight level."
+    },
+    {
+      "level": 4,
+      "heading": "Shared Marking (Requires Marked class feature, War sphere)",
+      "anchor": "",
+      "text": "When you mark a target, allies you share a mandate with gain the same static benefits from the mark that you do. This does not give your ally abilities that trigger from your mark, such as relentless pursuit."
+    },
+    {
+      "level": 4,
+      "heading": "Shifted Karma (Su) (requires Marked class feature)",
+      "anchor": "",
+      "text": "Whenever you hit an enemy you have marked with a melee weapon or natural weapon, you may give the target a -4 penalty to attack and AC against creatures other than yourself. This penalty lasts until the beginning of your next turn, or you may spend a spellpoint to make it last 1 minute. This ability ends immediately if the mark ends, or if the target successfully hits you with a melee attack. Source: The Abjurer's Handbook"
+    },
+    {
+      "level": 4,
+      "heading": "Shining Armor (Su)",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to cause your armor to give off a slight glow as it becomes partially translucent. While in this state, you take no armor check penalties for wearing the armor, nor do you take any penalties to your speed from wearing armor, and your Dexterity bonus to AC is unlimited. This lasts a number of rounds equal to your casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Signature Scar (Su)",
+      "anchor": "",
+      "text": "When you damage an enemy with a melee weapon or natural weapon, you may spend a spell point as a free action to give them a scar. The target may make a Fortitude save against a DC equal to 10 + 1/2 your mageknight level plus your casting ability modifier to avoid the scar. Any hit points a scarred enemy would regain are diverted to you, unless you are at your full hit point total. The scar fades away after 1 minute."
+    },
+    {
+      "level": 4,
+      "heading": "Silvered Blade (Su)",
+      "anchor": "",
+      "text": "Any weapon you wield counts as silver. If you threaten a critical against a creature under a polymorph effect, you may spend a spell point to automatically confirm the critical."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Mirror (Requires Spell Shield, Mageknight 10)",
+      "anchor": "",
+      "text": "When a spell or sphere effect that has you as a target is negated by your spell shield, the effect is turned back upon its caster as if the caster was the original target. Use your own attack modifiers if an attack roll is required."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Shield",
+      "anchor": "",
+      "text": "As an immediate action, you may spend a spell point to grant yourself spell resistance equal to 15 + your mageknight level until the start of your next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Strategic Planning (Requires War sphere)",
+      "anchor": "",
+      "text": "At the beginning of the day, choose a (mandate) talent or (totem) talent you qualify for. You gain that mandate or totem for the duration of the day. At any time during the day, you may change your choice by meditating for 10 minutes."
+    },
+    {
+      "level": 4,
+      "heading": "Sunder the Veil",
+      "anchor": "",
+      "text": "You gain the Pierce the Veil feat. You need not meet its prerequisites. Additionally, you may spend a spell point as a free action to add the skeptical weapon enhancement to a weapon for 1 round per mageknight level."
+    },
+    {
+      "level": 4,
+      "heading": "Sustain [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point as an immediate action to grant yourself temporary hit points equal to your mageknight level + your casting ability modifier that last 1 hour. This can keep you from dying."
+    },
+    {
+      "level": 4,
+      "heading": "Swift Combatant [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to move up to 30 ft. This movement provokes attacks of opportunity as normal."
+    },
+    {
+      "level": 4,
+      "heading": "Time Shift [Core]",
+      "anchor": "",
+      "text": "When using any ability gained through the mystic combat class feature, you may spend an extra spell point to decrease that ability\u2019s required action by one step: standard actions become move actions, swift actions become free actions, etc. This cannot reduce an immediate action."
+    },
+    {
+      "level": 4,
+      "heading": "Unbreakable [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to grant yourself DR equal to your mageknight level for a number of rounds equal to your casting ability modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Veil Piercer (Su)",
+      "anchor": "",
+      "text": "Your magic allows you to interact with other dimensions. You may choose to touch and interact with ethereal and incorporeal creatures and objects as if they were solid. You may choose to have your attacks and effects count as magical for the purposes of affecting incorporeal creatures. If you do, your damage is not halved against them, and effects that do not cause damage are not subject to the standard 50% chance of failure. In addition, you may inflict critical hits and sneak attack on incorporeal creatures as if using a ghost touch weapon. This does not allow you to perceive anything ethereal or invisible."
+    },
+    {
+      "level": 4,
+      "heading": "Vengeful [Core]",
+      "anchor": "",
+      "text": "If a target strikes you and is within your threatened area, you may spend a spell point as an immediate action to make a single attack against that target at your highest BAB."
+    },
+    {
+      "level": 4,
+      "heading": "Ward Against Magic (Sp) (requires Protection sphere, Resist Magic class feature)",
+      "anchor": "",
+      "text": "You may create a ward that duplicates the effects of your resist magic class feature for all within. You may also create an aegis that duplicates the effects of your resist magic class feature for any creature that bears it. The bonus from your resist magic ability can not stack with itself this way. Source: The Abjurer's Handbook"
+    },
+    {
+      "level": 4,
+      "heading": "Weirding Initiate",
+      "anchor": "",
+      "text": "You gain the Weird Defense combat feat. You need not meet its prerequisites."
+    },
+    {
+      "level": 4,
+      "heading": "Weirding Adept",
+      "anchor": "",
+      "text": "You gain the Mage Feint talent (from the Illusion sphere) and the Weird Motion combat feat. You need not meet their prerequisites if you possess the weirding initiate mystic combat. Treat your mageknight levels as High-Caster levels when using the Mage Feint talent."
+    },
+    {
+      "level": 4,
+      "heading": "Weirding Master",
+      "anchor": "",
+      "text": "You gain the Decoy talent (from the Illusion sphere) and the Weird Assault combat feat. You need not meet their prerequisites if you possess the weirding adept mystic combat."
+    },
+    {
+      "level": 4,
+      "heading": "Whirl of Blows [Core]",
+      "anchor": "",
+      "text": "You may spend a spell point as a swift action to gain the benefits of the Whirlwind Attack feat for a number of rounds equal to your casting ability modifier, even if you don\u2019t meet the prerequisites."
+    },
+    {
+      "level": 4,
+      "heading": "Wrestler",
+      "anchor": "",
+      "text": "You gain the Improved Unarmed Strike and Improved Grapple feats."
+    },
+    {
+      "level": 2,
+      "heading": "Stalwart (Ex)",
+      "anchor": "",
+      "text": "At 3rd level, a mageknight can use mental and physical resiliency to avoid certain attacks. If she makes a Fortitude or Will saving throw against an attack that has a reduced effect on a successful save, she instead avoids the effect entirely. A helpless mageknight does not gain the benefit of the stalwart ability."
+    },
+    {
+      "level": 2,
+      "heading": "Combat Feat",
+      "anchor": "",
+      "text": "At 4th level and every four levels thereafter, the mageknight gains a bonus combat feat of her choice, chosen from those for which she qualifies."
+    },
+    {
+      "level": 2,
+      "heading": "Marked (Su)",
+      "anchor": "",
+      "text": "At 7th level, a mageknight who successfully deals damage with a weapon or natural attack to a target may, as a swift action, leave a magical mark on that target. The target suffers a -2 penalty to saving throws against the spells, spelllike abilities, and sphere abilities of the mageknight, and the mageknight gains a +2 bonus to saving throws against the spells, spell-like abilities, and sphere abilities of the target. This mark lasts for 1 minute. The mageknight may not have more than 1 mark active at a time; giving a second mark causes the first to be dismissed."
+    },
+    {
+      "level": 2,
+      "heading": "Mystic Defense (Su)",
+      "anchor": "",
+      "text": "At 11th level, a mageknight gains resistance to magical damage. This functions as damage reduction, except it only applies to damage sustained from spells, spelllike abilities, and sphere abilities. This only affects abilities that allow Spell Resistance. This damage reduction is equal to 1/2 the mageknight\u2019s class level. This does not apply to damage from magic weapons."
+    },
+    {
+      "level": 2,
+      "heading": "Draw Power (Su)",
+      "anchor": "",
+      "text": "At 15th level, whenever the mageknight successfully confirms a critical hit, she gains 1 temporary spell point which lasts for 1 round."
+    },
+    {
+      "level": 2,
+      "heading": "Spell Critical (Su)",
+      "anchor": "",
+      "text": "At 19th level, whenever a mageknight successfully confirms a critical hit, she can use a sphere ability as an immediate action. The sphere ability must include the target of the attack as one of its targets or in its area of effect. Using this sphere ability does not provoke an attack of opportunity."
+    },
+    {
+      "level": 2,
+      "heading": "Spellsword",
+      "anchor": "",
+      "text": "At 20th level the mageknight may effortlessly combine magic and combat. Choose one mystic combat ability that costs a spell point to use. You may use this ability without spending a spell point."
+    },
+    {
+      "level": 1,
+      "heading": "Feats",
+      "anchor": "",
+      "text": "The following feats are particularly appropriate or helpful for Mageknights."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Magic Talent [Core]",
+      "anchor": "",
+      "text": "Prerequisite: Basic Magic Training or Casting class feature.\nBenefit: Gain an additional sphere or a talent from a sphere you possess. You may take this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Mystic Combat [Core]",
+      "anchor": "",
+      "text": "Prerequisite: Mystic Combat class feature.\nBenefit: Gain an extra mystic combat ability for which you qualify. You may gain this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Spell Points [Core]",
+      "anchor": "",
+      "text": "Prerequisite: Spell Pool.\nBenefit: Your spell pool total increases by 2. You may gain this feat multiple times. The effects stack."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Assault",
+      "anchor": "",
+      "text": "Prerequisites: Casting class feature, base attack bonus +6.\nBenefit: You may spend a spell point to make a full-round attack that replaces the first attack with any sphere ability or supernatural ability that can be used as a standard action and requires an attack roll. You must pay any costs required by this sphere ability or supernatural ability, such as spell points. Using the ability replaces your first attack among your iterative attacks. If you are using two weapons, then it replaces both the primary and secondary weapon attacks.\nUsing the sphere or supernatural ability can provoke an attack of opportunity (if it normally does so), and if the ability is disrupted, the associated attack is lost, but the remaining iterative attacks are not. You may decide after you have used your sphere or supernatural ability whether to continue with your full-round attack or if you wish to take a move action instead. The spell point is spent when you decide to proceed with your full-round attack. Abilities that replace any of your attacks in a full-round attack are not compatible with mystic assault, nor are other abilities that allow you to use a supernatural or sphere ability as part of an attack. Abilities that grant extra attacks (such as the haste ability of the Time sphere) are compatible. You can still use other abilities that can normally be used during a full-round attack as part of a mystic assault."
+    },
+    {
+      "level": 4,
+      "heading": "Mystic Assault, Improved",
+      "anchor": "",
+      "text": "Prerequisites: Mystic Assault.\nBenefit: You do not need to spend a spell point to use mystic assault."
+    },
+    {
+      "level": 4,
+      "heading": "Reach Blade (Doomblades only)",
+      "anchor": "",
+      "text": "Prerequisites: Destructive Blade class feature\nBenefit: Your Destructive Blade may be shaped with the reach property. This property can be added or removed each time you shape the blade."
+    },
+    {
+      "level": 4,
+      "heading": "Sphere Focus [Core]",
+      "anchor": "",
+      "text": "Prerequisite: Casting class feature.\nBenefit: Choose a sphere. You gain a +1 bonus to saving throw DCs for all abilities from that sphere. You may take this feat multiple times. The effects do not stack. each time it is gained, apply this benefit to a different sphere."
+    },
+    {
+      "level": 1,
+      "heading": "Favored Class Bonuses",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Aasimar",
+      "anchor": "",
+      "text": "Gain a +1/6 bonus to all saving throws made against effects originating from outsiders."
+    },
+    {
+      "level": 4,
+      "heading": "Dwarf",
+      "anchor": "",
+      "text": "+1/6 bonus to all saving throws vs magic. This stacks with the resist magic class feature."
+    },
+    {
+      "level": 4,
+      "heading": "Elf",
+      "anchor": "",
+      "text": "+1/2 to all Acrobatics checks made to avoid attacks of opportunity, and to Escape Artist checks made to escape a grapple."
+    },
+    {
+      "level": 4,
+      "heading": "Gnome",
+      "anchor": "",
+      "text": "Increase the bonuses and penalties bestowed by the mageknight\u2019s marked ability by +1/8th."
+    },
+    {
+      "level": 4,
+      "heading": "Goblin",
+      "anchor": "",
+      "text": "Gain a +1 ft increase to the mageknight\u2019s base move speed. In combat, this increases the mageknight\u2019s move speed by 5 ft per 5 times this benefit is taken."
+    },
+    {
+      "level": 4,
+      "heading": "Half-Elf",
+      "anchor": "",
+      "text": "Choose a single mystic combat with a duration measured in rounds. Increase the duration of that mystic combat by 1/2 a round (maximum: 4 rounds per mystic combat). This may be taken and applied to different mystic combats."
+    },
+    {
+      "level": 4,
+      "heading": "Half-orc",
+      "anchor": "",
+      "text": "Gain +1/6th of a bonus combat feat."
+    },
+    {
+      "level": 4,
+      "heading": "Halfling",
+      "anchor": "",
+      "text": "Gain +1/6th of a mystic combat."
+    },
+    {
+      "level": 4,
+      "heading": "Human",
+      "anchor": "",
+      "text": "Gain +1/6th of a bonus magic talent."
+    },
+    {
+      "level": 4,
+      "heading": "Merfolk",
+      "anchor": "",
+      "text": "Gain +1 ft to the mageknight\u2019s land base movement. In combat, this adds 5 ft to the mageknight\u2019s movement for every 5 times it is taken."
+    },
+    {
+      "level": 4,
+      "heading": "Orc",
+      "anchor": "",
+      "text": "Increase the mageknight\u2019s effective level by +1/5 when determining the potency of mystic combat abilities."
+    },
+    {
+      "level": 4,
+      "heading": "Tiefling",
+      "anchor": "",
+      "text": "Gain a +1/6 bonus to attack rolls made against outsiders."
+    },
+    {
+      "level": 1,
+      "heading": "Archetypes",
+      "anchor": "",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "-Old Broadcast Blade",
+      "anchor": "",
+      "text": "The Broadcast Blade specializes in using the Warp sphere to teleport and attack large areas with their weapon."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Divine Lariat",
+      "anchor": "",
+      "text": "The Divine Lariat specializes in the use of the lasso, and learns a number of unique tricks and techniques to further improve their talent with it."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Doomblade",
+      "anchor": "",
+      "text": "The Doomblade uses the Destructive Blast of the Destruction sphere as a weapon, replacing their normal mode offense with a tool of pure energy."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Dragoon",
+      "anchor": "",
+      "text": "The Dragoon trades their ability to resist magic for the services of a capable mount."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Dread Crusader",
+      "anchor": "",
+      "text": "Dread Crusaders use the Death sphere to gain ghostly powers."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Dustbringer",
+      "anchor": "",
+      "text": "Dustbringers specialize in the destructive use of the Creation sphere, leaving little more than powder in their wake."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Grim Disciple",
+      "anchor": "",
+      "text": "The Grim Disciple specializes in the use of the Fate sphere for cursing their foes."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Herculean Scion",
+      "anchor": "",
+      "text": "With divine power flowing through their veins, the Herculean Scion is able to improve their own abilities better than other Mageknights can."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Kinetic Scourge",
+      "anchor": "",
+      "text": "The Kinetic Scourge is a master of the Energy Tether talent from the Destruction sphere, quickly learning a number of special tricks they can perform with it."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Knight-Summoner",
+      "anchor": "",
+      "text": "The Knight-Summoner is especially adept at summoning a creature to serve as a mount, whether it's a celestial steed or a terror from the depths of the world."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Marshal Controller [CS]",
+      "anchor": "",
+      "text": "Marshal Controllers are able to designate certain areas of the battlefield, then impose their own laws on this area."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Martial Mageknight [CS]",
+      "anchor": "",
+      "text": "The Martial Mageknight has learned to blend martial and magic talents to create a more distinctive style."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Resizer",
+      "anchor": "",
+      "text": "As the name suggests, the Resizer is particularly talented at growing and shrinking their body, quickly learning to avoid penalties and shift faster than before."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Sun Warrior",
+      "anchor": "",
+      "text": "The Sun Warrior is particularly talented with the Light sphere, and gains an improved caster level with any powers affected by their Glory."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Utterdark Champion",
+      "anchor": "",
+      "text": "The Utterdark Champion is an evil warrior, using the powers of darkness and corruption to eliminate their foes."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Wardmage",
+      "anchor": "",
+      "text": "The Wardmage is capable of generating Mystic Wards, special connections that allow them to protect designated allies from the many threats that adventurers face."
+    },
+    {
+      "level": 2,
+      "heading": "-Old Warrior of Holy Light",
+      "anchor": "",
+      "text": "Champions of virtue, Warriors of Holy Light can empower their weapons with light that cleanses evil.\nArchetype Compatibility | | Weapon & Armor | Casting & Talents | Resist Magic | Mystic Combat | Stalwart | Combat Feats | Marked | Mystic Defense | Draw Power | Spell Critical | Spellsword\n| Divine Lariat | M | X | | | | | X | | | X |\n| Doomblade | | M | X | | | | | | | |\n| Dragoon | | | X | | X | | | | | |\n| Grim Disciple | | M | | M | X | | X | X | | |\n| Herculean Scion | | M | X | | | | X | X | | | X\n| Kinetic Scourge | M | M | | M | | | | | | |\n| Resizer | M | M | | M | X | | X | X | X | |\n| Sun Warrior | | M | X | | | | | | | |\n| Utterdark Champion | | M | X | M | | M | | | | | X\n| Wardmage | | M | X | | | | X | X | | |\n| Warrior of Holy Light | | M | X | M | | M | | | | | X\nGuide: M = Modifies, X = Replaces, Blank = No Change\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book\n| Champions of the Spheres by Drop Dead Studios\n| Classes\n| Bravo | Crimson Dancer | Dissident | Dragoon\n| Mountebank | Necros | Prodigy | Reaper\n| Sage | Theorist | Troubadour | Warden\n| Rules\n| Champion Feats | Unified Traditions | Champion FCBs |\n| Get Champions Of The Spheres\n| Get Mythic Champions of the Spheres\n| Get Legends of the Spheres\n| Get Study and Practice\n| The Crimson Dancer | The Realmwalker's Handbook\n| The Warden | Spheres Apocrypha: Sidhe Outcasts\n| The Cataclysm Handbook | The Gravecaller's Handbook\n| Get the Lost Champions Bundle\n| LC: Dragoon | LC: Mountebank | LC: Necros | LC: Reaper"
+    }
+  ]
+}

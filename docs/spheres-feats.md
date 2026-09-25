@@ -27,7 +27,8 @@ headings, rules, compiled prerequisites and unresolved clauses are retained in
 - Basic Magic Training grants casting core, CL/MSB 1, one spell point and a
   separate base-sphere-only choice, without two free caster talents.
 - Advanced Magic Training scales CL/MSB and spell points for the currently
-  supported Incanter/noncaster class model. Casting traditions are still manual.
+  supported Incanter/noncaster class model. A partial custom tradition builder
+  exists separately; it does not complete feat-driven tradition qualification.
 - Fixed metamagic spell-point surcharges are exposed as feat variables, not
   permanently subtracted from the spell pool.
 - Selected additional resource grants in

@@ -1,0 +1,22 @@
+# https://spheresofpower.wikidot.com/shifter (2026-09-24); numeric progression from the source table.
+CLASS:Shifter	HD:8	TYPE:Base.PC	MAXLEVEL:20	STARTSKILLPTS:4	CSKILL:Acrobatics|Bluff|Climb|TYPE=Craft|Disguise|Fly|Handle Animal|Intimidate|Knowledge (Geography)|Knowledge (Nature)|Perception|TYPE=Profession|Sense Motive|Spellcraft|Stealth|Survival|Swim	BONUS:COMBAT|BASEAB|floor(CL*3/4)|TYPE=Base.REPLACE	DEFINE:SPHERES_SHIFTER_LEVEL|0	BONUS:VAR|SPHERES_SHIFTER_LEVEL|CL	BONUS:SAVE|BASE.Fortitude|2+floor(CL/2)	BONUS:SAVE|BASE.Reflex|2+floor(CL/2)	BONUS:SAVE|BASE.Will|floor(CL/3)	BONUS:VAR|SPHERES_CASTER_LEVEL,SPHERES_MAGIC_SKILL_BONUS|floor(CL*3/4)	BONUS:VAR|SPHERES_SPELL_POOL_LEVELS|CL
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|Armor Prof ~ Light	ABILITY:Special Ability|AUTOMATIC|Spheres Casting Core	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 1	ABILITY:Special Ability|AUTOMATIC|Shifter Sphere Mastery
+2	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 2	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+3	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 3	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+4	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 4	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+5	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 5
+6	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 6	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+7	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 7	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+8	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 8	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+9	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 9
+10	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 10	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+11	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 11	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+12	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 12	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+13	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 13
+14	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 14	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+15	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 15	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+16	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 16	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+17	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 17
+18	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 18	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+19	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 19	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+20	ABILITY:Special Ability|AUTOMATIC|Shifter Class Features 20	BONUS:VAR|SPHERES_MAGIC_TALENTS|1

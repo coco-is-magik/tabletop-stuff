@@ -14,6 +14,7 @@ SNAPSHOTS = ROOT / "testdata/spheres/catalog-source"
 POWER = "alteration blood conjuration creation dark death destruction divination enhancement fallen-fey fate illusion life light mana mind nature protection telekinesis time war warp weather bear technomancy veilweaving".split()
 MIGHT = "alchemy athletics barrage barroom beastmastery berserker boxing brute dual-wielding duelist equipment-sphere fencing gladiator guardian lancer open-hand scoundrel scout shield sniper trap warleader-sphere wrestling leadership tech tinker pilot".split()
 FEATS = "admixture-feats anathema-feats aristeia-feats champion-feats chance-feats channeling-feats combat-feats companion-feats counterspell-feats damnation-feats drawback-feats extra-feats general-feats item-creation-feats metamagic-feats necrosis-feats plague-feats practitioner-feats protokinesis-feats proxy-feats purring-feats racial-feats ritual-feats skybourne-feats squadron-feats surreal-feats teamwork-feats theurge-feats wild-magic-feats".split()
+CLASSES = "armorist elementalist eliciter fey-adept hedgewitch mageknight shifter soul-weaver symbiat thaumaturge wraith armiger blacksmith commander scholar sentinel striker technician".split()
 
 
 class Page(HTMLParser):
@@ -79,7 +80,7 @@ class Page(HTMLParser):
 
 
 def fetch(slug):
-    if slug not in POWER + MIGHT + FEATS + ["legal:start", "using-spheres-of-might", "using-spheres-of-power"]:
+    if slug not in POWER + MIGHT + FEATS + CLASSES + ["traits", "practitioner-traits", "casting-traditions", "martial-traditions", "legal:start", "using-spheres-of-might", "using-spheres-of-power"]:
         raise ValueError("Not a catalog source")
     url = "https://spheresofpower.wikidot.com/" + slug
     request = urllib.request.Request(url, headers={"User-Agent": "PF1-PCGen-catalog/1.0"})

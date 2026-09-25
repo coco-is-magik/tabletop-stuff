@@ -1,0 +1,451 @@
+{
+  "url": "https://spheresofpower.wikidot.com/striker",
+  "retrieved": "2026-09-24",
+  "sha256": "032708b4f9558446632737d54f38e2fb3bdabd6ed0250c5f08b8e0688a206ce0",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Class Abilities Combat Training AC Bonus (Ex) Bare Knuckles (Ex) Tension (Ex) Tension Techniques (Ex) Striker Art (Ex) Adrenaline Rush [Tension] [LG] Adrenaline Surge [Tension] Area Strike [Tension] [LG] Armored Striker Avenging Burst [Tension] [LG] Biotic Invigoration [Tension] [LG] Blindside Offense Blink Step (Requires Striker 5) Critical Endurance [Tension] [LG] Critical Tension [Tension] (Requires Striker 8) Defensive Sequestration [LG] Dig In [Tension] [LG] Dispelling Knuckle [Tension] (Requires Striker 5) Enduring Critical Exploited Opening [Tension] Extra Boost (Requires Striker 5) Favored Weapon High Tension (Requires Striker 5) Improved Determination (Requires Striker 5) Invigorated Spirit [Tension] Iron Body [Tension] Iron Soul [Tension] Lasting Flame Lightning Dodge [Tension] Lucky Chance Mobile Step Mounted Striker [BTH] Outburst [Tension] (requires Striker 8) [LG] Phasic Blitz (requires adrenaline rush) (Su) [LG] Piercing Fist Resistant Transformation [Tension] [LG] Skill Adaptation [LG] Speed Pummeling (Requires Striker 5) Spell Bending [Tension] [LG] Spell Blocker [Tension] [LG] Steel Heart (Requires Iron Soul) Tension Drain [LG] Tension Drain, Improved [LG] True Desperation (Requires Striker 8) Vital Tension [Tension] (Requires Striker 5) Unarmored Striker Wild Charge [Tension] (Requires Striker 5) Tension Boost (Ex) Drill Knuckle (Ex) Uncanny Dodge (Ex) Desperate Tension (Ex) Tension Training (Ex) Pummeling Punisher (Ex) Rising Tension (Ex) Improved Uncanny Dodge (Ex) Ultimate Tension (Ex) Archetypes Barfighter Black Powder Brawler Chaos Shifter Elemental Fist [CS] Evolutionist [LG] Shadowed Fist Skirmishing Scout Strong Style Grappler Voidrusher [CS] [DRS] Favored Class Bonuses Class Equipment Adamantine Knuckles [TS:WAT] Arts Manual [TS:WAT] Risk And Reward [TS:WAT]\nSpheres of Might $19.99 \u201cWho needs a weapon when I am one?\u201d To a striker, only one thing matters; rhythm. Combat is a delicate dance for these daredevils, weaving in and out of skirmishes wearing little or no armor and often only bringing their fist to bare. But to a striker, combat isn\u2019t worth it without risk, as they thrive on taking risks and living to tell the tale. While other warriors may boast of their ability to hold others at bay, a striker delights in risking life and limb in the pursuit of the combat high which drives them, willing to do anything in order to reach that state of excitement, even at the cost of their lives.\nStarting Wealth: 3d6 \u00d7 10 gp (average 105 gp). In addition, each character begins play with an outfit worth 10 gp or less.\nStarting Age: Self-taught\nRole: A striker is meant to stay in the front lines, gaining tension to tear through her foes with devastating counter attacks.\nAlignment: Any.\nHit Die: d10\nClass Skills: The striker\u2019s class skills are Acrobatics (Dex), Climb (Str), Craft (Int), Escape Artist (Dex), Fly (Dex), Heal (Wis), Intimidate (Cha), Knowledge (nature) (Int), Perception (Wis), Perform (Cha), Profession (Wis), Ride (Dex), Sense Motive (Wis), Sleight of Hand (Dex), Stealth (Dex), Survival (Wis), and Swim (Str).\nSkill Ranks Per Level: 4 + Int modifier.\nProficiencies: Strikers are proficient with simple weapons, as well as light armor and bucklers. In addition, if this is this character\u2019s first level in any class, they may select a martial tradition of their choice. When wearing medium or heavy armor, using a shield, or carrying a medium or heavy load, a striker loses her AC bonus."
+    },
+    {
+      "level": 1,
+      "heading": "Class Abilities",
+      "anchor": "toc0",
+      "text": "Table: Striker | Class Level | Base Attack Bonus | Fort Save | Reflex Save | Will Save | Special | Combat Talents\n| 1 | +1 | +2 | +2 | +0 | AC bonus, bare knuckles, combat training, tension, tension techniques | 1\n| 2 | +2 | +3 | +3 | +0 | Striker art, tension boost | 2\n| 3 | +3 | +3 | +3 | +1 | Drill knuckle, uncanny dodge | 3\n| 4 | +4 | +4 | +4 | +1 | Desperate tension | 4\n| 5 | +5 | +4 | +4 | +1 | Striker art, tension training | 5\n| 6 | +6/+1 | +5 | +5 | +2 | Drill knuckle | 6\n| 7 | +7/+2 | +5 | +5 | +2 | Pummeling punisher, tension boost | 7\n| 8 | +8/+3 | +6 | +6 | +2 | Striker art | 8\n| 9 | +9/+4 | +6 | +6 | +3 | Drill knuckle | 9\n| 10 | +10/+5 | +7 | +7 | +3 | Rising tension | 10\n| 11 | +11/+6/+1 | +7 | +7 | +3 | Striker art, tension training | 11\n| 12 | +12/+7/+2 | +8 | +8 | +4 | Drill knuckle, improved uncanny dodge | 12\n| 13 | +13/+8/+3 | +8 | +8 | +4 | Tension boost | 13\n| 14 | +14/+9/+4 | +9 | +9 | +4 | Striker art | 14\n| 15 | +15/+10/+5 | +9 | +9 | +5 | Drill knuckle | 15\n| 16 | +16/+11/+6/+1 | +10 | +10 | +5 | Rising tension | 16\n| 17 | +17/+12/+7/+2 | +10 | +10 | +5 | Striker art, tension training | 17\n| 18 | +18/+13/+8/+3 | +11 | +11 | +6 | Drill knuckle | 18\n| 19 | +19/+14/+9/+4 | +11 | +11 | +6 | Tension boost | 19\n| 20 | +20/+15/+10/+5 | +12 | +12 | +6 | Striker art, ultimate tension | 20"
+    },
+    {
+      "level": 2,
+      "heading": "Combat Training",
+      "anchor": "toc1",
+      "text": "A striker may combine combat spheres and talents to create powerful martial techniques. Strikers are considered Expert practitioners and use Constitution as their practitioner modifier."
+    },
+    {
+      "level": 2,
+      "heading": "AC Bonus (Ex)",
+      "anchor": "toc2",
+      "text": "When wearing light armor or no armor, not carrying a shield, and unencumbered, the striker adds her Constitution bonus (if any) to her AC and her CMD; this bonus cannot exceed her class level. (A 1st level striker with 16 Constitution still gains only a +1 bonus to her armor class from this class feature.) This AC bonus does not stack with any class features which share the same name as it.\nThis bonus to AC applies even against touch attacks or when the striker is flat-footed. She loses these bonuses when she is immobilized or helpless, when she wears medium or heavy armor, uses a shield, or when she carries a medium or heavy load.\nWiki Note: This stacks with the Equipment Sphere's Unarmored Training talent. You can also get Unarmored Training as a Striker Art. (Source)"
+    },
+    {
+      "level": 2,
+      "heading": "Bare Knuckles (Ex)",
+      "anchor": "toc3",
+      "text": "The striker gains their choice of Boxing, Brute, or Open Hand as a bonus sphere. If she already possesses Boxing, Brute, or Open Hand, she can choose to gain either a sphere she does not have or a talent from the sphere she does possess."
+    },
+    {
+      "level": 2,
+      "heading": "Tension (Ex)",
+      "anchor": "toc4",
+      "text": "A striker is at home in battle, thriving on the raw energy of combat to fuel her attacks. A striker begins the day with no tension, but can gain tension in the following ways (a striker cannot gain tension from each of these more than once per round and a striker must be in combat to gain tension):\nOffensive Pressure: Whenever the striker successfully damages a creature with an unarmed strike or makes a successful combat maneuver check against a creature to initiate a combat maneuver, she gains 1 tension.\nDefensive Determination: Whenever the striker takes damage from an attack originating from a creature (including spells, spell-like abilities, and supernatural abilities), she gains 1 tension. A striker does not gain tension from attacks made against her while she is flat-footed or unaware.\nManeuvering Momentum: Whenever the striker moves 10 ft. or more during her turn (this cannot be forced movement), she gains 1 tension.\nHer tension goes up or down throughout the day, but usually cannot go higher than her Constitution modifier (minimum 1), though some feats, abilities, and magic items may affect this maximum. At 3rd level and every three levels afterward, her maximum tension increases by 1. If a striker spends 1 minute or longer outside of combat, she loses all tension she possesses."
+    },
+    {
+      "level": 2,
+      "heading": "Tension Techniques (Ex)",
+      "anchor": "toc5",
+      "text": "A striker can spend tension in order to accomplish incredible feats and each tension technique can only be used once per round (if an ability does not have an associated action listed, using it is a free action which can be done during anyone\u2019s turn). Unless stated otherwise, you must activate a tension technique before any applicable rolls are made. For example, if you activate Expert Guard, you must do so before making a saving throw.\n1 Tension\nExpert Guard: For each tension a striker spends on this tension technique, she gains a +1 circumstance bonus on all saves until the beginning of her next turn.\nFiery Offense: For each tension a striker spends on this tension technique, she gains a +1 circumstance bonus to attack and damage rolls made with unarmed strikes until the beginning of her next turn.\nLight Step: The striker spends a swift action and selects a single creature, all movement she makes until the beginning of her next turn does not provoke attacks of opportunity from that creature.\nStalwart Form: For each tension a striker spends on this tension technique, she gains DR 1/- until the beginning of her next turn; this damage reduction stacks with similar damage reduction.\nTimely Dodge: For each tension a striker spends on this tension technique, she gains a +1 dodge bonus to her armor class until the beginning of her next turn.\n2 Tension\nCritical Knuckle: The striker increases the critical threat range of her unarmed strikes by 1 until the beginning of her next turn; this bonus stacks with other increases to the striker\u2019s unarmed strikes critical threat range, but is applied last.\nPerfect Offensive: The striker automatically confirms a critical threat made with an unarmed strike.\nSwift Focus: The striker spends a swift action to regain martial focus.\n3 Tension\nRapid Pummel: Whenever a striker makes an attack action with an unarmed strike or attempts a combat maneuver check as a standard action, she can spend a swift action to make an additional attack with an unarmed strike with a -2 penalty (she can wait until the results of the attack roll before deciding to use this tension technique) once per turn.\nSecond Chance: The striker can reroll a saving throw after the result has been revealed, although she must accept the result of the reroll, even if it is worse.\nSpeed Step: The striker can spend a swift action to move up to her speed with whatever methods of movement she possesses."
+    },
+    {
+      "level": 2,
+      "heading": "Striker Art (Ex)",
+      "anchor": "toc6",
+      "text": "At 2nd level and every three levels thereafter, a striker gains a striker art from the following list (striker arts with the [Tension] tag add new tension techniques):"
+    },
+    {
+      "level": 4,
+      "heading": "Adrenaline Rush [Tension] [LG]",
+      "anchor": "toc7",
+      "text": "Source: Arcforge Players Compendium\nWhen the striker uses speed step, she may spend an additional point of tension to not provoke attacks of opportunity for moving."
+    },
+    {
+      "level": 4,
+      "heading": "Adrenaline Surge [Tension]",
+      "anchor": "toc8",
+      "text": "For every tension the striker spends on this tension technique, she gains a number of temporary hit points equal to her Constitution modifier (minimum 1); these temporary hit points last for 1 minute or until lost, whichever comes first, and stack with other sources of temporary hit points including itself."
+    },
+    {
+      "level": 4,
+      "heading": "Area Strike [Tension] [LG]",
+      "anchor": "toc9",
+      "text": "Source: Arcforge Players Compendium\nThe striker may spend 2 tension to have the next natural attack she makes target all creatures in a 15-foot cone or a 25-foot line. For each additional tension you spend to activate this adaptation, the striker may increase the cone\u2019s length by 5 feet or increase the line\u2019s length by 10 feet. Regardless of how many creatures are hit by this attack, she cannot apply the effects of an attack action to more than one target (as if she were making an attack with a scatter weapon)."
+    },
+    {
+      "level": 4,
+      "heading": "Armored Striker",
+      "anchor": "toc10",
+      "text": "The striker retains her AC bonus class feature while wearing medium armor. This talent can be selected a second time, allowing the striker to retain her AC bonus class feature while wearing heavy armor."
+    },
+    {
+      "level": 4,
+      "heading": "Avenging Burst [Tension] [LG]",
+      "anchor": "toc11",
+      "text": "Source: Arcforge Players Compendium\nWhen the striker is hit by a melee attack, she may spend 1 point of tension as an immediate action to vent energy on the attacker. The attacker takes 1d4 points of fire and electricity damage per 2 striker levels (Reflex save half, DC 10 + 1/2 the striker\u2019s level + her practitioner modifier). The striker may spend 1 additional point of tension to increase the damage dice from 1d4 to 1d6, or 2 additional points of tension to increase them from 1d4 to 1d8."
+    },
+    {
+      "level": 4,
+      "heading": "Biotic Invigoration [Tension] [LG]",
+      "anchor": "toc12",
+      "text": "Source: Arcforge Players Compendium\nWhen the striker would receive healing, she may spend 1 tension to increase that healing by her striker level. By spending 2 points of tension as a swift action, the striker may heal herself for 1d6 points of damage per 2 striker levels, to a maximum of 1/2 her maximum hp."
+    },
+    {
+      "level": 4,
+      "heading": "Blindside Offense",
+      "anchor": "toc13",
+      "text": "Whenever the striker successfully attacks a creature who is unaware of her presence, who considers her an ally, or who cannot see her, she gains 1 additional tension from her offensive pressure."
+    },
+    {
+      "level": 4,
+      "heading": "Blink Step (Requires Striker 5)",
+      "anchor": "toc14",
+      "text": "The striker can use her speed step tension technique as a free action."
+    },
+    {
+      "level": 4,
+      "heading": "Critical Endurance [Tension] [LG]",
+      "anchor": "toc15",
+      "text": "Source: Arcforge Players Compendium\nIf the striker is subject to a critical hit or instance of precision damage, she may spend 1 tension to gain a 25% chance to negate this additional damage as per the fortification armor special ability. For every additional point of tension spent, this chance increases by 25%, to a maximum of 100%."
+    },
+    {
+      "level": 4,
+      "heading": "Critical Tension [Tension] (Requires Striker 8)",
+      "anchor": "toc16",
+      "text": "The striker can spend 4 tension to treat a successful attack with an unarmed strike as a critical threat and gains a bonus to the confirmation roll equal to her Constitution modifier, although the critical hit multiplier of the weapon used for this attack is reduced to x2 if it wasn\u2019t already (this striker art cannot be used with the perfect offensive tension technique)."
+    },
+    {
+      "level": 4,
+      "heading": "Defensive Sequestration [LG]",
+      "anchor": "toc17",
+      "text": "Source: Arcforge Players Compendium\nWhen the striker takes the total defense action, she gains 3 points of tension."
+    },
+    {
+      "level": 4,
+      "heading": "Dig In [Tension] [LG]",
+      "anchor": "toc18",
+      "text": "Source: Arcforge Players Compendium\nWhen the striker would be forcibly moved or fall prone, she may spend 1 point of tension to not fall prone and reduce the movement by 5 feet."
+    },
+    {
+      "level": 4,
+      "heading": "Dispelling Knuckle [Tension] (Requires Striker 5)",
+      "anchor": "toc19",
+      "text": "The striker can spend 3 tension whenever she makes a successful attack against a creature or object to treat the results of that attack roll as a caster level check against 1 spell as though using the targeted dispel option of dispel magic or the Counterspell feat; if this attempt fails, the striker cannot use this striker art against that creature or object for 24 hours. At 8th level and every 4 levels afterwards, she can dispel an additional spell with this ability as though using greater dispel magic or the Improved Counterspell feat."
+    },
+    {
+      "level": 4,
+      "heading": "Enduring Critical",
+      "anchor": "toc20",
+      "text": "Whenever the striker uses her critical knuckle tension technique, its effects lasts for an additional number of rounds equal to her Constitution modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Exploited Opening [Tension]",
+      "anchor": "toc21",
+      "text": "Whenever the striker makes an attack of opportunity, she can spend 2 tension to make an additional attack with an unarmed strike with a -2 penalty."
+    },
+    {
+      "level": 4,
+      "heading": "Extra Boost (Requires Striker 5)",
+      "anchor": "toc22",
+      "text": "The striker gains an additional tension from her tension boost class feature. At 11th level and again at 17th level, the striker can select this striker art an additional time."
+    },
+    {
+      "level": 4,
+      "heading": "Favored Weapon",
+      "anchor": "toc23",
+      "text": "The striker can select a single light melee weapon or ranged weapon which can be used with 1 hand (such as a light crossbow or pistol), or any improvised weapon they would treat as a light melee weapon, treating it as though it was her unarmed strike for how much damage it deals and striker class features (but not for combat spheres and talents); a weapon used with this talent has its critical multiplier reduced to x2."
+    },
+    {
+      "level": 4,
+      "heading": "High Tension (Requires Striker 5)",
+      "anchor": "toc24",
+      "text": "The striker increases her maximum tension by 1. This striker art can be gained once at 5th level, plus an additional time for every 6 levels thereafter."
+    },
+    {
+      "level": 4,
+      "heading": "Improved Determination (Requires Striker 5)",
+      "anchor": "toc25",
+      "text": "The striker can gain up to 2 tension from their defensive determination ability, although she cannot gain tension from the same creature dealing damage to her two or more times."
+    },
+    {
+      "level": 4,
+      "heading": "Invigorated Spirit [Tension]",
+      "anchor": "toc26",
+      "text": "The striker can spend 2 tension to ignore temporary penalties to her physical ability scores for 1 minute."
+    },
+    {
+      "level": 4,
+      "heading": "Iron Body [Tension]",
+      "anchor": "toc27",
+      "text": "For each 2 tension the striker spends on this tension technique, she gains DR 3/- until the beginning of her next turn; this damage reduction stacks with similar damage reduction."
+    },
+    {
+      "level": 4,
+      "heading": "Iron Soul [Tension]",
+      "anchor": "toc28",
+      "text": "The striker can spend 2 tension as an immediate action to ignore any of the following conditions for a number of rounds equal to her Constitution modifier (minimum 1): blinded, deafened, entangled, fatigued, sickened, shaken, or staggered. Once a specific instance of a condition has been ignored by this striker art, it cannot be ignored again for 24 hours or until she has rested for 8 hours (whichever comes first)."
+    },
+    {
+      "level": 4,
+      "heading": "Lasting Flame",
+      "anchor": "toc29",
+      "text": "The circumstance bonus on attack and damage rolls granted by the striker\u2019s fiery offense tension technique now lasts until the end of her next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Lightning Dodge [Tension]",
+      "anchor": "toc30",
+      "text": "For each 2 tension the striker spends on this tension technique, she gains a +3 circumstance bonus to her AC until the beginning of her next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Lucky Chance",
+      "anchor": "toc31",
+      "text": "The striker reduces the tension needed for her second chance tension technique by 1. Also she can spend an additional tension while using this tension technique to gain a bonus on the reroll equal to her Constitution modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Mobile Step",
+      "anchor": "toc32",
+      "text": "The striker can use her light step tension technique as a free action."
+    },
+    {
+      "level": 4,
+      "heading": "Mounted Striker [BTH]",
+      "anchor": "toc33",
+      "text": "The striker gains the Beastmastery sphere as a bonus talent and Mounted Athlete as a bonus feat, even if she does not have the prerequisites normally required for this feat.\nIn addition, the striker may treat her mount\u2019s movement as though it were her own movement for the purposes of the maneuvering momentum ability. Whenever the striker would use a striker ability that affects her movement, such as the light step or speed step tension technique, the striker may grant that ability\u2019s benefits to her mount instead."
+    },
+    {
+      "level": 4,
+      "heading": "Outburst [Tension] (requires Striker 8) [LG]",
+      "anchor": "toc34",
+      "text": "Source: Arcforge Players Compendium\nThe striker may spend 3 points of tension as a standard action to make an attack with an unarmed strike against each enemy in her reach."
+    },
+    {
+      "level": 4,
+      "heading": "Phasic Blitz (requires adrenaline rush) (Su) [LG]",
+      "anchor": "toc35",
+      "text": "Source: Arcforge Players Compendium\nWhen the striker uses speed step, she may spend 1 additional tension to teleport up to her speed rather than moving."
+    },
+    {
+      "level": 4,
+      "heading": "Piercing Fist",
+      "anchor": "toc36",
+      "text": "Whenever the striker uses a tension technique to make multiple attacks with her unarmed strike against the same creature, total the damage from each additional hit before applying that creature\u2019s damage reduction and energy resistance."
+    },
+    {
+      "level": 4,
+      "heading": "Resistant Transformation [Tension] [LG]",
+      "anchor": "toc37",
+      "text": "Source: Arcforge Players Compendium\nThe striker may spend 2 points of tension to gain resistance to one energy type of her choice for a number of rounds equal to her practitioner modifier. This resistance is equal to her striker level."
+    },
+    {
+      "level": 4,
+      "heading": "Skill Adaptation [LG]",
+      "anchor": "toc38",
+      "text": "Source: Arcforge Players Compendium\nThe striker gains additional skill points equal to her striker level and selects two additional skills as class skills. This striker art may be selected multiple times."
+    },
+    {
+      "level": 4,
+      "heading": "Speed Pummeling (Requires Striker 5)",
+      "anchor": "toc39",
+      "text": "The striker can use her rapid pummeling tension technique as a free action."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Bending [Tension] [LG]",
+      "anchor": "toc40",
+      "text": "Source: Arcforge Players Compendium\nWhen a willing ally within close range of the striker casts a spell, the striker can spend 3 tension as an immediate action to absorb and redirect the spell\u2019s energy. The striker chooses the spell\u2019s targets, measures the spell\u2019s range from her space, and makes any attack rolls for the spell as if she were the caster, though the original spellcaster attempts any caster level checks, rolls any damage, and is responsible for controlling and concentrating on any subsequent effects of the spell. In addition, the striker also applies one of the following three special effects to the spell:\nIncrease the spell\u2019s saving throw DCs by 2.\nGrant the caster a +3 bonus to overcome spell resistance.\nIf the spell deals damage, the striker can replace her unarmed strikes and natural attacks\u2019 damage with one damage type dealt by the spell until the end of her next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Spell Blocker [Tension] [LG]",
+      "anchor": "toc41",
+      "text": "Source: Arcforge Players Compendium\nBy spending 2 points of tension, the striker may gain spell resistance equal to 11 + her striker level until the start of her next turn."
+    },
+    {
+      "level": 4,
+      "heading": "Steel Heart (Requires Iron Soul)",
+      "anchor": "toc42",
+      "text": "The striker adds the following conditions she can ignore with her iron soul striker art, although she must spend 1 additional tension when ignoring the following conditions: dazed, exhausted, frightened, nauseated, paralyzed, or stunned (if a condition would cause the striker to be unable to act, as long as she can take purely mental actions, she can use this striker art)."
+    },
+    {
+      "level": 4,
+      "heading": "Tension Drain [LG]",
+      "anchor": "toc43",
+      "text": "Source: Arcforge Players Compendium\nAs a standard action, the striker may make a melee touch attack against a creature. The target must attempt a Fortitude save (DC 10 + 1/2 the striker\u2019s level + her practitioner modifier) or become sickened for a number of rounds equal to the striker\u2019s level. On a successful touch attack, the striker gains 1 point of tension, or 3 points of tension if the target fails their saving throw."
+    },
+    {
+      "level": 4,
+      "heading": "Tension Drain, Improved [LG]",
+      "anchor": "toc44",
+      "text": "Source: Arcforge Players Compendium\nWhen the striker uses tension drain, the striker gains 1 additional point of tension on a successful attack. A target who fails their saving throw is also nauseated for 1 round."
+    },
+    {
+      "level": 4,
+      "heading": "True Desperation (Requires Striker 8)",
+      "anchor": "toc45",
+      "text": "The striker gains an additional tension from her desperate tension class feature. A striker must be 8th level or higher to select this striker art."
+    },
+    {
+      "level": 4,
+      "heading": "Vital Tension [Tension] (Requires Striker 5)",
+      "anchor": "toc46",
+      "text": "The striker can spend 1 tension to be treated as though she had the Vital Strike feat for a number of rounds equal to her Constitution modifier. At 10th level, she is instead treated as though she possessed the Improved Vital Strike feat. At 15th level, she is instead treated as though she possessed the Greater Vital Strike feat."
+    },
+    {
+      "level": 4,
+      "heading": "Unarmored Striker",
+      "anchor": "toc47",
+      "text": "The striker gains Unarmored Training from the Equipment sphere."
+    },
+    {
+      "level": 4,
+      "heading": "Wild Charge [Tension] (Requires Striker 5)",
+      "anchor": "toc48",
+      "text": "Whenever the striker uses the charge action, for each tension a striker spends on this tension technique, she deals additional damage equal to her Constitution modifier (minimum 1) on the first successful attack she makes with an unarmed strike as long as it is made before the end of her turn."
+    },
+    {
+      "level": 2,
+      "heading": "Tension Boost (Ex)",
+      "anchor": "toc49",
+      "text": "At 2nd level, a striker gains 1 tension at the start of her first turn in combat (including surprise rounds). At 7th level and every six levels thereafter, she gains an additional tension at the start of her first turn in combat."
+    },
+    {
+      "level": 2,
+      "heading": "Drill Knuckle (Ex)",
+      "anchor": "toc50",
+      "text": "At 3rd level, a striker gains the ability to break through even the hardiest of foes. A striker ignores up to 2 points of damage reduction or hardness whenever she makes an attack with an unarmed strike. At 6th level and every 3 levels thereafter, she can ignore an additional 1 point of damage reduction or hardness."
+    },
+    {
+      "level": 2,
+      "heading": "Uncanny Dodge (Ex)",
+      "anchor": "toc51",
+      "text": "At 3rd level, a striker gains the ability to react to danger before her senses would normally allow her to do so. She cannot be caught flat-footed, nor does she lose her Dexterity bonus to AC if the attacker is invisible. She still loses her Dexterity bonus to armor class if immobilized. A striker with this ability can still lose her Dexterity bonus to armor class if a creature successfully uses the feint action against her. If a striker already has uncanny dodge from a different class, she automatically gains improved uncanny dodge (see below) instead."
+    },
+    {
+      "level": 2,
+      "heading": "Desperate Tension (Ex)",
+      "anchor": "toc52",
+      "text": "At 4th level, if the striker starts her turn with 0 tension, she gains 1 tension (this is gained before the tension gained from tension boost, rising tension, or ultimate tension)."
+    },
+    {
+      "level": 2,
+      "heading": "Tension Training (Ex)",
+      "anchor": "toc53",
+      "text": "At 5th level and every six levels thereafter, a striker learns new ways to gain tension; she can select one of the following new methods through which to gain tension (a striker cannot gain tension from any of these more than once per round); a striker cannot regain tension if any of these tension training abilities are used against a helpless or unaware creature, or on a creature that has fewer Hit Dice than half the striker\u2019s character level:\nCritical Offense: Whenever the striker confirms a critical hit with an unarmed strike while in the heat of combat, she gains 1 tension.\nDeadly Offense: Whenever the striker reduces a creature\u2019s hit points to 0 or less with an unarmed strike, she gains 1 tension.\nDeceptive Taunt: Whenever a striker makes a successful Bluff check to feint in combat against a creature, she gains 1 tension.\nThreatening Taunt: Whenever the striker makes a successful Intimidate check to demoralize a creature, she gains 1 tension.\nVictorious Defense: Whenever the striker makes a successful saving throw against a non-harmless effect, she gains 1 tension."
+    },
+    {
+      "level": 2,
+      "heading": "Pummeling Punisher (Ex)",
+      "anchor": "toc54",
+      "text": "At 7th level, whenever a striker uses her rapid pummel tension technique, she can spend an additional 2 tension to make two attacks instead of one; both of these attacks suffer a -4 penalty."
+    },
+    {
+      "level": 2,
+      "heading": "Rising Tension (Ex)",
+      "anchor": "toc55",
+      "text": "At 10th level, a striker gains 1 tension at the start of her turn. At 16th level, she instead gains 2 tension at the start of her turn."
+    },
+    {
+      "level": 2,
+      "heading": "Improved Uncanny Dodge (Ex)",
+      "anchor": "toc56",
+      "text": "At 12th level and higher, a striker can no longer be flanked. This defense denies a rogue the ability to sneak attack the striker by flanking her, unless the attacker has at least four more rogue levels than the target has striker levels.\nIf a character already has uncanny dodge (see above) from another class, the levels from the classes that grant uncanny dodge stack to determine the minimum rogue level required to flank the character."
+    },
+    {
+      "level": 2,
+      "heading": "Ultimate Tension (Ex)",
+      "anchor": "toc57",
+      "text": "At 20th level, a striker gains 7 tension at the start of her first turn in combat (including surprise rounds). She also has no limit to how much tension she can possess, and if she possesses the high tension striker art, she can immediately swap it for another striker art. The striker also reduces the cost of all abilities which require tension by 1, to a minimum of 1."
+    },
+    {
+      "level": 1,
+      "heading": "Archetypes",
+      "anchor": "toc58",
+      "text": ""
+    },
+    {
+      "level": 2,
+      "heading": "Barfighter",
+      "anchor": "toc59",
+      "text": "Barfighters are Strikers who specialize in drinking as they brawl."
+    },
+    {
+      "level": 2,
+      "heading": "Black Powder Brawler",
+      "anchor": "toc60",
+      "text": "Black Powder Brawlers are experts with the use of firearms, and integrate them into their combat style instead of relying on their fists."
+    },
+    {
+      "level": 2,
+      "heading": "Chaos Shifter",
+      "anchor": "toc61",
+      "text": "Chaos Shifters use mutagenic formulas to become true monsters on the battlefield."
+    },
+    {
+      "level": 2,
+      "heading": "Elemental Fist [CS]",
+      "anchor": "toc62",
+      "text": "Elemental fists can use the powers of nature to augment their blows."
+    },
+    {
+      "level": 2,
+      "heading": "Evolutionist [LG]",
+      "anchor": "toc63",
+      "text": "Evolutionists couple martial grit with immense morphic potential, drawing on the tension of combat to force their transformations into wild and dangerous new forms."
+    },
+    {
+      "level": 2,
+      "heading": "Shadowed Fist",
+      "anchor": "toc64",
+      "text": "Shadowed Fists are stealthy strikers that can learn the arts of the ninja to help them assassinate their foes."
+    },
+    {
+      "level": 2,
+      "heading": "Skirmishing Scout",
+      "anchor": "toc65",
+      "text": "Skirmishing Scouts are darting combatants who are always on the move."
+    },
+    {
+      "level": 2,
+      "heading": "Strong Style Grappler",
+      "anchor": "toc66",
+      "text": "Strong Style Grapplers focus on grappling foes to quickly and effectively bring them down."
+    },
+    {
+      "level": 2,
+      "heading": "Voidrusher [CS] [DRS]",
+      "anchor": "toc67",
+      "text": "Voidrushers combine their innate talents with the inhuman might of a powerful outsider bound to their flesh."
+    },
+    {
+      "level": 1,
+      "heading": "Favored Class Bonuses",
+      "anchor": "toc68",
+      "text": "Aasimar: Add +1/4 cold damage to your unarmed strikes.\nDwarf: Increase the damage reduction/hardness penetration of drill knuckle by +1/3.\nElf: Gain +1/6 additional maximum tension.\nGnome: Gain +1/6 of a striker art.\nGoblin: Gain +1/5 to your CMB with a combat maneuver of your choice.\nHalfling: Add +1/4 additional points of damage to your unarmed strikes.\nHobgoblin: Add +1/2 to your total damage when making a critical hit with an unarmed strike.\nHuman: Gain +1 ft. to your movement speed (this ability does nothing until selected 5 times).\nKobold: Gain 1/6th of a Scoundrel sphere talent.\nOrc: Gain +1/3 virtual talent in an unarmed sphere for the purposes of determining the damage of your unarmed strikes.\nTiefling: Add +1/4 fire damage to your unarmed strikes."
+    },
+    {
+      "level": 1,
+      "heading": "Class Equipment",
+      "anchor": "toc69",
+      "text": ""
+    },
+    {
+      "level": 4,
+      "heading": "Adamantine Knuckles [TS:WAT]",
+      "anchor": "toc70",
+      "text": "Aura moderate Enhancement; CL 7th Slot hands; Price 15,000 gp; Weight 1/2 lbs.\nThese creatively-designed adamantine combat knuckles are hard for most warriors to use. However, a creature with the drill knuckle class feature can use these knuckles to ignore damage reduction or hardness when making unarmed strikes as if their striker class level was six higher. This item can allow a character\u2019s effective class level for the drill knuckle ability to exceed 20. In addition, these knuckles may be enchanted as an amulet of mighty fists, a gauntlet of maneuversTS, a pugilist\u2019s charmTS, or a talisman of techniquesTS as if it were not already a magical item.\nConstruction Requirements Craft Apparatus, Enhancement sphere, creator must have the drill knuckle class feature; Cost 7,500 gp"
+    },
+    {
+      "level": 4,
+      "heading": "Arts Manual [TS:WAT]",
+      "anchor": "toc71",
+      "text": "Aura moderate War; CL 6th Slot none; Price 15,000 gp; Weight 1/2 lbs.\nThis thick, leather-bound manual is covered from front to back with intricate diagrams showing the method of using certain martial combat techniques in different situations. When read by a creature with the striker art class feature, this manual teaches them one striker art, chosen when the manual is written, that they can retain for 24 hours or until the next 8 hours of rest they receive (whichever comes first). A creature can study this manual again as part of their morning preparations to retain their memory of its contents. A creature cannot benefit from more than one of these manuals at a time.\nConstruction Requirements Craft Apparatus, War sphere, creator must have the striker art class feature, creator must have the striker arts being added to this item; Cost 7,500 gp"
+    },
+    {
+      "level": 4,
+      "heading": "Risk And Reward [TS:WAT]",
+      "anchor": "toc72",
+      "text": "Aura moderate War; CL 8th Slot chest; Price 25,000 gp; Weight 3 lbs.\nThis well-made chest wrap is designed to support the user\u2019s defensive movements. Whenever a creature with the tension techniques class feature spends at least half of their maximum tension on the expert guard tension technique, the bonus to saving throws granted by expert guard increases by +1 until the beginning of their next turn. In addition, if the user expends all of their tension on expert guard (minimum 5 tension), they may increase the circumstance bonus to their saving throws as if they had spent 5 more tension (this stacks with the first effect of this item). However, if a creature does so, they cannot gain tension through any method for 3 rounds.\nConstruction Requirements Craft Apparatus, War sphere, creator must have the tension techniques class feature; Cost 12,500 gp\n| Spheres of Might by Drop Dead Studios\n| Using Spheres of Might\n| Classes\n| Armiger | Blacksmith | Commander | Conscript | Scholar | Sentinel | Striker | Technician\n| Prestige Classes\n| Aeronaut Captain\n| Spheres\n| Alchemy | Athletics | Barrage | Barroom | Beastmastery | Berserker | Boxing | Brute\n| Dual Wielding | Duelist | Equipment | Fencing | Gladiator | Guardian | Lancer | Leadership\n| Open Hand | Scoundrel | Scout | Shield | Sniper | Tech | Trap | Warleader\n| Wrestling | | Pilot (3PP) |\n| Rules\n| About Legendary Talents | Martial Traditions | Martial Packages | Practitioner Feats\n| Practitioner Traits | Practitioner FCB's | Practitioner Bestiary | Associated Feats & Skills\n| Ultimate Engineering (Tinker) | Starfinder Conversion [3pp]\n| Get Spheres of Might on DriveThruRPG\n| Mythic Spheres of Might\n| Ultimate Engineering\n| The Conqueror's Handbook | The General's Handbook\n| The Highlander's Handbook | The Inventor's Handbook\n| The Inventor's Handbook 2 | The Jester's Handbook\n| Woodfaring Adventures | The Youxia's Handbook\n| Spheres Apocrypha\n| Alch. Formulae | Alch. Poisons | Alch. Poisons 2 | Armor Talents\n| Astrologian Archetype | Debilitating Talents | Pugilists | Racial\n| Ranged | Swashbucklers | Tandem | Tricks & Traps"
+    }
+  ]
+}

@@ -21,7 +21,8 @@ class PcgenSpheresExport {
             }
             var spent = character.getTotalAbilityPool(category)
                     .subtract(character.getAvailableAbilityPool(category));
-            boolean freeDestruction = args.length == 5 && ("halfling-burst-save".equals(args[4])
+            boolean freeDestruction = character.getVariableValue("SPHERES_ELEMENTALIST_LEVEL", "").intValue() > 0
+                    || args.length == 5 && ("halfling-burst-save".equals(args[4])
                     || "orc-burst-save".equals(args[4]));
             if (spent.compareTo(java.math.BigDecimal.valueOf(freeDestruction ? 1 : 2)) != 0) {
                 throw new IllegalStateException("Unexpected spent talents: " + spent);

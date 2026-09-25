@@ -1,0 +1,22 @@
+# Power / Might base classes (September 24, 2026)
+
+Load `/bigdisk/programming/pathfinder1e/data/spheres/spheres.pcc` with the Pathfinder Core Rulebook. This campaign provides class records at levels 1–20 for **Armorist, Eliciter, Fey Adept, Hedgewitch, Mageknight, Shifter, Soul Weaver, Symbiat, Thaumaturge, Wraith, Armiger, Blacksmith, Commander, Scholar, Sentinel, Striker and Technician**. The earlier Incanter, Conscript and partial Elementalist remain available. Prestige classes and archetypes are not added.
+
+The wiki also lists **Savant (Class Version)** among its practitioners, but describes it as technically a Thaumaturge archetype. It is deliberately excluded under the requested no-archetypes boundary (https://spheresofpower.wikidot.com/savant-class).
+
+The 17 new classes are **not fully automated**. Their Hit Dice, class skills, proficiencies (with some equipment-specific exceptions), BAB, saves, talents, caster levels, spell pools and level-table feature records come from snapshots of their individual class pages under `/bigdisk/programming/pathfinder1e/testdata/spheres/catalog-source/`. Magic classes share the two initial magic talents. Class-granted spheres are present for Eliciter (Mind), Fey Adept (Illusion), Shifter (Alteration), Symbiat (Mind and Telekinesis), Soul Weaver (Life or Death), Wraith (path-dependent, including separate Nature and Weather choices for Anima), Commander (Warleader), Scholar (Alchemy and Scout), Sentinel (Guardian), Striker (one of Boxing/Brute/Open Hand) and Technician (Trap). The Mageknight's additional level-one magic talent is counted separately.
+
+Selection pools record source-level option counts. Named option records include source descriptions for the repeating class selections (such as arsenal tricks, emotions, secrets, mystic combats, bestial traits, nexus powers, invocations, haunts, prowesses, smithing insights, specializations, scholar's knacks, impositions, striker arts and technical insights). Hedgewitch paths, Wraith haunt paths, and Soul Weaver channel alignment are selectable. Armiger customized weapons, Technician inventions and Blacksmith equipment specialist selections have bounded manual-record slots; an Armiger's *per-weapon* talents do **not** increase their general combat-talent pool. Several class-dependent quantities are available as reference variables rather than indiscriminate bonuses.
+
+**Manual adjudication remains necessary:** named option prerequisites, effects, targets, limited-use resources, conditional attack/defense modifiers, summons, possessions, inventions and improvement statistics, bound equipment and its enhancement allocation, maintenance, choice-dependent class skills and feats, damage, actions and initiative, tradition grants, duplicate-sphere substitution, favored-class variants and multiclass stacking. A descriptive feature is **not** a working PCGen automation of that feature. Wraith's Anima path offers Nature *or* Weather as separate choices; its other path effects remain manual. Blacksmith's free Equipment talent is a separate manual record; it does not consume a class talent. Thaumaturge's bonus feat category is a broad filter, not full casting-prerequisite validation, and choosing an extra magic talent there needs manual accounting. The reference variables do not automatically change conditional attacks, AC, equipment, or spell effects. Check all unsupported choices against the individual source pages before play.
+
+To reproduce the source-table files, verify generated output, and exercise real PCGen loading and save/reload (Java 16 and the local PCGen build are required for the last step):
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/spheres_class_catalog.py --check
+python3 /bigdisk/programming/pathfinder1e/tools/test_class_catalog.py
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_class_catalog.py armorist --level 20
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_class_catalog.py wraith --level 1
+```
+
+The live gate accepts any of the 17 class slugs and levels 1–20. It checks table arithmetic, granted spheres for supported examples, class choice pools, some reference variables, and the persistence of representative path/channel/ability selections across save/reload. It does not exercise each named option's combat effect. The generator intentionally fails on missing or malformed pinned class tables rather than extrapolating data.
