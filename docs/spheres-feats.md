@@ -13,8 +13,14 @@ headings, rules, compiled prerequisites and unresolved clauses are retained in
 ## Supported
 
 - Normal feat selection and Combat/Teamwork/Metamagic/ItemCreation types.
-- Exact recognized stat, level, BAB, magic skill bonus, skill rank, sphere,
-  talent, package and feat prerequisites. Fully recognized OR clauses remain OR.
+- Exact recognized stat, level, BAB, magic skill bonus, skill rank (including
+  "N ranks in X"), sphere, talent, package and feat prerequisites. Fully
+  recognized OR clauses remain OR, including multi-clause AND branches
+  ("A, B; or C, D"); trailing global requirements (level, BAB, ranks, stats,
+  casting class feature) are hoisted to apply to every branch — the stricter
+  reading. "One of X, Y, or Z" enumerations compile to single-choice PREMULT.
+- Casting-tradition drawback prerequisites ("X drawback", "X (drawback)", bare
+  "X") resolve to the 14 selectable tradition drawback records.
 - Existing Extra Magic Talent, Extra Spell Points and Extra Arsenal Trick keys
   remain unchanged. Extra Combat Talent is no longer incorrectly Conscript-only.
 - Sphere Focus and Combat Sphere Focus have separate per-sphere records and
@@ -37,7 +43,10 @@ headings, rules, compiled prerequisites and unresolved clauses are retained in
 
 ## Unfinished / manual
 
-584 feats have unresolved prerequisite clauses. They are blocked until their
+496 feats have unresolved prerequisite clauses (reduced from 584 on 2026-09-25
+by the parser corrections in `docs/spheres-depth-audit.md`: multi-clause OR
+branches with global-requirement hoisting, "one of X, Y, or Z" alternatives,
+casting-tradition drawback clauses, and additional skill-rank forms). They are blocked until their
 specific zero-cost **Manual Feat Prerequisite Approval** is selected. Approval
 does not grant the feat, its prerequisite abilities, or its effects. Recognized
 clauses remain enforced. This is an explicit adjudication escape hatch, **not

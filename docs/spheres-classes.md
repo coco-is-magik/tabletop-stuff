@@ -20,3 +20,19 @@ python3 /bigdisk/programming/pathfinder1e/tools/pcgen_class_catalog.py wraith --
 ```
 
 The live gate accepts any of the 17 class slugs and levels 1–20. It checks table arithmetic, granted spheres for supported examples, class choice pools, some reference variables, and the persistence of representative path/channel/ability selections across save/reload. It does not exercise each named option's combat effect. The generator intentionally fails on missing or malformed pinned class tables rather than extrapolating data.
+
+## Mageknight selection corrections (September 27, 2026)
+
+Mystic Combat heading prerequisites are now enforced, including class-feature
+levels, required spheres and required Mystic Combat options. Black Dog Companion
+also needs a GM curse-talent attestation; curse descriptor detection and companion
+construction remain manual. Magic Power and Combat Talent are repeatable and
+grant actual talent slots. Whirl of Blows, Sunder The Veil and Weirding Initiate
+automatically grant their named feats. These corrections are exceptions to the
+general manual-feature limitations above, not full Mageknight combat automation.
+
+The dedicated runner is
+`/nas/contents/Projects/Programming Projects/Java/tabletop-stuff/tools/pcgen_mageknight.py`:
+run `save --level 12`, then `reload --work <absolute evidence directory>`.
+Levels 2, 6 and 12 have passed save/reload tests. See the depth audit for tested
+behaviors and remaining limitations; saved option keys have not been renamed.

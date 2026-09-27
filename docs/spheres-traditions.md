@@ -10,9 +10,12 @@ and `/bigdisk/programming/pathfinder1e/testdata/spheres/catalog-source/martial-t
 
 Select **Custom Casting Tradition** with a casting class, then choose a casting
 ability from the existing INT/WIS/CHA pool. The new general-drawback pool has
-five slots, with six individually selectable drawbacks: Verbal Casting, Somatic
-Casting (one copy), Focus Casting, Magical Signs, Prepared Caster, and Draining
-Casting. Each provides one point in the casting-boon pool. Easy Focus, Fortified
+five slots, with fourteen individually selectable drawbacks: Verbal Casting,
+Somatic Casting (one copy), Focus Casting, Magical Signs, Prepared Caster,
+Draining Casting, Addictive Casting, Area Bound, Bonded Casting, Charged
+Spells, Mental Focus, Terrain Casting, Unsettling Casting, and Vampiric
+Casting (the last eight added 2026-09-25 so feat prerequisites can reference
+them; several are third-party-sourced — see their records). Each provides one point in the casting-boon pool. Easy Focus, Fortified
 Casting (requires Draining Casting), and Metamagic Expert each cost two points.
 Unspent drawback points give bonus spell points according to the Ultimate
 1–5-point table; removing choices reverses the pool and spell-point awards.

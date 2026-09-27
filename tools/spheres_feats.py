@@ -19,10 +19,26 @@ TYPES = {t.lower(): t for t in (
     "Aristeia", "Champion", "Chance", "Channeling", "Companion", "Counterspell",
     "Damnation", "Drawback", "DualSphere", "Necrosis", "Plague", "Protokinesis",
     "Proxy", "Purring", "Racial", "Ritual", "Squadron", "Surreal", "Theurge", "WildMagic")}
+# General casting-tradition drawbacks with selectable records; see
+# data/spheres/spheres_traditions.lst. Feat prerequisites cite these as
+# "X drawback", "X (drawback)" or a bare "X".
+DRAWBACKS = ("Verbal Casting", "Somatic Casting", "Focus Casting", "Magical Signs",
+             "Prepared Caster", "Draining Casting", "Addictive Casting", "Area Bound",
+             "Bonded Casting", "Charged Spells", "Mental Focus", "Terrain Casting",
+             "Unsettling Casting", "Vampiric Casting")
+SKILLS = {"acrobatics", "bluff", "climb", "craft (alchemy)", "craft (calligraphy)",
+          "craft (tattoos)", "diplomacy", "fly", "handle animal", "heal", "intimidate",
+          "knowledge (arcana)", "knowledge (dungeoneering)", "knowledge (history)",
+          "knowledge (planes)", "knowledge (religion)", "perception", "perform (dance)",
+          "profession (engineer)", "ride", "sense motive", "sleight of hand",
+          "spellcraft", "stealth", "survival", "swim", "use magic device"}
 
 
 def normalize(value):
     return " ".join(value.replace("’", "'").replace("–", "-").split()).casefold()
+
+
+DRAWBACK_MAP = {normalize(n): n for n in DRAWBACKS}
 
 
 def name(heading):
@@ -106,9 +122,18 @@ class Prerequisites:
 
     def clause(self, value, caster_variable="SPHERES_CASTER_LEVEL"):
         value = value.strip().rstrip(".")
+        # "(drawback)" punctuation is equivalent to the bare "drawback" suffix.
+        value = re.sub(r"\s*\(drawback\)", " drawback", value, flags=re.I)
         simple = normalize(value)
         if simple.startswith("and "):
             return self.clause(value[4:], caster_variable)
+        # "One of A, B, or C" enumerates single-clause alternatives.
+        if simple.startswith("one of "):
+            parts = [p for p in re.split(r",\s*(?:or\s+)?|\s+or\s+", value[7:].strip()) if p.strip()]
+            alternatives = [self.clause(p, caster_variable) for p in parts]
+            if len(alternatives) >= 2 and all(p and len(p) == 1 for p in alternatives):
+                return ["PREMULT:1," + ",".join("[" + p[0] + "]" for p in alternatives)]
+            return None
         # OR is valid only when every complete alternative can be represented.
         if " or " in simple and "(" not in value:
             alternatives = [self.clause(p, caster_variable) for p in re.split(r" or ", value, flags=re.I)]
@@ -120,7 +145,9 @@ class Prerequisites:
         if simple in ("casting class feature", "spherecasting class feature"):
             return ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"]
         if simple == "combat training class feature":
-            return ["PREABILITY:1,CATEGORY=Special Ability,Conscript Combat Training"]
+            return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresCombatTraining"]
+        if simple in ("martial focus", "ability to gain martial focus", "ability to maintain martial focus"):
+            return ["PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"]
         if simple in ("no casting class feature", "no spherecasting class feature"):
             return ["!PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"]
         if simple == "spell pool":
@@ -138,8 +165,11 @@ class Prerequisites:
         if match:
             return ["PRESTAT:1," + match[1].upper() + "=" + match[2]]
         match = re.fullmatch(r"(.*?) (\d+) ranks?", value, re.I)
-        if match and match[1].lower() in {"acrobatics", "bluff", "diplomacy", "fly", "intimidate", "perception", "ride", "sense motive", "sleight of hand", "spellcraft", "stealth", "survival", "swim", "climb", "use magic device", "handle animal", "knowledge (arcana)"}:
+        if match and match[1].lower() in SKILLS:
             return ["PRESKILL:1," + match[1].title() + "=" + match[2]]
+        match = re.fullmatch(r"(\d+) ranks? in (?:the )?(.+?)(?: skill)?", value, re.I)
+        if match and match[2].lower() in SKILLS:
+            return ["PRESKILL:1," + match[2].title() + "=" + match[1]]
         match = re.fullmatch(r"(.+?) sphere(?:\s*\((.*)\))?", value, re.I)
         if match and normalize(match[1]) in self.spheres:
             row = self.spheres[normalize(match[1])]
@@ -158,22 +188,34 @@ class Prerequisites:
             return tags
         if simple in self.feats:
             return ["PREFEAT:1," + self.feats[simple]]
+        drawback = re.sub(r"\s*drawback$", "", simple)
+        if drawback in DRAWBACK_MAP:
+            return ["PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - " + DRAWBACK_MAP[drawback]]
         return None
+
+    # Requirements that are not sphere/feat-specific; when they follow the last
+    # branch of an OR expression they are hoisted to apply to every branch (the
+    # stricter reading; the adjudication record remains available otherwise).
+    GLOBAL = re.compile(r"^(?:base attack bonus|(?:character |caster )?level\b|magic skill bonus|"
+                        r"(?:str|dex|con|int|wis|cha) \d|\d+ ranks?\b|.* \d+ ranks?$|"
+                        r"(?:sphere)?casting class feature|combat training class feature|spell pool)", re.I)
 
     def compile(self, body):
         match = re.search(r"Prerequisites?:\s*(.*?)(?=\n|Benefits?:|$)", body, re.I)
         if not match:
             return [], []
-        clauses = split_clauses(match[1].rstrip("."))
-        # A comma-separated list ending in 'or' is not a conjunction. Preserve
-        # the entire expression for review instead of enforcing a wrong subset.
-        if any(re.match(r"or\b", c, re.I) for c in clauses):
-            return [], [match[1].rstrip(".")]
+        requirement = match[1].rstrip(".")
+        # Shield commas inside "one of A, B, or C" enumerations from clause splitting.
+        shielded = re.sub(r"one of ([^,;]+(?:, [^,;]+)*, or [^,;]+)",
+                          lambda m: "one of " + m[1].replace(",", "\x00"), requirement, flags=re.I)
+        clauses = [c.replace("\x00", ",") for c in split_clauses(shielded)]
         # Published CL prerequisites refer to the greatest prerequisite sphere CL.
         spheres = [r for n, r in self.spheres.items()
-                   if re.search(r"\b" + re.escape(n) + r" sphere\b", normalize(match[1])) and r["system"] == "power"]
+                   if re.search(r"\b" + re.escape(n) + r" sphere\b", normalize(requirement)) and r["system"] == "power"]
         variables = ["SPHERES_CL_" + token(r["sphere"]).upper() for r in spheres]
         caster = variables[0] if len(variables) == 1 else "max(" + ",".join(variables) + ")" if variables else "SPHERES_CASTER_LEVEL"
+        if any(re.match(r"or\b", c, re.I) for c in clauses):
+            return self.branches(clauses, requirement, caster)
         tags, unresolved = [], []
         for clause in clauses:
             parsed = self.clause(clause, caster)
@@ -182,6 +224,42 @@ class Prerequisites:
             else:
                 unresolved.append(clause)
         return list(dict.fromkeys(tags)), unresolved
+
+    def branches(self, clauses, original, caster):
+        """OR of AND branches; fail closed unless every clause in every branch resolves."""
+        branches = [[]]
+        for clause in clauses:
+            part = re.match(r"or\s+(.*)$", clause.strip(), re.I | re.S)
+            if part:
+                branches.append([part[1].strip()])
+            else:
+                branches[-1].append(clause)
+        if not branches[0]:
+            return [], [original]
+        hoisted = []
+        for branch in branches[1:]:
+            while branch and self.GLOBAL.match(branch[-1].strip()):
+                hoisted.append(branch.pop())
+        if any(not branch for branch in branches):
+            return [], [original]
+        alternatives = []
+        for branch in branches:
+            tags = []
+            for clause in branch:
+                parsed = self.clause(clause, caster)
+                if not parsed:
+                    return [], [original]
+                tags.extend(parsed)
+            alternatives.append(tags)
+        tags = ["PREMULT:1," + ",".join("[" + a[0] + "]" if len(a) == 1 else
+                "[PREMULT:" + str(len(a)) + "," + ",".join("[" + t + "]" for t in a) + "]"
+                for a in alternatives)]
+        for clause in hoisted:
+            parsed = self.clause(clause, caster)
+            if not parsed:
+                return [], [original]
+            tags.extend(parsed)
+        return list(dict.fromkeys(tags)), []
 
 
 def build():

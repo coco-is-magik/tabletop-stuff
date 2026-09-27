@@ -96,11 +96,10 @@
     ],
     "key": "Addictive Power",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Addictive Casting"
     ],
-    "unresolved_prerequisites": [
-      "Addictive Casting drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -329,9 +328,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc92"
     ],
     "key": "Agonizing Defiling",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+    ],
     "unresolved_prerequisites": [
-      "Terrain Casting drawback",
       "non-good alignment"
     ],
     "mechanics": [],
@@ -1132,10 +1132,10 @@
       "https://spheresofpower.wikidot.com/aristeia-feats#toc0"
     ],
     "key": "Ascendant Avenger",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Bonded Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Bonded Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1172,10 +1172,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc2"
     ],
     "key": "At-Will Powers",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Charged Spells drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1233,9 +1233,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc3"
     ],
     "key": "Augmented Modulation",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Mental Focus"
+    ],
     "unresolved_prerequisites": [
-      "Mental Focus drawback",
       "Enhancement or Protection Sphere"
     ],
     "mechanics": [],
@@ -1253,10 +1254,10 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc13"
     ],
     "key": "Augmented Wit",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Casting class feature or ability to gain martial focus"
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core],[PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1651,10 +1652,11 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc16"
     ],
     "key": "Battlebard",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
+    ],
     "unresolved_prerequisites": [
-      "Performance sphere",
-      "ability to maintain martial focus"
+      "Performance sphere"
     ],
     "mechanics": [],
     "status": "partial"
@@ -1671,10 +1673,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc6"
     ],
     "key": "Battlecry",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Verbal Casting drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Verbal Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1691,10 +1693,10 @@
       "https://spheresofpower.wikidot.com/war#toc142"
     ],
     "key": "Battlefield Tactics",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1769,10 +1771,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc7"
     ],
     "key": "Beholden to the Uncanny",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Unsettling Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2079,10 +2081,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc8"
     ],
     "key": "Bloody Savage",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Vampiric Casting drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Vampiric Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2145,10 +2147,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc106"
     ],
     "key": "Bonded Alliance",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Bonded Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Bonded Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2205,10 +2207,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc9"
     ],
     "key": "Bottled Salvage",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Vampiric Casting drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Vampiric Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2224,10 +2226,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc10"
     ],
     "key": "Bottled Spells",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Charged Spells"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2322,10 +2324,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc93"
     ],
     "key": "Broken Earth",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Terrain Casting drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2383,11 +2385,10 @@
     ],
     "key": "Buffeting Blast",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
     ],
-    "unresolved_prerequisites": [
-      "ability to gain martial focus"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2502,10 +2503,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc12"
     ],
     "key": "Burst of Concentration",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Mental Focus"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Mental Focus"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -3009,11 +3010,11 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc94"
     ],
     "key": "Charged Despoilation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Charged Spells drawback",
-      "Terrain Casting drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -3131,9 +3132,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc14"
     ],
     "key": "Clarity of Fortified Mind",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting"
+    ],
     "unresolved_prerequisites": [
-      "Unsettling Casting",
       "at least two magic spheres"
     ],
     "mechanics": [],
@@ -3174,10 +3176,10 @@
       "https://spheresofpower.wikidot.com/war#toc143"
     ],
     "key": "Close Formation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -3232,9 +3234,10 @@
       "https://spheresofpower.wikidot.com/metamagic-feats#toc9"
     ],
     "key": "Coaxing Spell",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRESKILL:1,Knowledge (Dungeoneering)=6"
+    ],
     "unresolved_prerequisites": [
-      "Knowledge (Dungeoneering) 6 ranks",
       "Sphere Focus (Mind)"
     ],
     "mechanics": [
@@ -3315,10 +3318,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc15"
     ],
     "key": "Combat Recharge",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Charged Spells (drawback)"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -3389,10 +3392,11 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc14"
     ],
     "key": "Combatant’s Alignment",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
+    ],
     "unresolved_prerequisites": [
-      "Essence sphere (Parallel Alignment (potent))",
-      "ability to gain martial focus"
+      "Essence sphere (Parallel Alignment (potent))"
     ],
     "mechanics": [],
     "status": "partial"
@@ -3591,9 +3595,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc20"
     ],
     "key": "Compound Mutagen",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRESKILL:1,Craft (Alchemy)=10"
+    ],
     "unresolved_prerequisites": [
-      "Craft (alchemy) 10 ranks",
       "Alchemy sphere ((toxin) package)."
     ],
     "mechanics": [],
@@ -4014,9 +4019,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc107"
     ],
     "key": "Coordinated Combo",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Bonded Casting"
+    ],
     "unresolved_prerequisites": [
-      "Bonded Casting",
       "sequence or tension class feature"
     ],
     "mechanics": [],
@@ -4100,12 +4106,11 @@
     ],
     "key": "Corrupted Form",
     "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Addictive Casting],[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting]",
       "PREFEAT:1,Witchwarped",
       "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,5"
     ],
-    "unresolved_prerequisites": [
-      "Addictive Casting drawback or Unsettling Casting drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -4121,9 +4126,10 @@
       "https://spheresofpower.wikidot.com/warp#toc76"
     ],
     "key": "Cosmologist",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRESKILL:1,Knowledge (Planes)=15"
+    ],
     "unresolved_prerequisites": [
-      "Knowledge (planes) 15 ranks",
       "Warp sphere (Create Demiplane, Extradimensional Room (space))"
     ],
     "mechanics": [],
@@ -4307,11 +4313,10 @@
     "prerequisites": [
       "PREFEAT:1,Brew Potion",
       "PREFEAT:1,Craft Wondrous Item",
+      "PRESKILL:1,Craft (Alchemy)=3",
       "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
     ],
-    "unresolved_prerequisites": [
-      "Craft (alchemy) 3 ranks"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -4574,11 +4579,10 @@
     "key": "Cultivate Ki",
     "prerequisites": [
       "PREFEAT:1,Improved Unarmed Strike",
-      "PREATT:4"
+      "PREATT:4",
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
     ],
-    "unresolved_prerequisites": [
-      "martial focus"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -4927,10 +4931,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc20"
     ],
     "key": "Debasing Exultation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Unsettling Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5152,9 +5156,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc95"
     ],
     "key": "Defiler’s Channel",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+    ],
     "unresolved_prerequisites": [
-      "Terrain Casting drawback",
       "channel energy 3d6"
     ],
     "mechanics": [],
@@ -5245,12 +5250,11 @@
     ],
     "key": "Designer Drugs",
     "prerequisites": [
+      "PRESKILL:1,Craft (Alchemy)=7",
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy Sphere",
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy - Pill Popper"
     ],
-    "unresolved_prerequisites": [
-      "Craft (alchemy) 7 ranks"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5431,10 +5435,11 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc96"
     ],
     "key": "Devouring Defiling",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Terrain Casting drawback, one of Agonizing Defiling, Ruinous Defiling, or Spellburn Defiling"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
+      "PREMULT:1,[PREFEAT:1,Agonizing Defiling],[PREFEAT:1,Ruinous Defiling],[PREFEAT:1,Spellburn Defiling]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5743,10 +5748,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc97"
     ],
     "key": "Distant Defiling",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Terrain Casting drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5879,10 +5884,10 @@
       "https://spheresofpower.wikidot.com/mind#toc80"
     ],
     "key": "Doublespeak",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Fate sphere (Echoing Word [mass]), Mind sphere; or Fate sphere, Mind sphere (Mass Charm [mass])"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Echoing Word],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere]],[PREMULT:3,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Mass Charm]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5899,11 +5904,10 @@
     ],
     "key": "Dragon’s Tattoos",
     "prerequisites": [
-      "PREFEAT:1,Improved Unarmed Strike"
+      "PREFEAT:1,Improved Unarmed Strike",
+      "PRESKILL:1,Craft (Tattoos)=5"
     ],
-    "unresolved_prerequisites": [
-      "Craft (tattoos) 5 ranks"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5942,7 +5946,8 @@
     "key": "Dramatic Intensity",
     "prerequisites": [],
     "unresolved_prerequisites": [
-      "tension pool, one of a grit, luck, or panache pool"
+      "tension pool",
+      "one of a grit, luck, or panache pool"
     ],
     "mechanics": [],
     "status": "partial"
@@ -6322,11 +6327,10 @@
     ],
     "key": "Elemental Might",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus",
       "PREATT:1"
     ],
-    "unresolved_prerequisites": [
-      "Ability to maintain martial focus"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7032,10 +7036,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc22"
     ],
     "key": "Environment Charge",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Charged Spells drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7256,11 +7260,11 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc37"
     ],
     "key": "Exorcist",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Knowledge (religion) 3 ranks",
-      "casting class feature or martial focus"
+    "prerequisites": [
+      "PRESKILL:1,Knowledge (Religion)=3",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core],[PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7534,11 +7538,10 @@
     ],
     "key": "Extra Blended Training Talent",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
     ],
-    "unresolved_prerequisites": [
-      "martial focus"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -8282,10 +8285,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc23"
     ],
     "key": "Fast Focus",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Mental Focus"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Mental Focus"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -8972,10 +8975,10 @@
       "https://spheresofpower.wikidot.com/war#toc144"
     ],
     "key": "Focused Fire Tactics",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -9012,9 +9015,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc54"
     ],
     "key": "Focused Stamina",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
+    ],
     "unresolved_prerequisites": [
-      "Martial focus",
       "combat stamina"
     ],
     "mechanics": [],
@@ -9032,10 +9036,11 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc42"
     ],
     "key": "Focusing Control",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
+    ],
     "unresolved_prerequisites": [
-      "Body Control sphere",
-      "ability to gain martial focus"
+      "Body Control sphere"
     ],
     "mechanics": [],
     "status": "partial"
@@ -9716,11 +9721,10 @@
     ],
     "key": "Graphomancy",
     "prerequisites": [
+      "PRESKILL:1,Craft (Calligraphy)=1",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Craft (calligraphy) 1 rank"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -10241,11 +10245,11 @@
     "key": "Hail",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
-      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
     ],
     "unresolved_prerequisites": [
-      "Mystic Focus",
-      "ability to gain martial focus"
+      "Mystic Focus"
     ],
     "mechanics": [],
     "status": "partial"
@@ -10382,11 +10386,11 @@
     "key": "Harnessed Virtue",
     "prerequisites": [
       "PREFEAT:1,Imbued Strike",
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus",
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
       "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
     ],
     "unresolved_prerequisites": [
-      "ability to gain martial focus",
       "non-neutral alignment"
     ],
     "mechanics": [],
@@ -10675,9 +10679,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc63"
     ],
     "key": "Heroic Resolve",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
+    ],
     "unresolved_prerequisites": [
-      "Ability to gain martial focus",
       "Constitution 13 or higher"
     ],
     "mechanics": [],
@@ -10770,10 +10775,11 @@
       "https://spheresofpower.wikidot.com/war#toc145"
     ],
     "key": "Hive Mind",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander; caster level 5th or 5 ranks in Diplomacy"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]",
+      "PREMULT:1,[PREVARGTEQ:SPHERES_CL_WAR,5],[PRESKILL:1,Diplomacy=5]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -10791,7 +10797,8 @@
     "key": "Hold the Note",
     "prerequisites": [],
     "unresolved_prerequisites": [
-      "tension pool, one of bardic performance, psionics, or raging song"
+      "tension pool",
+      "one of bardic performance, psionics, or raging song"
     ],
     "mechanics": [],
     "status": "partial"
@@ -11456,11 +11463,10 @@
     ],
     "key": "Improved Combat Recharge",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells",
       "PREFEAT:1,Combat Recharge"
     ],
-    "unresolved_prerequisites": [
-      "Charged Spells"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -11914,11 +11920,10 @@
     ],
     "key": "In Too Deep",
     "prerequisites": [
-      "PREFEAT:1,No Cost Too Great"
+      "PREFEAT:1,No Cost Too Great",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting"
     ],
-    "unresolved_prerequisites": [
-      "Unsettling Casting drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -11957,10 +11962,10 @@
     ],
     "key": "Inhuman Defiler",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
     ],
     "unresolved_prerequisites": [
-      "Terrain Casting drawback",
       "non-good alignment"
     ],
     "mechanics": [],
@@ -12079,10 +12084,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc67"
     ],
     "key": "Instinctive Stance",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Ability to gain martial focus"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12118,10 +12123,10 @@
       "https://spheresofpower.wikidot.com/war#toc146"
     ],
     "key": "Instructive Command",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12137,10 +12142,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc99"
     ],
     "key": "Intense Defiling",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Terrain Casting drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12480,10 +12485,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc35"
     ],
     "key": "Land-Attuned Magic",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Area Bound or Terrain Casting"
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Area Bound],[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12539,10 +12544,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc36"
     ],
     "key": "Ley Line Affinity",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Area Bound drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Area Bound"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12576,10 +12581,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc37"
     ],
     "key": "Life Conversion",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Draining Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Draining Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12641,10 +12646,11 @@
       "https://spheresofpower.wikidot.com/war#toc147"
     ],
     "key": "Lightning Tactics",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander; character level 10th"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]",
+      "PRELEVEL:MIN=10"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13060,10 +13066,10 @@
       "https://spheresofpower.wikidot.com/mana#toc106"
     ],
     "key": "Magical Blending",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Mana sphere; Death sphere, Destruction sphere, Mind sphere, or Nature sphere ((water) package)"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:4,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere],[PREABILITY:1,CATEGORY=Spheres Nature Package,Nature Package - Water]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13437,10 +13443,11 @@
       "https://spheresofpower.wikidot.com/war#toc148"
     ],
     "key": "Mass Command",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander, casting class feature"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]",
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13473,10 +13480,10 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc31"
     ],
     "key": "Master Engineer",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Profession (engineer) 5 ranks"
+    "prerequisites": [
+      "PRESKILL:1,Profession (Engineer)=5"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13531,10 +13538,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc42"
     ],
     "key": "Mastery of Many",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Charged Spells"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13673,11 +13680,10 @@
     ],
     "key": "Mental Metamagic",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Mental Focus",
       "PREFEAT:1,TYPE=Metamagic"
     ],
-    "unresolved_prerequisites": [
-      "Mental Focus drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13694,11 +13700,10 @@
     ],
     "key": "Mental Modulation",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Mental Focus",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Mental Focus drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14023,10 +14028,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc45"
     ],
     "key": "Minor Uncanniness Acclimation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Unsettling Casting drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14043,10 +14048,10 @@
       "https://spheresofpower.wikidot.com/war#toc149"
     ],
     "key": "Mixed Formation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14126,10 +14131,10 @@
       "https://spheresofpower.wikidot.com/war#toc150"
     ],
     "key": "Mobile Tactics",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14252,10 +14257,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc46"
     ],
     "key": "Multifarious Strain",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Unsettling Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14333,9 +14338,13 @@
       "https://spheresofpower.wikidot.com/enhancement#toc93"
     ],
     "key": "Mystic Choreography",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREFEAT:1,Circle Casting",
+      "PREFEAT:1,Spell Proxy"
+    ],
     "unresolved_prerequisites": [
-      "Enhancement sphere; at least one of the Skilled Casting, Somatic Casting, or Verbal Casting drawbacks; Circle Casting, Spell Proxy"
+      "at least one of the Skilled Casting, Somatic Casting, or Verbal Casting drawbacks"
     ],
     "mechanics": [],
     "status": "partial"
@@ -14500,10 +14509,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc48"
     ],
     "key": "Network of Bonds",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Bonded Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Bonded Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14521,11 +14530,10 @@
     ],
     "key": "Never Beyond Reach",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Bonded Casting",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Bonded Casting"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14584,10 +14592,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc49"
     ],
     "key": "No Cost Too Great",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Draining Casting (drawback) or Unsettling Casting (drawback)"
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Draining Casting],[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14990,12 +14998,11 @@
     ],
     "key": "Pawn of Prophecy",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Divine Future"
     ],
-    "unresolved_prerequisites": [
-      "Unsettling Casting"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15031,10 +15038,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc78"
     ],
     "key": "Perfect Calm",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Martial focus"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15170,10 +15177,10 @@
       "https://spheresofpower.wikidot.com/war#toc151"
     ],
     "key": "Phalanx Formation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15314,10 +15321,10 @@
       "https://spheresofpower.wikidot.com/war#toc152"
     ],
     "key": "Pincer Formation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15458,10 +15465,10 @@
       "https://spheresofpower.wikidot.com/war#toc153"
     ],
     "key": "Platoon Commander",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15542,11 +15549,10 @@
     ],
     "key": "Poisoned Apple",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells",
       "PREFEAT:1,Bottled Spells"
     ],
-    "unresolved_prerequisites": [
-      "Charged Spells drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15808,10 +15814,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc57"
     ],
     "key": "Powerful Focus",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Mental Focus"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Mental Focus"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15872,7 +15878,7 @@
     ],
     "key": "Practiced Interruption",
     "prerequisites": [
-      "PREMULT:1,[PREFEAT:1,Extra Combat Talent],[PREABILITY:1,CATEGORY=Special Ability,Conscript Combat Training]",
+      "PREMULT:1,[PREFEAT:1,Extra Combat Talent],[PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresCombatTraining]",
       "PREATT:5"
     ],
     "unresolved_prerequisites": [],
@@ -16069,10 +16075,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc60"
     ],
     "key": "Preserved Integrity",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Charged Spells"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16132,10 +16138,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc61"
     ],
     "key": "Preternatural Pizazz",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Magical Signs"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Magical Signs"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16196,9 +16202,10 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc126"
     ],
     "key": "Primal Dancer",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRESKILL:1,Perform (Dance)=3"
+    ],
     "unresolved_prerequisites": [
-      "Perform (dance) 3 ranks",
       "Performance sphere ((dance) package)",
       "either the Berserker sphere or Destruction sphere (one (blast type) talent that deals energy damage or Energy Aura talent)"
     ],
@@ -16407,10 +16414,11 @@
       "https://spheresofpower.wikidot.com/combat-feats#toc59"
     ],
     "key": "Puncturing Strike",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREMULT:1,[PREFEAT:1,Piercing Spell],[PREFEAT:1,Spell Penetration]"
+    ],
     "unresolved_prerequisites": [
-      "any [strike] talent",
-      "one of Piercing Spell or Spell Penetration"
+      "any [strike] talent"
     ],
     "mechanics": [],
     "status": "partial"
@@ -16428,14 +16436,13 @@
     ],
     "key": "Purging Despoilation",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
       "PREFEAT:1,Counterspell",
       "PREFEAT:1,Improved Counterspell (Spheres)",
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
       "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,5"
     ],
-    "unresolved_prerequisites": [
-      "Terrain Casting drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16556,7 +16563,8 @@
     "key": "Raging Lucidity",
     "prerequisites": [],
     "unresolved_prerequisites": [
-      "Body Control Sphere; Berserker Sphere or one of bloodrage, rage, or raging song class feature"
+      "Body Control Sphere",
+      "Berserker Sphere or one of bloodrage, rage, or raging song class feature"
     ],
     "mechanics": [],
     "status": "partial"
@@ -16638,10 +16646,11 @@
       "https://spheresofpower.wikidot.com/war#toc154"
     ],
     "key": "Ranged Command",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander; casting class feature"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]",
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16807,11 +16816,10 @@
     ],
     "key": "Realmwalker Adept",
     "prerequisites": [
+      "PRESKILL:1,Knowledge (Planes)=3",
       "PRESKILL:1,Survival=3"
     ],
-    "unresolved_prerequisites": [
-      "Knowledge (planes) 3 ranks"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16828,12 +16836,11 @@
     ],
     "key": "Realmwalker Master",
     "prerequisites": [
+      "PRESKILL:1,Knowledge (Planes)=7",
       "PRESKILL:1,Survival=7",
       "PREFEAT:1,Realmwalker Adept"
     ],
-    "unresolved_prerequisites": [
-      "Knowledge (planes) 7 ranks"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16991,9 +16998,12 @@
       "https://spheresofpower.wikidot.com/squadron-feats#toc21"
     ],
     "key": "Rehearsed Performance",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREFEAT:1,Posse Commander"
+    ],
     "unresolved_prerequisites": [
-      "Communication sphere; one of Performance sphere ((dance) package), bardic performance, psionics, or raging song; Posse Commander"
+      "Communication sphere",
+      "one of Performance sphere ((dance) package), bardic performance, psionics, or raging song"
     ],
     "mechanics": [],
     "status": "partial"
@@ -17073,10 +17083,10 @@
       "https://spheresofpower.wikidot.com/war#toc155"
     ],
     "key": "Requested Command",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17206,10 +17216,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc68"
     ],
     "key": "Restorative Rush",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Charged Spells"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17537,9 +17547,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc101"
     ],
     "key": "Ruinous Defiling",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+    ],
     "unresolved_prerequisites": [
-      "Terrain Casting drawback",
       "non-good alignment"
     ],
     "mechanics": [],
@@ -17580,11 +17591,10 @@
     "key": "Rush Of Magic",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Barroom Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Barroom - Chasing the Dragon"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Barroom - Chasing the Dragon",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Addictive Casting"
     ],
-    "unresolved_prerequisites": [
-      "Addictive Casting"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17700,10 +17710,10 @@
       "https://spheresofpower.wikidot.com/blood#toc74"
     ],
     "key": "Salvaging Execution",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Blood sphere, Death sphere (Shroud (dominion)), or Telekinesis sphere"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Shroud]],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17741,10 +17751,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc70"
     ],
     "key": "Sanctum Magic",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Area Bound drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Area Bound"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17782,11 +17792,10 @@
     ],
     "key": "Sanguinivorous",
     "prerequisites": [
-      "PREFEAT:1,Bloody Savage"
+      "PREFEAT:1,Bloody Savage",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Vampiric Casting"
     ],
-    "unresolved_prerequisites": [
-      "Vampiric Casting drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17843,11 +17852,10 @@
     ],
     "key": "Scholar Of Past And Future",
     "prerequisites": [
+      "PRESKILL:1,Knowledge (History)=1",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Knowledge (history) 1 rank"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17885,10 +17893,10 @@
       "https://spheresofpower.wikidot.com/war#toc156"
     ],
     "key": "Scouting Tactics",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -18405,10 +18413,10 @@
       "https://spheresofpower.wikidot.com/war#toc157"
     ],
     "key": "Shielded Formation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -18835,10 +18843,10 @@
     ],
     "key": "Sojourner",
     "prerequisites": [
+      "PRESKILL:1,Perform (Dance)=3",
       "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Athletics Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere]"
     ],
     "unresolved_prerequisites": [
-      "Perform (dance) 3 ranks",
       "Performance sphere ((dance) package)"
     ],
     "mechanics": [],
@@ -18957,10 +18965,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc73"
     ],
     "key": "Soul Harvester",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Charged Spells drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19121,9 +19129,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc102"
     ],
     "key": "Specialist Defiler",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+    ],
     "unresolved_prerequisites": [
-      "Terrain Casting drawback",
       "non-good alignment"
     ],
     "mechanics": [],
@@ -19563,11 +19572,10 @@
     ],
     "key": "Spellburn Defiling",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Terrain Casting drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19811,10 +19819,10 @@
       "https://spheresofpower.wikidot.com/war#toc158"
     ],
     "key": "Squad Triangulation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19851,10 +19859,11 @@
       "https://spheresofpower.wikidot.com/war#toc160"
     ],
     "key": "Squadron Network",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander; character level 10th"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]",
+      "PRELEVEL:MIN=10"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20087,11 +20096,10 @@
     ],
     "key": "Studied Healing",
     "prerequisites": [
+      "PRESKILL:1,Heal=1",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Heal 1 rank"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20210,12 +20218,11 @@
     "key": "Suffer By Proxy",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Draining Casting",
       "PREFEAT:1,Circle Casting",
       "PREFEAT:1,Spell Proxy"
     ],
-    "unresolved_prerequisites": [
-      "Draining Casting drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20501,11 +20508,10 @@
     ],
     "key": "Surgeon’s Trade Secrets",
     "prerequisites": [
+      "PRESKILL:1,Heal=1",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Heal 1 rank"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20579,10 +20585,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc80"
     ],
     "key": "Surrender of the Self",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Unsettling Casting drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21506,9 +21512,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc104"
     ],
     "key": "Terrain Defiler",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+    ],
     "unresolved_prerequisites": [
-      "Terrain Casting drawback",
       "non-good alignment"
     ],
     "mechanics": [],
@@ -21528,11 +21535,10 @@
     ],
     "key": "Terrain Focus",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
     ],
-    "unresolved_prerequisites": [
-      "Terrain Casting drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21708,10 +21714,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc109"
     ],
     "key": "Thoughtbond",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Bonded Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Bonded Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21749,10 +21755,10 @@
     "key": "Through The Long Night",
     "prerequisites": [
       "PREFEAT:1,Heroic Resolve",
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus",
       "PREMULT:1,[PRESTAT:1,CHA=15],[PRESTAT:1,CON=15]"
     ],
     "unresolved_prerequisites": [
-      "ability to gain martial focus",
       "good alignment"
     ],
     "mechanics": [],
@@ -21916,9 +21922,12 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc109"
     ],
     "key": "Tool Transformation",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Object Transformation"
+    ],
     "unresolved_prerequisites": [
-      "Alteration Sphere (Object Transformation), one of Artifice, Survivalism, or Trap Spheres"
+      "one of Artifice, Survivalism, or Trap Spheres"
     ],
     "mechanics": [],
     "status": "partial"
@@ -22316,11 +22325,10 @@
     ],
     "key": "Treat Injury",
     "prerequisites": [
+      "PRESKILL:1,Heal=1",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Heal 1 rank"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -22336,9 +22344,10 @@
       "https://spheresofpower.wikidot.com/general-feats#toc81"
     ],
     "key": "Triage",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRESKILL:1,Heal=1"
+    ],
     "unresolved_prerequisites": [
-      "Heal 1 rank",
       "casting class feature or ki pool class feature"
     ],
     "mechanics": [],
@@ -22520,10 +22529,10 @@
       "https://spheresofpower.wikidot.com/death#toc110"
     ],
     "key": "Twisted Reanimation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Alteration sphere (Undead Body), Death sphere; or Alteration sphere, Death sphere (Corpse Manipulation)"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Undead Body],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere]],[PREMULT:3,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Corpse Manipulation]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -22811,11 +22820,10 @@
     ],
     "key": "Unified Focus",
     "prerequisites": [
-      "PREFEAT:1,Fast Focus"
+      "PREFEAT:1,Fast Focus",
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
     ],
-    "unresolved_prerequisites": [
-      "ability to gain martial focus"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -22874,11 +22882,10 @@
     ],
     "key": "Unliving Chemister",
     "prerequisites": [
+      "PRESKILL:1,Craft (Alchemy)=3",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Craft (alchemy) 3 ranks"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -23444,10 +23451,10 @@
       "https://spheresofpower.wikidot.com/war#toc161"
     ],
     "key": "Vigilant Command",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -23702,10 +23709,10 @@
       "https://spheresofpower.wikidot.com/wild-magic-feats#toc13"
     ],
     "key": "War on Reality",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Unsettling Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -23804,10 +23811,10 @@
       "https://spheresofpower.wikidot.com/war#toc138"
     ],
     "key": "Warlord Of The Damned",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Death sphere (Master’s Presence), War sphere; or Death sphere, War sphere (Hallowed/Unhallowed Totem (totem))"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Master’s Presence],[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere]],[PREMULT:3,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,War - Hallowed/Unhallowed Totem]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -24154,10 +24161,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc87"
     ],
     "key": "Whispers From Beyond",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Unsettling Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -24253,10 +24260,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc88"
     ],
     "key": "Wild Casting",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Somatic Casting drawback or Verbal Casting drawback"
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Somatic Casting],[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Verbal Casting]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -24309,10 +24316,11 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc117"
     ],
     "key": "Winded By Words",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
+    ],
     "unresolved_prerequisites": [
-      "Bluster sphere",
-      "ability to gain martial focus"
+      "Bluster sphere"
     ],
     "mechanics": [],
     "status": "partial"
@@ -24350,10 +24358,11 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc89"
     ],
     "key": "Wishbound Casting",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Verbal Casting"
+    ],
     "unresolved_prerequisites": [
-      "Extended Casting (drawback)",
-      "Verbal Casting (drawback)"
+      "Extended Casting (drawback)"
     ],
     "mechanics": [],
     "status": "partial"
@@ -24471,9 +24480,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc111"
     ],
     "key": "Zodiac Tattoos",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRESKILL:1,Craft (Tattoos)=5"
+    ],
     "unresolved_prerequisites": [
-      "Craft (tattoos) 5 ranks",
       "Unarmored Training or AC Bonus class feature"
     ],
     "mechanics": [],

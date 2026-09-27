@@ -25,6 +25,18 @@ class PcgenFeats {
         String focus = might ? "Combat Sphere Focus - Fencing" : "Sphere Focus - Life";
         String dc = might ? "SPHERES_DC_FENCING" : "SPHERES_DC_LIFE";
         try {
+            var martialFocus = ability(AbilityCategory.FEAT, "Instinctive Stance");
+            require(martialFocus.qualifies(pc, martialFocus) == might, "Initial martial focus eligibility");
+            if (!might) {
+                var extraCombat = ability(feats, "Extra Combat Talent");
+                controller.addAbility(feats, extraCombat);
+                require(martialFocus.qualifies(pc, martialFocus), "Extra Combat Talent must grant focus eligibility");
+                require(pc.getVariableValue("SPHERES_MARTIAL_FOCUS_CAPACITY", "").intValue() == 1, "Baseline focus capacity");
+                controller.removeAbility(feats, extraCombat);
+                require(!martialFocus.qualifies(pc, martialFocus), "Focus eligibility must disappear with last source");
+            } else {
+                require(pc.getVariableValue("SPHERES_MARTIAL_FOCUS_CAPACITY", "").intValue() == 1, "Practitioner focus capacity");
+            }
             if (reload) {
                 require(pc.hasAbilityKeyed(feats, focus), "Focus not persisted");
                 controller.removeAbility(feats, ability(feats, focus));
@@ -112,6 +124,7 @@ class PcgenFeats {
                 controller.addAbility(feats, great);
                 require(pc.getVariableValue("SPHERES_MARTIAL_FOCUS_CAPACITY", "").intValue() == 2, "Great Focus capacity");
                 controller.removeAbility(feats, great);
+                require(pc.getVariableValue("SPHERES_MARTIAL_FOCUS_CAPACITY", "").intValue() == 1, "Great Focus capacity refund");
                 controller.removeAbility(talents, ability(talents, "Shield Sphere"));
                 var basic = ability(feats, "Basic Magic Training");
                 controller.addAbility(feats, basic);

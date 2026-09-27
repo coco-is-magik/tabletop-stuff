@@ -69,10 +69,100 @@ class FeatTests(unittest.TestCase):
         for line in self.outputs["spheres_feat_catalog.lst"].splitlines()[1:]:
             self.assertNotIn(",", line.split("\t")[0])
 
+    def test_multi_clause_or_branches(self):
+        tags, missing = self.parser.compile(
+            "Prerequisites: War sphere, Squadron Commander; or Warleader sphere, Troop Commander.\nBenefit: Test.")
+        self.assertFalse(missing)
+        self.assertEqual(len(tags), 1)
+        self.assertTrue(tags[0].startswith("PREMULT:1,[PREMULT:2,"))
+        for piece in ("PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+                      "PREFEAT:1,Squadron Commander",
+                      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere",
+                      "PREFEAT:1,Troop Commander"):
+            self.assertIn(piece, tags[0])
+
+    def test_or_branch_global_requirements_hoisted(self):
+        tags, missing = self.parser.compile(
+            "Prerequisites: War sphere, Squadron Commander; or Warleader sphere, Troop Commander; character level 10th.\nBenefit: Test.")
+        self.assertFalse(missing)
+        self.assertIn("PRELEVEL:MIN=10", tags)
+        self.assertNotIn("PRELEVEL", tags[0])
+        tags, missing = self.parser.compile(
+            "Prerequisites: War sphere, Squadron Commander; or Warleader sphere, Troop Commander; caster level 5th or 5 ranks in Diplomacy.\nBenefit: Test.")
+        self.assertFalse(missing)
+        self.assertIn("PREMULT:1,[PREVARGTEQ:SPHERES_CL_WAR,5],[PRESKILL:1,Diplomacy=5]", tags)
+
+    def test_or_branch_fail_closed(self):
+        tags, missing = self.parser.compile("Prerequisites: War sphere; or Performance sphere.\nBenefit: Test.")
+        self.assertEqual(tags, [])
+        self.assertEqual(missing, ["War sphere; or Performance sphere"])
+        tags, missing = self.parser.compile(
+            "Prerequisites: War sphere, Squadron Commander; or Warleader sphere, Unknown Talent.\nBenefit: Test.")
+        self.assertEqual(tags, [])
+        self.assertTrue(missing)
+
+    def test_drawback_prerequisites(self):
+        for text, record in (("Terrain Casting drawback", "Tradition - Terrain Casting"),
+                             ("Charged Spells", "Tradition - Charged Spells"),
+                             ("Draining Casting (drawback)", "Tradition - Draining Casting"),
+                             ("Vampiric Casting drawback", "Tradition - Vampiric Casting")):
+            self.assertEqual(self.parser.clause(text),
+                             ["PREABILITY:1,CATEGORY=Custom Casting Drawback," + record])
+        tags = self.parser.clause("Draining Casting (drawback) or Unsettling Casting (drawback)")
+        self.assertEqual(tags, ["PREMULT:1,[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Draining Casting],"
+                                "[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting]"])
+
+    def test_skill_rank_forms(self):
+        self.assertEqual(self.parser.clause("Craft (alchemy) 5 ranks"), ["PRESKILL:1,Craft (Alchemy)=5"])
+        self.assertEqual(self.parser.clause("Knowledge (planes) 5 ranks"), ["PRESKILL:1,Knowledge (Planes)=5"])
+        self.assertEqual(self.parser.clause("Heal 1 rank"), ["PRESKILL:1,Heal=1"])
+        self.assertEqual(self.parser.clause("5 ranks in Diplomacy"), ["PRESKILL:1,Diplomacy=5"])
+        self.assertIsNone(self.parser.clause("5 ranks in any 2 skills"))
+        self.assertIsNone(self.parser.clause("Profession (notaskill) 5 ranks"))
+
+    def test_one_of_alternatives(self):
+        tags = self.parser.clause("one of Agonizing Defiling, Ruinous Defiling, or Spellburn Defiling")
+        self.assertEqual(tags, ["PREMULT:1,[PREFEAT:1,Agonizing Defiling],[PREFEAT:1,Ruinous Defiling],"
+                                "[PREFEAT:1,Spellburn Defiling]"])
+        tags, missing = self.parser.compile(
+            "Prerequisites: Terrain Casting drawback, one of Agonizing Defiling, Ruinous Defiling, or Spellburn Defiling.\nBenefit: Test.")
+        self.assertFalse(missing)
+        self.assertIn("PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting", tags)
+        self.assertTrue(any(t.startswith("PREMULT:1,[PREFEAT:1,Agonizing Defiling]") for t in tags))
+        self.assertIsNone(self.parser.clause("one of Fabricated Feat, or Spellburn Defiling"))
+
     def test_limited_repeatability(self):
         line = next(s for s in self.outputs["spheres_feat_catalog.lst"].splitlines()
                     if s.startswith("Practiced Interruption\t"))
         self.assertIn("PREVARLT:SPHERES_FEAT_PRACTICEDINTERRUPTION_COUNT,2", line)
+
+    def test_martial_focus_eligibility(self):
+        focus = "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
+        for clause in ("martial focus", "Ability to gain martial focus", "ability to maintain martial focus"):
+            self.assertEqual(self.parser.clause(clause), [focus])
+        self.assertEqual(self.parser.clause("combat training class feature"),
+                         ["PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresCombatTraining"])
+        self.assertEqual(self.parser.clause("casting class feature or ability to gain martial focus"),
+                         ["PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core],[" + focus + "]"])
+        self.assertIsNone(self.parser.clause("ability to gain martial focus or use skill leverage"))
+        self.assertIsNone(self.parser.clause("currently has martial focus"))
+        self.assertEqual(self.by_name["Unified Focus"]["unresolved_prerequisites"], [])
+        self.assertTrue(self.by_name["Winded By Words"]["unresolved_prerequisites"])
+
+    def test_focus_grant_sources(self):
+        records = {line.split("\t")[0]: line for line in
+                   (DATA / "spheres_conscript.lst").read_text().splitlines()}
+        grant = "ABILITY:Special Ability|AUTOMATIC|Spheres Martial Focus"
+        for name in ("Conscript Combat Training", "Extra Combat Talent", "Martial Tradition (Manual)"):
+            self.assertIn(grant, records[name])
+        self.assertIn("TYPE:SpheresInternal.SpheresCombatTraining", records["Conscript Combat Training"])
+        self.assertNotIn("SpheresCombatTraining", records["Extra Combat Talent"])
+        custom = next(line for line in (DATA / "spheres_traditions.lst").read_text().splitlines()
+                      if line.startswith("Custom Martial Tradition\t"))
+        self.assertIn(grant, custom)
+        focus = next(line for line in (DATA / "spheres_core.lst").read_text().splitlines()
+                     if line.startswith("Spheres Martial Focus\t"))
+        self.assertIn("DEFINE:SPHERES_MARTIAL_FOCUS_CAPACITY|1", focus)
 
 
 if __name__ == "__main__":

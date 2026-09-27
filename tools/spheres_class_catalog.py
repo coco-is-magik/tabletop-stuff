@@ -8,6 +8,7 @@ import json
 import re
 
 from spheres_catalog_source import ROOT, SNAPSHOTS
+from spheres_mageknight import option_tags as mageknight_tags, review_records as mageknight_review
 
 NAMES = "armorist eliciter fey-adept hedgewitch mageknight shifter soul-weaver symbiat thaumaturge wraith armiger blacksmith commander scholar sentinel striker technician".split()
 DATA = ROOT / "data/spheres"
@@ -75,7 +76,8 @@ def option_abilities(slug, category, section, snapshot):
         if not body:
             body = f"Consult the {slug} class source for this choice."
         slug_key = "SPHERES_" + slug.upper().replace(" ", "_") + "_LEVEL"
-        lines.append(f"{slug} {key}\tCATEGORY:{category}\tPREVARGTEQ:{slug_key},1\tDESC:{body}")
+        tags = mageknight_tags(title) if category == "Mageknight Mystic Combat" else [f"PREVARGTEQ:{slug_key},1"]
+        lines.append(f"{slug} {key}\tCATEGORY:{category}\t" + "\t".join(tags) + f"\tDESC:{body}")
     return lines
 
 
@@ -263,6 +265,10 @@ def generate(slug):
     for level, row in enumerate(rows, 1):
         grants = []
         if level == 1:
+            if name == "Mageknight":
+                # Keep the pool definition alive when one repeated Combat Talent
+                # selection is removed; PCGen removes that selection's DEFINE.
+                grants.append("DEFINE:SPHERES_COMBAT_TALENTS|0")
             grants += proficiencies(source, magic)
             grants.append("ABILITY:Special Ability|AUTOMATIC|" + ("Spheres Casting Core" if magic else f"{name} Combat Training"))
             grants += ["ABILITY:Special Ability|AUTOMATIC|" + entry.split("\t", 1)[0] for entry in numeric]
@@ -277,7 +283,8 @@ def generate(slug):
     if not magic:
         practitioner = {"Blacksmith": "CON", "Striker": "CON", "Sentinel": "WIS", "Scholar": "INT", "Technician": "INT",
                         "Commander": "max(CHA,INT)"}.get(name)
-        abilities.append(f"{name} Combat Training\tCATEGORY:Special Ability\tTYPE:SpheresInternal\t"
+        abilities.append(f"{name} Combat Training\tCATEGORY:Special Ability\tTYPE:SpheresInternal.SpheresCombatTraining\t"
+                         "ABILITY:Special Ability|AUTOMATIC|Spheres Martial Focus\t"
                          "DEFINE:SPHERES_PRACTITIONER_DC|0\t" +
                          (f"BONUS:VAR|SPHERES_PRACTITIONER_MOD|{practitioner}\t" if practitioner else
                           f"DESC:Choose Intelligence, Wisdom or Charisma as the {name} practitioner modifier.\t") +
@@ -306,6 +313,10 @@ def generate(slug):
     else:
         categories_for_channel = ""
     categories = []
+    if name == "Mageknight":
+        review_category, review_ability = mageknight_review()
+        categories.append(review_category)
+        abilities.append(review_ability)
     option_sections = {
         "armorist": {"arsenal trick": "Arsenal Trick"},
         "eliciter": {"emotion": "List of Emotions"},

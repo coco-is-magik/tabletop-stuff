@@ -5,6 +5,7 @@ import unittest
 from spheres import DATA, check_package
 from spheres_class_catalog import NAMES, SNAPSHOTS, generate, table, number, source_options
 from pcgen_class_catalog import expected, fixture
+from spheres_mageknight import option_tags, CURSE_REVIEW, REVIEW_CATEGORY
 
 
 class ClassCatalogTest(unittest.TestCase):
@@ -77,6 +78,56 @@ class ClassCatalogTest(unittest.TestCase):
         for level, expected_bonus in ((1, 2), (5, 2), (6, 3), (11, 3),
                                       (12, 4), (17, 4), (18, 5), (20, 5)):
             self.assertEqual(2 + level // 6, expected_bonus)
+
+    def test_combat_training_grants_focus(self):
+        grant = "ABILITY:Special Ability|AUTOMATIC|Spheres Martial Focus"
+        for slug in NAMES:
+            _, abilities, _, details = generate(slug)
+            if details["magic"]:
+                self.assertNotIn(grant, abilities, slug)
+            else:
+                training = next(line for line in abilities.splitlines()
+                                if line.startswith(details["name"] + " Combat Training\t"))
+                self.assertIn("TYPE:SpheresInternal.SpheresCombatTraining", training, slug)
+                self.assertIn(grant, training, slug)
+
+    def test_mageknight_prerequisites(self):
+        snapshot = json.loads((SNAPSHOTS / "mageknight.json").read_text())
+        options = source_options(snapshot, "Mystic Combat (Su)")
+        records = {line.split("\t")[0]: line for line in generate("mageknight")[1].splitlines()}
+        for title, _ in options:
+            tags = option_tags(title)
+            self.assertTrue(tags[0].startswith("PREVARGTEQ:SPHERES_MAGEKNIGHT_LEVEL,"))
+        for title, level in (("Elemental Defense (requires mystic defense)", 11),
+                             ("Mark of Pain (requires marked)", 7),
+                             ("Whirl of Blows (requires mageknight 6)", 6),
+                             ("Magic Power", 2)):
+            self.assertIn(f"PREVARGTEQ:SPHERES_MAGEKNIGHT_LEVEL,{level}", records["Mageknight " + title])
+        self.assertIn("PREABILITY:1,CATEGORY=Mageknight Mystic Combat,Mageknight Spell Shield",
+                      records["Mageknight Spell Mirror (requires mageknight 10 - spell shield)"])
+        self.assertIn("PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+                      records["Mageknight Shared Marking (requires marked - War sphere)"])
+        black_dog = next(value for key, value in records.items() if key.startswith("Mageknight Black Dog Companion"))
+        self.assertIn("PREVARGTEQ:SPHERES_MAGEKNIGHT_LEVEL,4", black_dog)
+        self.assertIn(f"PREABILITY:1,CATEGORY={REVIEW_CATEGORY},{CURSE_REVIEW}", black_dog)
+        self.assertIn("COST:0", records[CURSE_REVIEW])
+        with self.assertRaisesRegex(ValueError, "Unreviewed"):
+            option_tags("Unreviewed Option (requires an unknown feature)")
+
+    def test_mageknight_repeatable_grants(self):
+        self.assertIn("DEFINE:SPHERES_COMBAT_TALENTS|0", generate("mageknight")[0])
+        self.assertNotIn("DEFINE:SPHERES_COMBAT_TALENTS|0", option_tags("Combat Talent [CotS]"))
+        for title, variable in (("Magic Power", "SPHERES_MAGIC_TALENTS"),
+                                ("Combat Talent [CotS]", "SPHERES_COMBAT_TALENTS")):
+            tags = option_tags(title)
+            for tag in ("MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|" + variable + "|1"):
+                self.assertIn(tag, tags)
+        for title, feat in (("Whirl of Blows (requires mageknight 6)", "Whirlwind Attack"),
+                            ("Sunder The Veil", "Pierce The Veil"),
+                            ("Weirding Initiate", "Weird Defense")):
+            self.assertIn("ABILITY:FEAT|AUTOMATIC|" + feat, option_tags(title))
+        self.assertNotIn("MULT:YES", option_tags("Spell Shield [WM]"))
+        self.assertFalse(any(tag.startswith("ABILITY:FEAT") for tag in option_tags("Weirding Adept")))
 
 
 if __name__ == "__main__":
