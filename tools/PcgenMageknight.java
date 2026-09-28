@@ -23,6 +23,13 @@ class PcgenMageknight {
         var shield = ability(choices, "Mageknight Spell Shield");
         var mirror = ability(choices, "Mageknight Spell Mirror (requires mageknight 10 - spell shield)");
         try {
+            if (level >= 16 && reload) {
+                var feats = game.getAbilityCategory("Mageknight Greater Combatant Feat");
+                require(pc.hasAbilityKeyed(AbilityCategory.FEAT, "Improved Initiative"), "Chosen combat feat persistence");
+                require(pc.getAvailableAbilityPool(feats).intValue() == 0, "Saved feat pool spend");
+                controller.removeAbility(feats, ability(AbilityCategory.FEAT, "Improved Initiative"));
+                controller.removeAbility(choices, ability(choices, "Mageknight Greater Combatant"));
+            }
             if (reload) {
                 require(pc.hasAbilityKeyed(choices, shield.getKeyName()), "Shield persistence");
                 require(pc.hasAbilityKeyed(choices, mirror.getKeyName()) == (level >= 10), "Mirror persistence");
@@ -45,6 +52,28 @@ class PcgenMageknight {
                 boolean qualified = level >= Integer.parseInt(test[1]);
                 require(option.qualifies(pc, option) == qualified, "Level prerequisite: " + test[0]);
                 if (!qualified) rejected(controller, messages, choices, option, "InfoAbility.Messages.NotQualified");
+            }
+            if (level >= 4) {
+                for (String name : new String[] {"Champion", "Greater Combatant"}) {
+                    var option = ability(choices, "Mageknight " + name);
+                    var feats = game.getAbilityCategory("Mageknight " + name + " Feat");
+                    require(pc.getAvailableAbilityPool(feats).intValue() == 0, "No unearned feat pool");
+                    controller.addAbility(choices, option);
+                    controller.addAbility(choices, option);
+                    require(pc.getAvailableAbilityPool(feats).intValue() == 2, "Repeated feat pool grant");
+                    controller.removeAbility(choices, option);
+                    require(pc.getAvailableAbilityPool(feats).intValue() == 1, "Partial feat pool refund");
+                    if (name.equals("Greater Combatant")) {
+                        rejected(controller, messages, feats, ability(AbilityCategory.FEAT, "Whirlwind Attack"),
+                                "InfoAbility.Messages.NotQualified");
+                        controller.addAbility(feats, ability(AbilityCategory.FEAT, "Improved Initiative"));
+                        require(pc.hasAbilityKeyed(AbilityCategory.FEAT, "Improved Initiative"), "Chosen combat feat grant");
+                        require(pc.getAvailableAbilityPool(feats).intValue() == 0, "Chosen feat cost");
+                        controller.removeAbility(feats, ability(AbilityCategory.FEAT, "Improved Initiative"));
+                    }
+                    controller.removeAbility(choices, option);
+                    require(pc.getAvailableAbilityPool(feats).intValue() == 0, "Full feat pool refund");
+                }
             }
             var strategic = ability(choices, "Mageknight Strategic Planning (requires War sphere)");
             rejected(controller, messages, choices, strategic, "InfoAbility.Messages.NotQualified");
@@ -91,6 +120,39 @@ class PcgenMageknight {
                 require(!pc.hasAbilityKeyed(AbilityCategory.FEAT, test[1]), "Bonus feat removal " + test[1]);
             }
             rejected(controller, messages, choices, mirror, "InfoAbility.Messages.NotQualified");
+            var adept = ability(choices, "Mageknight Weirding Adept");
+            var initiate = ability(choices, "Mageknight Weirding Initiate");
+            var master = ability(choices, "Mageknight Weirding Master");
+            var illusion = ability(talents, "Illusion Sphere");
+            var magicPool = pc.getAvailableAbilityPool(talents);
+            controller.addAbility(choices, adept);
+            require(!pc.hasAbilityKeyed(talents, "Illusion - Mage Feint"), "Adept without talent prerequisite or waiver");
+            require(!pc.hasAbilityKeyed(AbilityCategory.FEAT, "Weird Motion"), "Adept without feat prerequisite or waiver");
+            controller.addAbility(talents, illusion);
+            require(pc.hasAbilityKeyed(talents, "Illusion - Mage Feint"), "Adept grants qualified talent");
+            require(pc.getVariableValue("SPHERES_MAGE_FEINT_CL", "").intValue() == level, "Mage Feint high caster progression");
+            require(pc.getVariableValue("SPHERES_CL_ILLUSION", "").intValue() == level / 2, "Other Illusion effects retain low caster progression");
+            require(pc.hasAbilityKeyed(AbilityCategory.FEAT, "Weird Motion") == (level >= 3), "Normal Weird Motion BAB gate");
+            controller.removeAbility(talents, illusion);
+            require(!pc.hasAbilityKeyed(talents, "Illusion - Mage Feint"), "Talent prerequisite removal");
+            if (level >= 4) {
+                controller.addAbility(choices, initiate);
+                require(pc.hasAbilityKeyed(talents, "Illusion - Mage Feint"), "Initiate waives talent prerequisite");
+                require(pc.hasAbilityKeyed(AbilityCategory.FEAT, "Weird Motion"), "Initiate waives feat prerequisites");
+                controller.removeAbility(choices, initiate);
+                require(!pc.hasAbilityKeyed(AbilityCategory.FEAT, "Weird Motion"), "Waiver removal revokes grant");
+                controller.addAbility(choices, master);
+                require(pc.hasAbilityKeyed(talents, "Illusion - Decoy"), "Adept waives Master talent prerequisite");
+                require(pc.hasAbilityKeyed(AbilityCategory.FEAT, "Weird Assault"), "Adept waives Master feat prerequisites");
+                controller.removeAbility(choices, adept);
+                require(!pc.hasAbilityKeyed(talents, "Illusion - Decoy"), "Master waiver removal");
+                require(!pc.hasAbilityKeyed(AbilityCategory.FEAT, "Weird Assault"), "Master feat waiver removal");
+                controller.removeAbility(choices, master);
+            } else {
+                controller.removeAbility(choices, adept);
+            }
+            require(pc.getAvailableAbilityPool(talents).equals(magicPool), "Weirding grants do not spend talent slots");
+            require(pc.getVariableValue("SPHERES_MAGE_FEINT_CL", "").intValue() == 0, "Removing Adept removes its caster-level value");
             controller.addAbility(choices, shield);
             require(mirror.qualifies(pc, mirror) == (level >= 10), "Mirror level and shield requirements");
             if (level >= 10) {
@@ -106,6 +168,11 @@ class PcgenMageknight {
                     controller.addAbility(choices, ability(choices, "Mageknight " + name));
                 }
                 require(pc.getAvailableAbilityPool(choices).intValue() == level / 2 - 6, "Persisted selection costs");
+            }
+            if (level >= 16) {
+                controller.addAbility(choices, ability(choices, "Mageknight Greater Combatant"));
+                controller.addAbility(game.getAbilityCategory("Mageknight Greater Combatant Feat"),
+                        ability(AbilityCategory.FEAT, "Improved Initiative"));
             }
         } finally {
             controller.closeCharacter();

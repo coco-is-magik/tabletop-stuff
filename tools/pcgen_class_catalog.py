@@ -77,7 +77,8 @@ def run(slug, level):
                         ("caster_level=|VAR.SPHERES_CASTER_LEVEL.INTVAL|\n"
                          "spell_points=|VAR.SPHERES_SPELL_POINTS.INTVAL|\n" if source["magic"] else ""))
     prefix = "SPHERES_" + slug.replace("-", "_").upper()
-    reference = {"armorist": ("BOUND_ITEMS", lambda n: 1 + n // 5),
+    # The representative Armorist fixture selects Additional Binding at level 2.
+    reference = {"armorist": ("BOUND_ITEMS", lambda n: 1 + n // 5 + (1 if n >= 2 else 0)),
                  "eliciter": ("PERSUASIVE", lambda n: 2 + n // 6),
                  "fey-adept": ("SHADOWMARK_DICE", lambda n: (n + 1) // 2),
                  "mageknight": ("RESIST_MAGIC", lambda n: 1 + (n - 1) // 4),

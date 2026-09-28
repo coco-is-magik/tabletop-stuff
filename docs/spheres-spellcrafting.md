@@ -57,6 +57,29 @@ refund its slot; **also remove its acquisition record when forgetting it**.
 Relearning requires downtime again. PCGen does not automate this lifecycle or
 delete dependent records after a prerequisite or modifier is removed.
 
+## Spellbook casting
+
+Each recipe also produces three zero-cost records, separate from the repertoire:
+
+1. `Deciphered - <name>` records successful deciphering. Resolve the check or
+   qualifying magical method before selecting it; no die roll is automated.
+2. `Accessible Book - <name>` records current access to a deciphered written
+   copy. Remove it when the copy is unavailable; deciphering knowledge persists.
+3. `Book Casting - <name>` requires both records and Spellbook Mastery, but does
+   not require learning or a repertoire slot. It computes missing distinct
+   spheres/basic talents and the resulting 10-percent-per-component mishap
+   chance, capped at 100 percent. Repeated effects from the same component do
+   not multiply the missing-component count. Component feats are bypassed for
+   book casting and do not add to that chance; Spellbook Mastery itself remains
+   required. Ordinary learning and research still require component feats.
+
+Book casting adds one round to the spell's ordinary casting time. Resolve casting,
+spell-point expenditure and any GM-selected mishap at the table. Access records
+are player attestations, not links to inventory items. Loss of access or Mastery
+revokes qualification but does not delete an already-selected casting record.
+The compiler explicitly rejects advanced and unclassified talent components,
+including if such records are later added to the campaign.
+
 ## Remaining work and verification limits
 
 - No GUI recipe editor; recipes are compiled offline before campaign loading.
@@ -64,13 +87,12 @@ delete dependent records after a prerequisite or modifier is removed.
   alignment/CL/package prerequisites and tactical effects require review. Do not
   encode spells with unsupported extra prerequisites as if fully enforced.
 - Advanced talents are not in the existing catalog, so such recipes are rejected.
-- Spellbook Mastery's direct-casting bypass, missing-talent mishap probabilities,
-  temporary talents, deciphered-book persistence and book inventories are not
-  automated. Its feat description is guidance, not a casting implementation.
+- Temporary talents, physical book inventories, automatic access updates,
+  actual casting and mishap resolution are not automated.
 - Acquisition/forgetting and post-selection invalidation need stronger lifecycle
   integration. Existing shared casting-modifier limitations remain unchanged.
 
-Six offline regression tests passed. The real controller runner is
+The real controller runner is
 `/nas/contents/Projects/Programming Projects/Java/tabletop-stuff/tools/pcgen_spellcrafting.py`.
 Run it with no arguments for both gates on fast disks. On slow network
 filesystems each PCGen process needs up to ~110 seconds, so run the gates in
@@ -88,3 +110,10 @@ Mastery feat gating, repertoire slot spend/refund, duplicate rejection,
 prerequisite removal revoking qualification, and save/reload persistence.
 Evidence is in
 `/nas/contents/Projects/Programming Projects/Java/tabletop-stuff/build/pcgen-spheres-fr7hzm9l`.
+
+September 27 continuation: nine offline tests cover the added book records,
+deduplicated missing components, component-feat bypass and rejection of advanced
+or unclassified talents. Live book-casting save/reload checks passed in
+`/nas/contents/Projects/Programming Projects/Java/tabletop-stuff/build/pcgen-spheres-hc6b08ub`:
+deciphering/access persistence, Mastery/access gates, 20/10/0-percent mishap
+changes as spheres are restored, and repertoire-pool isolation.

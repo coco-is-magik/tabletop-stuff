@@ -27,8 +27,28 @@ implemented.** Full rules descriptions must not be mistaken for automation.
 - Equipment's free talent pool, separate from ordinary combat talent spending.
 - Base skill-rank grants for Alchemy, Fencing, Gladiator, Scoundrel, Scout, Trap,
   Warleader and Leadership; Athletics and Beastmastery package skill ranks.
+  Read Foe grants Sense Motive ranks and Military Training grants Profession
+  (Soldier) ranks. Both scale with their sphere's talent count and cap at HD.
+  Leadership plus Warleader grants one half-BAB competence bonus to Diplomacy;
+  their sphere-granted Diplomacy ranks do not stack.
 - Per-Power-sphere CL/DC variables, selected combat resource formulas, Life cure
   formulas, Shield Training and Finesse Fighting grants, and selected base feats.
+- Ace Pilot grants Profession (Pilot) ranks. Tech and Tinker grant Craft
+  (Mechanical) ranks; owning both supplies Tinker's half-HD competence bonus
+  rather than stacking ranks. Default associated skills only; alternate Tinker
+  traditions remain manual.
+- Alchemy, Trap and Tech save DCs use associated skill ranks instead of BAB.
+  Tech has a separate free gadget pool, charge capacity, recharge amount and
+  prepared-gadget capacity. Extra Gadgets grants repeatable capacity increases.
+  These are capacities, not expenditure tracking or gadget inventory enforcement.
+- Craftsman has a single Craft-skill chooser and grants HD-scaled ranks in that
+  skill. Crafting time and retraining previously purchased ranks remain manual.
+
+The Spheres campaign supplies the missing Core skills Craft (Mechanical) and
+Profession (Pilot). Its tested load combination remains Core Rulebook + Spheres.
+Technology Guide and Iron Gods also define Craft (Mechanical); loading those
+additional campaigns alongside this dataset needs duplicate-skill integration
+and has not been verified.
 
 ### Still required to satisfy the full request
 

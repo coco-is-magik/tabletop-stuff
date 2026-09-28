@@ -36,3 +36,46 @@ The dedicated runner is
 run `save --level 12`, then `reload --work <absolute evidence directory>`.
 Levels 2, 6 and 12 have passed save/reload tests. See the depth audit for tested
 behaviors and remaining limitations; saved option keys have not been renamed.
+
+Champion and Greater Combatant now grant separate bonus-feat choice pools and
+support repeated selection. Normal feat prerequisites remain enforced. Live
+checks at levels 6 and 16 cover pool refunds and invalid feat rejection; level
+16 also covers a selected combat feat's save/reload persistence.
+
+## Armorist corrections (September 27, 2026)
+
+Arsenal Trick heading prerequisites now enforce base-class feature levels and
+required tricks, including the alternative materials requirements of Bound
+Companion. Unknown heading prerequisite grammar fails generation. These checks
+assume the base class, not archetypes that replace its class features.
+
+Combat Talent grants repeatable combat-talent slots. Champion, Combat Feat and
+Crafter grant distinct repeatable feat-choice pools with ordinary prerequisites.
+Additional Binding increases the bound-item capacity. Greater Armor Training is
+repeatable and adds to the base armor-training progression. Equipped armor now
+receives the maximum-Dexterity and armor-check adjustments; medium/heavy armor
+movement abilities are granted at levels 3/7. Equipment construction, companions,
+Advanced Armor Training feat selection and conditional arsenal effects remain
+manual. Capacity increases do not themselves construct bound equipment.
+
+Runner: `/nas/contents/Projects/Programming Projects/Java/tabletop-stuff/tools/pcgen_armorist.py`.
+Save/reload checks passed at levels 2 and 12. The armor checks assert equipped
+bonus values and unequip removal, not every sheet format or movement output.
+
+Removing a parent option refunds its pool, but does not automatically delete a
+chosen feat: remove dependent feat choices when removing their granting option.
+
+## Armiger corrections (September 27, 2026)
+
+Prowess heading requirements now enforce Armiger levels, base-class Rapid
+Assault/Enhanced Customization availability, and both Leadership and its Cohort
+package for Share Customized Weapon. Extra Focus grants Great Focus. Champion
+grants a repeatable Champion-feat pool. Deadly Prowess chooses up to three distinct
+feats, bypassing their normal prerequisites as specified, at one prowess slot
+per selection. Partial removal preserves the other grants; full removal removes
+the feats and refunds the slots. Its grants live on the class with per-choice
+conditions to avoid upstream repeated-option removal bugs.
+
+Runner: `/nas/contents/Projects/Programming Projects/Java/tabletop-stuff/tools/pcgen_armiger.py`.
+Other explicit Prowess grants (including Spell Dabbler and sphere-choice grants),
+customized weapon configuration and conditional combat effects remain partial.

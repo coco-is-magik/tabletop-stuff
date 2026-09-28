@@ -3,7 +3,7 @@ import copy
 import json
 import unittest
 
-from spheres_spellcrafting import build, DEFINITIONS, OUTPUT, references
+from spheres_spellcrafting import build, DEFINITIONS, OUTPUT, references, book_variable
 
 
 class SpellcraftingTests(unittest.TestCase):
@@ -35,9 +35,44 @@ class SpellcraftingTests(unittest.TestCase):
         self.assertIn('PREFEAT:1,Spellcrafting', rows[2])
         self.assertNotIn('PREFEAT:', rows[3])
         self.assertIn('PREMULT:1,', rows[3])
-        for row in rows[1:]:
+        for row in rows[1:4]:
             self.assertIn('CATEGORY=Spheres Magic Talent,Life Sphere', row)
             self.assertIn('CATEGORY=Spheres Magic Talent,Protection Sphere', row)
+
+    def test_book_casting_is_separate_from_learning(self):
+        rows = self.render().splitlines()
+        self.assertEqual(len(rows), 7)
+        self.assertIn('Deciphered - Restoring Shield', rows[4])
+        self.assertIn('Accessible Book - Restoring Shield', rows[5])
+        casting = rows[6]
+        self.assertIn('PREFEAT:1,Spellbook Mastery', casting)
+        self.assertNotIn('CATEGORY:Spheres Spell Repertoire', casting)
+        self.assertIn('COST:0', casting)
+        self.assertIn('adds 1 round', casting)
+        variable = book_variable('Restoring Shield')
+        self.assertIn('BONUS:VAR|' + variable + '_MISHAP|min(100,10*' + variable + '_MISSING)', casting)
+        self.assertEqual(casting.count('_MISSING|1|!PREABILITY:'), 2)
+
+    def test_book_counts_distinct_missing_components(self):
+        output = self.render(lambda s: s['components'].append(
+            dict(kind='sphere', key='Life Sphere', effect='Invigorate', spell_points=0)))
+        self.assertEqual(output.splitlines()[6].count('_MISSING|1|!PREABILITY:'), 2)
+        self.assertNotEqual(book_variable('A-B'), book_variable('AB'))
+
+    def test_book_bypasses_component_feats_but_rejects_advanced_talents(self):
+        output = self.render(lambda s: s['components'].append(
+            dict(kind='feat', key='Spellcrafting', effect='Reviewed effect', spell_points=0)))
+        self.assertNotIn('PREFEAT:1,Spellcrafting', output.splitlines()[6])
+        self.assertIn('PREFEAT:1,Spellcrafting', output.splitlines()[1])
+        self.assertEqual(output.splitlines()[6].count('_MISSING|1|!PREABILITY:'), 2)
+        source = copy.deepcopy(self.source)
+        source['spells'][0]['components'].append(
+            dict(kind='talent', key='Test advanced', effect='Effect', spell_points=0))
+        for type_tag in ('SpheresAdvancedTalent', 'Unknown', 'SpheresBasicTalent.SpheresAdvancedTalent'):
+            known = dict(self.known)
+            known['Spheres Magic Talent', 'Test advanced'] = ['TYPE:' + type_tag]
+            with self.subTest(type_tag=type_tag), self.assertRaisesRegex(ValueError, 'non-basic'):
+                build(source, known)
 
     def test_complexity_rounding_and_floor(self):
         for count in range(8):

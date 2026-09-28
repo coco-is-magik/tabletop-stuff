@@ -32,12 +32,39 @@ def option_tags(title):
     if name in ("Magic Power", "Combat Talent"):
         variable = "SPHERES_MAGIC_TALENTS" if name == "Magic Power" else "SPHERES_COMBAT_TALENTS"
         tags.extend(["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|" + variable + "|1"])
+    if name in ("Champion", "Greater Combatant"):
+        tags.extend(["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
+                     "BONUS:ABILITYPOOL|Mageknight " + name + " Feat|1"])
     feat = {"Whirl of Blows": "Whirlwind Attack", "Sunder The Veil": "Pierce The Veil",
             "Weirding Initiate": "Weird Defense"}.get(name)
     if feat:
         # These options explicitly waive the granted feat's prerequisites.
         tags.append("ABILITY:FEAT|AUTOMATIC|" + feat)
+    if name in ("Weirding Adept", "Weirding Master"):
+        previous, talent, granted_feat = (
+            ("Weirding Initiate", "Mage Feint", "Weird Motion") if name == "Weirding Adept" else
+            ("Weirding Adept", "Decoy", "Weird Assault"))
+        waiver = "PREABILITY:1,CATEGORY=Mageknight Mystic Combat,Mageknight " + previous
+        sphere = "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere"
+        normal = [sphere, "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Mage Feint", "PREATT:3"]
+        if name == "Weirding Master":
+            normal.append("PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Decoy")
+        normal_gate = "PREMULT:" + str(len(normal)) + "," + ",".join("[" + p + "]" for p in normal)
+        tags.extend([
+            "ABILITY:Spheres Magic Talent|AUTOMATIC|Illusion - " + talent + "|PREMULT:1,[" + waiver + "],[" + sphere + "]",
+            "ABILITY:FEAT|AUTOMATIC|" + granted_feat + "|PREMULT:1,[" + waiver + "],[" + normal_gate + "]"])
+        if name == "Weirding Adept":
+            tags.extend(["DEFINE:SPHERES_MAGE_FEINT_CL|0",
+                         "BONUS:VAR|SPHERES_MAGE_FEINT_CL|max(SPHERES_CASTER_LEVEL,SPHERES_CL_ILLUSION)+"
+                         + LEVEL + "-floor(" + LEVEL + "/2)"])
     return tags
+
+
+def feat_categories():
+    return [f"ABILITYCATEGORY:Mageknight {name} Feat\tCATEGORY:FEAT\tTYPE:{types}\t"
+            "EDITABLE:YES\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:0\t"
+            f"PLURAL:Mageknight {name} Feats\tDISPLAYLOCATION:Feats"
+            for name, types in (("Champion", "Champion"), ("Greater Combatant", "Combat.Champion"))]
 
 
 def review_records():

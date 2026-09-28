@@ -8,7 +8,16 @@ import json
 import re
 
 from spheres_catalog_source import ROOT, SNAPSHOTS
-from spheres_mageknight import option_tags as mageknight_tags, review_records as mageknight_review
+from spheres_mageknight import (option_tags as mageknight_tags, review_records as mageknight_review,
+                               feat_categories as mageknight_feat_categories)
+from spheres_armorist import option_tags as armorist_tags, feat_categories as armorist_feat_categories
+from spheres_armiger import option_tags as armiger_tags, feat_category as armiger_feat_category
+from spheres_blacksmith import option_tags as blacksmith_tags, feat_category as blacksmith_feat_category
+from spheres_scholar import option_tags as scholar_tags, medical_records, medical_resources
+from spheres_technician import option_tags as technician_tags, class_tags as technician_class_tags
+from spheres_eliciter import emotion_records
+from spheres_striker import (option_tags as striker_tags, resource_tags as striker_resources,
+                             training_records as striker_training)
 
 NAMES = "armorist eliciter fey-adept hedgewitch mageknight shifter soul-weaver symbiat thaumaturge wraith armiger blacksmith commander scholar sentinel striker technician".split()
 DATA = ROOT / "data/spheres"
@@ -61,6 +70,8 @@ def option_abilities(slug, category, section, snapshot):
     options = source_options(snapshot, section)
     if not options:
         raise ValueError(f"No {section} options in {slug} source")
+    if category == "Eliciter Emotion":
+        return emotion_records(options)
     names = set()
     lines = []
     for title, text in options:
@@ -77,6 +88,18 @@ def option_abilities(slug, category, section, snapshot):
             body = f"Consult the {slug} class source for this choice."
         slug_key = "SPHERES_" + slug.upper().replace(" ", "_") + "_LEVEL"
         tags = mageknight_tags(title) if category == "Mageknight Mystic Combat" else [f"PREVARGTEQ:{slug_key},1"]
+        if category == "Armorist Arsenal Trick":
+            tags = armorist_tags(title)
+        if category == "Armiger Prowess":
+            tags = armiger_tags(title)
+        if category == "Blacksmith Smithing Insight":
+            tags = blacksmith_tags(title)
+        if category == "Scholar Scholar'S Knack":
+            tags = scholar_tags(title)
+        if category == "Technician Technical Insight":
+            tags = technician_tags(title)
+        if category == "Striker Striker Art":
+            tags = striker_tags(title)
         lines.append(f"{slug} {key}\tCATEGORY:{category}\t" + "\t".join(tags) + f"\tDESC:{body}")
     return lines
 
@@ -180,6 +203,16 @@ def numeric_features(name, prefix):
         features.append(f"{name} {key} (Reference)\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature\t"
                         f"DEFINE:{variable}|0\tBONUS:VAR|{variable}|{formula}\t"
                         f"DESC:%{variable} {context}; apply to qualifying rolls or uses only.")
+        if name == "Armorist" and key == "Armor Training":
+            features[-1] += (f"\tBONUS:MISC|MAXDEX|{variable}|PREEQUIP:1,TYPE=Armor"
+                             f"\tBONUS:MISC|ACCHECK|{variable}|PREEQUIP:1,TYPE=Armor"
+                             f"\tABILITY:Special Ability|AUTOMATIC|Armorist Medium Armor Movement|PREVARGTEQ:{level},3"
+                             f"\tABILITY:Special Ability|AUTOMATIC|Armorist Heavy Armor Movement|PREVARGTEQ:{level},7")
+        if name == "Eliciter" and key == "Persuasive":
+            features[-1] += (f"\tBONUS:SKILL|Bluff,Diplomacy,Intimidate|{variable}"
+                             f"\tBONUS:VAR|SPHERES_DC_MIND|{variable}"
+                             "\tDEFINE:SPHERES_ELICITER_CLASS_DC|0"
+                             f"\tBONUS:VAR|SPHERES_ELICITER_CLASS_DC|10+floor({level}/2)+CHA+{variable}")
     return features
 
 
@@ -264,8 +297,19 @@ def generate(slug):
     choices = choice_features(name, rows)
     for level, row in enumerate(rows, 1):
         grants = []
+        if name == "Striker" and level in (3, 12):
+            grants.append("BONUS:VAR|UncannyDodgeLVL|1")
+            if level == 3:
+                grants.append("BONUS:VAR|UncannyDodgeFlankingLevel|SPHERES_STRIKER_LEVEL|TYPE=EachClass.REPLACE")
+        if name == "Blacksmith" and level == 2:
+            grants.append("BONUS:SKILL|Profession (Blacksmith)|max(1,floor(SPHERES_BLACKSMITH_LEVEL/2))|TYPE=Competence")
+        if name == "Blacksmith" and level in (3, 5):
+            grants.append("ABILITY:FEAT|AUTOMATIC|" +
+                          ("Craft Wondrous Item" if level == 3 else "Craft Magic Arms and Armor"))
         if level == 1:
-            if name == "Mageknight":
+            if name == "Striker":
+                grants.extend(striker_resources())
+            if name in ("Mageknight", "Armorist"):
                 # Keep the pool definition alive when one repeated Combat Talent
                 # selection is removed; PCGen removes that selection's DEFINE.
                 grants.append("DEFINE:SPHERES_COMBAT_TALENTS|0")
@@ -313,9 +357,33 @@ def generate(slug):
     else:
         categories_for_channel = ""
     categories = []
+    if name == "Technician":
+        lines[2] += "\tDEFINE:SPHERES_TECHNICIAN_INTUITION|0\tDEFINE:SPHERES_TECHNICIAN_LUCK|0"
+        lines[2] += "\t" + "\t".join(technician_class_tags())
+    if name == "Scholar":
+        lines[2] += "\tDEFINE:SPHERES_SCHOLAR_STUDIED_TECHNIQUE|0"
+        lines[2] += "\t" + "\t".join(medical_resources())
+        medical_category, medical_ability = medical_records()
+        categories.append(medical_category)
+        abilities.append(medical_ability)
+    if name == "Armiger":
+        categories.append(armiger_feat_category())
+        for feat in ("Deadly Aim", "Piranha Strike", "Power Attack"):
+            lines[2] += "\tDEFINE:ArmigerDeadly " + feat + "|0"
+            lines[2] += "\tABILITY:FEAT|AUTOMATIC|" + feat + "|PREVARGTEQ:ArmigerDeadly " + feat + ",1"
+        for sphere in ("Sniper", "Barrage"):
+            lines[2] += "\tDEFINE:ArmigerRanged " + sphere + "|0"
+            lines[2] += "\tABILITY:Spheres Combat Talent|AUTOMATIC|" + sphere + " Sphere|PREVARGTEQ:ArmigerRanged " + sphere + ",1"
+    if name == "Blacksmith":
+        categories.append(blacksmith_feat_category())
+    if name == "Armorist":
+        categories.extend(armorist_feat_categories())
+        abilities.extend(["Armorist Medium Armor Movement\tCATEGORY:Special Ability\tUNENCUMBEREDMOVE:MediumArmor",
+                          "Armorist Heavy Armor Movement\tCATEGORY:Special Ability\tUNENCUMBEREDMOVE:HeavyArmor"])
     if name == "Mageknight":
         review_category, review_ability = mageknight_review()
         categories.append(review_category)
+        categories.extend(mageknight_feat_categories())
         abilities.append(review_ability)
     option_sections = {
         "armorist": {"arsenal trick": "Arsenal Trick"},
@@ -387,6 +455,9 @@ def generate(slug):
                                 f"BONUS:VAR|SPHERES_CL_{sphere.upper()}|{prefix}_LEVEL-SPHERES_CASTER_LEVEL")
                 abilities.append(f"{key}\tCATEGORY:Wraith Haunt Path\tPREVARGTEQ:{prefix}_LEVEL,1{sphere_bonus}\tDESC:{body} Consult source for any unrepresented path skills and effects.")
     if name == "Striker":
+        training_category, training_options = striker_training(source)
+        categories.append(training_category)
+        abilities.extend(training_options)
         categories.append(f"ABILITYCATEGORY:Striker Bare Knuckles\tCATEGORY:Striker Bare Knuckles\tEDITABLE:YES\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:min(1,{prefix}_LEVEL)\tPLURAL:Bare Knuckles Sphere\tDISPLAYLOCATION:Spheres")
         for sphere in ("Boxing", "Brute", "Open Hand"):
             abilities.append(f"Striker {sphere} Knuckles\tCATEGORY:Striker Bare Knuckles\tABILITY:Spheres Combat Talent|AUTOMATIC|{sphere} Sphere\tDESC:Gain {sphere} sphere without spending a combat talent; if already possessed, choose a legal replacement sphere or talent manually.")

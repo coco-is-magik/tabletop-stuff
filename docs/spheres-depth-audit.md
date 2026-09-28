@@ -178,3 +178,140 @@ conditional Weirding grants, companion construction, temporary talent/feat
 choices, and tactical effects. Prerequisite loss revokes qualification but does
 not cascade-delete the dependent selected option. Other classes' option
 prerequisites still need their own source-reviewed passes.
+
+## September 27 continuation: persistent skill training
+
+Added reviewed mechanics for Fencing's Read Foe and Leadership's Military
+Training using the pinned source texts: Sense Motive and Profession (Soldier)
+receive sphere-scaled ranks capped at total Hit Dice. The existing PCGen skill
+keys are reused; no new skill definitions or dependencies were introduced.
+Leadership now grants its half-BAB competence bonus to Diplomacy only while
+Warleader is also owned. The shared typed rank grants do not stack. Removing
+Warleader removes the overlap bonus. This covers the two Diplomacy-granting
+spheres currently in the catalog, not future sphere imports.
+
+Two offline regressions were added to the catalog suite (10 tests total), and
+the suite is now included in the normal build test command. Generated catalog
+records and the mechanical review manifest were regenerated.
+The new production-controller runner `tools/pcgen_skill_training.py` passed
+save/reload at levels 3 and 11, including base-sphere rejection, rank caps,
+selection/removal, original sphere-skill scaling, refunds, nonstacking overlap
+ranks, overlap bonus removal, and saved overlap bonus restoration. Evidence:
+`build/pcgen-spheres-zyj08t1v` and `build/pcgen-spheres-cdylhqkq`.
+
+Still manual: retraining previously purchased ranks, temporary-talent lifecycle
+restrictions, and other associated-skill overlap conversions. Ace Pilot's
+Profession (pilot) grant needs a reviewed skill definition (the loaded Core
+dataset does not provide that skill). Equipment's selectable Craft training and
+Tech's mechanical skill also require separate passes. This closes three
+persistent-effect gaps, not the full talent-mechanics backlog.
+
+## September 27 extended continuation: skills, Tech, Mageknight and Armorist
+
+Completed across several passes rather than stopping after one correction:
+
+- Added Core-compatible Profession (Pilot) and Craft (Mechanical) definitions,
+  Ace Pilot training, Tech/Tinker training and the default Tinker skill-overlap
+  bonus. The skills include class-skill and Skill Focus bonuses. The supported
+  load remains Core + Spheres; Technology Guide and Iron Gods define Mechanical
+  too, and cross-campaign duplicate-definition integration remains open.
+- Corrected Alchemy/Trap/Tech DCs to use actual associated skill ranks. Tech
+  now supplies a separate free gadget selection, charge/recharge/prepared-gadget
+  capacities, gadget-talent counting, and repeatable Extra Gadgets effects.
+  Actual charges, prepared inventories, drone construction and alternate Tinker
+  associated skills are not tracked.
+- Craftsman now chooses one Craft skill and grants HD-scaled ranks. Live tests
+  exercise the actual chooser, selected-skill persistence and removal. Rank
+  retraining and crafting elapsed time remain player-managed.
+- Mageknight Champion/Greater Combatant now provide repeatable filtered feat
+  pools with ordinary prerequisites, rather than description-only grants.
+- Armorist now enforces Arsenal Trick heading prerequisites and base feature
+  levels, supplies repeatable Combat Talent and Combat/Champion/Crafter feat
+  pools, applies equipped armor-training adjustments, supports repeatable
+  Greater Armor Training and increments Additional Binding's capacity.
+  Base-class prerequisite assumptions do not cover feature-trading archetypes.
+
+Validation: catalog and class-catalog regressions cover generated tags and
+unknown-prerequisite rejection. The normal build now runs all eight offline
+dataset suites rather than silently omitting feat/class regressions.
+Live evidence includes Mageknight levels 6/16 (`pcgen-spheres-68egxtjw`,
+`pcgen-spheres-r_8fjh37`), Armorist levels 2/12 (`pcgen-spheres-e9vfytcp`,
+`pcgen-spheres-8vpjwu0s`), and the expanded skill/Tech/Craftsman level-11 suite
+(`pcgen-spheres-57ku7yu0`), all under `build/`, with save and reload markers.
+Earlier focused skill checks passed at level 6, but the combined harness now
+requires level 8+ to afford all retained and temporary paid talent selections;
+it does not inflate the character's pools to make tests pass.
+
+Remaining class limitations: conditional Weirding grants, other classes' option
+prerequisites, item/companion construction and automated dependent-choice cleanup.
+The existing Spellcrafting lifecycle, advanced/legendary imports, temporary
+talents, tradition effects and most per-talent mechanics also remain open.
+
+### Armiger follow-through
+
+The next pass enforces all pinned Prowess heading prerequisites, grants Great
+Focus for Extra Focus, adds a repeatable Champion feat pool, and implements
+Deadly Prowess's three distinct prerequisite-free feat choices. Regression
+testing rejected both a generic selected-feat grant (orphaned a feat on removal)
+and option-owned conditional grants (lost remaining grants on partial removal).
+Class-owned, per-choice conditional grants pass partial/full refunds and
+save/reload at level 6 (`build/pcgen-spheres-mwrgwdxk`). Other Prowess grants,
+weapon configuration and conditional effects remain open. These are base-class
+checks, not support for archetypes that exchange the required features.
+
+Updated the older Armorist class-progression harness's expected bound capacity:
+its fixture selects Additional Binding, which now contributes a real extra item.
+
+### Eliciter and spellbook continuation
+
+Eliciter's emotion parser now preserves introductory text before the four tiers
+without weakening ordered-tier validation. The completed production harness
+checks tier costs, prerequisite loss, level rejection, Persuasive skill and DC
+bonuses, and save/reload at levels 2 and 12 (`build/pcgen-spheres-sbaqvo7y`,
+`build/pcgen-spheres-reslo89p`). Emotion effects themselves remain descriptive.
+
+Ultimate Spellbook Mastery now has separate deciphering, accessible-copy and
+book-casting records. Book casting bypasses component requirements without
+learning or spending repertoire slots; distinct missing spheres/basic talents
+contribute 10 percent each to a computed mishap chance. Mastery, deciphering and
+access are enforced. Advanced/unclassified talent recipes remain rejected.
+The compiler has nine regression tests, including component deduplication,
+feat bypass and fail-closed advanced talent handling. Live save/reload passed
+in `build/pcgen-spheres-hc6b08ub`, including 20/10/0-percent transitions and
+access/feat removal. Physical inventory linkage, spell-point expenditure,
+actual casting and GM-selected mishaps remain manual. These changes do not
+solve acquisition/forgetting cleanup or temporary talent integration.
+
+### Catalog repeatability and counter lifetime
+
+A new live assertion reproduced a shared bug: removing one repeated Extra
+Gadgets selection erased its counter while another selection remained. All
+generated repeat counters now belong to the base sphere rather than individual
+selections; the existing Destruction sphere receives its counter through a
+category-qualified `.MOD` record. Offline coverage checks every generated
+counter's ownership. Live checks prove partial/full refunds, capped-selection
+rejection after removal/reselection, and counter persistence after reload.
+
+Companion Vessel is no longer incorrectly capped at its second-selection
+milestone. Explicit `up to 2 times` and `more than once` wording now recognizes
+Nature's Ranged Geomancy and Leadership's Talented. Extendo Appendage enforces
+10 Mechanical ranks for its second selection. Range Amplifier supports one
+initial selection plus one per five Mechanical ranks, with removal-safe counters.
+These changes govern selection, not companion creation or gadget application.
+
+Live combined skill/catalog save/reload evidence at level 11:
+`build/pcgen-spheres-a399q39w`. The level-8 save gate passed in
+`build/pcgen-spheres-af0ic5oy`; this covers rejection below Extendo's threshold
+and Range Amplifier's lower cap. Full build passed all eight dataset suites,
+655 scenario checks and 21,147 engine checks. Conditional repeat rules outside
+this reviewed subset still need individual implementation; generic repeated
+wording must not be interpreted as evidence that all such conditions are enforced.
+
+The Tech Drone/Artificial Intelligence cap is now shared (four combined
+selections), including repeatable AI selections and removal-safe shared counters.
+Dedicated production-controller save/reload passed in
+`build/pcgen-spheres-7s5gtpwb`: four Drone, four AI, mixed selections, cross-family
+replacement, over-cap rejection, full paid-pool refunds and persistence. This
+does not build drone/AI stat blocks or enforce active HD/level inventories.
+The expanded level-8 skill/catalog reload also passed in
+`build/pcgen-spheres-af0ic5oy`.

@@ -28,7 +28,10 @@ EXPAND = {"athletics": "Expanded Training", "alchemy": "Master Chemist",
           "tinker": "Expanded Tinkering", "pilot": "Expanded Piloting"}
 SKILLS = {"alchemy": "Craft (Alchemy)", "fencing": "Bluff", "gladiator": "Intimidate",
           "scoundrel": "Sleight of Hand", "scout": "Stealth", "trap": "Craft (Traps)",
-          "warleader-sphere": "Diplomacy", "leadership": "Diplomacy"}
+          "warleader-sphere": "Diplomacy", "leadership": "Diplomacy",
+          "tech": "Craft (Mechanical)", "tinker": "Craft (Mechanical)"}
+SKILL_DCS = {"alchemy": "Craft (Alchemy)", "trap": "Craft (Traps)",
+             "tech": "Craft (Mechanical)"}
 
 
 def token(name):
@@ -55,13 +58,14 @@ def repeat_limit(talent):
     """Conservative, source-explicit repeatability; no inference from effect scaling."""
     rule = talent["text"]
     phrase = r"(?:take|select|gain) this talent (?:a |an |up to |a total of )?"
+    # An effect unlocked by the second selection is not necessarily a cap.
+    if re.search(phrase + r"(?:multiple times|any number of times|as many times|more than once)", rule, re.I):
+        return 99
     if re.search(phrase + r"(?:second time|twice|two times)", rule, re.I):
         return 2
-    for word, count in (("two",2),("three",3),("3",3),("4",4),("5",5)):
+    for word, count in (("two",2),("2",2),("three",3),("3",3),("4",4),("5",5)):
         if re.search(phrase + word + r" times", rule, re.I):
             return count
-    if re.search(phrase + r"(?:multiple times|any number of times|as many times)", rule, re.I):
-        return 99
     return 1
 
 
@@ -80,12 +84,20 @@ def build():
         base_tags = [base, "CATEGORY:" + cat, "TYPE:SpheresBaseSphere." + ident,
                      "PREVARGTEQ:" + ("SPHERES_CASTER_LEVEL,1" if row["system"] == "power" else "SPHERES_COMBAT_TALENTS,1"),
                      "DEFINE:" + prefix + "_TALENTS|0", "BONUS:VAR|" + prefix + "_TALENTS|1"]
+        # Repeated selections must not own DEFINEs: removing one selection
+        # otherwise undefines the counter while other selections still exist.
+        counters = ["DEFINE:" + prefix + "_" + token(t["name"]).upper() + "_COUNT|0"
+                    for t in row["talents"] if repeat_limit(t) > 1
+                    and not any(tag.startswith("MULT:") for tag in overrides.get(key(row, t), []))]
+        base_tags.extend(counters)
         if row["system"] == "power" and slug != "destruction":
             base_tags.extend(["DEFINE:SPHERES_CL_" + ident.upper() + "|SPHERES_CASTER_LEVEL",
                 "DEFINE:SPHERES_DC_" + ident.upper() + "|10+floor(SPHERES_CL_" + ident.upper() + "/2)+SPHERES_CASTING_ABILITY"])
         if row["system"] == "might":
             base_tags.extend(["DEFINE:SPHERES_BAB_" + ident.upper() + "|BAB",
-                "DEFINE:SPHERES_DC_" + ident.upper() + "|10+floor(SPHERES_BAB_" + ident.upper() + "/2)+SPHERES_PRACTITIONER_MOD"])
+                "DEFINE:SPHERES_DC_" + ident.upper() + "|10+floor(" +
+                ('skillinfo("TOTALRANK","' + SKILL_DCS[slug] + '")' if slug in SKILL_DCS else
+                 "SPHERES_BAB_" + ident.upper()) + "/2)+SPHERES_PRACTITIONER_MOD"])
         if slug in SKILLS:
             base_tags.append("BONUS:SKILLRANK|" + SKILLS[slug] + "|min(TL,5*" + prefix + "_TALENTS)|TYPE=SpheresTraining")
         if slug == "equipment-sphere":
@@ -93,6 +105,13 @@ def build():
             categories.append("\t".join(["ABILITYCATEGORY:Spheres Equipment Bonus Talent", "CATEGORY:" + cat,
                 "TYPE:EquipmentTalent", "EDITABLE:YES", "EDITPOOL:NO", "FRACTIONALPOOL:NO", "VISIBLE:QUALIFY",
                 "POOL:0", "PLURAL:Equipment Free Talent", "DISPLAYLOCATION:Spheres"]))
+        if slug == "tech":
+            base_tags.append("BONUS:ABILITYPOOL|Spheres Tech Bonus Gadget|1")
+            base_tags.append("DEFINE:SPHERES_TECH_RANGEAMPLIFIER_COUNT|0")
+            base_tags.append("DEFINE:SPHERES_TECH_DRONE_AI_COUNT|0")
+            categories.append("\t".join(["ABILITYCATEGORY:Spheres Tech Bonus Gadget", "CATEGORY:" + cat,
+                "TYPE:TechGadget", "EDITABLE:YES", "EDITPOOL:NO", "FRACTIONALPOOL:NO", "VISIBLE:QUALIFY",
+                "POOL:0", "PLURAL:Tech Free Gadget", "DISPLAYLOCATION:Spheres"]))
         if slug in PACKAGES:
             package_cat = "Spheres " + name + " Package"
             var = prefix + "_PACKAGES"
@@ -118,6 +137,8 @@ def build():
                       "SOURCEPAGE:" + row["url"]]
         if slug != "destruction":
             lines.append("\t".join(base_tags))
+        elif counters:
+            lines.append("\t".join(["CATEGORY=" + cat + "|" + base + ".MOD", *counters]))
         for talent in row["talents"]:
             name_key = key(row, talent)
             if slug == "destruction" and talent["name"] in LEGACY:
@@ -127,12 +148,15 @@ def build():
                     "BONUS:VAR|" + prefix + "_TALENTS|1"]
             if slug == "equipment-sphere":
                 tags[2] += ".EquipmentTalent"
+            if slug == "tech" and re.search(r"\([^)]*\bgadget\b[^)]*\)", talent["heading"]):
+                tags[2] += ".TechGadget"
+                tags.append("BONUS:VAR|SPHERES_TECH_GADGET_TALENTS|1")
             limit = repeat_limit(talent)
             if name_key in overrides and any(t.startswith("MULT:") for t in overrides[name_key]):
                 limit = 1
             if limit > 1:
                 counter = prefix + "_" + token(talent["name"]).upper() + "_COUNT"
-                tags += ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "DEFINE:" + counter + "|0",
+                tags += ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
                          "BONUS:VAR|" + counter + "|1"]
                 if limit < 99:
                     tags += ["PREVARLT:" + counter + "," + str(limit)]

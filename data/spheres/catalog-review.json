@@ -7050,10 +7050,11 @@
   {
     "key": "Nature - Ranged Geomancy",
     "sphere": "Nature",
-    "repeat_limit": 1,
+    "repeat_limit": 2,
     "mechanics": [],
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREVARLT:SPHERES_NATURE_RANGEDGEOMANCY_COUNT,2"
     ]
   },
   {
@@ -11690,7 +11691,9 @@
     "key": "Athletics - Ace Pilot",
     "sphere": "Athletics",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:SKILLRANK|Profession (Pilot)|min(TL,5*SPHERES_ATHLETICS_TALENTS)|TYPE=SpheresTraining"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Athletics Sphere"
     ]
@@ -14834,7 +14837,12 @@
     "key": "Equipment - Craftsman",
     "sphere": "Equipment",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:NO",
+      "CHOOSE:NUMCHOICES=1|SKILL|TYPE=Craft",
+      "BONUS:SKILLRANK|LIST|TL|TYPE=SpheresTraining"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Equipment Sphere"
     ]
@@ -15942,7 +15950,9 @@
     "key": "Fencing - Read Foe",
     "sphere": "Fencing",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:SKILLRANK|Sense Motive|min(TL,5*SPHERES_FENCING_TALENTS)|TYPE=SpheresTraining"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Fencing Sphere"
     ]
@@ -19617,7 +19627,9 @@
     "key": "Leadership - Military Training",
     "sphere": "Leadership",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:SKILLRANK|Profession (Soldier)|min(TL,5*SPHERES_LEADERSHIP_TALENTS)|TYPE=SpheresTraining"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Leadership Sphere"
     ]
@@ -19625,7 +19637,7 @@
   {
     "key": "Leadership - Additional Contacts",
     "sphere": "Leadership",
-    "repeat_limit": 1,
+    "repeat_limit": 99,
     "mechanics": [],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Leadership Sphere",
@@ -19746,7 +19758,7 @@
   {
     "key": "Leadership - Talented",
     "sphere": "Leadership",
-    "repeat_limit": 1,
+    "repeat_limit": 99,
     "mechanics": [],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Leadership Sphere",
@@ -19955,7 +19967,10 @@
     "key": "Tech - Extra Gadgets",
     "sphere": "Tech",
     "repeat_limit": 99,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_TECH_PREPARED_GADGETS|2",
+      "BONUS:VAR|SPHERES_TECH_CHARGE_CAPACITY|1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"
     ]
@@ -20139,9 +20154,16 @@
     "key": "Tech - Range Amplifier",
     "sphere": "Tech",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "PREVARLT:SPHERES_TECH_RANGEAMPLIFIER_COUNT,1+floor(SPHERES_TECH_RANKS/5)",
+      "BONUS:VAR|SPHERES_TECH_RANGEAMPLIFIER_COUNT|1"
+    ],
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere",
+      "PREVARLT:SPHERES_TECH_RANGEAMPLIFIER_COUNT,1+floor(SPHERES_TECH_RANKS/5)"
     ]
   },
   {
@@ -20230,9 +20252,16 @@
     "key": "Tech - Artificial Intelligence",
     "sphere": "Tech",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "PREVARLT:SPHERES_TECH_DRONE_AI_COUNT,4",
+      "BONUS:VAR|SPHERES_TECH_DRONE_AI_COUNT|1"
+    ],
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere",
+      "PREVARLT:SPHERES_TECH_DRONE_AI_COUNT,4"
     ]
   },
   {
@@ -20340,10 +20369,14 @@
     "key": "Tech - Drone",
     "sphere": "Tech",
     "repeat_limit": 4,
-    "mechanics": [],
+    "mechanics": [
+      "PREVARLT:SPHERES_TECH_DRONE_AI_COUNT,4",
+      "BONUS:VAR|SPHERES_TECH_DRONE_AI_COUNT|1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere",
-      "PREVARLT:SPHERES_TECH_DRONE_COUNT,4"
+      "PREVARLT:SPHERES_TECH_DRONE_COUNT,4",
+      "PREVARLT:SPHERES_TECH_DRONE_AI_COUNT,4"
     ]
   },
   {
@@ -20377,10 +20410,13 @@
     "key": "Tech - Extendo Appendage",
     "sphere": "Tech",
     "repeat_limit": 2,
-    "mechanics": [],
+    "mechanics": [
+      "PREMULT:1,[PREVARLT:SPHERES_TECH_EXTENDOAPPENDAGE_COUNT,1],[PRESKILL:1,Craft (Mechanical)=10]"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere",
-      "PREVARLT:SPHERES_TECH_EXTENDOAPPENDAGE_COUNT,2"
+      "PREVARLT:SPHERES_TECH_EXTENDOAPPENDAGE_COUNT,2",
+      "PREMULT:1,[PREVARLT:SPHERES_TECH_EXTENDOAPPENDAGE_COUNT,1],[PRESKILL:1,Craft (Mechanical)=10]"
     ]
   },
   {
@@ -20936,11 +20972,10 @@
   {
     "key": "Pilot - Companion Vessel",
     "sphere": "Pilot",
-    "repeat_limit": 2,
+    "repeat_limit": 99,
     "mechanics": [],
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Pilot Sphere",
-      "PREVARLT:SPHERES_PILOT_COMPANIONVESSEL_COUNT,2"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Pilot Sphere"
     ]
   },
   {

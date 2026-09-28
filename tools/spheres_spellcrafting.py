@@ -4,6 +4,7 @@ PCGen owns character qualification. This compiler checks definition structure an
 references, not whether a proposed combination is balanced or correctly reviewed.
 """
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -17,6 +18,36 @@ CHANGES = {"additional_effect": 2, "foreign_talent_or_feat": 1,
            "increase_range": 2, "increase_duration": 2,
            "decrease_range": -1, "decrease_duration": -1,
            "personal_to_touch": 1}
+
+
+def book_variable(name):
+    """Stable, collision-resistant per-spell namespace, independent of display punctuation."""
+    return "SPHERES_BOOK_" + hashlib.sha256(name.casefold().encode()).hexdigest()[:16].upper()
+
+
+def book_records(name, prerequisites, cost, complexity, effect):
+    variable = book_variable(name)
+    core = "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
+    deciphered = ["Deciphered - " + name, "CATEGORY:Spheres Spell Deciphered", "COST:0", core,
+                  f"DESC:Records successful deciphering [Spellcraft DC {20 + complexity}, read magic, or Divination sense]. Does not attest learning or book possession; retain when a book is lost.",
+                  "SOURCEPAGE:" + SOURCE]
+    accessible = ["Accessible Book - " + name, "CATEGORY:Spheres Spellbook Access", "COST:0", core,
+                  "PREABILITY:1,CATEGORY=Spheres Spell Deciphered,Deciphered - " + name,
+                  "DESC:Attests current access to a deciphered written copy. Remove when unavailable; does not grant a repertoire spell.",
+                  "SOURCEPAGE:" + SOURCE]
+    casting = ["Book Casting - " + name, "CATEGORY:Spheres Book Casting", "COST:0", core,
+               "PREFEAT:1,Spellbook Mastery",
+               "PREABILITY:1,CATEGORY=Spheres Spellbook Access,Accessible Book - " + name,
+               "PREABILITY:1,CATEGORY=Spheres Spell Deciphered,Deciphered - " + name,
+               "DEFINE:" + variable + "_MISSING|0"]
+    for prerequisite in prerequisites:
+        if prerequisite.startswith("PREABILITY:"):
+            casting.append("BONUS:VAR|" + variable + "_MISSING|1|!" + prerequisite)
+    casting += ["DEFINE:" + variable + "_MISHAP|0",
+                "BONUS:VAR|" + variable + "_MISHAP|min(100,10*" + variable + "_MISSING)",
+                f"DESC:Book casting costs {cost} SP and adds 1 round to normal casting time. Missing spheres/talents: %1; mishap chance: %2 percent. Resolve the roll and GM-selected mishap at the table. No repertoire slot is spent. {effect}|{variable}_MISSING|{variable}_MISHAP",
+                "SOURCEPAGE:" + SOURCE]
+    return ["\t".join(row) for row in (deciphered, accessible, casting)]
 
 
 def label(value):
@@ -90,6 +121,12 @@ def compile_spell(spell, known):
         is_sphere = is_sphere or key == "Destruction Sphere"
         if kind != "feat" and is_sphere != (kind == "sphere"):
             raise ValueError("component kind does not match catalog: " + key)
+        if kind == "talent":
+            types = {value for tag in tags if tag.startswith("TYPE:")
+                     for value in tag[5:].split(".")}
+            legacy = {"Admixture", "Searing Blast", "Epicenter", "Gather Energy"}
+            if "SpheresAdvancedTalent" in types or not ("SpheresBasicTalent" in types or key in legacy):
+                raise ValueError("unsupported non-basic talent component: " + key)
         if kind == "sphere":
             spheres.add(key)
         pre = ("PREFEAT:1," + key if kind == "feat" else
@@ -140,6 +177,7 @@ def compile_spell(spell, known):
             "DESC:" + summary + "|" + variable + "|SPHERES_DC_" + variable[11:],
             "SOURCEPAGE:" + SOURCE]
     rows.append("\t".join(tags))
+    rows.extend(book_records(name, prerequisites, cost, complexity, effect))
     return "\n".join(rows)
 
 
