@@ -57,8 +57,17 @@ class PcgenSpellcrafting {
             rejected(controller, messages, repertoire, spell, "InfoAbility.Messages.NotQualified");
             rejected(controller, messages, acquisition, learned, "InfoAbility.Messages.NotQualified");
             controller.addAbility(talents, life);
+            require(pc.getVariableValue("SPHERES_CASTER_LEVEL", "").intValue() == 10,
+                "Life selection must preserve Incanter caster level; class level="
+                    + pc.getVariableValue("SPHERES_INCANTER_LEVEL", "")
+                    + " caster bonus=" + pc.getTotalBonusTo("VAR", "SPHERES_CASTER_LEVEL"));
+            require(pc.hasAbilityKeyed(talents, life.getKeyName()), "Life purchase failed: " + messages.errors
+                + " pool=" + pc.getAvailableAbilityPool(talents));
             require(!spell.qualifies(pc, spell), "Missing Protection accepted");
             controller.addAbility(talents, protection);
+            require(pc.hasAbilityKeyed(talents, protection.getKeyName()), "Protection purchase failed: " + messages.errors
+                + " CL=" + pc.getVariableValue("SPHERES_CASTER_LEVEL", "")
+                + " prerequisites=" + protection.getPrerequisiteList());
             require(!spell.qualifies(pc, spell), "Missing acquisition accepted");
             require(learned.qualifies(pc, learned), "Learning incorrectly needs Spellcrafting");
             require(!research.qualifies(pc, research), "Research without Spellcrafting");

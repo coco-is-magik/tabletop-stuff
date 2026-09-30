@@ -10,6 +10,7 @@ import re
 from spheres_catalog import clean_name, inventory
 from spheres_catalog_lst import category, key, text, token, PACKAGES
 from spheres_catalog_source import ROOT, SNAPSHOTS, POWER, MIGHT, FEATS
+from spheres_traditions import sections as tradition_sections, DEFERRED as DEFERRED_DRAWBACKS
 
 DATA = ROOT / "data/spheres"
 LEGACY = {"Extra Magic Talent", "Extra Spell Points", "Extra Arsenal Trick", "Extra Combat Talent"}
@@ -22,10 +23,8 @@ TYPES = {t.lower(): t for t in (
 # General casting-tradition drawbacks with selectable records; see
 # data/spheres/spheres_traditions.lst. Feat prerequisites cite these as
 # "X drawback", "X (drawback)" or a bare "X".
-DRAWBACKS = ("Verbal Casting", "Somatic Casting", "Focus Casting", "Magical Signs",
-             "Prepared Caster", "Draining Casting", "Addictive Casting", "Area Bound",
-             "Bonded Casting", "Charged Spells", "Mental Focus", "Terrain Casting",
-             "Unsettling Casting", "Vampiric Casting")
+DRAWBACKS = tuple(key for key in tradition_sections('General Drawbacks')
+                 if key not in DEFERRED_DRAWBACKS)
 SKILLS = {"acrobatics", "bluff", "climb", "craft (alchemy)", "craft (calligraphy)",
           "craft (tattoos)", "diplomacy", "fly", "handle animal", "heal", "intimidate",
           "knowledge (arcana)", "knowledge (dungeoneering)", "knowledge (history)",

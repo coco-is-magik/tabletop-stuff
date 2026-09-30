@@ -15,6 +15,10 @@ ABILITY:spheres_spellcrafting_feats.lst
 ABILITY:spheres_custom_spells.lst
 ABILITYCATEGORY:spheres_categories_traditions.lst
 ABILITY:spheres_traditions.lst
+ABILITY:spheres_casting_options.lst
+ABILITYCATEGORY:spheres_categories_martial_traditions.lst
+ABILITY:spheres_martial_traditions.lst
+ABILITY:spheres_alternate_racial_traits.lst
 ABILITYCATEGORY:spheres_categories_traits.lst
 ABILITY:spheres_trait_adjudication.lst
 ABILITY:spheres_traits.lst
@@ -81,6 +85,8 @@ CLASS:spheres_striker_class.lst
 ABILITY:spheres_striker_features.lst
 ABILITYCATEGORY:spheres_striker_categories.lst
 CLASS:spheres_technician_class.lst
+CLASS:spheres_tempestarii_class.lst
+ABILITY:spheres_tempestarii_features.lst
 ABILITY:spheres_technician_features.lst
 ABILITYCATEGORY:spheres_technician_categories.lst
 ABILITYCATEGORY:spheres_categories_conscript.lst

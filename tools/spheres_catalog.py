@@ -28,9 +28,9 @@ def clean_intro(text):
     return re.sub(r"[^\n]*?\$\d+\.\d{2}\s*", "", "\n".join(paragraphs))
 
 
-def inventory():
+def inventory(slugs=None):
     result = []
-    for slug in POWER + MIGHT:
+    for slug in POWER + MIGHT if slugs is None else slugs:
         source = json.loads((SNAPSHOTS / (slug + ".json")).read_text())
         sections = source["sections"]
         start, end = BOUNDS[slug]

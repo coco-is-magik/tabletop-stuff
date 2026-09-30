@@ -3,6 +3,7 @@
 No network access occurs while loading characters or generating reviewed LST.
 """
 import argparse
+from datetime import date
 import hashlib
 from html.parser import HTMLParser
 import json
@@ -15,6 +16,7 @@ POWER = "alteration blood conjuration creation dark death destruction divination
 MIGHT = "alchemy athletics barrage barroom beastmastery berserker boxing brute dual-wielding duelist equipment-sphere fencing gladiator guardian lancer open-hand scoundrel scout shield sniper trap warleader-sphere wrestling leadership tech tinker pilot".split()
 FEATS = "admixture-feats anathema-feats aristeia-feats champion-feats chance-feats channeling-feats combat-feats companion-feats counterspell-feats damnation-feats drawback-feats extra-feats general-feats item-creation-feats metamagic-feats necrosis-feats plague-feats practitioner-feats protokinesis-feats proxy-feats purring-feats racial-feats ritual-feats skybourne-feats squadron-feats surreal-feats teamwork-feats theurge-feats wild-magic-feats".split()
 CLASSES = "armorist elementalist eliciter fey-adept hedgewitch mageknight shifter soul-weaver symbiat thaumaturge wraith armiger blacksmith commander scholar sentinel striker technician".split()
+PRESTIGE = 'aeronaut-captain spheres-archwizard ascendant-vanguard bokor cyborg forest-lord hive kingking magemage realmwalker renowned-warrior superintelligence tempestarii waking-sleeper alternate-justicar great-mind master-of-vagueries trinity-angel trinity-knight'.split()
 
 
 class Page(HTMLParser):
@@ -80,7 +82,7 @@ class Page(HTMLParser):
 
 
 def fetch(slug):
-    if slug not in POWER + MIGHT + FEATS + CLASSES + ["traits", "practitioner-traits", "casting-traditions", "martial-traditions", "legal:start", "using-spheres-of-might", "using-spheres-of-power"]:
+    if slug not in POWER + MIGHT + FEATS + CLASSES + PRESTIGE + ["alternate-racial-traits", "spellcrafting", "traits", "practitioner-traits", "casting-traditions", "martial-traditions", "legal:start", "using-spheres-of-might", "using-spheres-of-power"]:
         raise ValueError("Not a catalog source")
     url = "https://spheresofpower.wikidot.com/" + slug
     request = urllib.request.Request(url, headers={"User-Agent": "PF1-PCGen-catalog/1.0"})
@@ -93,7 +95,7 @@ def fetch(slug):
     if not page.sections or not any(s["text"] for s in page.sections):
         raise ValueError("Missing page content")
     SNAPSHOTS.mkdir(parents=True, exist_ok=True)
-    snapshot = {"url": url, "retrieved": "2026-09-24", "sha256": hashlib.sha256(raw).hexdigest(),
+    snapshot = {"url": url, "retrieved": date.today().isoformat(), "sha256": hashlib.sha256(raw).hexdigest(),
                 "sections": page.sections}
     (SNAPSHOTS / (slug.replace(":", "-") + ".json")).write_text(json.dumps(snapshot, indent=2) + "\n")
     print(f"{slug}: {len(page.sections)} sections, {len(raw)} bytes")

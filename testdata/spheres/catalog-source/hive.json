@@ -1,0 +1,151 @@
+{
+  "url": "https://spheresofpower.wikidot.com/hive",
+  "retrieved": "2026-09-29",
+  "sha256": "a7047f41e7f529f1ec5eb855ae33f7a22903c2e3c4ddbb7e2af7129806753acf",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Class Features Spell Points Casting Blended Training (Ex) Colony (Su) Create Swarm (Su) Enhance Swarm Devour Explosive Release Flight Mana Drain Reduce Size Swarm Blast (requires Destruction sphere, explosive release) Swarm Maneuvers (requires consolidate swarm) Vile Hood (requires consolidate swarm) Web Swarm Shield Consolidate Swarm Telegraph Attack (Ex) Swarm Movement (Ex) Consuming Void (Su) New Feat Extra Swarm Enhancement\nMany people keep pets and use animals for labor or recreation. Some go to great lengths to train them for more complex tasks. A few learn how to handle and command swarms of creatures\u2026 and then there are the hives. Hives go so far as to fold space to store their pet swarms inside their bodies, releasing them to do their bidding and warping, enhancing, and even creating them as needed.\nRequirements\nCombat Spheres & Talents: Beastmastery sphere (Bee Keeper, Broad Skills).\nMagic Spheres & Talents: Warp sphere (any (space) talent).\nFeats: Vermin Master.\nSkills: Handle Animal 5 ranks.\nClass Skills: Diplomacy (Cha), Handle Animal (Cha), Intimidate (Cha), Knowledge (arcana) (Int), Knowledge (nature) (Int), Knowledge (planes) (Int), Spellcraft (Int).\nSkill Points at each level: 4 + Int modifier.\nHit Dice: d8."
+    },
+    {
+      "level": 1,
+      "heading": "Class Features",
+      "anchor": "toc0",
+      "text": "Table: Hive | Level | Base Attack Bonus | Fort Save | Reflex Save | Will Save | Special | Blended Training Talents | Caster Level\n| 1 | +0 | +0 | +1 | +1 | Blended training, casting, colony, create swarm, enhance swarm, spell points | 1 | +0\n| 2 | +1 | +0 | +1 | +1 | Enhance swarm, swarm shield | 1 | +1\n| 3 | +2 | +1 | +2 | +2 | Consolidate swarm, enhance swarm, telegraph attack | 2 | +2\n| 4 | +3 | +1 | +2 | +2 | Enhance swarm, swarm movement | 2 | +3\n| 5 | +3 | +1 | +3 | +3 | Consuming void, enhance swarm | 3 | +3"
+    },
+    {
+      "level": 2,
+      "heading": "Spell Points",
+      "anchor": "toc1",
+      "text": "A hive gains 1 spell point for every hive level she possesses."
+    },
+    {
+      "level": 2,
+      "heading": "Casting",
+      "anchor": "toc2",
+      "text": "A hive\u2019s caster level increases as shown on Table: Hive. This stacks normally with caster levels gained from other sources."
+    },
+    {
+      "level": 2,
+      "heading": "Blended Training (Ex)",
+      "anchor": "toc3",
+      "text": "At the levels indicated on Table: Hive, the hive gains either a combat or a magic talent. A hive may use her casting ability modifier as her practitioner modifier if they are not the same when entering this class."
+    },
+    {
+      "level": 2,
+      "heading": "Colony (Su)",
+      "anchor": "toc4",
+      "text": "At 1st level, the hive is capable of creating, storing, and sustaining swarms of deadly insects. A hive may house any swarms she has tame within an extra-dimensional space within her body called a colony. A swarm may be released as a standard action on the part of the hive and a move action on the part of the swarm; the swarm and the hive then occupy the same spaces (or overlap spaces as much as possible, if different sizes. If the hive shares a space with a tame swarm, the swarm may be stored as a move action on the part of both the hive and swarm. Any swarm currently stored in the colony that ceases to be tame is immediately expelled into the hive\u2019s space. Conjuration sphere companions with the Swarm Companion advanced talent may be housed in the hive\u2019s colony."
+    },
+    {
+      "level": 2,
+      "heading": "Create Swarm (Su)",
+      "anchor": "toc5",
+      "text": "At 1st level, as a standard action, the hive may spend a spell point to create a swarm within her colony. The hive may only have a single created swarm at a time; creating another dismisses any existing created swarms. This created swarm counts as tame, but does not count its Hit Dice against the Hit Dice limit of the tame ability. This is an instantaneous summoning effect.\nUse the statistics of a Conjuration sphere companion summoned with a caster level equal to the hive\u2019s character level and the following base form:\nSpeed 20 ft., Climb 20 ft.; AC +2 natural armor; Saves Fort (good), Ref (good), Will (bad); Attack none; Ability Scores Str 12, Dex 16, Con 13, Int -, Wis 10, Cha 11. The swarm has the swarm subtype, with constituent members of Tiny size and occupies a 10-foot by 10-foot space. Its swarm damage is 1d6 + 1d6 per 3 Hit Dice and has a distraction DC of 10 + Hit Dice/2 + the hive\u2019s casting ability modifier. The swarm is a mindless creature of the vermin type."
+    },
+    {
+      "level": 2,
+      "heading": "Enhance Swarm",
+      "anchor": "toc6",
+      "text": "At each level, the hive gains a swarm enhancement from the following list. Each swarm enhancement may only be taken once unless otherwise noted. Some swarm enhancements have additional prerequisites. If a swarm enhancement has a DC, the DC of this ability is 10 + the hive\u2019s ranks in Handle Animal/2 + the hive\u2019s practitioner modifier."
+    },
+    {
+      "level": 4,
+      "heading": "Devour",
+      "anchor": "toc7",
+      "text": "When beginning its turn sharing a space with a dead creature of at least Small size, the swarm may spend a full-round action consuming the body. Doing so grants the hive 1 temporary hit point per Hit Die of the devoured creature. These temporary hit points last for 1 hour per class level. Multiple uses of this ability do not stack."
+    },
+    {
+      "level": 4,
+      "heading": "Explosive Release",
+      "anchor": "toc8",
+      "text": "The hive may release a swarm from her colony in a cone shaped spread extending out to close range (25 feet + 5 feet per 2 class levels) as a standard action. Any creature in this area must make a Reflex save or take the swarm\u2019s swarm damage. Creatures that take damage must immediately save against the swarm\u2019s distraction ability. The swarm then may occupy its normal space anywhere within the cone."
+    },
+    {
+      "level": 4,
+      "heading": "Flight",
+      "anchor": "toc9",
+      "text": "The hive may now create swarms with a fly speed of 30 feet (perfect). This increases by 10 feet at 3rd class level and again at 5th class level."
+    },
+    {
+      "level": 4,
+      "heading": "Mana Drain",
+      "anchor": "toc10",
+      "text": "When a creature with a spell point reserve takes swarm damage from a swarm the hive created, it must succeed on a Will save or lose 1d2 spell points. The hive gains these as temporary spell points that last for 1 minute per class level, though cannot gain more spell points than the damaged creature loses. Multiple instances of temporary spell points gained from this ability do not stack. This die size increases to 1d4 at 3rd class level and to 1d6 at 5th class level."
+    },
+    {
+      "level": 4,
+      "heading": "Reduce Size",
+      "anchor": "toc11",
+      "text": "The hive may now create swarms of Diminutive creatures with her create swarm ability. This ability may be taken a second time to reduce the size of the creatures in her created swarms to Fine."
+    },
+    {
+      "level": 4,
+      "heading": "Swarm Blast (requires Destruction sphere, explosive release)",
+      "anchor": "toc12",
+      "text": "When using explosive release, the hive may apply any (blast shape) talent she possesses to her swarm, with the swarm dealing its swarm damage and immediately forcing a save against the swarm\u2019s distraction ability. If the shape is non-instantaneous, the swarm keeps the blast\u2019s shape for the duration of the effect. If the effect is instantaneous or when the duration of the effect ends, the swarm regains its normal space in one of the squares it occupied. Any additional cost for the (blast shape) talent must be paid as usual."
+    },
+    {
+      "level": 4,
+      "heading": "Swarm Maneuvers (requires consolidate swarm)",
+      "anchor": "toc13",
+      "text": "Upon successfully completing a combat maneuver, a tame swarm may immediately return to swarm form as a free action, inflicting its swarm damage to creatures in its space at the end of its turn as normal."
+    },
+    {
+      "level": 4,
+      "heading": "Vile Hood (requires consolidate swarm)",
+      "anchor": "toc14",
+      "text": "A swarm may attempt to wrap itself around a creature\u2019s head (or equivalent). When the swarm consolidates, as a standard action it may target a single creature that is sharing its space. That creature must make a Reflex save or be blinded and unable to breathe until the swarm returns to its normal form or the creature makes a Strength or Escape Artist check with a DC equal to the hive\u2019s swarm enhancement DC."
+    },
+    {
+      "level": 4,
+      "heading": "Web",
+      "anchor": "toc15",
+      "text": "The hive\u2019s created swarms can create sheets of sticky webbing in squares they occupy. Doing so requires a full-round action. Approaching creatures must succeed on a DC 20 Perception check to notice a web; otherwise they stumble into it and become trapped as though by a successful web attack. Attempts to escape or burst the webbing gain a +5 bonus if the trapped creature has something to walk on or grab while pulling free. Each 5-foot square section of web has a number of hit points equal to the Hit Dice of the swarm that created it and damage reduction 5/\u2014. This ability can be used a number of times per day equal to the hive\u2019s casting ability modifier. If she possesses the consolidate swarm ability, upon pinning a creature, a swarm with this ability may spend a standard action to tie the creature in webbing. Such a creature counts as being tied up, with a DC to escape of 20 + 1/2 of the swarm\u2019s Hit Dice + Constitution modifier. The helpless creature may still attempt Strength and Escape Artist checks to free themselves as normal."
+    },
+    {
+      "level": 2,
+      "heading": "Swarm Shield",
+      "anchor": "toc16",
+      "text": "At 2nd level, while sharing a space with a tame swarm, the hive gains a 20% miss chance from all attacks originating from outside the swarm. At 5th level, this miss chance increases to 50% and the hive gains a 20% miss chance from attacks originating from other creatures inside the swarm."
+    },
+    {
+      "level": 2,
+      "heading": "Consolidate Swarm",
+      "anchor": "toc17",
+      "text": "At 3rd level, once per round as a free action, the hive may direct one of his tame swarms to consolidate itself. This requires a move action on the part of the swarm. A consolidated swarm no longer takes half again as much damage (+50%) from spells or effects that affect an area but takes full damage from weapons, though gains damage reduction/bludgeoning equal to its Hit Dice. A consolidated swarm can be bullrushed, grappled, and tripped. When consolidated, a swarm occupies the space of a Medium creature and counts as a Medium creature for the purpose of making combat maneuvers. The hive may spend a free action to direct the swarm to return to its normal state, requiring a move action on the part of the swarm. A swarm does not deal swarm damage and loses use of its distraction ability while consolidated."
+    },
+    {
+      "level": 2,
+      "heading": "Telegraph Attack (Ex)",
+      "anchor": "toc18",
+      "text": "At 3rd level, while a swarm is consolidated, the hive may use it to deliver his attacks and combat maneuvers. Doing so requires both the hive and the swarm to spend the requisite action. Treat the swarm\u2019s base attack bonus as equal to the hive\u2019s character level and the swarm\u2019s Strength modifier as equal to the hive\u2019s practitioner modifier for making attack rolls and combat maneuver checks with this ability."
+    },
+    {
+      "level": 2,
+      "heading": "Swarm Movement (Ex)",
+      "anchor": "toc19",
+      "text": "At 4th level, any tame swarm that begins its turn sharing the hive\u2019s space or passes through her space during its movement, the hive may choose to move along with it. When the swarm\u2019s movement ends, the hive may choose a square the swarm occupies to be deposited in. The swarm supports the hive as long as she shares its space or until she chooses to end this effect as a free action."
+    },
+    {
+      "level": 2,
+      "heading": "Consuming Void (Su)",
+      "anchor": "toc20",
+      "text": "At 5th level, the hive can make a melee touch attack against a creature as a standard action. A struck creature must make a Will save with a DC of 10 + 1/2 her ranks in Handle Animal + her casting ability modifier or be sucked into the hive\u2019s colony for a number of rounds equal to the hive\u2019s casting ability modifier. The creature is allowed a new save each round as a free action at the start of its turn to end this effect and appear in a space of its choice adjacent to the hive. The creature gains the grappled condition for the duration of this effect. If the hive currently has a swarm stored in its colony, the creature is affected as if it was sharing the swarm\u2019s space for the duration of this effect. The effects of multiple swarms do not stack. The swarm may be attacked and damaged normally by the consumed creature."
+    },
+    {
+      "level": 1,
+      "heading": "New Feat",
+      "anchor": "toc21",
+      "text": ""
+    },
+    {
+      "level": 3,
+      "heading": "Extra Swarm Enhancement",
+      "anchor": "toc22",
+      "text": "Prerequisite: Swarm enhancement class feature.\nBenefit: You may select an additional swarm enhancement that you qualify for.\nSpecial: This feat may be taken more than once; each time you select an additional swarm enhancement.\n| Champions of the Spheres by Drop Dead Studios\n| Classes\n| Bravo | Crimson Dancer | Dissident | Dragoon\n| Mountebank | Necros | Prodigy | Reaper\n| Sage | Theorist | Troubadour | Warden\n| Rules\n| Champion Feats | Unified Traditions | Champion FCBs |\n| Get Champions Of The Spheres\n| Get Mythic Champions of the Spheres\n| Get Legends of the Spheres\n| Get Study and Practice\n| The Crimson Dancer | The Realmwalker's Handbook\n| The Warden | Spheres Apocrypha: Sidhe Outcasts\n| The Cataclysm Handbook | The Gravecaller's Handbook\n| Get the Lost Champions Bundle\n| LC: Dragoon | LC: Mountebank | LC: Necros | LC: Reaper\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book\n| Spheres of Might by Drop Dead Studios\n| Using Spheres of Might\n| Classes\n| Armiger | Blacksmith | Commander | Conscript | Scholar | Sentinel | Striker | Technician\n| Prestige Classes\n| Aeronaut Captain\n| Spheres\n| Alchemy | Athletics | Barrage | Barroom | Beastmastery | Berserker | Boxing | Brute\n| Dual Wielding | Duelist | Equipment | Fencing | Gladiator | Guardian | Lancer | Leadership\n| Open Hand | Scoundrel | Scout | Shield | Sniper | Tech | Trap | Warleader\n| Wrestling | | Pilot (3PP) |\n| Rules\n| About Legendary Talents | Martial Traditions | Martial Packages | Practitioner Feats\n| Practitioner Traits | Practitioner FCB's | Practitioner Bestiary | Associated Feats & Skills\n| Ultimate Engineering (Tinker) | Starfinder Conversion [3pp]\n| Get Spheres of Might on DriveThruRPG\n| Mythic Spheres of Might\n| Ultimate Engineering\n| The Conqueror's Handbook | The General's Handbook\n| The Highlander's Handbook | The Inventor's Handbook\n| The Inventor's Handbook 2 | The Jester's Handbook\n| Woodfaring Adventures | The Youxia's Handbook\n| Spheres Apocrypha\n| Alch. Formulae | Alch. Poisons | Alch. Poisons 2 | Armor Talents\n| Astrologian Archetype | Debilitating Talents | Pugilists | Racial\n| Ranged | Swashbucklers | Tandem | Tricks & Traps"
+    }
+  ]
+}

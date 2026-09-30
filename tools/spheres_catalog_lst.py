@@ -146,6 +146,10 @@ def build():
             tags = [name_key, "CATEGORY:" + cat, "TYPE:SpheresBasicTalent." + ident,
                     "PREABILITY:1,CATEGORY=" + cat + "," + base,
                     "BONUS:VAR|" + prefix + "_TALENTS|1"]
+            if name_key == 'Scout - Somnambulance':
+                tags[3] = ('PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Scout Sphere],'
+                           '[PREABILITY:1,CATEGORY=Special Ability,Elf ~ Spheres Dreamless Sleep,'
+                           'Half-Elf ~ Spheres Dreamless Sleep]')
             if slug == "equipment-sphere":
                 tags[2] += ".EquipmentTalent"
             if slug == "tech" and re.search(r"\([^)]*\bgadget\b[^)]*\)", talent["heading"]):

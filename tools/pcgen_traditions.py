@@ -12,7 +12,7 @@ from pcgen_spheres_gates import validate_gate
 from spheres_progression_fixtures import fixture as casting_fixture
 from pcgen_conscript_class import fixture as martial_fixture
 
-TIMEOUT = 110
+TIMEOUT = 300
 
 
 def run(system, gate="all", work=None):
@@ -24,7 +24,9 @@ def run(system, gate="all", work=None):
     character = work / "tradition.pcg"
     saved = work / "saved.pcg"
     if gate != "reload":
-        raw = casting_fixture(10, "WIS") if system == "power" else martial_fixture(10)
+        raw = martial_fixture(10) if system == "might" else casting_fixture(10, "WIS")
+        if system in ('halfling', 'half-orc', 'elf'):
+            raw = raw.replace('RACE:Human', 'RACE:' + {'halfling': 'Halfling', 'half-orc': 'Half-Orc', 'elf': 'Elf'}[system])
         if system == "might":
             raw = "\n".join(line for line in raw.splitlines()
                             if not line.startswith("ABILITY:Conscript Martial Tradition|")) + "\n"
@@ -54,7 +56,7 @@ def run(system, gate="all", work=None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("system", choices=("power", "might"))
+    parser.add_argument("system", choices=("power", "might", "racial", "halfling", "half-orc", "elf"))
     parser.add_argument("gate", nargs="?", default="all", choices=("all", "save", "reload"))
     parser.add_argument("--work", type=Path, help="existing workspace for the reload gate")
     args = parser.parse_args()

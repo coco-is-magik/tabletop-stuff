@@ -5370,7 +5370,8 @@
     "sphere": "Life",
     "repeat_limit": 1,
     "mechanics": [
-      "BONUS:VAR|SPHERES_LIFE_CURE_DICE|1+floor(SPHERES_CL_LIFE/5)"
+      "BONUS:VAR|SPHERES_LIFE_CURE_DICE|1+floor(SPHERES_CL_LIFE/5)",
+      "BONUS:VAR|SPHERES_LIFE_INVIGORATE_HP|SPHERES_CL_LIFE"
     ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
@@ -5416,7 +5417,10 @@
     "key": "Life - Greater Invigorate",
     "sphere": "Life",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_LIFE_INVIGORATE_HP|SPHERES_CASTING_ABILITY",
+      "BONUS:VAR|SPHERES_LIFE_INVIGORATE_HOURS|SPHERES_CL_LIFE-1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
     ]
@@ -17954,7 +17958,7 @@
     "repeat_limit": 2,
     "mechanics": [],
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Scout Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Scout Sphere],[PREABILITY:1,CATEGORY=Special Ability,Elf ~ Spheres Dreamless Sleep,Half-Elf ~ Spheres Dreamless Sleep]",
       "PREVARLT:SPHERES_SCOUT_SOMNAMBULANCE_COUNT,2"
     ]
   },

@@ -21,10 +21,20 @@ class SpellcraftingTests(unittest.TestCase):
     def test_generated_file(self):
         self.assertEqual(OUTPUT.read_text(), self.render())
 
+    def test_references_use_stable_keys_and_exclude_modifications(self):
+        for (category, key), tags in self.known.items():
+            self.assertFalse(key.endswith(('.MOD', '.COPY', '.FORGET')))
+            explicit = next((tag[4:] for tag in tags if tag.startswith('KEY:')), None)
+            if explicit is not None:
+                self.assertEqual(key, explicit)
+        self.assertIn(('Special Ability', 'Human ~ Spheres Titan of Industry'), self.known)
+        self.assertNotIn(('Special Ability', 'Titan of Industry'), self.known)
+
     def test_published_example(self):
         output = self.render()
         for text in ('Complexity 2; 3 SP; 1 casting-time increases',
                      'Research Spellcraft DC 10; learning 2 hours',
+                      'research 2 days',
                      'spellbook 2 pages; writing 2 hours; decipher DC 22',
                      '|SPHERES_CL_PROTECTION|SPHERES_DC_PROTECTION'):
             self.assertIn(text, output)

@@ -121,6 +121,8 @@ is incomplete**. Supported behavior and remaining requirements:
 Power/Might feat records and selected mechanics are also available. This is not
 complete feat automation; unresolved prerequisites require explicit adjudication.
 Coverage, tests and limitations: `/bigdisk/programming/pathfinder1e/docs/spheres-feats.md`.
+The September 29 continuation inventory, verified fixes and remaining content
+backlog are recorded in `/bigdisk/programming/pathfinder1e/docs/spheres-backlog.md`.
 Incanter has level 1-20
 base progression, mental casting choices, bonus-feat support, several
 specializations, Core domain/bloodline adapters, Admixture, Destruction

@@ -25,7 +25,7 @@ def main():
          *map(str, sources)])
     if action == "test":
         for suite in ("catalog", "class_catalog", "conscript", "elementalist", "feats",
-                      "spellcrafting", "spheres", "traits"):
+                      "spellcrafting", "spheres", "traditions", "martial_traditions", "traits", "racial", "prestige"):
             run([sys.executable, str(ROOT / "tools" / f"test_{suite}.py")])
         run(["java", "-ea", "-cp", str(CLASSES), "dicepool.ProfileTest"])
         run(["java", "-ea", "-cp", str(CLASSES), "dicepool.CandidateTest"])

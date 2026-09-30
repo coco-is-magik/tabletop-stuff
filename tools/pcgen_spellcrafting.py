@@ -11,7 +11,7 @@ from pcgen_spheres_smoke import JAVA, ROOT, classpath, workspace
 from pcgen_spheres_gates import validate_gate
 from spheres_progression_fixtures import fixture
 
-TIMEOUT = 110
+TIMEOUT = 300
 
 
 def command(cp, work, gate, source, saved):

@@ -1442,10 +1442,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc4"
     ],
     "key": "Backdoor Arcana",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Incompatible Energies drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Incompatible Energies"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2444,11 +2444,10 @@
     ],
     "key": "Burn My Body",
     "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Addictive Casting],[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Decrepit Casting]",
       "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,5"
     ],
-    "unresolved_prerequisites": [
-      "Addictive Casting drawback or Decrepit Casting drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2643,11 +2642,10 @@
     ],
     "key": "Careful Magic",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Extended Casting"
     ],
-    "unresolved_prerequisites": [
-      "Extended Casting drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -3373,10 +3371,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc17"
     ],
     "key": "Combatant Caster",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Galvanized"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Galvanized"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -4662,10 +4660,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc19"
     ],
     "key": "Curse Mastery",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Innate Curse"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Innate Curse"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -10755,10 +10753,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc25"
     ],
     "key": "Hidden Heretic",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Witchmarked drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Witchmarked"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12003,10 +12001,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc30"
     ],
     "key": "Insidious Magic",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Incompatible Energies drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Incompatible Energies"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12103,10 +12101,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc32"
     ],
     "key": "Instinctual Skittishness",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Coy Caster"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Coy Caster"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13047,10 +13045,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc39"
     ],
     "key": "Magic Runes",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Diagram Magic"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Diagram Magic"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13087,11 +13085,10 @@
     ],
     "key": "Magical Focus",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Focus Casting],[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Galvanized]"
     ],
-    "unresolved_prerequisites": [
-      "Focus Casting drawback or Galvanized drawback"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13237,10 +13234,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc41"
     ],
     "key": "Manifold Foci",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Center Of Power or Focus Casting"
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Center Of Power],[PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Focus Casting]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14697,10 +14694,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc50"
     ],
     "key": "Off In A Blink",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Coy Caster"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Coy Caster"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15445,10 +15442,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc53"
     ],
     "key": "Planar Tether",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Planebound Magic"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Planebound Magic"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15776,10 +15773,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc55"
     ],
     "key": "Power Of Fear",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Emotional Casting drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Emotional Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15795,10 +15792,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc56"
     ],
     "key": "Power of Friendship",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Emotional Casting"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Emotional Casting"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16037,10 +16034,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc59"
     ],
     "key": "Prepared Diagram",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Diagram Magic"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Diagram Magic"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16518,11 +16515,10 @@
     ],
     "key": "Racing Ramp",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Ramp Up",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Ramp Up"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16915,10 +16911,11 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc64"
     ],
     "key": "Refined Amplification",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Skilled Casting"
+    ],
     "unresolved_prerequisites": [
-      "Mana Sphere (any (amp) talent)",
-      "Skilled Casting drawback"
+      "Mana Sphere (any (amp) talent)"
     ],
     "mechanics": [],
     "status": "partial"
@@ -17178,10 +17175,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc67"
     ],
     "key": "Resistant Veins",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Anemic"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Anemic"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19325,11 +19322,11 @@
     "key": "Spell Capacitor Agenda",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Substantial Magic",
       "PREFEAT:1,Spell Capacitor"
     ],
     "unresolved_prerequisites": [
-      "War Sphere (any momentum talent)",
-      "Substantial Magic drawback"
+      "War Sphere (any momentum talent)"
     ],
     "mechanics": [],
     "status": "partial"
@@ -19552,10 +19549,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc74"
     ],
     "key": "Spellbound Rebuke",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Substantial Magic drawback"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Substantial Magic"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19593,11 +19590,10 @@
     "key": "Spells to Life",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Animate Object"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Animate Object",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Substantial Magic"
     ],
-    "unresolved_prerequisites": [
-      "Substantial Magic"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -22901,10 +22897,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc85"
     ],
     "key": "Unlocked Power",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Ramp Up"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Ramp Up"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -22920,10 +22916,10 @@
       "https://spheresofpower.wikidot.com/drawback-feats#toc86"
     ],
     "key": "Unnatural Company",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Coy Caster"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Coy Caster"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -24359,11 +24355,10 @@
     ],
     "key": "Wishbound Casting",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Extended Casting",
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Verbal Casting"
     ],
-    "unresolved_prerequisites": [
-      "Extended Casting (drawback)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },

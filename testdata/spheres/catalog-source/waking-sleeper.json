@@ -1,0 +1,139 @@
+{
+  "url": "https://spheresofpower.wikidot.com/waking-sleeper",
+  "retrieved": "2026-09-29",
+  "sha256": "e26278cdf43f014cfc66f498b47d8d56282822b2d5c3d2b813a9b6e06eac4ebb",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Introduction",
+      "anchor": "",
+      "text": "| FoldUnfold Table of Contents Class Features Weapon and Armor Proficiencies Mark of the Master (Su) Sleeper Training (Ex) Second Self (Ex) Recall (Ex) Catatonia (Ex) Deep Conditioning (Ex) Regimented Thought (Su) Perfect Clarity (Ex)\nUltimate\nOriginal\nUltimate Spheres of Power $29.99 Alignment: The willingness to take the risks of training means that neutrality is rare among waking sleepers. Hit Die: d10\nClass Skills: Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Knowledge (nobility) (Int), Perception (Wis), Profession (Wis), Ride (Dex), Swim (Str), Use Magic Device (Cha)\nSkill Ranks at Each Level: 4 + Int modifier\nRequirements To qualify to become a waking sleeper, a character must fulfill all the following criteria.\nBase Attack Bonus: +3\nSkills: Knowledge (nobility) 5 ranks\nSpecial: Must have undergone the Rite of Waking Slumber as performed by a caster of caster level 12th or higher (see Incantations)."
+    },
+    {
+      "level": 1,
+      "heading": "Class Features",
+      "anchor": "toc0",
+      "text": "Table: The Waking Sleeper | Level | BAB | Fort Save | Ref Save | Will Save | Special\n| 1 | +1 | +0 | +1 | +1 | Mark of the master, recall, sleeper training\n| 2 | +2 | +1 | +1 | +1 | Catatonia\n| 3 | +3 | +1 | +2 | +2 | Deep conditioning\n| 4 | +4 | +1 | +2 | +2 | Regimented thought\n| 5 | +5 | +2 | +3 | +3 | Perfect clarity"
+    },
+    {
+      "level": 2,
+      "heading": "Weapon and Armor Proficiencies",
+      "anchor": "toc1",
+      "text": "A waking sleeper gains proficiency in all simple and martial weapons."
+    },
+    {
+      "level": 2,
+      "heading": "Mark of the Master (Su)",
+      "anchor": "toc2",
+      "text": "The waking sleeper generally has some sign, usually a tattoo on the back, that relates to his or her liege. Whether visible or not, the tattoo will glow with a faint light (though not enough to see by) whenever the waking sleeper enters a state of recall (see below). The waking sleeper takes a -10 penalty to resisting the DC of scrying effects cast by their master, and automatically fails any Will save triggered by mind-affecting effects originating from their master while in this state.\nIf the master ever chooses to fully sever ties or dies, the mark\u2019s effects cease (though the mark itself will remain). If a dead master returns to life or becomes an undead creature capable of casting spells with a caster level greater than or equal to the waking sleeper\u2019s class level, the effects of the mark resume unless it was the waking sleeper who dealt the blow that killed the master."
+    },
+    {
+      "level": 2,
+      "heading": "Sleeper Training (Ex)",
+      "anchor": "toc3",
+      "text": "A waking sleeper gains a pool of combat feats that represent her rigorous training. At level 1, the waking sleeper may add any two combat feats for which she meets the prerequisite to this pool, and she adds two more combat feats to the pool for every further level in the class. The waking sleeper does not have access to these feats except when in a state of recall (see below). The feats in this pool do not qualify as prerequisites, except for other feats that are added to the pool at higher levels. If a waking sleeper gains access to a feat in her pool through another method (such as by selecting it as a feat when leveling up) then the feat leaves sleeper training and may be immediately replaced with another feat."
+    },
+    {
+      "level": 2,
+      "heading": "Second Self (Ex)",
+      "anchor": "toc4",
+      "text": "A waking sleeper is, while in a state of recall, nearly a different person, often displaying detachment from things that would otherwise prompt emotional ties while not in recall. In many ways, this is a different identity; while in a state of recall, they cannot be scried upon as their typical self, and while not in recall the \u201csleeper\u201d version of themselves can similarly not be scried upon. Some waking sleepers create long careers of intrigue, espionage, or thievery, known only as the agent who makes a habit of stealing rare diamonds, assassinating various high-profile targets, or otherwise making life difficult for those in high places who could usually stamp out such interlopers."
+    },
+    {
+      "level": 2,
+      "heading": "Recall (Ex)",
+      "anchor": "toc5",
+      "text": "A waking sleeper\u2019s training allows them to enter a state known as recall for a number of rounds per day equal to 4 + her Wisdom modifier. At each level after 1st level, she gains 2 additional rounds per day. While experiencing recall, a waking sleeper gains a +2 morale bonus to Strength, and a +2 morale bonus to Will saves. In addition, the waking sleeper may select one of the feats from her sleeper training and activate it, making use of the feat as if she had it naturally, even if the feat has a prerequisite that is only met by virtue of other combat feats within the sleeper training pool of feats. When a sleeper ends a state of recall, she becomes fatigued for a number of rounds equal to the number of rounds that she experienced the recall, and cannot return to the state until the fatigue ends."
+    },
+    {
+      "level": 2,
+      "heading": "Catatonia (Ex)",
+      "anchor": "toc6",
+      "text": "Beginning at 2nd level, the waking sleeper\u2019s training allows for quick, efficient healing during rest. Whenever she completes a full night\u2019s rest or full day of bed rest, she recovers additional hit points equal to her waking sleeper level. In addition, a waking sleeper may choose to enter a deeper, more rejuvenating sleep: a waking sleeper who finishes a full night\u2019s rest or full day of bed rest recovers two additional points of ability damage for each affected ability score.\nUnfortunately, this deeper sleep makes it impossible to pass Perception checks while sleeping, instead requiring the waking sleeper to be physically shaken or wounded before waking. When something makes the waking sleeper awaken prematurely, she is dazed for one round afterward."
+    },
+    {
+      "level": 2,
+      "heading": "Deep Conditioning (Ex)",
+      "anchor": "toc7",
+      "text": "At 3rd level, the waking sleeper\u2019s deeper triggers begin to unlock. During a state of recall, the morale bonus to Will saves increases to +4, and a total of three sleeper training feats may be selected."
+    },
+    {
+      "level": 2,
+      "heading": "Regimented Thought (Su)",
+      "anchor": "toc8",
+      "text": "Beginning at 4th level, the conditioning of the waking sleeper\u2019s master becomes truly rooted, for better or for worse. While a waking sleeper is in her state of recall, any attempt to use a mind-affecting spell or sphere effect requires a magic skill check against a DC of 15 + the waking sleeper\u2019s total levels in casting classes."
+    },
+    {
+      "level": 2,
+      "heading": "Perfect Clarity (Ex)",
+      "anchor": "toc9",
+      "text": "At level 5, the waking sleeper gains incredible control of her combat techniques. The bonus to Strength and to Will saves increases to +6, and a total of five sleeper training feats may be selected when in a state of recall. In addition, the waking sleeper may, as a free action every round, change two of the selected feats without leaving her state of recall.\nAlignment: The willingness to take the risks of training means that neutrality is rare among waking sleepers.\nHit Die: d10\nClass Skills: Acrobatics (Dex), Climb (Str), Craft (Int), Handle Animal (Cha), Knowledge (Nobility) (Int), Perception (Wis), Profession (Wis), Ride (Dex), Swim (Str), Use Magic Device (Cha)\nSkill Ranks at Each Level: 4 + Int modifier"
+    },
+    {
+      "level": 1,
+      "heading": "Requirements",
+      "anchor": "",
+      "text": "To qualify to become a waking sleeper, a character must fulfill all the following criteria.\nBase Attack Bonus: +3\nSkills: Knowledge (Nobility) 5 ranks\nSpecial: Must have undergone the Rite of Waking Slumber as performed by a caster of CL 12 or higher (see the Incantations page)."
+    },
+    {
+      "level": 1,
+      "heading": "Class Features",
+      "anchor": "",
+      "text": "| Level | BAB | Fort Save | Ref Save | Will Save | Special\n| 1 | +1 | +0 | +1 | +1 | Mark of the master, recall, sleeper training\n| 2 | +2 | +1 | +1 | +1 | Catatonia\n| 3 | +3 | +1 | +2 | +2 | Deep conditioning\n| 4 | +4 | +1 | +2 | +2 | Regimented thought\n| 5 | +5 | +2 | +3 | +3 | Perfect clarity"
+    },
+    {
+      "level": 2,
+      "heading": "Weapon and Armor Proficiencies",
+      "anchor": "",
+      "text": "A waking sleeper gains proficiency in all simple and martial weapons."
+    },
+    {
+      "level": 2,
+      "heading": "Mark of the Master (Su)",
+      "anchor": "",
+      "text": "The waking sleeper generally has some sign, usually a tattoo on the back, that relates to his or her liege. Whether visible or not, the tattoo will glow with a faint light (though not enough to see by) whenever the waking sleeper enters a state of recall (see below). The waking sleeper takes a -10 penalty to resisting the DC of scrying effects cast by their master, and automatically fails any Will save triggered by mind affecting effects originating from their master while raging.\nIf the master ever chooses to fully sever ties or dies, the mark\u2019s effects cease (though the mark itself will remain).\nIf a dead master returns to life or becomes an undead creature capable of casting spells with a caster level greater than or equal to the waking sleeper\u2019s class level, the effects of the mark resume unless it was the waking sleeper who dealt the blow that killed the master."
+    },
+    {
+      "level": 2,
+      "heading": "Sleeper Training (Ex)",
+      "anchor": "",
+      "text": "A waking sleeper gains a pool of combat feats that represent her rigorous training. At level 1, the waking sleeper may add any two combat feats for which she meets the prerequisite to this pool, and she adds two more combat feats to the pool for every further level in the class.\nThe waking sleeper does not have access to these feats except when in a state of recall (see below). The feats in this pool do not qualify as prerequisites, except for other feats that are added to the pool at higher levels. If a waking sleeper gains access to a feat in her pool through another method (such as by selecting it as a feat when leveling up) then the feat leaves sleeper training and may be immediately replaced with another feat."
+    },
+    {
+      "level": 2,
+      "heading": "Second Self (Ex)",
+      "anchor": "",
+      "text": "A waking sleeper is, while in a state of recall, nearly a different person, often displaying detachment from things that would otherwise prompt emotional ties while not in recall. In many ways, this is a different identity; while in a state of recall, they cannot be scried upon as their typical self, and while not in recall the \u201csleeper\u201d version of themselves can similarly not be scried upon. Some waking sleepers create long careers of intrigue, espionage, or thievery, known only as the agent who makes a habit of stealing rare diamonds, assassinating various high-profile targets, or otherwise making life difficult for those in high places who could usually stamp out such interlopers."
+    },
+    {
+      "level": 2,
+      "heading": "Recall (Ex)",
+      "anchor": "",
+      "text": "A waking sleeper\u2019s training allows them to enter a state known as recall for a number of rounds per day equal to 4 + her Wisdom modifier. At each level after 1st level, she gains 2 additional rounds per day. While experiencing recall, a waking sleeper gains a +2 morale bonus to Strength, and a +2 morale bonus to Will saves. In addition, the waking sleeper may select one of the feats from her sleeper training and activate it, making use of the feat as if she had it naturally, even if the feat has a prerequisite that is only met by virtue of other combat feats within the sleeper training pool of feats. When a sleeper ends a state of recall, she becomes fatigued for a number of rounds equal to the number of rounds that she experienced the recall, and cannot return to the state until the fatigue ends."
+    },
+    {
+      "level": 2,
+      "heading": "Catatonia (Ex)",
+      "anchor": "",
+      "text": "Beginning at 2nd level, the waking sleeper\u2019s training allows for quick, efficient healing during rest. Whenever she completes a full night\u2019s rest or full day of bed rest, she recovers additional hit points equal to her waking sleeper level. In addition, a waking sleeper may choose to enter a deeper, more rejuvenating sleep: a waking sleeper who finishes a full night\u2019s rest or full day of bed rest recovers two additional points of ability damage for each affected ability score. Unfortunately, this deeper sleep makes it impossible to pass Perception checks while sleeping, instead requiring the waking sleeper to be physically shaken or wounded before waking. When something makes the waking sleeper awaken prematurely, she is dazed for one round afterward."
+    },
+    {
+      "level": 2,
+      "heading": "Deep Conditioning (Ex)",
+      "anchor": "",
+      "text": "At 3rd level, the waking sleeper\u2019s deeper triggers begin to unlock. During a state of recall, the morale bonus to Will saves increases to +4, and a total of three sleeper training feats may be selected."
+    },
+    {
+      "level": 2,
+      "heading": "Regimented Thought (Su)",
+      "anchor": "",
+      "text": "Beginning at 4th level, the conditioning of the waking sleeper\u2019s master becomes truly rooted, for better or for worse. While a waking sleeper is in her state of recall, any attempt to use a mind-affecting spell or sphere effect requires a magic skill check against a DC of 15 + the waking sleeper\u2019s total levels in casting classes."
+    },
+    {
+      "level": 2,
+      "heading": "Perfect Clarity (Ex)",
+      "anchor": "",
+      "text": "At level 5, the waking sleeper gains incredible control of her combat techniques. The bonus to strength and to Will saves increases to +6, and a total of five sleeper training feats may be selected. In addition, the waking sleeper may, as a free action every round, change two of the selected feats without leaving her state of recall.\n| Spheres of Power by Drop Dead Studios\n| Using Spheres of Power\n| Classes\n| Armorist | Elementalist | Eliciter | Fey Adept\n| Hedgewitch | Incanter | Mageknight | Shifter\n| Soul Weaver | Symbiat | Thaumaturge | Wraith\n| Prestige Classes\n| Bokor | Forest Lord | Magemage | Realmwalker\n| Tempestarii | Waking Sleeper | |\n| Spheres\n| Alteration | Blood | Conjuration | Creation\n| Dark | Polished Dark [DRS] | Death | Destruction | Divination\n| Enhancement | Fallen Fey | Fate | Illusion\n| Life | Light | Mana | Mind\n| Nature | Protection | Telekinesis | Time\n| War | Warp | Weather |\n| Other Spheres\n| Bear | Technomancy\n| Rules\n| About Advanced Magic | Advanced Talents | Alternate Racial Traits | Casting Traditions\n| Incantations | Magical Items | Mythic Spheres | Rituals\n| Spellcrafting | Traits | Wild Magic | Sphere Bestiary\n| Equipment\n| Weapons | Armor | Equipment | Special Materials\n| Alchemical Items | Apparatuses (Metamagic) | Charms | Compounds\n| Fabled Items | Implements | Marvelous Items | Schematics\n| Scrolls | Spell Engines | Spellzones | Talent Crystals\n| Feats\n| Admixture | Anathema | Aristeia | Champion\n| Chance | Channeling | Combat | Companion\n| Counterspell | Damnation | Drawback | Extra\n| General | Item Creation | Metamagic | Necrosis\n| Plague | Protokinesis | Proxy | Purring\n| Racial | Ritual | Squadron | Surreal\n| Teamwork | Theurge | Wild Magic |\n| Get Ultimate Spheres of Power | Get the Original RulebookU\n| Get Expanded OptionsU | Get Expanded Options 2\n| Alteration HandbookU | Conjuration HandbookU | Creation HandbookU | Dark HandbookU\n| Death HandbookU | Destruction HandbookU | Divination HandbookU | Enhancement HandbookU\n| Fate HandbookU | Illusion HandbookU | Life HandbookU | Light HandbookU\n| Mind HandbookU | Nature HandbookU | Protection HandbookU | Telekinesis HandbookU\n| Time HandbookU | War HandbookU | Warp HandbookU | Weather HandbookU\n| Spheres Apocrypha\n| Apex Shifter | Casting Traditions | Casting Traditions 2 | Cognition Talents\n| Cohorts and Companions | Dark ApocryphaU | Debilitating Talents 2 | Destruction ApocryphaU\n| Light ApocryphaU | Nature (Air) PackageU | Nature (Earth) ApocryphaU | Nature (Fire) ApocryphaU\n| Nature (M/P/W) ApocryphaU | Nature (Spirit) ApocryphaU | Protokinesis ApocryphaU | Sidhe Court\n| Other Spheres Products\n| Archetypes of PowerU | Archetypes of Power 2 | The Bear Sphere | The Blood SphereU\n| Blood and Portents | Compounds of Power | The Conqueror's Handbook | The Fallen Fey SphereU\n| Initiate's Handbook | Items of PowerU | The Jester's Handbook | Mythic Spheres of Power\n| The Technomancy Sphere | Treasures of the Spheres | Treasures: Weapons and Tools | The Wraith ClassU\n| Wild Magic | Woodfaring Adventures | Worlds of Power | The Youxia's Handbook\n| Bestiary: Fey and Feyfolk | The High Magic Handbook | Realmwalker's Handbook | Bestiary: Fiends of the Cosmos\n| Adventures\n| Wreckage to Deliverance | Wreckage to Deliverance Player's Guide\nU: Part of Ultimate Spheres of Power and does not need to be bought separately from that book"
+    }
+  ]
+}

@@ -82,8 +82,13 @@ def references():
     for path in paths:
         for line in records(path):
             tags = line.split("\t")
+            # Modifications are not independently selectable abilities. Resolve
+            # stable KEY identities rather than treating display names as keys.
+            if tags[0].endswith(('.MOD', '.COPY', '.FORGET')):
+                continue
             category = next((t[9:] for t in tags if t.startswith("CATEGORY:")), "FEAT")
-            result[(category, tags[0])] = tags
+            key = next((t[4:] for t in tags if t.startswith('KEY:')), tags[0])
+            result[(category, key)] = tags
     return result
 
 
@@ -158,6 +163,7 @@ def compile_spell(spell, known):
     variable = "SPHERES_CL_" + re.sub(r"[^A-Za-z0-9]", "", base).upper()
     summary = (f"Complexity {complexity}; {cost} SP; {(complexity + 1) // 2} casting-time increases. "
                f"Research Spellcraft DC {5 * total}; learning {total} hours; "
+               f"research {counts['sphere'] + counts['talent']} days; "
                f"spellbook {total} pages; writing {counts['sphere'] + counts['talent']} hours; "
                f"decipher DC {20 + complexity}. Base CL %1; base DC %2. "
                f"{effect} Review: {review}")
