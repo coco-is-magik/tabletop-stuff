@@ -23,6 +23,196 @@ The baseline nine Spellcrafting regression tests passed locally.
 
 ## Remaining acceptance work
 
+### Feat-granted casting choices — September 30 continuation
+
+- Basic Magic Training now exposes the existing casting-ability and custom
+  casting-tradition selectors when no spherecasting class supplies their pools.
+  The selectors qualify by the existing casting feature, rather than requiring
+  class spell-pool levels. No parallel tradition or casting system was added.
+- Corrected the earlier Advanced Magic Training class exclusion to use all
+  spherecasting spell-pool levels rather than only Incanter levels. Offline
+  regression coverage exists. Armorist 4/Fighter 6 live save/reload now passes in
+  `build/pcgen-spheres-nbfn01kr`: Advanced Training adds three caster levels and
+  six magic-skill-bonus points, leaves spell points unchanged, rejects Basic
+  Training, and refunds cleanly. Existing class selector allowances remain one.
+- 21 feat tests, nine tradition tests and 34 Spheres tests pass. Live Might feat
+  save/reload passed in `build/pcgen-spheres-52ihoak9`, including selector grants,
+  refunds and prerequisite loss. Those initial gates exercised then removed the
+  selectors. The expanded gate actually persisted both selectors and passed
+  save/reload in `build/pcgen-spheres-jsk3a75f`. Generated feat/tradition checks
+  and package structure checks also passed.
+- Basic Magic Training's required exchange for Extra Magic Talent when gaining
+  a spherecasting class is not automated. Do not interpret this fix as complete
+  multiclass lifecycle support. Other outstanding content remains open.
+- Full build after these changes passed 150 Python tests, profile/candidate
+  suites, 655 scenario checks and 21,147 engine checks.
+
+### Configurable Alternative-Brew continuation
+
+Final verification for this continuation: the complete build test command passed
+147 Python tests, profile/candidate suites, 655 scenario checks and 21,147 engine
+checks. These tests cover the implemented slices, not all requested content.
+
+- Added a one-choice Alternative-Brew selector over existing Core/Spheres Craft
+  and Profession skills. No bonus talent is awarded. It replaces Alchemy's
+  granted Craft ranks, supplies associated ranks to existing DC/capacity and
+  prerequisite formulas, and excludes Field Medic's fixed Heal exception in
+  both directions. Removing Alchemy disables retained skill-rank grants.
+- Live inspection exposed that PCGen skillinfo can return zero for skills not
+  in the character's displayed skill list despite granted bonus ranks. The
+  associated-rank formula now preserves the known training minimum with max,
+  rather than adding it twice. No upstream engine change was made.
+- Two focused tests and eighteen catalog/nineteen feat tests pass. Field Medic
+  regression save/reload passed in
+  `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-rb36oua1`.
+  Separate configurable Craft-to-Profession choice/refund/persistence checks
+  passed in `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-7zccb50n`.
+- GM permission for selecting/changing/removing the drawback remains explicit
+  tabletop approval, not an invented automatic qualification. Additional-source
+  and user-created skills are not automatically discovered by this compiler.
+
+### September 30 Liturgist and configurable weapon training
+
+- All 66 named martial traditions now have generated records. Liturgist grants
+  Custom Training, Leadership with Followers, the existing Basic Magic Training
+  feat, a Death/Fate/Life choice, and Base Of Operations or an Equipment talent.
+  Its restricted magic choice replaces the feat's ordinary free sphere allowance.
+  This is catalog coverage, not certification of every tradition interaction.
+- Custom Training has a repeatable five-point weapon allowance using actual Core
+  proficiency keys. Simple/martial weapons cost one; exotic weapons cost two,
+  including those tagged both Martial and Exotic. Choices are unique. Retained
+  choices cease granting proficiency when the parent talent is removed.
+- Two Custom Training, seventeen martial and eighteen catalog tests pass.
+  Live save/reload passed in
+  `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-1qyn5lo2`, including actual
+  proficiency grants/removal, duplicate rejection, weighted costs, additional
+  talent purchase/refund, restricted magic allowance and paid-pool isolation.
+- Still open: Liturgist's deity/philosophy-favored weapon constraint is displayed
+  but not mechanically enforced. Custom Training lists Core weapons, not arbitrary
+  additional-source proficiencies. Basic Magic Training multiclass limitations
+  remain. General Alternative-Brew configurability, companion/transformation
+  builders, class mechanics and other listed backlog areas remain incomplete.
+
+### September 30 Field Medic continuation
+
+- Added Field Medic with its fixed Formulae package/Salve, Scout and Fast Draw,
+  plus a configurable Alchemy-or-Scout talent choice. Alternative-Brew's published
+  Heal exception replaces granted Craft (Alchemy) ranks and drives Alchemy DCs
+  through an associated-ranks variable. Unrelated crafting prerequisites are not
+  changed; directly Alchemy-required feat prerequisites use that variable.
+- Added the missing general Formulae package free-talent pool, restricted to
+  formulae. Field Medic's Salve consumes that allowance. Toxins now require the
+  Poison package; formula capacity, crafting batch size and poison persistence
+  use associated ranks. Crafting actions and material resolution remain tabletop.
+- Sixteen martial tests, eighteen catalog tests and nineteen feat tests pass.
+  Live level-1 grants, Heal/Craft substitution and restoration, formula capacity,
+  toxin rejection, free formula selection/refund, paid-pool isolation and
+  save/reload pass in
+  `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-bw_ysoks`.
+- Named tradition coverage is 65 of 66; Liturgist remains open. Alternative-Brew
+  still needs its general configurable Craft/Profession selector; this specific
+  published Heal exception is not represented as completion of that subsystem.
+
+### September 30 Ace continuation
+
+- Added Ace with a configurable Fly/Run/Swim starting package, its published
+  Athletics talent choice, and Driver's Ace Pilot grant. No Equipment sphere
+  or additional unrestricted starting package is granted. Driver suppresses
+  Athletics package skill ranks without removing package ownership; Ace Pilot
+  continues to grant Profession (Pilot) ranks through its existing implementation.
+- Fifteen martial tests and eighteen catalog tests pass. Live level-1 selection,
+  paid-pool isolation, package-rank suppression, Pilot ranks, removal and
+  save/reload pass in
+  `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-aq7m7973`.
+  The earlier level-10 attempt timed out during loading, not an assertion pass.
+- Named martial coverage is 64 of 66; Field Medic and Liturgist remain open.
+  This does not complete configurable sphere drawbacks, companions,
+  transformations, feat prerequisites, or the class-mechanics backlog.
+
+### September 30 resumed verification and martial work
+
+- The expanded Equipment active-stance persistence test now passes both save and
+  reload in `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-wwl5_wp1`.
+  This supersedes the pending status recorded below, without treating the earlier
+  timeouts as passes. Offensive Style and Dagger Dancer survive persistence;
+  removing them removes their associated feat qualifications.
+- Added Expedition Spotter, Sergeant and Hacker with their published choice
+  pools and drawback grants. Named martial coverage is now 63 of 66. Remaining
+  names: Ace, Field Medic and Liturgist. This is not full mechanical coverage.
+- Dismantler grants Trap Finder; Squad Leader grants Squad and Sergeant fixes
+  the Cohort package. Hacker fixes Remote Control as its first gadget, consumes
+  the existing free gadget slot and grants the existing Remote Hacking feat.
+  Unsecured excludes Improved User Interface, including rejection of Hacker
+  when the incompatible talent is already present. No gadget-only saving throw
+  penalty is incorrectly applied to the character.
+- Fourteen martial regression tests pass, as do deterministic generation and
+  campaign structure checks. Live controller save/reload passed in
+  `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-ssbhcxz8`, exercising
+  Hacker's grants/refunds and incompatibility, Spotter's grants/refunds, and
+  Sergeant's package, equipment choice spend, paid-pool isolation and persistence.
+  Trap placement, recruitment restrictions and gadget control resolution remain
+  table effects. Configurable sphere drawback selection beyond these grants,
+  transformation/companion construction and remaining class mechanics are open.
+
+### September 30 continuation in progress
+
+The latest acceptance requirement is configurable traditions, spells,
+transformations and companions, not a collection of presets, with complete
+class mechanics and prerequisite/associated-feat enforcement. Existing custom
+spell definitions already accept user-supplied recipes; transformation and
+companion construction still need inspection and implementation. No completion
+claim is made for them.
+
+Investigated the pinned catalog and PCGen's existing `SERVESAS` implementation.
+Direct associated-feat equivalences were absent from the catalog generator.
+Adding reviewed direct Core associations through that existing token rather
+than automatically granting the real feats and their bonuses. Package-,
+weapon-, stance- and repeated-rank-dependent associations, and prerequisite
+waivers on dependent feats, remain distinct work. Initial patch application
+failed without changing files; the corrected patch was applied. Tests and
+live validation recorded below.
+
+- Implemented 36 reviewed direct Core feat associations through `SERVESAS`.
+  Four focused offline tests verify source declarations, loaded targets,
+  no automatic feat-effect grants, and guarded stance choices.
+- Versatile Fighter now has three selectable active stances in a one-slot
+  existing PCGen ability pool. Each supplies its published feats only while the
+  talent remains present; removing the talent revokes benefits even if the
+  stale stance selection has not been deleted. This does not implement action
+  timing or the conditional on-hit riders, nor cross-sphere stance exclusion.
+- Equipment live save/reload passed in
+  `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-20gw1rum`.
+  Checks exercise `PREFEAT` and upstream `PREABILITY` equivalence, removal,
+  refunds, inactive/active stance effects and prerequisite-loss revocation.
+  The runner now supports separate save/reload phases. Initial 50-second runs
+  timed out; inspection showed the second reached character saving, not a
+  failed assertion. Separate phases with a bounded 95-second JVM limit passed.
+- Post-change verification passed all 137 offline tests across the 13 suites.
+  The aggregate build's 120-second wrapper expired during traits; traits,
+  racial and prestige suites were subsequently run separately and passed.
+  Profile/candidate checks, 655 scenario checks and 21,147 engine checks also
+  passed separately. Generated-file consistency, Python compilation and package
+  structure checks passed. A category-count assertion initially failed because
+  of the newly added stance category; it now explicitly checks that category's
+  non-editable zero baseline pool rather than omitting the new category.
+- Expanded the Equipment fixture to save an active Offensive Style and Dagger
+  Dancer, then assert their feat qualifications after reload and remove them.
+  **This expanded persistence fixture is not yet verified.** Later runs exceeded
+  their time bounds during loading/selection without reaching a saved character.
+  Evidence: `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-wwl5_wp1`.
+  Host process inspection showed concurrent C++ compilation; that is a possible
+  contributor, not a proven cause. No unrelated processes were stopped.
+  The earlier successful gates exercise stance transitions and refund behavior,
+  but did not persist an active stance across processes. Do not conflate these.
+- The runner skips compilation only when both harness class files are newer
+  than their source files. Equipment-only fixtures now use Conscript 10;
+  other sphere resource-scaling fixtures remain level 20. The next validation
+  step is the expanded Equipment save/reload fixture, not another feature claim.
+- Complete class mechanics, configurable transformations/conjuration, remaining
+  traditions and other listed areas are still open; these results do not
+  certify them. No eight-hour unattended execution or full completion claim is
+  supported by this session's evidence.
+
 | Area | Current boundary | Completion work |
 | --- | --- | --- |
 | Casting traditions | Original fourteen choices plus weighted Extended Casting and second-tier Extended/Somatic choices, three boons | Remaining weighted/repeated drawbacks, incompatibilities, other drawbacks/boons, named traditions, sphere-specific grants and casting modifier effects |

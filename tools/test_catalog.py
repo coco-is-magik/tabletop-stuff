@@ -110,7 +110,11 @@ class CatalogTest(unittest.TestCase):
 
     def test_package_pools_and_equipment_grant(self):
         categories = self.files['spheres_categories_catalog.lst']
-        self.assertEqual(categories.count('ABILITYCATEGORY:'), len(PACKAGES) + 2)
+        self.assertEqual(categories.count('ABILITYCATEGORY:'), len(PACKAGES) + 6)
+        stance_pool = next(line for line in categories.splitlines()
+                           if line.startswith('ABILITYCATEGORY:Spheres Versatile Fighter Stance\t'))
+        self.assertIn('POOL:0', stance_pool)
+        self.assertIn('EDITPOOL:NO', stance_pool)
         equipment_pool = next(line for line in categories.splitlines() if line.startswith('ABILITYCATEGORY:Spheres Equipment Bonus Talent'))
         self.assertIn('TYPE:EquipmentTalent\t', equipment_pool)
         self.assertNotIn('TYPE:Equipment\t', equipment_pool)
@@ -144,10 +148,22 @@ class CatalogTest(unittest.TestCase):
         self.assertIn('SKILL:spheres_skills.lst', (DATA / 'spheres.pcc').read_text())
 
     def test_skill_based_dcs_and_free_gadgets(self):
-        for slug, skill in (('alchemy', 'Craft (Alchemy)'), ('trap', 'Craft (Traps)')):
+        for slug, skill in (('trap', 'Craft (Traps)'),):
             self.assertIn('DEFINE:SPHERES_DC_' + slug.upper() + '|10+floor(skillinfo("TOTALRANK","' + skill + '")/2)',
                           self.files['spheres_might_' + slug + '.lst'])
         tech = self.files['spheres_might_tech.lst']
+        alchemy = self.files['spheres_might_alchemy.lst']
+        self.assertIn('DEFINE:SPHERES_DC_ALCHEMY|10+floor(SPHERES_ALCHEMY_RANKS/2)', alchemy)
+        self.assertIn('BONUS:VAR|SPHERES_ALCHEMY_RANKS|skillinfo("TOTALRANK","Heal")|PREABILITY:', alchemy)
+        self.assertIn('BONUS:VAR|SPHERES_ALCHEMY_RANKS|skillinfo("TOTALRANK","Craft (Alchemy)")|!PREABILITY:', alchemy)
+        salve = next(row for row in alchemy.splitlines() if row.startswith('Alchemy - Salve\t'))
+        self.assertIn('.AlchemyFormula', salve)
+        self.assertIn('BONUS:ABILITYPOOL|Spheres Alchemy Bonus Formula|1', self.files['spheres_catalog_packages.lst'])
+        self.assertIn('BONUS:VAR|SPHERES_ALCHEMY_FORMULAE|1', salve)
+        poison = next(row for row in alchemy.splitlines() if row.startswith('Alchemy - Witchbane\t'))
+        self.assertIn('PREABILITY:1,CATEGORY=Spheres Alchemy Package,Alchemy Package - Poison', poison)
+        self.assertNotIn('.AlchemyFormula', poison)
+        self.assertIn('DEFINE:SPHERES_ALCHEMY_BATCH|1+floor(SPHERES_ALCHEMY_RANKS/4)', alchemy)
         self.assertIn('BONUS:ABILITYPOOL|Spheres Tech Bonus Gadget|1', tech)
         for line in tech.splitlines():
             if line.startswith('Tech - Battery\t'):

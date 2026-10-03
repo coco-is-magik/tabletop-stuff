@@ -19,6 +19,49 @@ class PcgenFeats {
         var controller = new CharacterAbilities(pc, messages, facade.getDataSet(), new TodoManager());
         var feats = AbilityCategory.FEAT;
         boolean reload = args[4].equals("feats-reload");
+        if (args[6].equals("mixed")) {
+            try {
+                var advanced = ability(feats, "Advanced Magic Training");
+                var basic = ability(feats, "Basic Magic Training");
+                require(!basic.qualifies(pc, basic), "Spherecasting class accepted Basic Magic Training");
+                require(pc.getVariableValue("SPHERES_SPELL_POOL_LEVELS", "").intValue() == 4,
+                    "Mixed fixture spherecasting levels");
+                if (reload) {
+                    require(pc.hasAbilityKeyed(feats, advanced.getKeyName()), "Mixed training persistence");
+                    require(pc.getVariableValue("SPHERES_CASTER_LEVEL", "").intValue() == 5,
+                        "Mixed training caster level persistence");
+                    controller.removeAbility(feats, advanced);
+                }
+                int cl = pc.getVariableValue("SPHERES_CASTER_LEVEL", "").intValue();
+                int msb = pc.getVariableValue("SPHERES_MAGIC_SKILL_BONUS", "").intValue();
+                int sp = pc.getVariableValue("SPHERES_SPELL_POINTS", "").intValue();
+                var pool = pc.getAvailableAbilityPool(feats);
+                var casting = game.getAbilityCategory("Spheres Casting Ability");
+                var traditions = game.getAbilityCategory("Custom Casting Tradition");
+                require(pc.getAvailableAbilityPool(casting).intValue() == 1, "Class casting allowance");
+                require(pc.getAvailableAbilityPool(traditions).intValue() == 1, "Class tradition allowance");
+                controller.addAbility(feats, advanced);
+                require(pc.getVariableValue("SPHERES_CASTER_LEVEL", "").intValue() == cl + 3,
+                    "Only six noncasting levels should advance CL");
+                require(pc.getVariableValue("SPHERES_MAGIC_SKILL_BONUS", "").intValue() == msb + 6,
+                    "Only six noncasting levels should advance MSB");
+                require(pc.getVariableValue("SPHERES_SPELL_POINTS", "").intValue() == sp,
+                    "Noncasting levels inflated spell pool");
+                controller.removeAbility(feats, advanced);
+                require(pc.getVariableValue("SPHERES_CASTER_LEVEL", "").intValue() == cl, "Mixed CL refund");
+                require(pc.getVariableValue("SPHERES_MAGIC_SKILL_BONUS", "").intValue() == msb, "Mixed MSB refund");
+                require(pc.getAvailableAbilityPool(feats).equals(pool), "Mixed feat refund");
+                controller.addAbility(feats, advanced);
+            } finally {
+                controller.closeCharacter();
+            }
+            if (!reload) {
+                facade.setFile(Path.of(args[5]).toFile());
+                require(CharacterManager.saveCharacter(facade), "Mixed save failed");
+            }
+            System.out.println("SPHERES_GATES_OK: " + args[4]);
+            System.exit(0);
+        }
         boolean might = args[6].equals("might");
         var talents = game.getAbilityCategory(might ? "Spheres Combat Talent" : "Spheres Magic Talent");
         String sphere = might ? "Fencing Sphere" : "Life Sphere";
@@ -44,6 +87,14 @@ class PcgenFeats {
                     require(pc.hasAbilityKeyed(feats, "Basic Magic Training"), "Basic Magic reload");
                     require(pc.hasAbilityKeyed(feats, "Advanced Magic Training"), "Advanced Magic reload");
                     require(pc.getVariableValue("SPHERES_CASTER_LEVEL", "").intValue() == 5, "Training caster level reload");
+                    var castingChoices = game.getAbilityCategory("Spheres Casting Ability");
+                    var traditionChoices = game.getAbilityCategory("Custom Casting Tradition");
+                    require(pc.hasAbilityKeyed(castingChoices, "Wisdom Casting"), "Feat casting ability not persisted");
+                    require(pc.hasAbilityKeyed(traditionChoices, "Custom Casting Tradition"), "Feat tradition not persisted");
+                    require(pc.getAvailableAbilityPool(castingChoices).intValue() == 0, "Reload casting choice cost");
+                    require(pc.getAvailableAbilityPool(traditionChoices).intValue() == 0, "Reload tradition choice cost");
+                    controller.removeAbility(castingChoices, ability(castingChoices, "Wisdom Casting"));
+                    controller.removeAbility(traditionChoices, ability(traditionChoices, "Custom Casting Tradition"));
                     controller.removeAbility(game.getAbilityCategory("Spheres Basic Magic Sphere"),
                         ability(game.getAbilityCategory("Spheres Magic Talent"), "Life Sphere"));
                     controller.removeAbility(feats, ability(feats, "Advanced Magic Training"));
@@ -127,7 +178,21 @@ class PcgenFeats {
                 require(pc.getVariableValue("SPHERES_MARTIAL_FOCUS_CAPACITY", "").intValue() == 1, "Great Focus capacity refund");
                 controller.removeAbility(talents, ability(talents, "Shield Sphere"));
                 var basic = ability(feats, "Basic Magic Training");
+                var castingChoices = game.getAbilityCategory("Spheres Casting Ability");
+                var traditionChoices = game.getAbilityCategory("Custom Casting Tradition");
+                var wisdom = ability(castingChoices, "Wisdom Casting");
+                var tradition = ability(traditionChoices, "Custom Casting Tradition");
+                require(!wisdom.qualifies(pc, wisdom), "Noncaster ability choice unlocked");
+                require(!tradition.qualifies(pc, tradition), "Noncaster tradition unlocked");
                 controller.addAbility(feats, basic);
+                require(pc.getAvailableAbilityPool(castingChoices).intValue() == 1, "Feat casting ability allowance");
+                require(pc.getAvailableAbilityPool(traditionChoices).intValue() == 1, "Feat tradition allowance");
+                controller.addAbility(castingChoices, wisdom);
+                controller.addAbility(traditionChoices, tradition);
+                require(pc.hasAbilityKeyed(castingChoices, wisdom.getKeyName()), "Feat Wisdom casting rejected");
+                require(pc.hasAbilityKeyed(traditionChoices, tradition.getKeyName()), "Feat casting tradition rejected");
+                require(pc.getAvailableAbilityPool(castingChoices).intValue() == 0, "Casting choice cost");
+                require(pc.getAvailableAbilityPool(traditionChoices).intValue() == 0, "Tradition choice cost");
                 require(pc.getVariableValue("SPHERES_CASTER_LEVEL", "").intValue() == 1, "Basic Magic caster level");
                 require(pc.getVariableValue("SPHERES_MAGIC_TALENTS", "").intValue() == 0, "Basic Magic bonus talents leaked");
                 require(pc.getVariableValue("SPHERES_SPELL_POINTS", "").intValue() == 1, "Basic Magic spell pool");
@@ -141,10 +206,18 @@ class PcgenFeats {
                 require(pc.getVariableValue("SPHERES_MAGIC_SKILL_BONUS", "").intValue() == 10, "Advanced Magic skill bonus");
                 controller.removeAbility(feats, advanced);
                 controller.removeAbility(feats, basic);
+                require(!wisdom.qualifies(pc, wisdom), "Casting ability survived last casting source");
+                require(!tradition.qualifies(pc, tradition), "Tradition survived last casting source");
+                controller.removeAbility(castingChoices, wisdom);
+                controller.removeAbility(traditionChoices, tradition);
+                require(pc.getAvailableAbilityPool(castingChoices).intValue() == 0, "Casting allowance survived refund");
+                require(pc.getAvailableAbilityPool(traditionChoices).intValue() == 0, "Tradition allowance survived refund");
                 require(pc.getVariableValue("SPHERES_CASTER_LEVEL", "").intValue() == 0, "Magic training refund");
                 controller.addAbility(feats, basic);
                 controller.addAbility(feats, advanced);
                 controller.addAbility(basicPool, ability(game.getAbilityCategory("Spheres Magic Talent"), "Life Sphere"));
+                controller.addAbility(castingChoices, wisdom);
+                controller.addAbility(traditionChoices, tradition);
                 require(pc.getAvailableAbilityPool(basicPool).intValue() == 0, "Basic sphere cost");
                 require(pc.getAvailableAbilityPool(game.getAbilityCategory("Spheres Magic Talent")).intValue() == 0, "Basic sphere spent paid talents");
             }

@@ -18,6 +18,32 @@ implemented.** Full rules descriptions must not be mistaken for automation.
 
 ### Currently automated
 
+- Custom Training grants five weighted weapon-choice points per purchase using
+  existing Core proficiencies. Exotic choices cost two; other weapons cost one.
+  Duplicate weapon choices are rejected, additional purchases expand the budget,
+  and removing the talent revokes proficiency even from retained choices.
+  Additional-source weapon catalogs are not yet included.
+
+- Alchemy Formulae grants a restricted free formula selection; toxins require
+  Poison. Associated ranks drive DCs, prepared formula capacity, crafting batch
+  size and poison persistence. Field Medic uses the published Heal substitution
+  without also gaining Craft (Alchemy) ranks. General Alternative-Brew skill
+  selection is not yet implemented. Capacity variables do not track inventory,
+  elapsed crafting time or poison expenditure.
+
+- Reviewed direct Core feat associations use PCGen `SERVESAS` for prerequisite
+  equivalence without granting the associated feats' bonuses. The explicit
+  mapping is in `/bigdisk/programming/pathfinder1e/tools/spheres_associated_feats.py`.
+  Conditional/package/weapon-specific associations and dependent-feat prerequisite
+  waivers are not covered by that mapping.
+- Versatile Fighter has a one-slot active stance selector. Offensive, Defensive
+  and Recovery styles reuse existing feats; inactive styles grant none, and
+  removing the talent revokes a retained stance's feat benefits. Action timing,
+  on-hit riders and exclusion against other spheres' stances remain manual.
+  Live stance transition/removal and active-stance persistence checks passed
+  on resumption after earlier runtime timeouts, as recorded in
+  `/bigdisk/programming/pathfinder1e/docs/spheres-backlog.md`.
+
 - Base and talent selection through the existing PCGen pools; duplicate rejection
   for nonrepeatable records, spending/refunds and character persistence.
 - Explicitly recognized repeatable wording and repeat caps; special repeat

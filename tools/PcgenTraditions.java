@@ -3,6 +3,8 @@ package pcgen.gui2.facade;
 import java.nio.file.Path;
 import pcgen.core.Globals;
 import pcgen.core.SettingsHandler;
+import pcgen.core.Skill;
+import pcgen.core.analysis.SkillRankControl;
 import pcgen.system.CharacterManager;
 import static pcgen.gui2.facade.PcgenSpheresGates.*;
 
@@ -18,7 +20,53 @@ class PcgenTraditions {
         boolean reload = args[4].equals("tradition-reload");
         boolean magic = args[6].equals("power");
         try {
-            if (magic) {
+            if (args[6].equals("drawback-martial")) {
+                var tradition = game.getAbilityCategory("Conscript Martial Tradition");
+                var talents = game.getAbilityCategory("Spheres Combat Talent");
+                var special = game.getAbilityCategory("Special Ability");
+                var sergeant = ability(tradition, "Martial Tradition - Sergeant");
+                var spotter = ability(tradition, "Martial Tradition - Expedition Spotter");
+                var equipment = game.getAbilityCategory("Sergeant Tradition Choice 1");
+                var shield = ability(talents, "Equipment - Shield Training");
+                var armor = ability(talents, "Equipment - Armor Training");
+                var paid = pc.getAvailableAbilityPool(talents);
+                if (!reload) {
+                    var hacker = ability(tradition, "Martial Tradition - Hacker");
+                    var interfaceTalent = ability(talents, "Tech - Improved User Interface");
+                    controller.addAbility(tradition, hacker);
+                    require(pc.hasAbilityKeyed(talents, "Tech - Remote Control"), "Hacker first gadget");
+                    require(pc.hasAbilityKeyed(game.getAbilityCategory("FEAT"), "Remote Hacking"), "Hacker feat grant");
+                    require(pc.getAvailableAbilityPool(game.getAbilityCategory("Spheres Tech Bonus Gadget")).intValue() == 0, "Hacker extra free gadget");
+                    require(!interfaceTalent.qualifies(pc, interfaceTalent), "Unsecured accepted incompatible interface");
+                    controller.removeAbility(tradition, hacker);
+                    require(!pc.hasAbilityKeyed(talents, "Tech - Remote Control"), "Hacker gadget refund");
+                    require(!pc.hasAbilityKeyed(game.getAbilityCategory("FEAT"), "Remote Hacking"), "Hacker feat refund");
+                    controller.addAbility(tradition, spotter);
+                    require(pc.hasAbilityKeyed(talents, "Trap - Trap Finder"), "Dismantler bonus missing");
+                    require(pc.hasAbilityKeyed(special, "Martial Drawback - Dismantler"), "Dismantler missing");
+                    require(pc.getAvailableAbilityPool(game.getAbilityCategory("Expedition Spotter Tradition Choice 1")).intValue() == 1, "Spotter sphere choice");
+                    require(pc.getAvailableAbilityPool(game.getAbilityCategory("Expedition Spotter Tradition Choice 2")).intValue() == 1, "Spotter theme choice");
+                    controller.removeAbility(tradition, spotter);
+                    require(!pc.hasAbilityKeyed(talents, "Trap - Trap Finder"), "Dismantler refund");
+                    controller.addAbility(tradition, sergeant);
+                    require(pc.getAvailableAbilityPool(equipment).intValue() == 2, "Sergeant equipment choices");
+                    controller.addAbility(equipment, shield);
+                    controller.addAbility(equipment, armor);
+                }
+                require(pc.hasAbilityKeyed(talents, "Leadership - Squad"), "Squad grant/persistence");
+                require(pc.hasAbilityKeyed(game.getAbilityCategory("Spheres Leadership Package"), "Leadership Package - Cohort"), "Cohort grant");
+                require(pc.getAvailableAbilityPool(game.getAbilityCategory("Spheres Leadership Package")).intValue() == 0, "Extra cohort package slot");
+                require(pc.getAvailableAbilityPool(equipment).intValue() == 0, "Equipment spend/persistence");
+                require(pc.getAvailableAbilityPool(talents).equals(paid), "Tradition spent paid talents");
+                if (reload) {
+                    controller.removeAbility(equipment, armor);
+                    controller.removeAbility(equipment, shield);
+                    controller.removeAbility(tradition, sergeant);
+                    require(!pc.hasAbilityKeyed(talents, "Leadership - Squad"), "Squad refund");
+                    require(!pc.hasAbilityKeyed(special, "Martial Drawback - Squad Leader"), "Drawback refund");
+                    require(pc.getAvailableAbilityPool(equipment).intValue() == 0, "Equipment pool refund");
+                }
+            } else if (magic) {
                 var tradition = game.getAbilityCategory("Custom Casting Tradition");
                 var drawback = game.getAbilityCategory("Custom Casting Drawback");
                 var boon = game.getAbilityCategory("Custom Casting Boon");
@@ -170,6 +218,177 @@ class PcgenTraditions {
                 controller.addAbility(drawback, verbal);
                 controller.addAbility(drawback, somatic);
                 controller.addAbility(boon, easy);
+            } else if (args[6].equals("liturgist")) {
+                var tradition = game.getAbilityCategory("Conscript Martial Tradition");
+                var combat = game.getAbilityCategory("Spheres Combat Talent");
+                var magicTalents = game.getAbilityCategory("Spheres Magic Talent");
+                var spheres = game.getAbilityCategory("Liturgist Magic Sphere");
+                var training = game.getAbilityCategory("Spheres Custom Training Weapon");
+                var feat = game.getAbilityCategory("FEAT");
+                var selected = ability(tradition, "Martial Tradition - Liturgist");
+                var life = ability(magicTalents, "Life Sphere");
+                var sword = ability(training, "Custom Training - Longsword");
+                var exotic = ability(training, "Custom Training - Sword (Bastard)");
+                var swordProf = Globals.getContext().getReferenceContext().silentlyGetConstructedCDOMObject(pcgen.core.WeaponProf.class, "Longsword");
+                var exoticProf = Globals.getContext().getReferenceContext().silentlyGetConstructedCDOMObject(pcgen.core.WeaponProf.class, "Sword (Bastard)");
+                if (reload) {
+                    require(pc.hasAbilityKeyed(tradition, selected.getKeyName()), "Liturgist persisted");
+                    require(pc.hasAbilityKeyed(magicTalents, life.getKeyName()), "Liturgist sphere persisted");
+                    require(pc.getAvailableAbilityPool(training).intValue() == 2, "Weapon costs persisted");
+                    require(pc.hasWeaponProf(swordProf) && pc.hasWeaponProf(exoticProf), "Weapon proficiencies persisted");
+                    controller.removeAbility(spheres, life);
+                    controller.removeAbility(training, sword);
+                    controller.removeAbility(training, exotic);
+                    controller.removeAbility(tradition, selected);
+                }
+                var paid = pc.getAvailableAbilityPool(combat);
+                var feats = pc.getAvailableAbilityPool(feat);
+                require(!sword.qualifies(pc, sword), "Weapon requires Custom Training");
+                controller.addAbility(tradition, selected);
+                require(pc.hasAbilityKeyed(feat, "Basic Magic Training"), "Liturgist feat grant");
+                require(pc.getAvailableAbilityPool(game.getAbilityCategory("Spheres Basic Magic Sphere")).intValue() == 0, "No unrestricted bonus sphere");
+                require(pc.getAvailableAbilityPool(spheres).intValue() == 1, "Restricted sphere allowance");
+                require(pc.getAvailableAbilityPool(training).intValue() == 5, "Training budget");
+                controller.addAbility(training, sword);
+                controller.addAbility(training, exotic);
+                require(pc.getAvailableAbilityPool(training).intValue() == 2, "Exotic double cost");
+                require(pc.hasWeaponProf(swordProf) && pc.hasWeaponProf(exoticProf), "Actual weapon proficiencies granted");
+                rejected(controller, messages, training, sword, "InfoAbility.Messages.Duplicate");
+                var custom = ability(combat, "Equipment - Custom Training");
+                controller.addAbility(combat, custom);
+                require(pc.getAvailableAbilityPool(training).intValue() == 7, "Repeated training adds five points");
+                controller.removeAbility(combat, custom);
+                require(pc.getAvailableAbilityPool(training).intValue() == 2, "Repeated training refund keeps original");
+                controller.addAbility(spheres, life);
+                require(pc.getAvailableAbilityPool(spheres).intValue() == 0, "Restricted sphere spent");
+                require(pc.getAvailableAbilityPool(combat).equals(paid), "Paid combat pool isolation");
+                require(pc.getAvailableAbilityPool(feat).equals(feats), "Paid feat pool isolation");
+                controller.removeAbility(spheres, life);
+                controller.removeAbility(tradition, selected);
+                require(!sword.qualifies(pc, sword), "Training prerequisite loss");
+                require(!pc.hasWeaponProf(swordProf) && !pc.hasWeaponProf(exoticProf), "Invalid retained choices grant no proficiency");
+                require(!pc.hasAbilityKeyed(feat, "Basic Magic Training"), "Training feat removed");
+                controller.removeAbility(training, sword);
+                controller.removeAbility(training, exotic);
+                require(pc.getAvailableAbilityPool(training).intValue() == 0, "Training refunded");
+                controller.addAbility(tradition, selected);
+                controller.addAbility(training, sword);
+                controller.addAbility(training, exotic);
+                controller.addAbility(spheres, life);
+            } else if (args[6].equals("brew")) {
+                var combat = game.getAbilityCategory("Spheres Combat Talent");
+                var associated = game.getAbilityCategory("Spheres Alchemy Associated Skill");
+                var alchemy = ability(combat, "Alchemy Sphere");
+                var profession = ability(associated, "Alternative-Brew - Profession - Soldier");
+                var craft = ability(associated, "Alternative-Brew - Craft - Mechanical");
+                if (reload) {
+                    require(pc.hasAbilityKeyed(associated, profession.getKeyName()), "Alternative skill persisted");
+                    require(pc.getVariableValue("SPHERES_ALCHEMY_RANKS", "").intValue() == 1, "Alternative ranks persisted");
+                    controller.removeAbility(associated, profession);
+                    controller.removeAbility(combat, alchemy);
+                }
+                controller.addAbility(combat, alchemy);
+                var paid = pc.getAvailableAbilityPool(combat);
+                controller.addAbility(associated, craft);
+                var skill = Globals.getContext().getReferenceContext().silentlyGetConstructedCDOMObject(Skill.class, "Craft (Mechanical)");
+                require(SkillRankControl.getTotalRank(pc, skill).intValue() == 1, "Configurable Craft ranks");
+                require(pc.getVariableValue("SPHERES_ALCHEMY_RANKS", "").intValue() == 1, "Configurable Craft DC ranks");
+                require(pc.getAvailableAbilityPool(associated).intValue() == 0, "Single associated skill");
+                controller.removeAbility(associated, craft);
+                require(SkillRankControl.getTotalRank(pc, skill).intValue() == 0, "Craft choice refund");
+                controller.addAbility(associated, profession);
+                require(pc.getAvailableAbilityPool(combat).equals(paid), "Alternative grants no paid talent");
+            } else if (args[6].equals("medic")) {
+                var tradition = game.getAbilityCategory("Conscript Martial Tradition");
+                var combat = game.getAbilityCategory("Spheres Combat Talent");
+                var packages = game.getAbilityCategory("Spheres Alchemy Package");
+                var free = game.getAbilityCategory("Spheres Alchemy Bonus Formula");
+                var medic = ability(tradition, "Martial Tradition - Field Medic");
+                var alchemy = ability(combat, "Alchemy Sphere");
+                var formulae = ability(packages, "Alchemy Package - Formulae");
+                var salve = ability(combat, "Alchemy - Salve");
+                var heal = Globals.getContext().getReferenceContext().silentlyGetConstructedCDOMObject(Skill.class, "Heal");
+                var craft = Globals.getContext().getReferenceContext().silentlyGetConstructedCDOMObject(Skill.class, "Craft (Alchemy)");
+                if (reload) {
+                    require(pc.hasAbilityKeyed(tradition, medic.getKeyName()), "Medic persisted");
+                    require(pc.hasAbilityKeyed(combat, salve.getKeyName()), "Medic salve persisted");
+                    require(SkillRankControl.getTotalRank(pc, heal).intValue() == 1, "Medic skill persisted");
+                    controller.removeAbility(tradition, medic);
+                }
+                var paid = pc.getAvailableAbilityPool(combat);
+                controller.addAbility(tradition, medic);
+                require(SkillRankControl.getTotalRank(pc, heal).intValue() == 1, "Medic Heal ranks");
+                require(SkillRankControl.getTotalRank(pc, craft).intValue() == 0, "Medic must not grant Craft ranks");
+                require(pc.getVariableValue("SPHERES_ALCHEMY_RANKS", "").intValue() == 1, "Medic associated ranks");
+                require(pc.getVariableValue("SPHERES_ALCHEMY_FORMULAE", "").intValue() == 1, "Medic formula count");
+                require(pc.getVariableValue("SPHERES_ALCHEMY_PREPARED_FORMULAE", "").intValue() == 2, "Medic formula capacity");
+                require(pc.getVariableValue("SPHERES_ALCHEMY_BATCH", "").intValue() == 1, "Medic formula batch");
+                require(!ability(combat, "Alchemy - Witchbane").qualifies(pc, ability(combat, "Alchemy - Witchbane")), "Toxin requires poison package");
+                require(pc.getAvailableAbilityPool(free).intValue() == 0, "Salve consumes free formula");
+                require(pc.getAvailableAbilityPool(packages).intValue() == 0, "Fixed formulae package cost");
+                require(pc.getAvailableAbilityPool(combat).equals(paid), "Medic preserves paid talents");
+                controller.removeAbility(tradition, medic);
+                require(!pc.hasAbilityKeyed(combat, salve.getKeyName()), "Medic salve refund");
+                require(SkillRankControl.getTotalRank(pc, heal).intValue() == 0, "Medic Heal refund");
+                controller.addAbility(combat, alchemy);
+                require(SkillRankControl.getTotalRank(pc, craft).intValue() == 1, "Ordinary Alchemy restores Craft");
+                controller.addAbility(packages, formulae);
+                require(pc.getAvailableAbilityPool(free).intValue() == 1, "Ordinary formulae free choice");
+                controller.addAbility(free, salve);
+                require(pc.hasAbilityKeyed(combat, salve.getKeyName()), "Free formula selection");
+                controller.removeAbility(free, salve);
+                controller.removeAbility(packages, formulae);
+                controller.removeAbility(combat, alchemy);
+                require(pc.getAvailableAbilityPool(combat).equals(paid), "Ordinary Alchemy refund");
+                var associated = game.getAbilityCategory("Spheres Alchemy Associated Skill");
+                var brewing = ability(associated, "Alternative-Brew - Profession - Soldier");
+                var soldier = Globals.getContext().getReferenceContext().silentlyGetConstructedCDOMObject(Skill.class, "Profession (Soldier)");
+                require(!brewing.qualifies(pc, brewing), "Brew requires Alchemy");
+                controller.addAbility(combat, alchemy);
+                controller.addAbility(associated, brewing);
+                require(SkillRankControl.getTotalRank(pc, soldier).intValue() == 1, "Alternative profession ranks");
+                require(SkillRankControl.getTotalRank(pc, craft).intValue() == 0, "Alternative replaces Craft ranks");
+                require(pc.getVariableValue("SPHERES_ALCHEMY_RANKS", "").intValue() == 1, "Alternative associated ranks: " + pc.getVariableValue("SPHERES_ALCHEMY_RANKS", ""));
+                require(!medic.qualifies(pc, medic), "Medic rejects conflicting associated skill");
+                controller.removeAbility(combat, alchemy);
+                require(SkillRankControl.getTotalRank(pc, soldier).intValue() == 0, "Retained brew grants no ranks without sphere");
+                controller.removeAbility(associated, brewing);
+                require(pc.getAvailableAbilityPool(associated).intValue() == 1, "Brew refund");
+                controller.addAbility(tradition, medic);
+                require(!brewing.qualifies(pc, brewing), "Medic excludes alternate profession");
+            } else if (args[6].equals("ace")) {
+                var tradition = game.getAbilityCategory("Conscript Martial Tradition");
+                var combat = game.getAbilityCategory("Spheres Combat Talent");
+                var packages = game.getAbilityCategory("Spheres Athletics Package");
+                var start = game.getAbilityCategory("Ace Starting Package");
+                var ace = ability(tradition, "Martial Tradition - Ace");
+                var fly = ability(packages, "Athletics Package - Fly");
+                var pilot = Globals.getContext().getReferenceContext().silentlyGetConstructedCDOMObject(Skill.class, "Profession (Pilot)");
+                var flying = Globals.getContext().getReferenceContext().silentlyGetConstructedCDOMObject(Skill.class, "Fly");
+                if (reload) {
+                    require(pc.hasAbilityKeyed(tradition, ace.getKeyName()), "Ace persisted");
+                    require(pc.hasAbilityKeyed(packages, fly.getKeyName()), "Ace package persisted");
+                    require(SkillRankControl.getTotalRank(pc, flying).intValue() == 0, "Driver ranks persisted incorrectly");
+                    controller.removeAbility(start, fly);
+                    controller.removeAbility(tradition, ace);
+                }
+                var paid = pc.getAvailableAbilityPool(combat);
+                controller.addAbility(tradition, ace);
+                require(pc.hasAbilityKeyed(combat, "Athletics - Ace Pilot"), "Driver bonus talent");
+                require(!pc.hasAbilityKeyed(combat, "Equipment Sphere"), "Ace must not grant Equipment");
+                require(pc.getAvailableAbilityPool(packages).intValue() == 0, "Ace ordinary package slot");
+                require(pc.getAvailableAbilityPool(start).intValue() == 1, "Ace restricted package slot");
+                controller.addAbility(start, fly);
+                require(pc.hasAbilityKeyed(packages, fly.getKeyName()), "Ace chosen package");
+                require(SkillRankControl.getTotalRank(pc, flying).intValue() == 0, "Driver must suppress package ranks");
+                require(SkillRankControl.getTotalRank(pc, pilot).intValue() == 1, "Ace Pilot ranks");
+                require(pc.getAvailableAbilityPool(combat).equals(paid), "Ace spent paid talents");
+                controller.removeAbility(tradition, ace);
+                require(!pc.hasAbilityKeyed(combat, "Athletics - Ace Pilot"), "Driver talent refund");
+                require(SkillRankControl.getTotalRank(pc, pilot).intValue() == 0, "Pilot rank refund");
+                controller.removeAbility(start, fly);
+                controller.addAbility(tradition, ace);
+                controller.addAbility(start, fly);
             } else if (args[6].equals("halfling") || args[6].equals("half-orc")) {
                 boolean halfling = args[6].equals("halfling");
                 String race = halfling ? "Halfling" : "Half-Orc";

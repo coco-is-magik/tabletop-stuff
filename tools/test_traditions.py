@@ -6,6 +6,10 @@ from spheres_traditions import build, OUTPUT, sections, LEGACY, DEFERRED, CONFLI
 
 
 class TraditionTests(unittest.TestCase):
+    def test_feat_casters_qualify_for_custom_tradition(self):
+        self.assertIn('CATEGORY=Custom Casting Tradition|Custom Casting Tradition.MOD\t'
+                      'PRE:.CLEAR\tPREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core', build())
+
     def test_embodiment_records_substance_without_unpublished_repeat(self):
         row = next(row for row in build().splitlines() if row.startswith('Tradition - Embodiment\t'))
         self.assertIn('CHOOSE:USERINPUT|1|TITLE=Substance embodied', row)

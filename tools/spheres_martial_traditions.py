@@ -10,6 +10,12 @@ from spheres_traditions import name, description
 # Fixed grants and independent variable slots. A trailing '*' is a sphere's
 # existing basic-talent list, not permission to select advanced talents.
 TRADITIONS = {
+    'Liturgist': (['Equipment - Custom Training', 'Leadership Sphere'], [(1, ['Leadership - Base Of Operations', 'Equipment*'])]),
+    'Field Medic': (['Equipment - Fast Draw', 'Alchemy Sphere', 'Scout Sphere'], [(1, ['Alchemy*', 'Scout*'])]),
+    'Ace': (['Athletics Sphere', 'Athletics - Mobile Striker', 'Athletics - Reflexive Twist'], [(1, ['Athletics*'])]),
+    'Hacker': (['Equipment - Techmaniac', 'Equipment - Toolkit Training', 'Tech Sphere'], [(1, ['Tech*', 'Trap Sphere'])]),
+    'Expedition Spotter': (['Equipment - Rogue Weapon Training', 'Trap Sphere'], [(1, ['Duelist Sphere', 'Fencing Sphere']), (1, ['Scout Sphere', 'Trap - Expert Eye'])]),
+    'Sergeant': (['Leadership Sphere', 'Warleader Sphere'], [(2, ['Equipment*'])]),
     'Tattooed Warrior': (['Equipment - Unarmed Training', 'Equipment - Unarmored Training'], []),
     'Elven Duelist': (['Equipment - Elvish Heritage', 'Equipment - Finesse Fighting', 'Equipment - Finesse Fighting'], [(1, ['Duelist Sphere', 'Fencing Sphere'])]),
     'Wandering Martial Artist': (['Equipment - Force Redirection Technique', 'Equipment - Unarmored Training'], [(1, ['Equipment discipline*']), (1, ['Athletics Sphere', 'Gladiator Sphere'])]),
@@ -72,6 +78,9 @@ TRADITIONS = {
     'Tempest Dancer': (['Equipment - Double Weapon Training', 'Dual Wielding Sphere'], [(1, ['Equipment - Armor Training', 'Equipment - Unarmored Training', 'Equipment - Finesse Fighting']), (1, ['Dual Wielding*'])]),
 }
 PACKAGES = {
+    'Liturgist': ('Leadership', 'Followers'),
+    'Field Medic': ('Alchemy', 'Formulae'),
+    'Sergeant': ('Leadership', 'Cohort'),
     'Janjaweed': ('Beastmastery', 'Ride'),
     'Animal Trainer': ('Beastmastery', 'Handle Animal'),
     'Chemist': ('Alchemy', 'Formulae'), 'Commando': ('Leadership', 'Cohort'),
@@ -129,6 +138,40 @@ def build():
         'SOURCEPAGE:' + equipment_source['url'] + '#' + force['anchor']])
     abilities[force_key] = force_record
     rows.append(force_record)
+    drawback_sources = json.loads((SNAPSHOTS / 'martial-traditions.json').read_text())['sections']
+    brew = next(row for row in drawback_sources if name(row['heading']) == 'Alternative-Brew')
+    rows.append('\t'.join([
+        'Martial Drawback - Alternative-Brew (Heal)', 'CATEGORY:Special Ability',
+        'TYPE:SpheresMartialDrawback.Alchemy',
+        'DESC:' + description(brew) + ' Field Medic selects Heal as its associated skill.',
+        'SOURCEPAGE:https://spheresofpower.wikidot.com/martial-traditions#' + brew['anchor']]))
+    driver = next(row for row in drawback_sources if name(row['heading']) == 'Driver')
+    rows.append('\t'.join([
+        'Martial Drawback - Driver', 'CATEGORY:Special Ability',
+        'TYPE:SpheresMartialDrawback.Athletics',
+        'ABILITY:Spheres Combat Talent|AUTOMATIC|Athletics - Ace Pilot',
+        'DESC:' + description(driver),
+        'SOURCEPAGE:https://spheresofpower.wikidot.com/martial-traditions#' + driver['anchor']]))
+    unsecured = next(row for row in drawback_sources if name(row['heading']) == 'Unsecured')
+    rows.append('\t'.join([
+        'Martial Drawback - Unsecured', 'CATEGORY:Special Ability',
+        'TYPE:SpheresMartialDrawback.Tech',
+        'ABILITY:FEAT|AUTOMATIC|Remote Hacking',
+        'ABILITY:Spheres Combat Talent|AUTOMATIC|Tech - Remote Control',
+        'BONUS:ABILITYPOOL|Spheres Tech Bonus Gadget|-1',
+        'DESC:' + description(unsecured) + ' Apply the conditional gadget saving throw penalty to the gadget, not its creator.',
+        'SOURCEPAGE:https://spheresofpower.wikidot.com/martial-traditions#' + unsecured['anchor']]))
+    rows.append('CATEGORY=Spheres Combat Talent|Tech - Improved User Interface.MOD\t!PREABILITY:1,CATEGORY=Special Ability,Martial Drawback - Unsecured')
+    for drawback, sphere, talent in (('Dismantler', 'Trap', 'Trap Finder'),
+                                     ('Squad Leader', 'Leadership', 'Squad')):
+        source_row = next(row for row in drawback_sources if name(row['heading']) == drawback)
+        rows.append('\t'.join([
+            'Martial Drawback - ' + drawback, 'CATEGORY:Special Ability',
+            'TYPE:SpheresMartialDrawback.' + sphere,
+            'ABILITY:Spheres Combat Talent|AUTOMATIC|' + sphere + ' - ' + talent,
+            'DESC:' + description(source_row) + ' Apply these restrictions when using the sphere; '
+            'the character builder does not resolve trap placement or cohort recruitment.',
+            'SOURCEPAGE:https://spheresofpower.wikidot.com/martial-traditions#' + source_row['anchor']]))
     for title, (fixed, choices) in TRADITIONS.items():
         expand(fixed, abilities)
         key = 'Martial Tradition - ' + title
@@ -144,7 +187,36 @@ def build():
         if title == 'Tattooed Warrior':
             tags += ['ABILITY:FEAT|AUTOMATIC|Dragon’s Tattoos|Zodiac Tattoos',
                      'BONUS:SKILLRANK|Craft (Tattoos)|TL']
-        if title not in ('Iron Breaker Style', 'Free Runner'):
+        if title == 'Hacker':
+            tags += ['ABILITY:Special Ability|AUTOMATIC|Martial Drawback - Unsecured',
+                     '!PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech - Improved User Interface']
+        if title == 'Field Medic':
+            tags += ['ABILITY:Special Ability|AUTOMATIC|Martial Drawback - Alternative-Brew (Heal)',
+                     '!PREABILITY:1,CATEGORY=Spheres Alchemy Associated Skill,TYPE.SpheresAlternativeBrew',
+                     'ABILITY:Spheres Combat Talent|AUTOMATIC|Alchemy - Salve',
+                     'BONUS:ABILITYPOOL|Spheres Alchemy Bonus Formula|-1']
+        if title == 'Liturgist':
+            tags += ['ABILITY:FEAT|AUTOMATIC|Basic Magic Training',
+                     'BONUS:ABILITYPOOL|Spheres Basic Magic Sphere|-1',
+                     'BONUS:ABILITYPOOL|Liturgist Magic Sphere|1']
+            categories.append('\t'.join([
+                'ABILITYCATEGORY:Liturgist Magic Sphere', 'CATEGORY:Spheres Magic Talent',
+                'ABILITYLIST:Death Sphere|Fate Sphere|Life Sphere',
+                'EDITABLE:YES', 'EDITPOOL:NO', 'FRACTIONALPOOL:NO', 'VISIBLE:QUALIFY',
+                'POOL:0', 'PLURAL:Liturgist Magic Sphere', 'DISPLAYLOCATION:Spheres']))
+        if title in ('Expedition Spotter', 'Sergeant'):
+            drawback = 'Dismantler' if title == 'Expedition Spotter' else 'Squad Leader'
+            tags.append('ABILITY:Special Ability|AUTOMATIC|Martial Drawback - ' + drawback)
+        if title == 'Ace':
+            tags += ['ABILITY:Special Ability|AUTOMATIC|Martial Drawback - Driver',
+                     'BONUS:ABILITYPOOL|Spheres Athletics Package|-1',
+                     'BONUS:ABILITYPOOL|Ace Starting Package|1']
+            categories.append('\t'.join([
+                'ABILITYCATEGORY:Ace Starting Package', 'CATEGORY:Spheres Athletics Package',
+                'ABILITYLIST:Athletics Package - Fly|Athletics Package - Run|Athletics Package - Swim',
+                'EDITABLE:YES', 'EDITPOOL:NO', 'FRACTIONALPOOL:NO', 'VISIBLE:QUALIFY',
+                'POOL:0', 'PLURAL:Ace Starting Package', 'DISPLAYLOCATION:Spheres']))
+        if title not in ('Iron Breaker Style', 'Free Runner', 'Ace'):
             tags += ['ABILITY:Spheres Combat Talent|AUTOMATIC|Equipment Sphere',
                 # A fixed Equipment talent occupies the Equipment sphere's free
                 # first talent. Do not grant a fifth talent with the base sphere.

@@ -6,6 +6,8 @@ import java.util.List;
 import pcgen.core.Globals;
 import pcgen.core.SettingsHandler;
 import pcgen.core.Skill;
+import pcgen.core.prereq.PrereqHandler;
+import pcgen.persistence.lst.prereq.PreParserFactory;
 import pcgen.core.analysis.SkillRankControl;
 import pcgen.system.CharacterManager;
 import static pcgen.gui2.facade.PcgenSpheresGates.*;
@@ -28,6 +30,50 @@ class PcgenCatalog {
         if (variable != null) {
             require(pc.getVariableValue(variable, "").intValue() == expected, "Resource: " + variable);
         }
+    }
+
+    private static boolean satisfies(pcgen.core.PlayerCharacter pc, String prerequisite) throws Exception {
+        return PrereqHandler.passes(PreParserFactory.getInstance().parse(prerequisite), pc, null);
+    }
+
+    private static void checkAssociatedFeats(pcgen.core.PlayerCharacter pc,
+            CharacterAbilities controller, pcgen.core.AbilityCategory cat) throws Exception {
+        var talent = ability(cat, "Equipment - Dagger Dancer");
+        String prerequisite = "PREFEAT:1,Critical Focus";
+        require(!satisfies(pc, prerequisite), "Unexpected Critical Focus before talent");
+        var pool = pc.getAvailableAbilityPool(cat);
+        var feats = SettingsHandler.getGameAsProperty().get().getAbilityCategory("FEAT");
+        var featPool = pc.getAvailableAbilityPool(feats);
+        controller.addAbility(cat, talent);
+        require(satisfies(pc, prerequisite), "Associated feat did not satisfy PREFEAT");
+        require(satisfies(pc, "PREABILITY:1,CATEGORY=FEAT,Critical Focus"),
+                "Associated feat did not satisfy upstream PREABILITY");
+        require(pc.getAvailableAbilityPool(feats).equals(featPool), "Association spent feat pool");
+        controller.removeAbility(cat, talent);
+        require(!satisfies(pc, prerequisite), "Association survived talent removal");
+        require(pc.getAvailableAbilityPool(cat).equals(pool), "Association refund");
+        var versatile = ability(cat, "Equipment - Versatile Fighter");
+        var stances = SettingsHandler.getGameAsProperty().get().getAbilityCategory("Spheres Versatile Fighter Stance");
+        var offensive = ability(stances, "Versatile Fighter - Offensive Style");
+        var defensive = ability(stances, "Versatile Fighter - Defensive Style");
+        require(!offensive.qualifies(pc, offensive), "Stance without talent");
+        controller.addAbility(cat, versatile);
+        require(pc.getAvailableAbilityPool(stances).intValue() == 1, "Stance slot");
+        require(!satisfies(pc, "PREFEAT:1,Power Attack"), "Inactive stance granted feat");
+        controller.addAbility(stances, offensive);
+        require(pc.getAvailableAbilityPool(stances).intValue() == 0, "Stance cost");
+        require(satisfies(pc, "PREFEAT:1,Power Attack"), "Offensive feat missing");
+        require(!satisfies(pc, "PREFEAT:1,Combat Expertise"), "Wrong stance feat");
+        controller.removeAbility(stances, offensive);
+        require(!satisfies(pc, "PREFEAT:1,Power Attack"), "Inactive offensive feat retained");
+        controller.addAbility(stances, defensive);
+        require(satisfies(pc, "PREFEAT:1,Combat Expertise"), "Defensive feat missing");
+        controller.removeAbility(cat, versatile);
+        require(!defensive.qualifies(pc, defensive), "Stance survived prerequisite loss");
+        require(!satisfies(pc, "PREFEAT:1,Combat Expertise"), "Invalid stance retained feat benefits");
+        controller.removeAbility(stances, defensive);
+        require(pc.getAvailableAbilityPool(cat).equals(pool), "Stance talent refund");
+        require(pc.getAvailableAbilityPool(feats).equals(featPool), "Stance spent feat pool");
     }
 
     public static void main(String[] args) throws Exception {
@@ -57,6 +103,17 @@ class PcgenCatalog {
                     }
                 }
                 if (fields[0].equals("Equipment Sphere") && reload) {
+                    var stances = game.getAbilityCategory("Spheres Versatile Fighter Stance");
+                    var offensive = ability(stances, "Versatile Fighter - Offensive Style");
+                    require(pc.hasAbilityKeyed(stances, offensive.getKeyName()), "Active stance lost on reload");
+                    require(satisfies(pc, "PREFEAT:1,Power Attack"), "Active stance feat lost on reload");
+                    require(satisfies(pc, "PREFEAT:1,Critical Focus"), "Association lost on reload");
+                    controller.removeAbility(stances, offensive);
+                    controller.removeAbility(cat, ability(cat, "Equipment - Versatile Fighter"));
+                    controller.removeAbility(cat, ability(cat, "Equipment - Dagger Dancer"));
+                    require(!satisfies(pc, "PREFEAT:1,Power Attack"), "Stance feat survived reload refund");
+                    require(!satisfies(pc, "PREFEAT:1,Critical Focus"), "Association survived reload refund");
+                    checkAssociatedFeats(pc, controller, cat);
                     var bonus = game.getAbilityCategory("Spheres Equipment Bonus Talent");
                     require(pc.hasAbilityKeyed(cat, "Equipment - Shield Training"), "Equipment grant reload");
                     controller.removeAbility(bonus, ability(cat, "Equipment - Shield Training"));
@@ -132,6 +189,10 @@ class PcgenCatalog {
                         ability(cat, "Equipment - Shield Training"));
                     controller.addAbility(cat, ability(cat, "Equipment - Finesse Fighting"));
                     controller.addAbility(cat, ability(cat, "Equipment - Finesse Fighting"));
+                    controller.addAbility(cat, ability(cat, "Equipment - Dagger Dancer"));
+                    controller.addAbility(cat, ability(cat, "Equipment - Versatile Fighter"));
+                    var stances = game.getAbilityCategory("Spheres Versatile Fighter Stance");
+                    controller.addAbility(stances, ability(stances, "Versatile Fighter - Offensive Style"));
                 }
             }
             require(pc.getAvailableAbilityPool(other).equals(otherPool), "Pool isolation");

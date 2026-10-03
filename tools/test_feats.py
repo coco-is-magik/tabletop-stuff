@@ -16,6 +16,16 @@ class FeatTests(unittest.TestCase):
         for name, content in self.outputs.items():
             self.assertEqual((DATA / name).read_text(), content, name)
 
+    def test_alchemy_required_feats_use_associated_ranks(self):
+        affected = [row for row in self.rows
+                    if 'PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy Sphere' in row['prerequisites']
+                    and any('SPHERES_ALCHEMY_RANKS' in tag for tag in row['prerequisites'])]
+        self.assertTrue(affected)
+        for row in affected:
+            self.assertFalse(any('PRESKILL:1,Craft (Alchemy)=' in tag for tag in row['prerequisites']))
+        self.assertEqual(self.parser.clause('Craft (alchemy) 5 ranks'),
+                         ['PRESKILL:1,Craft (Alchemy)=5'])
+
     def test_identity_and_no_legacy_duplicates(self):
         lines = self.outputs["spheres_feat_catalog.lst"].splitlines()[1:]
         keys = [line.split("\t")[0] for line in lines]
@@ -119,6 +129,26 @@ class FeatTests(unittest.TestCase):
         self.assertEqual(self.parser.clause("5 ranks in Diplomacy"), ["PRESKILL:1,Diplomacy=5"])
         self.assertIsNone(self.parser.clause("5 ranks in any 2 skills"))
         self.assertIsNone(self.parser.clause("Profession (notaskill) 5 ranks"))
+
+    def test_magic_training_does_not_count_other_caster_classes_as_martial(self):
+        rows = self.outputs['spheres_feat_catalog.lst'].splitlines()
+        for name in ('Basic Magic Training', 'Advanced Magic Training'):
+            row = next(row for row in rows if row.startswith(name + '\t'))
+            self.assertNotIn('SPHERES_INCANTER_LEVEL', row)
+            self.assertIn('SPHERES_SPELL_POOL_LEVELS', row)
+        advanced = next(row for row in rows if row.startswith('Advanced Magic Training\t'))
+        self.assertIn('floor((TL-SPHERES_SPELL_POOL_LEVELS)/2)', advanced)
+
+    def test_basic_training_unlocks_existing_casting_choices_without_class_levels(self):
+        row = next(row for row in self.outputs['spheres_feat_catalog.lst'].splitlines()
+                   if row.startswith('Basic Magic Training\t'))
+        for category in ('Spheres Casting Ability', 'Custom Casting Tradition'):
+            self.assertIn('BONUS:ABILITYPOOL|' + category +
+                          '|1|PREVAREQ:SPHERES_SPELL_POOL_LEVELS,0', row)
+        for row in (DATA / 'spheres_core.lst').read_text().splitlines():
+            if '\tCATEGORY:Spheres Casting Ability\t' in row:
+                self.assertIn('PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core', row)
+                self.assertNotIn('PREVARGTEQ:SPHERES_SPELL_POOL_LEVELS', row)
 
     def test_one_of_alternatives(self):
         tags = self.parser.clause("one of Agonizing Defiling, Ruinous Defiling, or Spellburn Defiling")

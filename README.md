@@ -121,8 +121,12 @@ is incomplete**. Supported behavior and remaining requirements:
 Power/Might feat records and selected mechanics are also available. This is not
 complete feat automation; unresolved prerequisites require explicit adjudication.
 Coverage, tests and limitations: `/bigdisk/programming/pathfinder1e/docs/spheres-feats.md`.
-The September 29 continuation inventory, verified fixes and remaining content
+The September 30 continuation inventory, verified fixes and remaining content
 backlog are recorded in `/bigdisk/programming/pathfinder1e/docs/spheres-backlog.md`.
+Reviewed direct feat-equivalence mappings and Versatile Fighter's active stance
+choices now reuse PCGen's existing mechanisms. Conditional equivalences and
+complete configurable companion/transformation and class mechanics remain open;
+the backlog distinguishes passed controller checks from pending persistence checks.
 Incanter has level 1-20
 base progression, mental casting choices, bonus-feat support, several
 specializations, Core domain/bloodline adapters, Admixture, Destruction

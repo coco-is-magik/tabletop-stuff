@@ -9,6 +9,7 @@ import re
 
 from spheres_catalog import inventory
 from spheres_catalog_source import ROOT, SNAPSHOTS
+from spheres_associated_feats import equivalence_tags
 
 DATA = ROOT / "data/spheres"
 LEGACY = {"Admixture", "Searing Blast", "Epicenter", "Gather Energy"}
@@ -70,6 +71,10 @@ def repeat_limit(talent):
 
 
 def build():
+    from spheres_custom_training import build as custom_training
+    from spheres_alternative_brew import build as alternative_brew
+    from spheres_alternative_brew import skills as brewing_skills
+    from spheres_alternative_brew import key as brewing_key
     rows = inventory()
     overrides = json.loads((DATA / "catalog-mechanics.json").read_text())
     categories, packages, output = [], [], {}
@@ -96,10 +101,33 @@ def build():
         if row["system"] == "might":
             base_tags.extend(["DEFINE:SPHERES_BAB_" + ident.upper() + "|BAB",
                 "DEFINE:SPHERES_DC_" + ident.upper() + "|10+floor(" +
-                ('skillinfo("TOTALRANK","' + SKILL_DCS[slug] + '")' if slug in SKILL_DCS else
+                ('SPHERES_ALCHEMY_RANKS' if slug == 'alchemy' else
+                 'skillinfo("TOTALRANK","' + SKILL_DCS[slug] + '")' if slug in SKILL_DCS else
                  "SPHERES_BAB_" + ident.upper()) + "/2)+SPHERES_PRACTITIONER_MOD"])
         if slug in SKILLS:
             base_tags.append("BONUS:SKILLRANK|" + SKILLS[slug] + "|min(TL,5*" + prefix + "_TALENTS)|TYPE=SpheresTraining")
+            if slug == 'alchemy':
+                base_tags[-1] += '|!PREABILITY:1,CATEGORY=Special Ability,Martial Drawback - Alternative-Brew (Heal)'
+                base_tags[-1] += '|!PREABILITY:1,CATEGORY=Spheres Alchemy Associated Skill,TYPE.SpheresAlternativeBrew'
+                base_tags += [
+                    'DEFINE:SPHERES_ALCHEMY_RANKS|0',
+                    'BONUS:VAR|SPHERES_ALCHEMY_RANKS|skillinfo("TOTALRANK","Craft (Alchemy)")|!PREABILITY:1,CATEGORY=Special Ability,Martial Drawback - Alternative-Brew (Heal)|!PREABILITY:1,CATEGORY=Spheres Alchemy Associated Skill,TYPE.SpheresAlternativeBrew',
+                    'BONUS:VAR|SPHERES_ALCHEMY_RANKS|skillinfo("TOTALRANK","Heal")|PREABILITY:1,CATEGORY=Special Ability,Martial Drawback - Alternative-Brew (Heal)',
+                    'BONUS:SKILLRANK|Heal|min(TL,5*SPHERES_ALCHEMY_TALENTS)|TYPE=SpheresTraining|PREABILITY:1,CATEGORY=Special Ability,Martial Drawback - Alternative-Brew (Heal)',
+                    'DEFINE:SPHERES_ALCHEMY_FORMULAE|0',
+                    'DEFINE:SPHERES_ALCHEMY_PREPARED_FORMULAE|max(1,floor(SPHERES_ALCHEMY_RANKS/2))+SPHERES_ALCHEMY_FORMULAE',
+                    'DEFINE:SPHERES_ALCHEMY_BATCH|1+floor(SPHERES_ALCHEMY_RANKS/4)',
+                    'DEFINE:SPHERES_ALCHEMY_POISON_ROUNDS|1+floor(SPHERES_ALCHEMY_RANKS/4)']
+                # skillinfo returns zero for skills absent from the character's
+                # display list even when BONUS:SKILLRANK grants ranks. Preserve
+                # the known training minimum without adding it twice.
+                base_tags.extend('BONUS:VAR|SPHERES_ALCHEMY_RANKS|max(min(TL,5*SPHERES_ALCHEMY_TALENTS),skillinfo("TOTALRANK","' + skill + '"))|PREABILITY:1,CATEGORY=Spheres Alchemy Associated Skill,' + brewing_key(skill)
+                                 for skill in brewing_skills())
+                categories.append('\t'.join([
+                    'ABILITYCATEGORY:Spheres Alchemy Bonus Formula', 'CATEGORY:' + cat,
+                    'TYPE:AlchemyFormula', 'EDITABLE:YES', 'EDITPOOL:NO',
+                    'FRACTIONALPOOL:NO', 'VISIBLE:QUALIFY', 'POOL:0',
+                    'PLURAL:Alchemy Free Formula', 'DISPLAYLOCATION:Spheres']))
         if slug == "equipment-sphere":
             base_tags.append("BONUS:ABILITYPOOL|Spheres Equipment Bonus Talent|1")
             categories.append("\t".join(["ABILITYCATEGORY:Spheres Equipment Bonus Talent", "CATEGORY:" + cat,
@@ -130,11 +158,16 @@ def build():
                          if slug == "athletics" else choice if slug == "beastmastery" else None)
                 if skill:
                     package_tags.append("BONUS:SKILLRANK|" + skill + "|min(TL,5*" + prefix + "_TALENTS)|TYPE=SpheresTraining")
+                    if slug == 'athletics':
+                        package_tags[-1] += '|!PREABILITY:1,CATEGORY=Special Ability,Martial Drawback - Driver'
+                if slug == 'alchemy' and choice == 'Formulae':
+                    package_tags.append('BONUS:ABILITYPOOL|Spheres Alchemy Bonus Formula|1')
                 packages.append("\t".join(package_tags))
         base_tags += [re.sub(r"\bBAB\b", "SPHERES_BAB_" + ident.upper(), tag)
                       if row["system"] == "might" else tag for tag in overrides.get(base, [])]
         base_tags += ["DESC:" + text(row["base"]) + " Automation is partial; consult docs/sphere-catalog.md. Unautomated rules must be applied manually.",
                       "SOURCEPAGE:" + row["url"]]
+        base_tags += equivalence_tags(base)
         if slug != "destruction":
             lines.append("\t".join(base_tags))
         elif counters:
@@ -152,6 +185,9 @@ def build():
                            'Half-Elf ~ Spheres Dreamless Sleep]')
             if slug == "equipment-sphere":
                 tags[2] += ".EquipmentTalent"
+            if slug == 'alchemy' and '(formulae)' in talent['heading'].lower():
+                tags[2] += '.AlchemyFormula'
+                tags.append('BONUS:VAR|SPHERES_ALCHEMY_FORMULAE|1')
             if slug == "tech" and re.search(r"\([^)]*\bgadget\b[^)]*\)", talent["heading"]):
                 tags[2] += ".TechGadget"
                 tags.append("BONUS:VAR|SPHERES_TECH_GADGET_TALENTS|1")
@@ -167,6 +203,8 @@ def build():
             if slug in PACKAGES:
                 inside = " ".join(re.findall(r"\(([^)]*)\)", talent["heading"])).lower()
                 matches = [p for p in PACKAGES[slug] if p.lower() in re.split(r", | or ", inside)]
+                if slug == 'alchemy' and talent['group'] == 'Toxin Talents':
+                    matches = ['Poison']
                 if matches:
                     tags.append("PREABILITY:1,CATEGORY=Spheres " + name + " Package," + ",".join(name + " Package - " + p for p in matches))
                 if talent["name"] == EXPAND[slug]:
@@ -176,6 +214,11 @@ def build():
             if match:
                 tags.append("PREVARGTEQ:SPHERES_CASTER_LEVEL," + match[1])
             tags += overrides.get(name_key, [])
+            tags += equivalence_tags(name_key)
+            if name_key == 'Equipment - Versatile Fighter':
+                tags.append('BONUS:ABILITYPOOL|Spheres Versatile Fighter Stance|1')
+            if name_key == 'Equipment - Custom Training':
+                tags.append('BONUS:ABILITYPOOL|Spheres Custom Training Weapon|5')
             tags += ["DESC:" + text(talent["text"]) + " Automation is partial; consult docs/sphere-catalog.md. Unautomated rules must be applied manually.",
                      "SOURCEPAGE:" + talent["url"]]
             lines.append("\t".join(tags))
@@ -183,6 +226,31 @@ def build():
                            "mechanics": overrides.get(name_key, []),
                            "prerequisites": [t for t in tags if t.startswith("PRE")]})
         output[f"spheres_{row['system']}_{slug}.lst"] = "\n".join(lines) + "\n"
+    stance_category = 'Spheres Versatile Fighter Stance'
+    categories.append('\t'.join([
+        'ABILITYCATEGORY:' + stance_category, 'CATEGORY:' + stance_category,
+        'EDITABLE:YES', 'EDITPOOL:NO', 'FRACTIONALPOOL:NO', 'VISIBLE:QUALIFY',
+        'POOL:0', 'PLURAL:Active Versatile Fighter stance', 'DISPLAYLOCATION:Spheres']))
+    for stance, feats in (('Offensive Style', ('Deadly Aim', 'Power Attack')),
+                          ('Defensive Style', ('Combat Expertise',)),
+                          ('Recovery Style', ('Heroic Resolve',))):
+        requirement = 'PREABILITY:1,CATEGORY=Spheres Combat Talent,Equipment - Versatile Fighter'
+        packages.append('\t'.join([
+            'Versatile Fighter - ' + stance, 'CATEGORY:' + stance_category, requirement,
+            # Conditional grants prevent a retained but invalid stance record
+            # from continuing to supply feat benefits after the talent is removed.
+            'ABILITY:FEAT|AUTOMATIC|' + '|'.join(feats) + '|' + requirement,
+            'DESC:Active ' + stance + '. Select only while this stance is active; '
+            'remove when leaving it. Use the existing feat attack options to apply '
+            'their bonuses and penalties. Resolve stance entry, duration, and '
+            'on-hit riders at the table. Other simultaneous stances remain manual.',
+            'SOURCEPAGE:https://spheresofpower.wikidot.com/equipment-sphere']))
+    training_category, training_choices = custom_training()
+    categories.append(training_category)
+    packages.extend(training_choices)
+    brew_category, brew_choices = alternative_brew()
+    categories.append(brew_category)
+    packages.extend(brew_choices)
     output["spheres_categories_catalog.lst"] = "\n".join(categories) + "\n"
     output["spheres_catalog_packages.lst"] = "\n".join(packages) + "\n"
     return output, review

@@ -5,6 +5,64 @@ from spheres_catalog import inventory
 
 
 class MartialTraditionTests(unittest.TestCase):
+    def test_liturgist_reuses_feat_with_restricted_free_sphere(self):
+        files = {path.name: content for path, content in build().items()}
+        row = next(row for row in files['spheres_martial_traditions.lst'].splitlines()
+                   if row.startswith('Martial Tradition - Liturgist\t'))
+        for tag in ('ABILITY:FEAT|AUTOMATIC|Basic Magic Training',
+                    'BONUS:ABILITYPOOL|Spheres Basic Magic Sphere|-1',
+                    'BONUS:ABILITYPOOL|Liturgist Magic Sphere|1'):
+            self.assertIn(tag, row)
+        self.assertIn('|Leadership Package - Followers', row)
+        category = next(row for row in files['spheres_categories_martial_traditions.lst'].splitlines()
+                        if row.startswith('ABILITYCATEGORY:Liturgist Magic Sphere\t'))
+        self.assertIn('ABILITYLIST:Death Sphere|Fate Sphere|Life Sphere', category)
+        self.assertEqual(set(TRADITIONS), set(sources()))
+
+    def test_field_medic_uses_heal_and_consumes_formula_grant(self):
+        output = next(content for path, content in build().items()
+                      if path.name == 'spheres_martial_traditions.lst')
+        row = next(row for row in output.splitlines()
+                   if row.startswith('Martial Tradition - Field Medic\t'))
+        self.assertIn('|Martial Drawback - Alternative-Brew (Heal)', row)
+        self.assertIn('|Alchemy - Salve', row)
+        self.assertIn('BONUS:ABILITYPOOL|Spheres Alchemy Bonus Formula|-1', row)
+        self.assertIn('|Alchemy Package - Formulae', row)
+        self.assertEqual(TRADITIONS['Field Medic'][1], [(1, ['Alchemy*', 'Scout*'])])
+
+    def test_ace_has_restricted_starting_package_and_driver(self):
+        files = build()
+        output = next(content for path, content in files.items()
+                      if path.name == 'spheres_martial_traditions.lst')
+        rows = {row.split('\t')[0]: row for row in output.splitlines()}
+        ace = rows['Martial Tradition - Ace']
+        self.assertNotIn('|Equipment Sphere', ace)
+        self.assertIn('BONUS:ABILITYPOOL|Spheres Athletics Package|-1', ace)
+        self.assertIn('BONUS:ABILITYPOOL|Ace Starting Package|1', ace)
+        self.assertIn('|Martial Drawback - Driver', ace)
+        self.assertIn('|Athletics - Ace Pilot', rows['Martial Drawback - Driver'])
+        categories = next(content for path, content in files.items()
+                          if path.name == 'spheres_categories_martial_traditions.lst')
+        pool = next(row for row in categories.splitlines()
+                    if row.startswith('ABILITYCATEGORY:Ace Starting Package\t'))
+        self.assertIn('Athletics Package - Fly|Athletics Package - Run|Athletics Package - Swim', pool)
+        self.assertNotIn('Athletics Package - Climb', pool)
+        self.assertNotIn('Athletics Package - Leap', pool)
+
+    def test_hacker_uses_first_gadget_and_blocks_incompatible_talent(self):
+        output = next(content for path, content in build().items()
+                      if path.name == 'spheres_martial_traditions.lst')
+        rows = {row.split('\t')[0]: row for row in output.splitlines()}
+        drawback = rows['Martial Drawback - Unsecured']
+        self.assertIn('ABILITY:FEAT|AUTOMATIC|Remote Hacking', drawback)
+        self.assertIn('ABILITY:Spheres Combat Talent|AUTOMATIC|Tech - Remote Control', drawback)
+        self.assertIn('BONUS:ABILITYPOOL|Spheres Tech Bonus Gadget|-1', drawback)
+        self.assertNotIn('BONUS:CHECKS', drawback)
+        self.assertIn('!PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech - Improved User Interface',
+                      rows['Martial Tradition - Hacker'])
+        self.assertIn('!PREABILITY:1,CATEGORY=Special Ability,Martial Drawback - Unsecured',
+                      rows['CATEGORY=Spheres Combat Talent|Tech - Improved User Interface.MOD'])
+
     def test_elven_duelist_two_finesse_ranks(self):
         output = next(content for path, content in build().items()
                       if path.name == 'spheres_martial_traditions.lst')
@@ -27,10 +85,28 @@ class MartialTraditionTests(unittest.TestCase):
     def test_four_talents_and_source_coverage(self):
         for name, (fixed, choices) in TRADITIONS.items():
             self.assertIn(name, sources())
-            linked = 2 if name == 'Tattooed Warrior' else 1 if name in ('Highlander', 'Janjaweed') else 0
+            linked = 2 if name == 'Tattooed Warrior' else 1 if name in ('Highlander', 'Janjaweed', 'Liturgist') else 0
             self.assertEqual(len(fixed) + sum(count for count, _ in choices) + linked, 4, name)
-            self.assertTrue(name in ('Iron Breaker Style', 'Free Runner') or any(key.startswith('Equipment - ') for key in fixed)
-                            or any('Equipment discipline*' in options for _, options in choices))
+            self.assertTrue(name in ('Iron Breaker Style', 'Free Runner', 'Ace') or any(key.startswith('Equipment - ') for key in fixed)
+                            or any('Equipment discipline*' in options or 'Equipment*' in options
+                                   for _, options in choices))
+
+    def test_drawback_traditions_keep_bonus_grants_separate(self):
+        output = next(content for path, content in build().items()
+                      if path.name == 'spheres_martial_traditions.lst')
+        rows = {row.split('\t')[0]: row for row in output.splitlines()}
+        for title, drawback, bonus in (
+                ('Expedition Spotter', 'Dismantler', 'Trap - Trap Finder'),
+                ('Sergeant', 'Squad Leader', 'Leadership - Squad')):
+            row = rows['Martial Tradition - ' + title]
+            self.assertIn('ABILITY:Special Ability|AUTOMATIC|Martial Drawback - ' + drawback, row)
+            self.assertNotIn('|' + bonus, row)
+            self.assertIn('ABILITY:Spheres Combat Talent|AUTOMATIC|' + bonus,
+                          rows['Martial Drawback - ' + drawback])
+        self.assertIn('BONUS:ABILITYPOOL|Sergeant Tradition Choice 1|2',
+                      rows['Martial Tradition - Sergeant'])
+        self.assertIn('BONUS:ABILITYPOOL|Spheres Equipment Bonus Talent|-1',
+                      rows['Martial Tradition - Sergeant'])
 
     def test_equipment_free_tradition_does_not_grant_equipment(self):
         output = next(content for path, content in build().items()

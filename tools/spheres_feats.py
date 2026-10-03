@@ -275,6 +275,12 @@ def build():
         override = overrides.get(row["name"], {})
         if "prerequisites" in override:
             prereqs, unresolved = override["prerequisites"], []
+        # Alternative-Brew substitutes only for feats requiring Alchemy,
+        # never for unrelated crafting prerequisites or an optional OR branch.
+        if 'PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy Sphere' in prereqs:
+            prereqs = [re.sub(r'PRESKILL:1,Craft \(Alchemy\)=(\d+)',
+                             r'PREVARGTEQ:SPHERES_ALCHEMY_RANKS,\1', tag)
+                       for tag in prereqs]
         row["prerequisites"] = prereqs
         row["unresolved_prerequisites"] = unresolved
         row["mechanics"] = list(override.get("tags", []))
