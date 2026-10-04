@@ -20,6 +20,45 @@ class PcgenStriker {
         boolean reload = args[4].equals("striker-reload");
         int constitution = pc.getVariableValue("CON", "").intValue();
         try {
+            var combatTalents = gameCategory("Spheres Combat Talent");
+            var armored = ability(cat, "Striker Armored Striker");
+            var armoredPool = pc.getAvailableAbilityPool(cat);
+            int repeats = Math.min(2, armoredPool.intValue());
+            for (int i = 1; i <= repeats; i++) {
+                controller.addAbility(cat, armored);
+                require(pc.getVariableValue("SPHERES_STRIKER_ARMORED_COUNT", "").intValue() == i,
+                    "Armored Striker repeat count");
+            }
+            if (repeats == 2) {
+                rejected(controller, messages, cat, armored, "InfoAbility.Messages.NotQualified");
+            }
+            for (int i = repeats - 1; i >= 0; i--) {
+                controller.removeAbility(cat, armored);
+                require(pc.getVariableValue("SPHERES_STRIKER_ARMORED_COUNT", "").intValue() == i,
+                    "Armored Striker partial refund");
+            }
+            require(pc.getAvailableAbilityPool(cat).equals(armoredPool), "Armored Striker full refund");
+            var unarmored = ability(cat, "Striker Unarmored Striker");
+            if (reload) {
+                require(pc.hasAbilityKeyed(cat, unarmored.getKeyName()), "Unarmored Striker persistence");
+                require(pc.hasAbilityKeyed(combatTalents, "Equipment - Unarmored Training"),
+                    "Granted Unarmored Training persistence");
+                controller.removeAbility(cat, unarmored);
+            }
+            var talentPool = pc.getAvailableAbilityPool(combatTalents);
+            var artPool = pc.getAvailableAbilityPool(cat);
+            boolean hadEquipment = pc.hasAbilityKeyed(combatTalents, "Equipment Sphere");
+            controller.addAbility(cat, unarmored);
+            require(pc.hasAbilityKeyed(combatTalents, "Equipment - Unarmored Training"),
+                "Unarmored Striker grants its talent");
+            require(pc.hasAbilityKeyed(combatTalents, "Equipment Sphere") == hadEquipment,
+                "Unarmored Striker does not grant the Equipment sphere");
+            require(pc.getAvailableAbilityPool(combatTalents).equals(talentPool),
+                "Granted talent does not spend a combat talent");
+            controller.removeAbility(cat, unarmored);
+            require(!pc.hasAbilityKeyed(combatTalents, "Equipment - Unarmored Training"),
+                "Unarmored Striker talent removal");
+            require(pc.getAvailableAbilityPool(cat).equals(artPool), "Unarmored Striker art refund");
             var training = gameCategory("Striker Tension Training");
             var critical = ability(training, "Striker Training - Critical Offense");
             if (reload && level >= 5) {
@@ -83,6 +122,7 @@ class PcgenStriker {
             } else {
                 rejected(controller, messages, cat, trueDesperation, "InfoAbility.Messages.NotQualified");
             }
+            controller.addAbility(cat, unarmored);
             if (cap > 0) {
                 controller.addAbility(training, critical);
                 controller.addAbility(cat, ability(cat, "Striker High Tension (Requires Striker 5)"));

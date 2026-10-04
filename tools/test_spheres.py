@@ -15,6 +15,13 @@ from pcgen_incanter_class import class_fixture, expected_chassis, validate_chass
 
 
 class SpheresToolTest(unittest.TestCase):
+    def test_destruction_summary_exposes_trait_damage(self):
+        text = (DATA / "spheres_destruction.lst").read_text()
+        sphere = next(line for line in text.splitlines() if line.startswith("Destruction Sphere\t"))
+        self.assertIn("DEFINE:SPHERES_DESTRUCTION_TRAIT_DAMAGE|0", sphere)
+        self.assertIn("Add %4 trait damage to either blast", sphere)
+        self.assertTrue(sphere.endswith("|SPHERES_DESTRUCTION_TRAIT_DAMAGE"))
+
     def test_incanter_chassis_and_casting_selection(self):
         text = (DATA / "spheres_classes.lst").read_text()
         for tag in ("HD:6", "MAXLEVEL:20", "STARTSKILLPTS:4",

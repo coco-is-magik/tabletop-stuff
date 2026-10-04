@@ -63,11 +63,17 @@ class CatalogTest(unittest.TestCase):
 
     def test_invigorate_grants_are_separate_from_cure(self):
         records = {line.split('\t')[0]: line for line in self.files['spheres_power_life.lst'].splitlines()}
-        self.assertIn('BONUS:VAR|SPHERES_LIFE_INVIGORATE_HP|max(1,SPHERES_CL_LIFE)', records['Life Sphere'])
-        self.assertIn('BONUS:VAR|SPHERES_LIFE_INVIGORATE_HP|SPHERES_CL_LIFE', records['Life - Deeper Healing'])
+        self.assertIn('DEFINE:SPHERES_LIFE_INVIGORATE_HP|max(1,SPHERES_CL_LIFE)', records['Life Sphere'])
+        self.assertNotIn('BONUS:VAR|SPHERES_LIFE_INVIGORATE_HP|max(1,SPHERES_CL_LIFE)', records['Life Sphere'])
+        self.assertIn('BONUS:VAR|SPHERES_LIFE_DEEPER_HEALING|1', records['Life - Deeper Healing'])
         greater = records['Life - Greater Invigorate']
-        self.assertIn('BONUS:VAR|SPHERES_LIFE_INVIGORATE_HP|SPHERES_CASTING_ABILITY', greater)
-        self.assertIn('BONUS:VAR|SPHERES_LIFE_INVIGORATE_HOURS|SPHERES_CL_LIFE-1', greater)
+        self.assertIn('BONUS:VAR|SPHERES_LIFE_GREATER_INVIGORATE|1', greater)
+        self.assertIn('DEFINE:SPHERES_LIFE_INVIGORATE_HOURS|1+SPHERES_LIFE_GREATER_INVIGORATE*(SPHERES_CL_LIFE-1)', records['Life Sphere'])
+        self.assertIn('SPHERES_LIFE_DEEPER_HEALING*SPHERES_CL_LIFE+SPHERES_LIFE_GREATER_INVIGORATE*SPHERES_CASTING_ABILITY', records['Life Sphere'])
+        for name in ('Life - Deeper Healing', 'Life - Greater Invigorate', 'Life - Restore Health'):
+            for tag in records[name].split('\t'):
+                if tag.startswith('BONUS:'):
+                    self.assertNotIn('SPHERES_CL_LIFE', tag)
         self.assertNotIn('BONUS:VAR|SPHERES_LIFE_CURE', greater)
 
     def test_generated_files_and_campaign(self):

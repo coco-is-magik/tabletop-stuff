@@ -118,12 +118,11 @@
     "key": "Admixture Efficiency",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Admixture"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Admixture",
+      "PREFEAT:1,TYPE=Admixture",
+      "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,7"
     ],
-    "unresolved_prerequisites": [
-      "any Admixture feat",
-      "MSB +7"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -139,9 +138,11 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc1"
     ],
     "key": "Adopt Animal Ally",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Beastmastery Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Beastmastery Package,Beastmastery Package - Handle Animal"
+    ],
     "unresolved_prerequisites": [
-      "Beastmastery sphere (handle animal) package",
       "an animal or vermin companion"
     ],
     "mechanics": [],
@@ -329,11 +330,10 @@
     ],
     "key": "Agonizing Defiling",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
+      "!PREALIGN:LG,NG,CG"
     ],
-    "unresolved_prerequisites": [
-      "non-good alignment"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1091,11 +1091,10 @@
     ],
     "key": "Artificer’s Healing",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Esoteric Healing]],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere]"
     ],
-    "unresolved_prerequisites": [
-      "Life sphere (Esoteric Healing) or Technomancy sphere"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1111,10 +1110,10 @@
       "https://spheresofpower.wikidot.com/general-feats#toc6"
     ],
     "key": "Artificery",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Any Craft or Profession 5 ranks"
+    "prerequisites": [
+      "PRESKILL:1,TYPE.Craft=5,TYPE.Profession=5"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1915,11 +1914,11 @@
       "https://spheresofpower.wikidot.com/channeling-feats#toc0"
     ],
     "key": "Blessing/Blight Mastery",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Blessing/blight class feature",
-      "channel energy class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Soul Weaver Blessing,Soul Weaver Blight",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1935,11 +1934,12 @@
       "https://spheresofpower.wikidot.com/channeling-feats#toc1"
     ],
     "key": "Blessing/Blight Versatility",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Soul Weaver Blessing,Soul Weaver Blight",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
+    ],
     "unresolved_prerequisites": [
-      "Versatile Channeler",
-      "blessing/blight class feature",
-      "channel energy class feature"
+      "Versatile Channeler"
     ],
     "mechanics": [],
     "status": "partial"
@@ -1958,11 +1958,10 @@
     "key": "Blood Construct Mastery",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood - Extract Blood Construct"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood - Extract Blood Construct",
+      "PREVARGTEQ:SPHERES_CL_BLOOD,5"
     ],
-    "unresolved_prerequisites": [
-      "Blood sphere caster level 5th"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2346,11 +2345,10 @@
     "key": "Bruinous Temper",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Bear Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Berserker Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Berserker Sphere",
+      "PREVARGTEQ:SPHERES_CL_BEAR,5"
     ],
-    "unresolved_prerequisites": [
-      "Bear sphere caster level 5th"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2405,10 +2403,10 @@
       "https://spheresofpower.wikidot.com/channeling-feats#toc2"
     ],
     "key": "Buffeting Channel",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Channel Energy"
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2721,11 +2719,10 @@
     ],
     "key": "Catty Observer",
     "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Diagnose]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Status]]",
       "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,3"
     ],
-    "unresolved_prerequisites": [
-      "Life sphere (Diagnose) or Protection sphere (Status)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2765,12 +2762,16 @@
       "https://spheresofpower.wikidot.com/general-feats#toc13"
     ],
     "key": "Cautious Incantation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "3 ranks in any 1 skill"
+    "prerequisites": [
+      "PRESKILL:1,TYPE.Base=3"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:NO",
+      "CHOOSE:SKILL|RANKS=3"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Cecaelia Burst",
@@ -2866,11 +2867,10 @@
     ],
     "key": "Channel Destruction",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
     ],
-    "unresolved_prerequisites": [
-      "channel energy class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2888,11 +2888,10 @@
     ],
     "key": "Channel Life",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
     ],
-    "unresolved_prerequisites": [
-      "channel energy class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2910,10 +2909,10 @@
       "https://spheresofpower.wikidot.com/channeling-feats#toc5"
     ],
     "key": "Channel Luck",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Channel energy"
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2948,10 +2947,10 @@
       "https://spheresofpower.wikidot.com/channeling-feats#toc6"
     ],
     "key": "Channel Resolve",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Channel energy class feature"
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -2970,11 +2969,10 @@
     "key": "Channeled Detonation",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel Negative Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Negative Channel]",
       "PREVARGTEQ:SPHERES_CL_DEATH,5"
     ],
-    "unresolved_prerequisites": [
-      "ability to channel negative energy"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -3433,10 +3431,10 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc10"
     ],
     "key": "Commanding Presence",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "3rd level"
+    "prerequisites": [
+      "PRELEVEL:MIN=3"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -3934,10 +3932,10 @@
       "https://spheresofpower.wikidot.com/purring-feats#toc7"
     ],
     "key": "Cooperating",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Any one teamwork feat"
+    "prerequisites": [
+      "PREFEAT:1,TYPE=Teamwork"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -4152,7 +4150,9 @@
     ],
     "unresolved_prerequisites": [],
     "mechanics": [
-      "DEFINE:SPHERES_COUNTERSPELL_RANGE|100+10*SPHERES_CASTER_LEVEL"
+      "DEFINE:SPHERES_COUNTERSPELL_RANGE|100+10*SPHERES_CASTER_LEVEL",
+      "DEFINE:SPHERES_COUNTERSPELL_CHECK_BONUS|0",
+      "DEFINE:SPHERES_COUNTERSPELL_CHECK|SPHERES_MAGIC_SKILL_BONUS+SPHERES_COUNTERSPELL_CHECK_BONUS"
     ],
     "status": "mechanics-added"
   },
@@ -4173,8 +4173,10 @@
       "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,7"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_COUNTERSPELL_CHECK_BONUS|2"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Counterspelling Strike",
@@ -4721,11 +4723,10 @@
     ],
     "key": "Damning Darkness",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREALIGN:LE,NE,CE"
     ],
-    "unresolved_prerequisites": [
-      "evil alignment"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5156,11 +5157,10 @@
     ],
     "key": "Defiler’s Channel",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
+      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Positive Energy],[PREVARGTEQ:ClericChannelPositiveEnergyDice,3],[PREVAREQ:ClericChannelPositiveEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Negative Energy],[PREVARGTEQ:ClericChannelNegativeEnergyDice,3],[PREVAREQ:ClericChannelNegativeEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Paladin ~ Channel Positive Energy],[PREVARGTEQ:PaladinChannelDice,3],[PREVAREQ:PaladinChannelDieSize,6]],[PREMULT:2,[PREABILITY:1,CATEGORY=Special Ability,Incanter Positive Channel,Incanter Negative Channel],[PREVARGTEQ:SPHERES_CHANNEL_DICE,3]],[PREMULT:2,[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREVARGTEQ:SPHERES_SOUL_WEAVER_CHANNEL_DICE,3]]"
     ],
-    "unresolved_prerequisites": [
-      "channel energy 3d6"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5291,11 +5291,11 @@
     ],
     "key": "Destiny Reader",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Augury],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Divine Future]",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Divination Sphere (augury or divine future)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5520,11 +5520,10 @@
     ],
     "key": "Dimensional Archer",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREATT:3"
     ],
-    "unresolved_prerequisites": [
-      "+3 base attack bonus"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5581,10 +5580,10 @@
       "https://spheresofpower.wikidot.com/mana#toc100"
     ],
     "key": "Dimensional Tether",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Destruction Sphere (energy tether) or Mana Sphere (hardened bond)"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Energy Tether]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Hardened Bond]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5620,12 +5619,12 @@
     ],
     "key": "Disabling Dastard",
     "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Tinker Sphere],[PREABILITY:1,CATEGORY=Spheres Combat Talent,Tinker - Disruption Set]],[PREFEAT:1,Counterspell]",
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
       "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,5"
     ],
     "unresolved_prerequisites": [
-      "Infiltration sphere",
-      "Tinker sphere (Disruption Set (gizmo)) or Counterspell"
+      "Infiltration sphere"
     ],
     "mechanics": [],
     "status": "partial"
@@ -6128,10 +6127,10 @@
       "https://spheresofpower.wikidot.com/protection#toc113"
     ],
     "key": "Dynamic Wallcrafter",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Destruction Sphere (energy wall) or Protection Sphere (greater barrier)"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Energy Wall]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Greater Barrier]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -6430,10 +6429,10 @@
       "https://spheresofpower.wikidot.com/combat-feats#toc19"
     ],
     "key": "Elicit Strike",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Emotion class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresEmotion"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -6570,9 +6569,11 @@
       "https://spheresofpower.wikidot.com/fallen-fey#toc67"
     ],
     "key": "Enchanting Performance",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey - Beckoning Call],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey - Enchanting Music]"
+    ],
     "unresolved_prerequisites": [
-      "Fallen Fey sphere (Beckoning Call (fey-blessing) or Enchanting Music (fey-blessing))",
       "bardic performance or raging song class feature"
     ],
     "mechanics": [],
@@ -6590,10 +6591,12 @@
       "https://spheresofpower.wikidot.com/plague-feats#toc1"
     ],
     "key": "Encompassing Illness",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Blood sphere and 5th caster level; or Death sphere and 5th caster level; or Duelist sphere and base attack bonus +5; or Alchemy sphere and base attack bonus +5; Virulent Ailment, character level 9th"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere],[PREVARGTEQ:SPHERES_CL_BLOOD,5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREVARGTEQ:SPHERES_CL_DEATH,5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Duelist Sphere],[PREATT:5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy Sphere],[PREATT:5]]",
+      "PREFEAT:1,Virulent Ailment",
+      "PREVARGTEQ:TL,9"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -6689,14 +6692,14 @@
       "https://spheresofpower.wikidot.com/metamagic-feats#toc23"
     ],
     "key": "Energized Spell",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Ability to channel positive or negative energy"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel Positive Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel]],[PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel Negative Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Negative Channel]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [
       "DEFINE:SPHERES_METAMAGIC_ENERGIZEDSPELL_COST|1"
     ],
-    "status": "partial"
+    "status": "mechanics-added"
   },
   {
     "name": "Energy Cascade",
@@ -6977,11 +6980,10 @@
     ],
     "key": "Ensouled Illuminations",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,Soul Weaver Bound Souls (Reference)"
     ],
-    "unresolved_prerequisites": [
-      "bound nexus class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -6998,11 +7000,10 @@
     ],
     "key": "Ensouled Vision",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,Soul Weaver Bound Souls (Reference)"
     ],
-    "unresolved_prerequisites": [
-      "bound nexus class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7238,11 +7239,11 @@
     "key": "Exemplary Transformation",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Outsider Body"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Outsider Body",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Emphasize Belief],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Mental Enhancement],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Physical Enhancement]"
     ],
-    "unresolved_prerequisites": [
-      "Enhancement Sphere (emphasize belief, mental enhancement, or physical enhancement)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7320,10 +7321,10 @@
       "https://spheresofpower.wikidot.com/general-feats#toc27"
     ],
     "key": "Expedited Incantation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "3 ranks in any 1 skill"
+    "prerequisites": [
+      "PRESKILL:1,TYPE.Base=3"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7498,10 +7499,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc42"
     ],
     "key": "Extra Battlefield Specialization",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Commander 5"
+    "prerequisites": [
+      "PRECLASS:1,Commander=5"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7541,8 +7542,13 @@
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Spheres Blended Talent Allocation|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Boon Of Purpose",
@@ -7649,12 +7655,17 @@
       "https://spheresofpower.wikidot.com/extra-feats#toc5"
     ],
     "key": "Extra Emotion",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Emotion class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresEmotion"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Eliciter Emotion|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Iatrogen",
@@ -7687,12 +7698,17 @@
       "https://spheresofpower.wikidot.com/extra-feats#toc7"
     ],
     "key": "Extra Invocations",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Invocations class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Thaumaturge Invocation Uses (Reference)"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_THAUMATURGE_INVOCATION_USES|2"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Ki Power",
@@ -7744,12 +7760,17 @@
       "https://spheresofpower.wikidot.com/extra-feats#toc9"
     ],
     "key": "Extra Mystic Combat",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Mystic combat class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresMysticCombat"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Mageknight Mystic Combat|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Nexus Powers",
@@ -7763,12 +7784,17 @@
       "https://spheresofpower.wikidot.com/extra-feats#toc10"
     ],
     "key": "Extra Nexus Powers",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Bound nexus class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Soul Weaver Bound Souls (Reference)"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_SOUL_WEAVER_BOUND_SOULS|2"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Origin Talent",
@@ -7820,10 +7846,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc47"
     ],
     "key": "Extra Prowess",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Armiger 5"
+    "prerequisites": [
+      "PRECLASS:1,Armiger=5"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7839,12 +7865,17 @@
       "https://spheresofpower.wikidot.com/extra-feats#toc12"
     ],
     "key": "Extra Psionics",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Psionics class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Symbiat Psionics Rounds (Reference)"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_SYMBIAT_PSIONICS_ROUNDS|6"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Reinforcement",
@@ -7877,10 +7908,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc48"
     ],
     "key": "Extra Scholar’s Knack",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Scholar 7"
+    "prerequisites": [
+      "PRECLASS:1,Scholar=7"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7915,12 +7946,17 @@
       "https://spheresofpower.wikidot.com/extra-feats#toc14"
     ],
     "key": "Extra Shadowstuff",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Shadowstuff class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadow Points (Reference)"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|2"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Smithing Insight",
@@ -7934,10 +7970,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc49"
     ],
     "key": "Extra Smithing Insight",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Blacksmith 7"
+    "prerequisites": [
+      "PRECLASS:1,Blacksmith=7"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7972,10 +8008,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc50"
     ],
     "key": "Extra Striker Art",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Striker 5"
+    "prerequisites": [
+      "PRECLASS:1,Striker=5"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -8029,10 +8065,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc51"
     ],
     "key": "Extra Technical Insight",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Technician 5"
+    "prerequisites": [
+      "PRECLASS:1,Technician=5"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -8087,12 +8123,17 @@
       "https://spheresofpower.wikidot.com/extra-feats#toc18"
     ],
     "key": "Extra Wraith Haunt",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Wraith haunt class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresWraithHaunt"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Wraith Wraith Haunt|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extradimensional Assembly",
@@ -9447,13 +9488,17 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc56"
     ],
     "key": "Friends In Close Places",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Leadership sphere ((follower) package)",
-      "call in a specialist logistic specialty"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Leadership Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Leadership Package,Leadership Package - Followers",
+      "PREABILITY:1,CATEGORY=Commander Logistic Specialty,Commander Call In A Specialist"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_COMMANDER_FOLLOWER_SPECIALIST_HOURS|SPHERES_COMMANDER_SPECIALIST_ARRIVAL_HOURS/2",
+      "DEFINE:SPHERES_COMMANDER_FOLLOWER_CHECK_BONUS|if(skillinfo(\"TOTALRANK\",\"Diplomacy\")>=10,4,2)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Frozen To The Bone",
@@ -9634,11 +9679,10 @@
     "key": "Glamered Thievery",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Scoundrel Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Scoundrel Sphere",
+      "PREVARGTEQ:SPHERES_CL_ILLUSION,5"
     ],
-    "unresolved_prerequisites": [
-      "Illusion sphere caster level 5th"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -9656,11 +9700,12 @@
     ],
     "key": "Glimpse The Flow",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Boxing Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Boxing Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREVARGTEQ:SPHERES_CL_DIVINATION,6"
     ],
     "unresolved_prerequisites": [
-      "Divination sphere (any (sense) talent)",
-      "Divination sphere caster level 6th"
+      "Divination sphere (any (sense) talent)"
     ],
     "mechanics": [],
     "status": "partial"
@@ -9957,12 +10002,15 @@
       "https://spheresofpower.wikidot.com/illusion#toc87"
     ],
     "key": "Greater Shadowmark",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Shadowmark 1d6"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadowmark Dice (Reference)",
+      "PREVARGTEQ:SPHERES_FEY_ADEPT_SHADOWMARK_DICE,1"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_DIE_SIZE|2"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Greater Two-Handed Fighting",
@@ -10525,10 +10573,10 @@
       "https://spheresofpower.wikidot.com/wild-magic-feats#toc4"
     ],
     "key": "Heedless Metamagic",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "1 or more metamagic feats"
+    "prerequisites": [
+      "PREFEAT:1,TYPE=Metamagic"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -10894,12 +10942,11 @@
     ],
     "key": "Hubris Defiance",
     "prerequisites": [
-      "PREFEAT:1,Hubris Style"
+      "PREFEAT:1,Hubris Style",
+      "PREMULT:1,[PREATT:5],[PRECLASS:1,Monk=5]",
+      "!PREALIGN:LG,LN,LE"
     ],
-    "unresolved_prerequisites": [
-      "base attack bonus +5 or monk level 5th",
-      "nonlawful"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -10915,11 +10962,11 @@
       "https://spheresofpower.wikidot.com/general-feats#toc39"
     ],
     "key": "Hubris Style",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Base attack bonus +3 or monk level 3rd",
-      "nonlawful"
+    "prerequisites": [
+      "PREMULT:1,[PREATT:3],[PRECLASS:1,Monk=3]",
+      "!PREALIGN:LG,LN,LE"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -10937,12 +10984,11 @@
     "key": "Hubris Triumph",
     "prerequisites": [
       "PREFEAT:1,Hubris Style",
-      "PREFEAT:1,Hubris Defiance"
+      "PREFEAT:1,Hubris Defiance",
+      "PREMULT:1,[PREATT:9],[PRECLASS:1,Monk=9]",
+      "!PREALIGN:LG,LN,LE"
     ],
-    "unresolved_prerequisites": [
-      "base attack bonus +9 or monk level 9th",
-      "nonlawful"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -11319,11 +11365,10 @@
     ],
     "key": "Improved Artificery",
     "prerequisites": [
+      "PRESKILL:1,TYPE.Craft=10,TYPE.Profession=10",
       "PREFEAT:1,Artificery"
     ],
-    "unresolved_prerequisites": [
-      "Any Craft or Profession 10 ranks"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -11962,11 +12007,10 @@
     "key": "Inhuman Defiler",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
-      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
+      "!PREALIGN:LG,NG,CG"
     ],
-    "unresolved_prerequisites": [
-      "non-good alignment"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12045,10 +12089,10 @@
       "https://spheresofpower.wikidot.com/general-feats#toc42"
     ],
     "key": "Inspired Learning",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "MSB +1"
+    "prerequisites": [
+      "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,1"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13006,11 +13050,10 @@
     "key": "Mage of Spore and Fungus",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Nature Package,Nature Package - Plant"
+      "PREABILITY:1,CATEGORY=Spheres Nature Package,Nature Package - Plant",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Plant Mastery"
     ],
-    "unresolved_prerequisites": [
-      "Plant Mastery"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13151,11 +13194,10 @@
     "key": "Maintain Proxy",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
-      "PREFEAT:1,Circle Casting"
+      "PREFEAT:1,Circle Casting",
+      "PREFEAT:1,Defensive Proxies,Improved Spell Proxy,Mystic Choreography,Mystic Generosity,Proxy Counterspell,Proxy Network,Spell Proxy,Spell Proxy Extended,Spreading Magic,Suffer By Proxy,Tactical Proxies"
     ],
-    "unresolved_prerequisites": [
-      "at least one Proxy feat"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14108,11 +14150,10 @@
     ],
     "key": "Mobile Drone",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech - Drone"
     ],
-    "unresolved_prerequisites": [
-      "Drone"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14338,12 +14379,11 @@
     "key": "Mystic Choreography",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Skilled Casting,Tradition - Somatic Casting,Tradition - Verbal Casting",
       "PREFEAT:1,Circle Casting",
       "PREFEAT:1,Spell Proxy"
     ],
-    "unresolved_prerequisites": [
-      "at least one of the Skilled Casting, Somatic Casting, or Verbal Casting drawbacks"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14957,10 +14997,12 @@
       "https://spheresofpower.wikidot.com/plague-feats#toc2"
     ],
     "key": "Pathological Host",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Blood sphere and 5th caster level; or Death sphere and 5th caster level; or Duelist sphere and base attack bonus +5; or Alchemy sphere and base attack bonus +5; Virulent Ailment, character level 7th"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere],[PREVARGTEQ:SPHERES_CL_BLOOD,5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREVARGTEQ:SPHERES_CL_DEATH,5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Duelist Sphere],[PREATT:5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy Sphere],[PREATT:5]]",
+      "PREFEAT:1,Virulent Ailment",
+      "PREVARGTEQ:TL,7"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14976,12 +15018,18 @@
       "https://spheresofpower.wikidot.com/plague-feats#toc3"
     ],
     "key": "Pathology",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Blood sphere and 5th caster level; or Death sphere and 5th caster level; or Duelist sphere and base attack bonus +5; or Alchemy sphere and base attack bonus +5; Virulent Ailment"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere],[PREVARGTEQ:SPHERES_CL_BLOOD,5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREVARGTEQ:SPHERES_CL_DEATH,5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Duelist Sphere],[PREATT:5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy Sphere],[PREATT:5]]",
+      "PREFEAT:1,Virulent Ailment"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:NO",
+      "SELECT:2",
+      "CHOOSE:STRING|Blinding sickness|Bonechill|Bubonic plague|Cackle fever|Cholera|Filth fever|Leprosy|Mindfire|Red ache|Shakes|Sleeping sickness|Slimy doom"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Pawn of Prophecy",
@@ -16393,10 +16441,10 @@
       "https://spheresofpower.wikidot.com/channeling-feats#toc11"
     ],
     "key": "Pulsing Channel",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Channel Energy 4d6"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Positive Energy],[PREVARGTEQ:ClericChannelPositiveEnergyDice,4],[PREVAREQ:ClericChannelPositiveEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Negative Energy],[PREVARGTEQ:ClericChannelNegativeEnergyDice,4],[PREVAREQ:ClericChannelNegativeEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Paladin ~ Channel Positive Energy],[PREVARGTEQ:PaladinChannelDice,4],[PREVAREQ:PaladinChannelDieSize,6]],[PREMULT:2,[PREABILITY:1,CATEGORY=Special Ability,Incanter Positive Channel,Incanter Negative Channel],[PREVARGTEQ:SPHERES_CHANNEL_DICE,4]],[PREMULT:2,[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREVARGTEQ:SPHERES_SOUL_WEAVER_CHANNEL_DICE,4]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16871,11 +16919,10 @@
     ],
     "key": "Reckless Drone",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech - Drone"
     ],
-    "unresolved_prerequisites": [
-      "Drone"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16892,11 +16939,10 @@
     ],
     "key": "Recon Drone",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech - Drone"
     ],
-    "unresolved_prerequisites": [
-      "Drone"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17428,12 +17474,17 @@
       "https://spheresofpower.wikidot.com/general-feats#toc59"
     ],
     "key": "Ritualistic Perseverance",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "3 ranks in any 2 skills"
+    "prerequisites": [
+      "PRESKILL:2,TYPE.Base=3,CHECKMULT"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:NO",
+      "SELECT:2",
+      "CHOOSE:SKILL|RANKS=3"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Robustness",
@@ -17526,12 +17577,17 @@
       "https://spheresofpower.wikidot.com/plague-feats#toc4"
     ],
     "key": "Rotten Hordes",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Blood sphere and 5th caster level; or Death sphere and 5th caster level; or Duelist sphere and base attack bonus +5; or Alchemy sphere and base attack bonus +5; Death sphere (Shroud), Virulent Ailment (plague)"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere],[PREVARGTEQ:SPHERES_CL_BLOOD,5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREVARGTEQ:SPHERES_CL_DEATH,5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Duelist Sphere],[PREATT:5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy Sphere],[PREATT:5]]",
+      "PREFEAT:1,Virulent Ailment",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Shroud"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Ruinous Defiling",
@@ -17546,11 +17602,10 @@
     ],
     "key": "Ruinous Defiling",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
+      "!PREALIGN:LG,NG,CG"
     ],
-    "unresolved_prerequisites": [
-      "non-good alignment"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17769,10 +17824,11 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc85"
     ],
     "key": "Sanguine Magic",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood - Hemorrhage]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Bleeding Wounds]]"
+    ],
     "unresolved_prerequisites": [
-      "Duelist sphere (one (bleed) talent)",
-      "Blood sphere (Hemorrhage) or Death sphere (Bleeding Wounds (ghost strike))"
+      "Duelist sphere (one (bleed) talent)"
     ],
     "mechanics": [],
     "status": "partial"
@@ -17991,11 +18047,10 @@
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Admixture",
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Selective Blast"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Selective Blast",
+      "PREFEAT:1,TYPE=Admixture"
     ],
-    "unresolved_prerequisites": [
-      "any one Admixture feat"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -18051,11 +18106,10 @@
     ],
     "key": "Seraphic Glow",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREALIGN:LG,NG,CG"
     ],
-    "unresolved_prerequisites": [
-      "good alignment"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -18312,10 +18366,11 @@
       "https://spheresofpower.wikidot.com/destruction#toc142"
     ],
     "key": "Shape Expert",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Destruction sphere (Energy Wall (blast shape) or Explosive Orb (blast shape))"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Energy Wall],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Explosive Orb]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -18390,11 +18445,10 @@
     ],
     "key": "Shield Drone",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech - Drone"
     ],
-    "unresolved_prerequisites": [
-      "Drone"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -18723,10 +18777,11 @@
       "https://spheresofpower.wikidot.com/telekinesis#toc68"
     ],
     "key": "Skillful Force",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Telekinesis sphere (Finesse, Steal, or Telekinetic Tools)"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Finesse],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Steal],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Telekinetic Tools]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -18907,11 +18962,10 @@
       "PREFEAT:1,Selective Admixture",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Admixture",
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Selective Blast"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Selective Blast",
+      "PREFEAT:1,TYPE=Admixture"
     ],
-    "unresolved_prerequisites": [
-      "any one Admixture feat"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -18927,10 +18981,10 @@
       "https://spheresofpower.wikidot.com/general-feats#toc65"
     ],
     "key": "Solitary Incantation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "5 ranks in any 1 skill"
+    "prerequisites": [
+      "PRESKILL:1,TYPE.Base=5"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19002,10 +19056,11 @@
       "https://spheresofpower.wikidot.com/destruction#toc144"
     ],
     "key": "Soul-Scorching Blast",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Destruction sphere (Paradigm Blast (blast type) or Smiting Blast (blast type))"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Paradigm Blast],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Smiting Blast]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19128,11 +19183,11 @@
     ],
     "key": "Specialist Defiler",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
+      "!PREALIGN:LG,NG,CG",
+      "!PREFEAT:1,Terrain Focus"
     ],
-    "unresolved_prerequisites": [
-      "non-good alignment"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19471,7 +19526,9 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
       "PREFEAT:1,Circle Casting"
     ],
-    "unresolved_prerequisites": [],
+    "unresolved_prerequisites": [
+      "Must not possess the Personal Magics sphere-specific drawback (Special)"
+    ],
     "mechanics": [],
     "status": "partial"
   },
@@ -19490,11 +19547,10 @@
     "key": "Spell Proxy Extended",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
-      "PREFEAT:1,Circle Casting"
+      "PREFEAT:1,Circle Casting",
+      "PREFEAT:1,Defensive Proxies,Improved Spell Proxy,Maintain Proxy,Mystic Choreography,Mystic Generosity,Proxy Counterspell,Proxy Network,Spell Proxy,Spreading Magic,Suffer By Proxy,Tactical Proxies"
     ],
-    "unresolved_prerequisites": [
-      "at least one Proxy feat"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20235,10 +20291,11 @@
       "https://spheresofpower.wikidot.com/destruction#toc146"
     ],
     "key": "Suffused Blasts",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Destruction sphere (Paradigm Blast (blast type) or Smiting Blast (blast type))"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Paradigm Blast],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Smiting Blast]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20645,10 +20702,11 @@
       "https://spheresofpower.wikidot.com/combat-feats#toc73"
     ],
     "key": "Swarming Strike",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Symbiat Psionics Rounds (Reference)"
+    ],
     "unresolved_prerequisites": [
-      "Coordination class feature",
-      "psionics class feature"
+      "Coordination class feature"
     ],
     "mechanics": [],
     "status": "partial"
@@ -20874,11 +20932,10 @@
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
       "PREFEAT:1,Circle Casting",
-      "PREFEAT:1,Spell Proxy"
+      "PREFEAT:1,Spell Proxy",
+      "PREFEAT:1,TYPE=Teamwork"
     ],
-    "unresolved_prerequisites": [
-      "any one teamwork feat"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20982,11 +21039,10 @@
     ],
     "key": "Tainted Manabond",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,Thaumaturge Forbidden Lore (Reference)"
     ],
-    "unresolved_prerequisites": [
-      "forbidden lore class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21081,11 +21137,11 @@
     ],
     "key": "Technical Compatibility",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech - Drone"
     ],
     "unresolved_prerequisites": [
-      "Independent Invention",
-      "Drone"
+      "Independent Invention"
     ],
     "mechanics": [],
     "status": "partial"
@@ -21156,12 +21212,12 @@
     ],
     "key": "Technologically Alchemical Ammo",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech - Ammo Spitter",
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Alchemy Package,Alchemy Package - Formulae"
     ],
-    "unresolved_prerequisites": [
-      "Ammo Spitter",
-      "Alchemy sphere (formulae) package"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21267,11 +21323,10 @@
     ],
     "key": "Telekineticat",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Bestow Intelligence]]"
     ],
-    "unresolved_prerequisites": [
-      "Mind sphere or Enhancement sphere (Bestow Intelligence (enhance))"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21384,12 +21439,11 @@
     ],
     "key": "Tentacle Adept",
     "prerequisites": [
+      "PREMULT:1,[PREATT:5],[PRECLASS:1,Monk=3]",
       "PREFEAT:1,Tentacle Novice",
       "PREFEAT:1,Improved Unarmed Strike"
     ],
-    "unresolved_prerequisites": [
-      "Base attack bonus +5 or monk 3"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21449,11 +21503,11 @@
     ],
     "key": "Tentacle Novice",
     "prerequisites": [
+      "PREMULT:1,[PREATT:2],[PRECLASS:1,Monk=1]",
       "PREFEAT:1,Improved Unarmed Strike"
     ],
     "unresolved_prerequisites": [
-      "Two or more tentacles",
-      "base attack bonus +2 or monk 1"
+      "Two or more tentacles"
     ],
     "mechanics": [],
     "status": "partial"
@@ -21470,10 +21524,10 @@
       "https://spheresofpower.wikidot.com/general-feats#toc74"
     ],
     "key": "Terminating Conversion",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "At least one metamagic feat"
+    "prerequisites": [
+      "PREFEAT:1,TYPE=Metamagic"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21510,11 +21564,11 @@
     ],
     "key": "Terrain Defiler",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
+      "!PREALIGN:LG,NG,CG",
+      "!PREFEAT:1,Terrain Focus"
     ],
-    "unresolved_prerequisites": [
-      "non-good alignment"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21533,7 +21587,8 @@
     "key": "Terrain Focus",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
-      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
+      "!PREFEAT:1,Terrain Defiler,Specialist Defiler"
     ],
     "unresolved_prerequisites": [],
     "mechanics": [],
@@ -21753,11 +21808,10 @@
     "prerequisites": [
       "PREFEAT:1,Heroic Resolve",
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus",
-      "PREMULT:1,[PRESTAT:1,CHA=15],[PRESTAT:1,CON=15]"
+      "PREMULT:1,[PRESTAT:1,CHA=15],[PRESTAT:1,CON=15]",
+      "PREALIGN:LG,NG,CG"
     ],
-    "unresolved_prerequisites": [
-      "good alignment"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -22023,11 +22077,10 @@
     ],
     "key": "Totemic Channeling",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
     ],
-    "unresolved_prerequisites": [
-      "channel energy class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -22794,9 +22847,10 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc111"
     ],
     "key": "Unerring Eye",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRESKILL:1,Sense Motive=3"
+    ],
     "unresolved_prerequisites": [
-      "Sense Motive ranks 3",
       "Investigation sphere",
       "either the Divination sphere or Scout sphere"
     ],
@@ -22858,11 +22912,10 @@
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Diagnose]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Project Thoughts]]"
     ],
-    "unresolved_prerequisites": [
-      "Life sphere (Diagnose) or Mind sphere (Project Thoughts)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -23024,11 +23077,11 @@
     "key": "Unveiling Admixture",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Admixture"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Admixture",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Sensory Overload],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Viewing]"
     ],
-    "unresolved_prerequisites": [
-      "Divination Sphere (Sensory Overload or Viewing)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -23127,9 +23180,11 @@
       "https://spheresofpower.wikidot.com/conjuration#toc132"
     ],
     "key": "Variable Armaments",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Battle Creature],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Shield Bearer]"
+    ],
     "unresolved_prerequisites": [
-      "Conjuration sphere (Battle Creature (form) or Shield Bearer (form))",
       "companion with 6 or more Hit Dice"
     ],
     "mechanics": [],
@@ -23467,10 +23522,10 @@
       "https://spheresofpower.wikidot.com/general-feats#toc83"
     ],
     "key": "Vigilant Skeptic",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Perception 5 ranks and Sense Motive 5 ranks; or Alertness"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PRESKILL:1,Perception=5],[PRESKILL:1,Sense Motive=5]],[PREFEAT:1,Alertness]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -23508,9 +23563,11 @@
       "https://spheresofpower.wikidot.com/illusion#toc95"
     ],
     "key": "Violent Shadow",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadowmark Dice (Reference)",
+      "PREVARGTEQ:SPHERES_FEY_ADEPT_SHADOWMARK_DICE,3"
+    ],
     "unresolved_prerequisites": [
-      "Shadowmark 3d6",
       "shadow pool"
     ],
     "mechanics": [],
@@ -23528,10 +23585,10 @@
       "https://spheresofpower.wikidot.com/plague-feats#toc5"
     ],
     "key": "Virulent Ailment",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Blood sphere and 5th caster level; or Death sphere and 5th caster level; or Duelist sphere and base attack bonus +5; or Alchemy sphere and base attack bonus +5"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere],[PREVARGTEQ:SPHERES_CL_BLOOD,5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREVARGTEQ:SPHERES_CL_DEATH,5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Duelist Sphere],[PREATT:5]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy Sphere],[PREATT:5]]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -24435,11 +24492,11 @@
     ],
     "key": "World In Miniature",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Extradimensional Room],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Extradimensional Storage]"
     ],
-    "unresolved_prerequisites": [
-      "Warp sphere (Extradimensional Room (space) or Extradimensional Storage (space))"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },

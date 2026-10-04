@@ -19,8 +19,36 @@ class PcgenEliciter {
         int level = pc.getVariableValue("SPHERES_ELICITER_LEVEL", "").intValue();
         boolean reload = args[4].equals("eliciter-reload");
         String[] tiers = {"", " - Lesser", " - Greater", " - Master"};
-        int count = Math.min(4, 1 + (level - 2) / 3);
+        int count = level < 2 ? 0 : Math.min(4, 1 + (level - 2) / 3);
         try {
+            var feats = pcgen.core.AbilityCategory.FEAT;
+            var extra = ability(feats, "Extra Emotion");
+            var strike = ability(feats, "Elicit Strike");
+            require(extra.qualifies(pc, extra) == (level >= 2), "Emotion feature qualification");
+            require(strike.qualifies(pc, strike) == (level >= 2), "Elicit Strike feature qualification");
+            if (reload && level >= 2) {
+                require(pc.hasAbilityKeyed(feats, extra.getKeyName()), "Extra Emotion persisted");
+                controller.removeAbility(feats, extra);
+            }
+            var featPool = pc.getAvailableAbilityPool(feats);
+            var emotionPool = pc.getAvailableAbilityPool(cat);
+            if (level >= 2) {
+                for (int i = 1; i <= 2; i++) {
+                    controller.addAbility(feats, extra);
+                    require(pc.getAvailableAbilityPool(cat).subtract(emotionPool).intValue() == i,
+                        "Repeated Extra Emotion grant");
+                    require(featPool.subtract(pc.getAvailableAbilityPool(feats)).intValue() == i,
+                        "Extra Emotion feat cost");
+                }
+                for (int i = 1; i >= 0; i--) {
+                    controller.removeAbility(feats, extra);
+                    require(pc.getAvailableAbilityPool(cat).subtract(emotionPool).intValue() == i,
+                        "Partial Extra Emotion refund");
+                }
+                require(pc.getAvailableAbilityPool(feats).equals(featPool), "Extra Emotion full refund");
+            } else {
+                rejected(controller, messages, feats, extra, "InfoAbility.Messages.NotQualified");
+            }
             int persuasive = 2 + level / 6;
             require(pc.getVariableValue("SPHERES_ELICITER_PERSUASIVE", "").intValue() == persuasive, "Persuasive progression");
             require(pc.getVariableValue("SPHERES_ELICITER_CLASS_DC", "").intValue() == 10 + level / 2 + 3 + persuasive,
@@ -60,6 +88,7 @@ class PcgenEliciter {
                 controller.addAbility(cat, minor);
                 require(lesser.qualifies(pc, lesser), "Restoring earlier tier restores qualification");
             }
+            if (level >= 2) controller.addAbility(feats, extra);
         } finally {
             controller.closeCharacter();
         }

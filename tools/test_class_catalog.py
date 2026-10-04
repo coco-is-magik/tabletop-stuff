@@ -16,6 +16,267 @@ from spheres_eliciter import emotion_records
 
 
 class ClassCatalogTest(unittest.TestCase):
+    def test_wraith_reference_capacities_are_not_permanent_incorporeality(self):
+        classes, abilities, _, _ = generate('wraith')
+        self.assertIn('3\tABILITY:Special Ability|AUTOMATIC|Wraith Haunts', classes)
+        self.assertIn('TYPE:SpheresClassFeature.SpheresWraithHaunt', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_WRAITH_FORM_UNLIMITED|if(SPHERES_WRAITH_LEVEL>=20,1,0)', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_WRAITH_POSSESSION_TARGETS|if(SPHERES_WRAITH_LEVEL<2,0,if(SPHERES_WRAITH_LEVEL<10,1,max(2,SPHERES_CASTING_ABILITY)))', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_WRAITH_FORM_ROUNDS|if(SPHERES_WRAITH_LEVEL>=20,0,SPHERES_WRAITH_LEVEL+SPHERES_CASTING_ABILITY)', abilities)
+        self.assertNotIn('RACETYPE:Incorporeal', abilities)
+        reactive = next(line for line in abilities.splitlines() if line.startswith('Wraith Reactive Possession ('))
+        self.assertIn('[PREMULT:2,[PREABILITY:1,CATEGORY=Wraith Haunt Path,Wraith Path of the Poltergeist],'
+                      '[PREVARGTEQ:SPHERES_WRAITH_LEVEL,8]]', reactive)
+        expanded = next(line for line in abilities.splitlines() if line.startswith('Wraith Expanded Path Possession - Improved ('))
+        self.assertIn('PREVARGTEQ:SPHERES_WRAITH_LEVEL,12', expanded)
+        self.assertIn('PREABILITY:1,CATEGORY=Wraith Wraith Haunt,'
+                      'Wraith Expanded Path Possession (requires haunt path - path sphere of the selected path)', expanded)
+        armaments = next(line for line in abilities.splitlines() if line.startswith('Wraith Possess Armaments ('))
+        self.assertIn('PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere', armaments)
+        self.assertIn('PREMULT:1,[PREABILITY:1,CATEGORY=Wraith Wraith Haunt,Wraith Object Ride],'
+                      '[PREABILITY:1,CATEGORY=Wraith Haunt Path,Wraith Path of the Poltergeist]', armaments)
+        for name, level in (('Ghost Glide (requires wraith 7)', 7),
+                            ('Ghost Glide - Improved (requires wraith 11)', 11),
+                            ('Share Wraith Form', 3)):
+            haunt = next(line for line in abilities.splitlines() if line.startswith('Wraith ' + name + '\t'))
+            self.assertIn(f'PREVARGTEQ:SPHERES_WRAITH_LEVEL,{level}', haunt)
+            self.assertNotIn('MOVE:', haunt)
+        for key, skill in (('Path of the Despoiler', 'Heal'), ('Path of the Anima - Nature', 'Knowledge (Nature)')):
+            path = next(line for line in abilities.splitlines() if line.startswith('Wraith ' + key + '\t'))
+            self.assertIn('CSKILL:' + skill, path)
+            self.assertIn('SPHERES_WRAITH_LEVEL-floor(SPHERES_WRAITH_LEVEL*3/4)', path)
+            self.assertNotIn('SPHERES_WRAITH_LEVEL-SPHERES_CASTER_LEVEL', path)
+            self.assertIn(f'BONUS:SKILL|{skill}|floor(SPHERES_WRAITH_LEVEL/2)|TYPE=Insight|PREVARGTEQ:SPHERES_WRAITH_LEVEL,4', path)
+        self.assertIn('DEFINE:SPHERES_WRAITH_FORCED_FORM_COUNT|0', classes)
+        forced = next(line for line in abilities.splitlines() if line.startswith('Wraith Forced Wraith Form '))
+        self.assertIn('PREABILITY:1,CATEGORY=Wraith Wraith Haunt,Wraith Share Wraith Form', forced)
+        self.assertIn('PREVARLT:SPHERES_WRAITH_FORCED_FORM_COUNT,2', forced)
+        self.assertIn('BONUS:VAR|SPHERES_WRAITH_FORCED_FORM_COUNT|1', forced)
+        self.assertNotIn('DEFINE:', forced)
+        extra = next(line for line in abilities.splitlines() if line.startswith('Wraith Extra Incorporeality\t'))
+        for tag in ('PREVARGTEQ:SPHERES_WRAITH_LEVEL,3', 'MULT:YES', 'STACK:YES', 'CHOOSE:NOCHOICE',
+                    'BONUS:VAR|SPHERES_WRAITH_FORM_ROUNDS|4|PREVARLT:SPHERES_WRAITH_LEVEL,20'):
+            self.assertIn(tag, extra)
+
+    def test_commander_logistics_reference_values_do_not_apply_party_bonuses(self):
+        from spheres_commander import option_tags
+        specialist = option_tags('Commander Logistic Specialty', 'Call In A Specialist')
+        self.assertIn('DEFINE:SPHERES_COMMANDER_SPECIALIST_ARRIVAL_HOURS|max(1,24-SPHERES_COMMANDER_LEVEL)', specialist)
+        self.assertIn('DEFINE:SPHERES_COMMANDER_SPECIALIST_MAX_DAYS|floor(SPHERES_COMMANDER_LEVEL/2)', specialist)
+        self.assertIn('DEFINE:SPHERES_COMMANDER_SPECIALIST_LEVEL|SPHERES_COMMANDER_LEVEL-3', specialist)
+        feeding = option_tags('Commander Logistic Specialty', 'Field Feeding')
+        self.assertIn('DEFINE:SPHERES_COMMANDER_FIELD_FEEDING_ADDITIONAL_CREATURES|10*SPHERES_COMMANDER_LEVEL', feeding)
+        self.assertFalse(any(tag.startswith('BONUS:') for tag in specialist + feeding))
+        cavalry = option_tags('Commander Logistic Specialty', 'Call In the Cavalry')
+        self.assertIn('DEFINE:SPHERES_COMMANDER_CAVALRY_WEEKS|1+floor((SPHERES_COMMANDER_LEVEL-7)/4)', cavalry)
+        self.assertIn('DEFINE:SPHERES_COMMANDER_CAVALRY_MOUNTS|SPHERES_COMMANDER_LEVEL', cavalry)
+        self.assertFalse(any(tag.startswith(('MOVE:', 'BONUS:MOVE', 'COMPANION:')) for tag in cavalry))
+
+    def test_commander_resources_have_level_gates(self):
+        _, abilities, _, _ = generate('commander')
+        self.assertIn('BONUS:VAR|SPHERES_COMMANDER_GROUP_FOCUS_USES|max(0,1+floor((SPHERES_COMMANDER_LEVEL-5)/6))', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_COMMANDER_ACTIVE_ENHANCED_TACTICS|if(SPHERES_COMMANDER_LEVEL<2,0,if(SPHERES_COMMANDER_LEVEL<10,1,if(SPHERES_COMMANDER_LEVEL<20,2,3)))', abilities)
+
+    def test_commander_terrain_bonuses_are_situational(self):
+        from spheres_commander import option_tags
+        for title in ('Desert', 'Jungle', 'Mountain (including hills)', 'Plains',
+                      'Urban', 'Underground', 'Water (above and below the surface)'):
+            tags = option_tags('Commander Battlefield Specialist', title)
+            self.assertTrue(any(tag.startswith('BONUS:SITUATION|') for tag in tags))
+            self.assertFalse(any(tag.startswith('BONUS:SKILL|') for tag in tags))
+        self.assertIn('BONUS:SITUATION|Survival=Scavenge food in plains terrain|max(1,max(CHA,INT))|TYPE=Competence',
+                      option_tags('Commander Battlefield Specialist', 'Plains'))
+
+    def test_commander_options_require_the_feature_level(self):
+        _, abilities, _, _ = generate('commander')
+        for category, level in (("Enhanced Tactic", 2), ("Battlefield Specialist", 3),
+                                ("Logistic Specialty", 7)):
+            records = [line for line in abilities.splitlines()
+                       if f'CATEGORY:Commander {category}\t' in line]
+            self.assertTrue(records)
+            for record in records:
+                self.assertIn(f'PREVARGTEQ:SPHERES_COMMANDER_LEVEL,{level}\t', record)
+
+    def test_expert_coordinator_grants_repeatable_teamwork_choices(self):
+        _, abilities, categories, _ = generate('commander')
+        record = next(line for line in abilities.splitlines() if line.startswith('Commander Expert Coordinator\t'))
+        for tag in ('MULT:YES', 'STACK:YES', 'CHOOSE:NOCHOICE',
+                    'BONUS:ABILITYPOOL|Commander Teamwork Feat|1'):
+            self.assertIn(tag, record)
+        self.assertIn('ABILITYCATEGORY:Commander Teamwork Feat\tCATEGORY:FEAT\tTYPE:Teamwork', categories)
+
+    def test_feytouched_is_level_twenty_and_does_not_change_race(self):
+        classes, abilities, _, _ = generate('fey-adept')
+        grant = 'ABILITY:Special Ability|AUTOMATIC|Fey Adept Feytouched'
+        self.assertEqual([line.split('\t')[0] for line in classes.splitlines() if grant in line], ['20'])
+        record = next(line for line in abilities.splitlines() if line.startswith('Fey Adept Feytouched\t'))
+        self.assertIn('DR:10/cold iron', record)
+        self.assertIn('BONUS:SAVE|ALL|2|TYPE=Luck', record)
+        self.assertNotIn('RACETYPE:', record)
+        self.assertNotIn('TEMPLATE:', record)
+        self.assertEqual([line.split('\t')[0] for line in classes.splitlines()
+                          if 'ABILITY:Special Ability|AUTOMATIC|Fey Adept See in Darkness' in line], ['14'])
+        self.assertIn('VISION:See in Darkness\t', abilities)
+        vision = next(line for line in classes.splitlines() if line.startswith('2\t'))
+        self.assertIn("VISION:Darkvision (30')", vision)
+        self.assertIn('BONUS:VISION|Darkvision|30', vision)
+        self.assertIn('BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|max(1,CHA+floor(SPHERES_FEY_ADEPT_LEVEL/2))', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_PENALTY|1+floor((SPHERES_FEY_ADEPT_LEVEL-1)/6)', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_FEY_ADEPT_MASTER_ILLUSIONIST_ROUNDS|max(1,floor(SPHERES_FEY_ADEPT_LEVEL/2))', abilities)
+
+    def test_symbiat_defenses_use_upstream_progression(self):
+        classes, _, _, _ = generate('symbiat')
+        levels = {line.split('\t')[0]: line for line in classes.splitlines()}
+        for level, ability in ((2, 'Evasion'), (3, 'Trap Sense'), (4, 'Uncanny Dodge ~ Base'), (9, 'Improved Evasion')):
+            self.assertIn('ABILITY:Special Ability|AUTOMATIC|' + ability, levels[str(level)])
+        self.assertIn('BONUS:VAR|TrapSenseBonus|floor(SPHERES_SYMBIAT_LEVEL/3)', levels['3'])
+        self.assertIn('BONUS:SKILL|Sense Motive,Perception|floor(SPHERES_SYMBIAT_LEVEL/2)', levels['2'])
+        self.assertIn('BONUS:MOVEADD|TYPE=Walk|10*min(6,floor(SPHERES_SYMBIAT_LEVEL/3))', levels['3'])
+        self.assertNotIn('BONUS:SKILL|Sense Motive,Perception', levels['1'])
+        self.assertNotIn('BONUS:MOVEADD', levels['2'])
+        self.assertIn('BONUS:SITUATION|Perception=Avoid being surprised|floor(SPHERES_SYMBIAT_LEVEL/3)', levels['3'])
+        for level in (4, 8):
+            self.assertIn('BONUS:VAR|UncannyDodgeLVL|1', levels[str(level)])
+        self.assertEqual(classes.count('BONUS:VAR|UncannyDodgeFlankingLevel|SPHERES_SYMBIAT_LEVEL'), 1)
+
+    def test_sentinel_reserve_and_second_wind_are_not_permanent_hp(self):
+        classes, abilities, _, _ = generate('sentinel')
+        grant = 'ABILITY:Special Ability|AUTOMATIC|Sentinel Second Wind'
+        self.assertEqual([line.split('\t')[0] for line in classes.splitlines() if grant in line], ['3'])
+        self.assertIn('DEFINE:SPHERES_SENTINEL_SECOND_WIND_DICE|floor(SPHERES_SENTINEL_LEVEL/2)', abilities)
+        self.assertIn('DEFINE:SPHERES_SENTINEL_SECOND_WIND_BONUS|WIS', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_SENTINEL_RESERVE_TEMPORARY_HP|2*BAB+WIS', abilities)
+        self.assertNotIn('BONUS:HP', abilities)
+
+    def test_sentinel_wise_reflexes_is_capped_optional_replacement(self):
+        classes, abilities, _, _ = generate('sentinel')
+        grant = 'ABILITY:Special Ability|AUTOMATIC|Sentinel Wise Reflexes'
+        self.assertEqual([line.split('\t')[0] for line in classes.splitlines() if grant in line], ['1'])
+        record = next(line for line in abilities.splitlines() if line.startswith('Sentinel Wise Reflexes\t'))
+        for target in ('COMBAT|INITIATIVE', 'SAVE|Reflex'):
+            self.assertIn(f'BONUS:{target}|max(0,min(WIS,SPHERES_SENTINEL_LEVEL)-DEX)|TYPE=Ability', record)
+
+    def test_sentinel_damage_reduction_is_additive(self):
+        classes, abilities, _, _ = generate('sentinel')
+        grant = 'ABILITY:Special Ability|AUTOMATIC|Sentinel Dedicated Defense'
+        self.assertEqual([line.split('\t')[0] for line in classes.splitlines() if grant in line], ['2'])
+        record = next(line for line in abilities.splitlines() if line.startswith('Sentinel Dedicated Defense\t'))
+        self.assertIn('DR:0/-', record)
+        self.assertIn('BONUS:DR|-|1+floor((SPHERES_SENTINEL_LEVEL-2)/4)', record)
+
+    def test_thaumaturge_fixture_honors_ability_score(self):
+        from pcgen_thaumaturge import character_fixture
+        for score in (3, 7, 10, 18, 30):
+            lines = character_fixture(2, score).splitlines()
+            self.assertEqual([line for line in lines if line.startswith('STAT:INT|')],
+                             [f'STAT:INT|SCORE:{score}'])
+            self.assertIn('STAT:WIS|SCORE:10', lines)
+        for score in (2, 31):
+            with self.assertRaises(ValueError):
+                character_fixture(2, score)
+
+    def test_thaumaturge_persistent_benefits_and_master_choices(self):
+        classes, abilities, categories, _ = generate('thaumaturge')
+        grant = 'ABILITY:Special Ability|AUTOMATIC|Thaumaturge Occult Knowledge'
+        self.assertEqual([line.split('\t')[0] for line in classes.splitlines() if grant in line], ['2'])
+        self.assertIn('BONUS:SKILL|TYPE.Knowledge,Spellcraft,Use Magic Device|min(5,1+floor((SPHERES_THAUMATURGE_LEVEL-2)/4))', abilities)
+        self.assertIn('10+floor(SPHERES_THAUMATURGE_LEVEL/2)+SPHERES_CASTING_ABILITY', abilities)
+        choices = [line for line in abilities.splitlines() if line.startswith('Thaumaturge Master Invoker - ')]
+        self.assertEqual(len(choices), 11)
+        self.assertFalse(any('Rebuke Death' in line for line in choices))
+        for line in choices:
+            self.assertIn('PREVARGTEQ:SPHERES_THAUMATURGE_LEVEL,20', line)
+            self.assertIn('PREABILITY:1,CATEGORY=Thaumaturge Invocations,Thaumaturge ', line)
+        category = next(line for line in categories.splitlines() if line.startswith('ABILITYCATEGORY:Thaumaturge Master Invoker\t'))
+        self.assertIn('POOL:if(SPHERES_THAUMATURGE_LEVEL>=20,2,0)', category)
+
+    def test_invocations_are_fixed_level_grants_not_choices(self):
+        from spheres_thaumaturge import INVOCATION_LEVELS, invocation_records
+        source = json.loads((SNAPSHOTS / 'thaumaturge.json').read_text())
+        options = source_options(source, 'Invocations')
+        classes, abilities, categories, _ = generate('thaumaturge')
+        levels = {line.split('\t')[0]: line for line in classes.splitlines()}
+        for title, at in INVOCATION_LEVELS.items():
+            self.assertIn(f'ABILITY:Thaumaturge Invocations|AUTOMATIC|Thaumaturge {title}', levels[str(at)])
+            record = next(line for line in abilities.splitlines() if line.startswith(f'Thaumaturge {title}\t'))
+            self.assertIn(f'PREVARGTEQ:SPHERES_THAUMATURGE_LEVEL,{at}', record)
+        category = next(line for line in categories.splitlines() if line.startswith('ABILITYCATEGORY:Thaumaturge Invocations\t'))
+        self.assertIn('EDITABLE:NO', category)
+        self.assertIn('POOL:0', category)
+        self.assertNotIn('ABILITY:Thaumaturge Invocations|TYPE:NORMAL', fixture('thaumaturge', 20))
+        for bad in (options[:-1], options + [options[0]],
+                    [(title, body.replace('At 3rd level,', 'At 4th level,')) for title, body in options]):
+            with self.assertRaises(ValueError):
+                invocation_records(bad)
+
+    def test_gravewalker_grants_immunity_without_changing_creature_type(self):
+        classes, abilities, _, _ = generate('soul-weaver')
+        grant = 'ABILITY:Special Ability|AUTOMATIC|Soul Weaver Gravewalker'
+        self.assertEqual([line.split('\t')[0] for line in classes.splitlines() if grant in line], ['20'])
+        record = next(line for line in abilities.splitlines() if line.startswith('Soul Weaver Gravewalker\t'))
+        self.assertIn('Supernatural.Immunity', record)
+        self.assertIn('ASPECT:Immunity|Nonlethal Damage, Ability Drain, Energy Drain', record)
+        self.assertNotIn('TEMPLATE:', record)
+        self.assertNotIn('RACETYPE:', record)
+
+    def test_blessings_follow_channel_polarity_and_class_level(self):
+        from spheres_soul_weaver import blessing_records
+        source = json.loads((SNAPSHOTS / 'soul-weaver.json').read_text())
+        positive = source_options(source, 'List of Blessings')
+        negative = source_options(source, 'List of Blights')
+        _, abilities, _, _ = generate('soul-weaver')
+        records, grants = blessing_records(positive, negative)
+        self.assertEqual(len(records), 10)
+        for polarity, options in (('Positive', positive), ('Negative', negative)):
+            channel = next(line for line in abilities.splitlines()
+                           if line.startswith(f'Soul Weaver {polarity} Channel\t'))
+            for (title, _), level in zip(options, (2, 6, 10, 14, 18)):
+                self.assertIn(f'ABILITY:Special Ability|AUTOMATIC|Soul Weaver {title}|'
+                              f'PREVARGTEQ:SPHERES_SOUL_WEAVER_LEVEL,{level}', channel)
+            self.assertEqual(len(grants[polarity]), 5)
+        for bad in (positive[:-1], list(reversed(positive)),
+                    [(title, body.replace('At 6th level,', 'At 5th level,')) for title, body in positive]):
+            with self.assertRaises(ValueError):
+                blessing_records(bad, negative)
+
+    def test_nexus_powers_are_automatic_at_their_source_levels(self):
+        from spheres_soul_weaver import NEXUS_LEVELS, nexus_records
+        source = json.loads((SNAPSHOTS / 'soul-weaver.json').read_text())
+        options = source_options(source, 'Bound Nexus (Su)')
+        classes, abilities, categories, _ = generate('soul-weaver')
+        levels = {line.split('\t')[0]: line for line in classes.splitlines()}
+        for name, at in NEXUS_LEVELS.items():
+            grant = 'ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver ' + name
+            self.assertIn(grant, levels[str(at)])
+            record = next(line for line in abilities.splitlines() if line.startswith('Soul Weaver ' + name + '\t'))
+            self.assertIn(f'PREVARGTEQ:SPHERES_SOUL_WEAVER_LEVEL,{at}', record)
+        category = next(line for line in categories.splitlines() if line.startswith('ABILITYCATEGORY:Soul Weaver Nexus Powers\t'))
+        self.assertIn('EDITABLE:NO', category)
+        self.assertIn('POOL:0', category)
+        for bad in (options[:-1], options + [options[0]],
+                    [(name, body.replace('At 4th level,', 'At 5th level,')) for name, body in options]):
+            with self.assertRaises(ValueError):
+                nexus_records(bad)
+
+    def test_soul_weaver_resource_modifiers_are_distinct(self):
+        classes, abilities, _, _ = generate('soul-weaver')
+        self.assertIn('BONUS:VAR|SPHERES_SOUL_WEAVER_CHANNEL_USES|max(1,3+CHA)', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_SOUL_WEAVER_CHANNEL_DC|10+floor(SPHERES_SOUL_WEAVER_LEVEL/2)+CHA', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_SOUL_WEAVER_NEXUS_DC|10+floor(SPHERES_SOUL_WEAVER_LEVEL/2)+SPHERES_CASTING_ABILITY', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_SOUL_WEAVER_BOUND_SOULS|max(1,3+SPHERES_CASTING_ABILITY)', abilities)
+        first = next(line for line in classes.splitlines() if line.startswith('1\t'))
+        self.assertIn('Soul Weaver Channel Uses (Reference)', first)
+        self.assertIn('Soul Weaver Bound Souls (Reference)', first)
+
+    def test_extra_feat_feature_markers_start_at_second_level(self):
+        for slug, name, feature in (("mageknight", "Mageknight", "Mystic Combat"),):
+            classes, abilities, categories, metadata = generate(slug)
+            marker = name + " " + feature + " Feature"
+            levels = {line.split('\t')[0]: line for line in classes.splitlines()}
+            self.assertNotIn(marker, levels['1'])
+            self.assertIn('ABILITY:Special Ability|AUTOMATIC|' + marker, levels['2'])
+            self.assertIn('TYPE:SpheresClassFeature.Spheres' + feature.replace(' ', ''), abilities)
+
     def test_armiger_ranged_prowess(self):
         tags = armiger_tags('Ranged Prowess')
         self.assertIn('STACK:NO', tags)
@@ -28,6 +289,13 @@ class ClassCatalogTest(unittest.TestCase):
                           ' Sphere|PREVARGTEQ:ArmigerRanged ' + sphere + ',1', classes)
 
     def test_eliciter_emotion_tiers(self):
+        class_lines, feature_lines, _, _ = generate('eliciter')
+        markers = [line for line in feature_lines.splitlines() if 'TYPE:SpheresClassFeature.SpheresEmotion' in line]
+        self.assertEqual(len(markers), 1)
+        self.assertTrue(markers[0].startswith('Eliciter Class Features 2\t'))
+        levels = {line.split('\t')[0]: line for line in class_lines.splitlines()}
+        self.assertNotIn('Eliciter Class Features 2', levels['1'])
+        self.assertIn('ABILITY:Special Ability|AUTOMATIC|Eliciter Class Features 2', levels['2'])
         source = json.loads((SNAPSHOTS / 'eliciter.json').read_text())
         options = source_options(source, 'List of Emotions')
         records = emotion_records(options)
@@ -67,6 +335,15 @@ class ClassCatalogTest(unittest.TestCase):
         self.assertIn('ABILITY:Spheres Combat Talent|AUTOMATIC|Tinker Sphere', technician_tags('Gadgeteer [SUE]'))
         self.assertNotIn('MULT:YES', technician_tags('Luck'))
 
+    def test_technician_trapfinding_is_situational_only_for_perception(self):
+        records = generate('technician')[1]
+        line = next(line for line in records.splitlines()
+                    if line.startswith('Technician Trapfinding (Reference)\t'))
+        self.assertIn('BONUS:SKILL|Disable Device|SPHERES_TECHNICIAN_TRAPFINDING|TYPE=Trapfinding', line)
+        self.assertIn('BONUS:SITUATION|Perception=Trapfinding|SPHERES_TECHNICIAN_TRAPFINDING|TYPE=Trapfinding', line)
+        self.assertNotIn('BONUS:SKILL|Perception', line)
+        self.assertNotIn('BONUS:SKILL|Disable Device', generate('technician')[0])
+
     def test_scholar_medical_training(self):
         category, ability = medical_records()
         self.assertIn('POOL:min(1,SPHERES_SCHOLAR_LEVEL)', category)
@@ -101,6 +378,15 @@ class ClassCatalogTest(unittest.TestCase):
                       scholar_tags('Astrology'))
 
     def test_striker_prerequisites_and_repeat_caps(self):
+        armored = striker_tags('Armored Striker')
+        for tag in ('MULT:YES', 'STACK:YES', 'CHOOSE:NOCHOICE',
+                    'PREVARLT:SPHERES_STRIKER_ARMORED_COUNT,2',
+                    'BONUS:VAR|SPHERES_STRIKER_ARMORED_COUNT|1'):
+            self.assertIn(tag, armored)
+        self.assertIn('DEFINE:SPHERES_STRIKER_ARMORED_COUNT|0', striker_resources())
+        self.assertEqual(striker_tags('Unarmored Striker'), [
+            'PREVARGTEQ:SPHERES_STRIKER_LEVEL,2',
+            'ABILITY:Spheres Combat Talent|AUTOMATIC|Equipment - Unarmored Training'])
         source = json.loads((SNAPSHOTS / 'striker.json').read_text())
         for title, _ in source_options(source, 'Striker Art (Ex)'):
             self.assertTrue(striker_tags(title)[0].startswith('PREVARGTEQ:SPHERES_STRIKER_LEVEL,'))
@@ -211,7 +497,7 @@ class ClassCatalogTest(unittest.TestCase):
                     result = expected(slug, level)
                     self.assertEqual(result["bab"], number(row[1]))
                     self.assertEqual([result[key] for key in ("fortitude", "reflex", "will")],
-                                     [number(row[j]) for j in (2, 3, 4)])
+                     [number(row[j]) + (2 if slug == 'fey-adept' and level == 20 else 0) for j in (2, 3, 4)])
                     self.assertEqual(result["talents"] - (2 if details["magic"] else 0)
                                      - (slug == "mageknight"), number(row[headers.index("Magic Talents") if "Magic Talents" in headers else headers.index("Talents") if details["magic"] else headers.index("Combat Talents")]))
                     if details["magic"]:

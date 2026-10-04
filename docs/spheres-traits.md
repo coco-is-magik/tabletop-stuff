@@ -27,10 +27,40 @@ routes, and situational target choices require GM review; PCGen's ability
 controller does not enforce removal if a prerequisite is lost later.
 
 Most effects are recorded as source rules text, **not** automated bonuses.
-Only narrow unconditional tags in `data/spheres/trait-mechanics.json` are
-applied; bonuses conditioned on a particular target, sphere, circumstance,
-once-per-day use, or action are deliberately not generalized. Apply remaining
-effects at the table. In particular no blanket caster-level, spell-point,
-combat maneuver, DR, hit-point scaling, or conditional skill bonus is inferred
-from the text. Source-specific variants with the same name are one selectable
-trait; review the linked text if a campaign uses the other wording.
+Nineteen traits have reviewed mechanics in `data/spheres/trait-mechanics.json`;
+this is not a count of fully implemented traits. Specific current additions:
+
+- Daysense grants +1 to Geography and Survival and a choice of one as a class
+  skill. Its time awareness remains table-resolved.
+- Corpse Watcher, Colloquial Terms, Weird Virtuoso, Impersonator and Guardian Of
+  The Real expose their circumstance-specific bonuses through PCGen situations,
+  not unconditional skill bonuses. Existing class-skill grants are retained.
+- Scarred by War grants native DR 1/piercing and Intimidate as a class skill.
+- Steel Body grants +1 HP plus +1 per two additional Hit Dice through PCGen's
+  normal HP field. Levels 1 and 2 grant +1; levels 3 and 4 grant +2.
+- Abrasive applies -5 to its three specified Diplomacy situations. Its
+  motivation requirement and effects on allies remain table-resolved.
+- Bountiful Charm grants +2 to Diplomacy when recruiting cohorts. Its optional
+  adaptation to a replacement recruitment skill remains manual.
+- Learned Readiness, Industrial Worker and Higher Calling grant their class
+  skills only. Prepared spell-point assignment, project-material gathering and
+  weekly augury respectively remain unautomated.
+- Skeptical's Sense Motive bonus is automated; its conditional Will save is not.
+- Technophile increases the Tech charge capacity only while Tech is present;
+  it does not create an independent charge pool.
+
+Aura and Technophile are retained in the default live fixture and verified on
+reload. The `--profile daysense` fixture retains Aura and Daysense, including its
+selected Survival class skill. Run `save --profile daysense`, then
+`reload --profile daysense --work <printed-evidence-directory>`. Other tested
+traits are selected and removed during each gate, not persisted selections,
+except `--profile steel`, which retains Steel Body and Aura. Use `--level` on
+save to exercise HP scaling at a specific level; reload reads the saved level.
+Evidence directories and the remaining acceptance ledger are recorded in
+`spheres-current-status.md`.
+
+Compassion's Charisma-for-Heal option remains open because it must not stack
+with Scholar's Intelligence-for-Heal substitution. Caster-level caps, optional
+ability substitutions, resource lifecycles and conditional effects must not be
+inferred from descriptions. Source-specific variants with the same name are one
+selectable trait; review the linked text if a campaign uses the other wording.

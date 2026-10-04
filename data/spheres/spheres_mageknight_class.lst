@@ -1,7 +1,7 @@
 # https://spheresofpower.wikidot.com/mageknight (2026-09-24); numeric progression from the source table.
 CLASS:Mageknight	HD:10	TYPE:Base.PC	MAXLEVEL:20	STARTSKILLPTS:4	CSKILL:Acrobatics|Climb|TYPE=Craft|Diplomacy|Handle Animal|Knowledge (Arcana)|Knowledge (Nature)|Knowledge (Nobility)|Knowledge (Planes)|Knowledge (Religion)|TYPE=Profession|Ride|Spellcraft|Survival|Swim	BONUS:COMBAT|BASEAB|CL|TYPE=Base.REPLACE	DEFINE:SPHERES_MAGEKNIGHT_LEVEL|0	BONUS:VAR|SPHERES_MAGEKNIGHT_LEVEL|CL	BONUS:SAVE|BASE.Fortitude|2+floor(CL/2)	BONUS:SAVE|BASE.Reflex|floor(CL/3)	BONUS:SAVE|BASE.Will|2+floor(CL/2)	BONUS:VAR|SPHERES_CASTER_LEVEL,SPHERES_MAGIC_SKILL_BONUS|floor(CL/2)	BONUS:VAR|SPHERES_SPELL_POOL_LEVELS|CL
 1	DEFINE:SPHERES_COMBAT_TALENTS|0	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple|Weapon Prof ~ Martial|Armor Prof ~ Light|Armor Prof ~ Medium|Shield Prof	ABILITY:Special Ability|AUTOMATIC|Spheres Casting Core	ABILITY:Special Ability|AUTOMATIC|Mageknight Resist Magic (Reference)	ABILITY:Special Ability|AUTOMATIC|Mageknight Class Features 1	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
-2	ABILITY:Special Ability|AUTOMATIC|Mageknight Class Features 2	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+2	ABILITY:Special Ability|AUTOMATIC|Mageknight Class Features 2	BONUS:VAR|SPHERES_MAGIC_TALENTS|1	ABILITY:Special Ability|AUTOMATIC|Mageknight Mystic Combat Feature
 3	ABILITY:Special Ability|AUTOMATIC|Mageknight Class Features 3
 4	ABILITY:Special Ability|AUTOMATIC|Mageknight Class Features 4	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
 5	ABILITY:Special Ability|AUTOMATIC|Mageknight Class Features 5

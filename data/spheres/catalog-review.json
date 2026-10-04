@@ -5370,8 +5370,7 @@
     "sphere": "Life",
     "repeat_limit": 1,
     "mechanics": [
-      "BONUS:VAR|SPHERES_LIFE_CURE_DICE|1+floor(SPHERES_CL_LIFE/5)",
-      "BONUS:VAR|SPHERES_LIFE_INVIGORATE_HP|SPHERES_CL_LIFE"
+      "BONUS:VAR|SPHERES_LIFE_DEEPER_HEALING|1"
     ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
@@ -5418,8 +5417,7 @@
     "sphere": "Life",
     "repeat_limit": 1,
     "mechanics": [
-      "BONUS:VAR|SPHERES_LIFE_INVIGORATE_HP|SPHERES_CASTING_ABILITY",
-      "BONUS:VAR|SPHERES_LIFE_INVIGORATE_HOURS|SPHERES_CL_LIFE-1"
+      "BONUS:VAR|SPHERES_LIFE_GREATER_INVIGORATE|1"
     ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
@@ -5593,7 +5591,7 @@
     "sphere": "Life",
     "repeat_limit": 1,
     "mechanics": [
-      "BONUS:VAR|SPHERES_LIFE_CURE_BONUS|SPHERES_CL_LIFE"
+      "BONUS:VAR|SPHERES_LIFE_RESTORE_HEALTH|1"
     ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"

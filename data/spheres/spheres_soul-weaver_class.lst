@@ -1,22 +1,22 @@
 # https://spheresofpower.wikidot.com/soul-weaver (2026-09-24); numeric progression from the source table.
 CLASS:Soul Weaver	HD:6	TYPE:Base.PC	MAXLEVEL:20	STARTSKILLPTS:4	CSKILL:TYPE=Craft|Diplomacy|Fly|Heal|Intimidate|Knowledge (Arcana)|Knowledge (History)|Knowledge (Planes)|Knowledge (Religion)|Linguistics|TYPE=Perform|TYPE=Profession|Sense Motive|Spellcraft	BONUS:COMBAT|BASEAB|floor(CL/2)|TYPE=Base.REPLACE	DEFINE:SPHERES_SOUL_WEAVER_LEVEL|0	BONUS:VAR|SPHERES_SOUL_WEAVER_LEVEL|CL	BONUS:SAVE|BASE.Fortitude|floor(CL/3)	BONUS:SAVE|BASE.Reflex|floor(CL/3)	BONUS:SAVE|BASE.Will|2+floor(CL/2)	BONUS:VAR|SPHERES_CASTER_LEVEL,SPHERES_MAGIC_SKILL_BONUS|CL	BONUS:VAR|SPHERES_SPELL_POOL_LEVELS|CL
-1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple	ABILITY:Special Ability|AUTOMATIC|Spheres Casting Core	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Channel Dice (Reference)	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 1	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+1	ABILITY:Internal|AUTOMATIC|Weapon Prof ~ Simple	ABILITY:Special Ability|AUTOMATIC|Spheres Casting Core	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Channel Dice (Reference)	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Channel DC (Reference)	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Nexus DC (Reference)	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Channel Uses (Reference)	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Bound Souls (Reference)	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 1	BONUS:VAR|SPHERES_MAGIC_TALENTS|1	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Aid the Dead	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Lovelorn Soul	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Siphon Health
 2	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 2	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
 3	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 3	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
-4	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 4	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+4	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 4	BONUS:VAR|SPHERES_MAGIC_TALENTS|1	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Curious Spirit	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Summon Spirit I
 5	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 5	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
 6	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 6	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
 7	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 7	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
-8	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 8	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+8	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 8	BONUS:VAR|SPHERES_MAGIC_TALENTS|1	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Channel Mastery	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Summon Spirit II	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Divine Soul	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Blessed Soul
 9	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 9	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
 10	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 10	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
 11	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 11	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
-12	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 12	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+12	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 12	BONUS:VAR|SPHERES_MAGIC_TALENTS|1	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Summon Spirit III	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Ghostpoint
 13	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 13	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
 14	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 14	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
 15	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 15	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
-16	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 16	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+16	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 16	BONUS:VAR|SPHERES_MAGIC_TALENTS|1	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Summon Spirit IV	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Temporary Resurrection	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Trap Soul
 17	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 17	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
 18	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 18	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
 19	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 19	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
-20	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 20	BONUS:VAR|SPHERES_MAGIC_TALENTS|1
+20	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Gravewalker	ABILITY:Special Ability|AUTOMATIC|Soul Weaver Class Features 20	BONUS:VAR|SPHERES_MAGIC_TALENTS|1	ABILITY:Soul Weaver Nexus Powers|AUTOMATIC|Soul Weaver Summon Spirit V

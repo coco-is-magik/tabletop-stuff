@@ -1,12 +1,10 @@
 # Explicit adjudication for prerequisite clauses unsupported by this dataset.
 Reviewed - Abundant Adrenaline	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Construct type or subtype
-Reviewed - Admixture Efficiency	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any Admixture feat; MSB +7
-Reviewed - Adopt Animal Ally	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Beastmastery sphere [handle animal] package; an animal or vermin companion
+Reviewed - Adopt Animal Ally	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: an animal or vermin companion
 Reviewed - Adrenaline-Fueled Frenzy	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Berserker sphere [any [adrenaline] talent]
 Reviewed - Advanced Circles	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Conjuration sphere [Diagram]
 Reviewed - Aeolian Flautist	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Bardic performance or raging song class feature
 Reviewed - Aerial Trip	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Improved Trip or a combat talent that allows you to perform a trip without provoking an attack of opportunity
-Reviewed - Agonizing Defiling	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: non-good alignment
 Reviewed - Airborne Aethermancer	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Draconic subtype; breezeflight
 Reviewed - Aligned Attacks	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Non-neutral alignment
 Reviewed - All Together Now	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Communication sphere
@@ -27,8 +25,6 @@ Reviewed - Armored Flight	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual 
 Reviewed - Armorist Training	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: One or more of the following class features: arcane pool; divine bond; sacred armor; sacred weapon
 Reviewed - Armorist Trick	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: One or more of the following class features: arcane pool; divine bond; sacred armor; sacred weapon
 Reviewed - Arrow of Inspiration	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: ability to smite creatures [such as through smite evil or smite good]; class feature that creates a continual aura [such as aura of courage or aura of fear]
-Reviewed - Artificer’s Healing	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Life sphere [Esoteric Healing] or Technomancy sphere
-Reviewed - Artificery	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Any Craft or Profession 5 ranks
 Reviewed - Attuned Dreamer	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: either Dreamwalking Initiate or dreamwalker hedgewitch path power
 Reviewed - Augmented Modulation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Enhancement or Protection Sphere
 Reviewed - Aura Engineering	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere [Deceive Dweomer, Manipulate Aura [sensory, magic]]
@@ -41,28 +37,17 @@ Reviewed - Battle Fanfare	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual 
 Reviewed - Battlebard	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Performance sphere
 Reviewed - Beckon And Pspsps	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Maker’s call class feature, phantom recall class feature, or other similar ability; spherecasting
 Reviewed - Biochemical Brews	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Alchemy sphere [[toxin] package]]; either the Barroom sphere or Nature sphere
-Reviewed - Blessing/Blight Mastery	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Blessing/blight class feature; channel energy class feature
-Reviewed - Blessing/Blight Versatility	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Versatile Channeler; blessing/blight class feature; channel energy class feature
-Reviewed - Blood Construct Mastery	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Blood sphere caster level 5th
+Reviewed - Blessing/Blight Versatility	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Versatile Channeler
 Reviewed - Blood Potion	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Brew Potion or the Alchemy sphere [formulae] package
 Reviewed - Blood Thirst	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: bite attack
 Reviewed - Blurred Boundary	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere [any [glamer] talent]
 Reviewed - Body Double	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: ability to create glamers
-Reviewed - Bruinous Temper	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Bear sphere caster level 5th
-Reviewed - Buffeting Channel	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Channel Energy
 Reviewed - Building Performance	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Performance sphere; tension pool
 Reviewed - Calculated Shot	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Focused Shot
 Reviewed - Capoeirista	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Performance sphere [[dance] package]
 Reviewed - Catisthenics	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: 1 rank in any Strength- or Dexterity-based skill
-Reviewed - Catty Observer	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Life sphere [Diagnose] or Protection sphere [Status]
 Reviewed - Cauldron of Venom	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: poison eater alraun
-Reviewed - Cautious Incantation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: 3 ranks in any 1 skill
 Reviewed - Cecaelia Burst	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Cecaelia subtype
-Reviewed - Channel Destruction	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: channel energy class feature
-Reviewed - Channel Life	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: channel energy class feature
-Reviewed - Channel Luck	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Channel energy
-Reviewed - Channel Resolve	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Channel energy class feature
-Reviewed - Channeled Detonation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: ability to channel negative energy
 Reviewed - Chaotic Counter	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Counterspell or the ability to cast dispel magic
 Reviewed - Cherufe Chomp	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Cherufe [zavr subtype]
 Reviewed - Cherufe Sweep	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Tail natural attack
@@ -75,7 +60,6 @@ Reviewed - Collective Intensity	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:M
 Reviewed - Color Guard	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Banner class feature
 Reviewed - Combatant’s Alignment	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Essence sphere [Parallel Alignment [potent]]
 Reviewed - Commander’s Acumen	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: tactician class feature
-Reviewed - Commanding Presence	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: 3rd level
 Reviewed - Companion Merger	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: animal companion or familiar
 Reviewed - Companion Trigger	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Animal Companion class feature, Mount class feature, or Beastmastery sphere
 Reviewed - Companionship	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: 3rd-level paladin
@@ -83,7 +67,6 @@ Reviewed - Complex Harmony	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual
 Reviewed - Compound Mutagen	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Alchemy sphere [[toxin] package].
 Reviewed - Contingency Tampering	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Enhanced Contingency [see Enhancement feats]
 Reviewed - Contingency Spread	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any [mass] talent
-Reviewed - Cooperating	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Any one teamwork feat
 Reviewed - Cooperative Mind	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Must have been subject to the Fusion advanced talent
 Reviewed - Coordinated Combo	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: sequence or tension class feature
 Reviewed - Coordinated Plot	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Communication sphere
@@ -98,20 +81,15 @@ Reviewed - Cuazaj Breath	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual p
 Reviewed - Cuazaj Breath Expanded	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Draconic subtype; cuazaj lightning racial trait
 Reviewed - Cumulative Nimbus	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Weather sphere [any [shroud] talent]
 Reviewed - Customized Bond	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Bound equipment class feature; customized weapons class feature
-Reviewed - Damning Darkness	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: evil alignment
 Reviewed - Dastardly Entrapment	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Infiltration sphere
 Reviewed - Deadcaller	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Conjuration sphere [Undead Creature [type] x2]
 Reviewed - Deduction	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: studied combat class feature
 Reviewed - Defender’s Bonds	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: lay on hands or sentinel’s reserve class feature
-Reviewed - Defiler’s Channel	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: channel energy 3d6
 Reviewed - Defy Fate	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Kismet pool
-Reviewed - Destiny Reader	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Divination Sphere [augury or divine future]
 Reviewed - Destructive Counter	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Creation sphere [any [material] talent]
 Reviewed - Devourer	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Alteration sphere [Serpentine Transformation [transformation]] or swallow whole ability
-Reviewed - Dimensional Archer	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: +3 base attack bonus
-Reviewed - Dimensional Tether	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction Sphere [energy tether] or Mana Sphere [hardened bond]
 Reviewed - Directed Instillation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Any [instill] talent
-Reviewed - Disabling Dastard	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Infiltration sphere; Tinker sphere [Disruption Set [gizmo]] or Counterspell
+Reviewed - Disabling Dastard	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Infiltration sphere
 Reviewed - Disarming Transformation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Alteration sphere [Transform Object]
 Reviewed - Disciplined Casting	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: casting
 Reviewed - Distributed Strain	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: War sphere, Squadron Commander; or Warleader sphere, Hive Mind, Troop Commander: caster level 5th or 5 ranks in Diplomacy
@@ -119,7 +97,6 @@ Reviewed - Dramatic Intensity	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Man
 Reviewed - Dramaturgic Spectacle	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Performance Sphere [act package]
 Reviewed - Dream Team	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Faction Sphere
 Reviewed - Dual Wielding Mystic Fusion	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Spherecasting
-Reviewed - Dynamic Wallcrafter	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction Sphere [energy wall] or Protection Sphere [greater barrier]
 Reviewed - Eldritch Exultation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: ability to cast arcane or psychic spells
 Reviewed - Eldritch Supplies	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Faction sphere
 Reviewed - Elemental Blood	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Blood sphere; ability to cast any sphere effect, spell, or spell-like ability with the acid, cold, electricity, or fire descriptor
@@ -127,55 +104,35 @@ Reviewed - Elemental Heart	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual
 Reviewed - Elemental Rebirth	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Fenghaung subtype; energy resistance
 Reviewed - Elemental Rift	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction sphere [any one [blast type] talent]; Survivalism sphere [[dredge] package, Hazardous Terrain]
 Reviewed - Elemental Touch	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Fenghaung subtype; energy resistance
-Reviewed - Elicit Strike	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Emotion class feature
 Reviewed - Embraced By Kindred	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Outsider with the native subtype; alignment matching either an extraplanar ancestor or a patron
 Reviewed - Emergency Repair	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Technological racial trait
 Reviewed - Emulation Expert	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere [Shadow Infusion] or shadow pool; Shadow Magic or create reality class feature
-Reviewed - Enchanting Performance	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Fallen Fey sphere [Beckoning Call [fey-blessing] or Enchanting Music [fey-blessing]]; bardic performance or raging song class feature
-Reviewed - Encompassing Illness	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Blood sphere and 5th caster level; or Death sphere and 5th caster level; or Duelist sphere and base attack bonus +5; or Alchemy sphere and base attack bonus +5; Virulent Ailment, character level 9th
+Reviewed - Enchanting Performance	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: bardic performance or raging song class feature
 Reviewed - Energized Appeasement	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Spirit class feature
-Reviewed - Energized Spell	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Ability to channel positive or negative energy
 Reviewed - Energy Shift	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction sphere or at least 2 evocation spells known
 Reviewed - Enmity Ward	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: favored enemy class feature
-Reviewed - Ensouled Illuminations	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: bound nexus class feature
-Reviewed - Ensouled Vision	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: bound nexus class feature
 Reviewed - Escutcheon	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Banner class feature or Warleader sphere [Heraldry]
 Reviewed - Event Horizon	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Telekinesis sphere [Gravity Well]
 Reviewed - Exceptional Ally	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Enhancement sphere [at least one [enhance] talent]
-Reviewed - Exemplary Transformation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Enhancement Sphere [emphasize belief, mental enhancement, or physical enhancement]
 Reviewed - Expanded Tension Technique	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: tension pool
 Reviewed - Expanding Presence	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: antipaladin or paladin
-Reviewed - Expedited Incantation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: 3 ranks in any 1 skill
 Reviewed - Explosive Chorus	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction Sphere [any [blast type] talent]; Warleader Sphere [resonating chorus]
 Reviewed - Exposing Critical	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: BAB +11
 Reviewed - Extend Stance	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Any [stance] talent
-Reviewed - Extra Battlefield Specialization	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Commander 5
 Reviewed - Extra Bestial Trait	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Bestial trait class feature
 Reviewed - Extra Boon Of Purpose	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Boon of purpose class feature
 Reviewed - Extra Breadth Of Form	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Breadth of form class feature
 Reviewed - Extra Divine Works	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Divine works class feature
 Reviewed - Extra Electrokinetic Stunt	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Electrokinetic stunt class feature
-Reviewed - Extra Emotion	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Emotion class feature
 Reviewed - Extra Iatrogen	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Iatrogen class feature
-Reviewed - Extra Invocations	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Invocations class feature
 Reviewed - Extra Ki Power	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Cultivate Ki or ki power class feature
-Reviewed - Extra Mystic Combat	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Mystic combat class feature
-Reviewed - Extra Nexus Powers	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Bound nexus class feature
 Reviewed - Extra Planar Balancer	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Fey type or subtype; planar balancer racial trait
-Reviewed - Extra Prowess	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Armiger 5
-Reviewed - Extra Psionics	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Psionics class feature
 Reviewed - Extra Reinforcement	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Warden 5
-Reviewed - Extra Scholar’s Knack	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Scholar 7
 Reviewed - Extra Secret	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Secrets class feature
-Reviewed - Extra Shadowstuff	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Shadowstuff class feature
-Reviewed - Extra Smithing Insight	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Blacksmith 7
-Reviewed - Extra Striker Art	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Striker 5
 Reviewed - Extra Swarm Enhancement	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Swarm enhancement class feature
 Reviewed - Extra Swarm Powers	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Swarm powers class feature
-Reviewed - Extra Technical Insight	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Technician 5
 Reviewed - Extra Unseen Augmentation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Unseen forces class feature
 Reviewed - Extra Venom	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Poison eater alraun
-Reviewed - Extra Wraith Haunt	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Wraith haunt class feature
 Reviewed - Extradimensional Gullet	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Swallow whole, Alteration sphere [Serpentine Transformation [transformation]], or Death sphere [Tomb Of Flesh]; Warp sphere [Extradimensional Room [space]]
 Reviewed - Extradimensional Pouch	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Form sphere [Hidden Storage [auxiliary]]; Warp sphere [Extradimensional Storage x2]
 Reviewed - Favorite Boost	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Mana sphere [at least one [amp] talent]
@@ -199,19 +156,16 @@ Reviewed - Formulae Geomancing	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Ma
 Reviewed - Fortified Conversion	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Casting Tradition; Combat Stamina
 Reviewed - Fortified Corpsecraft	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Ability to create undead creatures.
 Reviewed - Fortified Healing	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Combat Stamina
-Reviewed - Friends In Close Places	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Leadership sphere [[follower] package]; call in a specialist logistic specialty
 Reviewed - Frozen To The Bone	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction sphere [at least one [blast type] talent that deals cold damage]
 Reviewed - Furious Flare	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction sphere [any [blast type] talent]
 Reviewed - Fused Technique	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Knowledge of at least one technique
 Reviewed - Gather Shadowstuff	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Shadowmark class feature
-Reviewed - Glamered Thievery	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere caster level 5th
-Reviewed - Glimpse The Flow	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Divination sphere [any [sense] talent]; Divination sphere caster level 6th
+Reviewed - Glimpse The Flow	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Divination sphere [any [sense] talent]
 Reviewed - Grandiose Charms	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: either Bluster or Performance sphere
 Reviewed - Grappling Caster	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: casting class feature or ability to cast spells
 Reviewed - Graveborn Expression	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Performance sphere
 Reviewed - Greater Created	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Construct subtype
 Reviewed - Greater Cuazaj Breath	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Draconic subtype; cuazaj lightning racial trait
-Reviewed - Greater Shadowmark	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Shadowmark 1d6
 Reviewed - Gritting Teeth	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Combat Stamina
 Reviewed - Guarded Fane	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any magical sphere [see text]
 Reviewed - Guarded Range	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Navigation sphere
@@ -221,7 +175,6 @@ Reviewed - Hardened Shell	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual 
 Reviewed - Harnessed Virtue	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: non-neutral alignment
 Reviewed - Healing Touch	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: lay on hands or fervor class feature
 Reviewed - Heavy Hand	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction sphere [at least one [blast type] talent that deals nonlethal damage]
-Reviewed - Heedless Metamagic	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: 1 or more metamagic feats
 Reviewed - Hemothermia	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Blood sphere [any [blood art]]
 Reviewed - Heroic Companion	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Beastmastery sphere, Conjuration sphere, animal companion, familiar, or eidolon
 Reviewed - Heroic Resolve	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Constitution 13 or higher
@@ -229,25 +182,19 @@ Reviewed - Hexblade	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prereq
 Reviewed - Hold the Note	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: tension pool; one of bardic performance, psionics, or raging song
 Reviewed - Homogenous Companions	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Conjuration sphere [Extra Companion, any [form] or [type] talent]
 Reviewed - Horticulturist	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Associated ranks 3; Herbalism sphere [[herbal] package]; either the Alchemy sphere [[poison] package] or Creation sphere
-Reviewed - Hubris Defiance	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: base attack bonus +5 or monk level 5th; nonlawful
-Reviewed - Hubris Style	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Base attack bonus +3 or monk level 3rd; nonlawful
-Reviewed - Hubris Triumph	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: base attack bonus +9 or monk level 9th; nonlawful
 Reviewed - Huckster’s Gamble	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Catastrophic Failure
 Reviewed - Huckster’s Hypothetical	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Catastrophic Failure drawback; Hypothesis Dice class feature
 Reviewed - Hungry	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Ravenous Companion
 Reviewed - I Will Save You	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Guardian sphere [Defend Other, I Will Hear, I Will Come]
 Reviewed - Illusionary Blast	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere [Illusionary Touch [sensory, touch] x2]
 Reviewed - Imbue With Nature	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Nature sphere [any [geomancing] talent]
-Reviewed - Improved Artificery	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Any Craft or Profession 10 ranks
 Reviewed - Improved Assistance	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Knowledge of at least one technique
 Reviewed - Improved Atavism	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Berserker sphere [Atavism [adrenaline]]
 Reviewed - Improved Dispelling Attack	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Dispelling Attack
 Reviewed - Improved Ink Jet	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Cecaelia subtype; ink jet racial ability
 Reviewed - Improved Spell Combat	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any talent with the strike descriptor
 Reviewed - Improved Spell Kicker	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Card Casting or Charged Spells drawback
-Reviewed - Inhuman Defiler	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: non-good alignment
 Reviewed - Insinuating Incantation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Bluster sphere
-Reviewed - Inspired Learning	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: MSB +1
 Reviewed - Intense Metamagic	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: tension pool
 Reviewed - Jumbled Organs	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Construct type or subtype
 Reviewed - Layered Shroud	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Weather sphere [one [shroud] talent]
@@ -255,8 +202,6 @@ Reviewed - Lightshow	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prere
 Reviewed - Linguistic Mastery	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Tatulani subtype
 Reviewed - Living Accumulator	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Draconic subtype; Constitution 13+
 Reviewed - Localized Arcana	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Favored Terrain class feature
-Reviewed - Mage of Spore and Fungus	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Plant Mastery
-Reviewed - Maintain Proxy	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: at least one Proxy feat
 Reviewed - Manabond Versatility	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any other magic sphere
 Reviewed - Manifold Spell Knowledge	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Caster level 1st or higher with at least two casting traditions
 Reviewed - Manipulate Result	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Spell point pool or casting class feature
@@ -271,11 +216,9 @@ Reviewed - Middle Man	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prer
 Reviewed - Might Of The Grave	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Death sphere [reanimate ability]; Enhancement sphere [any [enhance] ability]
 Reviewed - Mind Over Manners	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Conjuration sphere [Call Planar Creature]
 Reviewed - Mixed Toxicity	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Poison eater alraun
-Reviewed - Mobile Drone	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Drone
 Reviewed - Morphic Disguise	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Alteration or Illusion sphere; Subterfuge sphere
 Reviewed - Mounted Protector	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Beastmastery sphere or animal companion class feature
 Reviewed - Mutagenic Enhancements	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Enhancement sphere [any [enhance] ability]
-Reviewed - Mystic Choreography	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: at least one of the Skilled Casting, Somatic Casting, or Verbal Casting drawbacks
 Reviewed - Natural Sciences	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Associated ranks 3; Herbalism sphere [[herbal] package]; either the Alchemy sphere [[formulae] package] or Nature sphere
 Reviewed - Nature’s Enhancement	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Nature sphere [any [spirit] talent]
 Reviewed - Object Familiar	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: ability to acquire a familiar
@@ -283,8 +226,6 @@ Reviewed - Organic Spirits	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual
 Reviewed - Organized Following	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Faction sphere
 Reviewed - Overwatch	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Covering Fire talent
 Reviewed - Pacified Strike	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: one talent from any sphere that has the strike descriptor
-Reviewed - Pathological Host	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Blood sphere and 5th caster level; or Death sphere and 5th caster level; or Duelist sphere and base attack bonus +5; or Alchemy sphere and base attack bonus +5; Virulent Ailment, character level 7th
-Reviewed - Pathology	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Blood sphere and 5th caster level; or Death sphere and 5th caster level; or Duelist sphere and base attack bonus +5; or Alchemy sphere and base attack bonus +5; Virulent Ailment
 Reviewed - Perpetual Connection	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Communication sphere, Posse Commander; or War sphere, Squadron Commander; or Warleader sphere, Troop Commander
 Reviewed - Persistent Onslaught	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Determined Defense or Furious Focus
 Reviewed - Petrifying Pennant	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: banner class feature or Warleader sphere [Heraldry]
@@ -308,7 +249,6 @@ Reviewed - Primal Blast	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual pr
 Reviewed - Primal Dancer	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Performance sphere [[dance] package]; either the Berserker sphere or Destruction sphere [one [blast type] talent that deals energy damage or Energy Aura talent]
 Reviewed - Primal Emblem	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Banner class feature
 Reviewed - Prolific Pugilist	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Bluster sphere
-Reviewed - Pulsing Channel	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Channel Energy 4d6
 Reviewed - Puncturing Strike	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any [strike] talent
 Reviewed - Push/Pull Mastery	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Telekinesis sphere [Directional Control drawback]
 Reviewed - Rage Of The Grave	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: rage class feature
@@ -321,8 +261,6 @@ Reviewed - Razor Talons	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual pr
 Reviewed - Reach Blade	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: destructive blade class feature
 Reviewed - Ready Initiation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Knowledge of at least one technique
 Reviewed - Real Flight	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Draconic subtype; breezeflight
-Reviewed - Reckless Drone	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Drone
-Reviewed - Recon Drone	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Drone
 Reviewed - Refined Amplification	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Mana Sphere [any [amp] talent]
 Reviewed - Regulated Metabolism	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Body Control sphere; vitae class feature
 Reviewed - Rehearsed Performance	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Communication sphere; one of Performance sphere [[dance] package], bardic performance, psionics, or raging song
@@ -330,44 +268,32 @@ Reviewed - Rerouted Costs	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual 
 Reviewed - Revenant Militia	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Ability to create undead creatures
 Reviewed - Revitalizing Grasp	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Life sphere [at least one [vitality] talent]; lay on hands class feature
 Reviewed - Rigorous Defense	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: inspiration class feature
-Reviewed - Ritualistic Perseverance	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: 3 ranks in any 2 skills
 Reviewed - Roiling Anger	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Ki pool class feature; rage class feature
 Reviewed - Roll Redemption	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Kismet pool.
-Reviewed - Rotten Hordes	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Blood sphere and 5th caster level; or Death sphere and 5th caster level; or Duelist sphere and base attack bonus +5; or Alchemy sphere and base attack bonus +5; Death sphere [Shroud], Virulent Ailment [plague]
-Reviewed - Ruinous Defiling	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: non-good alignment
 Reviewed - Rumbling	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: 3 purring feats
 Reviewed - Rust to Rust	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Ability to deal negative energy damage
 Reviewed - Ruthless Sneak	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Sneak Attack +3d6
 Reviewed - Sacrosanct Firewall	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Fate sphere [Hallow [word]]
 Reviewed - Sanctified Vigilance	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: War sphere [any [rally] talent]
-Reviewed - Sanguine Magic	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Duelist sphere [one [bleed] talent]; Blood sphere [Hemorrhage] or Death sphere [Bleeding Wounds [ghost strike]]
+Reviewed - Sanguine Magic	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Duelist sphere [one [bleed] talent]
 Reviewed - Savagery	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: animal focus class feature
 Reviewed - Scorched Path	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Navigation Sphere
 Reviewed - Secrets of the Land	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Area Casting drawback
 Reviewed - Sectioned Theurgy	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: method acting or lesser spirit power class feature
-Reviewed - Selective Admixture	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any one Admixture feat
-Reviewed - Seraphic Glow	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: good alignment
 Reviewed - Shadow Doppelganger	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere [Illusionary Disguise ability]
 Reviewed - Shadow Magic	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere [Shadow Infusion] or shadow pool
 Reviewed - Shadowblast	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Shadowmark class feature
-Reviewed - Shape Expert	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction sphere [Energy Wall [blast shape] or Explosive Orb [blast shape]]
-Reviewed - Shield Drone	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Drone
 Reviewed - Shift Cost	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Spell point pool
 Reviewed - Shift Effect	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Spell point pool or casting class feature
 Reviewed - Shifting Style	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: customized weapons class feature
 Reviewed - Shoulder To Shoulder	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Grit; luck pool or panache class feature
 Reviewed - Siege Engineer	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Proficiency with at least 1 siege engine
 Reviewed - Skeletal Contortionist	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: charmed life class feature
-Reviewed - Skillful Force	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Telekinesis sphere [Finesse, Steal, or Telekinetic Tools]
 Reviewed - Smolder Resin	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Nature sphere [[fire] package and [plant] package]
 Reviewed - So Close Yet So Far	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Kismet pool.
 Reviewed - Sojourner	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Performance sphere [[dance] package]
 Reviewed - Solid Illusions	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere [Illusionary Touch [sensory, touch] x2]
-Reviewed - Solipsistic Admixture	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any one Admixture feat
-Reviewed - Solitary Incantation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: 5 ranks in any 1 skill
-Reviewed - Soul-Scorching Blast	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction sphere [Paradigm Blast [blast type] or Smiting Blast [blast type]]
 Reviewed - Spatial Storage	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Artifice sphere [Storage Enhancement]
-Reviewed - Specialist Defiler	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: non-good alignment
 Reviewed - Spell Adept	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: spherecaster
 Reviewed - Spell Attack	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any talent with the strike descriptor
 Reviewed - Spell Attack Whirlwind	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Whirlwind Attack feat or Whirl of Blows mystic combat; any talent with the strike descriptor
@@ -375,7 +301,7 @@ Reviewed - Spell Capacitor Agenda	CATEGORY:Spheres Feat Adjudication	COST:0	DESC
 Reviewed - Spell Dabbler	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Spherecaster
 Reviewed - Spell Kicker	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Card Casting or Charged Spells drawback
 Reviewed - Spell Maneuver	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any talent with the strike descriptor
-Reviewed - Spell Proxy Extended	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: at least one Proxy feat
+Reviewed - Spell Proxy	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Must not possess the Personal Magics sphere-specific drawback [Special]
 Reviewed - Sphere Virtuoso	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: two or more talents from any sphere that both have the instill; mass; range or strike descriptors
 Reviewed - Spirit Form	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Nature sphere [any [spirit] talent]
 Reviewed - Spiteful End	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Death or Fate sphere
@@ -387,37 +313,27 @@ Reviewed - Striking Ensnarement	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:M
 Reviewed - Studied Scout	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: studied target or studied combat class feature
 Reviewed - Style Synthesis	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Any [stance] talent; any style feat
 Reviewed - Succor	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: lay on hands class feature
-Reviewed - Suffused Blasts	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction sphere [Paradigm Blast [blast type] or Smiting Blast [blast type]]
 Reviewed - Superior Rebuff	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: improved evasion class feature
 Reviewed - Surefire Coordination	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Knowledge of at least one technique
 Reviewed - Surreinforcement	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere [Shadow Infusion] or create reality class feature
-Reviewed - Swarming Strike	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Coordination class feature; psionics class feature
+Reviewed - Swarming Strike	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Coordination class feature
 Reviewed - Tactical Ensign	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: banner class feature
 Reviewed - Tactical Hypothesis	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Study sphere
-Reviewed - Tactical Proxies	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: any one teamwork feat
 Reviewed - Tactile Density	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Draconic subtype
 Reviewed - Tactile Illusion	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere [Illusionary Touch [sensory, touch] x2]
-Reviewed - Tainted Manabond	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: forbidden lore class feature
 Reviewed - Talented Leaper	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Cherufe subtype
 Reviewed - Target Spotting	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: favored enemy class feature
-Reviewed - Technical Compatibility	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Independent Invention; Drone
-Reviewed - Technologically Alchemical Ammo	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Ammo Spitter; Alchemy sphere [formulae] package
-Reviewed - Telekineticat	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Mind sphere or Enhancement sphere [Bestow Intelligence [enhance]]
+Reviewed - Technical Compatibility	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Independent Invention
 Reviewed - Tenacity	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Judgment class ability
-Reviewed - Tentacle Adept	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Base attack bonus +5 or monk 3
-Reviewed - Tentacle Novice	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Two or more tentacles; base attack bonus +2 or monk 1
-Reviewed - Terminating Conversion	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: At least one metamagic feat
-Reviewed - Terrain Defiler	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: non-good alignment
+Reviewed - Tentacle Novice	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Two or more tentacles
 Reviewed - Theatrical Effects	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Performance sphere [[act] package]
 Reviewed - Theorized Momentum	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Study Sphere
 Reviewed - Theurgic Advantage	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Caster level 1st or higher with at least two casting traditions
 Reviewed - Theurgic Virtuoso	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Caster level 1st or higher with at least two casting traditions
-Reviewed - Through The Long Night	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: good alignment
 Reviewed - Thrum Of Rain	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: bardic performance or raging song class feature
 Reviewed - Time-Crossed Plots	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Divination or Time sphere; any one [plan] talent
 Reviewed - Tool Transformation	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: one of Artifice, Survivalism, or Trap Spheres
 Reviewed - Tornado Companion	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: animal companion with an effective druid level of 7
-Reviewed - Totemic Channeling	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: channel energy class feature
 Reviewed - Totemic Stamina	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Combat Stamina
 Reviewed - Tough As Nails	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Grit, luck, or panache pool
 Reviewed - Toxic Webs	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Alteration sphere [Vermin Transformation [transformation]] or web bestial trait; poison bestial trait or racial poison ability
@@ -431,12 +347,10 @@ Reviewed - Two-Headed Sight	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manua
 Reviewed - Ultimate Form	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Alteration sphere or Transformation feat
 Reviewed - Undead Animal Companion	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: animal companion or mount class feature
 Reviewed - Understand Thy Enemy	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Fencing sphere [Read Foe, Parry And Riposte] or Fencing sphere [Read Foe] and opportune parry and riposte deed
-Reviewed - Unerring Eye	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Sense Motive ranks 3; Investigation sphere; either the Divination sphere or Scout sphere
+Reviewed - Unerring Eye	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Investigation sphere; either the Divination sphere or Scout sphere
 Reviewed - Unique Creative Strike	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Creative strike class feature
-Reviewed - Universal Bonding	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Life sphere [Diagnose] or Mind sphere [Project Thoughts]
 Reviewed - Unreasonable Coordination	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Three or more arms; Dexterity 13
-Reviewed - Unveiling Admixture	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Divination Sphere [Sensory Overload or Viewing]
-Reviewed - Variable Armaments	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Conjuration sphere [Battle Creature [form] or Shield Bearer [form]]; companion with 6 or more Hit Dice
+Reviewed - Variable Armaments	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: companion with 6 or more Hit Dice
 Reviewed - Vegetalker	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Plant type or subtype
 Reviewed - Venom Spitter	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Alteration sphere [Serpentine Transformation [transformation] or Vermin Transformation [transformation]], poison bestial trait, or racial poison ability
 Reviewed - Venomfire	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Alchemy sphere [Painful Venin x2]
@@ -447,10 +361,8 @@ Reviewed - Venomous Soul	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual p
 Reviewed - Venomous Spit	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Conjuration sphere [Monstrous Attacks [form] with poison option]
 Reviewed - Vermin Master	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: able to tame creatures of the vermin type
 Reviewed - Vicious Performer	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Performance sphere; either the Gladiator sphere or War sphere
-Reviewed - Vigilant Skeptic	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Perception 5 ranks and Sense Motive 5 ranks; or Alertness
 Reviewed - Vined Limbs	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Draide alraun
-Reviewed - Violent Shadow	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Shadowmark 3d6; shadow pool
-Reviewed - Virulent Ailment	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Blood sphere and 5th caster level; or Death sphere and 5th caster level; or Duelist sphere and base attack bonus +5; or Alchemy sphere and base attack bonus +5
+Reviewed - Violent Shadow	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: shadow pool
 Reviewed - Vital Magic	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Fervor or lay on hands class feature
 Reviewed - Vitalized Fervency	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Life Sphere [any [Vitality] talent]; ability to gain martial focus or use skill leverage
 Reviewed - Vudu	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Illusion sphere [Illusionary Touch [sensory, touch] x2, Illusionary Disguise ability]
@@ -459,5 +371,4 @@ Reviewed - Web Mastery	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual pre
 Reviewed - Whole-Set Blast	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Destruction Sphere [Conflagrant Cluster]
 Reviewed - Winded By Words	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Bluster sphere
 Reviewed - Witch Hunt	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: judgment class feature
-Reviewed - World In Miniature	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Warp sphere [Extradimensional Room [space] or Extradimensional Storage [space]]
 Reviewed - Zodiac Tattoos	CATEGORY:Spheres Feat Adjudication	COST:0	DESC:Manual prerequisite approval only; does not grant the feat or its effects. Verify: Unarmored Training or AC Bonus class feature

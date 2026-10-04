@@ -1,5 +1,9 @@
 # Spheres continuation backlog — September 29, 2026
 
+Current measured status and corrections are in `spheres-current-status.md`.
+The deterministic record-level inventory is `spheres-coverage.json`. Dated
+sections below are historical and must not be read as a single current snapshot.
+
 ## Contract
 
 Complete magic/martial traditions, feat-based Ultimate Spellcrafting, feats,

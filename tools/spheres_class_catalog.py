@@ -16,6 +16,7 @@ from spheres_blacksmith import option_tags as blacksmith_tags, feat_category as 
 from spheres_scholar import option_tags as scholar_tags, medical_records, medical_resources
 from spheres_technician import option_tags as technician_tags, class_tags as technician_class_tags
 from spheres_eliciter import emotion_records
+from spheres_commander import option_tags as commander_tags
 from spheres_striker import (option_tags as striker_tags, resource_tags as striker_resources,
                              training_records as striker_training)
 
@@ -100,6 +101,40 @@ def option_abilities(slug, category, section, snapshot):
             tags = technician_tags(title)
         if category == "Striker Striker Art":
             tags = striker_tags(title)
+        if slug == "Commander":
+            tags = commander_tags(category, title)
+        if category == "Wraith Wraith Haunt":
+            tags = ["PREVARGTEQ:SPHERES_WRAITH_LEVEL,3"]
+            requirement = re.search(r"\(requires wraith ([1-9]\d*)\)$", title)
+            if requirement:
+                tags = [f"PREVARGTEQ:SPHERES_WRAITH_LEVEL,{max(3, int(requirement[1]))}"]
+            if title.startswith("Possess Armaments ("):
+                # The historical key flattened the source's semicolon into OR.
+                # Preserve that key for saved characters, not its incorrect logic.
+                tags.extend([
+                    "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+                    "PREMULT:1,[PREABILITY:1,CATEGORY=Wraith Wraith Haunt,Wraith Object Ride],"
+                    "[PREABILITY:1,CATEGORY=Wraith Haunt Path,Wraith Path of the Poltergeist]",
+                ])
+            if title.startswith("Reactive Possession ("):
+                tags.append(
+                    "PREMULT:1,[PREABILITY:1,CATEGORY=Wraith Wraith Haunt,"
+                    "Wraith Possess Armaments (requires Enhancement sphere or object ride or path of the poltergeist)],"
+                    "[PREMULT:2,[PREABILITY:1,CATEGORY=Wraith Haunt Path,Wraith Path of the Poltergeist],"
+                    "[PREVARGTEQ:SPHERES_WRAITH_LEVEL,8]]")
+            if title.startswith("Expanded Path Possession, Improved ("):
+                tags = ["PREVARGTEQ:SPHERES_WRAITH_LEVEL,12",
+                        "PREABILITY:1,CATEGORY=Wraith Wraith Haunt,"
+                        "Wraith Expanded Path Possession (requires haunt path - path sphere of the selected path)"]
+        if category == "Wraith Wraith Haunt" and title == "Extra Incorporeality":
+            tags = ["PREVARGTEQ:SPHERES_WRAITH_LEVEL,3", "MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
+                    "BONUS:VAR|SPHERES_WRAITH_FORM_ROUNDS|4|PREVARLT:SPHERES_WRAITH_LEVEL,20"]
+        if category == "Wraith Wraith Haunt" and title == "Forced Wraith Form (requires share wraith form)":
+            tags = ["PREVARGTEQ:SPHERES_WRAITH_LEVEL,3",
+                    "PREABILITY:1,CATEGORY=Wraith Wraith Haunt,Wraith Share Wraith Form",
+                    "MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
+                    "PREVARLT:SPHERES_WRAITH_FORCED_FORM_COUNT,2",
+                    "BONUS:VAR|SPHERES_WRAITH_FORCED_FORM_COUNT|1"]
         lines.append(f"{slug} {key}\tCATEGORY:{category}\t" + "\t".join(tags) + f"\tDESC:{body}")
     return lines
 
@@ -182,19 +217,36 @@ def numeric_features(name, prefix):
     """Class-level-derived values whose combat application needs no assumptions."""
     level = prefix + "_LEVEL"
     mapping = {
+        "Wraith": (("Form Rounds", f"if({level}>=20,0,{level}+SPHERES_CASTING_ABILITY)", "daily wraith form rounds; zero denotes unlimited only when Form Unlimited is one"),
+                   ("Form Unlimited", f"if({level}>=20,1,0)", "unlimited wraith form at level 20; activation remains required"),
+                   ("Haunt DC", f"10+floor({level}/2)+SPHERES_CASTING_ABILITY", "save DC for wraith haunts that call for saves"),
+                   ("Possession DC", f"if({level}<2,0,10+floor({level}/2)+SPHERES_CASTING_ABILITY)", "possession save DC from level 2; host effects are table-resolved"),
+                   ("Possession Targets", f"if({level}<2,0,if({level}<10,1,max(2,SPHERES_CASTING_ABILITY)))", "simultaneously possessed creatures; actions are shared, not multiplied")),
+        "Commander": (("Group Focus Uses", f"max(0,1+floor(({level}-5)/6))", "daily group focus uses from level 5; recovery and ally effects are table-resolved"),
+                      ("Active Enhanced Tactics", f"if({level}<2,0,if({level}<10,1,if({level}<20,2,3)))", "maximum simultaneous enhanced tactics; activation and switching remain table-resolved")),
         "Eliciter": (("Persuasive", f"2+floor({level}/6)", "bonus to Mind sphere and eliciter DCs, Bluff, Diplomacy and Intimidate"),
                      ("Hypnotism Uses", f"3+floor({level}/2)", "uses per day; DC includes the persuasive bonus")),
         "Armorist": (("Bound Items", f"1+floor({level}/5)", "pieces of bound equipment"),
                      ("Armor Training", f"max(0,floor(({level}+1)/4))", "armor check penalty reduction and increase to maximum Dexterity bonus while wearing armor")),
-        "Soul Weaver": (("Channel Dice", f"floor(({level}+1)/2)", "d6 channel energy; positive or negative channel is a permanent choice"),),
+        "Soul Weaver": (("Channel Dice", f"floor(({level}+1)/2)", "d6 channel energy; positive or negative channel is a permanent choice"),
+                        ("Channel DC", f"10+floor({level}/2)+CHA", "saving throw DC for channel energy; Charisma-based"),
+                        ("Nexus DC", f"10+floor({level}/2)+SPHERES_CASTING_ABILITY", "saving throw DC when a bound nexus power requires a save"),
+                        ("Channel Uses", "max(1,3+CHA)", "channel uses per day; Charisma-based, not casting-ability-based"),
+                        ("Bound Souls", "max(1,3+SPHERES_CASTING_ABILITY)", "souls replenished when resting to regain spell points; spending and movement remain table-resolved")),
         "Blacksmith": (("Thunderous Blows Dice", f"floor(({level}+1)/2)", "d6 conditional damage on qualifying attacks or sunders"),),
         "Technician": (("Trapfinding", f"max(1,floor({level}/2))", "bonus to locating traps and Disable Device checks"),),
-        "Sentinel": (("Reserve Points", f"max(1,floor({level}/2)+WIS)", "daily reserve points; temporary HP from a spent point is 2 x BAB + WIS"),),
+        "Sentinel": (("Reserve Points", f"max(1,floor({level}/2)+WIS)", "daily reserve points; spending and recovery are table-resolved"),
+                     ("Reserve Temporary HP", "2*BAB+WIS", "temporary hit points per reserve point; lasts one minute or until lost, not a permanent HP increase")),
         "Mageknight": (("Resist Magic", f"1+floor(({level}-1)/4)", "saving throw bonus against spells, spell-like abilities, and magic sphere effects"),),
         "Symbiat": (("Psionics Rounds", f"4+INT+2*({level}-1)", "rounds per day of psionic effects"),),
         "Thaumaturge": (("Invocation Uses", f"SPHERES_CASTING_ABILITY+floor({level}/2)", "uses per day of invocations; only one invocation per roll"),
+                        ("Invocation DC", f"10+floor({level}/2)+SPHERES_CASTING_ABILITY", "saving throw DC for invocations"),
                         ("Forbidden Lore", f"2+floor(({level}-1)/4)", "caster-level increase on one qualifying effect when invoked, subject to backlash; not a permanent caster-level increase")),
         "Fey Adept": (("Shadowmark Dice", f"floor(({level}+1)/2)", "d6 shadowmark damage when its conditions are met"),
+                      ("Shadowmark Die Size", "6", "sides per shadowmark damage die; modified by Greater Shadowmark"),
+                      ("Shadow Points", f"max(1,CHA+floor({level}/2))", "shadow point capacity; Charisma-based; refills when all spell points are regained"),
+                      ("Shadowmark Penalty", f"1+floor(({level}-1)/6)", "magnitude of target Will penalty against your sphere effects for one minute; does not stack with itself"),
+                      ("Master Illusionist Rounds", f"max(1,floor({level}/2))", "rounds an illusion remains after concentration ends"),
                       ("Truesight Uses", f"floor({level}/4)", "uses per day of truesight from level 4")),
     }
     features = []
@@ -203,6 +255,9 @@ def numeric_features(name, prefix):
         features.append(f"{name} {key} (Reference)\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature\t"
                         f"DEFINE:{variable}|0\tBONUS:VAR|{variable}|{formula}\t"
                         f"DESC:%{variable} {context}; apply to qualifying rolls or uses only.")
+        if name == "Technician" and key == "Trapfinding":
+            features[-1] += (f"\tBONUS:SKILL|Disable Device|{variable}|TYPE=Trapfinding"
+                             f"\tBONUS:SITUATION|Perception=Trapfinding|{variable}|TYPE=Trapfinding")
         if name == "Armorist" and key == "Armor Training":
             features[-1] += (f"\tBONUS:MISC|MAXDEX|{variable}|PREEQUIP:1,TYPE=Armor"
                              f"\tBONUS:MISC|ACCHECK|{variable}|PREEQUIP:1,TYPE=Armor"
@@ -297,6 +352,44 @@ def generate(slug):
     choices = choice_features(name, rows)
     for level, row in enumerate(rows, 1):
         grants = []
+        if name == "Symbiat":
+            if level == 2:
+                grants.append("BONUS:SKILL|Sense Motive,Perception|floor(SPHERES_SYMBIAT_LEVEL/2)")
+            if level == 3:
+                grants.append("BONUS:MOVEADD|TYPE=Walk|10*min(6,floor(SPHERES_SYMBIAT_LEVEL/3))")
+            if level in (2, 9):
+                grants.append("ABILITY:Special Ability|AUTOMATIC|" + ("Evasion" if level == 2 else "Improved Evasion"))
+            if level == 3:
+                grants.extend(["ABILITY:Special Ability|AUTOMATIC|Trap Sense",
+                               "BONUS:VAR|TrapSenseBonus|floor(SPHERES_SYMBIAT_LEVEL/3)",
+                               "BONUS:SITUATION|Perception=Avoid being surprised|floor(SPHERES_SYMBIAT_LEVEL/3)"])
+            if level in (4, 8):
+                grants.append("BONUS:VAR|UncannyDodgeLVL|1")
+                if level == 4:
+                    grants.extend(["ABILITY:Special Ability|AUTOMATIC|Uncanny Dodge ~ Base",
+                                   "BONUS:VAR|UncannyDodgeFlankingLevel|SPHERES_SYMBIAT_LEVEL|TYPE=EachClass.REPLACE"])
+        if name == "Fey Adept" and level == 2:
+            grants.extend(["VISION:Darkvision (30')", "BONUS:VISION|Darkvision|30"])
+        if name == "Fey Adept" and level == 14:
+            grants.append("ABILITY:Special Ability|AUTOMATIC|Fey Adept See in Darkness")
+            abilities.append("Fey Adept See in Darkness\tCATEGORY:Special Ability\t"
+                             "TYPE:SpheresClassFeature.SpecialQuality.Supernatural\tVISION:See in Darkness\t"
+                             "DESC:See perfectly in darkness of any kind, including magical darkness.")
+        if name == "Fey Adept" and level == 20:
+            grants.append("ABILITY:Special Ability|AUTOMATIC|Fey Adept Feytouched")
+            abilities.append("Fey Adept Feytouched\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature\t"
+                             "DR:10/cold iron\tBONUS:SAVE|ALL|2|TYPE=Luck\t"
+                             "DESC:Treated as fey for spells and magical effects only; "
+                             "this does not globally replace creature type.")
+        if name == "Soul Weaver" and level == 20:
+            grants.append("ABILITY:Special Ability|AUTOMATIC|Soul Weaver Gravewalker")
+            abilities.append("Soul Weaver Gravewalker\tCATEGORY:Special Ability\t"
+                             "TYPE:SpheresClassFeature.SpecialQuality.Supernatural.Immunity\t"
+                             "ASPECT:Immunity|Nonlethal Damage, Ability Drain, Energy Drain\t"
+                             "DESC:Immune to nonlethal damage, ability drain and energy drain. "
+                             "Unintelligent undead ignore you unless provoked. On death you may "
+                             "choose to rise as a ghost 2d4 days later; resolve this choice at the table. "
+                             "This feature does not change your creature type or apply a ghost template.")
         if name == "Striker" and level in (3, 12):
             grants.append("BONUS:VAR|UncannyDodgeLVL|1")
             if level == 3:
@@ -319,7 +412,10 @@ def generate(slug):
         feature_key = f"{name} Class Features {level}"
         grants.append("ABILITY:Special Ability|AUTOMATIC|" + feature_key)
         special = row[5].replace("|", "/").replace("\t", " ") or "No new class-table feature"
-        abilities.append(f"{feature_key}\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature\tDESC:Level {level}: {special}. See {source['url']} for effects, timing and prerequisites.")
+        feature_type = "SpheresClassFeature"
+        if name == "Eliciter" and level == 2:
+            feature_type += ".SpheresEmotion"
+        abilities.append(f"{feature_key}\tCATEGORY:Special Ability\tTYPE:{feature_type}\tDESC:Level {level}: {special}. See {source['url']} for effects, timing and prerequisites.")
         delta = raw_talents[level - 1] - (raw_talents[level - 2] if level > 1 else 0)
         if delta:
             grants.append(f"BONUS:VAR|{'SPHERES_MAGIC_TALENTS' if magic else 'SPHERES_COMBAT_TALENTS'}|{delta}")
@@ -347,6 +443,11 @@ def generate(slug):
             lines[2] += "\tABILITY:Special Ability|AUTOMATIC|Symbiat Mental Powers"
     if name == "Mageknight":
         lines[2] += "\tBONUS:VAR|SPHERES_MAGIC_TALENTS|1"
+    if name == "Mageknight":
+        feature = "Mystic Combat"
+        marker = f"{name} {feature} Feature"
+        abilities.append(f"{marker}\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature.Spheres{feature.replace(' ', '')}")
+        lines[3] += "\tABILITY:Special Ability|AUTOMATIC|" + marker
     if name == "Blacksmith":
         # Equipment Sphere grants an extra sphere talent on acquisition. Do not
         # grant it automatically: the source awards one talent, not two.
@@ -404,6 +505,29 @@ def generate(slug):
         "technician": {"technical insight": "List of Technical Insights"},
     }
     for group, levels in choices.items():
+        if name == "Thaumaturge" and group == "invocations":
+            from spheres_thaumaturge import INVOCATION_LEVELS, invocation_records, master_records
+            master_category, master_choices = master_records()
+            categories.append(master_category)
+            abilities.extend(master_choices)
+            abilities.append('Thaumaturge Occult Knowledge\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature\t'
+                             'BONUS:SKILL|TYPE.Knowledge,Spellcraft,Use Magic Device|min(5,1+floor((SPHERES_THAUMATURGE_LEVEL-2)/4))\t'
+                             'DESC:Scaling bonus to Knowledge, Spellcraft and Use Magic Device checks.')
+            lines[3] += '\tABILITY:Special Ability|AUTOMATIC|Thaumaturge Occult Knowledge'
+            category = "Thaumaturge Invocations"
+            categories.append(f"ABILITYCATEGORY:{category}\tCATEGORY:{category}\tEDITABLE:NO\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:0\tPLURAL:Invocations\tDISPLAYLOCATION:Spheres")
+            abilities.extend(invocation_records(source_options(source, "Invocations")))
+            for title, at in INVOCATION_LEVELS.items():
+                lines[at + 1] += f"\tABILITY:{category}|AUTOMATIC|Thaumaturge {title}"
+            continue
+        if name == "Soul Weaver" and group == "nexus powers":
+            from spheres_soul_weaver import NEXUS_LEVELS, nexus_records
+            category = "Soul Weaver Nexus Powers"
+            categories.append(f"ABILITYCATEGORY:{category}\tCATEGORY:{category}\tEDITABLE:NO\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:0\tPLURAL:Bound Nexus Powers\tDISPLAYLOCATION:Spheres")
+            abilities.extend(nexus_records(source_options(source, "Bound Nexus (Su)")))
+            for title, at in NEXUS_LEVELS.items():
+                lines[at + 1] += f"\tABILITY:{category}|AUTOMATIC|Soul Weaver {title}"
+            continue
         title = group.title().replace("’", "'")
         category = f"{name} {title}"
         pool = "+".join(f"if({prefix}_LEVEL>={level},1,0)" for level in levels)
@@ -418,6 +542,9 @@ def generate(slug):
             abilities.append(option.replace(f"PREVARGTEQ:{prefix}_LEVEL,1", f"PREVARGTEQ:{prefix}_LEVEL,10"))
     if name == "Commander":
         category = "Commander Enhanced Tactic"
+        categories.append("ABILITYCATEGORY:Commander Teamwork Feat\tCATEGORY:FEAT\tTYPE:Teamwork\t"
+                          "EDITABLE:YES\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:0\t"
+                          "PLURAL:Commander Teamwork Feats\tDISPLAYLOCATION:Feats")
         pool = "+".join(f"if({prefix}_LEVEL>={at},1,0)" for at in range(2, 21, 2))
         categories.append(f"ABILITYCATEGORY:{category}\tCATEGORY:{category}\tEDITABLE:YES\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:{pool}\tPLURAL:Enhanced Tactics\tDISPLAYLOCATION:Spheres")
         abilities.extend(option_abilities(name, category, "Enhanced Tactics (Ex)", source))
@@ -427,8 +554,16 @@ def generate(slug):
         lines[2] += "\tABILITY:Special Ability|AUTOMATIC|Thaumaturge Bonus Feats"
     if categories_for_channel:
         categories.append(categories_for_channel)
-        abilities.extend(("Soul Weaver Positive Channel\tCATEGORY:Soul Weaver Channel\tABILITY:Spheres Magic Talent|AUTOMATIC|Life Sphere\tDESC:Positive channel energy and free Life sphere; consult class rules for channel uses and effects.",
-                          "Soul Weaver Negative Channel\tCATEGORY:Soul Weaver Channel\tABILITY:Spheres Magic Talent|AUTOMATIC|Death Sphere\tDESC:Negative channel energy and free Death sphere; consult class rules for channel uses and effects."))
+        from spheres_soul_weaver import blessing_records
+        records, grants = blessing_records(source_options(source, 'List of Blessings'),
+                                          source_options(source, 'List of Blights'))
+        abilities.extend(records)
+        for polarity, sphere in (('Positive', 'Life'), ('Negative', 'Death')):
+            abilities.append(f'Soul Weaver {polarity} Channel\tCATEGORY:Soul Weaver Channel\t'
+                             f'ABILITY:Spheres Magic Talent|AUTOMATIC|{sphere} Sphere\t'
+                             + '\t'.join(grants[polarity])
+                             + f'\tDESC:{polarity} channel energy and free {sphere} sphere; '
+                             'blessings/blights are granted at their class levels. Resolve effects on targets at the table.')
     if name == "Armiger":
         categories.append(f"ABILITYCATEGORY:Armiger Practitioner Ability\tCATEGORY:Armiger Practitioner Ability\tEDITABLE:YES\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:min(1,{prefix}_LEVEL)\tPLURAL:Practitioner Ability\tDISPLAYLOCATION:Spheres")
         for stat, label in (("INT", "Intelligence"), ("WIS", "Wisdom"), ("CHA", "Charisma")):
@@ -437,6 +572,9 @@ def generate(slug):
         categories.append(f"ABILITYCATEGORY:Hedgewitch Path\tCATEGORY:Hedgewitch Path\tEDITABLE:YES\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:2*min(1,{prefix}_LEVEL)\tPLURAL:Hedgewitch Paths\tDISPLAYLOCATION:Spheres")
         abilities.extend(option_abilities(name, "Hedgewitch Path", "List of Paths", source))
     if name == "Wraith":
+        lines[2] += "\tDEFINE:SPHERES_WRAITH_FORCED_FORM_COUNT|0"
+        abilities.append("Wraith Haunts\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature.SpheresWraithHaunt\tDESC:Wraith haunt selections; each haunt retains its own prerequisites.")
+        lines.append("3\tABILITY:Special Ability|AUTOMATIC|Wraith Haunts")
         categories.append(f"ABILITYCATEGORY:Wraith Haunt Path\tCATEGORY:Wraith Haunt Path\tEDITABLE:YES\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:min(1,{prefix}_LEVEL)\tPLURAL:Wraith Haunt Path\tDISPLAYLOCATION:Spheres")
         for title, text in source_options(source, "List of Haunt Paths"):
             if not title.startswith("Path of the "):
@@ -447,13 +585,19 @@ def generate(slug):
             match = re.search(r"Path Sphere:\s*([\w ]+?)(?=\s+Path Possession:)", text)
             if not match:
                 raise ValueError(f"Missing haunt path sphere: {title}")
+            skill_match = re.search(r"Path Skill:\s*([^\n]+?)\s*\((?:Str|Dex|Con|Int|Wis|Cha)\)", text)
+            if not skill_match:
+                raise ValueError(f"Missing haunt path skill: {title}")
+            path_skill = skill_match[1].strip().title()
             for sphere in (s.strip() for s in match.group(1).split(" or ")):
                 if not (DATA / f"spheres_power_{sphere.lower()}.lst").is_file():
                     raise ValueError(f"Unknown haunt path sphere: {sphere}")
                 key = f"Wraith {title}" + (f" - {sphere}" if " or " in match.group(1) else "")
                 sphere_bonus = (f"\tABILITY:Spheres Magic Talent|AUTOMATIC|{sphere} Sphere\t"
-                                f"BONUS:VAR|SPHERES_CL_{sphere.upper()}|{prefix}_LEVEL-SPHERES_CASTER_LEVEL")
-                abilities.append(f"{key}\tCATEGORY:Wraith Haunt Path\tPREVARGTEQ:{prefix}_LEVEL,1{sphere_bonus}\tDESC:{body} Consult source for any unrepresented path skills and effects.")
+                                f"BONUS:VAR|SPHERES_CL_{sphere.upper()}|{prefix}_LEVEL-floor({prefix}_LEVEL*3/4)")
+                abilities.append(f"{key}\tCATEGORY:Wraith Haunt Path\tPREVARGTEQ:{prefix}_LEVEL,1{sphere_bonus}"
+                                 f"\tCSKILL:{path_skill}\tBONUS:SKILL|{path_skill}|floor({prefix}_LEVEL/2)|TYPE=Insight|PREVARGTEQ:{prefix}_LEVEL,4"
+                                 f"\tDESC:{body} Consult source for unrepresented possession effects and duplicate-sphere replacement.")
     if name == "Striker":
         training_category, training_options = striker_training(source)
         categories.append(training_category)
@@ -462,6 +606,22 @@ def generate(slug):
         for sphere in ("Boxing", "Brute", "Open Hand"):
             abilities.append(f"Striker {sphere} Knuckles\tCATEGORY:Striker Bare Knuckles\tABILITY:Spheres Combat Talent|AUTOMATIC|{sphere} Sphere\tDESC:Gain {sphere} sphere without spending a combat talent; if already possessed, choose a legal replacement sphere or talent manually.")
     if name == "Sentinel":
+        abilities.append('Sentinel Second Wind\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature.Extraordinary\t'
+                         'DEFINE:SPHERES_SENTINEL_SECOND_WIND_DICE|floor(SPHERES_SENTINEL_LEVEL/2)\t'
+                         'DEFINE:SPHERES_SENTINEL_SECOND_WIND_BONUS|WIS\t'
+                         'DESC:Spend a reserve point as a swift action to heal d6 per two Sentinel levels plus Wisdom modifier, '
+                         'up to half maximum HP. Halve healing to regain martial focus, declared before rolling. '
+                         'Spending, healing, and the level-7 extra-point exception are table-resolved.')
+        lines[4] += '\tABILITY:Special Ability|AUTOMATIC|Sentinel Second Wind'
+        abilities.append('Sentinel Wise Reflexes\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature.Extraordinary\t'
+                         'BONUS:COMBAT|INITIATIVE|max(0,min(WIS,SPHERES_SENTINEL_LEVEL)-DEX)|TYPE=Ability\t'
+                         'BONUS:SAVE|Reflex|max(0,min(WIS,SPHERES_SENTINEL_LEVEL)-DEX)|TYPE=Ability\t'
+                         'DESC:Use capped Wisdom instead of Dexterity when it improves initiative or Reflex saves.')
+        lines[2] += '\tABILITY:Special Ability|AUTOMATIC|Sentinel Wise Reflexes'
+        abilities.append('Sentinel Dedicated Defense\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature.Extraordinary\t'
+                         'DR:0/-\tBONUS:DR|-|1+floor((SPHERES_SENTINEL_LEVEL-2)/4)\t'
+                         'DESC:Damage reduction stacks with other DR/- sources. Challenge-specific doubling remains table-resolved.')
+        lines[3] += '\tABILITY:Special Ability|AUTOMATIC|Sentinel Dedicated Defense'
         abilities.append(f"Sentinel Defender's Soul\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature\tABILITY:Spheres Combat Talent|AUTOMATIC|Guardian Sphere\tDESC:Free Guardian challenge package; if already possessed, choose a legal Guardian talent instead.")
         lines[2] += "\tABILITY:Special Ability|AUTOMATIC|Sentinel Defender's Soul"
     if name == "Scholar":

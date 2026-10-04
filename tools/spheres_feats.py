@@ -112,6 +112,22 @@ def core_feats():
             for line in path.read_text().splitlines() if line and not line.startswith("#")}
 
 
+def split_alternatives(value):
+    """Split OR only outside balanced talent/package parentheses."""
+    parts, start, depth = [], 0, 0
+    for i, char in enumerate(value):
+        depth += (char == "(") - (char == ")")
+        if depth < 0:
+            return None
+        if depth == 0 and value[i:i + 4].lower() == " or ":
+            parts.append(value[start:i].strip())
+            start = i + 4
+    if depth:
+        return None
+    parts.append(value[start:].strip())
+    return parts if all(parts) else None
+
+
 class Prerequisites:
     def __init__(self, feats):
         self.spheres = {normalize(r["sphere"]): r for r in inventory()}
@@ -123,9 +139,27 @@ class Prerequisites:
         value = value.strip().rstrip(".")
         # "(drawback)" punctuation is equivalent to the bare "drawback" suffix.
         value = re.sub(r"\s*\(drawback\)", " drawback", value, flags=re.I)
+        value = re.sub(r"^(.+? sphere)\s+\(([a-z ]+)\) package$",
+                       r"\1 (\2 package)", value, flags=re.I)
         simple = normalize(value)
+        alignment = {
+            "good alignment": "PREALIGN:LG,NG,CG",
+            "evil alignment": "PREALIGN:LE,NE,CE",
+            "non-good alignment": "!PREALIGN:LG,NG,CG",
+            "nonlawful": "!PREALIGN:LG,LN,LE",
+        }
+        if simple in alignment:
+            return [alignment[simple]]
         if simple.startswith("and "):
             return self.clause(value[4:], caster_variable)
+        drawback_choices = re.fullmatch(r"at least one of the (.+) drawbacks", value, re.I)
+        if drawback_choices:
+            choices = re.split(r",\s*(?:or\s+)?|\s+or\s+", drawback_choices[1])
+            names = [DRAWBACK_MAP.get(normalize(choice)) for choice in choices]
+            if len(names) < 2 or not all(names) or len(set(names)) != len(names):
+                return None
+            return ["PREABILITY:1,CATEGORY=Custom Casting Drawback," +
+                    ",".join("Tradition - " + name for name in names)]
         # "One of A, B, or C" enumerates single-clause alternatives.
         if simple.startswith("one of "):
             parts = [p for p in re.split(r",\s*(?:or\s+)?|\s+or\s+", value[7:].strip()) if p.strip()]
@@ -134,8 +168,20 @@ class Prerequisites:
                 return ["PREMULT:1," + ",".join("[" + p[0] + "]" for p in alternatives)]
             return None
         # OR is valid only when every complete alternative can be represented.
-        if " or " in simple and "(" not in value:
-            alternatives = [self.clause(p, caster_variable) for p in re.split(r" or ", value, flags=re.I)]
+        if simple == "1 or more metamagic feats":
+            return ["PREFEAT:1,TYPE=Metamagic"]
+        if simple == "ability to channel positive or negative energy":
+            alternatives = [self.clause("ability to channel " + energy + " energy", caster_variable)
+                            for energy in ("positive", "negative")]
+            return ["PREMULT:1," + ",".join("[" + tags[0] + "]" for tags in alternatives)]
+        skill_family = re.fullmatch(r"any craft or profession ([1-9]\d*) ranks?", simple)
+        if skill_family:
+            return ["PRESKILL:1,TYPE.Craft=" + skill_family[1] + ",TYPE.Profession=" + skill_family[1]]
+        branches = split_alternatives(value)
+        if branches is None:
+            return None
+        if len(branches) > 1:
+            alternatives = [self.clause(p, caster_variable) for p in branches]
             if all(p for p in alternatives):
                 return ["PREMULT:1," + ",".join("[" + p[0] + "]" if len(p) == 1 else
                         "[PREMULT:" + str(len(p)) + "," + ",".join("[" + t + "]" for t in p) + "]"
@@ -143,8 +189,38 @@ class Prerequisites:
             return None
         if simple in ("casting class feature", "spherecasting class feature"):
             return ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"]
+        channel_dice = re.fullmatch(r"channel energy ([1-9]\d*)d6", simple)
+        if channel_dice:
+            from spheres_channel import dice_prerequisite
+            return [dice_prerequisite(int(channel_dice[1]))]
+        if simple in ("channel energy", "channel energy class feature"):
+            return ["PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],"
+                    "[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"]
+        channel = re.fullmatch(r"(?:ability to channel|channel) (positive|negative) energy(?: class feature)?", simple)
+        if channel:
+            energy = channel[1].title()
+            return ["PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel " + energy + " Energy],"
+                    "[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver " + energy + " Channel]"]
         if simple == "combat training class feature":
             return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresCombatTraining"]
+        if simple == "blessing/blight class feature":
+            return ["PREABILITY:1,CATEGORY=Special Ability,Soul Weaver Blessing,Soul Weaver Blight"]
+        class_features = {"wraith haunt class feature": "SpheresWraithHaunt",
+                          "mystic combat class feature": "SpheresMysticCombat",
+                          "emotion class feature": "SpheresEmotion"}
+        if simple in class_features:
+            return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=" + class_features[simple]]
+        resource_features = {"psionics class feature": "Symbiat Psionics Rounds (Reference)",
+                             "shadowstuff class feature": "Fey Adept Shadow Points (Reference)",
+                             "forbidden lore class feature": "Thaumaturge Forbidden Lore (Reference)",
+                             "bound nexus class feature": "Soul Weaver Bound Souls (Reference)",
+                             "invocations class feature": "Thaumaturge Invocation Uses (Reference)"}
+        if simple in resource_features:
+            return ["PREABILITY:1,CATEGORY=Special Ability," + resource_features[simple]]
+        shadowmark = re.fullmatch(r"shadowmark ([1-9]\d*)d6", simple)
+        if shadowmark:
+            return ["PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadowmark Dice (Reference)",
+                    "PREVARGTEQ:SPHERES_FEY_ADEPT_SHADOWMARK_DICE," + shadowmark[1]]
         if simple in ("martial focus", "ability to gain martial focus", "ability to maintain martial focus"):
             return ["PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"]
         if simple in ("no casting class feature", "no spherecasting class feature"):
@@ -153,17 +229,60 @@ class Prerequisites:
             return ["PREVARGTEQ:SPHERES_SPELL_POINTS,1"]
         if simple in ("any metamagic feat", "any item creation feat"):
             return ["PREFEAT:1,TYPE=" + ("Metamagic" if "metamagic" in simple else "ItemCreation")]
+        feat_families = {"any one admixture feat": "Admixture",
+                         "any admixture feat": "Admixture",
+                         "at least one proxy feat": "Proxy",
+                         "any one teamwork feat": "Teamwork",
+                         "at least one metamagic feat": "Metamagic"}
+        if simple in feat_families:
+            return ["PREFEAT:1,TYPE=" + feat_families[simple]]
+        sphere_level = re.fullmatch(r"(.+?) sphere caster level ([1-9]\d*)(?:st|nd|rd|th)?", simple)
+        if sphere_level:
+            row = self.spheres.get(normalize(sphere_level[1]))
+            if row is None or row["system"] != "power":
+                return None
+            return ["PREABILITY:1,CATEGORY=" + category(row) + "," + row["sphere"] + " Sphere",
+                    "PREVARGTEQ:SPHERES_CL_" + token(row["sphere"]).upper() + "," + sphere_level[2]]
+        match = re.fullmatch(r"monk (?:level )?([1-9]\d*)(?:st|nd|rd|th)?", simple)
+        if match:
+            return ["PRECLASS:1,Monk=" + match[1]]
+        match = re.fullmatch(r"(commander|armiger|scholar|blacksmith|striker|technician) ([1-9]\d*)", simple)
+        if match:
+            return ["PRECLASS:1," + match[1].title() + "=" + match[2]]
+        match = re.fullmatch(r"\+([1-9]\d*) base attack bonus", simple)
+        if match:
+            return ["PREATT:" + match[1]]
+        match = re.fullmatch(r"([1-9]\d*)(?:st|nd|rd|th) level", simple)
+        if match:
+            return ["PRELEVEL:MIN=" + match[1]]
         for pattern, prefix in ((r"base attack bonus\s*\+?(\d+)", "PREATT:"),
                 (r"(?:character )?level (\d+)(?:st|nd|rd|th)?", "PRELEVEL:MIN="),
                 (r"caster level (\d+)(?:st|nd|rd|th)?", "PREVARGTEQ:" + caster_variable + ","),
-                (r"magic skill bonus\s*\+?(\d+)", "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,")):
+                (r"(?:magic skill bonus|msb)\s*\+?(\d+)", "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,")):
             match = re.fullmatch(pattern, simple)
             if match:
                 return [prefix + match[1]]
         match = re.fullmatch(r"(str|dex|con|int|wis|cha) (\d+)", simple)
         if match:
             return ["PRESTAT:1," + match[1].upper() + "=" + match[2]]
+        match = re.fullmatch(r"([1-9]\d*) ranks? in any 1 skill", simple)
+        if match:
+            # Loaded Core/Spheres skills use Base. A name wildcard stops at the
+            # first matching skill in this PCGen version, even if ranks fail.
+            return ["PRESKILL:1,TYPE.Base=" + match[1]]
+        match = re.fullmatch(r"([1-9]\d*) ranks? in any 2 skills", simple)
+        if match:
+            return ["PRESKILL:2,TYPE.Base=" + match[1] + ",CHECKMULT"]
+        match = re.fullmatch(r"(.+? [1-9]\d* ranks?) and (.+? [1-9]\d* ranks?)", value, re.I)
+        if match:
+            parts = [self.clause(part, caster_variable) for part in match.groups()]
+            if all(part and len(part) == 1 and part[0].startswith("PRESKILL:") for part in parts):
+                return parts[0] + parts[1]
+            return None
         match = re.fullmatch(r"(.*?) (\d+) ranks?", value, re.I)
+        if match and match[1].lower() in SKILLS:
+            return ["PRESKILL:1," + match[1].title() + "=" + match[2]]
+        match = re.fullmatch(r"(.+?) ranks? ([1-9]\d*)", value, re.I)
         if match and match[1].lower() in SKILLS:
             return ["PRESKILL:1," + match[1].title() + "=" + match[2]]
         match = re.fullmatch(r"(\d+) ranks? in (?:the )?(.+?)(?: skill)?", value, re.I)
@@ -171,11 +290,27 @@ class Prerequisites:
             return ["PRESKILL:1," + match[2].title() + "=" + match[1]]
         match = re.fullmatch(r"(.+?) sphere(?:\s*\((.*)\))?", value, re.I)
         if match and normalize(match[1]) in self.spheres:
+            if match[2] is not None and not match[2].strip():
+                return None
             row = self.spheres[normalize(match[1])]
             tags = ["PREABILITY:1,CATEGORY=" + category(row) + "," + row["sphere"] + " Sphere"]
             talents = {normalize(t["name"]): key(row, t) for t in row["talents"]}
             if match[2]:
-                for item in split_clauses(match[2]):
+                items = split_clauses(match[2])
+                alternatives = split_alternatives(match[2])
+                enumeration = (len(items) > 1 and items[-1].lower().startswith("or ")
+                               and all(split_alternatives(item) == [item] for item in items[:-1]))
+                if enumeration:
+                    alternatives = items[:-1] + [items[-1][3:].strip()]
+                if alternatives and len(alternatives) > 1 and (len(items) == 1 or enumeration):
+                    choices = []
+                    for item in alternatives:
+                        clean = normalize(clean_name(item))
+                        if clean not in talents:
+                            return None
+                        choices.append("[PREABILITY:1,CATEGORY=" + category(row) + "," + talents[clean] + "]")
+                    return tags + ["PREMULT:1," + ",".join(choices)]
+                for item in items:
                     package = re.fullmatch(r"\(?([a-z ]+)\)? package", item, re.I)
                     if package and package[1].title() in PACKAGES.get(row["slug"], ()):
                         tags.append("PREABILITY:1,CATEGORY=Spheres " + row["sphere"] + " Package," + row["sphere"] + " Package - " + package[1].title())
@@ -195,7 +330,8 @@ class Prerequisites:
     # Requirements that are not sphere/feat-specific; when they follow the last
     # branch of an OR expression they are hoisted to apply to every branch (the
     # stricter reading; the adjudication record remains available otherwise).
-    GLOBAL = re.compile(r"^(?:base attack bonus|(?:character |caster )?level\b|magic skill bonus|"
+    GLOBAL = re.compile(r"^(?:base attack bonus|(?:character |caster )?level\b|magic skill bonus|msb\b|"
+                        r"\+\d+ base attack bonus|\d+(?:st|nd|rd|th) level\b|.* ranks? \d+$|"
                         r"(?:str|dex|con|int|wis|cha) \d|\d+ ranks?\b|.* \d+ ranks?$|"
                         r"(?:sphere)?casting class feature|combat training class feature|spell pool)", re.I)
 
@@ -218,6 +354,14 @@ class Prerequisites:
         tags, unresolved = [], []
         for clause in clauses:
             parsed = self.clause(clause, caster)
+            # Resolve only reviewed bare names with an explicit sphere clause.
+            contextual_talents = {"drone": "Tech", "ammo spitter": "Tech",
+                                  "plant mastery": "Nature"}
+            sphere = contextual_talents.get(normalize(clause))
+            if parsed is None and sphere and any(
+                    re.fullmatch(re.escape(sphere) + r" sphere(?:\s*\(.*\))?", item, re.I)
+                    and self.clause(item, caster) for item in clauses):
+                parsed = self.clause(sphere + " sphere (" + clause + ")", caster)
             if parsed:
                 tags.extend(parsed)
             else:
@@ -262,19 +406,39 @@ class Prerequisites:
 
 
 def build():
+    from spheres_plague import prerequisites as plague_prerequisites
     feats = inventory_feats()
     core = core_feats()
     for row in feats:
         row["key"] = row["name"].replace(",", "") + (" (Spheres)" if normalize(row["name"]) in core and row["name"] not in LEGACY else "")
     parser = Prerequisites(feats)
     overrides = json.loads((DATA / "feat-mechanics.json").read_text())
+    legacy_overrides = LEGACY.intersection(overrides)
+    if legacy_overrides:
+        raise ValueError("Legacy feat overrides are not emitted; update the owning LST instead: "
+                         + ", ".join(sorted(legacy_overrides)))
     lines = ["# Generated by tools/spheres_feats.py; OGC: catalog-OGL.txt"]
     approvals = ["# Explicit adjudication for prerequisite clauses unsupported by this dataset."]
     for row in feats:
         prereqs, unresolved = parser.compile(row["text"])
+        plague = plague_prerequisites(row["name"], row["text"])
+        if plague is not None:
+            prereqs, unresolved = plague, []
         override = overrides.get(row["name"], {})
         if "prerequisites" in override:
             prereqs, unresolved = override["prerequisites"], []
+        prereqs.extend(override.get("additional_prerequisites", []))
+        unresolved.extend(override.get("additional_unresolved_prerequisites", []))
+        # A feat cannot supply its own required pre-existing feat family.
+        for family in ("Proxy", "Admixture"):
+            predicate = "PREFEAT:1,TYPE=" + family
+            if family in row["types"] and predicate in prereqs:
+                candidates = [other["key"] for other in feats
+                              if family in other["types"] and other["key"] != row["key"]]
+                if not candidates:
+                    raise ValueError("No other feats in required family: " + family)
+                prereqs = ["PREFEAT:1," + ",".join(candidates) if tag == predicate else tag
+                           for tag in prereqs]
         # Alternative-Brew substitutes only for feats requiring Alchemy,
         # never for unrelated crafting prerequisites or an optional OR branch.
         if 'PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy Sphere' in prereqs:
@@ -291,6 +455,10 @@ def build():
             row["status"] = "existing"
             continue
         types = row["types"] + ["SpheresFeat"]
+        # Only a mandatory top-level casting prerequisite certifies this family.
+        # An OR branch mentioning casting does not require every applicant to cast.
+        if "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core" in prereqs:
+            types.append("SpheresCasting")
         # Incanter grants only feats explicitly referring to spheres/spell points,
         # plus metamagic, crafting, and drawback feats (not all magic-adjacent feats).
         requirement = re.search(r"Prerequisites?:\s*(.*?)(?=\n|Benefits?:|$)", row["text"], re.I)
@@ -338,10 +506,20 @@ def build():
         tags += ["DESC:" + text(row["text"]) + " Automated tags and remaining manual effects: docs/spheres-feats.md. Apply unautomated effects manually.", "SOURCEPAGE:" + row["sources"][0]]
         lines.append("\t".join(tags))
         row["status"] = "partial" if unresolved or not row["mechanics"] else "mechanics-added"
+    for kind in ("Magic", "Combat"):
+        lines.append("\t".join([
+            "Blended Training - " + kind, "CATEGORY:Spheres Blended Talent Allocation",
+            "PREFEAT:1,Extra Blended Training Talent", "MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
+            "PREABILITY:2,CATEGORY=Special Ability,Spheres Casting Core,Spheres Martial Focus",
+            "BONUS:ABILITYPOOL|Spheres " + kind + " Talent|1|PREFEAT:1,Extra Blended Training Talent"
+            "|PREABILITY:2,CATEGORY=Special Ability,Spheres Casting Core,Spheres Martial Focus",
+            "DESC:Allocate one Extra Blended Training Talent selection to the existing "
+            + kind.lower() + " talent pool. Remove the purchased talent before refunding its allocation."]))
     return {"spheres_feat_catalog.lst": "\n".join(lines) + "\n",
             "spheres_feat_adjudication.lst": "\n".join(approvals) + "\n",
             "spheres_categories_feats.lst": "ABILITYCATEGORY:Spheres Feat Adjudication\tCATEGORY:Spheres Feat Adjudication\tEDITABLE:YES\tEDITPOOL:NO\tPOOL:0\tFRACTIONALPOOL:NO\tVISIBLE:YES\tPLURAL:Manual Feat Prerequisite Approvals\tDISPLAYLOCATION:Spheres\n"
-                "ABILITYCATEGORY:Spheres Basic Magic Sphere\tCATEGORY:Spheres Magic Talent\tTYPE:SpheresBaseSphere\tEDITABLE:YES\tEDITPOOL:NO\tPOOL:0\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPLURAL:Basic Magic Training Sphere\tDISPLAYLOCATION:Spheres\n",
+                "ABILITYCATEGORY:Spheres Basic Magic Sphere\tCATEGORY:Spheres Magic Talent\tTYPE:SpheresBaseSphere\tEDITABLE:YES\tEDITPOOL:NO\tPOOL:0\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPLURAL:Basic Magic Training Sphere\tDISPLAYLOCATION:Spheres\n"
+                "ABILITYCATEGORY:Spheres Blended Talent Allocation\tCATEGORY:Spheres Blended Talent Allocation\tEDITABLE:YES\tEDITPOOL:NO\tPOOL:0\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPLURAL:Blended Training Talent Allocations\tDISPLAYLOCATION:Spheres\n",
             "feat-catalog.json": json.dumps(feats, indent=2, ensure_ascii=False) + "\n"}
 
 

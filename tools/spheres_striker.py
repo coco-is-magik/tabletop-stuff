@@ -28,11 +28,18 @@ def option_tags(title):
                      f"BONUS:VAR|{counter}|1", f"BONUS:VAR|SPHERES_STRIKER_{resource}|1|PREVARLT:{LEVEL},20"])
     elif name == "True Desperation":
         tags.append("BONUS:VAR|SPHERES_STRIKER_DESPERATE_TENSION|1")
+    elif name == "Unarmored Striker":
+        tags.append("ABILITY:Spheres Combat Talent|AUTOMATIC|Equipment - Unarmored Training")
+    elif name == "Armored Striker":
+        tags.extend(["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
+                     "PREVARLT:SPHERES_STRIKER_ARMORED_COUNT,2",
+                     "BONUS:VAR|SPHERES_STRIKER_ARMORED_COUNT|1"])
     return tags
 
 
 def resource_tags():
-    tags = ["DEFINE:SPHERES_STRIKER_HIGH_TENSION|0", "DEFINE:SPHERES_STRIKER_EXTRA_BOOST|0"]
+    tags = ["DEFINE:SPHERES_STRIKER_HIGH_TENSION|0", "DEFINE:SPHERES_STRIKER_EXTRA_BOOST|0",
+            "DEFINE:SPHERES_STRIKER_ARMORED_COUNT|0"]
     # A zero finite cap at level 20 is meaningful only with UNLIMITED_TENSION=1.
     for name, formula in (("MAX_TENSION", f"if({LEVEL}>=20,0,max(1,CON)+floor({LEVEL}/3))"),
                           ("UNLIMITED_TENSION", f"if({LEVEL}>=20,1,0)"),

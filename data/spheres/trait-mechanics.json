@@ -1,8 +1,22 @@
 {
+  "Destructive Talent": ["DEFINE:SPHERES_DESTRUCTION_TRAIT_DAMAGE|0", "BONUS:VAR|SPHERES_DESTRUCTION_TRAIT_DAMAGE|1+floor(TL/10)|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"],
+  "Abrasive": ["BONUS:SITUATION|Diplomacy=Improve a creature's attitude|-5", "BONUS:SITUATION|Diplomacy=Entertain|-5", "BONUS:SITUATION|Diplomacy=Impressive display of skill|-5"],
+  "Steel Body": ["BONUS:HP|CURRENTMAX|1+floor((TL-1)/2)|PRERULE:1,DAMAGE_HP"],
+  "Weird Virtuoso": ["BONUS:SITUATION|Perform (Dance)=Subtly provide somatic components|1|TYPE=Trait", "BONUS:SITUATION|Perform (Oratory)=Whisper verbal components|1|TYPE=Trait", "BONUS:SITUATION|Perform (Sing)=Whisper verbal components|1|TYPE=Trait"],
+  "Learned Readiness": ["CSKILL:Perception"],
+  "Industrial Worker": ["CSKILL:Knowledge (Engineering)"],
+  "Higher Calling": ["CSKILL:Diplomacy"],
+  "Daysense": ["MULT:YES", "STACK:NO", "CHOOSE:NUMCHOICES=1|SKILL|Knowledge (Geography)|Survival", "CSKILL:LIST", "BONUS:SKILL|Knowledge (Geography),Survival|1|TYPE=Trait"],
+  "Corpse Watcher": ["BONUS:SITUATION|Heal=Learn information (not treatment)|3|TYPE=Trait"],
+  "Colloquial Terms": ["BONUS:SITUATION|Linguistics=Communicate without a shared language|4|TYPE=Trait"],
+  "Skeptical": ["BONUS:SKILL|Sense Motive|1|TYPE=Trait"],
+  "Aura": ["CSKILL:Knowledge (Religion)", "BONUS:SKILL|Knowledge (Religion)|1|TYPE=Trait"],
+  "Spatial Awareness": ["CSKILL:Knowledge (Engineering)"],
+  "Technophile": ["BONUS:SKILL|Craft (Mechanical)|2|TYPE=Trait", "BONUS:VAR|SPHERES_TECH_CHARGE_CAPACITY|2|PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"],
   "Combat Healer": ["CSKILL:Heal"],
   "Maneuver Trained": ["BONUS:COMBAT|CMB|1|TYPE=Trait"],
-  "Bountiful Charm": ["CSKILL:Diplomacy"],
-  "Scarred by War": ["CSKILL:Intimidate"],
-  "Impersonator": ["CSKILL:Bluff"],
-  "Guardian Of The Real": ["CSKILL:Knowledge (Planes)"]
+  "Bountiful Charm": ["CSKILL:Diplomacy", "BONUS:SITUATION|Diplomacy=Recruit cohorts|2|TYPE=Trait"],
+  "Scarred by War": ["CSKILL:Intimidate", "DR:1/piercing"],
+  "Impersonator": ["CSKILL:Bluff", "BONUS:SITUATION|Bluff=Impersonate another creature|2|TYPE=Trait"],
+  "Guardian Of The Real": ["CSKILL:Knowledge (Planes)", "BONUS:SITUATION|Knowledge (Planes)=Identify monsters|2|TYPE=Trait"]
 }

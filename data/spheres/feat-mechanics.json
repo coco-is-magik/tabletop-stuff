@@ -1,4 +1,59 @@
 {
+  "Extra Wraith Haunt": {
+    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:ABILITYPOOL|Wraith Wraith Haunt|1"]
+  },
+  "Friends In Close Places": {
+    "prerequisites": ["PREABILITY:1,CATEGORY=Spheres Combat Talent,Leadership Sphere", "PREABILITY:1,CATEGORY=Spheres Leadership Package,Leadership Package - Followers", "PREABILITY:1,CATEGORY=Commander Logistic Specialty,Commander Call In A Specialist"],
+    "tags": ["DEFINE:SPHERES_COMMANDER_FOLLOWER_SPECIALIST_HOURS|SPHERES_COMMANDER_SPECIALIST_ARRIVAL_HOURS/2", "DEFINE:SPHERES_COMMANDER_FOLLOWER_CHECK_BONUS|if(skillinfo(\"TOTALRANK\",\"Diplomacy\")>=10,4,2)"]
+  },
+  "Extra Shadowstuff": {
+    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|2"]
+  },
+  "Greater Shadowmark": {
+    "tags": ["BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_DIE_SIZE|2"]
+  },
+  "Extra Nexus Powers": {
+    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|SPHERES_SOUL_WEAVER_BOUND_SOULS|2"]
+  },
+  "Rotten Hordes": {
+    "tags": ["BONUS:VAR|SPHERES_SPELL_POINTS|1"]
+  },
+  "Pathology": {
+    "tags": ["MULT:YES", "STACK:NO", "SELECT:2", "CHOOSE:STRING|Blinding sickness|Bonechill|Bubonic plague|Cackle fever|Cholera|Filth fever|Leprosy|Mindfire|Red ache|Shakes|Sleeping sickness|Slimy doom"]
+  },
+  "Cautious Incantation": {
+    "tags": ["MULT:YES", "STACK:NO", "CHOOSE:SKILL|RANKS=3"]
+  },
+  "Ritualistic Perseverance": {
+    "tags": ["MULT:YES", "STACK:NO", "SELECT:2", "CHOOSE:SKILL|RANKS=3"]
+  },
+  "Spell Proxy": {
+    "additional_unresolved_prerequisites": ["Must not possess the Personal Magics sphere-specific drawback (Special)"]
+  },
+  "Extra Blended Training Talent": {
+    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:ABILITYPOOL|Spheres Blended Talent Allocation|1"]
+  },
+  "Extra Emotion": {
+    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:ABILITYPOOL|Eliciter Emotion|1"]
+  },
+  "Extra Psionics": {
+    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|SPHERES_SYMBIAT_PSIONICS_ROUNDS|6"]
+  },
+  "Extra Invocations": {
+    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|SPHERES_THAUMATURGE_INVOCATION_USES|2"]
+  },
+  "Extra Mystic Combat": {
+    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:ABILITYPOOL|Mageknight Mystic Combat|1"]
+  },
+  "Terrain Defiler": {
+    "additional_prerequisites": ["!PREFEAT:1,Terrain Focus"]
+  },
+  "Specialist Defiler": {
+    "additional_prerequisites": ["!PREFEAT:1,Terrain Focus"]
+  },
+  "Terrain Focus": {
+    "additional_prerequisites": ["!PREFEAT:1,Terrain Defiler,Specialist Defiler"]
+  },
   "Basic Magic Training": {
     "prerequisites": ["!PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"],
     "tags": [
@@ -34,7 +89,10 @@
   },
   "Counterspell": {
     "prerequisites": ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core", "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,5"],
-    "tags": ["DEFINE:SPHERES_COUNTERSPELL_RANGE|100+10*SPHERES_CASTER_LEVEL"]
+    "tags": ["DEFINE:SPHERES_COUNTERSPELL_RANGE|100+10*SPHERES_CASTER_LEVEL", "DEFINE:SPHERES_COUNTERSPELL_CHECK_BONUS|0", "DEFINE:SPHERES_COUNTERSPELL_CHECK|SPHERES_MAGIC_SKILL_BONUS+SPHERES_COUNTERSPELL_CHECK_BONUS"]
+  },
+  "Counterspell Mastery": {
+    "tags": ["BONUS:VAR|SPHERES_COUNTERSPELL_CHECK_BONUS|2"]
   },
   "Improved Counterspell": {
     "prerequisites": ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core", "PREFEAT:1,Counterspell", "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,10"],

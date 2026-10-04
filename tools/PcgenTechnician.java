@@ -23,6 +23,12 @@ class PcgenTechnician {
         var luck = ability(cat, "Technician Luck");
         var lucky = ability(cat, "Technician Intuition - Lucky");
         try {
+            require(pc.getTotalBonusTo("SKILL", "Disable Device") == Math.max(1, level / 2),
+                "Technician Disable Device trapfinding bonus");
+            require(pc.getTotalBonusTo("SITUATION", "Perception=Trapfinding") == Math.max(1, level / 2),
+                "Technician situational trap perception bonus");
+            require(pc.getTotalBonusTo("SKILL", "Perception") == 0,
+                "Trapfinding must not increase general Perception");
             require(pc.getVariableValue("SPHERES_TECHNICIAN_GADGETS", "").intValue() == Math.max(1, level / 2), "Daily gadgets");
             require(pc.getVariableValue("SPHERES_TECHNICIAN_GADGET_DC", "").intValue() == 10 + level / 2, "Gadget DC");
             require(pc.getTotalBonusTo("SKILL", "Disable Device") == Math.max(1, level / 2), "Trapfinding Disable Device");

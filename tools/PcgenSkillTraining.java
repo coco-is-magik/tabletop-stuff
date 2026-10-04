@@ -82,6 +82,19 @@ class PcgenSkillTraining {
                 controller.addAbility(cat, talent);
                 ranks(pc, test[2], Math.min(level, 10));
                 ranks(pc, test[3], Math.min(level, 10));
+                if (test[2].equals("Profession (Soldier)")) {
+                    var artificery = ability(pcgen.core.AbilityCategory.FEAT, "Artificery");
+                    var improved = ability(pcgen.core.AbilityCategory.FEAT, "Improved Artificery");
+                    var featPool = pc.getAvailableAbilityPool(pcgen.core.AbilityCategory.FEAT);
+                    require(artificery.qualifies(pc, artificery), "Profession ranks unlock Artificery");
+                    require(!improved.qualifies(pc, improved), "Improved Artificery requires its feat");
+                    controller.addAbility(pcgen.core.AbilityCategory.FEAT, artificery);
+                    require(improved.qualifies(pc, improved) == (level >= 10),
+                        "Improved Artificery ten-rank threshold");
+                    controller.removeAbility(pcgen.core.AbilityCategory.FEAT, artificery);
+                    require(pc.getAvailableAbilityPool(pcgen.core.AbilityCategory.FEAT).equals(featPool),
+                        "Artificery feat refund");
+                }
                 controller.removeAbility(cat, talent);
                 ranks(pc, test[2], 0);
                 ranks(pc, test[3], Math.min(level, 5));
@@ -201,7 +214,8 @@ class PcgenSkillTraining {
                 var sphere = ability(cat, test[0]);
                 controller.addAbility(cat, sphere);
                 require(pc.getVariableValue("SPHERES_DC_" + test[1], "").intValue() == 16,
-                        "Rank-based DC " + test[0]);
+                        "Rank-based DC " + test[0] + ": actual=" + pc.getVariableValue("SPHERES_DC_" + test[1], "")
+                        + " associated=" + pc.getVariableValue("SPHERES_ALCHEMY_RANKS", ""));
                 controller.removeAbility(cat, sphere);
             }
             controller.addAbility(cat, tinker);

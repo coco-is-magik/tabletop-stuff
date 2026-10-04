@@ -1,5 +1,8 @@
 # Spheres implementation depth audit — 2026-09-25
 
+This is a historical audit and continuation log. See `spheres-current-status.md`
+and the generated `spheres-coverage.json` for current measured counts and limits.
+
 Repository: `/nas/contents/Projects/Programming Projects/Java/tabletop-stuff`.
 Scope audited: the PCGen Spheres of Power/Might dataset under `data/spheres`
 and its generators/tests. Method: inventoried every documented partial area,

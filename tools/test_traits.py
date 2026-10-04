@@ -7,6 +7,74 @@ from spheres_feats import Prerequisites
 
 
 class TraitTests(unittest.TestCase):
+    def test_destructive_talent_damage_is_not_global_weapon_damage(self):
+        self.assertEqual(self.by_name["Destructive Talent"]["mechanics"], [
+            "DEFINE:SPHERES_DESTRUCTION_TRAIT_DAMAGE|0",
+            "BONUS:VAR|SPHERES_DESTRUCTION_TRAIT_DAMAGE|1+floor(TL/10)|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"])
+        self.assertIn("PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+                      self.by_name["Destructive Talent"]["prerequisites"])
+    def test_bountiful_charm_default_recruitment_bonus(self):
+        self.assertEqual(self.by_name["Bountiful Charm"]["mechanics"], [
+            "CSKILL:Diplomacy", "BONUS:SITUATION|Diplomacy=Recruit cohorts|2|TYPE=Trait"])
+
+    def test_abrasive_penalties_are_not_all_diplomacy_checks(self):
+        self.assertEqual(self.by_name["Abrasive"]["mechanics"], [
+            "BONUS:SITUATION|Diplomacy=Improve a creature's attitude|-5",
+            "BONUS:SITUATION|Diplomacy=Entertain|-5",
+            "BONUS:SITUATION|Diplomacy=Impressive display of skill|-5"])
+
+    def test_steel_body_additional_hit_dice_scaling(self):
+        self.assertEqual(self.by_name["Steel Body"]["mechanics"],
+                         ["BONUS:HP|CURRENTMAX|1+floor((TL-1)/2)|PRERULE:1,DAMAGE_HP"])
+
+    def test_scarred_by_war_uses_native_damage_reduction(self):
+        self.assertEqual(self.by_name["Scarred by War"]["mechanics"],
+                         ["CSKILL:Intimidate", "DR:1/piercing"])
+
+    def test_identification_traits_keep_class_skill_and_situational_bonus(self):
+        for name, skill, situation in (
+                ("Impersonator", "Bluff", "Impersonate another creature"),
+                ("Guardian Of The Real", "Knowledge (Planes)", "Identify monsters")):
+            self.assertEqual(self.by_name[name]["mechanics"], [
+                "CSKILL:" + skill, f"BONUS:SITUATION|{skill}={situation}|2|TYPE=Trait"])
+
+    def test_weird_virtuoso_only_bonuses_subtle_casting(self):
+        self.assertEqual(self.by_name["Weird Virtuoso"]["mechanics"], [
+            "BONUS:SITUATION|Perform (Dance)=Subtly provide somatic components|1|TYPE=Trait",
+            "BONUS:SITUATION|Perform (Oratory)=Whisper verbal components|1|TYPE=Trait",
+            "BONUS:SITUATION|Perform (Sing)=Whisper verbal components|1|TYPE=Trait"])
+
+    def test_class_skill_grants_do_not_invent_unconditional_benefits(self):
+        for name, skill in (("Learned Readiness", "Perception"),
+                            ("Industrial Worker", "Knowledge (Engineering)"),
+                            ("Higher Calling", "Diplomacy")):
+            self.assertEqual(self.by_name[name]["mechanics"], ["CSKILL:" + skill])
+
+    def test_daysense_grants_only_one_chosen_class_skill(self):
+        rows = {row["name"]: row for row in json.loads(build()["trait-catalog.json"])}
+        self.assertEqual(rows["Daysense"]["mechanics"], [
+            "MULT:YES", "STACK:NO", "CHOOSE:NUMCHOICES=1|SKILL|Knowledge (Geography)|Survival",
+            "CSKILL:LIST", "BONUS:SKILL|Knowledge (Geography),Survival|1|TYPE=Trait"])
+
+    def test_situational_bonuses_do_not_become_general_skill_bonuses(self):
+        rows = {row["name"]: row for row in json.loads(build()["trait-catalog.json"])}
+        for name, skill, situation, amount in (
+                ("Corpse Watcher", "Heal", "Learn information (not treatment)", 3),
+                ("Colloquial Terms", "Linguistics", "Communicate without a shared language", 4)):
+            self.assertEqual(rows[name]["mechanics"], [
+                f"BONUS:SITUATION|{skill}={situation}|{amount}|TYPE=Trait"])
+        self.assertEqual(rows["Skeptical"]["mechanics"], [
+            "BONUS:SKILL|Sense Motive|1|TYPE=Trait"])
+
+    def test_persistent_skill_bonuses_and_conditional_charge_capacity(self):
+        rows = {row["name"]: row for row in json.loads(build()["trait-catalog.json"])}
+        self.assertEqual(rows["Aura"]["mechanics"], [
+            "CSKILL:Knowledge (Religion)", "BONUS:SKILL|Knowledge (Religion)|1|TYPE=Trait"])
+        self.assertEqual(rows["Spatial Awareness"]["mechanics"], ["CSKILL:Knowledge (Engineering)"])
+        self.assertEqual(rows["Technophile"]["mechanics"], [
+            "BONUS:SKILL|Craft (Mechanical)|2|TYPE=Trait",
+            "BONUS:VAR|SPHERES_TECH_CHARGE_CAPACITY|2|PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"])
+
     @classmethod
     def setUpClass(cls):
         cls.outputs = build()

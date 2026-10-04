@@ -36,7 +36,6 @@ def fixture(slug, level):
         "eliciter": (2, "Eliciter Emotion", "Eliciter Apathy"),
         "mageknight": (2, "Mageknight Mystic Combat", "Mageknight Arcane Weapon Focus (Su)"),
         "shifter": (2, "Shifter Bestial Trait", "Shifter Adaptation (Ex)"),
-        "thaumaturge": (1, "Thaumaturge Invocations", "Thaumaturge Lingering Blessing"),
         "armiger": (2, "Armiger Prowess", "Armiger Armored Armiger"),
         "commander": (2, "Commander Enhanced Tactic", "Commander Command Attack"),
         "scholar": (2, "Scholar Scholar'S Knack", "Scholar Academic Knowledge"),
@@ -61,6 +60,9 @@ def expected(slug, level):
     if source["magic"]:
         result["caster_level"] = source["caster"][level - 1]
         result["spell_points"] = level
+    if slug == "fey-adept" and level == 20:
+        for save in ("fortitude", "reflex", "will"):
+            result[save] += 2
     return result
 
 
@@ -123,6 +125,7 @@ def run(slug, level):
                       "Armiger Customized Weapon": 3 + (level >= 11) + (level >= 19)})
     if slug == "soul-weaver":
         pools["Soul Weaver Channel"] = 1
+        pools["Soul Weaver Nexus Powers"] = 0
     if slug == "striker":
         pools["Striker Bare Knuckles"] = 1
     if slug == "blacksmith":
@@ -131,13 +134,19 @@ def run(slug, level):
         pools["Technician Invention"] = 1 + (level >= 3) + sum(level >= n for n in (7, 11, 15, 19))
         pools["Technician Invention Base Form"] = pools["Technician Invention"]
     if slug == "thaumaturge":
+        pools["Thaumaturge Invocations"] = 0
         pools["Thaumaturge Bonus Feat"] = level // 4
     pool_argument = "@".join(f"{key}={value}" for key, value in pools.items()) or "-"
+    with (work / "compile.log").open("w") as stream:
+        subprocess.run([str(JAVA.with_name("javac")), "--enable-preview", "--release", "16",
+                        "-cp", cp, "-d", str(work), str(ROOT / "tools/PcgenClassCatalog.java")],
+                       stdout=stream, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
+                       timeout=30, check=True)
     for source_file, destination, phase in ((character, saved, "first"), (saved, None, "reload")):
         output = work / f"{phase}.txt"
         log = work / f"{phase}.log"
         command = [str(JAVA), "--enable-preview", "-Djava.awt.headless=true", f"-Dpcgen.config={work}",
-                   "-cp", cp, "--source", "16", str(ROOT / "tools/PcgenClassCatalog.java"),
+                   "-cp", cp + ":" + str(work), "pcgen.gui2.facade.PcgenClassCatalog",
                    str(source_file), str(template), str(output), "config.ini", required, choice, pool_argument]
         if destination:
             command.append(str(destination))

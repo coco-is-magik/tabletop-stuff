@@ -11,7 +11,7 @@ from pcgen_class_catalog import fixture
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("gate", choices=("save", "reload"))
-    parser.add_argument("--level", type=int, choices=range(2, 21), default=12)
+    parser.add_argument("--level", type=int, choices=range(1, 21), default=12)
     parser.add_argument("--work", type=Path)
     args = parser.parse_args()
     if (args.gate == "reload") != (args.work is not None):
