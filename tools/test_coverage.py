@@ -38,6 +38,29 @@ class CoverageTests(unittest.TestCase):
         with self.assertRaises(KeyError):
             summarize([row], unresolved=True)
 
+    def test_every_referenced_variable_is_defined_in_the_campaign(self):
+        # A DEFINE that references an undefined SPHERES_ variable silently resolves
+        # to 0 in PCGen, so a typo would quietly disable a mechanic. Every variable
+        # used by a recorded mechanic must be defined by some campaign record.
+        import re
+        defined = set()
+        for path in DATA.glob("*.lst"):
+            for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+                if line.startswith("#"):
+                    continue
+                defined.update(re.findall(r"DEFINE:([A-Za-z_][A-Za-z0-9_]*)", line))
+                defined.update(re.findall(r"BONUS:VAR\|([A-Za-z_][A-Za-z0-9_]*)", line))
+        self.assertIn("SPHERES_CASTER_LEVEL", defined)
+        missing = {}
+        for name in ("catalog-mechanics.json", "feat-mechanics.json", "trait-mechanics.json"):
+            overrides = json.loads((DATA / name).read_text())
+            for key, tags in overrides.items():
+                for tag in tags:
+                    for variable in re.findall(r"(?<![A-Za-z0-9_])(SPHERES_[A-Za-z0-9_]+)", tag):
+                        if variable not in defined:
+                            missing.setdefault(variable, set()).add(key)
+        self.assertEqual(missing, {})
+
     def test_partition_and_determinism(self):
         report = build()
         self.assertEqual(render(), render())

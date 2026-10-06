@@ -427,5 +427,335 @@
     "tags": [
       "SERVESAS:ABILITY=FEAT|Combat Casting"
     ]
+  },
+  "Improved Energy Bomb": {
+    "tags": [
+      "DEFINE:SPHERES_ENERGY_BOMB_INCREASED_SPLASH|5+5*floor(SPHERES_CL_DESTRUCTION/5)"
+    ]
+  },
+  "Night Sky": {
+    "tags": [
+      "DEFINE:SPHERES_NIGHT_SKY_DAZZLED_PENALTY|1+floor(SPHERES_CL_DARK/5)"
+    ]
+  },
+  "Delayed Magic": {
+    "tags": [
+      "DEFINE:SPHERES_DELAYED_MAGIC_ROUNDS|5+SPHERES_CASTER_LEVEL"
+    ]
+  },
+  "Improved Force Shield": {
+    "tags": [
+      "DEFINE:SPHERES_IMPROVED_FORCE_SHIELD_BONUS|3+floor(SPHERES_CL_PROTECTION/5)"
+    ]
+  },
+  "Armory": {
+    "tags": [
+      "DEFINE:SPHERES_ARMORY_EXTRA_WEAPONS|1+floor(SPHERES_CL_CONJURATION/4)"
+    ]
+  },
+  "Battlecry": {
+    "tags": [
+      "DEFINE:SPHERES_BATTLECRY_INTIMIDATE_BONUS|floor(SPHERES_CASTER_LEVEL/2)"
+    ]
+  },
+  "Catisthenics": {
+    "tags": [
+      "DEFINE:SPHERES_CATISTHENICS_DICE|1+floor(HD/3)"
+    ]
+  },
+  "Concussive Spell": {
+    "tags": [
+      "DEFINE:SPHERES_CONCUSSIVE_SPELL_ROUNDS|floor(SPHERES_CASTER_LEVEL/2)"
+    ]
+  },
+  "Consumptive Intuition": {
+    "tags": [
+      "DEFINE:SPHERES_CONSUMPTIVE_INTUITION_MINUTES|TL"
+    ]
+  },
+  "Cooperative Destruction": {
+    "tags": [
+      "DEFINE:SPHERES_COOPERATIVE_DESTRUCTION_CL_BONUS|1+floor(SPHERES_CL_DESTRUCTION/4)"
+    ]
+  },
+  "Craft Marvelous Item": {
+    "tags": [
+      "DEFINE:SPHERES_CRAFT_MARVELOUS_ITEM_DC|10+floor(SPHERES_CASTER_LEVEL/2)"
+    ]
+  },
+  "Create Humor Familiar": {
+    "tags": [
+      "DEFINE:SPHERES_HUMOR_FAMILIAR_MAX_HD|HD"
+    ]
+  },
+  "Dazing Spell": {
+    "tags": [
+      "DEFINE:SPHERES_DAZING_SPELL_ROUNDS|max(1,floor(SPHERES_CASTER_LEVEL/2))"
+    ]
+  },
+  "Deadcaller": {
+    "tags": [
+      "DEFINE:SPHERES_DEADCALLER_MAX_CR|floor(SPHERES_CL_CONJURATION/2)"
+    ]
+  },
+  "Deceptive Advisor": {
+    "tags": [
+      "DEFINE:SPHERES_DECEPTIVE_ADVISOR_DC|10+floor(SPHERES_CL_MIND/2)+SPHERES_CASTING_ABILITY"
+    ]
+  },
+  "Deep Spellburn": {
+    "tags": [
+      "DEFINE:SPHERES_DEEP_SPELLBURN_BURN_INCREASE|2*floor(SPHERES_CASTER_LEVEL/6)"
+    ]
+  },
+  "Elemental Heart": {
+    "tags": [
+      "DEFINE:SPHERES_ELEMENTAL_HEART_RESIST|TL"
+    ]
+  },
+  "Endless Possibilities": {
+    "tags": [
+      "DEFINE:SPHERES_ENDLESS_POSSIBILITIES_BONUS|floor(SPHERES_CL_LIFE/5)"
+    ]
+  },
+  "Extended Resuscitate": {
+    "tags": [
+      "DEFINE:SPHERES_EXTENDED_RESUSCITATE_ROUNDS|floor(SPHERES_CASTER_LEVEL/2)"
+    ]
+  },
+  "Fearsome Spell": {
+    "tags": [
+      "DEFINE:SPHERES_FEARSOME_SPELL_ROUNDS|max(1,floor(SPHERES_CASTER_LEVEL/2))"
+    ]
+  },
+  "Fleeting Spell": {
+    "tags": [
+      "DEFINE:SPHERES_FLEETING_SPELL_DC|11+floor(SPHERES_CASTER_LEVEL/2)"
+    ]
+  },
+  "Focused Blast Type Group": {
+    "tags": [
+      "DEFINE:SPHERES_FOCUSED_BLAST_TYPE_GROUP_CL_BONUS|1+floor(HD/5)"
+    ]
+  },
+  "Forged Arcana": {
+    "tags": [
+      "DEFINE:SPHERES_FORGED_ARCANA_CL_BONUS|1+floor(skillinfo(\"TOTALRANK\",\"Spellcraft\")/5)"
+    ]
+  },
+  "Gritting Teeth": {
+    "tags": [
+      "DEFINE:SPHERES_GRITTING_TEETH_RESIST|TL+max(INT,WIS,CHA)"
+    ]
+  },
+  "Helping": {
+    "tags": [
+      "DEFINE:SPHERES_HELPING_TEMP_HP|floor(TL/2)"
+    ]
+  },
+  "Heroic Resolve": {
+    "tags": [
+      "DEFINE:SPHERES_HEROIC_RESOLVE_ROUNDS|max(1,CON)"
+    ]
+  },
+  "Perpetual Sphere": {
+    "tags": [
+      "DEFINE:SPHERES_PERPETUAL_SPHERE_MAX_ROUNDS|SPHERES_CL_DESTRUCTION"
+    ]
+  },
+  "Photosynthesis": {
+    "tags": [
+      "DEFINE:SPHERES_PHOTOSYNTHESIS_HEAL|TL"
+    ]
+  },
+  "Primal Emblem": {
+    "tags": [
+      "DEFINE:SPHERES_PRIMAL_EMBLEM_ROUNDS|SPHERES_CASTING_ABILITY+floor(TL/2)"
+    ]
+  },
+  "Receptive to Grafts": {
+    "tags": [
+      "DEFINE:SPHERES_RECEPTIVE_TO_GRAFTS_IMPLANT_BONUS|max(1,floor(HD/2))"
+    ]
+  },
+  "Reprogram Power": {
+    "tags": [
+      "DEFINE:SPHERES_REPROGRAM_POWER_ROUNDS|SPHERES_CL_MANA"
+    ]
+  },
+  "Rime Spell": {
+    "tags": [
+      "DEFINE:SPHERES_RIME_SPELL_ROUNDS|max(1,floor(SPHERES_CASTER_LEVEL/2))"
+    ]
+  },
+  "Robustness": {
+    "tags": [
+      "DEFINE:SPHERES_ROBUSTNESS_HEAL|HD"
+    ]
+  },
+  "Selective Spell": {
+    "tags": [
+      "DEFINE:SPHERES_SELECTIVE_SPELL_TARGETS|SPHERES_CASTING_ABILITY"
+    ]
+  },
+  "Silver Tongue": {
+    "tags": [
+      "DEFINE:SPHERES_SILVER_TONGUE_BONUS|floor(SPHERES_CL_MIND/3)"
+    ]
+  },
+  "Solar Spell": {
+    "tags": [
+      "DEFINE:SPHERES_SOLAR_SPELL_ROUNDS|max(1,floor(SPHERES_CASTER_LEVEL/2))"
+    ]
+  },
+  "Soul Harvester": {
+    "tags": [
+      "DEFINE:SPHERES_SOUL_HARVESTER_MINUTES|SPHERES_CASTER_LEVEL"
+    ]
+  },
+  "Soulfire": {
+    "tags": [
+      "DEFINE:SPHERES_SOULFIRE_BONUS|floor(TL/10)"
+    ]
+  },
+  "Squadron Commander": {
+    "tags": [
+      "DEFINE:SPHERES_SQUADRON_COMMANDER_BONUS|floor(SPHERES_CL_WAR/10)"
+    ]
+  },
+  "Swarming Strike": {
+    "tags": [
+      "DEFINE:SPHERES_SWARMING_STRIKE_ALLIES|SPHERES_CASTING_ABILITY"
+    ]
+  },
+  "Swift Warrior": {
+    "tags": [
+      "DEFINE:SPHERES_SWIFT_WARRIOR_CL_BONUS|if(HD>=9,3,if(HD>=5,2,1))"
+    ]
+  },
+  "Tenacity": {
+    "tags": [
+      "DEFINE:SPHERES_TENACITY_TEMP_HP|HD+SPHERES_CASTING_ABILITY"
+    ]
+  },
+  "Thundering Spell": {
+    "tags": [
+      "DEFINE:SPHERES_THUNDERING_SPELL_ROUNDS|max(1,floor(SPHERES_CASTER_LEVEL/2))"
+    ]
+  },
+  "Tough As Nails": {
+    "tags": [
+      "DEFINE:SPHERES_TOUGH_AS_NAILS_TEMP_HP|TL"
+    ]
+  },
+  "Unerring Eye": {
+    "tags": [
+      "DEFINE:SPHERES_UNERRING_EYE_VALUE|7+floor(skillinfo(\"TOTALRANK\",\"Sense Motive\")/6)"
+    ]
+  },
+  "Venomfire": {
+    "tags": [
+      "DEFINE:SPHERES_VENOMFIRE_PAINFUL_VENIN|SPHERES_CL_DESTRUCTION"
+    ]
+  },
+  "Web Mastery": {
+    "tags": [
+      "DEFINE:SPHERES_WEB_MASTERY_PER_MINUTE|CON"
+    ]
+  },
+  "Wellspring Of Life": {
+    "tags": [
+      "DEFINE:SPHERES_WELLSPRING_OF_LIFE_HP|2*SPHERES_CL_LIFE"
+    ]
+  },
+  "Wondrous Wardrobe": {
+    "tags": [
+      "DEFINE:SPHERES_WONDROUS_WARDROBE_DC_BONUS|floor(SPHERES_CASTER_LEVEL/2)"
+    ]
+  },
+  "Aggressive Mind Limb": {
+    "tags": [
+      "DEFINE:SPHERES_AGGRESSIVE_MIND_LIMB_CAM_BONUS|SPHERES_CASTING_ABILITY"
+    ]
+  },
+  "Anemic Wounds": {
+    "tags": [
+      "DEFINE:SPHERES_ANEMIC_WOUNDS_HEAL_BONUS|SPHERES_CASTER_LEVEL"
+    ]
+  },
+  "Ensouled Illuminations": {
+    "tags": [
+      "DEFINE:SPHERES_ENSOULED_ILLUMINATIONS_MSD|11+SPHERES_SOUL_WEAVER_LEVEL"
+    ]
+  },
+  "Focused Fire Tactics": {
+    "tags": [
+      "DEFINE:SPHERES_FOCUSED_FIRE_TACTICS_MAX|max(SPHERES_CL_WAR,skillinfo(\"TOTALRANK\",\"Diplomacy\"))"
+    ]
+  },
+  "Focusing Direction": {
+    "tags": [
+      "DEFINE:SPHERES_FOCUSING_DIRECTION_COMPANIONS|SPHERES_CASTING_ABILITY"
+    ]
+  },
+  "Improved Cascade Spell": {
+    "tags": [
+      "DEFINE:SPHERES_IMPROVED_CASCADE_SPELL_CL_BONUS|3"
+    ]
+  },
+  "Inkbound Portents": {
+    "tags": [
+      "DEFINE:SPHERES_INKBOUND_PORTENTS_USES|max(1,max(SPHERES_CASTING_ABILITY,SPHERES_PRACTITIONER_MOD))"
+    ]
+  },
+  "Inspired Learning": {
+    "tags": [
+      "DEFINE:SPHERES_INSPIRED_LEARNING_MAX_TALENTS|SPHERES_CASTING_ABILITY"
+    ]
+  },
+  "Living Accumulator": {
+    "tags": [
+      "DEFINE:SPHERES_LIVING_ACCUMULATOR_USES|CON"
+    ]
+  },
+  "Mind Joggle": {
+    "tags": [
+      "DEFINE:SPHERES_MIND_JOGGLE_ROUNDS|SPHERES_CASTING_ABILITY"
+    ]
+  },
+  "Minor Charm Specialist": {
+    "tags": [
+      "DEFINE:SPHERES_MINOR_CHARM_SPECIALIST_USES|max(1,SPHERES_CASTING_ABILITY)"
+    ]
+  },
+  "Necrotic Heart": {
+    "tags": [
+      "DEFINE:SPHERES_NECROTIC_HEART_TEMP_HP|HD*CHA"
+    ]
+  },
+  "Pacified Strike": {
+    "tags": [
+      "DEFINE:SPHERES_PACIFIED_STRIKE_ATTACK_BONUS|SPHERES_CASTER_LEVEL"
+    ]
+  },
+  "Pathological Host": {
+    "tags": [
+      "DEFINE:SPHERES_PATHOLOGICAL_HOST_DAMAGE|HD"
+    ]
+  },
+  "Skeletal Contortionist": {
+    "tags": [
+      "DEFINE:SPHERES_SKELETAL_CONTORTIONIST_DR|SPHERES_CASTING_ABILITY+floor(TL/2)"
+    ]
+  },
+  "Telekinetic Exoskeleton": {
+    "tags": [
+      "DEFINE:SPHERES_TELEKINETIC_EXOSKELETON_TEMP_HP|SPHERES_CASTING_ABILITY"
+    ]
+  },
+  "Touchsense": {
+    "tags": [
+      "DEFINE:SPHERES_TOUCHSENSE_CL|TL"
+    ]
   }
 }

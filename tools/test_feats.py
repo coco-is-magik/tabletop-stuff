@@ -946,6 +946,43 @@ class FeatTests(unittest.TestCase):
             self.assertTrue(unknown, text)
         self.assertIsNone(self.parser.clause("Drone"))
 
+    def test_reference_only_feat_mechanics_apply_no_unconditional_bonus(self):
+        # These feats expose a computed value for other abilities to read; they do
+        # not themselves change attack, saves, skills or hit points.
+        reference_only = (
+            "Battlecry", "Catisthenics", "Concussive Spell",
+            "Consumptive Intuition", "Cooperative Destruction", "Craft Marvelous Item",
+            "Create Humor Familiar", "Dazing Spell", "Deadcaller", "Deceptive Advisor",
+            "Deep Spellburn", "Elemental Heart", "Endless Possibilities",
+            "Extended Resuscitate", "Fearsome Spell", "Fleeting Spell",
+            "Focused Blast Type Group", "Forged Arcana", "Gritting Teeth", "Helping",
+            "Heroic Resolve", "Perpetual Sphere", "Photosynthesis", "Primal Emblem",
+            "Receptive to Grafts", "Reprogram Power", "Rime Spell", "Robustness",
+            "Selective Spell", "Silver Tongue", "Solar Spell", "Soul Harvester",
+            "Soulfire", "Squadron Commander", "Swarming Strike", "Swift Warrior",
+            "Tenacity", "Thundering Spell", "Tough As Nails", "Unerring Eye",
+            "Venomfire", "Web Mastery", "Wellspring Of Life", "Wondrous Wardrobe",
+            "Aggressive Mind Limb", "Anemic Wounds",
+            "Ensouled Illuminations", "Focused Fire Tactics", "Focusing Direction",
+            "Improved Cascade Spell", "Inkbound Portents", "Inspired Learning",
+            "Living Accumulator", "Mind Joggle", "Minor Charm Specialist",
+            "Necrotic Heart", "Pacified Strike", "Pathological Host",
+            "Skeletal Contortionist", "Telekinetic Exoskeleton", "Touchsense")
+        for name in reference_only:
+            mechanics = self.by_name[name]["mechanics"]
+            self.assertTrue(mechanics, name)
+            for tag in mechanics:
+                # Necrotic Heart predates this work and stacks a feat counter, so
+                # only its reference variable is asserted here.
+                if tag.startswith("BONUS:"):
+                    self.assertEqual(name, "Necrotic Heart", f"{name}: {tag}")
+                else:
+                    self.assertTrue(tag.startswith("DEFINE:SPHERES_"), f"{name}: {tag}")
+
+    def test_all_mechanics_overrides_resolve_to_feats(self):
+        overrides = json.loads((DATA / 'feat-mechanics.json').read_text())
+        self.assertEqual([name for name in overrides if name not in self.by_name], [])
+
     @classmethod
     def setUpClass(cls):
         cls.outputs = build()

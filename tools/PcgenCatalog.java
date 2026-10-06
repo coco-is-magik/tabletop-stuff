@@ -14,6 +14,13 @@ import static pcgen.gui2.facade.PcgenSpheresGates.*;
 
 /** Catalog selections go through PCGen's real controller, not a second evaluator. */
 class PcgenCatalog {
+    // Base-sphere reference values at the level-20 INT Incanter fixture (CL 20).
+    private static final String[][] BASE_REFERENCES = {
+        {"War Sphere", "SPHERES_WAR_TOTEM_RADIUS_FEET", "100"},
+        {"War Sphere", "SPHERES_WAR_TOTEM_WAR_DAMAGE", "6"},
+        {"War Sphere", "SPHERES_WAR_COMMANDING_AID_ATTACK", "24"},
+    };
+
     private static void checkResources(pcgen.core.PlayerCharacter pc, String sphere) {
         String variable = null;
         int expected = 0;
@@ -29,6 +36,12 @@ class PcgenCatalog {
         }
         if (variable != null) {
             require(pc.getVariableValue(variable, "").intValue() == expected, "Resource: " + variable);
+        }
+        for (String[] reference : BASE_REFERENCES) {
+            if (reference[0].equals(sphere)) {
+                require(pc.getVariableValue(reference[1], "").intValue() == Integer.parseInt(reference[2]),
+                        "Reference: " + reference[1]);
+            }
         }
     }
 

@@ -3,6 +3,83 @@
 Full implementation remains **open**. Catalog presence, nonempty mechanics tags,
 successful parsing, and testing one choice are different acceptance levels.
 
+## Live acceptance increment — 2026-10-06
+
+The vendored live harness (`vendor/jdk16` + built PCGen JAR + JavaFX cache) runs
+on this machine once the Gentoo user VM points at an installed JDK; the project
+builds and the full test gate passes with the system OpenJDK 25 (`--release 17`,
+bytecode major version 61).
+
+Live PCGen immediately caught a real defect: the generated Waking Sleeper class
+record used bare `Craft`/`Profession` CSKILL tokens and a nonexistent
+`Simple Weapon Prof ~ All` internal ability, which aborted the whole character
+load with `Unconstructed Reference` SEVEREs. Fixed to `TYPE=Craft`,
+`TYPE=Profession` and `Weapon Prof ~ Simple|Weapon Prof ~ Martial`. The campaign
+now loads, and `pcgen_spheres_smoke.py incanter1-int18` passes.
+
+Two guards were added:
+
+- `tools/test_class_tokens.py` validates every `spheres_*_class.lst` CSKILL token
+  against the Core Rulebook skills plus the campaign's own skills, internal
+  proficiency names against PCGen's `CATEGORY:Internal` prof abilities, and
+  granted named abilities against the Core/Spheres ability records. It reproduces
+  the Waking Sleeper defect offline, so live runs stay a confirmation step.
+- `tools/pcgen_catalog_variables.py` (`tools/PcgenCatalogVariables.java`) selects
+  a base sphere and talent, asserts the reference variable PCGen computes at the
+  level-20 INT Incanter fixture, removes both and checks the pool refund, then
+  retains one case through save/reload. Each case is asserted on its own because
+  the level-20 talent pool cannot hold every case at once. It covers 39 reference
+  values across War, Blood, Destruction, Dark, Death, Light, Mana, Mind, Nature,
+  Time, Warp, Creation, Divination, Protection, Illusion, Fate, Fallen Fey,
+  Weather, Enhancement and Technomancy. Both phases pass
+  (`variables-save` and `variables-reload`, 39 values, reload exit 0).
+
+The full live gate sweep (`tools/pcgen_spheres_gates.py all`) passes 42/42 gates
+with `exit=0`, including the Incanter level 1/20, specialization, domain,
+bloodline, healer, Destruction, Sword, and every favored-class and burst save/
+reload gate. The offline build (`tools/build.py test`, JDK 25 with `--release 17`)
+passes with `exit=0`: all 21 Python suites `OK`, 655 scenario baseline checks and
+21,147 regression checks. All generators reproduce byte-identical output, so the
+committed data is deterministic.
+
+The catalog round trip (`tools/PcgenCatalog.java`) now also asserts the War
+base-sphere references (`SPHERES_WAR_TOTEM_RADIUS_FEET` etc.) against the live
+controller.
+
+## Reference-mechanics and prestige increment
+
+Added persistent reference mechanics (caster-level and practitioner-modifier
+scaling variables exposed as `DEFINE`/`BONUS:VAR` values, never applied as
+unconditional character bonuses) for the War totem/rally/momentum subsystem and
+for area, duration and damage-dice references across Blood, Dark, Death,
+Destruction, Mana, Light, Nature, Warp, Conjuration, Creation, Enhancement,
+Illusion, Life, Time, Weather, Fallen Fey and Bear. Recorded-mechanics talent
+records rose from 97 to 804. A new catalog test enforces that no reference
+override grants `BONUS:COMBAT`/`SAVE`/`SKILL`/`HP`, and that repeatable talents
+never own a `DEFINE` (removing one selection must not undefine a shared counter).
+
+Added five prestige-class generators (Tempestarii, Forest Lord, Waking Sleeper,
+Spheres Archwizard, Magemage) with pinned prerequisites, per-level magic-talent
+grants and reference variables. Class-feature *effects* beyond those variables,
+trap/trigger resolution, charm/compulsion application and companion construction
+remain manual. The remaining prestige snapshots lack pinned class-skill/HD detail,
+so they stay unstarted rather than guessed.
+
+`tools/test_feats.py::test_all_mechanics_overrides_resolve_to_feats` and
+`tools/test_traits.py::test_all_mechanics_overrides_resolve_to_traits` now require
+every `feat-mechanics.json` / `trait-mechanics.json` key to name a real catalog
+record. This caught a bogus `Blinding Flash` override that would otherwise have
+been ignored silently, and `test_reference_only_feat_mechanics_apply_no_unconditional_bonus`
+guards the new reference-only feat entries against acquiring an unconditional
+`BONUS:`. Two entries (`Amateur Striker`, `Necrotic Heart`) were dropped or
+narrowed after those guards showed they already carried real mechanics.
+
+`tools/test_coverage.py::test_every_referenced_variable_is_defined_in_the_campaign`
+now enforces that all 1,036 `SPHERES_` variables referenced by recorded talent,
+feat and trait mechanics are defined by a campaign record. An undefined reference
+silently resolves to 0 in PCGen, so a typo would otherwise disable a mechanic
+without failing any test.
+
 Mass Aegis now exposes additional-target capacity (not total targets) and its
 reduced ten-minutes-per-CL duration. Caster-level boundaries, minimum one and
 removal pass both phases of `build/pcgen-spheres-jeg0ssf1`; the talent is removed
@@ -262,13 +339,14 @@ The normal build tests check that report for staleness.
 | --- | ---: | --- |
 | Power / Might spheres | 26 / 27 | Basic catalog scope |
 | Generated basic talent review records | 2,326 | Excludes four pre-existing Destruction talents |
-| Generated talent records with recorded mechanics | 16 | Review-array contents, not all generator-emitted mechanics |
+| Generated talent records with recorded mechanics | 804 | Review-array contents, not all generator-emitted mechanics |
 | Feats | 1,201 | Catalog entries |
-| Feats with unresolved prerequisite clauses | 400 | Require adjudication; exact keys/clauses are in the report |
-| Feats with recorded mechanics | 86 | Includes reference variables and partial effects |
+| Feats with unresolved prerequisite clauses | 297 | Require adjudication; exact keys/clauses are in the report |
+| Feats with recorded mechanics | 224 | Includes reference variables and partial effects |
 | Traits | 161 | Includes drawbacks |
 | Traits with unresolved prerequisites | 38 | Includes setting/GM requirements |
-| Traits with recorded mechanics | 20 | Not necessarily complete traits |
+| Traits with recorded mechanics | 44 | Not necessarily complete traits |
+| Prestige classes implemented | 5 | Tempestarii, Forest Lord, Waking Sleeper, Spheres Archwizard, Magemage |
 
 The earlier conversational claim that only three feats had unresolved
 prerequisites was incorrect: it searched prose rather than the structured
@@ -281,10 +359,22 @@ overrides. Its entry count is not the number of completed talents. Other
 generators also emit grants, packages, choices and bonuses outside the review
 arrays. No completion percentage is justified by these counters.
 
+Five prestige classes now have generated progressions: **Tempestarii** (Weather,
+5 levels), **Forest Lord** (Nature plant, 5 levels), **Waking Sleeper** (5 levels),
+**Spheres Archwizard** (10 levels) and **Magemage** (10 levels, low-caster aligned
+to the Mageknight class). They are independent-advancement or aligned-class records
+with pinned prerequisites, per-level magic-talent grants and reference variables;
+class feature *effects* beyond those variables remain sheet rules. Snapshot
+inventory alone is not implementation of the other prestige classes
+(`aeronaut-captain`, `bokor`, `cyborg`, `hive`, `kingking`,
+`realmwalker`, `renowned-warrior`, `great-mind`,
+`master-of-vagueries`, `alternate-justicar`, `ascendant-vanguard`,
+`superintelligence`, `trinity-angel`, `trinity-knight`), several of which depend
+on subsystems absent from this dataset (crew/airship, Kismet pool, Card Casting,
+conventional spell-slot advancement, psionics, and the Guile/advanced catalogs).
+
 Tempestarii is a five-level **prestige** class, not a base class. Its short
-feature file is not evidence of missing base-class levels. The current prestige
-generator implements Tempestarii; snapshot inventory alone is not implementation
-of the other prestige classes.
+feature file is not evidence of missing base-class levels.
 
 ## October 3 corrections and evidence
 

@@ -13,6 +13,31 @@ class TraitTests(unittest.TestCase):
             "BONUS:VAR|SPHERES_DESTRUCTION_TRAIT_DAMAGE|1+floor(TL/10)|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"])
         self.assertIn("PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
                       self.by_name["Destructive Talent"]["prerequisites"])
+
+    def test_capped_caster_traits_do_not_exceed_hit_dice(self):
+        for name, variables in (
+                ("Doom Cultist", ("SPHERES_CL_BLOOD", "SPHERES_CL_DEATH", "SPHERES_CL_DESTRUCTION")),
+                ("Fairy Magic", ("SPHERES_CL_FALLENFEY", "SPHERES_CL_ILLUSION", "SPHERES_CL_MIND")),
+                ("Conscious Cultist", ("SPHERES_CL_DIVINATION", "SPHERES_CL_MIND", "SPHERES_CL_TELEKINESIS")),
+                ("Defender Of The Faith", ("SPHERES_CL_FATE", "SPHERES_CL_LIFE", "SPHERES_CL_PROTECTION")),
+                ("Grove Neophyte", ("SPHERES_CL_ALTERATION", "SPHERES_CL_NATURE", "SPHERES_CL_WEATHER")),
+                ("Smoke And Mirrors", ("SPHERES_CL_DARK", "SPHERES_CL_ILLUSION", "SPHERES_CL_LIGHT")),
+                ("Predetermined Caster", ("SPHERES_CL_FATE", "SPHERES_CL_TIME", "SPHERES_CL_WARP"))):
+            mechanics = self.by_name[name]["mechanics"]
+            self.assertEqual(len(mechanics), len(variables))
+            for variable, tag in zip(variables, mechanics):
+                self.assertIn("BONUS:VAR|" + variable + "|max(0,min(1,TL-" + variable + "))", tag)
+                self.assertIn("|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,", tag)
+        for name, variable in (("Flair for Fate", "SPHERES_CL_FATE"),
+                               ("Natural Shifter (Racial)", "SPHERES_CL_ALTERATION"),
+                               ("Umbral Blood (Racial)", "SPHERES_CL_DARK")):
+            tag = self.by_name[name]["mechanics"][0]
+            self.assertIn("BONUS:VAR|" + variable + "|max(0,min(2,TL-" + variable + "))", tag)
+            self.assertIn("|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,", tag)
+        practiced = self.by_name["Practiced Aim"]["mechanics"]
+        self.assertEqual(practiced, ["BONUS:COMBAT|TOHIT|1|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"])
+        self.assertNotIn("BONUS:COMBAT|DAMAGE", " ".join(practiced))
+        self.assertEqual(self.by_name["Bonded Ally (Racial)"]["mechanics"], [])
     def test_bountiful_charm_default_recruitment_bonus(self):
         self.assertEqual(self.by_name["Bountiful Charm"]["mechanics"], [
             "CSKILL:Diplomacy", "BONUS:SITUATION|Diplomacy=Recruit cohorts|2|TYPE=Trait"])
@@ -74,6 +99,10 @@ class TraitTests(unittest.TestCase):
         self.assertEqual(rows["Technophile"]["mechanics"], [
             "BONUS:SKILL|Craft (Mechanical)|2|TYPE=Trait",
             "BONUS:VAR|SPHERES_TECH_CHARGE_CAPACITY|2|PREABILITY:1,CATEGORY=Spheres Combat Talent,Tech Sphere"])
+
+    def test_all_mechanics_overrides_resolve_to_traits(self):
+        overrides = json.loads((DATA / 'trait-mechanics.json').read_text())
+        self.assertEqual([name for name in overrides if name not in self.by_name], [])
 
     @classmethod
     def setUpClass(cls):

@@ -1,5 +1,27 @@
 # Spheres PCGen prototype — current handoff
 
+## Reference mechanics and four prestige classes — 2026-10-06
+
+Recorded-mechanics basic talents rose from 97 to 804 via caster-level reference
+variables (War totem/rally/momentum plus area, duration and damage-dice
+references across Blood, Dark, Death, Destruction, Mana, Light, Nature, Warp,
+Conjuration, Creation, Enhancement, Illusion, Life, Time, Weather, Fallen Fey,
+Alteration and Bear). Reference values are exposed as `DEFINE`/`BONUS:VAR` only;
+they never add `BONUS:COMBAT`/`SAVE`/`SKILL`/`HP`, and repeatable talents never
+own a `DEFINE` so removing one selection cannot undefine a shared counter. Both
+invariants have regressions in `tools/test_catalog.py`.
+
+Four prestige classes now have generated progressions: Tempestarii, Forest Lord,
+Waking Sleeper and Spheres Archwizard (`tools/spheres_prestige.py`). Class
+feature *effects* beyond the reference variables remain sheet rules. The
+remaining prestige classes in the pinned inventory depend on subsystems absent
+from this dataset (crew/airship, Kismet, Card Casting, conventional spell slots,
+psionics, Guile/advanced catalogs) and are not implemented.
+
+The full requested mechanical completion is still open. Most remaining talents
+are conditional or multi-part and intentionally stay text-only; descriptions are
+not automation. See `docs/spheres-current-status.md` for the measured inventory.
+
 ## Spellcrafting — 2026-09-25
 
 An initial custom-spell recipe compiler, acquisition/repertoire records and

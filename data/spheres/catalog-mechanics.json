@@ -207,7 +207,7 @@
     "DEFINE:SPHERES_ENHANCEMENT_MOVEMENT_SKILL_BONUS|2+2*floor(SPHERES_CL_ENHANCEMENT/5)"
   ],
   "Enhancement - Bestow Intelligence": [
-    "DEFINE:SPHERES_ENHANCEMENT_BESTOW_MENTAL_SCORE|6+floor(SPHERES_CL_ENHANCEMENT/2)"
+    "DEFINE:SPHERES_ENHANCEMENT_BESTOW_INTELLIGENCE_SCORE|6+floor(SPHERES_CL_ENHANCEMENT/2)"
   ],
   "Enhancement - Cripple": [
     "DEFINE:SPHERES_ENHANCEMENT_CRIPPLE_PENALTY|-2-floor(SPHERES_CL_ENHANCEMENT/5)"
@@ -460,6 +460,2177 @@
     "STACK:NO",
     "CHOOSE:NUMCHOICES=1|SKILL|TYPE=Craft",
     "BONUS:SKILLRANK|LIST|TL|TYPE=SpheresTraining"
+  ],
+  "War Sphere": [
+    "DEFINE:SPHERES_WAR_TOTEM_RADIUS_FEET|50+5*floor(SPHERES_CL_WAR/2)",
+    "DEFINE:SPHERES_WAR_TOTEM_WAR_DAMAGE|2+floor(SPHERES_CL_WAR/5)",
+    "DEFINE:SPHERES_WAR_COMMANDING_AID_ATTACK|SPHERES_CL_WAR+SPHERES_CASTING_ABILITY"
+  ],
+  "War - Totem Of Speed": [
+    "DEFINE:SPHERES_WAR_TOTEM_SPEED_FEET|5+5*floor(SPHERES_CL_WAR/5)"
+  ],
+  "War - Totem Of Stability": [
+    "DEFINE:SPHERES_WAR_TOTEM_STABILITY_CMD|2+floor(SPHERES_CL_WAR/5)"
+  ],
+  "War - Totem Of Stumbling": [
+    "DEFINE:SPHERES_WAR_TOTEM_STUMBLING_CMD|-2-floor(SPHERES_CL_WAR/5)"
+  ],
+  "War - Mass Rally": [
+    "DEFINE:SPHERES_WAR_MASS_RALLY_ADDITIONAL_TARGETS|max(1,floor(SPHERES_CL_WAR/2))"
+  ],
+  "War - Blood Totem": [
+    "DEFINE:SPHERES_WAR_BLOOD_TOTEM_REDUCTION|1+floor(SPHERES_CL_WAR/5)",
+    "DEFINE:SPHERES_WAR_BLOOD_TOTEM_RETRIBUTION|1+floor(SPHERES_CL_WAR/5)"
+  ],
+  "War - Invigorating Totem": [
+    "DEFINE:SPHERES_WAR_INVIGORATING_TEMP_HP_ROUND|1+floor(SPHERES_CL_WAR/5)",
+    "DEFINE:SPHERES_WAR_INVIGORATING_TEMP_HP_CAP|SPHERES_CL_WAR"
+  ],
+  "War - Quickening Totem": [
+    "DEFINE:SPHERES_WAR_QUICKENING_AOO_AC|2+floor(SPHERES_CL_WAR/4)"
+  ],
+  "War - Scourging Totem": [
+    "DEFINE:SPHERES_WAR_SCOURGING_DAMAGE|max(1,floor(SPHERES_CL_WAR/2))"
+  ],
+  "War - Totem Of Tactical Prowess": [
+    "DEFINE:SPHERES_WAR_TACTICAL_PROWESS_INCREASE|1+floor(SPHERES_CL_WAR/5)"
+  ],
+  "War - Totem Of The Dragonslayer": [
+    "DEFINE:SPHERES_WAR_DRAGONSLAYER_REFLEX|1+floor(SPHERES_CL_WAR/5)"
+  ],
+  "War - Blood Bond": [
+    "DEFINE:SPHERES_WAR_BLOOD_BOND_MINUTES|10*SPHERES_CL_WAR",
+    "DEFINE:SPHERES_WAR_BLOOD_BOND_MEMBER_MINUTES|60*SPHERES_CL_WAR"
+  ],
+  "War - Combat Inertia": [
+    "DEFINE:SPHERES_WAR_COMBAT_INERTIA_MOMENTUM|1+floor(SPHERES_CL_WAR/10)"
+  ],
+  "War - Totem Of Whispers": [
+    "DEFINE:SPHERES_WAR_WHISPERS_PENALTY|-1-floor(SPHERES_CL_WAR/2)",
+    "DEFINE:SPHERES_WAR_WHISPERS_FAIL_CHANCE|10+5*floor(SPHERES_CL_WAR/5)",
+    "DEFINE:SPHERES_WAR_WHISPERS_PERFORM_DC|10+SPHERES_CL_WAR"
+  ],
+  "War - Totem Of The Heroic Heart": [
+    "DEFINE:SPHERES_WAR_HEROIC_HEART_BONUS|4+floor(SPHERES_CL_WAR/5)"
+  ],
+  "War - Totem Of Screaming Skin": [
+    "DEFINE:SPHERES_WAR_SCREAMING_SKIN_DAMAGE|SPHERES_CL_WAR"
+  ],
+  "War - Totem Of Courage": [
+    "DEFINE:SPHERES_WAR_COURAGE_ATTACK|1+floor(SPHERES_CL_WAR/10)",
+    "DEFINE:SPHERES_WAR_COURAGE_FEAR_SAVE|1+floor(SPHERES_CL_WAR/5)"
+  ],
+  "War - Totem Of Iron": [
+    "DEFINE:SPHERES_WAR_IRON_NATURAL_ARMOR|1+floor(SPHERES_CL_WAR/10)"
+  ],
+  "War - Totem Of Liberation": [
+    "DEFINE:SPHERES_WAR_LIBERATION_BONUS|1+floor(SPHERES_CL_WAR/5)"
+  ],
+  "War - Totem Of Enemies": [
+    "DEFINE:SPHERES_WAR_ENEMIES_PENALTY|-1-floor(SPHERES_CL_WAR/10)"
+  ],
+  "War - Totem Of Allegiance": [
+    "DEFINE:SPHERES_WAR_ALLEGIANCE_BONUS|1+floor(SPHERES_CL_WAR/10)"
+  ],
+  "War - Totem Of Deep Thought": [
+    "DEFINE:SPHERES_WAR_DEEP_THOUGHT_CONCENTRATION|1+floor(SPHERES_CL_WAR/5)"
+  ],
+  "War - Hammer And Anvil": [
+    "DEFINE:SPHERES_WAR_HAMMER_SHARED_FEATS|1+floor(SPHERES_CL_WAR/10)"
+  ],
+  "War - Lingering Resentment": [
+    "DEFINE:SPHERES_WAR_LINGERING_ROUNDS|2"
+  ],
+  "Blood - Internal Propulsion": [
+    "DEFINE:SPHERES_BLOOD_INTERNAL_PROPULSION_FEET|10+5*floor(SPHERES_CL_BLOOD/5)"
+  ],
+  "Dark - Shifting Shadows": [
+    "DEFINE:SPHERES_DARK_SHIFTING_SHADOWS_SQUARES|1+floor(SPHERES_CL_DARK/2)"
+  ],
+  "Destruction - Sculpt Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_SCULPT_BLAST_RADIUS|10+5*floor(SPHERES_CL_DESTRUCTION/5)"
+  ],
+  "Light - Bend Radiance": [
+    "DEFINE:SPHERES_LIGHT_BEND_RADIANCE_CUBES|1+floor(SPHERES_CL_LIGHT/2)"
+  ],
+  "Mana - Explosive Expunge": [
+    "DEFINE:SPHERES_MANA_EXPLOSIVE_EXPUNGE_RADIUS|10+5*floor(SPHERES_CL_MANA/5)"
+  ],
+  "Mana - Flexible Shuffle": [
+    "DEFINE:SPHERES_MANA_FLEXIBLE_SHUFFLE_SQUARES|3+floor(SPHERES_CL_MANA/2)"
+  ],
+  "Nature - Breeze Mastery": [
+    "DEFINE:SPHERES_NATURE_BREEZE_MASTERY_RADIUS|15+5*floor(SPHERES_CL_NATURE/5)"
+  ],
+  "Nature - Repress Element": [
+    "DEFINE:SPHERES_NATURE_REPRESS_ELEMENT_RADIUS|5+5*floor(SPHERES_CL_NATURE/5)"
+  ],
+  "Warp - Create Gap": [
+    "DEFINE:SPHERES_WARP_CREATE_GAP_CUBES|1+floor(SPHERES_CL_WARP/4)"
+  ],
+  "Warp - Looped Space": [
+    "DEFINE:SPHERES_WARP_LOOPED_SPACE_CUBES|1+floor(SPHERES_CL_WARP/5)"
+  ],
+  "Warp - Wormhole": [
+    "DEFINE:SPHERES_WARP_WORMHOLE_SQUARES|1+floor(SPHERES_CL_WARP/2)"
+  ],
+  "Blood - Piercing Blood": [
+    "DEFINE:SPHERES_BLOOD_PIERCING_BLOOD_D6|max(1,floor(SPHERES_CL_BLOOD/2))"
+  ],
+  "Dark - Edge Of Night": [
+    "DEFINE:SPHERES_DARK_EDGE_OF_NIGHT_D6|max(1,floor(SPHERES_CL_DARK/3))"
+  ],
+  "Dark - Thick Darkness": [
+    "DEFINE:SPHERES_DARK_THICK_DARKNESS_PENALTY|-1-floor(SPHERES_CL_DARK/10)",
+    "DEFINE:SPHERES_DARK_THICK_DARKNESS_FALL_D6|1+floor(SPHERES_CL_DARK/10)"
+  ],
+  "Dark - Dark Slaughter": [
+    "DEFINE:SPHERES_DARK_SLAUGHTER_D6|1+floor(SPHERES_CL_DARK/10)"
+  ],
+  "Death - Bonerattle": [
+    "DEFINE:SPHERES_DEATH_BONERATTLE_D6|1+floor(SPHERES_CL_DEATH/3)",
+    "DEFINE:SPHERES_DEATH_BONERATTLE_MOVE_FEET|5+5*floor(SPHERES_CL_DEATH/10)"
+  ],
+  "Death - Vampiric Strike": [
+    "DEFINE:SPHERES_DEATH_VAMPIRIC_STRIKE_D6|max(1,floor(SPHERES_CL_DEATH/2))",
+    "DEFINE:SPHERES_DEATH_VAMPIRIC_STRIKE_TEMP_HP_CAP|max(6,3*SPHERES_CL_DEATH)"
+  ],
+  "Light - Flare": [
+    "DEFINE:SPHERES_LIGHT_FLARE_D4|max(1,floor(SPHERES_CL_LIGHT/2))",
+    "DEFINE:SPHERES_LIGHT_FLARE_RADIUS|5+5*floor(SPHERES_CL_LIGHT/10)"
+  ],
+  "Light - Sunstroke": [
+    "DEFINE:SPHERES_LIGHT_SUNSTROKE_D4|max(1,floor(SPHERES_CL_LIGHT/2))"
+  ],
+  "Creation - Lengthened Creation": [
+    "DEFINE:SPHERES_CREATION_LENGTHENED_HOURS|SPHERES_CL_CREATION"
+  ],
+  "Illusion - Lingering Illusion": [
+    "DEFINE:SPHERES_ILLUSION_LINGERING_MINUTES|SPHERES_CL_ILLUSION"
+  ],
+  "Life - Latent Healing": [
+    "DEFINE:SPHERES_LIFE_LATENT_HEALING_HOURS|SPHERES_CL_LIFE"
+  ],
+  "Light - Mass Lens": [
+    "DEFINE:SPHERES_LIGHT_MASS_LENS_ADDITIONAL_TARGETS|max(1,floor(SPHERES_CL_LIGHT/2))",
+    "DEFINE:SPHERES_LIGHT_MASS_LENS_MINUTES|10*SPHERES_CL_LIGHT"
+  ],
+  "Light - Trail": [
+    "DEFINE:SPHERES_LIGHT_TRAIL_BRIGHT_FEET|30+5*floor(SPHERES_CL_LIGHT/2)"
+  ],
+  "Nature - Nature Sight": [
+    "DEFINE:SPHERES_NATURE_NATURE_SIGHT_MINUTES|SPHERES_CL_NATURE"
+  ],
+  "Protection - Impedance": [
+    "DEFINE:SPHERES_PROTECTION_IMPEDANCE_AEGIS_FEET|5+5*floor(SPHERES_CL_PROTECTION/10)"
+  ],
+  "Warp - Distort Size": [
+    "DEFINE:SPHERES_WARP_DISTORT_SIZE_ADDITIONAL_FEET|5*floor(SPHERES_CL_WARP/4)"
+  ],
+  "Warp - Spatial Reach": [
+    "DEFINE:SPHERES_WARP_SPATIAL_REACH_FEET|10+5*floor(SPHERES_CL_WARP/5)"
+  ],
+  "Weather - Lengthened Weather": [
+    "DEFINE:SPHERES_WEATHER_LENGTHENED_MINUTES|60*SPHERES_CL_WEATHER"
+  ],
+  "Death - Shroud": [
+    "DEFINE:SPHERES_DEATH_SHROUD_MARKS|max(1,SPHERES_CASTING_ABILITY)",
+    "DEFINE:SPHERES_DEATH_SHROUD_ROUNDS|SPHERES_CL_DEATH"
+  ],
+  "Blood - Red Mist": [
+    "DEFINE:SPHERES_BLOOD_RED_MIST_MISS_CHANCE|20"
+  ],
+  "Conjuration - Lingering Companion": [
+    "DEFINE:SPHERES_CONJURATION_LINGERING_MINUTES|60*SPHERES_CL_CONJURATION"
+  ],
+  "Dark - Greater Darkness": [
+    "DEFINE:SPHERES_DARK_GREATER_DARKNESS_RADIUS|20+5*SPHERES_CL_DARK",
+    "DEFINE:SPHERES_DARK_GREATER_DARKNESS_WALL_CUBES|6+2*SPHERES_CL_DARK"
+  ],
+  "Dark - Mass Meld": [
+    "DEFINE:SPHERES_DARK_MASS_MELD_ADDITIONAL_TARGETS|max(1,floor(SPHERES_CL_DARK/2))",
+    "DEFINE:SPHERES_DARK_MASS_MELD_MINUTES|10*SPHERES_CL_DARK"
+  ],
+  "Death - Necrotic Conduit": [
+    "DEFINE:SPHERES_DEATH_NECROTIC_CONDUIT_ADDITIONAL|max(1,floor(SPHERES_CL_DEATH/2))"
+  ],
+  "Destruction - Chain Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_CHAIN_BLAST_TARGETS|max(2,1+floor(SPHERES_CL_DESTRUCTION/2))",
+    "DEFINE:SPHERES_DESTRUCTION_CHAIN_BLAST_JUMP_FEET|10+5*floor(SPHERES_CL_DESTRUCTION/5)"
+  ],
+  "Destruction - Energy Aura": [
+    "DEFINE:SPHERES_DESTRUCTION_ENERGY_AURA_RADIUS|5+5*floor(SPHERES_CL_DESTRUCTION/10)"
+  ],
+  "Mana - Bulwark": [
+    "DEFINE:SPHERES_MANA_BULWARK_LAYERS|1+floor(SPHERES_CL_MANA/10)"
+  ],
+  "Nature - Earth Mastery": [
+    "DEFINE:SPHERES_NATURE_EARTH_MASTERY_FEET|5+5*floor(SPHERES_CL_NATURE/5)"
+  ],
+  "Warp - Flex Space": [
+    "DEFINE:SPHERES_WARP_FLEX_SPACE_CUBES|3+SPHERES_CL_WARP"
+  ],
+  "Weather - Encompassing Weather": [
+    "DEFINE:SPHERES_WEATHER_ENCOMPASSING_ADDITIONAL_TARGETS|max(1,floor(SPHERES_CL_WEATHER/2))",
+    "DEFINE:SPHERES_WEATHER_ENCOMPASSING_MINUTES|10*SPHERES_CL_WEATHER"
+  ],
+  "Creation - Magnify/Minimize": [
+    "DEFINE:SPHERES_CREATION_MAGNIFY_STEPS|1+floor(SPHERES_CL_CREATION/5)",
+    "DEFINE:SPHERES_CREATION_MAGNIFY_MINUTES|SPHERES_CL_CREATION"
+  ],
+  "Destruction - Energy Sphere": [
+    "DEFINE:SPHERES_DESTRUCTION_ENERGY_SPHERE_FLY|20+5*floor(SPHERES_CL_DESTRUCTION/2)"
+  ],
+  "Destruction - Explosive Orb": [
+    "DEFINE:SPHERES_DESTRUCTION_EXPLOSIVE_ORB_RADIUS|10+5*floor(SPHERES_CL_DESTRUCTION/5)"
+  ],
+  "Illusion - Synesthesia": [
+    "DEFINE:SPHERES_ILLUSION_SYNESTHESIA_RANGE|5*SPHERES_CL_ILLUSION"
+  ],
+  "Light - Area Glow": [
+    "DEFINE:SPHERES_LIGHT_AREA_GLOW_RADIUS|10+5*floor(SPHERES_CL_LIGHT/5)"
+  ],
+  "Mind - Wrack": [
+    "DEFINE:SPHERES_MIND_WRACK_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Nature - Plant Mastery": [
+    "DEFINE:SPHERES_NATURE_PLANT_MASTERY_RADIUS|5+5*floor(SPHERES_CL_NATURE/5)",
+    "DEFINE:SPHERES_NATURE_PLANT_MASTERY_BRANCHES|1+floor(SPHERES_CL_NATURE/5)",
+    "DEFINE:SPHERES_NATURE_PLANT_MASTERY_BERRIES|2*SPHERES_CL_NATURE"
+  ],
+  "Time - Eject": [
+    "DEFINE:SPHERES_TIME_EJECT_ROUNDS|SPHERES_CL_TIME"
+  ],
+  "Conjuration - Greater Summoning": [
+    "DEFINE:SPHERES_CONJURATION_GREATER_SUMMONING_MINUTES|10*SPHERES_CL_CONJURATION"
+  ],
+  "Fallen Fey - Fae Light": [
+    "DEFINE:SPHERES_FALLENFEY_FAE_LIGHT_MOVE_FEET|30+5*floor(SPHERES_CL_FALLENFEY/2)"
+  ],
+  "Fallen Fey - Mantle Of Spring": [
+    "DEFINE:SPHERES_FALLENFEY_MANTLE_OF_SPRING_STEPS|1+floor(SPHERES_CL_FALLENFEY/10)"
+  ],
+  "Fate - Confine": [
+    "DEFINE:SPHERES_FATE_CONFINE_ROUNDS|SPHERES_CL_FATE"
+  ],
+  "Illusion - Focused Imagination": [
+    "DEFINE:SPHERES_ILLUSION_FOCUSED_IMAGINATION_MINUTES|10*SPHERES_CL_ILLUSION"
+  ],
+  "Life - Fount Of Life": [
+    "DEFINE:SPHERES_LIFE_FOUNT_STORED_MAX|10*SPHERES_CL_LIFE"
+  ],
+  "Warp - Plane Manipulator": [
+    "DEFINE:SPHERES_WARP_PLANE_MANIPULATOR_FEET|10*SPHERES_CL_WARP",
+    "DEFINE:SPHERES_WARP_PLANE_MANIPULATOR_MINUTES|SPHERES_CL_WARP"
+  ],
+  "Bear - Bear With Me": [
+    "DEFINE:SPHERES_BEAR_WITH_ME_MINUTES|SPHERES_CL_BEAR"
+  ],
+  "Conjuration - Spell-Linked Companions": [
+    "DEFINE:SPHERES_CONJURATION_SPELL_LINKED_COMPANIONS|1+floor(SPHERES_CL_CONJURATION/5)",
+    "DEFINE:SPHERES_CONJURATION_SPELL_LINKED_RANGE_FEET|5+5*floor(SPHERES_CL_CONJURATION/5)"
+  ],
+  "Creation - Change Material": [
+    "DEFINE:SPHERES_CREATION_CHANGE_MATERIAL_ROUNDS|SPHERES_CL_CREATION"
+  ],
+  "Life - Restore Spirit": [
+    "DEFINE:SPHERES_LIFE_RESTORE_SPIRIT_HEALING|SPHERES_CL_LIFE",
+    "DEFINE:SPHERES_LIFE_RESTORE_SPIRIT_NEGATIVE_LEVELS|1+floor(SPHERES_CL_LIFE/5)"
+  ],
+  "Nature - Elevated Nature": [
+    "DEFINE:SPHERES_NATURE_ELEVATED_NATURE_FEET|10*SPHERES_CL_NATURE",
+    "DEFINE:SPHERES_NATURE_ELEVATED_NATURE_FLY_DC|15+SPHERES_CL_NATURE"
+  ],
+  "Nature - Rejuvenation": [
+    "DEFINE:SPHERES_NATURE_REJUVENATION_HEALING|max(1,floor(SPHERES_CL_NATURE/2))",
+    "DEFINE:SPHERES_NATURE_REJUVENATION_MINUTES|SPHERES_CL_NATURE"
+  ],
+  "Technomancy - Lingering Sprite": [
+    "DEFINE:SPHERES_TECHNOMANCY_LINGERING_MINUTES|SPHERES_CL_TECHNOMANCY"
+  ],
+  "Nature - Aquatic Adept": [
+    "DEFINE:SPHERES_NATURE_AQUATIC_ADEPT_MINUTES|10*SPHERES_CL_NATURE"
+  ],
+  "Blood - Lengthened Control": [
+    "DEFINE:SPHERES_BLOOD_LENGTHENED_CONTROL_HOURS|SPHERES_CL_BLOOD"
+  ],
+  "Blood - Mana Bleed": [
+    "DEFINE:SPHERES_BLOOD_MANA_BLEED_STEPS|1+floor(SPHERES_CL_BLOOD/5)"
+  ],
+  "Blood - Blood Puppet": [
+    "DEFINE:SPHERES_BLOOD_BLOOD_PUPPET_ROUNDS|SPHERES_CL_BLOOD"
+  ],
+  "Creation - Transparency": [
+    "DEFINE:SPHERES_CREATION_TRANSPARENCY_MINUTES|SPHERES_CL_CREATION"
+  ],
+  "Dark - Wall Of Darkness": [
+    "DEFINE:SPHERES_DARK_WALL_OF_DARKNESS_CUBES|3+SPHERES_CL_DARK"
+  ],
+  "Death - Tomb Of Flesh": [
+    "DEFINE:SPHERES_DEATH_TOMB_OF_FLESH_D6|1+floor(SPHERES_CL_DEATH/3)"
+  ],
+  "Death - Bleeding Wounds": [
+    "DEFINE:SPHERES_DEATH_BLEEDING_WOUNDS_BLEED|max(1,SPHERES_CL_DEATH)"
+  ],
+  "Death - Drain": [
+    "DEFINE:SPHERES_DEATH_DRAIN_HOURS|SPHERES_CL_DEATH",
+    "DEFINE:SPHERES_DEATH_DRAIN_STEPS|1+floor(SPHERES_CL_DEATH/5)"
+  ],
+  "Death - Hunger": [
+    "DEFINE:SPHERES_DEATH_HUNGER_D8|SPHERES_CL_DEATH"
+  ],
+  "Death - Lich Strike": [
+    "DEFINE:SPHERES_DEATH_LICH_STRIKE_ROUNDS|1+floor(SPHERES_CL_DEATH/4)",
+    "DEFINE:SPHERES_DEATH_LICH_STRIKE_PARALYZE_ROUNDS|SPHERES_CL_DEATH"
+  ],
+  "Death - Sickening": [
+    "DEFINE:SPHERES_DEATH_SICKENING_ROUNDS|SPHERES_CL_DEATH"
+  ],
+  "Destruction - Blast Trap": [
+    "DEFINE:SPHERES_DESTRUCTION_BLAST_TRAP_MINUTES|10*SPHERES_CL_DESTRUCTION"
+  ],
+  "Divination - Alarm": [
+    "DEFINE:SPHERES_DIVINATION_ALARM_MINUTES|10*SPHERES_CL_DIVINATION",
+    "DEFINE:SPHERES_DIVINATION_ALARM_HOURS|SPHERES_CL_DIVINATION"
+  ],
+  "Fate - Mercy": [
+    "DEFINE:SPHERES_FATE_MERCY_ROUNDS|SPHERES_CL_FATE"
+  ],
+  "Mana - Ignition": [
+    "DEFINE:SPHERES_MANA_IGNITION_D8|1+floor((SPHERES_CL_MANA-1)/3)"
+  ],
+  "Mind - Courage": [
+    "DEFINE:SPHERES_MIND_COURAGE_BONUS|2+floor(SPHERES_CL_MIND/5)"
+  ],
+  "Mind - Esteem": [
+    "DEFINE:SPHERES_MIND_ESTEEM_BONUS|max(1,floor(SPHERES_CL_MIND/2))"
+  ],
+  "Mind - Fascinate": [
+    "DEFINE:SPHERES_MIND_FASCINATE_PENALTY|-2-floor(SPHERES_CL_MIND/5)"
+  ],
+  "Mind - Paralyze": [
+    "DEFINE:SPHERES_MIND_PARALYZE_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Mind - Sleep": [
+    "DEFINE:SPHERES_MIND_SLEEP_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Mind - Vision": [
+    "DEFINE:SPHERES_MIND_VISION_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Nature - Hazardous Terrain": [
+    "DEFINE:SPHERES_NATURE_HAZARDOUS_TERRAIN_ROUNDS|SPHERES_CL_NATURE"
+  ],
+  "Nature - Instant Burial": [
+    "DEFINE:SPHERES_NATURE_INSTANT_BURIAL_INCHES|SPHERES_CL_NATURE"
+  ],
+  "Time - Broken Time": [
+    "DEFINE:SPHERES_TIME_BROKEN_TIME_PENALTY|-max(1,floor(SPHERES_CL_TIME/2))"
+  ],
+  "Warp - Emergency Teleport": [
+    "DEFINE:SPHERES_WARP_EMERGENCY_TELEPORT_FEET|5*max(1,floor(SPHERES_CL_WARP/2))"
+  ],
+  "Alteration - Giant Traits": [
+    "DEFINE:SPHERES_ALTERATION_GIANT_TRAITS_TEMP_HP|SPHERES_CL_ALTERATION",
+    "DEFINE:SPHERES_ALTERATION_GIANT_TRAITS_FORT|1+floor(SPHERES_CL_ALTERATION/10)"
+  ],
+  "Alteration - Lingering Transformation": [
+    "DEFINE:SPHERES_ALTERATION_LINGERING_ROUNDS|2",
+    "DEFINE:SPHERES_ALTERATION_LINGERING_MINUTES|10*SPHERES_CL_ALTERATION"
+  ],
+  "Destruction - Rebuff": [
+    "DEFINE:SPHERES_DESTRUCTION_REBUFF_AC|2+2*floor(SPHERES_CL_DESTRUCTION/5)",
+    "DEFINE:SPHERES_DESTRUCTION_REBUFF_REFLEX|1+floor(SPHERES_CL_DESTRUCTION/5)"
+  ],
+  "Destruction - Energy Wall": [
+    "DEFINE:SPHERES_DESTRUCTION_ENERGY_WALL_WIDTH_FEET|20*SPHERES_CL_DESTRUCTION"
+  ],
+  "Fate - Freedom": [
+    "DEFINE:SPHERES_FATE_FREEDOM_ROUNDS|SPHERES_CL_FATE"
+  ],
+  "Nature - Nature’s Carapace": [
+    "DEFINE:SPHERES_NATURE_CARAPACE_MISS_CHANCE|10+10*floor(SPHERES_CL_NATURE/5)",
+    "DEFINE:SPHERES_NATURE_CARAPACE_MINUTES|SPHERES_CL_NATURE"
+  ],
+  "Nature - Nature’s Movement": [
+    "DEFINE:SPHERES_NATURE_MOVEMENT_MINUTES|SPHERES_CL_NATURE"
+  ],
+  "Nature - Resist Elements": [
+    "DEFINE:SPHERES_NATURE_RESIST_ELEMENTS_MINUTES|SPHERES_CL_NATURE"
+  ],
+  "Nature - Ride The Elements": [
+    "DEFINE:SPHERES_NATURE_RIDE_ELEMENTS_FEET|10+10*floor(SPHERES_CL_NATURE/5)",
+    "DEFINE:SPHERES_NATURE_RIDE_ELEMENTS_MINUTES|SPHERES_CL_NATURE"
+  ],
+  "Death - Gravetongue": [
+    "DEFINE:SPHERES_DEATH_GRAVETONGUE_MINUTES|SPHERES_CL_DEATH"
+  ],
+  "Death - Command Undead": [
+    "DEFINE:SPHERES_DEATH_COMMAND_UNDEAD_MINUTES|SPHERES_CL_DEATH"
+  ],
+  "Light - Lingering Glow": [
+    "DEFINE:SPHERES_LIGHT_LINGERING_GLOW_MINUTES|10*SPHERES_CL_LIGHT"
+  ],
+  "Time - Time Of The Season": [
+    "DEFINE:SPHERES_TIME_OF_THE_SEASON_RADIUS|10+5*floor(SPHERES_CL_TIME/2)"
+  ],
+  "Time - Timeline Bridge": [
+    "DEFINE:SPHERES_TIME_TIMELINE_BRIDGE_BONUS|max(1,floor(SPHERES_CL_TIME/2))"
+  ],
+  "Fallen Fey - Feline Omens": [
+    "DEFINE:SPHERES_FALLENFEY_FELINE_OMENS_ROUNDS|max(1,floor(SPHERES_CL_FALLENFEY/5))"
+  ],
+  "Fallen Fey - Fey Secrets": [
+    "DEFINE:SPHERES_FALLENFEY_FEY_SECRETS_STEPS|floor(SPHERES_CL_FALLENFEY/5)"
+  ],
+  "Mana - Disorient": [
+    "DEFINE:SPHERES_MANA_DISORIENT_MINUTES|SPHERES_CL_MANA"
+  ],
+  "Mana - Mark Of Instability": [
+    "DEFINE:SPHERES_MANA_MARK_OF_INSTABILITY_ROUNDS|1+floor((SPHERES_CL_MANA-1)/4)"
+  ],
+  "Mind - Brainwash": [
+    "DEFINE:SPHERES_MIND_BRAINWASH_PENALTY|-2",
+    "DEFINE:SPHERES_MIND_BRAINWASH_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Warp - Fluctuate": [
+    "DEFINE:SPHERES_WARP_FLUCTUATE_FEET|10+5*floor(SPHERES_CL_WARP/4)",
+    "DEFINE:SPHERES_WARP_FLUCTUATE_ROUNDS|SPHERES_CL_WARP"
+  ],
+  "Dark - Rolling Blackout": [
+    "DEFINE:SPHERES_DARK_ROLLING_BLACKOUT_FEET|25+5*floor(SPHERES_CL_DARK/2)"
+  ],
+  "Dark - Step Through Darkness": [
+    "DEFINE:SPHERES_DARK_STEP_THROUGH_FEET|30+10*floor(SPHERES_CL_DARK/5)"
+  ],
+  "Dark - Hungry Darkness": [
+    "DEFINE:SPHERES_DARK_HUNGRY_CON_DAMAGE|1+floor(SPHERES_CL_DARK/10)"
+  ],
+  "Death - Taint Soul": [
+    "DEFINE:SPHERES_DEATH_TAINT_SOUL_ROUNDS|max(1,floor(SPHERES_CL_DEATH/2))"
+  ],
+  "Alteration - Animalistic Transformation": [
+    "DEFINE:SPHERES_ALTERATION_ANIMALISTIC_NATURAL_ARMOR|2+floor(SPHERES_CL_ALTERATION/5)",
+    "DEFINE:SPHERES_ALTERATION_ANIMALISTIC_LAND_SPEED|40+20*floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Serpentine Transformation": [
+    "DEFINE:SPHERES_ALTERATION_SERPENTINE_NATURAL_ARMOR|2+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Vermin Transformation": [
+    "DEFINE:SPHERES_ALTERATION_VERMIN_NATURAL_ARMOR|2+floor(SPHERES_CL_ALTERATION/5)",
+    "DEFINE:SPHERES_ALTERATION_VERMIN_CLIMB_SPEED|30+15*floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Aquan Transformation": [
+    "DEFINE:SPHERES_ALTERATION_AQUAN_NATURAL_ARMOR|2+floor(SPHERES_CL_ALTERATION/5)",
+    "DEFINE:SPHERES_ALTERATION_AQUAN_SWIM_SPEED|40+20*floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Dragon Transformation": [
+    "DEFINE:SPHERES_ALTERATION_DRAGON_NATURAL_ARMOR|2+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Ooze Transformation": [
+    "DEFINE:SPHERES_ALTERATION_OOZE_NATURAL_ARMOR|4+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Plant Transformation": [
+    "DEFINE:SPHERES_ALTERATION_PLANT_NATURAL_ARMOR|4+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Size Change": [
+    "DEFINE:SPHERES_ALTERATION_SIZE_CHANGE_STEPS|1+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Twisted Shapeshift": [
+    "DEFINE:SPHERES_ALTERATION_TWISTED_SHAPESHIFT_D6|max(1,floor(SPHERES_CL_ALTERATION/2))"
+  ],
+  "Alteration - Aberrant Body": [
+    "DEFINE:SPHERES_ALTERATION_ABERRANT_ACID_D6|max(1,floor(SPHERES_CL_ALTERATION/2))",
+    "DEFINE:SPHERES_ALTERATION_ABERRANT_ACID_ROUNDS|max(1,floor(SPHERES_CL_ALTERATION/2))"
+  ],
+  "Alteration - Fey Body": [
+    "DEFINE:SPHERES_ALTERATION_FEY_BODY_DR|3+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Blood - Extract Blood Construct": [
+    "DEFINE:SPHERES_BLOOD_EXTRACT_CONSTRUCT_MINUTES|SPHERES_CL_BLOOD"
+  ],
+  "Blood - Slick": [
+    "DEFINE:SPHERES_BLOOD_SLICK_CMD_PENALTY|-2-floor(SPHERES_CL_BLOOD/5)"
+  ],
+  "Blood - Martyr’s Tithings": [
+    "DEFINE:SPHERES_BLOOD_MARTYRS_TITHINGS_ROUNDS|SPHERES_CASTING_ABILITY"
+  ],
+  "Conjuration - Mass Summon": [
+    "DEFINE:SPHERES_CONJURATION_MASS_SUMMON_ADDITIONAL|1+floor(SPHERES_CL_CONJURATION/5)"
+  ],
+  "Dark - Intoxicating Darkness": [
+    "DEFINE:SPHERES_DARK_INTOXICATING_WIS_DAMAGE|1+floor(SPHERES_CL_DARK/10)"
+  ],
+  "Dark - Numbing Darkness": [
+    "DEFINE:SPHERES_DARK_NUMBING_DEX_DAMAGE|1+floor(SPHERES_CL_DARK/10)"
+  ],
+  "Dark - Edgelord": [
+    "DEFINE:SPHERES_DARK_EDGELORD_INTIMIDATE|1+floor(SPHERES_CL_DARK/5)"
+  ],
+  "Death - Sustained Necromancy": [
+    "DEFINE:SPHERES_DEATH_SUSTAINED_NECROMANCY_HOURS|SPHERES_CL_DEATH"
+  ],
+  "Death - Manipulate Undeath": [
+    "DEFINE:SPHERES_DEATH_MANIPULATE_UNDEATH_D8|max(1,floor(SPHERES_CL_DEATH/2))"
+  ],
+  "Fallen Fey - Aelfwine": [
+    "DEFINE:SPHERES_FALLENFEY_AELFWINE_HP|5*SPHERES_CL_FALLENFEY"
+  ],
+  "Mind - Fear": [
+    "DEFINE:SPHERES_MIND_FEAR_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Mind - Incense": [
+    "DEFINE:SPHERES_MIND_INCENSE_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Nature - Deep Nature": [
+    "DEFINE:SPHERES_NATURE_DEEP_NATURE_EXTRA_ROUNDS|2"
+  ],
+  "Mind - Confusion": [
+    "DEFINE:SPHERES_MIND_CONFUSION_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Mind - Flabbergast": [
+    "DEFINE:SPHERES_MIND_FLABBERGAST_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Mind - Innocence": [
+    "DEFINE:SPHERES_MIND_INNOCENCE_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Mind - Speechless": [
+    "DEFINE:SPHERES_MIND_SPEECHLESS_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Mind - Recommend": [
+    "DEFINE:SPHERES_MIND_RECOMMEND_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Fate - Malice": [
+    "DEFINE:SPHERES_FATE_MALICE_ROUNDS|SPHERES_CASTING_ABILITY",
+    "DEFINE:SPHERES_FATE_MALICE_BONUS|1+floor(SPHERES_CL_FATE/10)",
+    "DEFINE:SPHERES_FATE_MALICE_MINUTES|SPHERES_CL_FATE"
+  ],
+  "Fate - Mundanity": [
+    "DEFINE:SPHERES_FATE_MUNDANITY_ROUNDS|SPHERES_CL_FATE"
+  ],
+  "Fate - Truth": [
+    "DEFINE:SPHERES_FATE_TRUTH_MINUTES|SPHERES_CL_FATE"
+  ],
+  "Fate - Perfect": [
+    "DEFINE:SPHERES_FATE_PERFECT_MINUTES|SPHERES_CL_FATE",
+    "DEFINE:SPHERES_FATE_PERFECT_STR_CMB|2+floor(SPHERES_CL_FATE/4)",
+    "DEFINE:SPHERES_FATE_PERFECT_DEX_FEET|10+5*floor(SPHERES_CL_FATE/5)",
+    "DEFINE:SPHERES_FATE_PERFECT_CON_TEMP_HP|1+floor(SPHERES_CL_FATE/5)",
+    "DEFINE:SPHERES_FATE_PERFECT_INT_SKILL|2+floor(SPHERES_CL_FATE/5)",
+    "DEFINE:SPHERES_FATE_PERFECT_WIS_INITIATIVE|1+floor(SPHERES_CL_FATE/5)"
+  ],
+  "Dark - Obscure Passage": [
+    "DEFINE:SPHERES_DARK_OBSCURE_PASSAGE_FEET|5*SPHERES_CL_DARK"
+  ],
+  "Dark - Shadow Tag": [
+    "DEFINE:SPHERES_DARK_SHADOW_TAG_HOURS|SPHERES_CL_DARK"
+  ],
+  "Dark - Hide In Darkness": [
+    "DEFINE:SPHERES_DARK_HIDE_IN_DARKNESS_HOURS|SPHERES_CL_DARK"
+  ],
+  "Dark - Voidwatcher": [
+    "DEFINE:SPHERES_DARK_VOIDWATCHER_HOURS|SPHERES_CL_DARK"
+  ],
+  "Mana - Retained Imbuement": [
+    "DEFINE:SPHERES_MANA_RETAINED_IMBUEMENT_MINUTES|SPHERES_CL_MANA"
+  ],
+  "Mana - Melt Power": [
+    "DEFINE:SPHERES_MANA_MELT_POWER_D4|1+floor(SPHERES_CL_MANA/10)"
+  ],
+  "Mana - Arcanodynamics": [
+    "DEFINE:SPHERES_MANA_ARCANODYNAMICS_CL_BONUS|4+floor(SPHERES_CL_MANA/4)"
+  ],
+  "Protection - Glyph": [
+    "DEFINE:SPHERES_PROTECTION_GLYPH_HOURS|SPHERES_CL_PROTECTION"
+  ],
+  "War - Position": [
+    "DEFINE:SPHERES_WAR_POSITION_FEET|5*max(1,floor(SPHERES_CL_WAR/2))"
+  ],
+  "Bear - Angry Bear": [
+    "DEFINE:SPHERES_BEAR_ANGRY_BEAR_ROUNDS|SPHERES_CL_BEAR"
+  ],
+  "Nature - Speak With The Elements": [
+    "DEFINE:SPHERES_NATURE_SPEAK_ELEMENTS_MINUTES|SPHERES_CL_NATURE"
+  ],
+  "Death - Poltergeist": [
+    "DEFINE:SPHERES_DEATH_POLTERGEIST_ROUNDS|SPHERES_CL_DEATH",
+    "DEFINE:SPHERES_DEATH_POLTERGEIST_PENALTY|-3-floor(SPHERES_CL_DEATH/6)"
+  ],
+  "Destruction - Energy Satellite": [
+    "DEFINE:SPHERES_DESTRUCTION_ENERGY_SATELLITE_MINUTES|SPHERES_CL_DESTRUCTION"
+  ],
+  "Fallen Fey - Greater Fey-Link": [
+    "DEFINE:SPHERES_FALLENFEY_GREATER_FEY_LINK_MINUTES|10*SPHERES_CL_FALLENFEY",
+    "DEFINE:SPHERES_FALLENFEY_GREATER_FEY_LINK_HOURS|SPHERES_CL_FALLENFEY"
+  ],
+  "Alteration - Odiferous": [
+    "DEFINE:SPHERES_ALTERATION_ODIFEROUS_SAVE|2+floor(SPHERES_CL_ALTERATION/4)"
+  ],
+  "Mana - Mark Of Lifeburn": [
+    "DEFINE:SPHERES_MANA_MARK_OF_LIFEBURN_D8|max(1,floor(SPHERES_CL_MANA/3))"
+  ],
+  "Fate - The Emperor": [
+    "DEFINE:SPHERES_FATE_THE_EMPEROR_PENALTY_REDUCTION|1+floor(SPHERES_CL_FATE/10)"
+  ],
+  "Mind - Intuit Knowledge": [
+    "DEFINE:SPHERES_MIND_INTUIT_KNOWLEDGE_RANKS|max(1,floor(SPHERES_CL_MIND/2))"
+  ],
+  "Alchemy - Risky Business": [
+    "DEFINE:SPHERES_ALCHEMY_RISKY_BUSINESS_SAVE|1+floor(SPHERES_ALCHEMY_RANKS/4)"
+  ],
+  "Alchemy - Concentration Aid": [
+    "DEFINE:SPHERES_ALCHEMY_CONCENTRATION_AID|3+floor(SPHERES_ALCHEMY_RANKS/5)"
+  ],
+  "Alchemy - Psychotropic Hallucinogen": [
+    "DEFINE:SPHERES_ALCHEMY_PSYCHOTROPIC_BONUS|2+floor(SPHERES_ALCHEMY_RANKS/3)"
+  ],
+  "Alchemy - Vitiating Venom": [
+    "DEFINE:SPHERES_ALCHEMY_VITIATING_WEAKNESS|2+floor(SPHERES_ALCHEMY_RANKS/3)"
+  ],
+  "Alchemy - Anesthetic Dosage": [
+    "DEFINE:SPHERES_ALCHEMY_ANESTHETIC_NONLETHAL|2*SPHERES_ALCHEMY_RANKS"
+  ],
+  "Barroom - Charming Drunk": [
+    "DEFINE:SPHERES_BARROOM_CHARMING_DRUNK_BONUS|2+floor(SPHERES_BAB_BARROOM/3)"
+  ],
+  "Berserker - Absolute Determination": [
+    "DEFINE:SPHERES_BERSERKER_ABSOLUTE_DETERMINATION_SAVE|1+floor(SPHERES_BAB_BERSERKER/6)"
+  ],
+  "Beastmastery - Faithful Friend": [
+    "DEFINE:SPHERES_BEASTMASTERY_FAITHFUL_FRIEND_AID|1+floor(max(skillinfo(\"TOTALRANK\",\"Handle Animal\"),skillinfo(\"TOTALRANK\",\"Ride\"))/5)"
+  ],
+  "Beastmastery - Pack Attack": [
+    "DEFINE:SPHERES_BEASTMASTERY_PACK_ATTACK_RANGE|25+5*floor(skillinfo(\"TOTALRANK\",\"Handle Animal\")/2)"
+  ],
+  "Barrage - Double Tap": [
+    "DEFINE:SPHERES_BARRAGE_DOUBLE_TAP_BONUS|1+floor(SPHERES_BAB_BARRAGE/7)"
+  ],
+  "Barroom - Boozehound": [
+    "DEFINE:SPHERES_BARROOM_BOOZEHOUND_BONUS|2+floor(SPHERES_BAB_BARROOM/5)"
+  ],
+  "Athletics - Slippery Weasel’s Tumble": [
+    "DEFINE:SPHERES_ATHLETICS_WEASEL_ATTACK_BONUS|1+floor(max(skillinfo(\"TOTALRANK\",\"Climb\"),skillinfo(\"TOTALRANK\",\"Fly\"),skillinfo(\"TOTALRANK\",\"Acrobatics\"),skillinfo(\"TOTALRANK\",\"Swim\"))/7)",
+    "DEFINE:SPHERES_ATHLETICS_WEASEL_EXTRA_FEET|5*floor(max(skillinfo(\"TOTALRANK\",\"Climb\"),skillinfo(\"TOTALRANK\",\"Fly\"),skillinfo(\"TOTALRANK\",\"Acrobatics\"),skillinfo(\"TOTALRANK\",\"Swim\"))/10)"
+  ],
+  "Berserker - Dreadnought": [
+    "DEFINE:SPHERES_BERSERKER_DREADNOUGHT_SAVE|1+floor(SPHERES_BAB_BERSERKER/4)"
+  ],
+  "Berserker - Juggernaut": [
+    "DEFINE:SPHERES_BERSERKER_JUGGERNAUT_CHARGE|1+floor(SPHERES_BAB_BERSERKER/10)"
+  ],
+  "Gladiator - Dread": [
+    "DEFINE:SPHERES_GLADIATOR_DREAD_PENALTY|1+floor(skillinfo(\"TOTALRANK\",\"Intimidate\")/7)"
+  ],
+  "Scoundrel - Improved Grifting": [
+    "DEFINE:SPHERES_SCOUNDREL_GRIFTING_BONUS|1+floor(skillinfo(\"TOTALRANK\",\"Sleight of Hand\")/4)"
+  ],
+  "Trap - Trap Finder": [
+    "DEFINE:SPHERES_TRAP_FINDER_BONUS|1+floor(skillinfo(\"TOTALRANK\",\"Craft (Traps)\")/4)"
+  ],
+  "Warleader - Militant Will": [
+    "DEFINE:SPHERES_WARLEADER_MILITANT_WILL_SAVE|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/4)"
+  ],
+  "Leadership - Alchemists": [
+    "DEFINE:SPHERES_LEADERSHIP_ALCHEMISTS_DC|15+skillinfo(\"TOTALRANK\",\"Diplomacy\")",
+    "DEFINE:SPHERES_LEADERSHIP_ALCHEMISTS_GP_PER_DAY|10*skillinfo(\"TOTALRANK\",\"Diplomacy\")"
+  ],
+  "Tech - Dermal Plating": [
+    "DEFINE:SPHERES_TECH_DERMAL_PLATING_NATURAL_ARMOR|2+floor(SPHERES_TECH_RANKS/5)"
+  ],
+  "Tech - Exo-Skeletal Muscles": [
+    "DEFINE:SPHERES_TECH_EXO_SKELETAL_STR|2+2*floor(SPHERES_TECH_RANKS/7)"
+  ],
+  "Tech - External Health Modulator": [
+    "DEFINE:SPHERES_TECH_HEALTH_MODULATOR_CON|2+2*floor(SPHERES_TECH_RANKS/7)"
+  ],
+  "Tech - Synaptic Reaction Maximizer": [
+    "DEFINE:SPHERES_TECH_SYNAPTIC_DEX|2+2*floor(SPHERES_TECH_RANKS/7)"
+  ],
+  "Tech - Overdrive": [
+    "DEFINE:SPHERES_TECH_OVERDRIVE_INSIGHT|2+floor(SPHERES_TECH_RANKS/10)"
+  ],
+  "Tech - Seeker Missile Cannon": [
+    "DEFINE:SPHERES_TECH_SEEKER_RANGE_FEET|400+40*SPHERES_TECH_RANKS"
+  ],
+  "Trap - Trap Door": [
+    "DEFINE:SPHERES_TRAP_DOOR_FEET|10+5*floor(skillinfo(\"TOTALRANK\",\"Craft (Traps)\")/5)"
+  ],
+  "Trap - Brutal Traps": [
+    "DEFINE:SPHERES_TRAP_BRUTAL_CMB|1+floor(skillinfo(\"TOTALRANK\",\"Craft (Traps)\")/2)"
+  ],
+  "Trap - Terrain Trap": [
+    "DEFINE:SPHERES_TRAP_TERRAIN_RADIUS|10+5*floor(skillinfo(\"TOTALRANK\",\"Craft (Traps)\")/5)"
+  ],
+  "Warleader - Lasting Oration": [
+    "DEFINE:SPHERES_WARLEADER_LASTING_ORATION_MINUTES|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/4)"
+  ],
+  "Warleader - Distracting Cacophony": [
+    "DEFINE:SPHERES_WARLEADER_CACOPHONY_DC_BONUS|2+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/4)"
+  ],
+  "Equipment - Unarmored Training": [
+    "DEFINE:SPHERES_EQUIPMENT_UNARMORED_AC|3+floor(SPHERES_BAB_EQUIPMENT/3)"
+  ],
+  "Gladiator - Dullahan’s Call": [
+    "DEFINE:SPHERES_GLADIATOR_DULLAHAN_ROUNDS|1+floor(skillinfo(\"TOTALRANK\",\"Intimidate\")/4)"
+  ],
+  "Scout - Advisory Scout": [
+    "DEFINE:SPHERES_SCOUT_ADVISORY_ROUNDS|1+floor(skillinfo(\"TOTALRANK\",\"Stealth\")/4)"
+  ],
+  "Trap - Scatter Trap": [
+    "DEFINE:SPHERES_TRAP_SCATTER_EXTRA_SPACES|max(1,floor(skillinfo(\"TOTALRANK\",\"Craft (Traps)\")/4))"
+  ],
+  "Trap - Scratching Post": [
+    "DEFINE:SPHERES_TRAP_SCRATCHING_POST_MINUTES|skillinfo(\"TOTALRANK\",\"Craft (Traps)\")"
+  ],
+  "Leadership - Master’s Instruction": [
+    "DEFINE:SPHERES_LEADERSHIP_MASTERS_INSTRUCTION_FEET|25+5*floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/2)"
+  ],
+  "Leadership - Pack Tactics": [
+    "DEFINE:SPHERES_LEADERSHIP_PACK_TACTICS_FEET|25+5*floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/2)"
+  ],
+  "Leadership - Team Lookout": [
+    "DEFINE:SPHERES_LEADERSHIP_TEAM_LOOKOUT_FEET|25+5*floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/2)"
+  ],
+  "Leadership - Squad": [
+    "DEFINE:SPHERES_LEADERSHIP_SQUAD_DICE|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/3)"
+  ],
+  "Alchemy - Salve": [
+    "DEFINE:SPHERES_ALCHEMY_SALVE_D8|max(1,floor(SPHERES_ALCHEMY_RANKS/2))"
+  ],
+  "Alchemy - Improved Liquid Ice": [
+    "DEFINE:SPHERES_ALCHEMY_LIQUID_ICE_CUBES|floor(SPHERES_ALCHEMY_RANKS/2)"
+  ],
+  "Alchemy - Neutralizer": [
+    "DEFINE:SPHERES_ALCHEMY_NEUTRALIZER_TYPES|1+floor(SPHERES_ALCHEMY_RANKS/10)"
+  ],
+  "Alchemy - Fireworks": [
+    "DEFINE:SPHERES_ALCHEMY_FIREWORKS_RANGE|5+5*floor(SPHERES_ALCHEMY_RANKS/2)"
+  ],
+  "Leadership - Practiced Teamwork": [
+    "DEFINE:SPHERES_LEADERSHIP_TEAMWORK_AID|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/7)"
+  ],
+  "Leadership - Healers": [
+    "DEFINE:SPHERES_LEADERSHIP_HEALERS_KITS|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/5)",
+    "DEFINE:SPHERES_LEADERSHIP_HEALERS_HP|10*skillinfo(\"TOTALRANK\",\"Diplomacy\")"
+  ],
+  "Leadership - Manager": [
+    "DEFINE:SPHERES_LEADERSHIP_MANAGER_BUSINESSES|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/5)"
+  ],
+  "Tech - Superior Joints": [
+    "DEFINE:SPHERES_TECH_SUPERIOR_JOINTS|3+floor(SPHERES_TECH_RANKS/6)"
+  ],
+  "Tech - Homing Pack": [
+    "DEFINE:SPHERES_TECH_HOMING_COVER_BYPASS|2+2*floor(SPHERES_TECH_RANKS/6)"
+  ],
+  "Athletics - Stable Positioning": [
+    "DEFINE:SPHERES_ATHLETICS_STABLE_POSITIONING|2+floor(max(skillinfo(\"TOTALRANK\",\"Climb\"),skillinfo(\"TOTALRANK\",\"Fly\"),skillinfo(\"TOTALRANK\",\"Acrobatics\"),skillinfo(\"TOTALRANK\",\"Swim\"))/5)"
+  ],
+  "Barroom - Shatter": [
+    "DEFINE:SPHERES_BARROOM_SHATTER_D4|1+floor(SPHERES_BAB_BARROOM/4)"
+  ],
+  "Berserker - Heavy Swing": [
+    "DEFINE:SPHERES_BERSERKER_HEAVY_SWING_ROUNDS|1+floor(SPHERES_BAB_BERSERKER/4)"
+  ],
+  "Gladiator - Mage’s Terror": [
+    "DEFINE:SPHERES_GLADIATOR_MAGES_TERROR_PENALTY|-2-floor(skillinfo(\"TOTALRANK\",\"Intimidate\")/4)"
+  ],
+  "Trap - False Trigger": [
+    "DEFINE:SPHERES_TRAP_FALSE_TRIGGER_BONUS|1+floor(skillinfo(\"TOTALRANK\",\"Craft (Traps)\")/10)"
+  ],
+  "Trap - Razor Wire": [
+    "DEFINE:SPHERES_TRAP_RAZOR_WIRE_D6|1+floor(skillinfo(\"TOTALRANK\",\"Craft (Traps)\")/2)"
+  ],
+  "Warleader - Persisting Influence": [
+    "DEFINE:SPHERES_WARLEADER_PERSISTING_ROUNDS|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/7)"
+  ],
+  "Warleader - Fortifying Phalanx": [
+    "DEFINE:SPHERES_WARLEADER_PHALANX_SAVE|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/4)"
+  ],
+  "Alchemy - Chemical Cocktail": [
+    "DEFINE:SPHERES_ALCHEMY_COCKTAIL_SAVE|2+2*floor(SPHERES_ALCHEMY_RANKS/6)",
+    "DEFINE:SPHERES_ALCHEMY_COCKTAIL_RANKS|1+floor(SPHERES_ALCHEMY_RANKS/6)"
+  ],
+  "Alchemy - Adrenal Stimulator": [
+    "DEFINE:SPHERES_ALCHEMY_ADRENAL_BONUS|2+floor(SPHERES_ALCHEMY_RANKS/3)"
+  ],
+  "Alchemy - Instant Foam": [
+    "DEFINE:SPHERES_ALCHEMY_INSTANT_FOAM_FEET|10+5*floor(SPHERES_ALCHEMY_RANKS/5)"
+  ],
+  "Leadership - Ground Team": [
+    "DEFINE:SPHERES_LEADERSHIP_GROUND_TEAM_CROWD|10*skillinfo(\"TOTALRANK\",\"Diplomacy\")"
+  ],
+  "Leadership - Messengers": [
+    "DEFINE:SPHERES_LEADERSHIP_MESSENGERS_LB|10*skillinfo(\"TOTALRANK\",\"Diplomacy\")"
+  ],
+  "Leadership - Scholars": [
+    "DEFINE:SPHERES_LEADERSHIP_SCHOLARS_DC|15+skillinfo(\"TOTALRANK\",\"Diplomacy\")"
+  ],
+  "Leadership - Artificers": [
+    "DEFINE:SPHERES_LEADERSHIP_ARTIFICERS_DC|15+skillinfo(\"TOTALRANK\",\"Diplomacy\")"
+  ],
+  "Nature - Fog Mastery": [
+    "DEFINE:SPHERES_NATURE_FOG_MASTERY_SLASHING|1+floor(SPHERES_CL_NATURE/2)"
+  ],
+  "Nature - Reforge Mastery": [
+    "DEFINE:SPHERES_NATURE_REFORGE_CRIT_RANGE|1+floor(SPHERES_CL_NATURE/10)"
+  ],
+  "Nature - Temperature": [
+    "DEFINE:SPHERES_NATURE_TEMPERATURE_ROUNDS|max(1,floor(SPHERES_CL_NATURE/2))"
+  ],
+  "Protection - Bewilder": [
+    "DEFINE:SPHERES_PROTECTION_BEWILDER_ROUNDS|SPHERES_CL_PROTECTION"
+  ],
+  "Warp - Imbue Teleport": [
+    "DEFINE:SPHERES_WARP_IMBUE_TELEPORT_HOURS|SPHERES_CL_WARP"
+  ],
+  "Warp - Recall": [
+    "DEFINE:SPHERES_WARP_RECALL_ROUNDS|SPHERES_CL_WARP"
+  ],
+  "Alchemy - Improved Acid Flask": [
+    "DEFINE:SPHERES_ALCHEMY_ACID_FLASK_D6|1+floor(SPHERES_ALCHEMY_RANKS/2)"
+  ],
+  "Alchemy - Improved Alchemist Fire": [
+    "DEFINE:SPHERES_ALCHEMY_ALCHEMIST_FIRE_D6|1+floor(SPHERES_ALCHEMY_RANKS/2)"
+  ],
+  "Beastmastery - Mass Handle": [
+    "DEFINE:SPHERES_BEASTMASTERY_MASS_HANDLE_ADDITIONAL|1+floor(skillinfo(\"TOTALRANK\",\"Handle Animal\")/2)"
+  ],
+  "Blood - Absorb Blood": [
+    "DEFINE:SPHERES_BLOOD_ABSORB_BLOOD_MINUTES|SPHERES_CL_BLOOD"
+  ],
+  "Blood - Hemorrhage": [
+    "DEFINE:SPHERES_BLOOD_HEMORRHAGE_DAMAGE|2*SPHERES_CL_BLOOD"
+  ],
+  "Blood - Inject": [
+    "DEFINE:SPHERES_BLOOD_INJECT_ROUNDS|SPHERES_CL_BLOOD"
+  ],
+  "Blood - Bloodbind": [
+    "DEFINE:SPHERES_BLOOD_BLOODBIND_ROUNDS|SPHERES_CL_BLOOD"
+  ],
+  "Blood - Rush To The Head": [
+    "DEFINE:SPHERES_BLOOD_RUSH_CONFUSION_ROUNDS|SPHERES_CL_BLOOD"
+  ],
+  "Creation - Rigidity": [
+    "DEFINE:SPHERES_CREATION_RIGIDITY_MINUTES|SPHERES_CL_CREATION"
+  ],
+  "Dark - Creeping Lethargy": [
+    "DEFINE:SPHERES_DARK_CREEPING_LETHARGY_ROUNDS|SPHERES_CL_DARK"
+  ],
+  "Dark - Imbue Shadow": [
+    "DEFINE:SPHERES_DARK_IMBUE_SHADOW_ROUNDS|SPHERES_CL_DARK"
+  ],
+  "Dark - Silent Darkness": [
+    "DEFINE:SPHERES_DARK_SILENT_DARKNESS_FAIL|20+5*SPHERES_CL_DARK"
+  ],
+  "Death - Corpse Manipulation": [
+    "DEFINE:SPHERES_DEATH_CORPSE_MANIPULATION_DAYS|SPHERES_CL_DEATH"
+  ],
+  "Death - Undead Whisperer": [
+    "DEFINE:SPHERES_DEATH_UNDEAD_WHISPERER_RANKS|SPHERES_CL_DEATH"
+  ],
+  "Destruction - Energy Tether": [
+    "DEFINE:SPHERES_DESTRUCTION_ENERGY_TETHER_ROUNDS|SPHERES_CL_DESTRUCTION"
+  ],
+  "Divination - Augury": [
+    "DEFINE:SPHERES_DIVINATION_AUGURY_CHANCE|min(90,70+SPHERES_CL_DIVINATION)"
+  ],
+  "Warp - Blink": [
+    "DEFINE:SPHERES_WARP_BLINK_MINUTES|SPHERES_CL_WARP"
+  ],
+  "Warp - Dimension Pierce": [
+    "DEFINE:SPHERES_WARP_DIMENSION_PIERCE_HOURS|SPHERES_CL_WARP"
+  ],
+  "Warp - Pullback": [
+    "DEFINE:SPHERES_WARP_PULLBACK_ROUNDS|SPHERES_CL_WARP"
+  ],
+  "Warp - Teleport Beacon": [
+    "DEFINE:SPHERES_WARP_TELEPORT_BEACON_HOURS|SPHERES_CL_WARP"
+  ],
+  "Warp - Warp Link": [
+    "DEFINE:SPHERES_WARP_LINK_HOURS|SPHERES_CL_WARP"
+  ],
+  "Technomancy - Sabotage": [
+    "DEFINE:SPHERES_TECHNOMANCY_SABOTAGE_D6|SPHERES_CL_TECHNOMANCY"
+  ],
+  "Alchemy - Fuse Master": [
+    "DEFINE:SPHERES_ALCHEMY_FUSE_MASTER_D6|1+floor(SPHERES_ALCHEMY_RANKS/5)"
+  ],
+  "Alchemy - Armor Maintenance Kit": [
+    "DEFINE:SPHERES_ALCHEMY_LUBRICANT_ACP|1+floor(SPHERES_ALCHEMY_RANKS/10)"
+  ],
+  "Barroom - Sudden Crash": [
+    "DEFINE:SPHERES_BARROOM_SUDDEN_CRASH_ROUNDS|1+floor(SPHERES_BAB_BARROOM/5)"
+  ],
+  "Beastmastery - Leaping Rider": [
+    "DEFINE:SPHERES_BEASTMASTERY_LEAPING_RIDER|1+floor(skillinfo(\"TOTALRANK\",\"Ride\")/5)"
+  ],
+  "Berserker - Shatter Earth": [
+    "DEFINE:SPHERES_BERSERKER_SHATTER_EARTH_FEET|5*floor(SPHERES_BAB_BERSERKER/10)"
+  ],
+  "Brute - Earthquake Stomp": [
+    "DEFINE:SPHERES_BRUTE_EARTHQUAKE_STOMP|floor(SPHERES_BAB_BRUTE/10)"
+  ],
+  "Equipment - Versatile Fighter": [
+    "DEFINE:SPHERES_EQUIPMENT_VERSATILE_FIGHTER_AC|1+floor(SPHERES_BAB_EQUIPMENT/10)"
+  ],
+  "Guardian - Iron Wall": [
+    "DEFINE:SPHERES_GUARDIAN_IRON_WALL|floor(SPHERES_BAB_GUARDIAN/2)"
+  ],
+  "Scoundrel - Ranged Trickery": [
+    "DEFINE:SPHERES_SCOUNDREL_RANGED_TRICKERY|floor(skillinfo(\"TOTALRANK\",\"Sleight of Hand\")/4)"
+  ],
+  "Trap - Remote Trigger": [
+    "DEFINE:SPHERES_TRAP_REMOTE_TRIGGER_RANGE|floor(skillinfo(\"TOTALRANK\",\"Craft (Traps)\")/2)"
+  ],
+  "Leadership - Friends In Low Places": [
+    "DEFINE:SPHERES_LEADERSHIP_FRIENDS_LOW_PLACES|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/4)"
+  ],
+  "Tech - Pneumatic Box": [
+    "DEFINE:SPHERES_TECH_PNEUMATIC_BOX|floor(SPHERES_TECH_RANKS/5)"
+  ],
+  "Tech - Remote Control": [
+    "DEFINE:SPHERES_TECH_REMOTE_CONTROL_GADGETS|2+floor(SPHERES_TECH_RANKS/4)"
+  ],
+  "Blood - Crimson Vortex": [
+    "DEFINE:SPHERES_BLOOD_CRIMSON_VORTEX_ROUNDS|SPHERES_CL_BLOOD"
+  ],
+  "Creation - Larger Creation": [
+    "DEFINE:SPHERES_CREATION_LARGER_OBJECTS|SPHERES_CL_CREATION"
+  ],
+  "Creation - Replication": [
+    "DEFINE:SPHERES_CREATION_REPLICATION_MINUTES|SPHERES_CL_CREATION"
+  ],
+  "Creation - Acidic Creation": [
+    "DEFINE:SPHERES_CREATION_ACIDIC_POTENCY_ROUNDS|SPHERES_CL_CREATION"
+  ],
+  "Dark - Shadowed Mien": [
+    "DEFINE:SPHERES_DARK_SHADOWED_MIEN_MINUTES|10*SPHERES_CL_DARK"
+  ],
+  "Destruction - Crystal Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_CRYSTAL_BLAST_HP|3*SPHERES_CL_DESTRUCTION"
+  ],
+  "Destruction - Living Crystal Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_LIVING_CRYSTAL_HP|3*SPHERES_CL_DESTRUCTION"
+  ],
+  "Destruction - Razor Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_RAZOR_CRYSTAL_HP|SPHERES_CL_DESTRUCTION"
+  ],
+  "Fallen Fey - Crown Of The Courts": [
+    "DEFINE:SPHERES_FALLENFEY_CROWN_HP|5*SPHERES_CL_FALLENFEY"
+  ],
+  "Fallen Fey - Feast And Famine": [
+    "DEFINE:SPHERES_FALLENFEY_FEAST_FAMINE_CREATURES|SPHERES_CL_FALLENFEY"
+  ],
+  "Fallen Fey - Shadow Collector": [
+    "DEFINE:SPHERES_FALLENFEY_SHADOW_COLLECTOR_ROUNDS|SPHERES_CL_FALLENFEY"
+  ],
+  "Fallen Fey - Water Creature": [
+    "DEFINE:SPHERES_FALLENFEY_WATER_CREATURE_SQUARES|SPHERES_CL_FALLENFEY"
+  ],
+  "Fate - Bind Wyrd": [
+    "DEFINE:SPHERES_FATE_BIND_WYRD_MINUTES|SPHERES_CL_FATE"
+  ],
+  "Fate - Divine Pressure": [
+    "DEFINE:SPHERES_FATE_DIVINE_PRESSURE_MINUTES|SPHERES_CL_FATE"
+  ],
+  "Fate - Reveal Alignment": [
+    "DEFINE:SPHERES_FATE_REVEAL_ALIGNMENT_ROUNDS|SPHERES_CL_FATE"
+  ],
+  "Fate - Stricture": [
+    "DEFINE:SPHERES_FATE_STRICTURE_MINUTES|SPHERES_CL_FATE"
+  ],
+  "Fate - Tug Fate": [
+    "DEFINE:SPHERES_FATE_TUG_FATE_ROUNDS|SPHERES_CL_FATE"
+  ],
+  "Illusion - Manipulate Aura": [
+    "DEFINE:SPHERES_ILLUSION_MANIPULATE_AURA_DAYS|SPHERES_CL_ILLUSION"
+  ],
+  "Life - Diagnose": [
+    "DEFINE:SPHERES_LIFE_DIAGNOSE_DAYS|SPHERES_CL_LIFE"
+  ],
+  "Life - Restore Capacity": [
+    "DEFINE:SPHERES_LIFE_RESTORE_CAPACITY_HEALING|SPHERES_CL_LIFE"
+  ],
+  "Life - Restore Senses": [
+    "DEFINE:SPHERES_LIFE_RESTORE_SENSES_HEALING|SPHERES_CL_LIFE"
+  ],
+  "Light - Rose-Tinted": [
+    "DEFINE:SPHERES_LIGHT_ROSE_TINTED_D4|SPHERES_CL_LIGHT"
+  ],
+  "Light - Searing Light": [
+    "DEFINE:SPHERES_LIGHT_SEARING_LIGHT_DAMAGE|SPHERES_CL_LIGHT"
+  ],
+  "Mana - Mark of Insolvency": [
+    "DEFINE:SPHERES_MANA_MARK_OF_INSOLVENCY_MINUTES|SPHERES_CL_MANA"
+  ],
+  "Mana - Oversaturation Surge": [
+    "DEFINE:SPHERES_MANA_OVERSATURATION_D8|SPHERES_CL_MANA"
+  ],
+  "Mana - Gift Of Knowledge": [
+    "DEFINE:SPHERES_MANA_GIFT_OF_KNOWLEDGE_MINUTES|SPHERES_CL_MANA"
+  ],
+  "Mana - Imbued Vessel": [
+    "DEFINE:SPHERES_MANA_IMBUED_VESSEL_HOURS|SPHERES_CL_MANA"
+  ],
+  "Mind - Command": [
+    "DEFINE:SPHERES_MIND_COMMAND_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Mind - Enthrall": [
+    "DEFINE:SPHERES_MIND_ENTHRALL_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Mind - Hostility": [
+    "DEFINE:SPHERES_MIND_HOSTILITY_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Mind - Mind Spy": [
+    "DEFINE:SPHERES_MIND_MIND_SPY_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Mind - Misdirect": [
+    "DEFINE:SPHERES_MIND_MISDIRECT_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Mind - Suppress": [
+    "DEFINE:SPHERES_MIND_SUPPRESS_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Mind - Polyglot": [
+    "DEFINE:SPHERES_MIND_POLYGLOT_HOURS|SPHERES_CL_MIND"
+  ],
+  "Mind - Rapid Processing": [
+    "DEFINE:SPHERES_MIND_RAPID_PROCESSING_HOURS|SPHERES_CL_MIND"
+  ],
+  "Mind - Terrifying Mind": [
+    "DEFINE:SPHERES_MIND_TERRIFYING_MIND_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Alchemy - Chemical Coating": [
+    "DEFINE:SPHERES_ALCHEMY_COATING_ROUNDS|SPHERES_PRACTITIONER_MOD+1+floor(SPHERES_ALCHEMY_RANKS/4)"
+  ],
+  "Blood - Gory Armaments": [
+    "DEFINE:SPHERES_BLOOD_GORY_ARMAMENTS_TEMP_HP|max(1,floor(SPHERES_CL_BLOOD/2))"
+  ],
+  "Blood - Manipulate Density": [
+    "DEFINE:SPHERES_BLOOD_MANIPULATE_DENSITY_ACRO|2+floor(SPHERES_CL_BLOOD/2)"
+  ],
+  "Destruction - Hurricane Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_HURRICANE_PENALTY|-floor(SPHERES_CL_DESTRUCTION/2)"
+  ],
+  "Destruction - Reverberating Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_REVERBERATING_PENALTY|-floor(SPHERES_CL_DESTRUCTION/2)"
+  ],
+  "Destruction - Shattering Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_SHATTERING_HARDNESS|floor(SPHERES_CL_DESTRUCTION/2)"
+  ],
+  "Divination - Divine Biohazard": [
+    "DEFINE:SPHERES_DIVINATION_DIVINE_BIOHAZARD_HEAL|floor(SPHERES_CL_DIVINATION/2)"
+  ],
+  "Divination - Divine Capability": [
+    "DEFINE:SPHERES_DIVINATION_DIVINE_CAPABILITY_BONUS|floor(SPHERES_CL_DIVINATION/2)"
+  ],
+  "Divination - Divine Information": [
+    "DEFINE:SPHERES_DIVINATION_DIVINE_INFORMATION_BONUS|floor(SPHERES_CL_DIVINATION/2)"
+  ],
+  "Divination - Object Reading": [
+    "DEFINE:SPHERES_DIVINATION_OBJECT_READING_APPRAISE|floor(SPHERES_CL_DIVINATION/2)"
+  ],
+  "Divination - Discern Individual": [
+    "DEFINE:SPHERES_DIVINATION_DISCERN_INDIVIDUAL_BONUS|max(1,floor(SPHERES_CL_DIVINATION/2))"
+  ],
+  "Divination - Prescience": [
+    "DEFINE:SPHERES_DIVINATION_PRESCIENCE_BONUS|10+floor(SPHERES_CL_DIVINATION/2)"
+  ],
+  "Divination - Sniper’s Eye": [
+    "DEFINE:SPHERES_DIVINATION_SNIPERS_EYE_BONUS|floor(SPHERES_CL_DIVINATION/2)"
+  ],
+  "Fallen Fey - Snare Setter": [
+    "DEFINE:SPHERES_FALLENFEY_SNARE_AC_HP|SPHERES_CL_FALLENFEY",
+    "DEFINE:SPHERES_FALLENFEY_SNARE_HARDNESS|floor(SPHERES_CL_FALLENFEY/2)"
+  ],
+  "Fate - Axe You A Question": [
+    "DEFINE:SPHERES_FATE_AXE_SHAKEN_ROUNDS|floor(SPHERES_CL_FATE/2)"
+  ],
+  "Fate - Pain": [
+    "DEFINE:SPHERES_FATE_PAIN_NONLETHAL|floor(SPHERES_CL_FATE/2)"
+  ],
+  "Mana - Heightened Magic": [
+    "DEFINE:SPHERES_MANA_HEIGHTENED_MAGIC_DAMAGE|floor(SPHERES_CL_MANA/2)"
+  ],
+  "Protection - Reactive Barrier": [
+    "DEFINE:SPHERES_PROTECTION_REACTIVE_BARRIER_DR|floor(SPHERES_CL_PROTECTION/2)"
+  ],
+  "Weather - Heat Stroke": [
+    "DEFINE:SPHERES_WEATHER_HEAT_STROKE_NONLETHAL|floor(SPHERES_CL_WEATHER/2)"
+  ],
+  "Weather - Karakaze": [
+    "DEFINE:SPHERES_WEATHER_KARAKAZE_MAX_DEX_PENALTY|floor(SPHERES_CL_WEATHER/2)"
+  ],
+  "Weather - Sirocco": [
+    "DEFINE:SPHERES_WEATHER_SIROCCO_NONLETHAL|floor(SPHERES_CL_WEATHER/2)"
+  ],
+  "Bear - Bear Necessities": [
+    "DEFINE:SPHERES_BEAR_NECESSITIES_SURVIVAL|floor(SPHERES_CL_BEAR/2)"
+  ],
+  "Bear - Unbearable Rawr": [
+    "DEFINE:SPHERES_BEAR_UNBEARABLE_RAWR_BONUS|floor(SPHERES_CL_BEAR/2)"
+  ],
+  "Technomancy - Analyze": [
+    "DEFINE:SPHERES_TECHNOMANCY_ANALYZE_BONUS|max(1,floor(SPHERES_CL_TECHNOMANCY/2))"
+  ],
+  "Alteration - Vitality": [
+    "DEFINE:SPHERES_ALTERATION_VITALITY_FAST_HEALING|1+floor(SPHERES_CL_ALTERATION/10)"
+  ],
+  "Alteration - Outsider Body": [
+    "DEFINE:SPHERES_ALTERATION_OUTSIDER_BODY_DR|2+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Protean Mastery": [
+    "DEFINE:SPHERES_ALTERATION_PROTEAN_MASTERY|1+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Undead Body": [
+    "DEFINE:SPHERES_ALTERATION_UNDEAD_BODY_SAVE|2+floor(SPHERES_CL_ALTERATION/10)"
+  ],
+  "Alteration - Avian Transformation": [
+    "DEFINE:SPHERES_ALTERATION_AVIAN_NATURAL_ARMOR|2+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Elemental Transformation": [
+    "DEFINE:SPHERES_ALTERATION_ELEMENTAL_NATURAL_ARMOR|2+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Orb Transformation": [
+    "DEFINE:SPHERES_ALTERATION_ORB_RAY_D6|1+floor(SPHERES_CL_ALTERATION/3)"
+  ],
+  "Conjuration - Mount": [
+    "DEFINE:SPHERES_CONJURATION_MOUNT_BONUS|1+floor(SPHERES_CL_CONJURATION/5)"
+  ],
+  "Illusion - Decoy": [
+    "DEFINE:SPHERES_ILLUSION_DECOY_COUNT|2+floor(SPHERES_CL_ILLUSION/3)"
+  ],
+  "Life - Ruin into Resurgence": [
+    "DEFINE:SPHERES_LIFE_RUIN_INTO_RESURGENCE|max(1,floor(SPHERES_CL_LIFE/4))"
+  ],
+  "Light - Guiding Light": [
+    "DEFINE:SPHERES_LIGHT_GUIDING_LIGHT_BONUS|1+floor(SPHERES_CL_LIGHT/10)"
+  ],
+  "Nature - Metal Mastery": [
+    "DEFINE:SPHERES_NATURE_METAL_MASTERY|1+floor(SPHERES_CL_NATURE/5)"
+  ],
+  "Nature - Primordial Branches": [
+    "DEFINE:SPHERES_NATURE_PRIMORDIAL_HARDNESS|8+floor(SPHERES_CL_NATURE/2)"
+  ],
+  "Nature - Destroy Element": [
+    "DEFINE:SPHERES_NATURE_DESTROY_ELEMENT_D4|1+floor(SPHERES_CL_NATURE/2)"
+  ],
+  "Nature - Wreath Of Elements": [
+    "DEFINE:SPHERES_NATURE_WREATH_DEFLECTION|2+floor(SPHERES_CL_NATURE/5)"
+  ],
+  "Alchemy - Universal Alcohol": [
+    "DEFINE:SPHERES_ALCHEMY_UNIVERSAL_ALCOHOL_D4|floor(SPHERES_ALCHEMY_RANKS/3)"
+  ],
+  "Death - Spectral Distortion": [
+    "DEFINE:SPHERES_DEATH_SPECTRAL_DISTORTION_ROUNDS|max(1,SPHERES_CL_DEATH)"
+  ],
+  "Fallen Fey - Saboteur": [
+    "DEFINE:SPHERES_FALLENFEY_SABOTEUR_BONUS|SPHERES_CL_FALLENFEY"
+  ],
+  "Fallen Fey - Stone Shape": [
+    "DEFINE:SPHERES_FALLENFEY_STONE_SHAPE_ENHANCEMENT|floor(SPHERES_CL_FALLENFEY/5)"
+  ],
+  "Fallen Fey - Wood Shape": [
+    "DEFINE:SPHERES_FALLENFEY_WOOD_SHAPE_ENHANCEMENT|floor(SPHERES_CL_FALLENFEY/5)"
+  ],
+  "Fallen Fey - Zolavoi’s Mantle": [
+    "DEFINE:SPHERES_FALLENFEY_MANTLE_FIRE_DAMAGE|SPHERES_CL_FALLENFEY"
+  ],
+  "Mana - Heavy Expunge": [
+    "DEFINE:SPHERES_MANA_HEAVY_EXPUNGE_ROUNDS|SPHERES_CASTING_ABILITY"
+  ],
+  "Mana - Visual Dynamics": [
+    "DEFINE:SPHERES_MANA_VISUAL_DYNAMICS_ROUNDS|SPHERES_CASTING_ABILITY"
+  ],
+  "Mind - Calm": [
+    "DEFINE:SPHERES_MIND_CALM_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Mind - Candor": [
+    "DEFINE:SPHERES_MIND_CANDOR_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Mind - Disrupt Focus": [
+    "DEFINE:SPHERES_MIND_DISRUPT_FOCUS_ROUNDS|SPHERES_CL_MIND"
+  ],
+  "Mind - Gestures": [
+    "DEFINE:SPHERES_MIND_GESTURES_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Mind - Mind Shield": [
+    "DEFINE:SPHERES_MIND_MIND_SHIELD_BONUS|1+floor(SPHERES_CL_MIND/2)"
+  ],
+  "Mind - Utterances": [
+    "DEFINE:SPHERES_MIND_UTTERANCES_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Mind - Dispersion": [
+    "DEFINE:SPHERES_MIND_DISPERSION_HOURS|SPHERES_CL_MIND"
+  ],
+  "Mind - Lure": [
+    "DEFINE:SPHERES_MIND_LURE_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Nature - Nature’s Weapon": [
+    "DEFINE:SPHERES_NATURE_NATURES_WEAPON_ENHANCEMENT|min(5,floor(SPHERES_CL_NATURE/4))",
+    "DEFINE:SPHERES_NATURE_NATURES_WEAPON_COLD|floor(SPHERES_CL_NATURE/2)"
+  ],
+  "Protection - Blast Shield": [
+    "DEFINE:SPHERES_PROTECTION_BLAST_SHIELD_RESIST|SPHERES_CL_PROTECTION"
+  ],
+  "Protection - Vengeance": [
+    "DEFINE:SPHERES_PROTECTION_VENGEANCE_DAMAGE|SPHERES_CL_PROTECTION"
+  ],
+  "War - Tactical Momentum": [
+    "DEFINE:SPHERES_WAR_TACTICAL_MOMENTUM_BONUS|max(1,floor(SPHERES_CASTING_ABILITY/2))"
+  ],
+  "Warp - Timed Warp": [
+    "DEFINE:SPHERES_WARP_TIMED_WARP_ROUNDS|SPHERES_CL_WARP"
+  ],
+  "Alchemy - Lingering Poison": [
+    "DEFINE:SPHERES_ALCHEMY_LINGERING_POISON_ROUNDS|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Athletics - Sinking Blow": [
+    "DEFINE:SPHERES_ATHLETICS_SINKING_BLOW_ROUNDS|max(1,SPHERES_PRACTITIONER_MOD)"
+  ],
+  "Barrage - Hammering Shots": [
+    "DEFINE:SPHERES_BARRAGE_HAMMERING_SHOTS_ROUNDS|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Beastmastery - Hands-On Handler": [
+    "DEFINE:SPHERES_BEASTMASTERY_HANDS_ON_ROUNDS|max(1,SPHERES_PRACTITIONER_MOD)"
+  ],
+  "Berserker - Beat Down": [
+    "DEFINE:SPHERES_BERSERKER_BEAT_DOWN_ROUNDS|max(1,SPHERES_PRACTITIONER_MOD)"
+  ],
+  "Boxing - Elongated Step": [
+    "DEFINE:SPHERES_BOXING_ELONGATED_STEP_ROUNDS|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Dual Wielding - Gemini Dancer": [
+    "DEFINE:SPHERES_DUALWIELDING_GEMINI_DANCER_ROUNDS|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Duelist - Bloodied Shark’s Frenzy": [
+    "DEFINE:SPHERES_DUELIST_BLOODIED_FRENZY_ROUNDS|max(1,SPHERES_PRACTITIONER_MOD)"
+  ],
+  "Duelist - Invigorating Sights": [
+    "DEFINE:SPHERES_DUELIST_INVIGORATING_TEMP_HP|floor(SPHERES_BAB_DUELIST/2)",
+    "DEFINE:SPHERES_DUELIST_INVIGORATING_ROUNDS|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Gladiator - Battering Banter": [
+    "DEFINE:SPHERES_GLADIATOR_BATTERING_BANTER_ROUNDS|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Gladiator - Duel Of Wills": [
+    "DEFINE:SPHERES_GLADIATOR_DUEL_OF_WILLS_ROUNDS|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Open Hand - Fading Slide": [
+    "DEFINE:SPHERES_OPENHAND_FADING_SLIDE_DAMAGE|SPHERES_PRACTITIONER_MOD+SPHERES_BAB_OPENHAND"
+  ],
+  "Scout - Discern Illusions": [
+    "DEFINE:SPHERES_SCOUT_DISCERN_ILLUSIONS_ROUNDS|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Wrestling - Stubborn Serpent’s Coils": [
+    "DEFINE:SPHERES_WRESTLING_STUBBORN_SERPENT_ROUNDS|max(1,floor(SPHERES_PRACTITIONER_MOD/2))"
+  ],
+  "Tech - Particle Weapon": [
+    "DEFINE:SPHERES_TECH_PARTICLE_WEAPON_ROUNDS|max(2,SPHERES_PRACTITIONER_MOD)"
+  ],
+  "Pilot - Shattering Crash": [
+    "DEFINE:SPHERES_PILOT_SHATTERING_CRASH_ROUNDS|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Blood - Numb": [
+    "DEFINE:SPHERES_BLOOD_NUMB_PENALTY|-1-floor(SPHERES_CL_BLOOD/5)"
+  ],
+  "Conjuration - Boon Companion": [
+    "DEFINE:SPHERES_CONJURATION_BOON_COMPANION_BONUS|1+floor(TL/5)"
+  ],
+  "Fallen Fey - Long Step": [
+    "DEFINE:SPHERES_FALLENFEY_LONG_STEP_FEET|5*ceil(SPHERES_CL_FALLENFEY/2)-5"
+  ],
+  "Fallen Fey - Mantle Of Autumn": [
+    "DEFINE:SPHERES_FALLENFEY_MANTLE_AUTUMN_RADIUS|5*floor(SPHERES_CL_FALLENFEY/5)"
+  ],
+  "Fallen Fey - Winterfey": [
+    "DEFINE:SPHERES_FALLENFEY_WINTERFEY_D4|floor(SPHERES_CL_FALLENFEY/6)",
+    "DEFINE:SPHERES_FALLENFEY_WINTERFEY_COLD_D6|floor(SPHERES_CL_FALLENFEY/9)"
+  ],
+  "Illusion - Suppression": [
+    "DEFINE:SPHERES_ILLUSION_SUPPRESSION_DC|10+SPHERES_CL_ILLUSION"
+  ],
+  "Mana - Spell Mastery": [
+    "DEFINE:SPHERES_MANA_SPELL_MASTERY_MARKS|2+floor(SPHERES_CL_MANA/6)"
+  ],
+  "Mind - Mental Archive": [
+    "DEFINE:SPHERES_MIND_MENTAL_ARCHIVE|SPHERES_CASTING_ABILITY+floor(SPHERES_CL_MIND/2)"
+  ],
+  "Protection - Healing Aegis": [
+    "DEFINE:SPHERES_PROTECTION_HEALING_AEGIS|SPHERES_CASTING_ABILITY+SPHERES_CL_PROTECTION"
+  ],
+  "Fencing - Skewer": [
+    "DEFINE:SPHERES_FENCING_SKEWER_D6|1+floor(SPHERES_BAB_FENCING/2)"
+  ],
+  "Alteration - Cosmic Body": [
+    "DEFINE:SPHERES_ALTERATION_COSMIC_BODY_REACH|5+5*floor(SPHERES_CL_ALTERATION/10)"
+  ],
+  "Blood - Hemokinesis": [
+    "DEFINE:SPHERES_BLOOD_HEMOKINESIS_FEET|20+5*floor(SPHERES_CL_BLOOD/5)"
+  ],
+  "Blood - Cystic Growth": [
+    "DEFINE:SPHERES_BLOOD_CYSTIC_GROWTH_D10|1+floor(SPHERES_CL_BLOOD/5)"
+  ],
+  "Conjuration - Explosive Companion": [
+    "DEFINE:SPHERES_CONJURATION_EXPLOSIVE_COMPANION_FEET|5+5*floor(TL/5)"
+  ],
+  "Creation - Crack": [
+    "DEFINE:SPHERES_CREATION_CRACK_RADIUS|10+5*floor(SPHERES_CL_CREATION/5)"
+  ],
+  "Fallen Fey - Natural Dominion": [
+    "DEFINE:SPHERES_FALLENFEY_NATURAL_DOMINION_CR|SPHERES_CL_FALLENFEY"
+  ],
+  "Light - Inner Sun": [
+    "DEFINE:SPHERES_LIGHT_INNER_SUN_D4|1+floor(SPHERES_CL_LIGHT/4)"
+  ],
+  "Mind - Mental Backdoor": [
+    "DEFINE:SPHERES_MIND_MENTAL_BACKDOOR_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Nature - Air Mastery": [
+    "DEFINE:SPHERES_NATURE_AIR_MASTERY_RADIUS|10+5*floor(SPHERES_CL_NATURE/5)"
+  ],
+  "Nature - Create Nature": [
+    "DEFINE:SPHERES_NATURE_CREATE_NATURE_RADIUS|5+5*floor(SPHERES_CL_NATURE/5)"
+  ],
+  "Nature - Water Mastery": [
+    "DEFINE:SPHERES_NATURE_WATER_MASTERY_RADIUS|5+5*floor(SPHERES_CL_NATURE/5)"
+  ],
+  "Warp - Splinter": [
+    "DEFINE:SPHERES_WARP_SPLINTER_D6|max(1,floor(SPHERES_CL_WARP/2))"
+  ],
+  "Alchemy - Demolishing Chemistry": [
+    "DEFINE:SPHERES_ALCHEMY_DEMOLISHING_DAMAGE|2*SPHERES_ALCHEMY_RANKS"
+  ],
+  "Berserker - Marauder": [
+    "DEFINE:SPHERES_BERSERKER_MARAUDER_FEET|5+5*floor(SPHERES_BAB_BERSERKER/4)"
+  ],
+  "Berserker - Specter": [
+    "DEFINE:SPHERES_BERSERKER_SPECTER_FEET|20+5*floor(SPHERES_BAB_BERSERKER/4)"
+  ],
+  "Brute - Ornery Ox": [
+    "DEFINE:SPHERES_BRUTE_ORNERY_OX_TARGETS|floor(SPHERES_BAB_BRUTE/5)"
+  ],
+  "Duelist - Whisking Disarm": [
+    "DEFINE:SPHERES_DUELIST_WHISKING_DISARM_FEET|5*floor(SPHERES_BAB_DUELIST/5)"
+  ],
+  "Equipment - Elemental Disruption": [
+    "DEFINE:SPHERES_EQUIPMENT_ELEMENTAL_DISRUPTION_FEET|5+5*floor(SPHERES_BAB_EQUIPMENT/5)"
+  ],
+  "Guardian - Roaming Patrol": [
+    "DEFINE:SPHERES_GUARDIAN_ROAMING_PATROL_FEET|5*floor(SPHERES_BAB_GUARDIAN/5)"
+  ],
+  "Open Hand - Hurricane Kick": [
+    "DEFINE:SPHERES_OPENHAND_HURRICANE_KICK_FEET|5*floor(SPHERES_BAB_OPENHAND/5)"
+  ],
+  "Trap - Aimed Dart": [
+    "DEFINE:SPHERES_TRAP_AIMED_DART_RANGE|100+10*skillinfo(\"TOTALRANK\",\"Craft (Traps)\")"
+  ],
+  "Alteration - Adaptive Physicality": [
+    "DEFINE:SPHERES_ALTERATION_ADAPTIVE_PHYSICALITY|1+floor(SPHERES_CL_ALTERATION/4)"
+  ],
+  "Alteration - Extreme Adaptation": [
+    "DEFINE:SPHERES_ALTERATION_EXTREME_ADAPTATION|1+floor(SPHERES_CL_ALTERATION/10)"
+  ],
+  "Alteration - Mass Alteration": [
+    "DEFINE:SPHERES_ALTERATION_MASS_ALTERATION_TARGETS|max(1,floor(SPHERES_CL_ALTERATION/2))"
+  ],
+  "Alteration - Morphic Weapon": [
+    "DEFINE:SPHERES_ALTERATION_MORPHIC_WEAPON_ENHANCEMENT|min(5,floor(SPHERES_CL_ALTERATION/4))"
+  ],
+  "Alteration - Powerful Limbs": [
+    "DEFINE:SPHERES_ALTERATION_POWERFUL_LIMBS_FEET|10+5*floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Prickly": [
+    "DEFINE:SPHERES_ALTERATION_PRICKLY_BLEED|1+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Swarm Shape": [
+    "DEFINE:SPHERES_ALTERATION_SWARM_SHAPE_FLY|10+5*floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Alteration - Muensterous Traits": [
+    "DEFINE:SPHERES_ALTERATION_MUENSTEROUS_TRAITS|1+floor(SPHERES_CL_ALTERATION/4)"
+  ],
+  "Alteration - Subterranean Transformation": [
+    "DEFINE:SPHERES_ALTERATION_SUBTERRANEAN_NATURAL_ARMOR|2+floor(SPHERES_CL_ALTERATION/5)"
+  ],
+  "Blood - Improved Bleed": [
+    "DEFINE:SPHERES_BLOOD_IMPROVED_BLEED_HEAL_DC|15+SPHERES_CL_BLOOD"
+  ],
+  "Blood - Mass Blood Magic": [
+    "DEFINE:SPHERES_BLOOD_MASS_BLOOD_MAGIC_TARGETS|max(1,floor(SPHERES_CL_BLOOD/2))"
+  ],
+  "Blood - Cardiovascular Mastery": [
+    "DEFINE:SPHERES_BLOOD_CARDIOVASCULAR_HEAL_DC|20+SPHERES_CL_BLOOD"
+  ],
+  "Blood - Manipulate Alchemy": [
+    "DEFINE:SPHERES_BLOOD_MANIPULATE_ALCHEMY_EFFECTS|1+floor(SPHERES_CL_BLOOD/10)"
+  ],
+  "Blood - Redirect Flow": [
+    "DEFINE:SPHERES_BLOOD_REDIRECT_FLOW_FEET|5*floor(SPHERES_CL_BLOOD/5)"
+  ],
+  "Creation - Alchemical Creation": [
+    "DEFINE:SPHERES_CREATION_ALCHEMICAL_GP|25*SPHERES_CL_CREATION"
+  ],
+  "Dark - Looming Darkness": [
+    "DEFINE:SPHERES_DARK_LOOMING_DARKNESS_PENALTY|-1-floor(SPHERES_CL_DARK/5)"
+  ],
+  "Death - Piecemeal Reanimation": [
+    "DEFINE:SPHERES_DEATH_PIECEMEAL_ADDITIONAL|max(1,floor(SPHERES_CL_DEATH/2))"
+  ],
+  "Death - Curse": [
+    "DEFINE:SPHERES_DEATH_CURSE_ABILITY|-4-2*floor(SPHERES_CL_DEATH/5)"
+  ],
+  "Death - Weakening": [
+    "DEFINE:SPHERES_DEATH_WEAKENING_ROUNDS|SPHERES_CL_DEATH"
+  ],
+  "Destruction - Mutable Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_MUTABLE_BLAST_CUBES|5+floor(SPHERES_CL_DESTRUCTION/2)"
+  ],
+  "Fallen Fey - Enchanting Music": [
+    "DEFINE:SPHERES_FALLENFEY_ENCHANTING_MUSIC_HP|5*SPHERES_CL_FALLENFEY"
+  ],
+  "Fallen Fey - Pixie Sticks": [
+    "DEFINE:SPHERES_FALLENFEY_PIXIE_STICKS_HEALING|SPHERES_CL_FALLENFEY"
+  ],
+  "Fallen Fey - Spores": [
+    "DEFINE:SPHERES_FALLENFEY_SPORES_RADIUS|5+5*floor(SPHERES_CL_FALLENFEY/7)"
+  ],
+  "Fate - Subvert Weapon": [
+    "DEFINE:SPHERES_FATE_SUBVERT_WEAPON_HOURS|SPHERES_CL_FATE"
+  ],
+  "Fate - Metaphysical Cloak": [
+    "DEFINE:SPHERES_FATE_METAPHYSICAL_CLOAK_HOURS|SPHERES_CL_FATE"
+  ],
+  "Illusion - Bestow Focus": [
+    "DEFINE:SPHERES_ILLUSION_BESTOW_FOCUS_CONCENTRATORS|1+floor(SPHERES_CL_ILLUSION/10)"
+  ],
+  "Illusion - Blur": [
+    "DEFINE:SPHERES_ILLUSION_BLUR_MISS_CHANCE|min(50,20+5*SPHERES_CL_ILLUSION)"
+  ],
+  "Illusion - Inspire Doubt": [
+    "DEFINE:SPHERES_ILLUSION_INSPIRE_DOUBT_PENALTY|1+floor(SPHERES_CL_ILLUSION/5)"
+  ],
+  "Illusion - Programmed Illusion": [
+    "DEFINE:SPHERES_ILLUSION_PROGRAMMED_ILLUSION_EXTRA|floor(SPHERES_CL_ILLUSION/5)"
+  ],
+  "Life - Mass Healing": [
+    "DEFINE:SPHERES_LIFE_MASS_HEALING_TARGETS|max(1,floor(SPHERES_CL_LIFE/2))"
+  ],
+  "Mana - Elemental Enhancement": [
+    "DEFINE:SPHERES_MANA_ELEMENTAL_ENHANCEMENT_MINUTES|SPHERES_CL_MANA"
+  ],
+  "Mind - Mass Charm": [
+    "DEFINE:SPHERES_MIND_MASS_CHARM_TARGETS|max(1,floor(SPHERES_CL_MIND/2))"
+  ],
+  "Mind - Amnesia": [
+    "DEFINE:SPHERES_MIND_AMNESIA_MINUTES|SPHERES_CL_MIND"
+  ],
+  "Mind - Cerebral Strike": [
+    "DEFINE:SPHERES_MIND_CEREBRAL_STRIKE_D8|max(1,floor(SPHERES_CL_MIND/2))"
+  ],
+  "Mind - Inspiration": [
+    "DEFINE:SPHERES_MIND_INSPIRATION_BONUS|max(1,floor(SPHERES_CL_MIND/2))"
+  ],
+  "Nature - Environmental Presence": [
+    "DEFINE:SPHERES_NATURE_ENVIRONMENTAL_PRESENCE_TARGETS|max(1,floor(SPHERES_CL_NATURE/2))"
+  ],
+  "Nature - Manipulate Nature": [
+    "DEFINE:SPHERES_NATURE_MANIPULATE_NATURE_RADIUS|5+5*floor(SPHERES_CL_NATURE/5)"
+  ],
+  "Nature - Purify Nature": [
+    "DEFINE:SPHERES_NATURE_PURIFY_NATURE_HEALING|1+floor(SPHERES_CL_NATURE/4)"
+  ],
+  "Protection - Mystic Shell": [
+    "DEFINE:SPHERES_PROTECTION_MYSTIC_SHELL_LAYERS|2+floor(SPHERES_CL_PROTECTION/10)"
+  ],
+  "Protection - Punishment": [
+    "DEFINE:SPHERES_PROTECTION_PUNISHMENT_D8|max(1,floor(SPHERES_CL_PROTECTION/2))"
+  ],
+  "Warp - Mass Teleport": [
+    "DEFINE:SPHERES_WARP_MASS_TELEPORT_TARGETS|max(1,floor(SPHERES_CL_WARP/2))"
+  ],
+  "Weather - Battering Winds": [
+    "DEFINE:SPHERES_WEATHER_BATTERING_WINDS_PENALTY|-1-floor(SPHERES_CL_WEATHER/5)"
+  ],
+  "Weather - Fata Morgana": [
+    "DEFINE:SPHERES_WEATHER_FATA_MORGANA_PENALTY|-1-floor(SPHERES_CL_WEATHER/5)"
+  ],
+  "Weather - Illuminating Shaft": [
+    "DEFINE:SPHERES_WEATHER_ILLUMINATING_SHAFT_BONUS|1+floor(SPHERES_CL_WEATHER/5)"
+  ],
+  "Bear - Bear Form": [
+    "DEFINE:SPHERES_BEAR_FORM_NATURAL_ARMOR|2+floor(SPHERES_CL_BEAR/5)"
+  ],
+  "Bear - Bear Speed": [
+    "DEFINE:SPHERES_BEAR_SPEED_FEET|floor(SPHERES_CL_BEAR/2)"
+  ],
+  "Bear - Bearbaque": [
+    "DEFINE:SPHERES_BEAR_BEARBAQUE_D8|max(1,floor(SPHERES_CL_BEAR/2))"
+  ],
+  "Bear - Slumbear": [
+    "DEFINE:SPHERES_BEAR_SLUMBEAR_HEALING|1+floor(SPHERES_CL_BEAR/3)"
+  ],
+  "Veilweaving - Veil Knowledge": [
+    "DEFINE:SPHERES_VEILWEAVING_VEIL_KNOWLEDGE_EXTRA|1+floor(SPHERES_CL_VEILWEAVING/5)"
+  ],
+  "Life - Sanctify": [
+    "DEFINE:SPHERES_LIFE_SANCTIFY_NEGATIVE_LEVEL_STEPS|1+floor(SPHERES_CL_LIFE/5)"
+  ],
+  "Divination - Foreshadow": [
+    "DEFINE:SPHERES_DIVINATION_FORESHADOW_AC|1+floor(SPHERES_CL_DIVINATION/10)",
+    "DEFINE:SPHERES_DIVINATION_FORESHADOW_REFLEX|2+floor(SPHERES_CL_DIVINATION/10)"
+  ],
+  "Divination - Nature Sense": [
+    "DEFINE:SPHERES_DIVINATION_NATURE_SENSE_BONUS|1+floor(SPHERES_CL_DIVINATION/5)"
+  ],
+  "Fallen Fey - Fey Beauty": [
+    "DEFINE:SPHERES_FALLENFEY_FEY_BEAUTY|1+floor(SPHERES_CL_FALLENFEY/5)"
+  ],
+  "Fallen Fey - Fey Potency": [
+    "DEFINE:SPHERES_FALLENFEY_FEY_POTENCY|1+floor(SPHERES_CL_FALLENFEY/5)"
+  ],
+  "Fallen Fey - Natural Blessing": [
+    "DEFINE:SPHERES_FALLENFEY_NATURAL_BLESSING|1+floor(SPHERES_CL_FALLENFEY/5)"
+  ],
+  "Fate - The Chariot": [
+    "DEFINE:SPHERES_FATE_THE_CHARIOT_SAVE|2+floor(SPHERES_CL_FATE/10)"
+  ],
+  "Fate - The Devil": [
+    "DEFINE:SPHERES_FATE_THE_DEVIL_USES|floor(SPHERES_CL_FATE/5)"
+  ],
+  "Fate - The Hanged Man": [
+    "DEFINE:SPHERES_FATE_THE_HANGED_MAN_BONUS|2+floor(SPHERES_CL_FATE/10)"
+  ],
+  "Fate - The Hermit": [
+    "DEFINE:SPHERES_FATE_THE_HERMIT_AID|3+floor(SPHERES_CL_FATE/5)"
+  ],
+  "Fate - The Hierophant": [
+    "DEFINE:SPHERES_FATE_THE_HIEROPHANT_SAVE|2+floor(SPHERES_CL_FATE/5)"
+  ],
+  "Fate - Justice": [
+    "DEFINE:SPHERES_FATE_JUSTICE_BONUS|2+floor(SPHERES_CL_FATE/5)"
+  ],
+  "Fate - The King": [
+    "DEFINE:SPHERES_FATE_THE_KING_BONUS|2+floor(SPHERES_CL_FATE/10)"
+  ],
+  "Fate - The Magician": [
+    "DEFINE:SPHERES_FATE_THE_MAGICIAN_BONUS|2+floor(SPHERES_CL_FATE/5)"
+  ],
+  "Fate - The Moon": [
+    "DEFINE:SPHERES_FATE_THE_MOON_BONUS|2+floor(SPHERES_CL_FATE/10)"
+  ],
+  "Fate - The Star": [
+    "DEFINE:SPHERES_FATE_THE_STAR_AC|2+floor(SPHERES_CL_FATE/5)"
+  ],
+  "Fate - Strength": [
+    "DEFINE:SPHERES_FATE_STRENGTH_BONUS|2+floor(SPHERES_CL_FATE/4)"
+  ],
+  "Fate - The World": [
+    "DEFINE:SPHERES_FATE_THE_WORLD_BONUS|2+floor(SPHERES_CL_FATE/5)"
+  ],
+  "Light - Halo Effect": [
+    "DEFINE:SPHERES_LIGHT_HALO_EFFECT_BONUS|2+floor(SPHERES_CL_LIGHT/4)"
+  ],
+  "Light - Beacon Of Hope": [
+    "DEFINE:SPHERES_LIGHT_BEACON_OF_HOPE_BONUS|1+floor(SPHERES_CL_LIGHT/5)"
+  ],
+  "Light - Revelation": [
+    "DEFINE:SPHERES_LIGHT_REVELATION_BONUS|2+floor(SPHERES_CL_LIGHT/4)"
+  ],
+  "Mana - Transfer": [
+    "DEFINE:SPHERES_MANA_TRANSFER_TEMP_SP|2+floor(SPHERES_CL_MANA/5)"
+  ],
+  "Protection - Armored Magic": [
+    "DEFINE:SPHERES_PROTECTION_ARMORED_MAGIC_SHIELD|1+floor(SPHERES_CL_PROTECTION/5)"
+  ],
+  "Protection - Guardian": [
+    "DEFINE:SPHERES_PROTECTION_GUARDIAN_PENALTY|-1-floor(SPHERES_CL_PROTECTION/5)"
+  ],
+  "Protection - Resistance": [
+    "DEFINE:SPHERES_PROTECTION_RESISTANCE_BONUS|1+floor(SPHERES_CL_PROTECTION/4)"
+  ],
+  "Protection - Slippery": [
+    "DEFINE:SPHERES_PROTECTION_SLIPPERY_BONUS|2+floor(SPHERES_CL_PROTECTION/5)"
+  ],
+  "Illusion - Distracting Phantoms": [
+    "DEFINE:SPHERES_ILLUSION_DISTRACTING_PHANTOMS_ROUNDS|SPHERES_CL_ILLUSION"
+  ],
+  "Illusion - Illusionary Terrain": [
+    "DEFINE:SPHERES_ILLUSION_ILLUSIONARY_TERRAIN_ROUNDS|SPHERES_CL_ILLUSION"
+  ],
+  "Illusion - Illusionary Sound": [
+    "DEFINE:SPHERES_ILLUSION_ILLUSIONARY_SOUND_UNITS|4*SPHERES_CL_ILLUSION"
+  ],
+  "Mana - Magical Conduit": [
+    "DEFINE:SPHERES_MANA_MAGICAL_CONDUIT_TARGETS|max(1,floor(SPHERES_CL_MANA/2))"
+  ],
+  "Alchemy - Improved Liquid Nice": [
+    "DEFINE:SPHERES_ALCHEMY_LIQUID_NICE_MINUTES|SPHERES_ALCHEMY_RANKS"
+  ],
+  "Athletics - Dolphin Strike": [
+    "DEFINE:SPHERES_ATHLETICS_DOLPHIN_STRIKE_D6|skillinfo(\"TOTALRANK\",\"Acrobatics\")"
+  ],
+  "Gladiator - Theatrical Boast": [
+    "DEFINE:SPHERES_GLADIATOR_THEATRICAL_BOAST|skillinfo(\"TOTALRANK\",\"Intimidate\")"
+  ],
+  "Trap - Alarm Trap": [
+    "DEFINE:SPHERES_TRAP_ALARM_BONUS|skillinfo(\"TOTALRANK\",\"Craft (Traps)\")"
+  ],
+  "Tech - Camera": [
+    "DEFINE:SPHERES_TECH_CAMERA_PHOTOS|max(1,floor(SPHERES_TECH_RANKS/4))"
+  ],
+  "Tech - Signal Cable": [
+    "DEFINE:SPHERES_TECH_SIGNAL_CABLE_FEET|100+10*SPHERES_TECH_RANKS"
+  ],
+  "Fallen Fey - Fairy Flight": [
+    "DEFINE:SPHERES_FALLENFEY_FAIRY_FLIGHT_FEET|5*floor(SPHERES_CL_FALLENFEY/5)"
+  ],
+  "War - Retribution": [
+    "DEFINE:SPHERES_WAR_RETRIBUTION_D6|max(1,floor(SPHERES_CL_WAR/2))"
+  ],
+  "Alchemy - Shaped Chemistry": [
+    "DEFINE:SPHERES_ALCHEMY_SHAPED_CHEMISTRY_FEET|5*floor(SPHERES_BAB_ALCHEMY/5)"
+  ],
+  "Guardian - Flush Of Victory": [
+    "DEFINE:SPHERES_GUARDIAN_FLUSH_OF_VICTORY_ROUNDS|1+floor(SPHERES_BAB_GUARDIAN/2)"
+  ],
+  "Scoundrel - No Honor Among Thieves": [
+    "DEFINE:SPHERES_SCOUNDREL_NO_HONOR_RANGE|5*floor(skillinfo(\"TOTALRANK\",\"Sleight of Hand\")/2)"
+  ],
+  "Wrestling - Armbar": [
+    "DEFINE:SPHERES_WRESTLING_ARMBAR_ROUNDS|1+floor(SPHERES_BAB_WRESTLING/4)"
+  ],
+  "Athletics - Compact Frame": [
+    "DEFINE:SPHERES_ATHLETICS_COMPACT_FRAME_AC|1+floor(SPHERES_BAB_ATHLETICS/7)"
+  ],
+  "Barroom - Liquid Courage": [
+    "DEFINE:SPHERES_BARROOM_LIQUID_COURAGE_BONUS|1+floor(SPHERES_BAB_BARROOM/7)"
+  ],
+  "Barroom - Surprise": [
+    "DEFINE:SPHERES_BARROOM_SURPRISE_BONUS|1+floor(SPHERES_BAB_BARROOM/4)"
+  ],
+  "Beastmastery - Knock Down": [
+    "DEFINE:SPHERES_BEASTMASTERY_KNOCK_DOWN_D6|1+floor(skillinfo(\"TOTALRANK\",\"Ride\")/3)"
+  ],
+  "Berserker - Bell-Ringer": [
+    "DEFINE:SPHERES_BERSERKER_BELL_RINGER_PENALTY|-1-floor(SPHERES_BAB_BERSERKER/4)"
+  ],
+  "Berserker - Cast-Crusher": [
+    "DEFINE:SPHERES_BERSERKER_CAST_CRUSHER_PENALTY|-1-floor(SPHERES_BAB_BERSERKER/4)"
+  ],
+  "Berserker - Leg-Smasher": [
+    "DEFINE:SPHERES_BERSERKER_LEG_SMASHER_PENALTY|-1-floor(SPHERES_BAB_BERSERKER/4)"
+  ],
+  "Berserker - Shrapnel": [
+    "DEFINE:SPHERES_BERSERKER_SHRAPNEL_D6|1+floor(SPHERES_BAB_BERSERKER/2)"
+  ],
+  "Boxing - Shoulder Roll": [
+    "DEFINE:SPHERES_BOXING_SHOULDER_ROLL_BONUS|1+floor(SPHERES_BAB_BOXING/4)"
+  ],
+  "Duelist - Blooded Skeptic": [
+    "DEFINE:SPHERES_DUELIST_BLOODED_SKEPTIC_BONUS|1+floor(SPHERES_BAB_DUELIST/4)"
+  ],
+  "Duelist - Open Vein": [
+    "DEFINE:SPHERES_DUELIST_OPEN_VEIN_D4|1+floor(SPHERES_BAB_DUELIST/3)"
+  ],
+  "Duelist - Finger Cutter": [
+    "DEFINE:SPHERES_DUELIST_FINGER_CUTTER_BLEED|1+floor(SPHERES_BAB_DUELIST/3)"
+  ],
+  "Equipment - Immovable Object": [
+    "DEFINE:SPHERES_EQUIPMENT_IMMOVABLE_OBJECT_BONUS|1+floor(SPHERES_BAB_EQUIPMENT/4)"
+  ],
+  "Equipment - Tower Shield Mastery": [
+    "DEFINE:SPHERES_EQUIPMENT_TOWER_SHIELD_BONUS|1+floor(SPHERES_BAB_EQUIPMENT/5)"
+  ],
+  "Wrestling - Iron Grip": [
+    "DEFINE:SPHERES_WRESTLING_IRON_GRIP_BONUS|1+floor(SPHERES_BAB_WRESTLING/4)"
+  ],
+  "Wrestling - Clinch Strike": [
+    "DEFINE:SPHERES_WRESTLING_CLINCH_STRIKE_D6|1+floor(SPHERES_BAB_WRESTLING/4)"
+  ],
+  "Time - Improved Haste": [
+    "DEFINE:SPHERES_TIME_IMPROVED_HASTE_AOO|1+floor(SPHERES_CL_TIME/5)"
+  ],
+  "Technomancy - Sprite Sustenance": [
+    "DEFINE:SPHERES_TECHNOMANCY_SPRITE_SUSTENANCE_SAVE|1+floor(SPHERES_CL_TECHNOMANCY/6)"
+  ],
+  "Alchemy - Improved Bottled Lightning": [
+    "DEFINE:SPHERES_ALCHEMY_BOTTLED_LIGHTNING_D8|1+floor(SPHERES_ALCHEMY_RANKS/2)"
+  ],
+  "Fate - Villainy": [
+    "DEFINE:SPHERES_FATE_VILLAINY_BONUS|1+floor(SPHERES_CL_FATE/3)"
+  ],
+  "Barroom - Miracle Drink": [
+    "DEFINE:SPHERES_BARROOM_MIRACLE_DRINK_ROUNDS|max(1,CON)+floor(SPHERES_BAB_BARROOM/4)"
+  ],
+  "Gladiator - Hear Their Screams": [
+    "DEFINE:SPHERES_GLADIATOR_HEAR_THEIR_SCREAMS_EXTRA_ROUNDS|1+floor(skillinfo(\"TOTALRANK\",\"Intimidate\")/5)"
+  ],
+  "Dark - Snagging Darkness": [
+    "DEFINE:SPHERES_DARK_SNAGGING_CMB|SPHERES_CL_DARK+SPHERES_CASTING_ABILITY"
+  ],
+  "Destruction - Alkali Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_ALKALI_CMB|SPHERES_CL_DESTRUCTION+SPHERES_CASTING_ABILITY"
+  ],
+  "Destruction - Gale Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_GALE_CMB|SPHERES_CL_DESTRUCTION+SPHERES_CASTING_ABILITY"
+  ],
+  "Destruction - Static Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_STATIC_CMB|SPHERES_CL_DESTRUCTION+SPHERES_CASTING_ABILITY"
+  ],
+  "Fallen Fey - Plant Friend": [
+    "DEFINE:SPHERES_FALLENFEY_PLANT_FRIEND_DR|SPHERES_CL_FALLENFEY"
+  ],
+  "Illusion - Patterns": [
+    "DEFINE:SPHERES_ILLUSION_PATTERNS_PENALTY|-SPHERES_CL_ILLUSION"
+  ],
+  "Mana - Control Resistance": [
+    "DEFINE:SPHERES_MANA_CONTROL_RESISTANCE_SR|11+SPHERES_CL_MANA"
+  ],
+  "Protection - Mettle": [
+    "DEFINE:SPHERES_PROTECTION_METTLE_AC|5+SPHERES_CL_PROTECTION"
+  ],
+  "Protection - Spell Ward": [
+    "DEFINE:SPHERES_PROTECTION_SPELL_WARD_SR|10+SPHERES_CL_PROTECTION"
+  ],
+  "Protection - Bulwark": [
+    "DEFINE:SPHERES_PROTECTION_BULWARK_DR|SPHERES_CL_PROTECTION"
+  ],
+  "War - Absolute Totem": [
+    "DEFINE:SPHERES_WAR_ABSOLUTE_TOTEM_HARDNESS|SPHERES_CL_WAR"
+  ],
+  "War - Totem Of Expulsion": [
+    "DEFINE:SPHERES_WAR_EXPULSION_PENALTY|-SPHERES_CL_WAR"
+  ],
+  "Weather - Squamish": [
+    "DEFINE:SPHERES_WEATHER_SQUAMISH_CMB|SPHERES_CL_WEATHER+SPHERES_CASTING_ABILITY"
+  ],
+  "Technomancy - Copious Charge": [
+    "DEFINE:SPHERES_TECHNOMANCY_COPIOUS_CHARGE|SPHERES_CL_TECHNOMANCY"
+  ],
+  "Creation - Object Of Force": [
+    "DEFINE:SPHERES_CREATION_OBJECT_OF_FORCE_HARDNESS|SPHERES_CL_CREATION"
+  ],
+  "Protection - Exclusion": [
+    "DEFINE:SPHERES_PROTECTION_EXCLUSION_PENALTY|-SPHERES_CL_PROTECTION"
+  ],
+  "Protection - Helping Hand": [
+    "DEFINE:SPHERES_PROTECTION_HELPING_HAND_BONUS|max(1,floor(SPHERES_CL_PROTECTION/4))"
+  ],
+  "War - Strike": [
+    "DEFINE:SPHERES_WAR_STRIKE_CMB|max(0,floor(SPHERES_CL_WAR/5))"
+  ],
+  "Weather - Crackling Arc": [
+    "DEFINE:SPHERES_WEATHER_CRACKLING_ARC_DAMAGE|SPHERES_CL_WEATHER"
+  ],
+  "Weather - Diamond Dust": [
+    "DEFINE:SPHERES_WEATHER_DIAMOND_DUST_DAMAGE|SPHERES_CL_WEATHER"
+  ],
+  "Weather - Personal Thunderhead": [
+    "DEFINE:SPHERES_WEATHER_THUNDERHEAD_DAMAGE|SPHERES_CL_WEATHER"
+  ],
+  "Alchemy - Delayed Poison": [
+    "DEFINE:SPHERES_ALCHEMY_DELAYED_POISON_MINUTES|floor(SPHERES_ALCHEMY_RANKS/2)"
+  ],
+  "Alchemy - Endorphine Shot": [
+    "DEFINE:SPHERES_ALCHEMY_ENDORPHINE_POOL|2*SPHERES_ALCHEMY_RANKS"
+  ],
+  "Athletics - Tumbling Recovery": [
+    "DEFINE:SPHERES_ATHLETICS_TUMBLING_RECOVERY|max(1,floor(skillinfo(\"TOTALRANK\",\"Acrobatics\")/2))"
+  ],
+  "Barroom - Competitive Spirit": [
+    "DEFINE:SPHERES_BARROOM_COMPETITIVE_SPIRIT_MAX|1+SPHERES_PRACTITIONER_MOD"
+  ],
+  "Barroom - Purge": [
+    "DEFINE:SPHERES_BARROOM_PURGE_SAVE|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Barroom - Calamitous Coercion": [
+    "DEFINE:SPHERES_BARROOM_CALAMITOUS_MAX|2+SPHERES_PRACTITIONER_MOD"
+  ],
+  "Barroom - Take To Go": [
+    "DEFINE:SPHERES_BARROOM_TAKE_TO_GO|max(1,SPHERES_PRACTITIONER_MOD)"
+  ],
+  "Beastmastery - Armored Mount": [
+    "DEFINE:SPHERES_BEASTMASTERY_ARMORED_MOUNT|max(1,floor(skillinfo(\"TOTALRANK\",\"Ride\")/2))"
+  ],
+  "Fencing - Isolating Repartee": [
+    "DEFINE:SPHERES_FENCING_ISOLATING_REPARTEE_PENALTY|-SPHERES_PRACTITIONER_MOD"
+  ],
+  "Gladiator - Awesome Impression": [
+    "DEFINE:SPHERES_GLADIATOR_AWESOME_IMPRESSION|SPHERES_PRACTITIONER_MOD"
+  ],
+  "Gladiator - Last Bastion": [
+    "DEFINE:SPHERES_GLADIATOR_LAST_BASTION_HP|skillinfo(\"TOTALRANK\",\"Intimidate\")+SPHERES_PRACTITIONER_MOD"
+  ],
+  "Scoundrel - Misdirected Attack": [
+    "DEFINE:SPHERES_SCOUNDREL_MISDIRECTED_ATTACK|floor(skillinfo(\"TOTALRANK\",\"Sleight of Hand\")/4)"
+  ],
+  "Scoundrel - Switcheroo": [
+    "DEFINE:SPHERES_SCOUNDREL_SWITCHEROO_MINUTES|skillinfo(\"TOTALRANK\",\"Sleight of Hand\")"
+  ],
+  "Scoundrel - Vagabond Nick": [
+    "DEFINE:SPHERES_SCOUNDREL_VAGABOND_NICK|floor(skillinfo(\"TOTALRANK\",\"Sleight of Hand\")/2)+SPHERES_PRACTITIONER_MOD"
+  ],
+  "Scout - Active Camouflage": [
+    "DEFINE:SPHERES_SCOUT_ACTIVE_CAMOUFLAGE|floor(skillinfo(\"TOTALRANK\",\"Stealth\")/2)"
+  ],
+  "Scout - Calibrating Wiggle": [
+    "DEFINE:SPHERES_SCOUT_CALIBRATING_WIGGLE|max(1,floor(skillinfo(\"TOTALRANK\",\"Perception\")/2))"
+  ],
+  "Scout - Deadly Strike": [
+    "DEFINE:SPHERES_SCOUT_DEADLY_STRIKE|skillinfo(\"TOTALRANK\",\"Stealth\")"
+  ],
+  "Scout - Find Gap": [
+    "DEFINE:SPHERES_SCOUT_FIND_GAP_ROUNDS|max(1,floor(skillinfo(\"TOTALRANK\",\"Perception\")/2))"
+  ],
+  "Scout - Track The Scene": [
+    "DEFINE:SPHERES_SCOUT_TRACK_THE_SCENE|max(1,floor(skillinfo(\"TOTALRANK\",\"Perception\")/2))"
+  ],
+  "Trap - Flash Trap": [
+    "DEFINE:SPHERES_TRAP_FLASH_TRAP_ROUNDS|skillinfo(\"TOTALRANK\",\"Craft (Traps)\")"
+  ],
+  "Trap - Foam Spray": [
+    "DEFINE:SPHERES_TRAP_FOAM_SPRAY_HP|3*skillinfo(\"TOTALRANK\",\"Craft (Traps)\")"
+  ],
+  "Warleader - Make It Hurt": [
+    "DEFINE:SPHERES_WARLEADER_MAKE_IT_HURT|floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/2)"
+  ],
+  "Warleader - Preparation": [
+    "DEFINE:SPHERES_WARLEADER_PREPARATION|max(1,floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/4))"
+  ],
+  "Warleader - Shieldbrothers": [
+    "DEFINE:SPHERES_WARLEADER_SHIELDBROTHERS|max(1,floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/4))"
+  ],
+  "Leadership - Drill Sergeant": [
+    "DEFINE:SPHERES_LEADERSHIP_DRILL_SERGEANT_RANKS|skillinfo(\"TOTALRANK\",\"Diplomacy\")"
+  ],
+  "Tech - Chameleon Suit": [
+    "DEFINE:SPHERES_TECH_CHAMELEON_SUIT|SPHERES_TECH_RANKS"
+  ],
+  "Tech - Battery": [
+    "DEFINE:SPHERES_TECH_BATTERY_CHARGES|max(1,SPHERES_PRACTITIONER_MOD)"
+  ],
+  "Tech - Clamp Boots": [
+    "DEFINE:SPHERES_TECH_CLAMP_BOOTS|max(1,floor(SPHERES_TECH_RANKS/2))"
+  ],
+  "Tech - Mechanical Tool": [
+    "DEFINE:SPHERES_TECH_MECHANICAL_TOOL_BONUS|3+floor(SPHERES_TECH_RANKS/2)"
+  ],
+  "Tech - Tutor": [
+    "DEFINE:SPHERES_TECH_TUTOR_BONUS|3+floor(SPHERES_TECH_RANKS/2)"
+  ],
+  "Light - Chameleon": [
+    "DEFINE:SPHERES_LIGHT_CHAMELEON_NOTICE_DC|10+SPHERES_CASTING_ABILITY"
+  ],
+  "Light - Periscope": [
+    "DEFINE:SPHERES_LIGHT_PERISCOPE_DETECT_DC|20+SPHERES_CL_LIGHT"
+  ],
+  "Protection - Energy Resistance": [
+    "DEFINE:SPHERES_PROTECTION_ENERGY_RESISTANCE_REDUCTION|10+SPHERES_CL_PROTECTION"
+  ],
+  "Protection - Missile Shield": [
+    "DEFINE:SPHERES_PROTECTION_MISSILE_SHIELD_REDUCTION|5+SPHERES_CL_PROTECTION"
+  ],
+  "Technomancy - Broadcast": [
+    "DEFINE:SPHERES_TECHNOMANCY_BROADCAST_DC|10+SPHERES_CL_TECHNOMANCY+SPHERES_CASTING_ABILITY"
+  ],
+  "Alchemy - Elixir": [
+    "DEFINE:SPHERES_ALCHEMY_ELIXIR_BONUS|max(1,floor(SPHERES_ALCHEMY_RANKS/2)+SPHERES_PRACTITIONER_MOD)"
+  ],
+  "Barroom - Bellowing Shanty": [
+    "DEFINE:SPHERES_BARROOM_BELLOWING_SHANTY|floor(SPHERES_BAB_BARROOM/2)"
+  ],
+  "Barroom - Nice And Loose": [
+    "DEFINE:SPHERES_BARROOM_NICE_AND_LOOSE|max(1,floor(SPHERES_BAB_BARROOM/2))",
+    "DEFINE:SPHERES_BARROOM_NICE_AND_LOOSE_ROUNDS|SPHERES_BAB_BARROOM"
+  ],
+  "Barroom - Reeling Steps": [
+    "DEFINE:SPHERES_BARROOM_REELING_STEPS|floor(SPHERES_BAB_BARROOM/2)"
+  ],
+  "Berserker - Promethean": [
+    "DEFINE:SPHERES_BERSERKER_PROMETHEAN_RESIST|5+floor(SPHERES_BAB_BERSERKER/2)"
+  ],
+  "Berserker - Flesh Carver": [
+    "DEFINE:SPHERES_BERSERKER_FLESH_CARVER_DR_REDUCTION|max(1,floor(SPHERES_BAB_BERSERKER/2))"
+  ],
+  "Boxing - Haymaker": [
+    "DEFINE:SPHERES_BOXING_HAYMAKER_DC|max(1,floor(SPHERES_BAB_BOXING/4))"
+  ],
+  "Boxing - Winding Blow": [
+    "DEFINE:SPHERES_BOXING_WINDING_BLOW_ROUNDS|max(1,floor(SPHERES_BAB_BOXING/2))"
+  ],
+  "Brute - Greater Shove": [
+    "DEFINE:SPHERES_BRUTE_GREATER_SHOVE_DAMAGE|floor(SPHERES_BAB_BRUTE/2)"
+  ],
+  "Duelist - Hurricane Strike": [
+    "DEFINE:SPHERES_DUELIST_HURRICANE_STRIKE_ROUNDS|max(1,floor(SPHERES_BAB_DUELIST/2))"
+  ],
+  "Equipment - Armored Defense": [
+    "DEFINE:SPHERES_EQUIPMENT_ARMORED_DEFENSE|max(1,floor(SPHERES_BAB_EQUIPMENT/3))"
+  ],
+  "Equipment - Armored Deflection": [
+    "DEFINE:SPHERES_EQUIPMENT_ARMORED_DEFLECTION|max(1,floor(SPHERES_BAB_EQUIPMENT/3))"
+  ],
+  "Equipment - Mechanical Savant": [
+    "DEFINE:SPHERES_EQUIPMENT_MECHANICAL_SAVANT_DAMAGE|max(1,floor(SPHERES_BAB_EQUIPMENT/2))"
+  ],
+  "Equipment - Skin of Steel": [
+    "DEFINE:SPHERES_EQUIPMENT_SKIN_OF_STEEL_DR|floor(SPHERES_BAB_EQUIPMENT/2)"
+  ],
+  "Fencing - To The Hilt": [
+    "DEFINE:SPHERES_FENCING_TO_THE_HILT_DR_REDUCTION|max(1,floor(SPHERES_BAB_FENCING/2))"
+  ],
+  "Guardian - Glutton For Punishment": [
+    "DEFINE:SPHERES_GUARDIAN_GLUTTON_DR|floor(SPHERES_BAB_GUARDIAN/2)"
+  ],
+  "Guardian - Mageguard": [
+    "DEFINE:SPHERES_GUARDIAN_MAGEGUARD_PENALTY|max(1,floor(SPHERES_BAB_GUARDIAN/2))"
+  ],
+  "Sniper - Targeted Assault": [
+    "DEFINE:SPHERES_SNIPER_TARGETED_ASSAULT_REDUCTION|max(1,floor(SPHERES_BAB_SNIPER/2))"
+  ],
+  "Alchemy - Painter": [
+    "DEFINE:SPHERES_ALCHEMY_PAINTER_ADDITIONAL|1+floor(SPHERES_ALCHEMY_RANKS/7)"
+  ],
+  "Athletics - Strong Lungs": [
+    "DEFINE:SPHERES_ATHLETICS_STRONG_LUNGS|1+floor(max(skillinfo(\"TOTALRANK\",\"Acrobatics\"),skillinfo(\"TOTALRANK\",\"Swim\"))/4)"
+  ],
+  "Beastmastery - Armored Charge": [
+    "DEFINE:SPHERES_BEASTMASTERY_ARMORED_CHARGE|if(skillinfo(\"TOTALRANK\",\"Ride\")>=10,2,1)"
+  ],
+  "Trap - Bear Trap": [
+    "DEFINE:SPHERES_TRAP_BEAR_TRAP_BLEED|max(1,floor(skillinfo(\"TOTALRANK\",\"Craft (Traps)\")/8))"
+  ],
+  "Warleader - Heraldry": [
+    "DEFINE:SPHERES_WARLEADER_HERALDRY_RANKS|5"
+  ],
+  "Warleader - Protective Warning": [
+    "DEFINE:SPHERES_WARLEADER_PROTECTIVE_WARNING|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/5)"
+  ],
+  "Leadership - Mystic Craftsman": [
+    "DEFINE:SPHERES_LEADERSHIP_MYSTIC_CRAFTSMAN|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/8)"
+  ],
+  "Leadership - Rangers": [
+    "DEFINE:SPHERES_LEADERSHIP_RANGERS_HEXES|floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/3)"
+  ],
+  "Tech - Load Bearer": [
+    "DEFINE:SPHERES_TECH_LOAD_BEARER_SIZES|if(SPHERES_TECH_RANKS>=14,3,if(SPHERES_TECH_RANKS>=7,2,1))"
+  ],
+  "Dark - Shadow Coterie": [
+    "DEFINE:SPHERES_DARK_SHADOW_COTERIE_ADDITIONAL|floor(SPHERES_CL_DARK/5)"
+  ],
+  "Fallen Fey - Gremlin’s Presence": [
+    "DEFINE:SPHERES_FALLENFEY_GREMLIN_PENALTY|-1-floor(SPHERES_CL_FALLENFEY/5)"
+  ],
+  "Light - Encompassing Light": [
+    "DEFINE:SPHERES_LIGHT_ENCOMPASSING_SIZE_STEPS|floor(SPHERES_CL_LIGHT/10)"
+  ],
+  "Light - Purifying Light": [
+    "DEFINE:SPHERES_LIGHT_PURIFYING_SAVE|floor(SPHERES_CL_LIGHT/10)"
+  ],
+  "Mana - Intelligent Interactions": [
+    "DEFINE:SPHERES_MANA_INTELLIGENT_INTERACTIONS|1+floor(SPHERES_CL_MANA/5)"
+  ],
+  "War - Hallowed/Unhallowed Totem": [
+    "DEFINE:SPHERES_WAR_HALLOWED_TOTEM_PENALTY|-1-floor(SPHERES_CL_WAR/10)"
+  ],
+  "War - Tactical Totem": [
+    "DEFINE:SPHERES_WAR_TACTICAL_TOTEM_FEATS|floor(SPHERES_CL_WAR/10)"
+  ],
+  "Technomancy - Compound Hacking": [
+    "DEFINE:SPHERES_TECHNOMANCY_COMPOUND_HACKING|2+floor(SPHERES_CL_TECHNOMANCY/5)"
+  ],
+  "Technomancy - Sprite Legion": [
+    "DEFINE:SPHERES_TECHNOMANCY_SPRITE_LEGION|floor(SPHERES_CL_TECHNOMANCY/2)"
+  ],
+  "Berserker - Executioner": [
+    "DEFINE:SPHERES_BERSERKER_EXECUTIONER_EXTRA|floor(SPHERES_BAB_BERSERKER/10)"
+  ],
+  "Berserker - Bone-Breaker": [
+    "DEFINE:SPHERES_BERSERKER_BONE_BREAKER_PENALTY|-1-floor(SPHERES_BAB_BERSERKER/4)"
+  ],
+  "Berserker - Heart Crusher": [
+    "DEFINE:SPHERES_BERSERKER_HEART_CRUSHER_PENALTY|-1-floor(SPHERES_BAB_BERSERKER/4)"
+  ],
+  "Duelist - Perforating Wounds": [
+    "DEFINE:SPHERES_DUELIST_PERFORATING_BLEED|1+floor(SPHERES_BAB_DUELIST/3)"
+  ],
+  "Equipment - Scatter Mastery": [
+    "DEFINE:SPHERES_EQUIPMENT_SCATTER_MASTERY_SPARED|floor(SPHERES_BAB_EQUIPMENT/4)"
+  ],
+  "Guardian - Cold Iron Call": [
+    "DEFINE:SPHERES_GUARDIAN_COLD_IRON_CALL_PENALTY|-1-floor(SPHERES_BAB_GUARDIAN/4)"
+  ],
+  "Guardian - Durable": [
+    "DEFINE:SPHERES_GUARDIAN_DURABLE_PENALTY|-1-floor(SPHERES_BAB_GUARDIAN/4)"
+  ],
+  "Guardian - Insulate": [
+    "DEFINE:SPHERES_GUARDIAN_INSULATE_DR|1+floor(SPHERES_BAB_GUARDIAN/5)"
+  ],
+  "Wrestling - Worked Match": [
+    "DEFINE:SPHERES_WRESTLING_WORKED_MATCH_BONUS|2+2*floor(SPHERES_BAB_WRESTLING/4)"
+  ],
+  "Tech - Disarmer": [
+    "DEFINE:SPHERES_TECH_DISARMER_MARGIN|1+floor(SPHERES_TECH_RANKS/10)"
+  ],
+  "Tech - Diga Drill": [
+    "DEFINE:SPHERES_TECH_DIGA_DRILL_HARDNESS|floor(SPHERES_TECH_RANKS/2)"
+  ],
+  "Protection - Obstruction": [
+    "DEFINE:SPHERES_PROTECTION_OBSTRUCTION_DR|max(1,floor(SPHERES_CL_PROTECTION/2))"
+  ],
+  "Lancer - Ragdoll Swing": [
+    "DEFINE:SPHERES_LANCER_RAGDOLL_SWING_DAMAGE|floor(SPHERES_BAB_LANCER/2)"
+  ],
+  "Wrestling - Compound Entrapment": [
+    "DEFINE:SPHERES_WRESTLING_COMPOUND_ENTRAPMENT_CAP|max(2,floor(SPHERES_BAB_WRESTLING/2))"
+  ],
+  "Creation - Potent Alteration": [
+    "DEFINE:SPHERES_CREATION_POTENT_ALTERATION_DAMAGE|SPHERES_CL_CREATION"
+  ],
+  "Destruction - Selective Blast": [
+    "DEFINE:SPHERES_DESTRUCTION_SELECTIVE_EXCLUDED|max(1,SPHERES_CASTING_ABILITY)"
+  ],
+  "Fate - The Sun": [
+    "DEFINE:SPHERES_FATE_THE_SUN_BONUS|SPHERES_CASTING_ABILITY"
+  ],
+  "War - Resilient Momentum": [
+    "DEFINE:SPHERES_WAR_RESILIENT_MOMENTUM_REDUCTION|max(1,SPHERES_CASTING_ABILITY)"
+  ],
+  "Weather - Forceful Wind": [
+    "DEFINE:SPHERES_WEATHER_FORCEFUL_WIND_BONUS|max(1,SPHERES_CASTING_ABILITY)"
+  ],
+  "Fallen Fey - Summon Fairy": [
+    "DEFINE:SPHERES_FALLENFEY_SUMMON_FAIRY_CR|floor(SPHERES_CL_FALLENFEY/3)"
+  ],
+  "Alchemy - Cherry Bomb": [
+    "DEFINE:SPHERES_ALCHEMY_CHERRY_BOMB_COUNT|max(3,SPHERES_PRACTITIONER_MOD)"
+  ],
+  "Barroom - Had A Few": [
+    "DEFINE:SPHERES_BARROOM_HAD_A_FEW_TEMP_HP|CON+SPHERES_BAB_BARROOM"
+  ],
+  "Barroom - Interceding Crash": [
+    "DEFINE:SPHERES_BARROOM_INTERCEDING_CRASH_REDUCTION|max(1,SPHERES_PRACTITIONER_MOD)"
+  ],
+  "Beastmastery - Purposeful Training": [
+    "DEFINE:SPHERES_BEASTMASTERY_PURPOSEFUL_TRAINING_RANKS|skillinfo(\"TOTALRANK\",\"Handle Animal\")"
+  ],
+  "Berserker - Sanguine Invigoration": [
+    "DEFINE:SPHERES_BERSERKER_SANGUINE_TEMP_HP|SPHERES_BAB_BERSERKER"
+  ],
+  "Boxing - Corkscrew Set Up": [
+    "DEFINE:SPHERES_BOXING_CORKSCREW_DAMAGE|SPHERES_PRACTITIONER_MOD+SPHERES_BAB_BOXING"
+  ],
+  "Equipment - Battle Ready Armor": [
+    "DEFINE:SPHERES_EQUIPMENT_BATTLE_READY_HARDNESS|SPHERES_BAB_EQUIPMENT"
+  ],
+  "Equipment - Expert Grenadier": [
+    "DEFINE:SPHERES_EQUIPMENT_EXPERT_GRENADIER_DC|10+floor(SPHERES_BAB_EQUIPMENT/2)+SPHERES_PRACTITIONER_MOD"
+  ],
+  "Equipment - Faceful Of Shrapnel": [
+    "DEFINE:SPHERES_EQUIPMENT_FACEFUL_SHRAPNEL_DAMAGE|floor(SPHERES_BAB_EQUIPMENT/2)"
+  ],
+  "Gladiator - Iron Roar": [
+    "DEFINE:SPHERES_GLADIATOR_IRON_ROAR_DR|max(1,floor(skillinfo(\"TOTALRANK\",\"Intimidate\")/2))"
+  ],
+  "Gladiator - Steel Braggart": [
+    "DEFINE:SPHERES_GLADIATOR_STEEL_BRAGGART_DR|max(1,floor(skillinfo(\"TOTALRANK\",\"Intimidate\")/2))"
+  ],
+  "Gladiator - Fear Eater": [
+    "DEFINE:SPHERES_GLADIATOR_FEAR_EATER_TEMP_HP|skillinfo(\"TOTALRANK\",\"Intimidate\")"
+  ],
+  "Guardian - Defend Other": [
+    "DEFINE:SPHERES_GUARDIAN_DEFEND_OTHER_AC|max(1,floor(SPHERES_BAB_GUARDIAN/2))"
+  ],
+  "Guardian - Mage Warden": [
+    "DEFINE:SPHERES_GUARDIAN_MAGE_WARDEN_BONUS|SPHERES_BAB_GUARDIAN"
+  ],
+  "Scout - Sudden Acuity": [
+    "DEFINE:SPHERES_SCOUT_SUDDEN_ACUITY|max(1,floor(skillinfo(\"TOTALRANK\",\"Stealth\")/2))"
+  ],
+  "Barroom - Chasing the Dragon": [
+    "DEFINE:SPHERES_BARROOM_CHASING_THE_DRAGON_ROUNDS|2*CON+floor(SPHERES_BAB_BARROOM/2)"
+  ],
+  "Barroom - Postprandial Maudlin": [
+    "DEFINE:SPHERES_BARROOM_POSTPRANDIAL_ROUNDS|2*CON+floor(SPHERES_BAB_BARROOM/2)"
+  ],
+  "Barroom - Dulled Senses": [
+    "DEFINE:SPHERES_BARROOM_DULLED_SENSES_DR|1+floor(SPHERES_BAB_BARROOM/4)"
+  ],
+  "Berserker - Greater Sunder": [
+    "DEFINE:SPHERES_BERSERKER_GREATER_SUNDER_BONUS|1+floor(SPHERES_BAB_BERSERKER/4)"
+  ],
+  "Berserker - Agonizing Bruise": [
+    "DEFINE:SPHERES_BERSERKER_AGONIZING_BRUISE_DAMAGE|2+floor(SPHERES_BAB_BERSERKER/3)"
+  ],
+  "Equipment - Splitshot": [
+    "DEFINE:SPHERES_EQUIPMENT_SPLITSHOT_EXTRA_FEET|5*floor(SPHERES_BAB_EQUIPMENT/4)"
+  ],
+  "Guardian - Mass Challenge": [
+    "DEFINE:SPHERES_GUARDIAN_MASS_CHALLENGE_ADDITIONAL|max(1,floor(SPHERES_BAB_GUARDIAN/2))"
+  ],
+  "Fate - The Fool": [
+    "DEFINE:SPHERES_FATE_THE_FOOL_PENALTY_REDUCTION|floor(SPHERES_CL_FATE/10)"
+  ],
+  "Illusion - Swift Figments": [
+    "DEFINE:SPHERES_ILLUSION_SWIFT_FIGMENTS_SPEED|25+5*floor(SPHERES_CL_ILLUSION/2)"
+  ],
+  "Mana - Friction": [
+    "DEFINE:SPHERES_MANA_FRICTION_EXTRA_COST|floor(SPHERES_CL_MANA/10)"
+  ],
+  "Bear - Bear Arms": [
+    "DEFINE:SPHERES_BEAR_BEAR_ARMS_DIE_STEPS|floor(SPHERES_CL_BEAR/5)"
+  ],
+  "Boxing - Dug In Blow": [
+    "DEFINE:SPHERES_BOXING_DUG_IN_BLOW_DR|floor(SPHERES_BAB_BOXING/4)"
+  ],
+  "Boxing - Gazelle Punch": [
+    "DEFINE:SPHERES_BOXING_GAZELLE_PUNCH_REACH|if(SPHERES_BAB_BOXING>=10,5,0)"
+  ],
+  "Brute - Dazed And Confused": [
+    "DEFINE:SPHERES_BRUTE_DAZED_DURATION|if(SPHERES_BAB_BRUTE>=10,2,1)"
+  ],
+  "Brute - Dizzy Spin": [
+    "DEFINE:SPHERES_BRUTE_DIZZY_SPIN_DURATION|if(SPHERES_BAB_BRUTE>=10,2,1)"
+  ],
+  "Brute - Humiliate": [
+    "DEFINE:SPHERES_BRUTE_HUMILIATE_DURATION|if(SPHERES_BAB_BRUTE>=10,2,1)"
+  ],
+  "Equipment - Cold-Weather Adaptation": [
+    "DEFINE:SPHERES_EQUIPMENT_COLD_WEATHER_RESIST|if(SPHERES_BAB_EQUIPMENT>=6,5,0)"
+  ],
+  "Fencing - Unlikely Feint": [
+    "DEFINE:SPHERES_FENCING_UNLIKELY_FEINT_REDUCTION|2*floor(SPHERES_BAB_FENCING/5)"
+  ],
+  "Fencing - Wide Open": [
+    "DEFINE:SPHERES_FENCING_WIDE_OPEN_PENALTY|-1-floor(SPHERES_BAB_FENCING/5)"
+  ],
+  "Gladiator - Inspire": [
+    "DEFINE:SPHERES_GLADIATOR_INSPIRE_BONUS|floor(skillinfo(\"TOTALRANK\",\"Intimidate\")/5)"
+  ],
+  "Lancer - Lancealot": [
+    "DEFINE:SPHERES_LANCER_LANCEALOT_SIZE_STEPS|if(SPHERES_BAB_LANCER>=10,2,1)"
+  ],
+  "Open Hand - Joint Lock": [
+    "DEFINE:SPHERES_OPENHAND_JOINT_LOCK_ROUNDS|if(SPHERES_BAB_OPENHAND>=10,2,1)"
+  ],
+  "Open Hand - Up High Down Low Too Slow": [
+    "DEFINE:SPHERES_OPENHAND_TOO_SLOW_REDUCTION|if(SPHERES_BAB_OPENHAND>=10,15,10)"
+  ],
+  "Scout - Sight Beyond Sight": [
+    "DEFINE:SPHERES_SCOUT_SIGHT_BEYOND_SIGHT_FEET|if(skillinfo(\"TOTALRANK\",\"Perception\")>=10,15,10)"
+  ],
+  "Sniper - Covering Fire": [
+    "DEFINE:SPHERES_SNIPER_COVERING_FIRE_EXTRA_FEET|5*floor(SPHERES_BAB_SNIPER/4)"
+  ],
+  "Destruction - Energy Beam": [
+    "DEFINE:SPHERES_DESTRUCTION_ENERGY_BEAM_EXTRA_FEET|5*floor(SPHERES_CL_DESTRUCTION/4)"
+  ],
+  "Illusion - Overwhelming Sensations": [
+    "DEFINE:SPHERES_ILLUSION_OVERWHELMING_ROUNDS|max(1,floor(SPHERES_CL_ILLUSION/2))"
+  ],
+  "Veilweaving - Shape Additional Veil": [
+    "DEFINE:SPHERES_VEILWEAVING_MAX_VEILS|1+floor(HD/3)"
+  ],
+  "Leadership - Crew": [
+    "DEFINE:SPHERES_LEADERSHIP_CREW_PERKS|1+floor(skillinfo(\"TOTALRANK\",\"Diplomacy\")/5)"
   ],
   "Protection Sphere": [
     "DEFINE:SPHERES_PROTECTION_ENDURING|0",

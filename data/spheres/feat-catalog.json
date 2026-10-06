@@ -291,8 +291,10 @@
       "PREATT:5"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_AGGRESSIVE_MIND_LIMB_CAM_BONUS|SPHERES_CASTING_ABILITY"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Agitating Scout",
@@ -644,8 +646,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Bleeding Wounds"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_ANEMIC_WOUNDS_HEAL_BONUS|SPHERES_CASTER_LEVEL"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Angels’ Darling",
@@ -1067,8 +1071,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Battle Creature"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_ARMORY_EXTRA_WEAPONS|1+floor(SPHERES_CL_CONJURATION/4)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Arrow of Inspiration",
@@ -1694,8 +1700,10 @@
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Verbal Casting"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_BATTLECRY_INTIMIDATE_BONUS|floor(SPHERES_CASTER_LEVEL/2)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Battlefield Tactics",
@@ -2725,7 +2733,9 @@
     "unresolved_prerequisites": [
       "1 rank in any Strength- or Dexterity-based skill"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_CATISTHENICS_DICE|1+floor(HD/3)"
+    ],
     "status": "partial"
   },
   {
@@ -3705,6 +3715,7 @@
     "prerequisites": [],
     "unresolved_prerequisites": [],
     "mechanics": [
+      "DEFINE:SPHERES_CONCUSSIVE_SPELL_ROUNDS|floor(SPHERES_CASTER_LEVEL/2)",
       "DEFINE:SPHERES_METAMAGIC_CONCUSSIVESPELL_COST|2"
     ],
     "status": "mechanics-added"
@@ -3843,8 +3854,10 @@
       "PREFEAT:1,Brain Consumption"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_CONSUMPTIVE_INTUITION_MINUTES|TL"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Consumptive Mutation",
@@ -4027,8 +4040,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_COOPERATIVE_DESTRUCTION_CL_BONUS|1+floor(SPHERES_CL_DESTRUCTION/4)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Cooperative Mind",
@@ -4364,8 +4379,10 @@
       "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_CRAFT_MARVELOUS_ITEM_DC|10+floor(SPHERES_CASTER_LEVEL/2)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Craft Ooze",
@@ -4463,8 +4480,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_HUMOR_FAMILIAR_MAX_HD|HD"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Creation Mastery",
@@ -4896,6 +4915,7 @@
     "prerequisites": [],
     "unresolved_prerequisites": [],
     "mechanics": [
+      "DEFINE:SPHERES_DAZING_SPELL_ROUNDS|max(1,floor(SPHERES_CASTER_LEVEL/2))",
       "DEFINE:SPHERES_METAMAGIC_DAZINGSPELL_COST|3"
     ],
     "status": "mechanics-added"
@@ -4919,7 +4939,9 @@
     "unresolved_prerequisites": [
       "Conjuration sphere (Undead Creature (type) x2)"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_DEADCALLER_MAX_CR|floor(SPHERES_CL_CONJURATION/2)"
+    ],
     "status": "partial"
   },
   {
@@ -5037,8 +5059,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DECEPTIVE_ADVISOR_DC|10+floor(SPHERES_CL_MIND/2)+SPHERES_CASTING_ABILITY"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Deceptive Boast",
@@ -5118,8 +5142,10 @@
       "PREVARGTEQ:SPHERES_CL_MANA,9"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEEP_SPELLBURN_BURN_INCREASE|2*floor(SPHERES_CASTER_LEVEL/6)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Defender’s Bonds",
@@ -5285,6 +5311,7 @@
     "prerequisites": [],
     "unresolved_prerequisites": [],
     "mechanics": [
+      "DEFINE:SPHERES_DELAYED_MAGIC_ROUNDS|5+SPHERES_CASTER_LEVEL",
       "DEFINE:SPHERES_METAMAGIC_DELAYEDMAGIC_COST|1"
     ],
     "status": "mechanics-added"
@@ -6412,7 +6439,9 @@
       "Fenghaung subtype",
       "energy resistance"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ELEMENTAL_HEART_RESIST|TL"
+    ],
     "status": "partial"
   },
   {
@@ -6747,8 +6776,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_ENDLESS_POSSIBILITIES_BONUS|floor(SPHERES_CL_LIFE/5)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Enduring Aristeia",
@@ -7095,8 +7126,10 @@
       "PREABILITY:1,CATEGORY=Special Ability,Soul Weaver Bound Souls (Reference)"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_ENSOULED_ILLUMINATIONS_MSD|11+SPHERES_SOUL_WEAVER_LEVEL"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Ensouled Vision",
@@ -7588,8 +7621,10 @@
       "PREVARGTEQ:SPHERES_CL_LIFE,5"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_EXTENDED_RESUSCITATE_ROUNDS|floor(SPHERES_CASTER_LEVEL/2)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Arsenal Trick",
@@ -8643,6 +8678,7 @@
     "prerequisites": [],
     "unresolved_prerequisites": [],
     "mechanics": [
+      "DEFINE:SPHERES_FEARSOME_SPELL_ROUNDS|max(1,floor(SPHERES_CASTER_LEVEL/2))",
       "DEFINE:SPHERES_METAMAGIC_FEARSOMESPELL_COST|2"
     ],
     "status": "mechanics-added"
@@ -8969,6 +9005,7 @@
     "prerequisites": [],
     "unresolved_prerequisites": [],
     "mechanics": [
+      "DEFINE:SPHERES_FLEETING_SPELL_DC|11+floor(SPHERES_CASTER_LEVEL/2)",
       "DEFINE:SPHERES_METAMAGIC_FLEETINGSPELL_COST|0"
     ],
     "status": "mechanics-added"
@@ -9177,8 +9214,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_FOCUSED_BLAST_TYPE_GROUP_CL_BONUS|1+floor(HD/5)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Focused Fire Tactics",
@@ -9197,8 +9236,10 @@
       "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere],[PREFEAT:1,Squadron Commander]],[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere],[PREFEAT:1,Troop Commander]]"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_FOCUSED_FIRE_TACTICS_MAX|max(SPHERES_CL_WAR,skillinfo(\"TOTALRANK\",\"Diplomacy\"))"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Focused Miasma",
@@ -9279,8 +9320,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_FOCUSING_DIRECTION_COMPANIONS|SPHERES_CASTING_ABILITY"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Focusing Spell",
@@ -9510,8 +9553,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_FORGED_ARCANA_CL_BONUS|1+floor(skillinfo(\"TOTALRANK\",\"Spellcraft\")/5)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Formed Construct",
@@ -10260,7 +10305,9 @@
     "unresolved_prerequisites": [
       "Combat Stamina"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_GRITTING_TEETH_RESIST|TL+max(INT,WIS,CHA)"
+    ],
     "status": "partial"
   },
   {
@@ -10794,8 +10841,10 @@
     "key": "Helping",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_HELPING_TEMP_HP|floor(TL/2)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Hematic Impaler",
@@ -10940,7 +10989,9 @@
     "unresolved_prerequisites": [
       "Constitution 13 or higher"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_HEROIC_RESOLVE_ROUNDS|max(1,CON)"
+    ],
     "status": "partial"
   },
   {
@@ -11658,8 +11709,10 @@
       "PREFEAT:1,Cascade Spell"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_IMPROVED_CASCADE_SPELL_CL_BONUS|3"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Improved Chain Blast",
@@ -11784,8 +11837,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Energy Bomb"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_ENERGY_BOMB_INCREASED_SPLASH|5+5*floor(SPHERES_CL_DESTRUCTION/5)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Improved Energy Leap",
@@ -11870,8 +11925,10 @@
       "PRELEVEL:MIN=5"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_IMPROVED_FORCE_SHIELD_BONUS|3+floor(SPHERES_CL_PROTECTION/5)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Improved Huckster’s Gamble",
@@ -12252,8 +12309,10 @@
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy - War Paint"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_INKBOUND_PORTENTS_USES|max(1,max(SPHERES_CASTING_ABILITY,SPHERES_PRACTITIONER_MOD))"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Insidious Magic",
@@ -12314,8 +12373,10 @@
       "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,1"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_INSPIRED_LEARNING_MAX_TALENTS|SPHERES_CASTING_ABILITY"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Inspired Surge",
@@ -13026,7 +13087,9 @@
       "Draconic subtype",
       "Constitution 13+"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_LIVING_ACCUMULATOR_USES|CON"
+    ],
     "status": "partial"
   },
   {
@@ -14169,8 +14232,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_MIND_JOGGLE_ROUNDS|SPHERES_CASTING_ABILITY"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Mind Limb",
@@ -14289,8 +14354,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_MINOR_CHARM_SPECIALIST_USES|max(1,SPHERES_CASTING_ABILITY)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Minor Uncanniness Acclimation",
@@ -14769,6 +14836,7 @@
     ],
     "unresolved_prerequisites": [],
     "mechanics": [
+      "DEFINE:SPHERES_NECROTIC_HEART_TEMP_HP|HD*CHA",
       "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
       "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
       "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
@@ -14856,8 +14924,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_NIGHT_SKY_DAZZLED_PENALTY|1+floor(SPHERES_CL_DARK/5)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "No Cost Too Great",
@@ -15206,8 +15276,10 @@
       "PREVARGTEQ:SPHERES_CASTER_LEVEL,3"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_PACIFIED_STRIKE_ATTACK_BONUS|SPHERES_CASTER_LEVEL"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Parts And Pieces",
@@ -15250,8 +15322,10 @@
       "PREVARGTEQ:TL,7"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_PATHOLOGICAL_HOST_DAMAGE|HD"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Pathology",
@@ -15376,8 +15450,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Energy Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_PERPETUAL_SPHERE_MAX_ROUNDS|SPHERES_CL_DESTRUCTION"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Persistent Onslaught",
@@ -15516,8 +15592,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_PHOTOSYNTHESIS_HEAL|TL"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Piecemeal Animation",
@@ -16535,7 +16613,9 @@
     "unresolved_prerequisites": [
       "Banner class feature"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_PRIMAL_EMBLEM_ROUNDS|SPHERES_CASTING_ABILITY+floor(TL/2)"
+    ],
     "status": "partial"
   },
   {
@@ -17169,8 +17249,10 @@
     "key": "Receptive to Grafts",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_RECEPTIVE_TO_GRAFTS_IMPLANT_BONUS|max(1,floor(HD/2))"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Reckless Drone",
@@ -17377,8 +17459,10 @@
       "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,3"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_REPROGRAM_POWER_ROUNDS|SPHERES_CL_MANA"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Requested Command",
@@ -17652,6 +17736,7 @@
     "prerequisites": [],
     "unresolved_prerequisites": [],
     "mechanics": [
+      "DEFINE:SPHERES_RIME_SPELL_ROUNDS|max(1,floor(SPHERES_CASTER_LEVEL/2))",
       "DEFINE:SPHERES_METAMAGIC_RIMESPELL_COST|1"
     ],
     "status": "mechanics-added"
@@ -17777,8 +17862,10 @@
     "key": "Robustness",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_ROBUSTNESS_HEAL|HD"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Roiling Anger",
@@ -18361,6 +18448,7 @@
     "prerequisites": [],
     "unresolved_prerequisites": [],
     "mechanics": [
+      "DEFINE:SPHERES_SELECTIVE_SPELL_TARGETS|SPHERES_CASTING_ABILITY",
       "DEFINE:SPHERES_METAMAGIC_SELECTIVESPELL_COST|1"
     ],
     "status": "mechanics-added"
@@ -19058,8 +19146,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_SILVER_TONGUE_BONUS|floor(SPHERES_CL_MIND/3)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Skeletal Contortionist",
@@ -19079,7 +19169,9 @@
     "unresolved_prerequisites": [
       "charmed life class feature"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_SKELETAL_CONTORTIONIST_DR|SPHERES_CASTING_ABILITY+floor(TL/2)"
+    ],
     "status": "partial"
   },
   {
@@ -19256,6 +19348,7 @@
     "prerequisites": [],
     "unresolved_prerequisites": [],
     "mechanics": [
+      "DEFINE:SPHERES_SOLAR_SPELL_ROUNDS|max(1,floor(SPHERES_CASTER_LEVEL/2))",
       "DEFINE:SPHERES_METAMAGIC_SOLARSPELL_COST|1"
     ],
     "status": "mechanics-added"
@@ -19357,8 +19450,10 @@
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Charged Spells"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_SOUL_HARVESTER_MINUTES|SPHERES_CASTER_LEVEL"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Soul Seer",
@@ -19416,8 +19511,10 @@
       "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_SOULFIRE_BONUS|floor(TL/10)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Space-Rending Admixture",
@@ -20246,8 +20343,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_SQUADRON_COMMANDER_BONUS|floor(SPHERES_CL_WAR/10)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Squadron Network",
@@ -21067,7 +21166,9 @@
     "unresolved_prerequisites": [
       "Coordination class feature"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_SWARMING_STRIKE_ALLIES|SPHERES_CASTING_ABILITY"
+    ],
     "status": "partial"
   },
   {
@@ -21108,8 +21209,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_SWIFT_WARRIOR_CL_BONUS|if(HD>=9,3,if(HD>=5,2,1))"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Swooping Grapple",
@@ -21619,8 +21722,10 @@
       "PRELEVEL:MIN=3"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINETIC_EXOSKELETON_TEMP_HP|SPHERES_CASTING_ABILITY"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Telekinetic Fist",
@@ -21762,7 +21867,9 @@
     "unresolved_prerequisites": [
       "Judgment class ability"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TENACITY_TEMP_HP|HD+SPHERES_CASTING_ABILITY"
+    ],
     "status": "partial"
   },
   {
@@ -22235,6 +22342,7 @@
     "prerequisites": [],
     "unresolved_prerequisites": [],
     "mechanics": [
+      "DEFINE:SPHERES_THUNDERING_SPELL_ROUNDS|max(1,floor(SPHERES_CASTER_LEVEL/2))",
       "DEFINE:SPHERES_METAMAGIC_THUNDERINGSPELL_COST|2"
     ],
     "status": "mechanics-added"
@@ -22510,8 +22618,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_TOUCHSENSE_CL|TL"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Tough As Nails",
@@ -22529,7 +22639,9 @@
     "unresolved_prerequisites": [
       "Grit, luck, or panache pool"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TOUGH_AS_NAILS_TEMP_HP|TL"
+    ],
     "status": "partial"
   },
   {
@@ -23216,7 +23328,9 @@
       "Investigation sphere",
       "either the Divination sphere or Scout sphere"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_UNERRING_EYE_VALUE|7+floor(skillinfo(\"TOTALRANK\",\"Sense Motive\")/6)"
+    ],
     "status": "partial"
   },
   {
@@ -23651,7 +23765,9 @@
     "unresolved_prerequisites": [
       "Alchemy sphere (Painful Venin x2)"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_VENOMFIRE_PAINFUL_VENIN|SPHERES_CL_DESTRUCTION"
+    ],
     "status": "partial"
   },
   {
@@ -24483,7 +24599,9 @@
     "unresolved_prerequisites": [
       "Alteration sphere (Vermin Transformation (transformation)) or web bestial trait"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_WEB_MASTERY_PER_MINUTE|CON"
+    ],
     "status": "partial"
   },
   {
@@ -24587,8 +24705,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Fount Of Life"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WELLSPRING_OF_LIFE_HP|2*SPHERES_CL_LIFE"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Whispers From Beyond",
@@ -24862,8 +24982,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Expanded Materials"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WONDROUS_WARDROBE_DC_BONUS|floor(SPHERES_CASTER_LEVEL/2)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "World In Miniature",

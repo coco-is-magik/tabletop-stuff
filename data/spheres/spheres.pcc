@@ -93,6 +93,14 @@ ABILITYCATEGORY:spheres_striker_categories.lst
 CLASS:spheres_technician_class.lst
 CLASS:spheres_tempestarii_class.lst
 ABILITY:spheres_tempestarii_features.lst
+CLASS:spheres_forest-lord_class.lst
+ABILITY:spheres_forest-lord_features.lst
+CLASS:spheres_waking-sleeper_class.lst
+ABILITY:spheres_waking-sleeper_features.lst
+CLASS:spheres_archwizard_class.lst
+ABILITY:spheres_archwizard_features.lst
+CLASS:spheres_magemage_class.lst
+ABILITY:spheres_magemage_features.lst
 ABILITY:spheres_technician_features.lst
 ABILITYCATEGORY:spheres_technician_categories.lst
 ABILITYCATEGORY:spheres_categories_conscript.lst

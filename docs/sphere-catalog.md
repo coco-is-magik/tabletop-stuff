@@ -80,7 +80,10 @@ and has not been verified.
 
 - Complete talent-by-talent persistent mechanical effects, including Equipment
   proficiency groups/armor, unarmed damage progression, skill/stat bonuses and
-  associated-skill overlap rules.
+  associated-skill overlap rules. 804 of the 2,326 generated talents now expose
+  a persistent reference value (caster-level area/duration/damage references and
+  the War totem/rally/momentum subsystem); the remainder are conditional or
+  multi-part and stay text-only.
 - All free grants, subchoices, package edge cases and special repeat conditions.
 - Companion/gizmo/veil character-building choices and derived statistics where
   required; tactical resolution remains outside PCGen.

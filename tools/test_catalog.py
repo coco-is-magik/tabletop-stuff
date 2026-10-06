@@ -1184,6 +1184,133 @@ class CatalogTest(unittest.TestCase):
         for content in (leadership, warleader):
             self.assertIn('|TYPE=SpheresTraining', content.splitlines()[2])
 
+    def test_war_reference_values_do_not_grant_combat_bonuses(self):
+        records = {line.split('\t')[0]: line for line in self.files['spheres_power_war.lst'].splitlines()}
+        base = records['War Sphere']
+        self.assertIn('TOTEM_RADIUS_FEET|50+5*floor(SPHERES_CL_WAR/2)', base)
+        self.assertIn('TOTEM_WAR_DAMAGE|2+floor(SPHERES_CL_WAR/5)', base)
+        self.assertIn('COMMANDING_AID_ATTACK|SPHERES_CL_WAR+SPHERES_CASTING_ABILITY', base)
+        self.assertNotIn('BONUS:COMBAT', base)
+        self.assertIn('TOTEM_SPEED_FEET|5+5*floor(SPHERES_CL_WAR/5)', records['War - Totem Of Speed'])
+        self.assertIn('TOTEM_STABILITY_CMD|2+floor(SPHERES_CL_WAR/5)', records['War - Totem Of Stability'])
+        self.assertIn('TOTEM_STUMBLING_CMD|-2-floor(SPHERES_CL_WAR/5)', records['War - Totem Of Stumbling'])
+        self.assertIn('MASS_RALLY_ADDITIONAL_TARGETS|max(1,floor(SPHERES_CL_WAR/2))',
+                      records['War - Mass Rally'])
+        for name in ('War Sphere', 'War - Totem Of Speed', 'War - Totem Of Stability',
+                     'War - Totem Of Stumbling', 'War - Mass Rally'):
+            self.assertNotIn('BONUS:COMBAT', records[name])
+            self.assertNotIn('\tMOVE:', records[name])
+
+    def test_war_totem_scaling_references_use_war_caster_level(self):
+        records = {line.split('\t')[0]: line for line in self.files['spheres_power_war.lst'].splitlines()}
+        expected = {
+            'War - Blood Totem': ('BLOOD_TOTEM_REDUCTION|1+floor(SPHERES_CL_WAR/5)',
+                                  'BLOOD_TOTEM_RETRIBUTION|1+floor(SPHERES_CL_WAR/5)'),
+            'War - Invigorating Totem': ('INVIGORATING_TEMP_HP_ROUND|1+floor(SPHERES_CL_WAR/5)',
+                                         'INVIGORATING_TEMP_HP_CAP|SPHERES_CL_WAR'),
+            'War - Quickening Totem': ('QUICKENING_AOO_AC|2+floor(SPHERES_CL_WAR/4)',),
+            'War - Scourging Totem': ('SCOURGING_DAMAGE|max(1,floor(SPHERES_CL_WAR/2))',),
+            'War - Totem Of Tactical Prowess': ('TACTICAL_PROWESS_INCREASE|1+floor(SPHERES_CL_WAR/5)',),
+            'War - Totem Of The Dragonslayer': ('DRAGONSLAYER_REFLEX|1+floor(SPHERES_CL_WAR/5)',),
+        }
+        for name, formulas in expected.items():
+            for formula in formulas:
+                self.assertIn(formula, records[name])
+            self.assertNotIn('BONUS:COMBAT', records[name])
+            self.assertNotIn('BONUS:HP', records[name])
+            self.assertNotIn('\tDR:', records[name])
+
+    def test_war_duration_and_trigger_references_stay_table_resolved(self):
+        records = {line.split('\t')[0]: line for line in self.files['spheres_power_war.lst'].splitlines()}
+        expected = {
+            'War - Blood Bond': ('BLOOD_BOND_MINUTES|10*SPHERES_CL_WAR',
+                                 'BLOOD_BOND_MEMBER_MINUTES|60*SPHERES_CL_WAR'),
+            'War - Combat Inertia': ('COMBAT_INERTIA_MOMENTUM|1+floor(SPHERES_CL_WAR/10)',),
+            'War - Totem Of Whispers': ('WHISPERS_PENALTY|-1-floor(SPHERES_CL_WAR/2)',
+                                        'WHISPERS_FAIL_CHANCE|10+5*floor(SPHERES_CL_WAR/5)',
+                                        'WHISPERS_PERFORM_DC|10+SPHERES_CL_WAR'),
+            'War - Totem Of The Heroic Heart': ('HEROIC_HEART_BONUS|4+floor(SPHERES_CL_WAR/5)',),
+            'War - Totem Of Screaming Skin': ('SCREAMING_SKIN_DAMAGE|SPHERES_CL_WAR',),
+            'War - Totem Of Allegiance': ('ALLEGIANCE_BONUS|1+floor(SPHERES_CL_WAR/10)',),
+            'War - Totem Of Deep Thought': ('DEEP_THOUGHT_CONCENTRATION|1+floor(SPHERES_CL_WAR/5)',),
+            'War - Hammer And Anvil': ('HAMMER_SHARED_FEATS|1+floor(SPHERES_CL_WAR/10)',),
+            'War - Lingering Resentment': ('LINGERING_ROUNDS|2',),
+        }
+        for name, formulas in expected.items():
+            for formula in formulas:
+                self.assertIn(formula, records[name])
+            self.assertNotIn('BONUS:COMBAT', records[name])
+            self.assertNotIn('BONUS:SKILL', records[name])
+            self.assertNotIn('BONUS:SAVE', records[name])
+
+    def test_war_aligned_and_armor_totem_references_stay_table_resolved(self):
+        records = {line.split('\t')[0]: line for line in self.files['spheres_power_war.lst'].splitlines()}
+        expected = {
+            'War - Totem Of Courage': ('COURAGE_ATTACK|1+floor(SPHERES_CL_WAR/10)',
+                                       'COURAGE_FEAR_SAVE|1+floor(SPHERES_CL_WAR/5)'),
+            'War - Totem Of Iron': ('IRON_NATURAL_ARMOR|1+floor(SPHERES_CL_WAR/10)',),
+            'War - Totem Of Liberation': ('LIBERATION_BONUS|1+floor(SPHERES_CL_WAR/5)',),
+            'War - Totem Of Enemies': ('ENEMIES_PENALTY|-1-floor(SPHERES_CL_WAR/10)',),
+        }
+        for name, formulas in expected.items():
+            for formula in formulas:
+                self.assertIn(formula, records[name])
+            self.assertNotIn('BONUS:COMBAT', records[name])
+            self.assertNotIn('BONUS:SAVE', records[name])
+            self.assertNotIn('BONUS:SKILL', records[name])
+
+    def test_repeatable_talents_never_own_defines(self):
+        for row in self.review:
+            if row['repeat_limit'] > 1:
+                for tag in row['mechanics']:
+                    self.assertFalse(tag.startswith('DEFINE:'),
+                                     f"{row['key']} must not own {tag}")
+
+    def test_talent_reference_defines_grant_no_character_bonuses(self):
+        checked = 0
+        for row in self.review:
+            mechanics = row['mechanics']
+            if not mechanics or row['repeat_limit'] > 1:
+                continue
+            if not all(tag.startswith('DEFINE:') for tag in mechanics):
+                continue
+            line = next((line for line in ''.join(
+                self.files[name] for name in self.files if name.endswith('.lst')
+                and not name.endswith('_effects.lst') and 'categories' not in name).splitlines()
+                if line.startswith(row['key'] + '\t')), None)
+            self.assertIsNotNone(line, row['key'])
+            for forbidden in ('BONUS:COMBAT', 'BONUS:SAVE', 'BONUS:SKILL', 'BONUS:HP', 'BONUS:VAR|SPHERES_CL'):
+                self.assertNotIn(forbidden, line, row['key'])
+            checked += 1
+        self.assertGreater(checked, 40)
+
+    def test_area_talent_references_use_sphere_specific_caster_level(self):
+        cases = {
+            'spheres_power_blood.lst': ('Blood - Internal Propulsion', 'SPHERES_CL_BLOOD',
+                                        'INTERNAL_PROPULSION_FEET|10+5*floor(SPHERES_CL_BLOOD/5)'),
+            'spheres_power_dark.lst': ('Dark - Shifting Shadows', 'SPHERES_CL_DARK',
+                                       'SHIFTING_SHADOWS_SQUARES|1+floor(SPHERES_CL_DARK/2)'),
+            'spheres_power_destruction.lst': ('Destruction - Sculpt Blast', 'SPHERES_CL_DESTRUCTION',
+                                              'SCULPT_BLAST_RADIUS|10+5*floor(SPHERES_CL_DESTRUCTION/5)'),
+            'spheres_power_light.lst': ('Light - Bend Radiance', 'SPHERES_CL_LIGHT',
+                                        'BEND_RADIANCE_CUBES|1+floor(SPHERES_CL_LIGHT/2)'),
+            'spheres_power_mana.lst': ('Mana - Flexible Shuffle', 'SPHERES_CL_MANA',
+                                       'FLEXIBLE_SHUFFLE_SQUARES|3+floor(SPHERES_CL_MANA/2)'),
+            'spheres_power_nature.lst': ('Nature - Repress Element', 'SPHERES_CL_NATURE',
+                                         'REPRESS_ELEMENT_RADIUS|5+5*floor(SPHERES_CL_NATURE/5)'),
+            'spheres_power_warp.lst': ('Warp - Wormhole', 'SPHERES_CL_WARP',
+                                       'WORMHOLE_SQUARES|1+floor(SPHERES_CL_WARP/2)'),
+        }
+        for filename, (key, variable, formula) in cases.items():
+            line = next(line for line in self.files[filename].splitlines()
+                        if line.startswith(key + '\t'))
+            self.assertIn(formula, line)
+            self.assertNotIn('SPHERES_CASTER_LEVEL', line)
+            self.assertNotIn('BONUS:COMBAT', line)
+            self.assertNotIn('BONUS:SAVE', line)
+            self.assertNotIn('\tMOVE:', line)
+            self.assertIn(variable, line)
+
 
 if __name__ == '__main__':
     unittest.main()

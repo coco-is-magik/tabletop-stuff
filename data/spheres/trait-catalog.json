@@ -43,7 +43,9 @@
     "key": "Spheres Trait ~ Allied with the Spirits",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_WAR|max(0,min(2,TL-SPHERES_CL_WAR))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere"
+    ]
   },
   {
     "name": "Ammo Gatherer",
@@ -160,7 +162,9 @@
     "key": "Spheres Trait ~ Blood Cult Survivor",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "DEFINE:SPHERES_BLOOD_CULT_SURVIVOR_INCREMENT|1+floor(HD/5)"
+    ]
   },
   {
     "name": "Blood Manipulator",
@@ -336,7 +340,11 @@
       "such as an agency or guild",
       "and have experience with esoteric rituals and incantations"
     ],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_DIVINATION|max(0,min(1,TL-SPHERES_CL_DIVINATION))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "BONUS:VAR|SPHERES_CL_MIND|max(0,min(1,TL-SPHERES_CL_MIND))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "BONUS:VAR|SPHERES_CL_TELEKINESIS|max(0,min(1,TL-SPHERES_CL_TELEKINESIS))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
+    ]
   },
   {
     "name": "Corpse Watcher",
@@ -379,7 +387,9 @@
     "key": "Spheres Trait ~ Creative Knack",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_CREATION|max(0,min(2,TL-SPHERES_CL_CREATION))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere"
+    ]
   },
   {
     "name": "Cryptwood Survivor",
@@ -430,7 +440,11 @@
     "unresolved_prerequisites": [
       "You must openly belong to a publicly known religious organization"
     ],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_FATE|max(0,min(1,TL-SPHERES_CL_FATE))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "BONUS:VAR|SPHERES_CL_LIFE|max(0,min(1,TL-SPHERES_CL_LIFE))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "BONUS:VAR|SPHERES_CL_PROTECTION|max(0,min(1,TL-SPHERES_CL_PROTECTION))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
+    ]
   },
   {
     "name": "Destructive Adept",
@@ -446,7 +460,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "DEFINE:SPHERES_DESTRUCTIVE_ADEPT_HALF_CL|floor(SPHERES_CL_CREATION/2)",
+      "DEFINE:SPHERES_DESTRUCTIVE_ADEPT_FULL_CL|SPHERES_CL_CREATION"
+    ]
   },
   {
     "name": "Destructive Reservoir",
@@ -526,7 +543,11 @@
     "key": "Spheres Trait ~ Doom Cultist",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_BLOOD|max(0,min(1,TL-SPHERES_CL_BLOOD))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere",
+      "BONUS:VAR|SPHERES_CL_DEATH|max(0,min(1,TL-SPHERES_CL_DEATH))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "BONUS:VAR|SPHERES_CL_DESTRUCTION|max(0,min(1,TL-SPHERES_CL_DESTRUCTION))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"
+    ]
   },
   {
     "name": "Dragon Training",
@@ -631,7 +652,11 @@
     "key": "Spheres Trait ~ Fairy Magic",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_FALLENFEY|max(0,min(1,TL-SPHERES_CL_FALLENFEY))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
+      "BONUS:VAR|SPHERES_CL_ILLUSION|max(0,min(1,TL-SPHERES_CL_ILLUSION))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "BONUS:VAR|SPHERES_CL_MIND|max(0,min(1,TL-SPHERES_CL_MIND))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere"
+    ]
   },
   {
     "name": "Favored Curse",
@@ -658,7 +683,9 @@
     "key": "Spheres Trait ~ Favored Damage",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "DEFINE:SPHERES_FAVORED_DAMAGE_CL_BONUS|2"
+    ]
   },
   {
     "name": "Favorite Shape",
@@ -726,7 +753,9 @@
     "key": "Spheres Trait ~ Flair for Fate",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_FATE|max(0,min(2,TL-SPHERES_CL_FATE))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
+    ]
   },
   {
     "name": "Focused Hearing",
@@ -794,7 +823,9 @@
     "key": "Spheres Trait ~ Gift for Magic",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "DEFINE:SPHERES_GIFT_FOR_MAGIC_CL_BONUS|2"
+    ]
   },
   {
     "name": "Groundbreaker",
@@ -825,7 +856,11 @@
       "be it an element",
       "ideal or actual spirit"
     ],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_ALTERATION|max(0,min(1,TL-SPHERES_CL_ALTERATION))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "BONUS:VAR|SPHERES_CL_NATURE|max(0,min(1,TL-SPHERES_CL_NATURE))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "BONUS:VAR|SPHERES_CL_WEATHER|max(0,min(1,TL-SPHERES_CL_WEATHER))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere"
+    ]
   },
   {
     "name": "Guardian Of The Real",
@@ -1338,7 +1373,9 @@
     "key": "Spheres Trait ~ Natural Shifter (Racial)",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_ALTERATION|max(0,min(2,TL-SPHERES_CL_ALTERATION))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere"
+    ]
   },
   {
     "name": "Necrotic Tinkerer",
@@ -1380,7 +1417,9 @@
     "key": "Spheres Trait ~ Omen Reader",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "DEFINE:SPHERES_OMEN_READER_CL|max(1,floor(HD/2))"
+    ]
   },
   {
     "name": "Pact Magic Training",
@@ -1409,7 +1448,9 @@
     "key": "Spheres Trait ~ Paranoid",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:SKILL|Sense Motive|2|TYPE=Trait"
+    ]
   },
   {
     "name": "Photosynthetic Magic",
@@ -1506,7 +1547,9 @@
     "key": "Spheres Trait ~ Practiced Aim",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:COMBAT|TOHIT|1|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"
+    ]
   },
   {
     "name": "Practiced Maneuver",
@@ -1547,7 +1590,11 @@
     "key": "Spheres Trait ~ Predetermined Caster",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_FATE|max(0,min(1,TL-SPHERES_CL_FATE))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "BONUS:VAR|SPHERES_CL_TIME|max(0,min(1,TL-SPHERES_CL_TIME))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "BONUS:VAR|SPHERES_CL_WARP|max(0,min(1,TL-SPHERES_CL_WARP))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere"
+    ]
   },
   {
     "name": "Prosperian Prodigy",
@@ -1560,7 +1607,9 @@
     "key": "Spheres Trait ~ Prosperian Prodigy",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_WEATHER|max(0,min(2,TL-SPHERES_CL_WEATHER))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere"
+    ]
   },
   {
     "name": "Psychic Training",
@@ -1690,7 +1739,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "DEFINE:SPHERES_RESTORATIVE_ADEPT_HALF_CL|floor(SPHERES_CL_CREATION/2)",
+      "DEFINE:SPHERES_RESTORATIVE_ADEPT_FULL_CL|SPHERES_CL_CREATION"
+    ]
   },
   {
     "name": "Sacred Preparation",
@@ -1857,7 +1909,9 @@
     "key": "Spheres Trait ~ Sky Dancer",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "DEFINE:SPHERES_SKY_DANCER_HP|2*skillinfo(\"TOTALRANK\",\"Craft (airship)\")"
+    ]
   },
   {
     "name": "Skyport Cartographer",
@@ -1886,7 +1940,11 @@
     "key": "Spheres Trait ~ Smoke And Mirrors",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_DARK|max(0,min(1,TL-SPHERES_CL_DARK))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "BONUS:VAR|SPHERES_CL_ILLUSION|max(0,min(1,TL-SPHERES_CL_ILLUSION))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "BONUS:VAR|SPHERES_CL_LIGHT|max(0,min(1,TL-SPHERES_CL_LIGHT))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere"
+    ]
   },
   {
     "name": "Snobby",
@@ -2152,7 +2210,9 @@
     "key": "Spheres Trait ~ Umbral Blood (Racial)",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "BONUS:VAR|SPHERES_CL_DARK|max(0,min(2,TL-SPHERES_CL_DARK))|TYPE=Trait|PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere"
+    ]
   },
   {
     "name": "Unorthodox Casting",
@@ -2180,7 +2240,9 @@
     "key": "Spheres Trait ~ Unrealized Telekinetic",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "DEFINE:SPHERES_UNREALIZED_TELEKINETIC_CL|TL"
+    ]
   },
   {
     "name": "Untethered",
@@ -2208,7 +2270,9 @@
     "key": "Spheres Trait ~ Waking Dreamer",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": []
+    "mechanics": [
+      "DEFINE:SPHERES_WAKING_DREAMER_ROUNDS|HD"
+    ]
   },
   {
     "name": "Weird Virtuoso",
