@@ -1,61 +1,321 @@
 {
+  "Precogniscent Protection": {
+    "tags": [
+      "DEFINE:SPHERES_ACTIVE_DIVINATION_SENSES|0",
+      "BONUS:COMBAT|AC|min(SPHERES_ACTIVE_DIVINATION_SENSES,1+floor(TL/5))|TYPE=Insight"
+    ]
+  },
+  "Precogniscent Resistance": {
+    "tags": [
+      "DEFINE:SPHERES_ACTIVE_DIVINATION_SENSES|0",
+      "BONUS:SAVE|ALL|min(SPHERES_ACTIVE_DIVINATION_SENSES,1+floor(TL/4))|TYPE=Resistance"
+    ]
+  },
+  "Precogniscent Smite": {
+    "tags": [
+      "DEFINE:SPHERES_ACTIVE_DIVINATION_SENSES|0",
+      "BONUS:COMBAT|TOHIT,DAMAGE|min(SPHERES_ACTIVE_DIVINATION_SENSES,1+floor(TL/5))|TYPE=Insight",
+      "DEFINE:SPHERES_PRECOGNISCENT_SMITE_MISS_CHANCE|5+5*floor(TL/5)"
+    ]
+  },
+  "Careful Magic": {
+    "tags": [
+      "DEFINE:SPHERES_CAREFUL_MAGIC_DISPEL_MSD_BONUS|max(1,SPHERES_CASTING_ABILITY)"
+    ]
+  },
+  "Complex Animations": {
+    "tags": [
+      "DEFINE:SPHERES_ANIMATED_OBJECT_EXTRA_CONSTRUCTION_POINTS|1"
+    ]
+  },
+  "Durable Objects": {
+    "tags": [
+      "BONUS:VAR|SPHERES_ANIMATED_OBJECT_DURABLE|1"
+    ]
+  },
+  "Analyze Caster": {
+    "tags": [
+      "BONUS:SITUATION|Spellcraft=Determine casting tradition with Detect Spellcaster|5"
+    ]
+  },
+  "Vigilant Skeptic": {
+    "tags": [
+      "BONUS:SITUATION|Perception=Target benefiting from a glamer|floor(TL/2)",
+      "BONUS:SITUATION|Sense Motive=Target benefiting from a glamer|floor(TL/2)",
+      "DEFINE:SPHERES_SKEPTIC_FIGMENT_RANGE|5+5*floor(skillinfo(\"TOTALRANK\",\"Perception\")/2)"
+    ]
+  },
+  "Inhuman Defiler": {
+    "tags": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|floor(SPHERES_NECROSIS_FEAT_COUNT/2)|PREVARGTEQ:SPHERES_NECROSIS_FEAT_COUNT,4"
+    ]
+  },
+  "Scholar Of Past And Future": {
+    "tags": [
+      "BONUS:SKILL|Knowledge (History)|if(skillinfo(\"TOTALRANK\",\"Knowledge (History)\")>=10,4,2)",
+      "DEFINE:SPHERES_SCHOLAR_DIVINE_CL_BONUS|max(0,min(ceil(skillinfo(\"TOTALRANK\",\"Knowledge (History)\")/2),TL-SPHERES_CL_DIVINATION))"
+    ]
+  },
+  "Banshee’s Sotto Voce": {
+    "tags": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1"
+    ]
+  },
+  "Between Two Worlds": {
+    "tags": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_BETWEEN_TWO_WORLDS_ROUNDS|SPHERES_NECROSIS_FEAT_COUNT"
+    ]
+  },
+  "Deathknight’s Purchase": {
+    "tags": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_DEATHKNIGHT_PURCHASE_D6|SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_DEATHKNIGHT_PURCHASE_FLAT|floor(TL/2)",
+      "DEFINE:SPHERES_DEATHKNIGHT_PURCHASE_MINUTES|SPHERES_NECROSIS_FEAT_COUNT"
+    ]
+  },
+  "Hemomancy": {
+    "tags": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_HEMOMANCY_BLEEDING_BLINDSENSE|15*SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_HEMOMANCY_ACTIVE_ROUNDS|SPHERES_NECROSIS_FEAT_COUNT"
+    ]
+  },
+  "Wandering Spirit": {
+    "tags": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_PHYLACTERY_HP|5*SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_PHYLACTERY_BREAK_DC|5*SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_PHYLACTERY_HARDNESS|3*SPHERES_NECROSIS_FEAT_COUNT"
+    ]
+  },
+  "Cold Heart": {
+    "tags": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "BONUS:VAR|ColdResistanceBonus,ElectricityResistanceBonus|10|TYPE=Resistance|PREVARGTEQ:SPHERES_NECROSIS_FEAT_COUNT,4",
+      "DEFINE:SPHERES_COLD_HEART_ACTIVE_RESISTANCE|5*SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_COLD_HEART_ACTIVE_ROUNDS|SPHERES_NECROSIS_FEAT_COUNT"
+    ]
+  },
+  "Resistant Veins": {
+    "tags": [
+      "BONUS:COMBAT|AC|1+floor(SPHERES_MAGIC_SKILL_BONUS/5)|TYPE=NaturalArmor"
+    ]
+  },
+  "Channel Resistance": {
+    "tags": [
+      "ABILITY:Special Ability|AUTOMATIC|Channel Resistance",
+      "BONUS:VAR|ChannelResistance|2"
+    ]
+  },
+  "Fey Interference": {
+    "tags": [
+      "DEFINE:SPHERES_FEY_INTERFERENCE_USES|floor(TL/2)",
+      "DEFINE:SPHERES_FEY_INTERFERENCE_RANGE|30"
+    ]
+  },
+  "Vegetalker": {
+    "tags": [
+      "DEFINE:SPHERES_VEGETALKER_CL|TL"
+    ]
+  },
+  "Forest Roots": {
+    "tags": [
+      "DEFINE:SPHERES_FOREST_ROOTS_RANGE|100+10*TL",
+      "DEFINE:SPHERES_FOREST_ROOTS_RADIUS|50"
+    ]
+  },
+  "Roiling Anger": {
+    "tags": [
+      "BONUS:VAR|KiPoints|1",
+      "BONUS:VAR|RageDuration|3|PREABILITY:1,CATEGORY=Special Ability,Standard Rage"
+    ]
+  },
+  "Extra Secret": {
+    "tags": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Hedgewitch Secret|1"
+    ]
+  },
   "Extra Wraith Haunt": {
-    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:ABILITYPOOL|Wraith Wraith Haunt|1"]
+    "tags": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Wraith Wraith Haunt|1"
+    ]
   },
   "Friends In Close Places": {
-    "prerequisites": ["PREABILITY:1,CATEGORY=Spheres Combat Talent,Leadership Sphere", "PREABILITY:1,CATEGORY=Spheres Leadership Package,Leadership Package - Followers", "PREABILITY:1,CATEGORY=Commander Logistic Specialty,Commander Call In A Specialist"],
-    "tags": ["DEFINE:SPHERES_COMMANDER_FOLLOWER_SPECIALIST_HOURS|SPHERES_COMMANDER_SPECIALIST_ARRIVAL_HOURS/2", "DEFINE:SPHERES_COMMANDER_FOLLOWER_CHECK_BONUS|if(skillinfo(\"TOTALRANK\",\"Diplomacy\")>=10,4,2)"]
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Leadership Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Leadership Package,Leadership Package - Followers",
+      "PREABILITY:1,CATEGORY=Commander Logistic Specialty,Commander Call In A Specialist"
+    ],
+    "tags": [
+      "DEFINE:SPHERES_COMMANDER_FOLLOWER_SPECIALIST_HOURS|SPHERES_COMMANDER_SPECIALIST_ARRIVAL_HOURS/2",
+      "DEFINE:SPHERES_COMMANDER_FOLLOWER_CHECK_BONUS|if(skillinfo(\"TOTALRANK\",\"Diplomacy\")>=10,4,2)"
+    ]
   },
   "Extra Shadowstuff": {
-    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|2"]
+    "tags": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|2"
+    ]
   },
   "Greater Shadowmark": {
-    "tags": ["BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_DIE_SIZE|2"]
+    "tags": [
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_DIE_SIZE|2"
+    ]
+  },
+  "Surreal Strike": {
+    "tags": [
+      "DEFINE:SPHERES_SURREAL_STRIKE_LEVEL|0",
+      "BONUS:VAR|SPHERES_SURREAL_STRIKE_LEVEL|max(1,TL-4)",
+      "ABILITY:Special Ability|AUTOMATIC|Fey Adept Shadowmark Dice (Reference)|Fey Adept Shadowmark Die Size (Reference)|Fey Adept Shadowmark Penalty (Reference)"
+    ]
+  },
+  "Shadow Magic": {
+    "tags": [
+      "DEFINE:SPHERES_CL_ILLUSION|SPHERES_CASTER_LEVEL",
+      "DEFINE:SPHERES_HEDGEWITCH_SHADOW_MAGIC_CL_BONUS|0",
+      "DEFINE:SPHERES_SHADOW_MAGIC_TALENT_CAPACITY|1+floor(SPHERES_SURREAL_FEAT_COUNT/5)",
+      "DEFINE:SPHERES_SHADOW_MAGIC_EFFECT_CL|max(1,SPHERES_CL_ILLUSION-2+SPHERES_HEDGEWITCH_SHADOW_MAGIC_CL_BONUS)"
+    ]
+  },
+  "Shadow Shield": {
+    "tags": [
+      "DEFINE:SPHERES_SHADOW_SHIELD_DICE|TL",
+      "DEFINE:SPHERES_SHADOW_SHIELD_DIE_SIZE|4",
+      "DEFINE:SPHERES_SHADOW_SHIELD_RANGE|25+5*floor(TL/2)",
+      "DEFINE:SPHERES_SHADOW_SHIELD_REDUCTION|1+floor(TL/5)",
+      "DEFINE:SPHERES_SHADOW_SHIELD_HP_BONUS|0",
+      "DEFINE:SPHERES_SHADOW_SHIELD_ALL_DAMAGE|0"
+    ]
+  },
+  "Improved Shadow Shield": {
+    "tags": [
+      "BONUS:VAR|SPHERES_SHADOW_SHIELD_HP_BONUS|TL|PREFEAT:1,Shadow Shield",
+      "BONUS:VAR|SPHERES_SHADOW_SHIELD_ALL_DAMAGE|1|PREFEAT:1,Shadow Shield"
+    ]
+  },
+  "Shadowstuff Armament": {
+    "tags": [
+      "DEFINE:SPHERES_SHADOW_ARMAMENT_OBJECTS|1+floor(TL/5)"
+    ]
   },
   "Extra Nexus Powers": {
-    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|SPHERES_SOUL_WEAVER_BOUND_SOULS|2"]
+    "tags": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_SOUL_WEAVER_BOUND_SOULS|2"
+    ]
   },
   "Rotten Hordes": {
-    "tags": ["BONUS:VAR|SPHERES_SPELL_POINTS|1"]
+    "tags": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1"
+    ]
   },
   "Pathology": {
-    "tags": ["MULT:YES", "STACK:NO", "SELECT:2", "CHOOSE:STRING|Blinding sickness|Bonechill|Bubonic plague|Cackle fever|Cholera|Filth fever|Leprosy|Mindfire|Red ache|Shakes|Sleeping sickness|Slimy doom"]
+    "tags": [
+      "MULT:YES",
+      "STACK:NO",
+      "SELECT:2",
+      "CHOOSE:STRING|Blinding sickness|Bonechill|Bubonic plague|Cackle fever|Cholera|Filth fever|Leprosy|Mindfire|Red ache|Shakes|Sleeping sickness|Slimy doom"
+    ]
   },
   "Cautious Incantation": {
-    "tags": ["MULT:YES", "STACK:NO", "CHOOSE:SKILL|RANKS=3"]
+    "tags": [
+      "MULT:YES",
+      "STACK:NO",
+      "CHOOSE:SKILL|RANKS=3"
+    ]
   },
   "Ritualistic Perseverance": {
-    "tags": ["MULT:YES", "STACK:NO", "SELECT:2", "CHOOSE:SKILL|RANKS=3"]
+    "tags": [
+      "MULT:YES",
+      "STACK:NO",
+      "SELECT:2",
+      "CHOOSE:SKILL|RANKS=3"
+    ]
   },
   "Spell Proxy": {
-    "additional_unresolved_prerequisites": ["Must not possess the Personal Magics sphere-specific drawback (Special)"]
+    "additional_unresolved_prerequisites": [
+      "Must not possess the Personal Magics sphere-specific drawback (Special)"
+    ]
   },
   "Extra Blended Training Talent": {
-    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:ABILITYPOOL|Spheres Blended Talent Allocation|1"]
+    "tags": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Spheres Blended Talent Allocation|1"
+    ]
   },
   "Extra Emotion": {
-    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:ABILITYPOOL|Eliciter Emotion|1"]
+    "tags": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Eliciter Emotion|1"
+    ]
   },
   "Extra Psionics": {
-    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|SPHERES_SYMBIAT_PSIONICS_ROUNDS|6"]
+    "tags": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_SYMBIAT_PSIONICS_ROUNDS|6"
+    ]
   },
   "Extra Invocations": {
-    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|SPHERES_THAUMATURGE_INVOCATION_USES|2"]
+    "tags": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_THAUMATURGE_INVOCATION_USES|2"
+    ]
   },
   "Extra Mystic Combat": {
-    "tags": ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:ABILITYPOOL|Mageknight Mystic Combat|1"]
+    "tags": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Mageknight Mystic Combat|1"
+    ]
+  },
+  "Extra Bestial Trait": {
+    "tags": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Shifter Bestial Trait|1"
+    ]
   },
   "Terrain Defiler": {
-    "additional_prerequisites": ["!PREFEAT:1,Terrain Focus"]
+    "additional_prerequisites": [
+      "!PREFEAT:1,Terrain Focus"
+    ]
   },
   "Specialist Defiler": {
-    "additional_prerequisites": ["!PREFEAT:1,Terrain Focus"]
+    "additional_prerequisites": [
+      "!PREFEAT:1,Terrain Focus"
+    ]
   },
   "Terrain Focus": {
-    "additional_prerequisites": ["!PREFEAT:1,Terrain Defiler,Specialist Defiler"]
+    "additional_prerequisites": [
+      "!PREFEAT:1,Terrain Defiler,Specialist Defiler"
+    ]
   },
   "Basic Magic Training": {
-    "prerequisites": ["!PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"],
+    "prerequisites": [
+      "!PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
+    ],
     "tags": [
       "ABILITY:Special Ability|AUTOMATIC|Spheres Casting Core",
       "BONUS:VAR|SPHERES_CASTER_LEVEL,SPHERES_MAGIC_SKILL_BONUS|1|PREVAREQ:SPHERES_SPELL_POOL_LEVELS,0",
@@ -67,7 +327,9 @@
     ]
   },
   "Advanced Magic Training": {
-    "prerequisites": ["PREMULT:1,[PREFEAT:1,Basic Magic Training],[PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core]"],
+    "prerequisites": [
+      "PREMULT:1,[PREFEAT:1,Basic Magic Training],[PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core]"
+    ],
     "tags": [
       "BONUS:VAR|SPHERES_CASTER_LEVEL|max(0,floor((TL-SPHERES_SPELL_POOL_LEVELS)/2)-max(0,1-SPHERES_SPELL_POOL_LEVELS))",
       "BONUS:VAR|SPHERES_MAGIC_SKILL_BONUS|max(0,TL-SPHERES_SPELL_POOL_LEVELS-max(0,1-SPHERES_SPELL_POOL_LEVELS))",
@@ -75,31 +337,95 @@
     ]
   },
   "Great Focus": {
-    "prerequisites": ["PREABILITY:2,CATEGORY=Spheres Combat Talent,TYPE.SpheresBaseSphere", "PREATT:6"],
-    "tags": ["DEFINE:SPHERES_MARTIAL_FOCUS_CAPACITY|2"]
+    "prerequisites": [
+      "PREABILITY:2,CATEGORY=Spheres Combat Talent,TYPE.SpheresBaseSphere",
+      "PREATT:6"
+    ],
+    "tags": [
+      "DEFINE:SPHERES_MARTIAL_FOCUS_CAPACITY|2"
+    ]
   },
   "Deadly Targeting": {
-    "tags": ["DEFINE:SPHERES_DESTRUCTIVE_BLAST_THREAT_MIN|19"]
+    "tags": [
+      "DEFINE:SPHERES_DESTRUCTIVE_BLAST_THREAT_MIN|19"
+    ]
   },
   "Deadened Flesh": {
-    "tags": ["BONUS:VAR|SPHERES_SPELL_POINTS|1"]
+    "tags": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "BONUS:COMBAT|AC|floor(SPHERES_NECROSIS_FEAT_COUNT/2)|TYPE=NaturalArmor|PREVARGTEQ:SPHERES_NECROSIS_FEAT_COUNT,4",
+      "DR:floor(SPHERES_NECROSIS_FEAT_COUNT*0.5)/-|PREVARGTEQ:SPHERES_NECROSIS_FEAT_COUNT,4"
+    ]
   },
   "Numb Mind": {
-    "tags": ["BONUS:VAR|SPHERES_SPELL_POINTS|1"]
+    "tags": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1"
+    ]
   },
   "Counterspell": {
-    "prerequisites": ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core", "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,5"],
-    "tags": ["DEFINE:SPHERES_COUNTERSPELL_RANGE|100+10*SPHERES_CASTER_LEVEL", "DEFINE:SPHERES_COUNTERSPELL_CHECK_BONUS|0", "DEFINE:SPHERES_COUNTERSPELL_CHECK|SPHERES_MAGIC_SKILL_BONUS+SPHERES_COUNTERSPELL_CHECK_BONUS"]
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,5"
+    ],
+    "tags": [
+      "DEFINE:SPHERES_COUNTERSPELL_RANGE|100+10*SPHERES_CASTER_LEVEL",
+      "DEFINE:SPHERES_COUNTERSPELL_CHECK_BONUS|0",
+      "DEFINE:SPHERES_COUNTERSPELL_CHECK|SPHERES_MAGIC_SKILL_BONUS+SPHERES_COUNTERSPELL_CHECK_BONUS"
+    ]
   },
   "Counterspell Mastery": {
-    "tags": ["BONUS:VAR|SPHERES_COUNTERSPELL_CHECK_BONUS|2"]
+    "tags": [
+      "BONUS:VAR|SPHERES_COUNTERSPELL_CHECK_BONUS|2"
+    ]
   },
   "Improved Counterspell": {
-    "prerequisites": ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core", "PREFEAT:1,Counterspell", "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,10"],
-    "tags": ["DEFINE:SPHERES_COUNTERSPELL_ADDITIONAL_EFFECTS|floor(SPHERES_CASTER_LEVEL/5)"]
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREFEAT:1,Counterspell",
+      "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,10"
+    ],
+    "tags": [
+      "DEFINE:SPHERES_COUNTERSPELL_ADDITIONAL_EFFECTS|floor(SPHERES_CASTER_LEVEL/5)"
+    ]
   },
   "Greater Counterspell": {
-    "prerequisites": ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core", "PREFEAT:2,Counterspell,Improved Counterspell (Spheres)", "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,15"],
-    "tags": ["DEFINE:SPHERES_COUNTERSPELL_BURST_RADIUS|40"]
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREFEAT:2,Counterspell,Improved Counterspell (Spheres)",
+      "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,15"
+    ],
+    "tags": [
+      "DEFINE:SPHERES_COUNTERSPELL_BURST_RADIUS|40"
+    ]
+  },
+  "Studied Healing": {
+    "tags": [
+      "BONUS:VAR|SPHERES_STUDIED_HEALING|1"
+    ]
+  },
+  "Graphomancy": {
+    "tags": [
+      "BONUS:VAR|SPHERES_GRAPHOMANCY|1"
+    ]
+  },
+  "Wardlord": {
+    "tags": [
+      "BONUS:VAR|SPHERES_WARDLORD|1"
+    ]
+  },
+  "Surgeon’s Trade Secrets": {
+    "tags": [
+      "BONUS:SITUATION|Heal=Target under your blood control|if(skillinfo(\"TOTALRANK\",\"Heal\")>=10,6,3)"
+    ]
+  },
+  "Liberating Triumph": {
+    "tags": [
+      "SERVESAS:ABILITY=FEAT|Great Fortitude|Lightning Reflexes|Iron Will"
+    ]
+  },
+  "Combatant Caster": {
+    "tags": [
+      "SERVESAS:ABILITY=FEAT|Combat Casting"
+    ]
   }
 }

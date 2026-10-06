@@ -10,6 +10,11 @@ ABILITYCATEGORY:spheres_categories.lst
 ABILITYCATEGORY:spheres_categories_incanter.lst
 ABILITY:spheres_core.lst
 SKILL:spheres_skills.lst
+TEMPLATE:spheres_enhancement_effects.lst
+TEMPLATE:spheres_protection_effects.lst
+TEMPLATE:spheres_fate_effects.lst
+TEMPLATE:spheres_divination_effects.lst
+TEMPLATE:spheres_time_effects.lst
 ABILITYCATEGORY:spheres_categories_spellcrafting.lst
 ABILITY:spheres_spellcrafting_feats.lst
 ABILITY:spheres_custom_spells.lst
@@ -55,6 +60,7 @@ ABILITYCATEGORY:spheres_mageknight_categories.lst
 CLASS:spheres_shifter_class.lst
 ABILITY:spheres_shifter_features.lst
 ABILITYCATEGORY:spheres_shifter_categories.lst
+ABILITY:spheres_shifter_natural_weapons.lst
 CLASS:spheres_soul-weaver_class.lst
 ABILITY:spheres_soul-weaver_features.lst
 ABILITYCATEGORY:spheres_soul-weaver_categories.lst

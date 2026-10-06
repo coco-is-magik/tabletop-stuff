@@ -43,6 +43,7 @@ def build(data=DATA):
             "Nonempty mechanics arrays do not prove full implementation or runtime verification.",
             "Basic talent review excludes four existing Destruction records and all advanced/legendary talents.",
             "Classes, traditions, racial replacements and prestige coverage require separate audits.",
+            "Received-effect templates are counted separately; they do not certify talent or casting lifecycle completion.",
         ],
         "spheres_by_system": dict(sorted(Counter(row["system"] for row in catalog).items())),
         "source_basic_talents": sum(len(row["talents"]) for row in catalog),
@@ -54,6 +55,11 @@ def build(data=DATA):
         "feats": summarize(feats, unresolved=True),
         "feat_status_labels": dict(sorted(Counter(row["status"] for row in feats).items())),
         "traits": summarize(traits, unresolved=True),
+        "received_effect_templates": {
+            path.name: sorted(line.split('\t')[0] for line in path.read_text().splitlines()
+                              if line and not line.startswith('#'))
+            for path in sorted(data.glob('spheres_*_effects.lst'))
+        },
     }
 
 

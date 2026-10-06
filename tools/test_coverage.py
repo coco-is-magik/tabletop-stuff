@@ -6,6 +6,17 @@ from spheres_coverage import DATA, REPORT, build, render, summarize
 
 
 class CoverageTests(unittest.TestCase):
+    def test_received_effects_are_separate_from_talent_completion(self):
+        report = build()
+        effects = report['received_effect_templates']
+        self.assertIn('Protection Effect - Slippery', effects['spheres_protection_effects.lst'])
+        self.assertIn('Enhancement Effect - Physical Enhancement - STR',
+                      effects['spheres_enhancement_effects.lst'])
+        for keys in effects.values():
+            self.assertEqual(keys, sorted(set(keys)))
+        self.assertEqual(report['generated_basic_talents']['records'],
+                         len(json.loads((DATA / 'catalog-review.json').read_text())))
+
     def test_generated_report_current(self):
         self.assertEqual(REPORT.read_text(), render())
 

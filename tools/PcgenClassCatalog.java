@@ -356,6 +356,21 @@ class PcgenClassCatalog {
             }
             if (pc.getClassKeyed("Sentinel") != null) {
                 int level = pc.getVariableValue("SPHERES_SENTINEL_LEVEL", "").intValue();
+                var bonds = pcgen.core.Globals.getContext().getReferenceContext()
+                    .getManufacturerId(game.getAbilityCategory("FEAT")).getActiveObject("Defender’s Bonds");
+                if (bonds.qualifies(pc, bonds)) throw new IllegalStateException("Defender's Bonds requires Beastmastery");
+                var beast = new pcgen.core.PCTemplate();
+                beast.setName("Defender bonds Beastmastery regression");
+                if (!pcgen.core.Globals.getContext().processToken(beast, "ABILITY", "Spheres Combat Talent|AUTOMATIC|Beastmastery Sphere")) {
+                    throw new IllegalStateException("Beastmastery fixture parse");
+                }
+                pcgen.core.Globals.getContext().commit();
+                pc.addTemplate(beast);
+                pc.calcActiveBonuses();
+                if (bonds.qualifies(pc, bonds) != (level >= 3)) throw new IllegalStateException("Defender's Bonds reserve and level requirements");
+                pc.removeTemplate(beast);
+                pc.calcActiveBonuses();
+                if (bonds.qualifies(pc, bonds)) throw new IllegalStateException("Defender's Bonds loses Beastmastery prerequisite");
                 var references = pcgen.core.Globals.getContext().getReferenceContext();
                 var wisdom = references.silentlyGetConstructedCDOMObject(pcgen.core.PCStat.class, "WIS");
                 var dexterity = references.silentlyGetConstructedCDOMObject(pcgen.core.PCStat.class, "DEX");

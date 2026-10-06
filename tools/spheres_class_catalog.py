@@ -89,6 +89,12 @@ def option_abilities(slug, category, section, snapshot):
             body = f"Consult the {slug} class source for this choice."
         slug_key = "SPHERES_" + slug.upper().replace(" ", "_") + "_LEVEL"
         tags = mageknight_tags(title) if category == "Mageknight Mystic Combat" else [f"PREVARGTEQ:{slug_key},1"]
+        if category == "Hedgewitch Secret":
+            from spheres_hedgewitch import secret_tags
+            tags = secret_tags(title, grand=section == "Grand Secrets")
+        if category == "Hedgewitch Path":
+            from spheres_hedgewitch import path_tags
+            tags = path_tags(text, title)
         if category == "Armorist Arsenal Trick":
             tags = armorist_tags(title)
         if category == "Armiger Prowess":
@@ -101,6 +107,9 @@ def option_abilities(slug, category, section, snapshot):
             tags = technician_tags(title)
         if category == "Striker Striker Art":
             tags = striker_tags(title)
+        if category == "Shifter Bestial Trait":
+            from spheres_shifter import option_tags
+            tags = option_tags(title, options)
         if slug == "Commander":
             tags = commander_tags(category, title)
         if category == "Wraith Wraith Haunt":
@@ -126,9 +135,20 @@ def option_abilities(slug, category, section, snapshot):
                 tags = ["PREVARGTEQ:SPHERES_WRAITH_LEVEL,12",
                         "PREABILITY:1,CATEGORY=Wraith Wraith Haunt,"
                         "Wraith Expanded Path Possession (requires haunt path - path sphere of the selected path)"]
+                tags.extend(["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
+                             "BONUS:ABILITYPOOL|Wraith Improved Expanded Path|1"])
+            elif title.startswith("Expanded Path Possession ("):
+                tags.extend(["PREABILITY:1,CATEGORY=Wraith Haunt Path,TYPE=SpheresWraithPath",
+                             "MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
+                             "BONUS:ABILITYPOOL|Wraith Expanded Path|1"])
         if category == "Wraith Wraith Haunt" and title == "Extra Incorporeality":
             tags = ["PREVARGTEQ:SPHERES_WRAITH_LEVEL,3", "MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
                     "BONUS:VAR|SPHERES_WRAITH_FORM_ROUNDS|4|PREVARLT:SPHERES_WRAITH_LEVEL,20"]
+        if category == "Wraith Wraith Haunt" and title == "Ghostly Talent":
+            tags = ["PREVARGTEQ:SPHERES_WRAITH_LEVEL,3",
+                    "PREABILITY:1,CATEGORY=Wraith Haunt Path,TYPE=SpheresWraithPath",
+                    "MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
+                    "BONUS:VAR|SPHERES_WRAITH_GHOSTLY_TALENTS|1"]
         if category == "Wraith Wraith Haunt" and title == "Forced Wraith Form (requires share wraith form)":
             tags = ["PREVARGTEQ:SPHERES_WRAITH_LEVEL,3",
                     "PREABILITY:1,CATEGORY=Wraith Wraith Haunt,Wraith Share Wraith Form",
@@ -242,10 +262,10 @@ def numeric_features(name, prefix):
         "Thaumaturge": (("Invocation Uses", f"SPHERES_CASTING_ABILITY+floor({level}/2)", "uses per day of invocations; only one invocation per roll"),
                         ("Invocation DC", f"10+floor({level}/2)+SPHERES_CASTING_ABILITY", "saving throw DC for invocations"),
                         ("Forbidden Lore", f"2+floor(({level}-1)/4)", "caster-level increase on one qualifying effect when invoked, subject to backlash; not a permanent caster-level increase")),
-        "Fey Adept": (("Shadowmark Dice", f"floor(({level}+1)/2)", "d6 shadowmark damage when its conditions are met"),
+        "Fey Adept": (("Shadowmark Dice", f"floor((max({level},SPHERES_HEDGEWITCH_UMBRAL_LEVEL,SPHERES_SURREAL_STRIKE_LEVEL)+1)/2)", "shadowmark damage dice when its conditions are met; use the strongest granting source, not pooled shadow-point levels"),
                       ("Shadowmark Die Size", "6", "sides per shadowmark damage die; modified by Greater Shadowmark"),
-                      ("Shadow Points", f"max(1,CHA+floor({level}/2))", "shadow point capacity; Charisma-based; refills when all spell points are regained"),
-                      ("Shadowmark Penalty", f"1+floor(({level}-1)/6)", "magnitude of target Will penalty against your sphere effects for one minute; does not stack with itself"),
+                      ("Shadow Points", f"if(SPHERES_HEDGEWITCH_UMBRAL_LEVEL>0,if({level}>0,max(3,CHA),3)+floor(({level}+SPHERES_HEDGEWITCH_UMBRAL_LEVEL)/2),max(1,CHA+floor({level}/2)))", "shared Fey Adept/Umbral shadow point capacity; refills when all spell points are regained"),
+                      ("Shadowmark Penalty", f"1+floor((max({level},SPHERES_HEDGEWITCH_UMBRAL_LEVEL,SPHERES_SURREAL_STRIKE_LEVEL)-1)/6)", "magnitude of target Will penalty against your sphere effects for one minute; does not stack with itself"),
                       ("Master Illusionist Rounds", f"max(1,floor({level}/2))", "rounds an illusion remains after concentration ends"),
                       ("Truesight Uses", f"floor({level}/4)", "uses per day of truesight from level 4")),
     }
@@ -258,6 +278,10 @@ def numeric_features(name, prefix):
         if name == "Technician" and key == "Trapfinding":
             features[-1] += (f"\tBONUS:SKILL|Disable Device|{variable}|TYPE=Trapfinding"
                              f"\tBONUS:SITUATION|Perception=Trapfinding|{variable}|TYPE=Trapfinding")
+        if name == "Fey Adept" and key == "Shadow Points":
+            features[-1] += "\tDEFINE:SPHERES_HEDGEWITCH_UMBRAL_LEVEL|0\tDEFINE:SPHERES_FEY_ADEPT_LEVEL|0"
+        if name == "Fey Adept" and key == "Shadowmark Dice":
+            features[-1] += "\tDEFINE:SPHERES_SURREAL_STRIKE_LEVEL|0\tDEFINE:SPHERES_HEDGEWITCH_UMBRAL_LEVEL|0\tDEFINE:SPHERES_FEY_ADEPT_LEVEL|0"
         if name == "Armorist" and key == "Armor Training":
             features[-1] += (f"\tBONUS:MISC|MAXDEX|{variable}|PREEQUIP:1,TYPE=Armor"
                              f"\tBONUS:MISC|ACCHECK|{variable}|PREEQUIP:1,TYPE=Armor"
@@ -311,6 +335,9 @@ def generate(slug):
     formula = "CL" if bab[-1] == 20 else "floor(CL*3/4)" if bab[-1] == 15 else "floor(CL/2)"
     class_tags = [f"HD:{hd}", "TYPE:Base.PC", "MAXLEVEL:20", f"STARTSKILLPTS:{ranks}", f"CSKILL:{skill_list}",
                   f"BONUS:COMBAT|BASEAB|{formula}|TYPE=Base.REPLACE", f"DEFINE:{prefix}_LEVEL|0", f"BONUS:VAR|{prefix}_LEVEL|CL"]
+    from spheres_extra_options import OPTIONS
+    if any(klass == name for klass, _, _ in OPTIONS.values()):
+        class_tags.append('DEFINE:SPHERES_EXTRA_' + name.upper() + '_OPTIONS|0')
     for save_name, values in zip(("Fortitude", "Reflex", "Will"), saves):
         class_tags.append(f"BONUS:SAVE|BASE.{save_name}|" + ("2+floor(CL/2)" if values[0] == 2 else "floor(CL/3)"))
     if magic:
@@ -415,6 +442,8 @@ def generate(slug):
         feature_type = "SpheresClassFeature"
         if name == "Eliciter" and level == 2:
             feature_type += ".SpheresEmotion"
+        if name == "Fey Adept" and level == 6:
+            feature_type += ".SpheresCreateReality"
         abilities.append(f"{feature_key}\tCATEGORY:Special Ability\tTYPE:{feature_type}\tDESC:Level {level}: {special}. See {source['url']} for effects, timing and prerequisites.")
         delta = raw_talents[level - 1] - (raw_talents[level - 2] if level > 1 else 0)
         if delta:
@@ -432,7 +461,7 @@ def generate(slug):
     else:
         free = {"Eliciter": "Mind", "Fey Adept": "Illusion", "Shifter": "Alteration"}.get(name)
         if free:
-            bonus = (f"\tBONUS:VAR|SPHERES_CL_{free.upper()}|{prefix}_LEVEL-SPHERES_CASTER_LEVEL"
+            bonus = (f"\tBONUS:VAR|SPHERES_CL_{free.upper()}|{prefix}_LEVEL-floor({prefix}_LEVEL*3/4)"
                      if name in ("Eliciter", "Shifter") else "")
             abilities.append(f"{name} Sphere Mastery\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature\t"
                              f"ABILITY:Spheres Magic Talent|AUTOMATIC|{free} Sphere{bonus}\t"
@@ -443,8 +472,8 @@ def generate(slug):
             lines[2] += "\tABILITY:Special Ability|AUTOMATIC|Symbiat Mental Powers"
     if name == "Mageknight":
         lines[2] += "\tBONUS:VAR|SPHERES_MAGIC_TALENTS|1"
-    if name == "Mageknight":
-        feature = "Mystic Combat"
+    if name in ("Mageknight", "Shifter"):
+        feature = "Mystic Combat" if name == "Mageknight" else "Bestial Trait"
         marker = f"{name} {feature} Feature"
         abilities.append(f"{marker}\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature.Spheres{feature.replace(' ', '')}")
         lines[3] += "\tABILITY:Special Ability|AUTOMATIC|" + marker
@@ -469,6 +498,9 @@ def generate(slug):
         abilities.append(medical_ability)
     if name == "Armiger":
         categories.append(armiger_feat_category())
+        from spheres_armiger import spell_dabbler_category
+        categories.append(spell_dabbler_category())
+        lines[2] += "\tDEFINE:SPHERES_ARMIGER_SPELL_DABBLER_COUNT|0"
         for feat in ("Deadly Aim", "Piranha Strike", "Power Attack"):
             lines[2] += "\tDEFINE:ArmigerDeadly " + feat + "|0"
             lines[2] += "\tABILITY:FEAT|AUTOMATIC|" + feat + "|PREVARGTEQ:ArmigerDeadly " + feat + ",1"
@@ -486,6 +518,27 @@ def generate(slug):
         categories.append(review_category)
         categories.extend(mageknight_feat_categories())
         abilities.append(review_ability)
+    if name == "Shifter":
+        from spheres_shifter import champion_category, class_features, breath_configuration
+        categories.append(champion_category())
+        breath_category, breath_abilities = breath_configuration()
+        categories.append(breath_category)
+        abilities.extend(breath_abilities)
+        lines[2] += "\tDEFINE:SPHERES_SHIFTER_BREATH_IMPROVED|0\tDEFINE:SPHERES_SHIFTER_BREATH_CONFIGURED|0\tDEFINE:SPHERES_SHIFTER_BREATH_RANGE|0"
+        lines[2] += "\tDEFINE:SPHERES_COMBAT_TALENTS|0\tDEFINE:SPHERES_SHIFTER_QUICK_HEALING_HP|0"
+        lines[2] += "\tDEFINE:SPHERES_SHIFTER_FORTIFICATION_COUNT|0\tDEFINE:SPHERES_SHIFTER_FORTIFICATION_PERCENT|0"
+        lines[2] += "\tDEFINE:SPHERES_SHIFTER_FAST_HEALING_COUNT|0"
+        lines[2] += "\tDEFINE:SPHERES_KNOWLEDGE_OF_MANY_SHAPES|0"
+        lines[2] += "\tBONUS:VAR|FastHealingRate|if(SPHERES_SHIFTER_FAST_HEALING_COUNT>=2,floor(SPHERES_SHIFTER_LEVEL/2),SPHERES_SHIFTER_FAST_HEALING_COUNT)|TYPE=Base.REPLACE"
+        for energy in ("Acid", "Cold", "Electricity", "Fire", "Sonic"):
+            lines[2] += f"\tDEFINE:ShifterImmunity {energy}|0"
+        for feat in ("Flyby Attack", "Hover", "Wingover"):
+            lines[2] += f"\tDEFINE:ShifterFlightFeat {feat}|0"
+            lines[2] += f"\tABILITY:FEAT|AUTOMATIC|{feat}|PREVARGTEQ:ShifterFlightFeat {feat},1"
+        for at, title, tags in class_features():
+            key = f"Shifter {title} Mechanics"
+            abilities.append(f"{key}\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature\t" + "\t".join(tags))
+            lines[at + 1] += f"\tABILITY:Special Ability|AUTOMATIC|{key}"
     option_sections = {
         "armorist": {"arsenal trick": "Arsenal Trick"},
         "eliciter": {"emotion": "List of Emotions"},
@@ -539,7 +592,55 @@ def generate(slug):
             abilities.append(f"{title} (Manual)\tCATEGORY:{category}\tMULT:YES\tSTACK:YES\tCHOOSE:USERINPUT|1|TITLE={category} choice\tDESC:Record the source-legal {group} option: %1. Prerequisites and effects require adjudication.|%LIST")
     if name == "Hedgewitch":
         for option in option_abilities(name, "Hedgewitch Secret", "Grand Secrets", source):
-            abilities.append(option.replace(f"PREVARGTEQ:{prefix}_LEVEL,1", f"PREVARGTEQ:{prefix}_LEVEL,10"))
+            abilities.append(option)
+        from spheres_hedgewitch import feat_categories, path_secret_records, academia_mastery, astrology_records, exorcism_records, charlatan_records, inspiration_records
+        categories.extend(feat_categories())
+        abilities.extend(path_secret_records())
+        abilities.extend(exorcism_records())
+        abilities.extend(charlatan_records())
+        abilities.extend(inspiration_records())
+        for quantity in ("INSPIRATION", "STUDIED_BONUS", "STUDIED_ROUNDS"):
+            lines[2] += f"\tDEFINE:SPHERES_HEDGEWITCH_{quantity}|0"
+        for skill in ("Bluff", "Disguise", "Intimidate", "Acrobatics", "Fly", "Diplomacy", "Sense Motive", "Handle Animal"):
+            lines[2] += f"\tDEFINE:HedgewitchExceptional {skill}|0"
+        for quantity in ("GUILE", "GUILE_SKILL_BONUS", "GUILE_SNEAK_DICE", "GUILE_SNEAK_DIE_SIZE"):
+            lines[2] += f"\tDEFINE:SPHERES_HEDGEWITCH_{quantity}|0"
+        for quantity in ("ROUNDS", "DC", "RADIUS", "LIMIT", "PUSH"):
+            lines[2] += f"\tDEFINE:SPHERES_HEDGEWITCH_SANCTION_{quantity}|0"
+        for quantity in ("NEMESIS_RANGE", "RATTLING_DICE", "RATTLING_TARGETS", "WARD_ENABLED"):
+            lines[2] += f"\tDEFINE:SPHERES_HEDGEWITCH_{quantity}|0"
+        lines[2] += "\tDEFINE:SPHERES_HEDGEWITCH_WARD_CL|if(SPHERES_HEDGEWITCH_WARD_ENABLED>0,SPHERES_CL_PROTECTION+SPHERES_HEDGEWITCH_LEVEL-floor(SPHERES_HEDGEWITCH_LEVEL*3/4),0)"
+        for path in ("Academia", "Combat"):
+            mastery_category, mastery_records = academia_mastery(path)
+            categories.append(mastery_category)
+            abilities.extend(mastery_records)
+        aura_category, aura_records = astrology_records()
+        from spheres_covenant import records as covenant_records, definitions as covenant_definitions
+        covenant_category, covenant_abilities = covenant_records()
+        from spheres_covenant import feat_category as covenant_feat_category
+        categories.append(covenant_feat_category())
+        categories.append(covenant_category)
+        abilities.extend(covenant_abilities)
+        lines[2] += "\t" + "\t".join(covenant_definitions())
+        categories.append(aura_category)
+        abilities.extend(aura_records)
+        lines[2] += "\tDEFINE:SPHERES_HEDGEWITCH_AURA_REACH_COUNT|0\tDEFINE:SPHERES_HEDGEWITCH_AURA_RADIUS|0"
+        lines[2] += "\tDEFINE:SPHERES_HEDGEWITCH_AURA_ACTIVE_LIMIT|0\tDEFINE:SPHERES_HEDGEWITCH_AURA_EFFECTIVE_LEVEL|0"
+        lines[2] += "\tDEFINE:SPHERES_HEDGEWITCH_INSIGHT_CAPACITY|0\tDEFINE:SPHERES_HEDGEWITCH_TRANSMUTATIONS|0\tDEFINE:SPHERES_HEDGEWITCH_TRANSMUTATION_DC|0"
+        # Keep derived caster-level references out of BONUS evaluation: feeding
+        # total CL into a bonus can suppress class contributions during recursion.
+        lines[2] += "\tDEFINE:SPHERES_HEDGEWITCH_CREATE_ENABLED|0"
+        lines[2] += "\tDEFINE:SPHERES_HEDGEWITCH_CREATE_CL|if(SPHERES_HEDGEWITCH_CREATE_ENABLED>0,SPHERES_CL_CREATION+SPHERES_HEDGEWITCH_LEVEL-floor(SPHERES_HEDGEWITCH_LEVEL*3/4),0)"
+        for quantity in ("SIZE_STEPS", "RANGE", "HD_BONUS"):
+            lines[2] += f"\tDEFINE:SPHERES_HEDGEWITCH_TRANSMUTATION_{quantity}|0"
+        lines[2] += "\tDEFINE:SPHERES_HEDGEWITCH_CONCOCTIONS|0\tDEFINE:SPHERES_HEDGEWITCH_CONCOCTION_DC|0\tDEFINE:SPHERES_HEDGEWITCH_CONCOCTION_HEALING_DICE|0"
+        lines[2] += "\tDEFINE:SPHERES_HEDGEWITCH_CONCOCTION_HOURS|0"
+        lines[2] += "\tDEFINE:SPHERES_HEDGEWITCH_SHADOW_MAGIC_CL_BONUS|0"
+        lines[2] += "\tDEFINE:SPHERES_HEDGEWITCH_CURSES|0\tDEFINE:SPHERES_HEDGEWITCH_CURSE_DC|0\tDEFINE:SPHERES_HEDGEWITCH_SPIRIT_USES|0\tDEFINE:SPHERES_HEDGEWITCH_SPIRIT_TALENT_LIMIT|0"
+        lines[2] += "\tBONUS:VAR|SPHERES_HEDGEWITCH_AURA_RADIUS|30|PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Astrology"
+        lines[2] += "\tDEFINE:SPHERES_COMBAT_TALENTS|0"
+        abilities.append("Hedgewitch Secrets\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature.SpheresHedgewitchSecrets\tDESC:General and path secret selections retain their individual prerequisites.")
+        lines[3] += "\tABILITY:Special Ability|AUTOMATIC|Hedgewitch Secrets"
     if name == "Commander":
         category = "Commander Enhanced Tactic"
         categories.append("ABILITYCATEGORY:Commander Teamwork Feat\tCATEGORY:FEAT\tTYPE:Teamwork\t"
@@ -573,6 +674,10 @@ def generate(slug):
         abilities.extend(option_abilities(name, "Hedgewitch Path", "List of Paths", source))
     if name == "Wraith":
         lines[2] += "\tDEFINE:SPHERES_WRAITH_FORCED_FORM_COUNT|0"
+        lines[2] += "\tDEFINE:SPHERES_WRAITH_GHOSTLY_TALENTS|0"
+        ghostly_spheres = set()
+        for category in ("Wraith Expanded Path", "Wraith Improved Expanded Path"):
+            categories.append(f"ABILITYCATEGORY:{category}\tCATEGORY:{category}\tEDITABLE:YES\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:0\tDISPLAYLOCATION:Spheres")
         abilities.append("Wraith Haunts\tCATEGORY:Special Ability\tTYPE:SpheresClassFeature.SpheresWraithHaunt\tDESC:Wraith haunt selections; each haunt retains its own prerequisites.")
         lines.append("3\tABILITY:Special Ability|AUTOMATIC|Wraith Haunts")
         categories.append(f"ABILITYCATEGORY:Wraith Haunt Path\tCATEGORY:Wraith Haunt Path\tEDITABLE:YES\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:min(1,{prefix}_LEVEL)\tPLURAL:Wraith Haunt Path\tDISPLAYLOCATION:Spheres")
@@ -589,12 +694,32 @@ def generate(slug):
             if not skill_match:
                 raise ValueError(f"Missing haunt path skill: {title}")
             path_skill = skill_match[1].strip().title()
+            path_key = f"Wraith {title}"
+            path_spheres = [sphere.strip() for sphere in match.group(1).split(" or ")]
+            own_keys = [path_key + (f" - {sphere}" if len(path_spheres) > 1 else "") for sphere in path_spheres]
+            target_tags = ["PREVARGTEQ:SPHERES_WRAITH_LEVEL,3",
+                           "PREABILITY:1,CATEGORY=Wraith Haunt Path,TYPE=SpheresWraithPath",
+                           "PREABILITY:1,CATEGORY=Spheres Magic Talent," + ",".join(f"{sphere} Sphere" for sphere in path_spheres)]
+            target_tags.extend(f"!PREABILITY:1,CATEGORY=Wraith Haunt Path,{own}" for own in own_keys)
+            target_tags.append("PREABILITY:1,CATEGORY=Wraith Wraith Haunt,Wraith Expanded Path Possession (requires haunt path - path sphere of the selected path)")
+            abilities.append(f"{path_key}\tCATEGORY:Wraith Expanded Path\t" + "\t".join(target_tags)
+                             + "\tDESC:Gain this path's path possession, not its sphere, class skill or caster-level progression. Resolve possession effects at the table.")
+            abilities.append(f"{path_key}\tCATEGORY:Wraith Improved Expanded Path\tPREVARGTEQ:SPHERES_WRAITH_LEVEL,12\t"
+                             f"PREABILITY:1,CATEGORY=Wraith Expanded Path,{path_key}\t"
+                             "PREABILITY:1,CATEGORY=Wraith Wraith Haunt,Wraith Expanded Path Possession - Improved (requires expanded path possession - wraith 12)\t"
+                             + "\t".join(target_tags[1:-1])
+                             + "\tDESC:Gain the improved path possession of this previously expanded path. Resolve possession effects at the table.")
             for sphere in (s.strip() for s in match.group(1).split(" or ")):
                 if not (DATA / f"spheres_power_{sphere.lower()}.lst").is_file():
                     raise ValueError(f"Unknown haunt path sphere: {sphere}")
                 key = f"Wraith {title}" + (f" - {sphere}" if " or " in match.group(1) else "")
+                ghostly_category = f"Wraith Ghostly {sphere} Talent"
+                if sphere not in ghostly_spheres:
+                    categories.append(f"ABILITYCATEGORY:{ghostly_category}\tCATEGORY:Spheres Magic Talent\tTYPE:{sphere.replace(' ', '')}\tEDITABLE:YES\tEDITPOOL:NO\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPOOL:0\tDISPLAYLOCATION:Spheres")
+                    ghostly_spheres.add(sphere)
                 sphere_bonus = (f"\tABILITY:Spheres Magic Talent|AUTOMATIC|{sphere} Sphere\t"
                                 f"BONUS:VAR|SPHERES_CL_{sphere.upper()}|{prefix}_LEVEL-floor({prefix}_LEVEL*3/4)")
+                sphere_bonus += (f"\tTYPE:SpheresWraithPath\tBONUS:ABILITYPOOL|{ghostly_category}|SPHERES_WRAITH_GHOSTLY_TALENTS")
                 abilities.append(f"{key}\tCATEGORY:Wraith Haunt Path\tPREVARGTEQ:{prefix}_LEVEL,1{sphere_bonus}"
                                  f"\tCSKILL:{path_skill}\tBONUS:SKILL|{path_skill}|floor({prefix}_LEVEL/2)|TYPE=Insight|PREVARGTEQ:{prefix}_LEVEL,4"
                                  f"\tDESC:{body} Consult source for unrepresented possession effects and duplicate-sphere replacement.")
@@ -674,7 +799,11 @@ def main():
     args = parser.parse_args()
     for slug in NAMES:
         class_lst, ability_lst, category_lst, _ = generate(slug)
-        for suffix, content in (("class", class_lst), ("features", ability_lst), ("categories", category_lst)):
+        outputs = [("class", class_lst), ("features", ability_lst), ("categories", category_lst)]
+        if slug == "shifter":
+            from spheres_shifter import natural_weapons
+            outputs.append(("natural_weapons", natural_weapons()))
+        for suffix, content in outputs:
             if not content:
                 continue
             path = DATA / f"spheres_{slug}_{suffix}.lst"

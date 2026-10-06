@@ -6,6 +6,526 @@ from spheres_feats import build, Prerequisites, split_clauses, split_alternative
 
 
 class FeatTests(unittest.TestCase):
+    def test_precogniscent_feats_use_active_senses_and_hit_dice(self):
+        rows = {row['name']: row for row in json.loads(build()['feat-catalog.json'])}
+        for name, kind, divisor, bonus_type in (
+                ('Protection', 'COMBAT|AC', 5, 'Insight'),
+                ('Resistance', 'SAVE|ALL', 4, 'Resistance'),
+                ('Smite', 'COMBAT|TOHIT,DAMAGE', 5, 'Insight')):
+            row = rows['Precogniscent ' + name]
+            self.assertFalse(row['unresolved_prerequisites'])
+            self.assertIn('DEFINE:SPHERES_ACTIVE_DIVINATION_SENSES|0', row['mechanics'])
+            self.assertIn('BONUS:' + kind + '|min(SPHERES_ACTIVE_DIVINATION_SENSES,1+floor(TL/'
+                          + str(divisor) + '))|TYPE=' + bonus_type, row['mechanics'])
+
+    def test_divination_base_sense_is_not_a_purchased_sense_talent(self):
+        parser = Prerequisites(json.loads(build()['feat-catalog.json']))
+        base = 'PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere'
+        self.assertEqual(parser.compile('Prerequisites: Divination sphere (one or more (sense) talents or abilities).'),
+                         ([base], []))
+        tags, unresolved = parser.compile('Prerequisites: Divination sphere (any (sense) talent).')
+        self.assertFalse(unresolved)
+        self.assertEqual(tags[0], base)
+        self.assertIn('Divination - Prescience', tags[1])
+        self.assertNotIn('Divination Sphere', tags[1])
+        self.assertNotIn('Divination - Expanded Divination', tags[1])
+
+    def test_mana_amp_requires_a_purchased_descriptor_member(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        parser = Prerequisites(rows)
+        for wording in ('any', 'at least one'):
+            tags, unresolved = parser.compile('Prerequisites: Mana sphere (' + wording + ' (amp) talent).')
+            self.assertFalse(unresolved)
+            self.assertIn('Mana - Arcanodynamics', tags[-1])
+            self.assertIn('Mana - Heightened Magic', tags[-1])
+            self.assertNotIn('Mana - Bulwark', tags[-1])
+            self.assertNotIn('Mana - Defensive Bond', tags[-1])
+            self.assertNotIn('Mana Sphere', tags[-1])
+        self.assertTrue(parser.compile('Prerequisites: Mana sphere (any (unknown) talent).')[1])
+
+    def test_sacrosanct_firewall_uses_base_hallow_but_requires_technomancy(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        row = next(row for row in rows if row['name'] == 'Sacrosanct Firewall')
+        self.assertFalse(row['unresolved_prerequisites'])
+        self.assertEqual(row['prerequisites'], [
+            'PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere',
+            'PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere'])
+        parser = Prerequisites(rows)
+        self.assertTrue(parser.compile('Prerequisites: Fate sphere (Unknown (word)).')[1])
+
+    def test_shared_sphere_suffix_preserves_alternatives(self):
+        parser = Prerequisites(json.loads(build()['feat-catalog.json']))
+        tags, unresolved = parser.compile('Prerequisites: Death or Fate sphere')
+        self.assertFalse(unresolved)
+        self.assertEqual(tags, ['PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],'
+                                '[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere]'])
+        self.assertTrue(parser.compile('Prerequisites: Unknown or Fate sphere')[1])
+        self.assertTrue(parser.compile('Prerequisites: Death or Unknown sphere')[1])
+
+    def test_sanctified_vigilance_requires_a_rally_not_a_totem(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        row = next(row for row in rows if row['name'] == 'Sanctified Vigilance')
+        self.assertFalse(row['unresolved_prerequisites'])
+        family = row['prerequisites'][-1]
+        self.assertIn('War - Absorb', family)
+        self.assertNotIn('War Sphere', family)
+        self.assertNotIn('War - Totem Of War', family)
+
+    def test_object_familiar_uses_existing_familiar_advancement(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        parser = Prerequisites(rows)
+        self.assertEqual(parser.compile('Prerequisites: ability to acquire a familiar.'),
+                         (['PREVARGTEQ:FamiliarMasterLVL,1'], []))
+        row = next(row for row in rows if row['name'] == 'Object Familiar')
+        self.assertFalse(row['unresolved_prerequisites'])
+        self.assertIn('PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Animate Object', row['prerequisites'])
+
+    def test_base_enhance_ability_is_distinct_from_purchased_talent(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        parser = Prerequisites(rows)
+        tags, unresolved = parser.compile('Prerequisites: Alteration sphere, Enhancement sphere (any (enhance) ability).')
+        self.assertEqual(unresolved, [])
+        self.assertEqual(tags, [
+            'PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere',
+            'PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere'])
+        self.assertTrue(parser.compile('Prerequisites: Enhancement sphere (any unknown ability).')[1])
+
+    def test_solid_illusions_requires_two_illusionary_touch_selections(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        parser = Prerequisites(rows)
+        tags, unresolved = parser.compile('Prerequisites: Enhancement sphere, Illusion sphere (Illusionary Touch (sensory, touch) x2).')
+        self.assertEqual(unresolved, [])
+        self.assertEqual(tags[-1], 'PREVARGTEQ:SPHERES_ILLUSION_ILLUSIONARYTOUCH_COUNT,2')
+        self.assertIn('PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere', tags)
+        self.assertTrue(parser.compile('Prerequisites: Illusion sphere (Illusionary Touch (sensory, touch) x3).')[1])
+
+    def test_careful_magic_bonus_is_not_general_magic_defense(self):
+        rows = {row['name']: row for row in json.loads(build()['feat-catalog.json'])}
+        self.assertEqual(rows['Careful Magic']['mechanics'], [
+            'DEFINE:SPHERES_CAREFUL_MAGIC_DISPEL_MSD_BONUS|max(1,SPHERES_CASTING_ABILITY)'])
+        self.assertIn('PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Extended Casting', rows['Careful Magic']['prerequisites'])
+
+    def test_exceptional_ally_requires_an_actual_enhance_talent(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        parser = Prerequisites(rows)
+        tags, unresolved = parser.compile('Prerequisites: Conjuration sphere, Enhancement sphere (at least one (enhance) talent).')
+        self.assertEqual(unresolved, [])
+        self.assertEqual(len(tags), 3)
+        self.assertIn('Enhancement - Animate Object', tags[-1])
+        self.assertIn('Enhancement - Lighten', tags[-1])
+        self.assertNotIn('Enhancement Sphere', tags[-1])
+        self.assertNotIn('Enhancement - Deep Enhancement', tags[-1])
+        self.assertNotIn('Enhancement - Ranged Enhancement', tags[-1])
+        self.assertTrue(parser.compile('Prerequisites: Enhancement sphere (at least two (enhance) talents).')[1])
+
+    def test_animation_feats_require_animation_and_do_not_change_caster_hp(self):
+        rows = {row['name']: row for row in json.loads(build()['feat-catalog.json'])}
+        for name in ('Complex Animations', 'Durable Objects'):
+            self.assertIn('PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Animate Object', rows[name]['prerequisites'])
+            self.assertTrue(rows[name]['mechanics'])
+            self.assertFalse(any(tag.startswith(('BONUS:HP', 'BONUS:COMBAT', 'SIZE:')) for tag in rows[name]['mechanics']))
+
+    def test_analyze_caster_bonus_is_limited_to_detect_spellcaster(self):
+        rows = {row['name']: row for row in json.loads(build()['feat-catalog.json'])}
+        self.assertEqual(rows['Analyze Caster']['mechanics'], [
+            'BONUS:SITUATION|Spellcraft=Determine casting tradition with Detect Spellcaster|5'])
+
+    def test_vigilant_skeptic_bonuses_remain_glamer_specific(self):
+        rows = {row['name']: row for row in json.loads(build()['feat-catalog.json'])}
+        tags = rows['Vigilant Skeptic']['mechanics']
+        for skill in ('Perception', 'Sense Motive'):
+            self.assertIn(f'BONUS:SITUATION|{skill}=Target benefiting from a glamer|floor(TL/2)', tags)
+        self.assertIn('DEFINE:SPHERES_SKEPTIC_FIGMENT_RANGE|5+5*floor(skillinfo("TOTALRANK","Perception")/2)', tags)
+        self.assertFalse(any(tag.startswith('BONUS:SKILL|') for tag in tags))
+
+    def test_reviewed_feat_equivalences_do_not_grant_imitated_effects(self):
+        rows = {row['name']: row for row in json.loads(build()['feat-catalog.json'])}
+        self.assertEqual(rows['Liberating Triumph']['mechanics'], ['SERVESAS:ABILITY=FEAT|Great Fortitude|Lightning Reflexes|Iron Will'])
+        self.assertEqual(rows['Combatant Caster']['mechanics'], ['SERVESAS:ABILITY=FEAT|Combat Casting'])
+
+    def test_surgeon_bonus_is_situational_and_rank_scaled(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        surgeon = next(row for row in rows if row['name'] == 'Surgeon’s Trade Secrets')
+        self.assertIn('BONUS:SITUATION|Heal=Target under your blood control|if(skillinfo("TOTALRANK","Heal")>=10,6,3)', surgeon['mechanics'])
+        self.assertFalse(any(tag.startswith('BONUS:SKILL|') for tag in surgeon['mechanics']))
+        self.assertFalse(any(tag.startswith('SERVESAS:') for tag in surgeon['mechanics']))
+        self.assertFalse(any(line.startswith('Skill Focus (Heal)\t')
+                             for line in build()['spheres_feat_catalog.lst'].splitlines()))
+        parser = Prerequisites(rows)
+        tags, unresolved = parser.compile('Prerequisites: Skill Focus (Heal).')
+        self.assertEqual(unresolved, [])
+        self.assertEqual(tags, ['PREMULT:1,[PREFEAT:1,Skill Focus (Heal)],[PREFEAT:1,Surgeon’s Trade Secrets]'])
+
+    def test_terrain_defiler_uses_reviewed_cataclysm_revision(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        matches = [row for row in rows if row['name'] == 'Terrain Defiler']
+        self.assertEqual(len(matches), 1)
+        self.assertEqual(matches[0]['types'], ['Defiler', 'Drawback'])
+        self.assertIn('Four Defiler Feats:', matches[0]['text'])
+        self.assertIn('BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1', matches[0]['mechanics'])
+
+    def test_defiler_necrosis_overlap_is_counted_once(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        both = next(row for row in rows if row['name'] == 'Inhuman Defiler')
+        self.assertIn('Defiler', both['types'])
+        self.assertEqual(both['mechanics'].count('BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1'), 1)
+        self.assertEqual(both['mechanics'].count('BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1'), 1)
+        self.assertFalse(any('COUNT|1|PREFEAT:' in tag for tag in both['mechanics']))
+        distant = next(row for row in rows if row['name'] == 'Distant Defiling')
+        self.assertIn('BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler', distant['mechanics'])
+
+    def test_scholar_divine_bonus_does_not_increase_general_caster_level(self):
+        tags = json.loads((DATA / 'feat-mechanics.json').read_text())['Scholar Of Past And Future']['tags']
+        self.assertEqual(tags[0], 'BONUS:SKILL|Knowledge (History)|if(skillinfo("TOTALRANK","Knowledge (History)")>=10,4,2)')
+        self.assertTrue(tags[1].startswith('DEFINE:SPHERES_SCHOLAR_DIVINE_CL_BONUS|max(0,min('))
+        self.assertFalse(any(tag.startswith('BONUS:VAR|SPHERES_CL_') for tag in tags))
+
+    def test_necrosis_count_and_cold_heart_threshold(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        necrosis = [row for row in rows if 'Necrosis' in row['types']]
+        self.assertEqual(len(necrosis), 11)
+        for row in necrosis:
+            self.assertEqual(row['mechanics'].count('BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1'), 1)
+        cold = next(row for row in necrosis if row['name'] == 'Cold Heart')
+        self.assertIn('BONUS:VAR|SPHERES_SPELL_POINTS|1', cold['mechanics'])
+        self.assertIn('BONUS:VAR|ColdResistanceBonus,ElectricityResistanceBonus|10|TYPE=Resistance|PREVARGTEQ:SPHERES_NECROSIS_FEAT_COUNT,4', cold['mechanics'])
+        heart = next(row for row in necrosis if row['name'] == 'Necrotic Heart')
+        self.assertNotIn('BONUS:VAR|SPHERES_SPELL_POINTS|1', heart['mechanics'])
+        flesh = next(row for row in necrosis if row['name'] == 'Deadened Flesh')
+        self.assertIn('DR:floor(SPHERES_NECROSIS_FEAT_COUNT*0.5)/-|PREVARGTEQ:SPHERES_NECROSIS_FEAT_COUNT,4', flesh['mechanics'])
+        for name in ('Banshee’s Sotto Voce', 'Between Two Worlds', 'Deathknight’s Purchase',
+                     'Hemomancy', 'Wandering Spirit'):
+            row = next(row for row in necrosis if row['name'] == name)
+            self.assertEqual(row['mechanics'].count('BONUS:VAR|SPHERES_SPELL_POINTS|1'), 1)
+        blood = next(row for row in necrosis if row['name'] == 'Hemomancy')
+        self.assertFalse(any(tag.startswith('VISION:') for tag in blood['mechanics']))
+
+    def test_resistant_veins_is_natural_armor_not_an_enhancement(self):
+        overrides = json.loads((DATA / 'feat-mechanics.json').read_text())
+        self.assertEqual(overrides['Resistant Veins']['tags'],
+                         ['BONUS:COMBAT|AC|1+floor(SPHERES_MAGIC_SKILL_BONUS/5)|TYPE=NaturalArmor'])
+        self.assertEqual(Prerequisites([]).clause('Anemic'),
+                         ['PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Anemic'])
+
+    def test_channel_resistance_grants_personal_defense(self):
+        overrides = json.loads((DATA / 'feat-mechanics.json').read_text())
+        tags = overrides['Channel Resistance']['tags']
+        self.assertEqual(tags, ['ABILITY:Special Ability|AUTOMATIC|Channel Resistance',
+                               'BONUS:VAR|ChannelResistance|2'])
+
+    def test_reviewed_racial_type_or_subtype(self):
+        parser = Prerequisites([])
+        for name in ('Construct', 'Fey', 'Plant'):
+            self.assertEqual(parser.clause(name + ' type or subtype'),
+                             [f'PRERACE:1,RACETYPE={name},RACESUBTYPE={name}'])
+        self.assertIsNone(parser.clause('invented type or subtype'))
+
+    def test_racial_subtype_is_not_interchangeable_with_type(self):
+        parser = Prerequisites([])
+        for name in ('Construct', 'Plant'):
+            self.assertEqual(parser.clause(name + ' subtype'),
+                             [f'PRERACE:1,RACESUBTYPE={name}'])
+        self.assertEqual(parser.clause('Outsider with the native subtype'),
+                         ['PRERACE:2,RACETYPE=Outsider,RACESUBTYPE=Native'])
+        tags, unresolved = parser.compile('Prerequisites: Outsider with the native subtype, alignment matching either an extraplanar ancestor or a patron.')
+        self.assertEqual(tags, ['PRERACE:2,RACETYPE=Outsider,RACESUBTYPE=Native'])
+        self.assertEqual(unresolved, ['alignment matching either an extraplanar ancestor or a patron'])
+        self.assertIsNone(parser.clause('invented subtype'))
+
+    def test_greater_created_retains_creation_time_review(self):
+        rows = json.loads(build()['feat-catalog.json'])
+        row = next(row for row in rows if row['name'] == 'Greater Created')
+        self.assertIn('PRERACE:1,RACESUBTYPE=Construct', row['prerequisites'])
+        self.assertIn('Only selectable at character creation', row['unresolved_prerequisites'])
+
+    def test_core_combat_class_feature_predicates(self):
+        parser = Prerequisites([])
+        self.assertEqual(parser.clause('Favored Terrain class feature'),
+                         ['PREABILITY:1,CATEGORY=Special Ability,TYPE=FavoredTerrain'])
+        self.assertEqual(parser.clause('improved evasion class feature'),
+                         ['PREABILITY:1,CATEGORY=Special Ability,Improved Evasion'])
+        self.assertEqual(parser.clause('rage class feature'),
+                         ['PREABILITY:1,CATEGORY=Special Ability,TYPE=Rage'])
+        self.assertEqual(parser.clause('favored enemy class feature'),
+                         ['PREABILITY:1,CATEGORY=Special Ability,Ranger ~ Favored Enemy,TYPE=FavoredEnemy'])
+        self.assertIsNone(parser.clause('invented rage class feature'))
+        self.assertEqual(parser.clause('Ki pool class feature'),
+                         ['PREABILITY:1,CATEGORY=Special Ability,TYPE=Ki Pool'])
+
+    def test_wild_magic_scaling_and_spell_pool_alias(self):
+        from spheres_wild_magic import feat_tags, COUNT
+        parser = Prerequisites([])
+        self.assertEqual(parser.clause('Spell point pool'), parser.clause('Spell pool'))
+        self.assertEqual(parser.clause('Spell point pool or casting class feature'), [
+            'PREMULT:1,[PREVARGTEQ:SPHERES_SPELL_POINTS,1],'
+            '[PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core]'])
+        self.assertIn(f'DEFINE:SPHERES_CAREFUL_CASTER_REDUCTION|min(50,25+5*({COUNT}-1))',
+                      feat_tags('Careful Caster'))
+        self.assertIn('BONUS:VAR|SPHERES_COUNTERSPELL_CHECK_BONUS|1', feat_tags('Chaotic Counter'))
+        self.assertFalse(any('BONUS:VAR|SPHERES_MAGIC_SKILL_BONUS|' in tag
+                             for tag in feat_tags('Chaotic Counter')))
+        self.assertIn('DEFINE:SPHERES_SHIFT_COST_REDUCTION|if(TL>=10,2,1)', feat_tags('Shift Cost'))
+        for name in ('Blood Dampening', 'Careful Caster', 'Chaotic Counter', 'Energy Shift',
+                     'Heedless Metamagic', 'Inspired Surge', 'Manipulate Result',
+                     'Overpower Resistance', 'Rhythmic Chaos', 'Risk Management',
+                     'Shift Cost', 'Shift Effect', 'Spectacular Surge', 'War on Reality'):
+            tags = feat_tags(name)
+            self.assertEqual(tags.count(f'BONUS:VAR|{COUNT}|1'), 1)
+            self.assertTrue(any(tag.startswith('DEFINE:SPHERES_') and not tag.startswith('DEFINE:' + COUNT)
+                                for tag in tags), name)
+
+    def test_performance_prerequisites_require_features_not_skill_ranks(self):
+        self.assertEqual(self.parser.clause('bardic performance or raging song class feature'),
+                         ['PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance,TYPE=SkaldRagingSong'])
+        self.assertEqual(self.parser.clause('bardic performance class ability'),
+                         ['PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance'])
+        for name in ('Battle Fanfare', 'Crescendo', 'Enchanting Performance', 'Lightshow', 'Thrum Of Rain', 'Tribal Rhythm', 'Hold the Note'):
+            self.assertFalse(self.by_name[name]['unresolved_prerequisites'], name)
+        self.assertIsNone(self.parser.clause('bardic performance or invented song class feature'))
+
+    def test_shadow_magic_capacity_counts_feats_not_shadow_points(self):
+        tags = self.by_name['Shadow Magic']['mechanics']
+        self.assertIn('DEFINE:SPHERES_SHADOW_MAGIC_TALENT_CAPACITY|1+floor(SPHERES_SURREAL_FEAT_COUNT/5)', tags)
+        self.assertIn('DEFINE:SPHERES_SHADOW_MAGIC_EFFECT_CL|max(1,SPHERES_CL_ILLUSION-2+SPHERES_HEDGEWITCH_SHADOW_MAGIC_CL_BONUS)', tags)
+        self.assertFalse(any(tag.startswith('BONUS:ABILITYPOOL') for tag in tags))
+        for row in self.by_name.values():
+            if 'Surreal' in row['types']:
+                self.assertIn('BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1', row['mechanics'])
+        self.assertNotIn('BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1', self.by_name['Extra Shadowstuff']['mechanics'])
+
+    def test_shadow_shield_capacity_does_not_grant_permanent_defense(self):
+        shield = self.by_name['Shadow Shield']['mechanics']
+        improved = self.by_name['Improved Shadow Shield']['mechanics']
+        self.assertIn('DEFINE:SPHERES_SHADOW_SHIELD_DICE|TL', shield)
+        self.assertIn('DEFINE:SPHERES_SHADOW_SHIELD_REDUCTION|1+floor(TL/5)', shield)
+        self.assertIn('BONUS:VAR|SPHERES_SHADOW_SHIELD_HP_BONUS|TL|PREFEAT:1,Shadow Shield', improved)
+        self.assertFalse(any(tag.startswith(('DR:', 'BONUS:HP', 'BONUS:COMBAT')) for tag in shield + improved))
+
+    def test_create_reality_requires_the_class_feature(self):
+        self.assertEqual(self.parser.clause('create reality class feature'),
+                         ['PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresCreateReality'])
+        self.assertFalse(self.by_name['Emulation Expert']['unresolved_prerequisites'])
+        gate = ' '.join(self.by_name['Emulation Expert']['prerequisites'])
+        self.assertIn('PREFEAT:1,Shadow Magic', gate)
+        self.assertIn('TYPE=SpheresCreateReality', gate)
+
+    def test_shadow_pool_accepts_class_or_surreal_feat_sources(self):
+        self.assertEqual(self.parser.clause('shadow pool'), [
+            'PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadow Points (Reference)],'
+            '[PREFEAT:1,TYPE=Surreal]'])
+        shadow = self.by_name['Shadow Magic']
+        self.assertFalse(shadow['unresolved_prerequisites'])
+        gate = ' '.join(shadow['prerequisites'])
+        self.assertIn('Illusion - Shadow Infusion', gate)
+        self.assertIn('Fey Adept Shadow Points (Reference)', gate)
+        self.assertNotIn('PREFEAT:1,TYPE=Surreal', gate)
+        self.assertIn('Shadow Shield', gate)
+        self.assertFalse(self.by_name['Violent Shadow']['unresolved_prerequisites'])
+
+    def test_every_surreal_feat_contributes_to_shared_shadow_capacity(self):
+        surreal = [row for row in self.by_name.values() if 'Surreal' in row['types']]
+        self.assertGreater(len(surreal), 10)
+        for row in surreal:
+            self.assertIn('DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0', row['mechanics'], row['name'])
+            self.assertIn('BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1', row['mechanics'], row['name'])
+        strike = ' '.join(self.by_name['Surreal Strike']['mechanics'])
+        self.assertIn('BONUS:VAR|SPHERES_SURREAL_STRIKE_LEVEL|max(1,TL-4)', strike)
+        self.assertIn('Fey Adept Shadowmark Dice (Reference)', strike)
+        self.assertNotIn('Fey Adept Shadow Points (Reference)', strike)
+
+    def test_font_of_inspiration_feature_prerequisites(self):
+        inspiration = self.parser.clause('inspiration class feature')
+        studied = self.parser.clause('studied combat class feature')
+        self.assertIn('Hedgewitch Font Of Inspiration', inspiration[0])
+        self.assertIn('InvestigatorInspirationDice,1', inspiration[0])
+        self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,5', studied[0])
+        self.assertIn('InvestigatorStudiedCombatBonus,1', studied[0])
+        for name in ('Deduction', 'Rigorous Defense'):
+            self.assertFalse(self.by_name[name]['unresolved_prerequisites'])
+        self.assertFalse(self.by_name['Studied Scout']['unresolved_prerequisites'])
+        alternative = self.parser.clause('studied target or studied combat class feature')[0]
+        self.assertIn('SlayerStudiedTargetBonus,1', alternative)
+        self.assertIn('[' + studied[0] + ']', alternative)
+
+    def test_extra_bestial_trait_requires_feature_and_grants_repeatable_slots(self):
+        row = self.by_name['Extra Bestial Trait']
+        self.assertEqual(row['prerequisites'], ['PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresBestialTrait'])
+        self.assertFalse(row['unresolved_prerequisites'])
+        for tag in ('MULT:YES', 'STACK:YES', 'CHOOSE:NOCHOICE', 'BONUS:ABILITYPOOL|Shifter Bestial Trait|1'):
+            self.assertIn(tag, row['mechanics'])
+
+    def test_any_package_requires_selected_package_not_available_slot(self):
+        tags = self.parser.clause('Nature sphere (any package)')
+        self.assertEqual(tags, [
+            'PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere',
+            'PREABILITY:1,CATEGORY=Spheres Nature Package,Nature Package - Air,Nature Package - Earth,Nature Package - Fire,Nature Package - Metal,Nature Package - Plant,Nature Package - Water'])
+        self.assertFalse(self.by_name['Primal Blast']['unresolved_prerequisites'])
+        self.assertIsNone(self.parser.clause('Destruction sphere (any package)'))
+        self.assertIsNone(self.parser.clause('Nature sphere (any invented package)'))
+
+    def test_cross_sphere_descriptor_prerequisites(self):
+        strike = self.parser.clause('any talent with the strike descriptor')
+        self.assertEqual(strike, self.parser.clause('one talent from any sphere that has the strike descriptor'))
+        self.assertIn('Destruction - Energy Strike', strike[0].split(','))
+        self.assertIn('Life - Clarified Strike', strike[0].split(','))
+        self.assertNotIn('Destruction - Acid Blast', strike[0].split(','))
+        stance = self.parser.clause('Any (stance) talent')
+        self.assertIn('Berserker - Sword Eater', stance[0].split(','))
+        self.assertNotIn('Berserker - Juggernaut', stance[0].split(','))
+        for name in ('Spell Attack', 'Improved Spell Combat', 'Spell Maneuver', 'Pacified Strike', 'Extend Stance'):
+            self.assertFalse(self.by_name[name]['unresolved_prerequisites'], name)
+        self.assertIsNone(self.parser.clause('any talent with the invented descriptor'))
+        self.assertIsNone(self.parser.clause('two talents with the strike descriptor'))
+
+    def test_shadowmark_feature_requires_grant_not_damage_value(self):
+        expected = ['PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadowmark Dice (Reference)']
+        self.assertEqual(self.parser.clause('Shadowmark class feature'), expected)
+        for name in ('Gather Shadowstuff', 'Shadowblast'):
+            self.assertEqual(self.by_name[name]['prerequisites'], expected)
+            self.assertFalse(self.by_name[name]['unresolved_prerequisites'])
+
+    def test_compound_heading_descriptors_are_exact_members(self):
+        for sphere, descriptor, included, excluded in (
+                ('Destruction', 'blast type', 'Destruction - Acid Blast', 'Destruction - Energy Aura'),
+                ('Nature', 'spirit', 'Nature - Aquatic Adept', 'Nature - Water Mastery')):
+            tags = self.parser.clause(f'{sphere} sphere (any ({descriptor}) talent)')
+            self.assertIn(sphere + ' Sphere', tags[0])
+            members = tags[1].split(',')[2:]
+            self.assertIn(included, members)
+            self.assertNotIn(excluded, members)
+        for name in ('Furious Flare', 'Nature’s Enhancement', 'Spirit Form'):
+            self.assertFalse(self.by_name[name]['unresolved_prerequisites'], name)
+        self.assertIsNone(self.parser.clause('Destruction sphere (any (blast) talent)'))
+        self.assertIsNone(self.parser.clause('Destruction sphere (any (blast type) talent that deals cold damage)'))
+
+    def test_sentinel_reserve_alternative_preserves_other_requirements(self):
+        for spelling in ("sentinel’s reserve class feature", "sentinel's reserve class feature"):
+            self.assertEqual(self.parser.clause(spelling),
+                             ['PREABILITY:1,CATEGORY=Special Ability,Sentinel Reserve Points (Reference)'])
+        row = self.by_name['Defender’s Bonds']
+        self.assertFalse(row['unresolved_prerequisites'])
+        self.assertIn('PRELEVEL:MIN=3', row['prerequisites'])
+        self.assertIn('PREABILITY:1,CATEGORY=Spheres Combat Talent,Beastmastery Sphere', row['prerequisites'])
+        self.assertIn('Sentinel Reserve Points (Reference)', '\t'.join(row['prerequisites']))
+        self.assertIn('Hedgewitch Covenant Positive', '\t'.join(row['prerequisites']))
+        self.assertNotIn('Hedgewitch Covenant Negative', '\t'.join(row['prerequisites']))
+
+    def test_extra_class_options_grant_real_pools_with_source_caps(self):
+        from spheres_extra_options import OPTIONS, rules
+        for name, (klass, category, levels) in OPTIONS.items():
+            row = self.by_name[name]
+            self.assertFalse(row['unresolved_prerequisites'], name)
+            self.assertIn('BONUS:ABILITYPOOL|' + category + '|1', row['mechanics'])
+            self.assertIn('STACK:YES', row['mechanics'])
+            self.assertNotIn('CHOOSE:USERINPUT', '\t'.join(row['mechanics']))
+            for minimum in levels:
+                self.assertIn(str(minimum), '\t'.join(row['prerequisites']))
+            # Pool names are engine identifiers, not necessarily source headings.
+            self.assertTrue(any('ABILITYCATEGORY:' + category + '\t' in path.read_text()
+                                for path in DATA.glob('*categories*.lst')), category)
+        self.assertIn('PREFEAT:1,Amateur Striker', '\t'.join(rules('Extra Striker Art')[0]))
+        self.assertIsNone(rules('Unknown Extra Option'))
+
+    def test_amateur_striker_choices_and_capacity(self):
+        from spheres_amateur_striker import records, feat_tags
+        abilities, categories = records()
+        self.assertEqual(len(abilities), 14)
+        self.assertEqual(len(categories), 2)
+        for ability in abilities:
+            self.assertIn('PREFEAT:1,Amateur Striker', ability)
+            self.assertIn('!PRECLASS:1,Striker=1', ability)
+            self.assertNotIn('BONUS:COMBAT', ability)
+        self.assertIn('BONUS:VAR|SPHERES_AMATEUR_STRIKER_CAPACITY|max(0,CON)|!PRECLASS:1,Striker=1', feat_tags())
+        self.assertTrue(set(feat_tags()).issubset(self.by_name['Amateur Striker']['mechanics']))
+
+    def test_tension_pool_is_not_its_current_or_maximum_quantity(self):
+        self.assertEqual(self.parser.clause('tension pool'),
+                         ['PREMULT:1,[PRECLASS:1,Striker=1],[PREFEAT:1,Amateur Striker]'])
+        self.assertEqual(self.parser.clause('Tension class feature'), ['PRECLASS:1,Striker=1'])
+        self.assertEqual(self.parser.clause('No levels in a class that has the tension class feature'),
+                         ['!PRECLASS:1,Striker=1'])
+        for name in ('Amateur Striker', 'Expanded Tension Technique', 'Intense Metamagic'):
+            self.assertFalse(self.by_name[name]['unresolved_prerequisites'], name)
+        # Resolving one side of an unknown alternative must not unlock it.
+        self.assertIsNone(self.parser.clause('tension pool or imaginary resource'))
+        self.assertFalse(self.by_name['Hold the Note']['unresolved_prerequisites'])
+        for name in ('Building Performance', 'Dramatic Intensity'):
+            self.assertTrue(self.by_name[name]['unresolved_prerequisites'], name)
+
+    def test_expanded_tension_selects_only_unknown_base_techniques(self):
+        from spheres_amateur_striker import expanded_records, expanded_tags, records
+        abilities, categories = expanded_records()
+        self.assertEqual(len(abilities), 11)
+        self.assertEqual(len(categories), 1)
+        for record in abilities:
+            self.assertIn('PREFEAT:1,Expanded Tension Technique', record)
+            self.assertIn('PREFEAT:1,Amateur Striker', record)
+            self.assertIn('!PRECLASS:1,Striker=1', record)
+            self.assertIn('!PREABILITY:1,CATEGORY=Amateur Striker Technique,', record)
+            self.assertNotIn('BONUS:COMBAT', record)
+        self.assertTrue(set(expanded_tags()).issubset(self.by_name['Expanded Tension Technique']['mechanics']))
+        self.assertIn('!PREABILITY:1,CATEGORY=Expanded Tension Technique,Expanded Tension - Swift Focus',
+                      '\n'.join(records()[0]))
+
+    def test_customized_bond_requires_both_feature_sources(self):
+        from spheres_armorist import option_tags as armorist
+        from spheres_armiger import option_tags as armiger
+        row = self.by_name['Customized Bond']
+        self.assertFalse(row['unresolved_prerequisites'])
+        self.assertEqual(len(row['prerequisites']), 2)
+        self.assertIn('Armorist Bound Items (Reference)', '\t'.join(row['prerequisites']))
+        self.assertIn('Armiger Talents Per Customized Weapon (Reference)', '\t'.join(row['prerequisites']))
+        for tags, other in ((armorist('Customized Bond'), 'Armiger Talents Per Customized Weapon'),
+                            (armiger('Customized Bond'), 'Armorist Bound Items')):
+            self.assertIn('ABILITY:FEAT|AUTOMATIC|Customized Bond', tags)
+            self.assertIn(other + ' (Reference)', '\t'.join(tags))
+        self.assertIn('PREFEAT:1,Transformation', self.by_name['Shifting Style']['prerequisites'])
+        self.assertFalse(self.by_name['Shifting Style']['unresolved_prerequisites'])
+
+    def test_spell_dabbler_is_capped_and_uses_real_feat_choices(self):
+        from spheres_armiger import option_tags, spell_dabbler_category
+        self.assertIn('PREVARLT:SPHERES_ARMIGER_SPELL_DABBLER_COUNT,3', option_tags('Spell Dabbler [CS]'))
+        self.assertIn('BONUS:ABILITYPOOL|Armiger Spell Dabbler Feat|1', option_tags('Spell Dabbler [CS]'))
+        self.assertIn('ABILITYLIST:Basic Magic Training|Advanced Magic Training|Extra Magic Talent', spell_dabbler_category())
+
+    def test_reviewed_talent_families_require_actual_descriptor_members(self):
+        for sphere, descriptor, member, excluded in (
+                ('War', 'momentum', 'War - Aggressive Momentum', 'War - Combat Inertia'),
+                ('Creation', 'material', 'Creation - Expanded Materials', 'Creation - Created Momentum'),
+                ('Berserker', 'adrenaline', 'Berserker - Juggernaut', 'Berserker - Advancing Carnage')):
+            for phrase in ('any ' + descriptor + ' talent', 'any (' + descriptor + ') talent'):
+                tags = self.parser.clause(sphere + ' sphere (' + phrase + ')')
+                self.assertEqual(len(tags), 2)
+                self.assertIn(sphere + ' Sphere', tags[0])
+                self.assertIn(member, tags[1])
+                self.assertNotIn(excluded, tags[1])
+        self.assertIsNone(self.parser.clause('War sphere (any invented talent)'))
+        self.assertIsNone(self.parser.clause('Creation sphere (any momentum talent)'))
+
+    def test_covenant_touch_prerequisites_preserve_polarity(self):
+        from spheres_covenant import channel_prerequisite
+        for name, key, energy in (('lay on hands', 'Paladin ~ Lay on Hands', 'Positive'),
+                                  ('touch of corruption', 'Antipaladin ~ Touch of Corruption', 'Negative')):
+            tags = self.parser.clause(name)
+            self.assertEqual(tags, self.parser.clause(name + ' class feature'))
+            self.assertIn(key, tags[0])
+            self.assertIn(channel_prerequisite(energy), tags[0])
+            self.assertNotIn('TYPE=LayOnHands', tags[0])
+        self.assertFalse(self.by_name['Succor']['unresolved_prerequisites'])
+        self.assertIsNone(self.parser.clause('lay on hands or invented healing class feature'))
+
+    def test_covenant_channel_family_requires_channel_prerequisite(self):
+        records = {line.split('\t')[0]: line for line in build()['spheres_feat_catalog.lst'].splitlines()}
+        for name in ('Channel Luck', 'Channel Life', 'Pulsing Channel'):
+            self.assertIn('HedgewitchChannelFeat', records[self.by_name[name]['key']].split('\t')[2])
+        self.assertNotIn('HedgewitchChannelFeat', records[self.by_name['Extra Secret']['key']].split('\t')[2])
+
+    def test_extra_secret_uses_feature_and_repeatable_pool(self):
+        row = self.by_name['Extra Secret']
+        self.assertFalse(row['unresolved_prerequisites'])
+        self.assertEqual(row['prerequisites'], ['PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresHedgewitchSecrets'])
+        self.assertEqual(row['mechanics'], ['MULT:YES', 'STACK:YES', 'CHOOSE:NOCHOICE',
+                                           'BONUS:ABILITYPOOL|Hedgewitch Secret|1'])
     def test_extra_wraith_haunt_requires_feature_and_grants_repeatable_slots(self):
         row = self.by_name['Extra Wraith Haunt']
         self.assertFalse(row['unresolved_prerequisites'])
@@ -42,7 +562,11 @@ class FeatTests(unittest.TestCase):
             self.assertFalse(self.by_name[name]['unresolved_prerequisites'])
         self.assertIn('BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|2', self.by_name['Extra Shadowstuff']['mechanics'])
         self.assertEqual(self.by_name['Greater Shadowmark']['mechanics'],
-                         ['BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_DIE_SIZE|2'])
+                         ['BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_DIE_SIZE|2',
+                          'DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0',
+                      'BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1',
+                      'DEFINE:SPHERES_SURREAL_FEAT_COUNT|0',
+                      'BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1'])
 
     def test_forbidden_lore_checks_feature_not_generic_casting(self):
         expected = 'PREABILITY:1,CATEGORY=Special Ability,Thaumaturge Forbidden Lore (Reference)'
@@ -56,6 +580,20 @@ class FeatTests(unittest.TestCase):
         self.assertIn('.SpheresCasting', records['Counterspell'])
         self.assertNotIn('.SpheresCasting', records['Basic Magic Training'])
         self.assertNotIn('.SpheresCasting', records['Advanced Magic Training'])
+
+    def test_hedgewitch_magic_feat_family_requires_casting_or_magic_sphere(self):
+        records = {line.split('\t')[0]: line for line in self.outputs['spheres_feat_catalog.lst'].splitlines()}
+        self.assertIn('.HedgewitchMagicalSkill', records['Counterspell'])
+        self.assertNotIn('.HedgewitchMagicalSkill', records['Basic Magic Training'])
+        for row in self.rows:
+            if row['name'] in ('Extra Magic Talent', 'Extra Spell Points', 'Extra Arsenal Trick', 'Extra Combat Talent'):
+                continue
+            if row['key'] not in records:
+                continue
+            if '.HedgewitchMagicalSkill' in records[row['key']]:
+                self.assertTrue(any(tag == 'PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core'
+                                    or tag.startswith('PREABILITY:1,CATEGORY=Spheres Magic Talent,')
+                                    for tag in row['prerequisites']), row['name'])
 
     def test_blessing_feature_requires_a_granted_power(self):
         self.assertEqual(self.parser.clause('blessing/blight class feature'),
@@ -74,15 +612,18 @@ class FeatTests(unittest.TestCase):
         self.assertIsNone(self.parser.clause('greater bound nexus class feature'))
 
     def test_channel_energy_requires_actual_feature(self):
+        from spheres_covenant import channel_prerequisite
         generic = self.parser.clause('channel energy class feature')
         self.assertEqual(generic, self.parser.clause('Channel Energy'))
         self.assertIn('TYPE=ChannelEnergy', generic[0])
+        self.assertIn(channel_prerequisite(), generic[0])
         self.assertIn('TYPE=Channel Energy', generic[0])
         self.assertIn('CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel', generic[0])
         for energy in ('positive', 'negative'):
             tags = self.parser.clause('ability to channel ' + energy + ' energy')
             self.assertIn('TYPE=Channel ' + energy.title() + ' Energy', tags[0])
             self.assertIn('Soul Weaver ' + energy.title() + ' Channel', tags[0])
+            self.assertIn(channel_prerequisite(energy.title()), tags[0])
             self.assertNotIn('PRECLASS', tags[0])
         for unsupported in ('channel energy 0d6', 'channel energy 4d8', 'channel fire energy'):
             self.assertIsNone(self.parser.clause(unsupported))
@@ -103,6 +644,10 @@ class FeatTests(unittest.TestCase):
             self.assertEqual(tags[0].count('DieSize,6'), 3)
             self.assertIn(f'SPHERES_CHANNEL_DICE,{dice}', tags[0])
             self.assertIn(f'SPHERES_SOUL_WEAVER_CHANNEL_DICE,{dice}', tags[0])
+            self.assertIn(f'SPHERES_HEDGEWITCH_COVENANT_DICE,{dice}', tags[0])
+            self.assertIn('SPHERES_HEDGEWITCH_COVENANT_DIE_SIZE,6', tags[0])
+            from spheres_covenant import channel_prerequisite
+            self.assertIn(channel_prerequisite(), tags[0])
         for invalid in (0, -1, True, '3'):
             with self.assertRaises(ValueError):
                 dice_prerequisite(invalid)
@@ -111,7 +656,11 @@ class FeatTests(unittest.TestCase):
 
     def test_plague_persistent_effects(self):
         self.assertEqual(self.by_name['Rotten Hordes']['mechanics'],
-                         ['BONUS:VAR|SPHERES_SPELL_POINTS|1'])
+                         ['BONUS:VAR|SPHERES_SPELL_POINTS|1',
+                          'DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0',
+                          'BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1',
+                          'DEFINE:SPHERES_DEFILER_FEAT_COUNT|0',
+                          'BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler'])
         tags = self.by_name['Pathology']['mechanics']
         self.assertEqual(tags[:3], ['MULT:YES', 'STACK:NO', 'SELECT:2'])
         choices = tags[3].split('|')[1:]
@@ -203,7 +752,8 @@ class FeatTests(unittest.TestCase):
             self.assertIsNone(self.parser.clause(invalid))
         for name in ("Blood Construct Mastery", "Bruinous Temper", "Glamered Thievery"):
             self.assertFalse(self.by_name[name]["unresolved_prerequisites"])
-        self.assertTrue(self.by_name["Glimpse The Flow"]["unresolved_prerequisites"])
+        self.assertFalse(self.by_name["Glimpse The Flow"]["unresolved_prerequisites"])
+        self.assertIn('PREVARGTEQ:SPHERES_CL_DIVINATION,6', self.by_name["Glimpse The Flow"]["prerequisites"])
 
     def test_craft_or_profession_requires_ranks_in_either_family(self):
         for ranks in (5, 10):
@@ -445,9 +995,12 @@ class FeatTests(unittest.TestCase):
                 ("good alignment", "PREALIGN:LG,NG,CG"),
                 ("evil alignment", "PREALIGN:LE,NE,CE"),
                 ("non-good alignment", "!PREALIGN:LG,NG,CG"),
-                ("nonlawful", "!PREALIGN:LG,LN,LE")):
+                ("nonlawful", "!PREALIGN:LG,LN,LE"),
+                ("non-neutral alignment", "!PREALIGN:TN")):
             self.assertEqual(self.parser.clause(clause), [expected])
-        self.assertIsNone(self.parser.clause("non-neutral alignment"))
+        self.assertFalse(self.by_name['Aligned Attacks']['unresolved_prerequisites'])
+        self.assertIn('!PREALIGN:TN', self.by_name['Aligned Attacks']['prerequisites'])
+        self.assertIn('PREVARGTEQ:SPHERES_CASTER_LEVEL,5', self.by_name['Aligned Attacks']['prerequisites'])
         self.assertIsNone(self.parser.clause("alignment matching a patron"))
         tags, missing = self.parser.compile(
             "Prerequisites: good alignment or evil alignment.\nBenefit: Test.")

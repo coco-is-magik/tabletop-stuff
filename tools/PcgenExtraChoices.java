@@ -51,8 +51,8 @@ class PcgenExtraChoices {
         var facade = CharacterManager.getCharacters().iterator().next();
         var messages = new Messages();
         var controller = new CharacterAbilities(pc, messages, facade.getDataSet(), new TodoManager());
-        String owner = "Mageknight";
-        String feature = "Mystic Combat";
+        String owner = args[6].equals("shifter") ? "Shifter" : "Mageknight";
+        String feature = args[6].equals("shifter") ? "Bestial Trait" : "Mystic Combat";
         int level = pc.getVariableValue("SPHERES_" + owner.toUpperCase() + "_LEVEL", "").intValue();
         var pool = game.getAbilityCategory(owner + " " + feature);
         var extra = ability(AbilityCategory.FEAT, "Extra " + feature);
@@ -60,7 +60,7 @@ class PcgenExtraChoices {
         var option = ability(pool, owner + " Combat Talent");
         boolean reload = args[4].equals("extrachoices-reload");
         try {
-            if (!args[6].equals("mageknight")) {
+            if (!args[6].equals("mageknight") && !args[6].equals("shifter")) {
                 resources(pc, controller, messages, args[6], reload);
             } else {
             require(!wrong.qualifies(pc, wrong), "Wrong class must not qualify");

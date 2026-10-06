@@ -5,7 +5,8 @@
     "Generators also emit mechanics outside these arrays; review source and generated LSTs.",
     "Nonempty mechanics arrays do not prove full implementation or runtime verification.",
     "Basic talent review excludes four existing Destruction records and all advanced/legendary talents.",
-    "Classes, traditions, racial replacements and prestige coverage require separate audits."
+    "Classes, traditions, racial replacements and prestige coverage require separate audits.",
+    "Received-effect templates are counted separately; they do not certify talent or casting lifecycle completion."
   ],
   "spheres_by_system": {
     "might": 27,
@@ -14,7 +15,7 @@
   "source_basic_talents": 2330,
   "generated_basic_talents": {
     "records": 2326,
-    "records_with_recorded_mechanics": 16,
+    "records_with_recorded_mechanics": 97,
     "records_without_recorded_mechanics": [
       "Alchemy - Academic Enhancer",
       "Alchemy - Activated Creations",
@@ -762,9 +763,7 @@
       "Divination - Foreshadow",
       "Divination - Ghost Sight",
       "Divination - Grant Divination",
-      "Divination - Greater Divine",
       "Divination - Instill Divination",
-      "Divination - Lingering Divination",
       "Divination - Logos",
       "Divination - Nature Sense",
       "Divination - Object Reading",
@@ -777,11 +776,9 @@
       "Divination - Sense Magic",
       "Divination - Sense Presence",
       "Divination - Sensory Overload",
-      "Divination - Shared Perception",
       "Divination - Sniper’s Eye",
       "Divination - Tremorsense",
       "Divination - Unhooded Sight",
-      "Divination - Viewing",
       "Divination - Witness The City",
       "Dual Wielding - Asynchronous Swing",
       "Dual Wielding - Balanced Blows",
@@ -849,42 +846,17 @@
       "Duelist - Whisking Disarm",
       "Duelist - Winding Wounds",
       "Duelist - …And Stay Down!",
-      "Enhancement - Alter Movement",
-      "Enhancement - Animate Object",
-      "Enhancement - Bestow Intelligence",
-      "Enhancement - Cripple",
       "Enhancement - Crippling Strike",
-      "Enhancement - Deadly Weapon",
-      "Enhancement - Deep Enhancement",
       "Enhancement - Dual Enhancement",
-      "Enhancement - Emphasize Belief",
-      "Enhancement - Energize Body",
-      "Enhancement - Energy Enhancement",
-      "Enhancement - Enhance Focus",
-      "Enhancement - Enhance Potency",
       "Enhancement - Flash of Excellence",
-      "Enhancement - Greater Enhance Equipment",
-      "Enhancement - Harden/Weaken",
-      "Enhancement - Improved Flexibility",
       "Enhancement - Instill Enhancement",
-      "Enhancement - Lighten",
       "Enhancement - Magic Sink",
-      "Enhancement - Mass Enhancement",
-      "Enhancement - Mental Enhancement",
       "Enhancement - Natural Enhancement",
-      "Enhancement - Physical Enhancement",
       "Enhancement - Power Parasitism",
-      "Enhancement - Ragged Edges",
       "Enhancement - Ranged Enhancement",
-      "Enhancement - Ravenous Weapon",
-      "Enhancement - Spectral Enhancement",
-      "Enhancement - Staunch Resistance",
       "Enhancement - Steal Capacity",
       "Enhancement - Steal Senses",
       "Enhancement - Superior Poison",
-      "Enhancement - Superior Reflexes",
-      "Enhancement - Supply Vigor",
-      "Enhancement - Traveling Weapon",
       "Equipment - Able Aim",
       "Equipment - Angler Training",
       "Equipment - Arcane Armor",
@@ -1051,7 +1023,6 @@
       "Fallen Fey - Zolavoi’s Mantle",
       "Fate - Align Object",
       "Fate - Axe You A Question",
-      "Fate - Bargain",
       "Fate - Bind Wyrd",
       "Fate - Bless",
       "Fate - Borrow Luck",
@@ -1060,17 +1031,13 @@
       "Fate - Classify",
       "Fate - Confine",
       "Fate - Conjunction",
-      "Fate - Consequences",
-      "Fate - Cups",
       "Fate - Curse",
       "Fate - Divine Force",
       "Fate - Divine Pressure",
-      "Fate - Echoing Word",
       "Fate - Enmity",
       "Fate - Exorcism",
       "Fate - Freedom",
       "Fate - Greater Serendipity",
-      "Fate - Harm",
       "Fate - Instill Fate",
       "Fate - Judgment",
       "Fate - Justice",
@@ -1082,7 +1049,6 @@
       "Fate - Open/Close",
       "Fate - Pain",
       "Fate - Pair Of Myths",
-      "Fate - Pentacles",
       "Fate - Perfect",
       "Fate - Resounding Word",
       "Fate - Reveal Alignment",
@@ -1090,33 +1056,25 @@
       "Fate - Strength",
       "Fate - Stricture",
       "Fate - Subvert Weapon",
-      "Fate - Swords",
       "Fate - Temperance",
       "Fate - The Chariot",
       "Fate - The Devil",
       "Fate - The Emperor",
-      "Fate - The Empress",
       "Fate - The Fool",
       "Fate - The Hanged Man",
       "Fate - The Hermit",
       "Fate - The Hierophant",
       "Fate - The King",
       "Fate - The Knight",
-      "Fate - The Lovers",
       "Fate - The Magician",
       "Fate - The Moon",
-      "Fate - The Page",
-      "Fate - The Queen",
       "Fate - The Star",
       "Fate - The Sun",
-      "Fate - The Tower",
-      "Fate - The Wheel",
       "Fate - The World",
       "Fate - Truth",
       "Fate - Tug Fate",
       "Fate - Undo Harm",
       "Fate - Villainy",
-      "Fate - Wands",
       "Fencing - Ankle Strike",
       "Fencing - Arm Strike",
       "Fencing - Belt Cutter",
@@ -1616,21 +1574,17 @@
       "Pilot - Swift Repair",
       "Pilot - Temperature Control",
       "Pilot - Thruster Burn",
-      "Protection - Ablating",
       "Protection - Armored Magic",
       "Protection - Bewilder",
       "Protection - Blast Shield",
       "Protection - Breathless",
       "Protection - Bulwark",
-      "Protection - Buttressing",
       "Protection - Clarity",
       "Protection - Community",
       "Protection - Continuous Ward",
       "Protection - Deathless",
       "Protection - Destructionless",
       "Protection - Distant Protection",
-      "Protection - Durable Barrier",
-      "Protection - Enduring Protection",
       "Protection - Energy Resistance",
       "Protection - Evasive Succor",
       "Protection - Exclusion",
@@ -1639,7 +1593,6 @@
       "Protection - Fortifier",
       "Protection - Friendship",
       "Protection - Glyph",
-      "Protection - Greater Barrier",
       "Protection - Guardian",
       "Protection - Healing Aegis",
       "Protection - Helping Hand",
@@ -1653,20 +1606,17 @@
       "Protection - Logic",
       "Protection - Luck",
       "Protection - Magnetic Shield",
-      "Protection - Mass Aegis",
       "Protection - Mettle",
       "Protection - Missile Shield",
       "Protection - Mystic Shell",
       "Protection - Negation",
       "Protection - Obscurity",
       "Protection - Obstruction",
-      "Protection - Painful Aegis",
       "Protection - Peacebound",
       "Protection - Persistent Succor",
       "Protection - Plexing Aegis",
       "Protection - Punishment",
       "Protection - Quantum Lock",
-      "Protection - Ray Deflection",
       "Protection - Reactive Barrier",
       "Protection - Reflection",
       "Protection - Repel Chaos/Evil/Good/Law",
@@ -1674,7 +1624,6 @@
       "Protection - Resistance",
       "Protection - Secure",
       "Protection - Selective Barrier",
-      "Protection - Shaped Ward",
       "Protection - Shared Aegis",
       "Protection - Slippery",
       "Protection - Spell Ward",
@@ -1892,64 +1841,35 @@
       "Technomancy - Sprite Sustenance",
       "Technomancy - Sprite Triangulation",
       "Telekinesis - Acceleration",
-      "Telekinesis - Dampening Field",
-      "Telekinesis - Dancing Weapon",
-      "Telekinesis - Divided Mind",
       "Telekinesis - Excessive Force",
-      "Telekinesis - Finesse",
-      "Telekinesis - Flight",
       "Telekinesis - Floating Shield",
-      "Telekinesis - Forceful Telekinesis",
-      "Telekinesis - Gravity Shift",
-      "Telekinesis - Gravity Ward/Well",
-      "Telekinesis - Greater Speed",
-      "Telekinesis - Homing",
       "Telekinesis - Idle Concentration",
       "Telekinesis - Increased Range",
       "Telekinesis - Kinetic Field",
-      "Telekinesis - Kinetic Sense",
       "Telekinesis - Mobile Bludgeon",
       "Telekinesis - Orbit",
-      "Telekinesis - Pantomime Cage",
       "Telekinesis - Parry",
-      "Telekinesis - Powerful Telekinesis",
-      "Telekinesis - Quick Reactions",
       "Telekinesis - Return",
       "Telekinesis - Seizing Strike",
-      "Telekinesis - Steal",
       "Telekinesis - Sweeping Bludgeons",
-      "Telekinesis - Telekinetic Crush",
-      "Telekinesis - Telekinetic Maneuver",
-      "Telekinesis - Telekinetic Push",
-      "Telekinesis - Telekinetic Tools",
-      "Telekinesis - Tether",
-      "Telekinesis - Whirlwind Assembly",
-      "Time - After Image",
       "Time - Age",
-      "Time - Augment Healing",
       "Time - Broken Time",
       "Time - Causality",
       "Time - Delay Pain",
       "Time - Eject",
-      "Time - Fast Time",
       "Time - Improved Haste",
       "Time - Improved Slow",
       "Time - Instill Time",
       "Time - Lethargy",
       "Time - Lingering Time",
-      "Time - Mass Time",
       "Time - Ranged Time",
       "Time - Rapid Response",
       "Time - Repetition",
-      "Time - Retroactive Preparation",
       "Time - Retry",
       "Time - Second Chance",
       "Time - Shift Time",
       "Time - Steal Time",
-      "Time - Stretch Time",
       "Time - Temporal Trap",
-      "Time - Time Bubble",
-      "Time - Time Freeze",
       "Time - Time Of The Season",
       "Time - Time Strike",
       "Time - Time Zone",
@@ -3152,7 +3072,7 @@
     },
     "Divination": {
       "records": 42,
-      "records_with_recorded_mechanics": 0,
+      "records_with_recorded_mechanics": 4,
       "records_without_recorded_mechanics": [
         "Divination - Alarm",
         "Divination - Augury",
@@ -3175,9 +3095,7 @@
         "Divination - Foreshadow",
         "Divination - Ghost Sight",
         "Divination - Grant Divination",
-        "Divination - Greater Divine",
         "Divination - Instill Divination",
-        "Divination - Lingering Divination",
         "Divination - Logos",
         "Divination - Nature Sense",
         "Divination - Object Reading",
@@ -3190,11 +3108,9 @@
         "Divination - Sense Magic",
         "Divination - Sense Presence",
         "Divination - Sensory Overload",
-        "Divination - Shared Perception",
         "Divination - Sniper’s Eye",
         "Divination - Tremorsense",
         "Divination - Unhooded Sight",
-        "Divination - Viewing",
         "Divination - Witness The City"
       ]
     },
@@ -3278,44 +3194,19 @@
     },
     "Enhancement": {
       "records": 36,
-      "records_with_recorded_mechanics": 0,
+      "records_with_recorded_mechanics": 25,
       "records_without_recorded_mechanics": [
-        "Enhancement - Alter Movement",
-        "Enhancement - Animate Object",
-        "Enhancement - Bestow Intelligence",
-        "Enhancement - Cripple",
         "Enhancement - Crippling Strike",
-        "Enhancement - Deadly Weapon",
-        "Enhancement - Deep Enhancement",
         "Enhancement - Dual Enhancement",
-        "Enhancement - Emphasize Belief",
-        "Enhancement - Energize Body",
-        "Enhancement - Energy Enhancement",
-        "Enhancement - Enhance Focus",
-        "Enhancement - Enhance Potency",
         "Enhancement - Flash of Excellence",
-        "Enhancement - Greater Enhance Equipment",
-        "Enhancement - Harden/Weaken",
-        "Enhancement - Improved Flexibility",
         "Enhancement - Instill Enhancement",
-        "Enhancement - Lighten",
         "Enhancement - Magic Sink",
-        "Enhancement - Mass Enhancement",
-        "Enhancement - Mental Enhancement",
         "Enhancement - Natural Enhancement",
-        "Enhancement - Physical Enhancement",
         "Enhancement - Power Parasitism",
-        "Enhancement - Ragged Edges",
         "Enhancement - Ranged Enhancement",
-        "Enhancement - Ravenous Weapon",
-        "Enhancement - Spectral Enhancement",
-        "Enhancement - Staunch Resistance",
         "Enhancement - Steal Capacity",
         "Enhancement - Steal Senses",
-        "Enhancement - Superior Poison",
-        "Enhancement - Superior Reflexes",
-        "Enhancement - Supply Vigor",
-        "Enhancement - Traveling Weapon"
+        "Enhancement - Superior Poison"
       ]
     },
     "Equipment": {
@@ -3496,11 +3387,10 @@
     },
     "Fate": {
       "records": 68,
-      "records_with_recorded_mechanics": 0,
+      "records_with_recorded_mechanics": 14,
       "records_without_recorded_mechanics": [
         "Fate - Align Object",
         "Fate - Axe You A Question",
-        "Fate - Bargain",
         "Fate - Bind Wyrd",
         "Fate - Bless",
         "Fate - Borrow Luck",
@@ -3509,17 +3399,13 @@
         "Fate - Classify",
         "Fate - Confine",
         "Fate - Conjunction",
-        "Fate - Consequences",
-        "Fate - Cups",
         "Fate - Curse",
         "Fate - Divine Force",
         "Fate - Divine Pressure",
-        "Fate - Echoing Word",
         "Fate - Enmity",
         "Fate - Exorcism",
         "Fate - Freedom",
         "Fate - Greater Serendipity",
-        "Fate - Harm",
         "Fate - Instill Fate",
         "Fate - Judgment",
         "Fate - Justice",
@@ -3531,7 +3417,6 @@
         "Fate - Open/Close",
         "Fate - Pain",
         "Fate - Pair Of Myths",
-        "Fate - Pentacles",
         "Fate - Perfect",
         "Fate - Resounding Word",
         "Fate - Reveal Alignment",
@@ -3539,33 +3424,25 @@
         "Fate - Strength",
         "Fate - Stricture",
         "Fate - Subvert Weapon",
-        "Fate - Swords",
         "Fate - Temperance",
         "Fate - The Chariot",
         "Fate - The Devil",
         "Fate - The Emperor",
-        "Fate - The Empress",
         "Fate - The Fool",
         "Fate - The Hanged Man",
         "Fate - The Hermit",
         "Fate - The Hierophant",
         "Fate - The King",
         "Fate - The Knight",
-        "Fate - The Lovers",
         "Fate - The Magician",
         "Fate - The Moon",
-        "Fate - The Page",
-        "Fate - The Queen",
         "Fate - The Star",
         "Fate - The Sun",
-        "Fate - The Tower",
-        "Fate - The Wheel",
         "Fate - The World",
         "Fate - Truth",
         "Fate - Tug Fate",
         "Fate - Undo Harm",
-        "Fate - Villainy",
-        "Fate - Wands"
+        "Fate - Villainy"
       ]
     },
     "Fencing": {
@@ -4147,23 +4024,19 @@
     },
     "Protection": {
       "records": 68,
-      "records_with_recorded_mechanics": 0,
+      "records_with_recorded_mechanics": 9,
       "records_without_recorded_mechanics": [
-        "Protection - Ablating",
         "Protection - Armored Magic",
         "Protection - Bewilder",
         "Protection - Blast Shield",
         "Protection - Breathless",
         "Protection - Bulwark",
-        "Protection - Buttressing",
         "Protection - Clarity",
         "Protection - Community",
         "Protection - Continuous Ward",
         "Protection - Deathless",
         "Protection - Destructionless",
         "Protection - Distant Protection",
-        "Protection - Durable Barrier",
-        "Protection - Enduring Protection",
         "Protection - Energy Resistance",
         "Protection - Evasive Succor",
         "Protection - Exclusion",
@@ -4172,7 +4045,6 @@
         "Protection - Fortifier",
         "Protection - Friendship",
         "Protection - Glyph",
-        "Protection - Greater Barrier",
         "Protection - Guardian",
         "Protection - Healing Aegis",
         "Protection - Helping Hand",
@@ -4186,20 +4058,17 @@
         "Protection - Logic",
         "Protection - Luck",
         "Protection - Magnetic Shield",
-        "Protection - Mass Aegis",
         "Protection - Mettle",
         "Protection - Missile Shield",
         "Protection - Mystic Shell",
         "Protection - Negation",
         "Protection - Obscurity",
         "Protection - Obstruction",
-        "Protection - Painful Aegis",
         "Protection - Peacebound",
         "Protection - Persistent Succor",
         "Protection - Plexing Aegis",
         "Protection - Punishment",
         "Protection - Quantum Lock",
-        "Protection - Ray Deflection",
         "Protection - Reactive Barrier",
         "Protection - Reflection",
         "Protection - Repel Chaos/Evil/Good/Law",
@@ -4207,7 +4076,6 @@
         "Protection - Resistance",
         "Protection - Secure",
         "Protection - Selective Barrier",
-        "Protection - Shaped Ward",
         "Protection - Shared Aegis",
         "Protection - Slippery",
         "Protection - Spell Ward",
@@ -4464,73 +4332,44 @@
     },
     "Telekinesis": {
       "records": 33,
-      "records_with_recorded_mechanics": 0,
+      "records_with_recorded_mechanics": 21,
       "records_without_recorded_mechanics": [
         "Telekinesis - Acceleration",
-        "Telekinesis - Dampening Field",
-        "Telekinesis - Dancing Weapon",
-        "Telekinesis - Divided Mind",
         "Telekinesis - Excessive Force",
-        "Telekinesis - Finesse",
-        "Telekinesis - Flight",
         "Telekinesis - Floating Shield",
-        "Telekinesis - Forceful Telekinesis",
-        "Telekinesis - Gravity Shift",
-        "Telekinesis - Gravity Ward/Well",
-        "Telekinesis - Greater Speed",
-        "Telekinesis - Homing",
         "Telekinesis - Idle Concentration",
         "Telekinesis - Increased Range",
         "Telekinesis - Kinetic Field",
-        "Telekinesis - Kinetic Sense",
         "Telekinesis - Mobile Bludgeon",
         "Telekinesis - Orbit",
-        "Telekinesis - Pantomime Cage",
         "Telekinesis - Parry",
-        "Telekinesis - Powerful Telekinesis",
-        "Telekinesis - Quick Reactions",
         "Telekinesis - Return",
         "Telekinesis - Seizing Strike",
-        "Telekinesis - Steal",
-        "Telekinesis - Sweeping Bludgeons",
-        "Telekinesis - Telekinetic Crush",
-        "Telekinesis - Telekinetic Maneuver",
-        "Telekinesis - Telekinetic Push",
-        "Telekinesis - Telekinetic Tools",
-        "Telekinesis - Tether",
-        "Telekinesis - Whirlwind Assembly"
+        "Telekinesis - Sweeping Bludgeons"
       ]
     },
     "Time": {
       "records": 30,
-      "records_with_recorded_mechanics": 0,
+      "records_with_recorded_mechanics": 8,
       "records_without_recorded_mechanics": [
-        "Time - After Image",
         "Time - Age",
-        "Time - Augment Healing",
         "Time - Broken Time",
         "Time - Causality",
         "Time - Delay Pain",
         "Time - Eject",
-        "Time - Fast Time",
         "Time - Improved Haste",
         "Time - Improved Slow",
         "Time - Instill Time",
         "Time - Lethargy",
         "Time - Lingering Time",
-        "Time - Mass Time",
         "Time - Ranged Time",
         "Time - Rapid Response",
         "Time - Repetition",
-        "Time - Retroactive Preparation",
         "Time - Retry",
         "Time - Second Chance",
         "Time - Shift Time",
         "Time - Steal Time",
-        "Time - Stretch Time",
         "Time - Temporal Trap",
-        "Time - Time Bubble",
-        "Time - Time Freeze",
         "Time - Time Of The Season",
         "Time - Time Strike",
         "Time - Time Zone",
@@ -4960,7 +4799,7 @@
   },
   "feats": {
     "records": 1201,
-    "records_with_recorded_mechanics": 91,
+    "records_with_recorded_mechanics": 168,
     "records_without_recorded_mechanics": [
       "Ability Channel",
       "Able Aiming",
@@ -4976,7 +4815,6 @@
       "Afterglow",
       "Aggressive Mind Limb",
       "Agitating Scout",
-      "Agonizing Defiling",
       "Airborne Aethermancer",
       "Aligned Attacks",
       "All Together Now",
@@ -4985,9 +4823,7 @@
       "Alloy Telekinesis",
       "Alraun Nose",
       "Altered Summons",
-      "Amateur Striker",
       "Amplifying Adjustment",
-      "Analyze Caster",
       "Anathema",
       "Anemic Wounds",
       "Angels’ Darling",
@@ -5032,7 +4868,6 @@
       "Backup Breaker",
       "Balatro’s Boons",
       "Baleful Storm",
-      "Banshee’s Sotto Voce",
       "Bard of Booze",
       "Bargainer’s Counterspell",
       "Battle Fanfare",
@@ -5044,7 +4879,6 @@
       "Before Creation Comes Destruction",
       "Beholden to the Uncanny",
       "Benevolence",
-      "Between Two Worlds",
       "Biochemical Brews",
       "Bioluminescent Transformation",
       "Black Totem",
@@ -5052,7 +4886,6 @@
       "Blessing/Blight Mastery",
       "Blessing/Blight Versatility",
       "Blood Construct Mastery",
-      "Blood Dampening",
       "Blood Potion",
       "Blood Thirst",
       "Blood Wrack",
@@ -5067,7 +4900,6 @@
       "Bottled Spells",
       "Boundary Admixture",
       "Brain Consumption",
-      "Broken Earth",
       "Bruinous Temper",
       "Brutal Shatter",
       "Buffeting Blast",
@@ -5081,8 +4913,6 @@
       "Cantrips",
       "Capoeirista",
       "Capture Spell",
-      "Careful Caster",
-      "Careful Magic",
       "Catisthenics",
       "Catnip Connoisseur",
       "Catty Observer",
@@ -5094,11 +4924,8 @@
       "Channel Destruction",
       "Channel Life",
       "Channel Luck",
-      "Channel Resistance",
       "Channel Resolve",
       "Channeled Detonation",
-      "Chaotic Counter",
-      "Charged Despoilation",
       "Charming",
       "Cherufe Chomp",
       "Cherufe Sweep",
@@ -5109,13 +4936,11 @@
       "Close Formation",
       "Close-Quarters Conduction",
       "Coastal Infusion",
-      "Cold Heart",
       "Collective Intensity",
       "Color Guard",
       "Combat Recharge",
       "Combat Sphere Focus",
       "Combat Sphere Specialization",
-      "Combatant Caster",
       "Combatant’s Alignment",
       "Commander’s Acumen",
       "Commanding Presence",
@@ -5124,7 +4949,6 @@
       "Companion Teleport",
       "Companion Trigger",
       "Companionship",
-      "Complex Animations",
       "Complex Harmony",
       "Compound Mutagen",
       "Concealed Command",
@@ -5180,7 +5004,6 @@
       "Darkrider",
       "Dastardly Entrapment",
       "Deadcaller",
-      "Deathknight’s Purchase",
       "Debasing Exultation",
       "Deceptive Advisor",
       "Deceptive Boast",
@@ -5192,7 +5015,6 @@
       "Defensive Vigilance",
       "Defiant Radiance",
       "Defiant Shadow",
-      "Defiler’s Channel",
       "Defy Fate",
       "Derelict Dreamspace",
       "Desensitized",
@@ -5205,7 +5027,6 @@
       "Determined Defense",
       "Develop Spellzone",
       "Devourer",
-      "Devouring Defiling",
       "Devouring Finish",
       "Digital Admixture",
       "Dimensional Aegis",
@@ -5219,7 +5040,6 @@
       "Disciplined Casting",
       "Dispatch The Weak",
       "Dispelling Admixture",
-      "Distant Defiling",
       "Distill Compound",
       "Distracting",
       "Distributed Strain",
@@ -5236,7 +5056,6 @@
       "Dreamwalking Initiate",
       "Dual Wielding Mystic Fusion",
       "Dual Wielding Mystic Strike",
-      "Durable Objects",
       "Dynamic Wallcrafter",
       "Ecumenicism",
       "Eldritch Animation",
@@ -5254,7 +5073,6 @@
       "Embraced By Kindred",
       "Emergency Repair",
       "Empowered Anathema",
-      "Emulation Expert",
       "Enchanted Animation",
       "Enchanting Performance",
       "Encompassing Illness",
@@ -5264,7 +5082,6 @@
       "Energy Cascade",
       "Energy Laser",
       "Energy Reflection",
-      "Energy Shift",
       "Energy Snake",
       "Energy Soldier",
       "Enhanced Contingency",
@@ -5275,7 +5092,6 @@
       "Enmity Ward",
       "Ensouled Illuminations",
       "Ensouled Vision",
-      "Entranced in Unreality",
       "Environment Charge",
       "Equal and Opposite",
       "Erratic Vital Strike",
@@ -5287,7 +5103,6 @@
       "Exceptional Ally",
       "Exemplary Transformation",
       "Exorcist",
-      "Expanded Tension Technique",
       "Expanding Presence",
       "Expedited Incantation",
       "Explanatory Illusion",
@@ -5297,8 +5112,6 @@
       "Extended Anathema",
       "Extended Resuscitate",
       "Extra Arsenal Trick",
-      "Extra Battlefield Specialization",
-      "Extra Bestial Trait",
       "Extra Boon Of Purpose",
       "Extra Breadth Of Form",
       "Extra Combat Talent",
@@ -5309,16 +5122,10 @@
       "Extra Magic Talent",
       "Extra Origin Talent",
       "Extra Planar Balancer",
-      "Extra Prowess",
       "Extra Reinforcement",
-      "Extra Scholar’s Knack",
-      "Extra Secret",
-      "Extra Smithing Insight",
       "Extra Spell Points",
-      "Extra Striker Art",
       "Extra Swarm Enhancement",
       "Extra Swarm Powers",
-      "Extra Technical Insight",
       "Extra Unseen Augmentation",
       "Extra Venom",
       "Extradimensional Assembly",
@@ -5338,7 +5145,6 @@
       "Fear And Flame",
       "Feline Heritage",
       "Fertilize Nature",
-      "Fey Interference",
       "Fey Melodies",
       "Feylignment",
       "Field Instruction",
@@ -5371,7 +5177,6 @@
       "Force Shield",
       "Forceful Creation",
       "Forceful Hand",
-      "Forest Roots",
       "Forge Charm",
       "Forged Arcana",
       "Formed Construct",
@@ -5384,7 +5189,6 @@
       "Frozen To The Bone",
       "Furious Flare",
       "Fused Technique",
-      "Gather Shadowstuff",
       "Generative Admixture",
       "Ghostly Admixture",
       "Giantslayer",
@@ -5392,7 +5196,6 @@
       "Glimpse The Flow",
       "Goading Malediction",
       "Grandiose Charms",
-      "Graphomancy",
       "Grappling Caster",
       "Graveborn Expression",
       "Gravitic Anomaly",
@@ -5409,7 +5212,6 @@
       "Guarded Range",
       "Guarded Step",
       "Guided Charm",
-      "Gulf in Reality",
       "Gunsmithing",
       "Habit Forming",
       "Haboob Lord",
@@ -5428,10 +5230,8 @@
       "Healing Touch",
       "Heavy Hand",
       "Heavy-handed Force",
-      "Heedless Metamagic",
       "Helping",
       "Hematic Impaler",
-      "Hemomancy",
       "Hemothermia",
       "Heroic Advantage",
       "Heroic Companion",
@@ -5487,7 +5287,6 @@
       "Improved Rebuff",
       "Improved Retributive Blast",
       "Improved Selective Blast",
-      "Improved Shadow Shield",
       "Improved Spell Combat",
       "Improved Spell Kicker",
       "Improved Spell Proxy",
@@ -5496,16 +5295,13 @@
       "Improving",
       "In Too Deep",
       "Infantry Formation",
-      "Inhuman Defiler",
       "Inkbound Portents",
       "Insidious Magic",
       "Insinuating Incantation",
       "Inspired Learning",
-      "Inspired Surge",
       "Instinctive Stance",
       "Instinctual Skittishness",
       "Instructive Command",
-      "Intense Defiling",
       "Intense Metamagic",
       "Introductory Admixture",
       "Invigorating Rally",
@@ -5524,7 +5320,6 @@
       "Layered Shroud",
       "Leveraged Magic",
       "Ley Line Affinity",
-      "Liberating Triumph",
       "Life Conversion",
       "Lifebound Auspician",
       "Lightning Tactics",
@@ -5557,7 +5352,6 @@
       "Manifestation",
       "Manifold Foci",
       "Manifold Spell Knowledge",
-      "Manipulate Result",
       "Mantled Caster",
       "March Of The Treants",
       "Mark Of Magical Ineptitude",
@@ -5614,7 +5408,6 @@
       "Natural Sciences",
       "Nature’s Enhancement",
       "Nebulous Admixture",
-      "Necrotic Heart",
       "Network of Bonds",
       "Never Beyond Reach",
       "Never Really There",
@@ -5631,7 +5424,6 @@
       "Organized Following",
       "Otherworldly Host",
       "Otherworldly Mind",
-      "Overpower Resistance",
       "Overwatch",
       "Pacified Strike",
       "Parts And Pieces",
@@ -5681,9 +5473,6 @@
       "Practiced Seer",
       "Precision Bombardment",
       "Precocious Creation",
-      "Precogniscent Protection",
-      "Precogniscent Resistance",
-      "Precogniscent Smite",
       "Prepared Counter",
       "Prepared Diagram",
       "Prescient Reflexes",
@@ -5704,7 +5493,6 @@
       "Proxy Network",
       "Pulsing Channel",
       "Puncturing Strike",
-      "Purging Despoilation",
       "Purrging Transformation",
       "Push/Pull Mastery",
       "Racing Ramp",
@@ -5738,23 +5526,18 @@
       "Reservoir",
       "Resist Consumption",
       "Resist Expulsion",
-      "Resistant Veins",
       "Resolute Expertise",
       "Restorative Rush",
       "Revenant Militia",
       "Revitalizing Grasp",
-      "Rhythmic Chaos",
       "Rigorous Defense",
       "Rigorous Student",
-      "Risk Management",
       "Ritual Caster",
       "Ritual Expert",
       "Ritual Master",
       "Robustness",
-      "Roiling Anger",
       "Roll Redemption",
       "Rolling Serpent",
-      "Ruinous Defiling",
       "Rumbling",
       "Rush Of Magic",
       "Rust to Rust",
@@ -5768,7 +5551,6 @@
       "Sanguine Magic",
       "Sanguinivorous",
       "Savagery",
-      "Scholar Of Past And Future",
       "Scorched Path",
       "Scouting Tactics",
       "Searing Brilliance",
@@ -5782,20 +5564,13 @@
       "Shadow Cage",
       "Shadow Doppelganger",
       "Shadow Feast",
-      "Shadow Magic",
-      "Shadow Shield",
       "Shadow Swap",
-      "Shadowblast",
-      "Shadowstuff Armament",
-      "Shadowy Slay",
       "Shape Expert",
       "Shape Quintessence",
       "Shaped Anathema",
       "Shared Magic",
       "Shield Drone",
       "Shielded Formation",
-      "Shift Cost",
-      "Shift Effect",
       "Shifting Disguise",
       "Shifting Mastery",
       "Shifting Style",
@@ -5825,10 +5600,8 @@
       "Spacetime Drift",
       "Spatial Storage",
       "Special Transport",
-      "Specialist Defiler",
       "Specialized Wipe",
       "Spectacular Admixture",
-      "Spectacular Surge",
       "Spell Absorption",
       "Spell Adept",
       "Spell Attack",
@@ -5846,7 +5619,6 @@
       "Spell Saga",
       "Spell Slugger",
       "Spellbound Rebuke",
-      "Spellburn Defiling",
       "Spells to Life",
       "Spellshock Admixture",
       "Spellthief",
@@ -5871,7 +5643,6 @@
       "Strategic Terrain",
       "Strengthened Arms",
       "Striking Ensnarement",
-      "Studied Healing",
       "Studied Scout",
       "Style Synthesis",
       "Succor",
@@ -5889,9 +5660,7 @@
       "Suppressive Counterspell",
       "Surefire Coordination",
       "Surge of Fortune",
-      "Surgeon’s Trade Secrets",
       "Surging Triumph",
-      "Surreal Strike",
       "Surreinforcement",
       "Surrender of the Self",
       "Survey of your Realm",
@@ -5935,7 +5704,6 @@
       "Tentacle Novice",
       "Terminating Conversion",
       "Termination Clause",
-      "Terrain Defiler",
       "Terrain Focus",
       "Terrain Strider",
       "Tether Adept",
@@ -6008,7 +5776,6 @@
       "Vaporized Formulae",
       "Variable Armaments",
       "Variable Size",
-      "Vegetalker",
       "Veiled Horror",
       "Venom Spitter",
       "Venomfire",
@@ -6023,9 +5790,7 @@
       "Versed Student",
       "Vicious Performer",
       "Vigilant Command",
-      "Vigilant Skeptic",
       "Vined Limbs",
-      "Violent Shadow",
       "Virulent Ailment",
       "Vital Magic",
       "Vitalized Fervency",
@@ -6033,12 +5798,9 @@
       "Wall Master",
       "Wand Charger",
       "Wand Wielder",
-      "Wandering Spirit",
-      "War on Reality",
       "Warded Bones",
       "Warded Step",
       "Warding Admixture",
-      "Wardlord",
       "Warlord Of The Damned",
       "Warming",
       "Warning Sign",
@@ -6073,22 +5835,13 @@
       "Wound Manipulator",
       "Zodiac Tattoos"
     ],
-    "records_with_unresolved_prerequisites": 375,
+    "records_with_unresolved_prerequisites": 297,
     "unresolved_prerequisites": {
-      "Abundant Adrenaline": [
-        "Construct type or subtype"
-      ],
       "Adopt Animal Ally": [
         "an animal or vermin companion"
       ],
-      "Adrenaline-Fueled Frenzy": [
-        "Berserker sphere (any (adrenaline) talent)"
-      ],
       "Advanced Circles": [
         "Conjuration sphere (Diagram)"
-      ],
-      "Aeolian Flautist": [
-        "Bardic performance or raging song class feature"
       ],
       "Aerial Trip": [
         "Improved Trip or a combat talent that allows you to perform a trip without provoking an attack of opportunity"
@@ -6097,21 +5850,13 @@
         "Draconic subtype",
         "breezeflight"
       ],
-      "Aligned Attacks": [
-        "Non-neutral alignment"
-      ],
       "All Together Now": [
         "Communication sphere"
       ],
       "Alraun Nose": [
-        "Plant subtype",
         "blood sense racial trait"
       ],
-      "Amateur Striker": [
-        "No levels in a class that has the tension class feature"
-      ],
       "Amplifying Adjustment": [
-        "Mana sphere (any (amp) talent)",
         "Spellhacking sphere"
       ],
       "Anathema": [
@@ -6122,9 +5867,6 @@
       ],
       "Animist": [
         "Survivalism sphere"
-      ],
-      "Arcane Carnage": [
-        "any talent with the strike descriptor"
       ],
       "Arcane Combo": [
         "Caster level 1st or higher with at least two casting traditions"
@@ -6138,9 +5880,6 @@
       "Arcane Fusion": [
         "Caster level 1st or higher with at least two casting traditions",
         "able to create the same effect using multiple casting traditions"
-      ],
-      "Area Bypass": [
-        "War Sphere (any momentum talent)"
       ],
       "Armored Casting": [
         "Light Armor Proficiency"
@@ -6168,9 +5907,6 @@
       "Attuned Dreamer": [
         "either Dreamwalking Initiate or dreamwalker hedgewitch path power"
       ],
-      "Augmented Modulation": [
-        "Enhancement or Protection Sphere"
-      ],
       "Aura Engineering": [
         "Illusion sphere (Deceive Dweomer, Manipulate Aura (sensory, magic))"
       ],
@@ -6189,9 +5925,6 @@
       ],
       "Bard of Booze": [
         "Barroom sphere and Performance sphere"
-      ],
-      "Battle Fanfare": [
-        "bardic performance or raging song class feature"
       ],
       "Battlebard": [
         "Performance sphere"
@@ -6218,8 +5951,7 @@
         "ability to create glamers"
       ],
       "Building Performance": [
-        "Performance sphere",
-        "tension pool"
+        "Performance sphere"
       ],
       "Calculated Shot": [
         "Focused Shot"
@@ -6286,9 +6018,6 @@
       "Companionship": [
         "3rd-level paladin"
       ],
-      "Complex Harmony": [
-        "Bardic performance class feature"
-      ],
       "Compound Mutagen": [
         "Alchemy sphere ((toxin) package)."
       ],
@@ -6316,12 +6045,6 @@
       "Craft Stimulant": [
         "Caster or manifester level 5th"
       ],
-      "Creation Mastery": [
-        "Creation sphere (any (material) talent)"
-      ],
-      "Crescendo": [
-        "bardic performance or raging song class feature"
-      ],
       "Crimson Cabaret": [
         "Performance Sphere",
         "Vitae class feature"
@@ -6340,27 +6063,14 @@
       "Cumulative Nimbus": [
         "Weather sphere (any (shroud) talent)"
       ],
-      "Customized Bond": [
-        "Bound equipment class feature",
-        "customized weapons class feature"
-      ],
       "Dastardly Entrapment": [
         "Infiltration sphere"
       ],
       "Deadcaller": [
         "Conjuration sphere (Undead Creature (type) x2)"
       ],
-      "Deduction": [
-        "studied combat class feature"
-      ],
-      "Defender’s Bonds": [
-        "lay on hands or sentinel’s reserve class feature"
-      ],
       "Defy Fate": [
         "Kismet pool"
-      ],
-      "Destructive Counter": [
-        "Creation sphere (any (material) talent)"
       ],
       "Devourer": [
         "Alteration sphere (Serpentine Transformation (transformation)) or swallow whole ability"
@@ -6381,7 +6091,6 @@
         "War sphere, Squadron Commander; or Warleader sphere, Hive Mind, Troop Commander: caster level 5th or 5 ranks in Diplomacy"
       ],
       "Dramatic Intensity": [
-        "tension pool",
         "one of a grit, luck, or panache pool"
       ],
       "Dramaturgic Spectacle": [
@@ -6419,18 +6128,10 @@
         "energy resistance"
       ],
       "Embraced By Kindred": [
-        "Outsider with the native subtype",
         "alignment matching either an extraplanar ancestor or a patron"
       ],
       "Emergency Repair": [
         "Technological racial trait"
-      ],
-      "Emulation Expert": [
-        "Illusion sphere (Shadow Infusion) or shadow pool",
-        "Shadow Magic or create reality class feature"
-      ],
-      "Enchanting Performance": [
-        "bardic performance or raging song class feature"
       ],
       "Energized Appeasement": [
         "Spirit class feature"
@@ -6438,39 +6139,23 @@
       "Energy Shift": [
         "Destruction sphere or at least 2 evocation spells known"
       ],
-      "Enmity Ward": [
-        "favored enemy class feature"
-      ],
       "Escutcheon": [
         "Banner class feature or Warleader sphere (Heraldry)"
       ],
       "Event Horizon": [
         "Telekinesis sphere (Gravity Well)"
       ],
-      "Exceptional Ally": [
-        "Enhancement sphere (at least one (enhance) talent)"
-      ],
-      "Expanded Tension Technique": [
-        "tension pool"
-      ],
       "Expanding Presence": [
         "antipaladin or paladin"
       ],
       "Explosive Chorus": [
-        "Destruction Sphere (any (blast type) talent)",
         "Warleader Sphere (resonating chorus)"
       ],
       "Exposing Critical": [
         "BAB +11"
       ],
-      "Extend Stance": [
-        "Any (stance) talent"
-      ],
       "Extra Arsenal Trick": [
         "Arsenal trick class feature"
-      ],
-      "Extra Bestial Trait": [
-        "Bestial trait class feature"
       ],
       "Extra Boon Of Purpose": [
         "Boon of purpose class feature"
@@ -6491,14 +6176,10 @@
         "Cultivate Ki or ki power class feature"
       ],
       "Extra Planar Balancer": [
-        "Fey type or subtype",
         "planar balancer racial trait"
       ],
       "Extra Reinforcement": [
         "Warden 5"
-      ],
-      "Extra Secret": [
-        "Secrets class feature"
       ],
       "Extra Swarm Enhancement": [
         "Swarm enhancement class feature"
@@ -6519,17 +6200,8 @@
         "Form sphere (Hidden Storage [auxiliary])",
         "Warp sphere (Extradimensional Storage x2)"
       ],
-      "Favorite Boost": [
-        "Mana sphere (at least one (amp) talent)"
-      ],
-      "Fey Interference": [
-        "Fey type or subtype"
-      ],
       "Fey Melodies": [
         "Performance sphere (instrumental) package"
-      ],
-      "Feylignment": [
-        "Fey type or subtype"
       ],
       "Field Instruction": [
         "Navigation sphere"
@@ -6569,9 +6241,6 @@
       "Fool Magic": [
         "Deceitful or Skill Focus (Bluff)"
       ],
-      "Forest Roots": [
-        "Plant type or subtype"
-      ],
       "Formulae Geomancing": [
         "Nature sphere (three or more packages)"
       ],
@@ -6588,17 +6257,8 @@
       "Frozen To The Bone": [
         "Destruction sphere (at least one (blast type) talent that deals cold damage)"
       ],
-      "Furious Flare": [
-        "Destruction sphere (any (blast type) talent)"
-      ],
       "Fused Technique": [
         "Knowledge of at least one technique"
-      ],
-      "Gather Shadowstuff": [
-        "Shadowmark class feature"
-      ],
-      "Glimpse The Flow": [
-        "Divination sphere (any (sense) talent)"
       ],
       "Grandiose Charms": [
         "either Bluster or Performance sphere"
@@ -6610,7 +6270,7 @@
         "Performance sphere"
       ],
       "Greater Created": [
-        "Construct subtype"
+        "Only selectable at character creation"
       ],
       "Greater Cuazaj Breath": [
         "Draconic subtype",
@@ -6634,9 +6294,6 @@
       "Hardened Shell": [
         "Tatulani subtype"
       ],
-      "Harnessed Virtue": [
-        "non-neutral alignment"
-      ],
       "Healing Touch": [
         "lay on hands or fervor class feature"
       ],
@@ -6654,10 +6311,6 @@
       ],
       "Hexblade": [
         "Hex class feature"
-      ],
-      "Hold the Note": [
-        "tension pool",
-        "one of bardic performance, psionics, or raging song"
       ],
       "Homogenous Companions": [
         "Conjuration sphere (Extra Companion, any (form) or (type) talent)"
@@ -6680,9 +6333,6 @@
       "I Will Save You": [
         "Guardian sphere (Defend Other, I Will Hear, I Will Come)"
       ],
-      "Illusionary Blast": [
-        "Illusion sphere (Illusionary Touch (sensory, touch) x2)"
-      ],
       "Imbue With Nature": [
         "Nature sphere (any (geomancing) talent)"
       ],
@@ -6699,26 +6349,14 @@
         "Cecaelia subtype",
         "ink jet racial ability"
       ],
-      "Improved Spell Combat": [
-        "any talent with the strike descriptor"
-      ],
       "Improved Spell Kicker": [
         "Card Casting or Charged Spells drawback"
       ],
       "Insinuating Incantation": [
         "Bluster sphere"
       ],
-      "Intense Metamagic": [
-        "tension pool"
-      ],
-      "Jumbled Organs": [
-        "Construct type or subtype"
-      ],
       "Layered Shroud": [
         "Weather sphere (one (shroud) talent)"
-      ],
-      "Lightshow": [
-        "bardic performance class ability"
       ],
       "Linguistic Mastery": [
         "Tatulani subtype"
@@ -6727,17 +6365,11 @@
         "Draconic subtype",
         "Constitution 13+"
       ],
-      "Localized Arcana": [
-        "Favored Terrain class feature"
-      ],
       "Manabond Versatility": [
         "any other magic sphere"
       ],
       "Manifold Spell Knowledge": [
         "Caster level 1st or higher with at least two casting traditions"
-      ],
-      "Manipulate Result": [
-        "Spell point pool or casting class feature"
       ],
       "Mantled Caster": [
         "any (mantle) talent"
@@ -6765,8 +6397,7 @@
         "Faction sphere"
       ],
       "Might Of The Grave": [
-        "Death sphere (reanimate ability)",
-        "Enhancement sphere (any (enhance) ability)"
+        "Death sphere (reanimate ability)"
       ],
       "Mind Over Manners": [
         "Conjuration sphere (Call Planar Creature)"
@@ -6775,25 +6406,15 @@
         "Poison eater alraun"
       ],
       "Morphic Disguise": [
-        "Alteration or Illusion sphere",
         "Subterfuge sphere"
       ],
       "Mounted Protector": [
         "Beastmastery sphere or animal companion class feature"
       ],
-      "Mutagenic Enhancements": [
-        "Enhancement sphere (any (enhance) ability)"
-      ],
       "Natural Sciences": [
         "Associated ranks 3",
         "Herbalism sphere ((herbal) package)",
         "either the Alchemy sphere ((formulae) package) or Nature sphere"
-      ],
-      "Nature’s Enhancement": [
-        "Nature sphere (any (spirit) talent)"
-      ],
-      "Object Familiar": [
-        "ability to acquire a familiar"
       ],
       "Organic Spirits": [
         "Barroom sphere plus one other sphere: Nature sphere or Herbalism sphere"
@@ -6803,9 +6424,6 @@
       ],
       "Overwatch": [
         "Covering Fire talent"
-      ],
-      "Pacified Strike": [
-        "one talent from any sphere that has the strike descriptor"
       ],
       "Perpetual Connection": [
         "Communication sphere, Posse Commander; or War sphere, Squadron Commander; or Warleader sphere, Troop Commander"
@@ -6823,11 +6441,9 @@
         "Knowledge of at least one technique"
       ],
       "Planar Strike": [
-        "Fey type or subtype",
         "planar balancer racial trait"
       ],
       "Planar Swing": [
-        "Fey type or subtype",
         "planar balancer racial trait"
       ],
       "Poetry of Form": [
@@ -6855,22 +6471,6 @@
       "Practiced Concentration": [
         "Consciousness Linked x2"
       ],
-      "Precocious Creation": [
-        "Creation sphere (any (material) talent)"
-      ],
-      "Precogniscent Protection": [
-        "Divination sphere (one or more (sense) talents or abilities)"
-      ],
-      "Precogniscent Resistance": [
-        "Divination sphere (one or more (sense) talents or abilities)"
-      ],
-      "Precogniscent Smite": [
-        "Divination sphere (one or more (sense) talents or abilities)"
-      ],
-      "Primal Blast": [
-        "Destruction sphere (any (blast type) talent)",
-        "Nature sphere (any package)"
-      ],
       "Primal Dancer": [
         "Performance sphere ((dance) package)",
         "either the Berserker sphere or Destruction sphere (one (blast type) talent that deals energy damage or Energy Aura talent)"
@@ -6886,9 +6486,6 @@
       ],
       "Push/Pull Mastery": [
         "Telekinesis sphere (Directional Control drawback)"
-      ],
-      "Rage Of The Grave": [
-        "rage class feature"
       ],
       "Raging Lucidity": [
         "Body Control Sphere",
@@ -6920,9 +6517,6 @@
         "Draconic subtype",
         "breezeflight"
       ],
-      "Refined Amplification": [
-        "Mana Sphere (any (amp) talent)"
-      ],
       "Regulated Metabolism": [
         "Body Control sphere",
         "vitae class feature"
@@ -6938,15 +6532,7 @@
         "Ability to create undead creatures"
       ],
       "Revitalizing Grasp": [
-        "Life sphere (at least one (vitality) talent)",
-        "lay on hands class feature"
-      ],
-      "Rigorous Defense": [
-        "inspiration class feature"
-      ],
-      "Roiling Anger": [
-        "Ki pool class feature",
-        "rage class feature"
+        "Life sphere (at least one (vitality) talent)"
       ],
       "Roll Redemption": [
         "Kismet pool."
@@ -6960,11 +6546,8 @@
       "Ruthless Sneak": [
         "Sneak Attack +3d6"
       ],
-      "Sacrosanct Firewall": [
-        "Fate sphere (Hallow (word))"
-      ],
-      "Sanctified Vigilance": [
-        "War sphere (any (rally) talent)"
+      "Salvaging Execution": [
+        "Blood sphere, Death sphere (Shroud (dominion)), or Telekinesis sphere"
       ],
       "Sanguine Magic": [
         "Duelist sphere (one (bleed) talent)"
@@ -6983,21 +6566,6 @@
       ],
       "Shadow Doppelganger": [
         "Illusion sphere (Illusionary Disguise ability)"
-      ],
-      "Shadow Magic": [
-        "Illusion sphere (Shadow Infusion) or shadow pool"
-      ],
-      "Shadowblast": [
-        "Shadowmark class feature"
-      ],
-      "Shift Cost": [
-        "Spell point pool"
-      ],
-      "Shift Effect": [
-        "Spell point pool or casting class feature"
-      ],
-      "Shifting Style": [
-        "customized weapons class feature"
       ],
       "Shoulder To Shoulder": [
         "Grit",
@@ -7018,33 +6586,20 @@
       "Sojourner": [
         "Performance sphere ((dance) package)"
       ],
-      "Solid Illusions": [
-        "Illusion sphere (Illusionary Touch (sensory, touch) x2)"
-      ],
       "Spatial Storage": [
         "Artifice sphere (Storage Enhancement)"
       ],
       "Spell Adept": [
         "spherecaster"
       ],
-      "Spell Attack": [
-        "any talent with the strike descriptor"
-      ],
       "Spell Attack Whirlwind": [
-        "Whirlwind Attack feat or Whirl of Blows mystic combat",
-        "any talent with the strike descriptor"
-      ],
-      "Spell Capacitor Agenda": [
-        "War Sphere (any momentum talent)"
+        "Whirlwind Attack feat or Whirl of Blows mystic combat"
       ],
       "Spell Dabbler": [
         "Spherecaster"
       ],
       "Spell Kicker": [
         "Card Casting or Charged Spells drawback"
-      ],
-      "Spell Maneuver": [
-        "any talent with the strike descriptor"
       ],
       "Spell Proxy": [
         "Must not possess the Personal Magics sphere-specific drawback (Special)"
@@ -7054,17 +6609,8 @@
         "mass",
         "range or strike descriptors"
       ],
-      "Spirit Form": [
-        "Nature sphere (any (spirit) talent)"
-      ],
-      "Spiteful End": [
-        "Death or Fate sphere"
-      ],
       "Steam Geomancing": [
         "Nature sphere ((fire) package and (water) package)"
-      ],
-      "Steel Skeleton": [
-        "Construct type or subtype"
       ],
       "Strategic Terrain": [
         "Survivalism sphere ((dredge) package)"
@@ -7075,24 +6621,11 @@
       "Striking Ensnarement": [
         "Constrict, engulf, swallow whole, troop attack, or swarm attack; any one strike talent"
       ],
-      "Studied Scout": [
-        "studied target or studied combat class feature"
-      ],
       "Style Synthesis": [
-        "Any (stance) talent",
         "any style feat"
-      ],
-      "Succor": [
-        "lay on hands class feature"
-      ],
-      "Superior Rebuff": [
-        "improved evasion class feature"
       ],
       "Surefire Coordination": [
         "Knowledge of at least one technique"
-      ],
-      "Surreinforcement": [
-        "Illusion sphere (Shadow Infusion) or create reality class feature"
       ],
       "Swarming Strike": [
         "Coordination class feature"
@@ -7106,14 +6639,8 @@
       "Tactile Density": [
         "Draconic subtype"
       ],
-      "Tactile Illusion": [
-        "Illusion sphere (Illusionary Touch (sensory, touch) x2)"
-      ],
       "Talented Leaper": [
         "Cherufe subtype"
-      ],
-      "Target Spotting": [
-        "favored enemy class feature"
       ],
       "Technical Compatibility": [
         "Independent Invention"
@@ -7136,11 +6663,7 @@
       "Theurgic Virtuoso": [
         "Caster level 1st or higher with at least two casting traditions"
       ],
-      "Thrum Of Rain": [
-        "bardic performance or raging song class feature"
-      ],
       "Time-Crossed Plots": [
-        "Divination or Time sphere",
         "any one [plan] talent"
       ],
       "Tool Transformation": [
@@ -7161,15 +6684,6 @@
       ],
       "Trailblazer": [
         "Navigation sphere"
-      ],
-      "Triage": [
-        "casting class feature or ki pool class feature"
-      ],
-      "Tribal Rhythm": [
-        "bardic performance or raging song class feature"
-      ],
-      "True Rage": [
-        "Berserker sphere (any (adrenaline) talent)"
       ],
       "Two Minds": [
         "Alteration sphere (Additional Limbs) or multiple heads"
@@ -7203,9 +6717,6 @@
       "Variable Armaments": [
         "companion with 6 or more Hit Dice"
       ],
-      "Vegetalker": [
-        "Plant type or subtype"
-      ],
       "Venom Spitter": [
         "Alteration sphere (Serpentine Transformation (transformation) or Vermin Transformation (transformation)), poison bestial trait, or racial poison ability"
       ],
@@ -7236,9 +6747,6 @@
       ],
       "Vined Limbs": [
         "Draide alraun"
-      ],
-      "Violent Shadow": [
-        "shadow pool"
       ],
       "Vital Magic": [
         "Fervor or lay on hands class feature"
@@ -7272,8 +6780,8 @@
   },
   "feat_status_labels": {
     "existing": 4,
-    "mechanics-added": 90,
-    "partial": 1104,
+    "mechanics-added": 165,
+    "partial": 1029,
     "sphere-specific-records": 3
   },
   "traits": {
@@ -7543,5 +7051,322 @@
         "GM approval and setting/tradition eligibility for Tradition trait"
       ]
     }
+  },
+  "received_effect_templates": {
+    "spheres_divination_effects.lst": [
+      "Divination Effect - Discern Individual - Monster Lore",
+      "Divination Effect - Divine Capability - Assessed Target",
+      "Divination Effect - Divine Future - Attack",
+      "Divination Effect - Divine Future - Initiative",
+      "Divination Effect - Divine Future - Maneuver",
+      "Divination Effect - Divine Future - Save",
+      "Divination Effect - Divine Future - Skill",
+      "Divination Effect - Foreshadow",
+      "Divination Effect - Foreshadow - Dodge AC",
+      "Divination Effect - Ghost Sight - Invisible or Ethereal Target",
+      "Divination Effect - Nature Sense",
+      "Divination Effect - Prescience",
+      "Divination Effect - Prescience - Dismissed Attack",
+      "Divination Effect - Prescience - Dismissed Maneuver",
+      "Divination Effect - Sensory Overload - Mindless Target",
+      "Divination Effect - Sniper's Eye - Distance Perception",
+      "Divination Effect - Sniper's Eye - Ranged Attack Penalties",
+      "Divination Effect - Unhooded Sight - Disbelieve Illusion",
+      "Divination State - Active Senses"
+    ],
+    "spheres_enhancement_effects.lst": [
+      "Enhancement Effect - Alter Movement - Burrow",
+      "Enhancement Effect - Alter Movement - Climb",
+      "Enhancement Effect - Alter Movement - Conditional Skills",
+      "Enhancement Effect - Alter Movement - Fly",
+      "Enhancement Effect - Alter Movement - Swim",
+      "Enhancement Effect - Alter Movement - Walk",
+      "Enhancement Effect - Cripple",
+      "Enhancement Effect - Enhance Focus - Acrobatics",
+      "Enhancement Effect - Enhance Focus - Appraise",
+      "Enhancement Effect - Enhance Focus - Bluff",
+      "Enhancement Effect - Enhance Focus - Climb",
+      "Enhancement Effect - Enhance Focus - Craft (Alchemy)",
+      "Enhancement Effect - Enhance Focus - Craft (Armor)",
+      "Enhancement Effect - Enhance Focus - Craft (Baskets)",
+      "Enhancement Effect - Enhance Focus - Craft (Blacksmithing)",
+      "Enhancement Effect - Enhance Focus - Craft (Books)",
+      "Enhancement Effect - Enhance Focus - Craft (Bows)",
+      "Enhancement Effect - Enhance Focus - Craft (Calligraphy)",
+      "Enhancement Effect - Enhance Focus - Craft (Carpentry)",
+      "Enhancement Effect - Enhance Focus - Craft (Cloth)",
+      "Enhancement Effect - Enhance Focus - Craft (Clothing)",
+      "Enhancement Effect - Enhance Focus - Craft (Gemcutting)",
+      "Enhancement Effect - Enhance Focus - Craft (Glass)",
+      "Enhancement Effect - Enhance Focus - Craft (Jewelry)",
+      "Enhancement Effect - Enhance Focus - Craft (Leather)",
+      "Enhancement Effect - Enhance Focus - Craft (Locks)",
+      "Enhancement Effect - Enhance Focus - Craft (Mechanical)",
+      "Enhancement Effect - Enhance Focus - Craft (Paintings)",
+      "Enhancement Effect - Enhance Focus - Craft (Pottery)",
+      "Enhancement Effect - Enhance Focus - Craft (Sculptures)",
+      "Enhancement Effect - Enhance Focus - Craft (Ships)",
+      "Enhancement Effect - Enhance Focus - Craft (Shoes)",
+      "Enhancement Effect - Enhance Focus - Craft (Stonemasonry)",
+      "Enhancement Effect - Enhance Focus - Craft (Tattoos)",
+      "Enhancement Effect - Enhance Focus - Craft (Traps)",
+      "Enhancement Effect - Enhance Focus - Craft (Untrained)",
+      "Enhancement Effect - Enhance Focus - Craft (Weapons)",
+      "Enhancement Effect - Enhance Focus - Diplomacy",
+      "Enhancement Effect - Enhance Focus - Disable Device",
+      "Enhancement Effect - Enhance Focus - Disguise",
+      "Enhancement Effect - Enhance Focus - Escape Artist",
+      "Enhancement Effect - Enhance Focus - Fly",
+      "Enhancement Effect - Enhance Focus - Handle Animal",
+      "Enhancement Effect - Enhance Focus - Heal",
+      "Enhancement Effect - Enhance Focus - Intimidate",
+      "Enhancement Effect - Enhance Focus - Knowledge (Arcana)",
+      "Enhancement Effect - Enhance Focus - Knowledge (Dungeoneering)",
+      "Enhancement Effect - Enhance Focus - Knowledge (Engineering)",
+      "Enhancement Effect - Enhance Focus - Knowledge (Geography)",
+      "Enhancement Effect - Enhance Focus - Knowledge (History)",
+      "Enhancement Effect - Enhance Focus - Knowledge (Local)",
+      "Enhancement Effect - Enhance Focus - Knowledge (Nature)",
+      "Enhancement Effect - Enhance Focus - Knowledge (Nobility)",
+      "Enhancement Effect - Enhance Focus - Knowledge (Planes)",
+      "Enhancement Effect - Enhance Focus - Knowledge (Religion)",
+      "Enhancement Effect - Enhance Focus - Knowledge (Untrained)",
+      "Enhancement Effect - Enhance Focus - Linguistics",
+      "Enhancement Effect - Enhance Focus - Perception",
+      "Enhancement Effect - Enhance Focus - Perform (Act)",
+      "Enhancement Effect - Enhance Focus - Perform (Comedy)",
+      "Enhancement Effect - Enhance Focus - Perform (Dance)",
+      "Enhancement Effect - Enhance Focus - Perform (Keyboard Instruments)",
+      "Enhancement Effect - Enhance Focus - Perform (Oratory)",
+      "Enhancement Effect - Enhance Focus - Perform (Percussion Instruments)",
+      "Enhancement Effect - Enhance Focus - Perform (Sing)",
+      "Enhancement Effect - Enhance Focus - Perform (String Instruments)",
+      "Enhancement Effect - Enhance Focus - Perform (Untrained)",
+      "Enhancement Effect - Enhance Focus - Perform (Wind Instruments)",
+      "Enhancement Effect - Enhance Focus - Profession (Architect)",
+      "Enhancement Effect - Enhance Focus - Profession (Baker)",
+      "Enhancement Effect - Enhance Focus - Profession (Barrister)",
+      "Enhancement Effect - Enhance Focus - Profession (Blacksmith)",
+      "Enhancement Effect - Enhance Focus - Profession (Brewer)",
+      "Enhancement Effect - Enhance Focus - Profession (Butcher)",
+      "Enhancement Effect - Enhance Focus - Profession (Clerk)",
+      "Enhancement Effect - Enhance Focus - Profession (Cook)",
+      "Enhancement Effect - Enhance Focus - Profession (Courtesan)",
+      "Enhancement Effect - Enhance Focus - Profession (Driver)",
+      "Enhancement Effect - Enhance Focus - Profession (Engineer)",
+      "Enhancement Effect - Enhance Focus - Profession (Farmer)",
+      "Enhancement Effect - Enhance Focus - Profession (Fisherman)",
+      "Enhancement Effect - Enhance Focus - Profession (Gambler)",
+      "Enhancement Effect - Enhance Focus - Profession (Gardener)",
+      "Enhancement Effect - Enhance Focus - Profession (Herbalist)",
+      "Enhancement Effect - Enhance Focus - Profession (Innkeeper)",
+      "Enhancement Effect - Enhance Focus - Profession (Librarian)",
+      "Enhancement Effect - Enhance Focus - Profession (Merchant)",
+      "Enhancement Effect - Enhance Focus - Profession (Midwife)",
+      "Enhancement Effect - Enhance Focus - Profession (Miller)",
+      "Enhancement Effect - Enhance Focus - Profession (Miner)",
+      "Enhancement Effect - Enhance Focus - Profession (Pilot)",
+      "Enhancement Effect - Enhance Focus - Profession (Porter)",
+      "Enhancement Effect - Enhance Focus - Profession (Sailor)",
+      "Enhancement Effect - Enhance Focus - Profession (Scribe)",
+      "Enhancement Effect - Enhance Focus - Profession (Shepherd)",
+      "Enhancement Effect - Enhance Focus - Profession (Soldier)",
+      "Enhancement Effect - Enhance Focus - Profession (Soothsayer)",
+      "Enhancement Effect - Enhance Focus - Profession (Stable Master)",
+      "Enhancement Effect - Enhance Focus - Profession (Tanner)",
+      "Enhancement Effect - Enhance Focus - Profession (Trapper)",
+      "Enhancement Effect - Enhance Focus - Profession (Untrained)",
+      "Enhancement Effect - Enhance Focus - Profession (Woodcutter)",
+      "Enhancement Effect - Enhance Focus - Ride",
+      "Enhancement Effect - Enhance Focus - Sense Motive",
+      "Enhancement Effect - Enhance Focus - Sleight of Hand",
+      "Enhancement Effect - Enhance Focus - Spellcraft",
+      "Enhancement Effect - Enhance Focus - Stealth",
+      "Enhancement Effect - Enhance Focus - Survival",
+      "Enhancement Effect - Enhance Focus - Swim",
+      "Enhancement Effect - Enhance Focus - Untrained Charisma",
+      "Enhancement Effect - Enhance Focus - Untrained Dexterity",
+      "Enhancement Effect - Enhance Focus - Untrained Intelligence",
+      "Enhancement Effect - Enhance Focus - Untrained Strength",
+      "Enhancement Effect - Enhance Focus - Untrained Wisdom",
+      "Enhancement Effect - Enhance Focus - Use Magic Device",
+      "Enhancement Effect - Lighten - Half Weight - Conditional CMD",
+      "Enhancement Effect - Lighten - Levitating Attack",
+      "Enhancement Effect - Lighten - Weightless or Floating - Conditional CMD",
+      "Enhancement Effect - Mental Enhancement - CHA",
+      "Enhancement Effect - Mental Enhancement - INT",
+      "Enhancement Effect - Mental Enhancement - WIS",
+      "Enhancement Effect - Physical Enhancement - CON",
+      "Enhancement Effect - Physical Enhancement - DEX",
+      "Enhancement Effect - Physical Enhancement - STR",
+      "Enhancement Effect - Spectral Enhancement - Conditional Saves",
+      "Enhancement Effect - Staunch Resistance - Fortitude",
+      "Enhancement Effect - Staunch Resistance - Reflex",
+      "Enhancement Effect - Staunch Resistance - Will",
+      "Enhancement Effect - Superior Reflexes"
+    ],
+    "spheres_fate_effects.lst": [
+      "Fate Effect - Borrow Luck - Ability Checks",
+      "Fate Effect - Borrow Luck - Attack Rolls",
+      "Fate Effect - Borrow Luck - Saving Throws",
+      "Fate Effect - Borrow Luck - Skill Checks",
+      "Fate Effect - Borrow Trouble - Ability Checks",
+      "Fate Effect - Borrow Trouble - Attack Rolls",
+      "Fate Effect - Borrow Trouble - Saving Throws",
+      "Fate Effect - Borrow Trouble - Skill Checks",
+      "Fate Effect - Cups",
+      "Fate Effect - Enmity - Overwhelming Opposing Aura",
+      "Fate Effect - Enmity - Strong Opposing Aura",
+      "Fate Effect - Greater Serendipity - Enemy",
+      "Fate Effect - Hallow - Profane - Opposed Alignment Only",
+      "Fate Effect - Hallow - Sacred - Opposed Alignment Only",
+      "Fate Effect - Justice - Conditional",
+      "Fate Effect - Malice - Accumulated Bonus",
+      "Fate Effect - Pain",
+      "Fate Effect - Pain - Mental Skills",
+      "Fate Effect - Pentacles - Fortitude",
+      "Fate Effect - Pentacles - Reflex",
+      "Fate Effect - Pentacles - Will",
+      "Fate Effect - Perfect - CHA",
+      "Fate Effect - Perfect - CHA - One Round Diplomacy",
+      "Fate Effect - Perfect - CON",
+      "Fate Effect - Perfect - DEX",
+      "Fate Effect - Perfect - INT",
+      "Fate Effect - Perfect - INT - Trained Check Only",
+      "Fate Effect - Perfect - STR",
+      "Fate Effect - Perfect - STR - BullRush Already Safe",
+      "Fate Effect - Perfect - STR - Overrun Already Safe",
+      "Fate Effect - Perfect - STR - Trip Already Safe",
+      "Fate Effect - Perfect - WIS",
+      "Fate Effect - Serendipity",
+      "Fate Effect - Strength",
+      "Fate Effect - Swords",
+      "Fate Effect - Swords - Discharged Confirmation Only",
+      "Fate Effect - The Chariot - Conditional",
+      "Fate Effect - The Devil - Discharged - Conditional",
+      "Fate Effect - The Emperor - Discharged Insight - Attack",
+      "Fate Effect - The Emperor - Discharged Insight - Damage",
+      "Fate Effect - The Emperor - Discharged Insight - Initiative",
+      "Fate Effect - The Emperor - Discharged Insight - Save",
+      "Fate Effect - The Emperor - Discharged Insight - Skill",
+      "Fate Effect - The Emperor - Penalty Reduction - Attack",
+      "Fate Effect - The Emperor - Penalty Reduction - Damage",
+      "Fate Effect - The Emperor - Penalty Reduction - Initiative",
+      "Fate Effect - The Emperor - Penalty Reduction - Save",
+      "Fate Effect - The Emperor - Penalty Reduction - Skill",
+      "Fate Effect - The Empress - Discharge - Attack",
+      "Fate Effect - The Empress - Discharge - Initiative",
+      "Fate Effect - The Empress - Discharge - Save",
+      "Fate Effect - The Empress - Discharge - Skill",
+      "Fate Effect - The Empress - Spend - Attack",
+      "Fate Effect - The Empress - Spend - Initiative",
+      "Fate Effect - The Empress - Spend - Save",
+      "Fate Effect - The Empress - Spend - Skill",
+      "Fate Effect - The Empress - Spend - Weapon Damage",
+      "Fate Effect - The Fool",
+      "Fate Effect - The Hanged Man - Discharged - Attack",
+      "Fate Effect - The Hanged Man - Discharged - Combat Maneuver",
+      "Fate Effect - The Hanged Man - Discharged - Initiative",
+      "Fate Effect - The Hanged Man - Discharged - Save",
+      "Fate Effect - The Hanged Man - Discharged - Skill",
+      "Fate Effect - The Hanged Man - Penalize Fortitude",
+      "Fate Effect - The Hanged Man - Penalize Reflex",
+      "Fate Effect - The Hanged Man - Penalize Will",
+      "Fate Effect - The Hermit - Self Aid - Attack",
+      "Fate Effect - The Hermit - Self Aid - Defense",
+      "Fate Effect - The Hermit - Self Aid - Skill",
+      "Fate Effect - The Hierophant - Conditional",
+      "Fate Effect - The High Priestess - Discharged",
+      "Fate Effect - The King",
+      "Fate Effect - The Knight - Condition Initiative Penalties",
+      "Fate Effect - The Lovers - Adjacent Allies",
+      "Fate Effect - The Magician - Attacks of Opportunity",
+      "Fate Effect - The Magician - Untrained Skills",
+      "Fate Effect - The Moon - Conditional",
+      "Fate Effect - The Page - Discharged Morale - Attack",
+      "Fate Effect - The Page - Discharged Morale - Damage",
+      "Fate Effect - The Page - Discharged Morale - Initiative",
+      "Fate Effect - The Page - Discharged Morale - Save",
+      "Fate Effect - The Page - Discharged Morale - Skill",
+      "Fate Effect - The Star - Conditional",
+      "Fate Effect - The Sun - Discharged",
+      "Fate Effect - The Wheel - Discharged - Attack",
+      "Fate Effect - The Wheel - Discharged - Concentration",
+      "Fate Effect - The Wheel - Discharged - Initiative",
+      "Fate Effect - The Wheel - Discharged - Save",
+      "Fate Effect - The Wheel - Discharged - Skill",
+      "Fate Effect - The Wheel - Ongoing - 1 - Attack and Damage",
+      "Fate Effect - The Wheel - Ongoing - 2 - Saves",
+      "Fate Effect - The Wheel - Ongoing - 3 - Initiative and Skills",
+      "Fate Effect - The Wheel - Ongoing - 4 - Concentration and Maneuvers",
+      "Fate Effect - The World - Conditional Skills",
+      "Fate Effect - Tug Fate - Bonus - Attack",
+      "Fate Effect - Tug Fate - Bonus - Initiative",
+      "Fate Effect - Tug Fate - Bonus - Save",
+      "Fate Effect - Tug Fate - Bonus - Skill",
+      "Fate Effect - Tug Fate - Penalty - Attack",
+      "Fate Effect - Tug Fate - Penalty - Initiative",
+      "Fate Effect - Tug Fate - Penalty - Save",
+      "Fate Effect - Tug Fate - Penalty - Skill",
+      "Fate Effect - Villainy - Paid Ally Bonus",
+      "Fate Effect - Wands"
+    ],
+    "spheres_protection_effects.lst": [
+      "Protection Effect - Armored Magic - Armor",
+      "Protection Effect - Armored Magic - Shield",
+      "Protection Effect - Breathless - Conditional Saves",
+      "Protection Effect - Deathless - Conditional Saves",
+      "Protection Effect - Deflection",
+      "Protection Effect - Destructionless - Conditional Defense",
+      "Protection Effect - Energy Resistance - Acid",
+      "Protection Effect - Energy Resistance - Cold",
+      "Protection Effect - Energy Resistance - Electricity",
+      "Protection Effect - Energy Resistance - Fire",
+      "Protection Effect - Energy Resistance - Sonic",
+      "Protection Effect - Exclusion - Attacker Penalty",
+      "Protection Effect - Eyeless - Conditional Defense",
+      "Protection Effect - Fateless - Conditional Saves",
+      "Protection Effect - Guardian - Attacker Penalty",
+      "Protection Effect - Helping Hand - Skill Reroll Only",
+      "Protection Effect - Inner Peace - Conditional Saves",
+      "Protection Effect - Inner Peace - Situational Skills",
+      "Protection Effect - Iron Shield - Conditional Defense",
+      "Protection Effect - Mettle - Critical Confirmation Only",
+      "Protection Effect - Resist Transformation - Conditional Saves",
+      "Protection Effect - Resistance",
+      "Protection Effect - Slippery",
+      "Protection Effect - Stabilize - Conditional Defense"
+    ],
+    "spheres_time_effects.lst": [
+      "Time Effect - Age - Middle Age to Old Age",
+      "Time Effect - Age - Middle Age to Venerable",
+      "Time Effect - Age - Middle Age to Young Adult",
+      "Time Effect - Age - Old Age to Middle Age",
+      "Time Effect - Age - Old Age to Venerable",
+      "Time Effect - Age - Old Age to Young Adult",
+      "Time Effect - Age - Venerable to Middle Age",
+      "Time Effect - Age - Venerable to Old Age",
+      "Time Effect - Age - Venerable to Young Adult",
+      "Time Effect - Age - Young Adult to Middle Age",
+      "Time Effect - Age - Young Adult to Old Age",
+      "Time Effect - Age - Young Adult to Venerable",
+      "Time Effect - Broken Time",
+      "Time Effect - Haste - Attack",
+      "Time Effect - Haste - Burrow",
+      "Time Effect - Haste - Climb",
+      "Time Effect - Haste - Dodge",
+      "Time Effect - Haste - Fly",
+      "Time Effect - Haste - Swim",
+      "Time Effect - Haste - Walk",
+      "Time Effect - Improved Haste - Attacks of Opportunity",
+      "Time Effect - Improved Haste - Full Attack",
+      "Time Effect - Rapid Response - Initiative",
+      "Time Effect - Rapid Response - Three Selections",
+      "Time Effect - Rapid Response - Two Selections",
+      "Time Effect - Slow - Penalties",
+      "Time Effect - Timeline Bridge - Knowledge",
+      "Time Effect - Timeline Bridge - Single Attack Defense",
+      "Time Effect - Timeline Bridge - Single Save"
+    ]
   }
 }

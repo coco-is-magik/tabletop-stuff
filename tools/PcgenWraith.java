@@ -64,7 +64,35 @@ class PcgenWraith {
                 rejected(controller, messages, feats, extra, "InfoAbility.Messages.NotQualified");
                 rejected(controller, messages, haunts, rounds, "InfoAbility.Messages.NotQualified");
             } else {
+                var savedGhostlyPool = game.getAbilityCategory("Wraith Ghostly Death Talent");
+                var savedGhostly = ability(haunts, "Wraith Ghostly Talent");
+                var savedDeath = ability(savedGhostlyPool, "Death - Corpse Bomb");
+                if (reload && level >= 5) {
+                    require(pc.hasAbilityKeyed(game.getAbilityCategory("Spheres Magic Talent"), savedDeath.getKeyName()), "Ghostly selection persistence");
+                    require(pc.getVariableValue("SPHERES_WRAITH_GHOSTLY_TALENTS", "").intValue() == 2, "Repeated ghostly grant persistence");
+                    require(pc.getAvailableAbilityPool(savedGhostlyPool).intValue() == 1, "Saved ghostly pool");
+                    controller.removeAbility(savedGhostlyPool, savedDeath);
+                    controller.removeAbility(haunts, savedGhostly);
+                    require(pc.getAvailableAbilityPool(savedGhostlyPool).intValue() == 1, "Partial ghostly refund");
+                    controller.removeAbility(haunts, savedGhostly);
+                }
                 if (reload) {
+                    if (level >= 12) {
+                        var expandedPool = game.getAbilityCategory("Wraith Expanded Path");
+                        var improvedPool = game.getAbilityCategory("Wraith Improved Expanded Path");
+                        var target = ability(expandedPool, "Wraith Path of the Poltergeist");
+                        var improvedTarget = ability(improvedPool, "Wraith Path of the Poltergeist");
+                        require(pc.hasAbilityKeyed(expandedPool, target.getKeyName()), "Expanded target persistence");
+                        require(pc.hasAbilityKeyed(improvedPool, improvedTarget.getKeyName()), "Improved target persistence");
+                        require(pc.getAvailableAbilityPool(expandedPool).intValue() == 0, "Saved expanded target cost");
+                        require(pc.getAvailableAbilityPool(improvedPool).intValue() == 0, "Saved improved target cost");
+                        controller.removeAbility(improvedPool, improvedTarget);
+                        controller.removeAbility(expandedPool, target);
+                        controller.removeAbility(haunts, ability(haunts, "Wraith Expanded Path Possession - Improved (requires expanded path possession - wraith 12)"));
+                        controller.removeAbility(haunts, ability(haunts, "Wraith Expanded Path Possession (requires haunt path - path sphere of the selected path)"));
+                        var magicPool = game.getAbilityCategory("Spheres Magic Talent");
+                        controller.removeAbility(magicPool, ability(magicPool, "Telekinesis Sphere"));
+                    }
                     require(pc.hasAbilityKeyed(haunts, rounds.getKeyName()), "Repeated rounds persistence");
                     require(pc.getVariableValue("SPHERES_WRAITH_FORM_ROUNDS", "").intValue() == baseRounds + 2 * increment,
                         "Saved form rounds");
@@ -79,10 +107,50 @@ class PcgenWraith {
                     controller.removeAbility(feats, extra);
                 }
                 var featPool = pc.getAvailableAbilityPool(feats);
+                var ghostly = ability(haunts, "Wraith Ghostly Talent");
+                var deathPool = game.getAbilityCategory("Wraith Ghostly Death Talent");
+                var deathTalent = ability(deathPool, "Death - Corpse Bomb");
+                controller.addAbility(haunts, ghostly);
+                require(pc.getAvailableAbilityPool(deathPool).intValue() == 1, "Path-only ghostly grant");
+                controller.addAbility(deathPool, deathTalent);
+                require(pc.hasAbilityKeyed(game.getAbilityCategory("Spheres Magic Talent"), deathTalent.getKeyName()), "Ghostly talent selected: " + messages.errors);
+                require(pc.getAvailableAbilityPool(deathPool).intValue() == 0, "Ghostly pool spent");
+                controller.removeAbility(deathPool, deathTalent);
+                controller.removeAbility(haunts, ghostly);
+                require(pc.getAvailableAbilityPool(deathPool).intValue() == 0, "Ghostly grant refunded");
+                controller.removeAbility(paths, path);
+                require(!ghostly.qualifies(pc, ghostly), "Ghostly Talent requires a haunt path");
+                controller.addAbility(paths, path);
                 var expanded = ability(haunts, "Wraith Expanded Path Possession (requires haunt path - path sphere of the selected path)");
                 var improvedExpanded = ability(haunts, "Wraith Expanded Path Possession - Improved (requires expanded path possession - wraith 12)");
                 require(!improvedExpanded.qualifies(pc, improvedExpanded), "Improved expanded path requires base haunt");
                 controller.addAbility(haunts, expanded);
+                var expandedPool = game.getAbilityCategory("Wraith Expanded Path");
+                var improvedPool = game.getAbilityCategory("Wraith Improved Expanded Path");
+                var ownExpanded = ability(expandedPool, "Wraith Path of the Despoiler");
+                var otherExpanded = ability(expandedPool, "Wraith Path of the Poltergeist");
+                var otherImproved = ability(improvedPool, "Wraith Path of the Poltergeist");
+                require(!ownExpanded.qualifies(pc, ownExpanded), "Cannot expand own path");
+                require(!otherExpanded.qualifies(pc, otherExpanded), "Expanded path requires its sphere");
+                var telekinesis = ability(game.getAbilityCategory("Spheres Magic Talent"), "Telekinesis Sphere");
+                controller.addAbility(game.getAbilityCategory("Spheres Magic Talent"), telekinesis);
+                require(otherExpanded.qualifies(pc, otherExpanded), "Target sphere unlocks expanded path");
+                controller.addAbility(expandedPool, otherExpanded);
+                require(pc.getAvailableAbilityPool(expandedPool).intValue() == 0, "Expanded target slot spent");
+                require(!otherImproved.qualifies(pc, otherImproved), "Improved target requires improved haunt");
+                if (level >= 12) {
+                    controller.addAbility(haunts, improvedExpanded);
+                    require(otherImproved.qualifies(pc, otherImproved), "Matching improved target qualifies");
+                    controller.addAbility(improvedPool, otherImproved);
+                    require(pc.getAvailableAbilityPool(improvedPool).intValue() == 0, "Improved target slot spent");
+                    controller.removeAbility(expandedPool, otherExpanded);
+                    require(!otherImproved.qualifies(pc, otherImproved), "Improved target loses base path prerequisite");
+                    controller.removeAbility(improvedPool, otherImproved);
+                    controller.removeAbility(haunts, improvedExpanded);
+                } else {
+                    controller.removeAbility(expandedPool, otherExpanded);
+                }
+                controller.removeAbility(game.getAbilityCategory("Spheres Magic Talent"), telekinesis);
                 require(improvedExpanded.qualifies(pc, improvedExpanded) == (level >= 12),
                     "Improved expanded path requires Wraith twelve");
                 controller.removeAbility(haunts, expanded);
@@ -157,6 +225,21 @@ class PcgenWraith {
                 require(pc.getVariableValue("SPHERES_WRAITH_FORM_ROUNDS", "").intValue() == baseRounds + 2 * increment,
                     "Stacked extra rounds");
                 require(pc.getAvailableAbilityPool(haunts).intValue() == baseline, "Repeated rounds spend two slots");
+                if (level >= 5) {
+                    controller.addAbility(haunts, savedGhostly);
+                    controller.addAbility(haunts, savedGhostly);
+                    controller.addAbility(savedGhostlyPool, savedDeath);
+                    require(pc.getAvailableAbilityPool(savedGhostlyPool).intValue() == 1, "Repeated ghostly pool");
+                }
+                if (level >= 12) {
+                    controller.addAbility(magic, telekinesis);
+                    controller.addAbility(haunts, expanded);
+                    controller.addAbility(expandedPool, otherExpanded);
+                    controller.addAbility(haunts, improvedExpanded);
+                    controller.addAbility(improvedPool, otherImproved);
+                    require(pc.getAvailableAbilityPool(expandedPool).intValue() == 0, "Persist expanded selection");
+                    require(pc.getAvailableAbilityPool(improvedPool).intValue() == 0, "Persist improved selection");
+                }
             }
             require(messages.errors.size() == 2, "Unexpected errors: " + messages.errors);
         } finally {

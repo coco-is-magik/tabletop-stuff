@@ -3258,7 +3258,9 @@
     "key": "Divination - Greater Divine",
     "sphere": "Divination",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_DIVINATION_GREATER_DIVINE|1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
     ]
@@ -3276,7 +3278,9 @@
     "key": "Divination - Lingering Divination",
     "sphere": "Divination",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_DIVINATION_LINGER_ROUNDS|2"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
     ]
@@ -3357,10 +3361,11 @@
   {
     "key": "Divination - Divine Future",
     "sphere": "Divination",
-    "repeat_limit": 99,
+    "repeat_limit": 5,
     "mechanics": [],
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREVARLT:SPHERES_DIVINATION_DIVINEFUTURE_COUNT,5"
     ]
   },
   {
@@ -3421,7 +3426,9 @@
     "key": "Divination - Viewing",
     "sphere": "Divination",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_DIVINATION_VIEWING_DETECT_DC|20+SPHERES_CL_DIVINATION"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
     ]
@@ -3565,7 +3572,10 @@
     "key": "Divination - Shared Perception",
     "sphere": "Divination",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_DIVINATION_SHARED_TARGETS|2+floor(SPHERES_CL_DIVINATION/5)",
+      "DEFINE:SPHERES_DIVINATION_SHARED_RANGE|400+40*SPHERES_CL_DIVINATION"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
     ]
@@ -3610,7 +3620,9 @@
     "key": "Enhancement - Deep Enhancement",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_ENHANCEMENT_DEEP|1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3637,7 +3649,9 @@
     "key": "Enhancement - Greater Enhance Equipment",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_ENHANCEMENT_GREATER_EQUIPMENT|1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3655,7 +3669,9 @@
     "key": "Enhancement - Mass Enhancement",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_EXTRA_TARGETS|max(1,floor(SPHERES_CL_ENHANCEMENT/2))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3691,7 +3707,10 @@
     "key": "Enhancement - Alter Movement",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_MOVEMENT_BONUS|10+10*floor(SPHERES_CL_ENHANCEMENT/5)",
+      "DEFINE:SPHERES_ENHANCEMENT_MOVEMENT_SKILL_BONUS|2+2*floor(SPHERES_CL_ENHANCEMENT/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3700,7 +3719,14 @@
     "key": "Enhancement - Animate Object",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_ANIMATE_TOTAL_HD|2*SPHERES_CL_ENHANCEMENT",
+      "DEFINE:SPHERES_ENHANCEMENT_ANIMATE_SIZE_INDEX|2+if(SPHERES_CL_ENHANCEMENT>=3,1,0)+if(SPHERES_CL_ENHANCEMENT>=5,1,0)+if(SPHERES_CL_ENHANCEMENT>=8,1,0)+if(SPHERES_CL_ENHANCEMENT>=11,1,0)+if(SPHERES_CL_ENHANCEMENT>=15,1,0)+if(SPHERES_CL_ENHANCEMENT>=20,1,0)+if(SPHERES_CL_ENHANCEMENT>=30,1,0)+if(SPHERES_CL_ENHANCEMENT>=36,1,0)+if(SPHERES_CL_ENHANCEMENT>=42,1,0)",
+      "DEFINE:SPHERES_ENHANCEMENT_ANIMATE_MAX_HD|if(SPHERES_ENHANCEMENT_ANIMATE_SIZE_INDEX<=5,SPHERES_ENHANCEMENT_ANIMATE_SIZE_INDEX-1,3*SPHERES_ENHANCEMENT_ANIMATE_SIZE_INDEX-11)",
+      "DEFINE:SPHERES_ENHANCEMENT_ANIMATE_MAX_CONSTRUCTION_POINTS|max(1,SPHERES_ENHANCEMENT_ANIMATE_SIZE_INDEX-2)",
+      "BONUS:VAR|SPHERES_ENHANCEMENT_ANIMATE_MAX_CONSTRUCTION_POINTS|1|PREFEAT:1,Complex Animations",
+      "DEFINE:SPHERES_ENHANCEMENT_ANIMATE_MAX_SIZE_BONUS_HP|if(SPHERES_ENHANCEMENT_ANIMATE_SIZE_INDEX<6,10*(SPHERES_ENHANCEMENT_ANIMATE_SIZE_INDEX-2),if(SPHERES_ENHANCEMENT_ANIMATE_SIZE_INDEX<11,20*(SPHERES_ENHANCEMENT_ANIMATE_SIZE_INDEX-4),150))+SPHERES_ANIMATED_OBJECT_DURABLE*if(SPHERES_CL_ENHANCEMENT<11,10,if(SPHERES_CL_ENHANCEMENT<20,20,30))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3709,7 +3735,9 @@
     "key": "Enhancement - Bestow Intelligence",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_BESTOW_MENTAL_SCORE|6+floor(SPHERES_CL_ENHANCEMENT/2)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3718,7 +3746,9 @@
     "key": "Enhancement - Cripple",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_CRIPPLE_PENALTY|-2-floor(SPHERES_CL_ENHANCEMENT/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3727,7 +3757,9 @@
     "key": "Enhancement - Deadly Weapon",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_CRITICAL_CONFIRMATION|floor(SPHERES_CL_ENHANCEMENT/3)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3736,7 +3768,9 @@
     "key": "Enhancement - Emphasize Belief",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_ALIGNMENT_DR|max(1,floor(SPHERES_CL_ENHANCEMENT/3))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3745,7 +3779,10 @@
     "key": "Enhancement - Energize Body",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_CARRY_MULTIPLIER|2+floor(SPHERES_CL_ENHANCEMENT/5)",
+      "DEFINE:SPHERES_ENHANCEMENT_ENDURANCE_CON_BONUS|SPHERES_CL_ENHANCEMENT"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3754,7 +3791,10 @@
     "key": "Enhancement - Energy Enhancement",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_ENERGY_WEAPON_BONUS|floor(SPHERES_CL_ENHANCEMENT/2)",
+      "DEFINE:SPHERES_ENHANCEMENT_ENERGY_ITEM_DAMAGE|SPHERES_CL_ENHANCEMENT"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3763,7 +3803,9 @@
     "key": "Enhancement - Enhance Focus",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_FOCUS_BONUS|5+floor(SPHERES_CL_ENHANCEMENT/4)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3772,7 +3814,11 @@
     "key": "Enhancement - Enhance Potency",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_POTENCY_SAVE_DC|SPHERES_DC_ENHANCEMENT",
+      "DEFINE:SPHERES_ENHANCEMENT_POTENCY_DISABLE_DC|10+SPHERES_CASTING_ABILITY+SPHERES_CL_ENHANCEMENT",
+      "DEFINE:SPHERES_ENHANCEMENT_POTENCY_DC_REDUCTION|1+floor(SPHERES_CL_ENHANCEMENT/8)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3781,7 +3827,10 @@
     "key": "Enhancement - Harden/Weaken",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_HARDNESS_CHANGE|max(1,SPHERES_CL_ENHANCEMENT)",
+      "DEFINE:SPHERES_ENHANCEMENT_DR_CHANGE|max(1,floor(SPHERES_CL_ENHANCEMENT/2))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3790,7 +3839,11 @@
     "key": "Enhancement - Improved Flexibility",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_FLEXIBILITY_NARROW|if(SPHERES_CL_ENHANCEMENT>=6,1,0)",
+      "DEFINE:SPHERES_ENHANCEMENT_FLEXIBILITY_TIGHT|if(SPHERES_CL_ENHANCEMENT>=12,1,0)",
+      "DEFINE:SPHERES_ENHANCEMENT_FLEXIBILITY_FIST|if(SPHERES_CL_ENHANCEMENT>=18,1,0)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3799,7 +3852,13 @@
     "key": "Enhancement - Lighten",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_LIGHTEN_TABLE_STEP|3+if(SPHERES_CL_ENHANCEMENT>=3,1,0)+if(SPHERES_CL_ENHANCEMENT>=5,1,0)+if(SPHERES_CL_ENHANCEMENT>=8,1,0)+if(SPHERES_CL_ENHANCEMENT>=11,1,0)+if(SPHERES_CL_ENHANCEMENT>=15,1,0)+if(SPHERES_CL_ENHANCEMENT>=20,1,0)+if(SPHERES_CL_ENHANCEMENT>=25,1,0)",
+      "DEFINE:SPHERES_ENHANCEMENT_LIGHTEN_HALF_SIZE_INDEX|min(8,SPHERES_ENHANCEMENT_LIGHTEN_TABLE_STEP)",
+      "DEFINE:SPHERES_ENHANCEMENT_LIGHTEN_WEIGHTLESS_SIZE_INDEX|min(8,SPHERES_ENHANCEMENT_LIGHTEN_TABLE_STEP-1)",
+      "DEFINE:SPHERES_ENHANCEMENT_LIGHTEN_FLOAT_SIZE_INDEX|min(8,SPHERES_ENHANCEMENT_LIGHTEN_TABLE_STEP-2)",
+      "DEFINE:SPHERES_ENHANCEMENT_LIGHTEN_VERTICAL_SPEED|20"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3817,7 +3876,9 @@
     "key": "Enhancement - Mental Enhancement",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_MENTAL_BONUS|2+2*floor(SPHERES_CL_ENHANCEMENT/7)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3826,7 +3887,9 @@
     "key": "Enhancement - Physical Enhancement",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_PHYSICAL_BONUS|2+2*floor(SPHERES_CL_ENHANCEMENT/7)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3835,7 +3898,10 @@
     "key": "Enhancement - Ragged Edges",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_BLEED|max(1,floor(SPHERES_CL_ENHANCEMENT/2))",
+      "DEFINE:SPHERES_ENHANCEMENT_EMPOWERED_BLEED|SPHERES_CL_ENHANCEMENT"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3844,7 +3910,9 @@
     "key": "Enhancement - Ravenous Weapon",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_RAVENOUS_D6|1+floor(SPHERES_CL_ENHANCEMENT/4)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3853,7 +3921,11 @@
     "key": "Enhancement - Spectral Enhancement",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_SPECTRAL_SIZE_INDEX|2+if(SPHERES_CL_ENHANCEMENT>=3,1,0)+if(SPHERES_CL_ENHANCEMENT>=5,1,0)+if(SPHERES_CL_ENHANCEMENT>=8,1,0)+if(SPHERES_CL_ENHANCEMENT>=11,1,0)+if(SPHERES_CL_ENHANCEMENT>=15,1,0)+if(SPHERES_CL_ENHANCEMENT>=20,1,0)+if(SPHERES_CL_ENHANCEMENT>=30,1,0)+if(SPHERES_CL_ENHANCEMENT>=36,1,0)+if(SPHERES_CL_ENHANCEMENT>=42,1,0)",
+      "DEFINE:SPHERES_ENHANCEMENT_SPECTRAL_RESISTANCE|floor(SPHERES_CL_ENHANCEMENT/2)",
+      "DEFINE:SPHERES_ENHANCEMENT_SPECTRAL_SAVE_BONUS|2+floor(SPHERES_CL_ENHANCEMENT/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3862,7 +3934,9 @@
     "key": "Enhancement - Staunch Resistance",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_SAVE_BONUS|2+floor(SPHERES_CL_ENHANCEMENT/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3898,7 +3972,10 @@
     "key": "Enhancement - Superior Reflexes",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_INITIATIVE_BONUS|1+max(0,floor((SPHERES_CL_ENHANCEMENT-1)/4))",
+      "DEFINE:SPHERES_ENHANCEMENT_EXTRA_AOO|SPHERES_ENHANCEMENT_INITIATIVE_BONUS"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3907,7 +3984,10 @@
     "key": "Enhancement - Supply Vigor",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_ABILITY_DAMAGE_IGNORED|2+2*floor(SPHERES_CL_ENHANCEMENT/7)",
+      "DEFINE:SPHERES_ENHANCEMENT_ABILITY_DAMAGE_REDUCTION|1+floor(SPHERES_CL_ENHANCEMENT/7)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -3916,7 +3996,9 @@
     "key": "Enhancement - Traveling Weapon",
     "sphere": "Enhancement",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ENHANCEMENT_COVER_IGNORED|2+2*floor(SPHERES_CL_ENHANCEMENT/7)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ]
@@ -4375,7 +4457,9 @@
     "key": "Fate - Echoing Word",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_ECHOING_ADDITIONAL_TARGETS|max(1,floor(SPHERES_CL_FATE/2))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4448,7 +4532,10 @@
     "key": "Fate - Consequences",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_CONSEQUENCES_DAMAGE|SPHERES_CL_FATE",
+      "DEFINE:SPHERES_FATE_CONSEQUENCES_PER_ROUND|1+floor(SPHERES_CL_FATE/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4512,7 +4599,10 @@
     "key": "Fate - Cups",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_CUPS_RETAINED_D20|2+floor(SPHERES_CL_FATE/7)",
+      "DEFINE:SPHERES_FATE_CUPS_DISCHARGE_MINUTES|SPHERES_CL_FATE"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4521,7 +4611,10 @@
     "key": "Fate - Pentacles",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_PENTACLES_REROLLS|1+floor(SPHERES_CL_FATE/10)",
+      "DEFINE:SPHERES_FATE_PENTACLES_DISCHARGE_MINUTES|SPHERES_CL_FATE"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4530,7 +4623,10 @@
     "key": "Fate - Swords",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_SWORDS_CONFIRM_BONUS|max(1,floor(SPHERES_CL_FATE/2))",
+      "DEFINE:SPHERES_FATE_SWORDS_DISCHARGE_MINUTES|1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4539,7 +4635,9 @@
     "key": "Fate - Wands",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_WANDS_DISCHARGE_MINUTES|SPHERES_CL_FATE"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4575,7 +4673,10 @@
     "key": "Fate - The Empress",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_EMPRESS_INITIAL_POINTS|1+SPHERES_CL_FATE",
+      "DEFINE:SPHERES_FATE_EMPRESS_SPEND_LIMIT|max(1,floor(SPHERES_CL_FATE/5))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4656,7 +4757,9 @@
     "key": "Fate - The Lovers",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_LOVERS_MAX_SAVE_BONUS|2+floor(SPHERES_CL_FATE/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4683,7 +4786,9 @@
     "key": "Fate - The Page",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_PAGE_MORALE_EXTRA_ROUNDS|1+floor(SPHERES_CL_FATE/10)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4692,7 +4797,10 @@
     "key": "Fate - The Queen",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_QUEEN_FEAR_ROUND_REDUCTION|2+floor(SPHERES_CL_FATE/5)",
+      "DEFINE:SPHERES_FATE_QUEEN_DISCHARGE_DAMAGE_REDUCTION|max(1,floor(SPHERES_CL_FATE/2))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4737,7 +4845,10 @@
     "key": "Fate - The Tower",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_TOWER_BYPASS|5+floor(SPHERES_CL_FATE/4)",
+      "DEFINE:SPHERES_FATE_TOWER_DISCHARGE_D4|SPHERES_CL_FATE"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4746,7 +4857,10 @@
     "key": "Fate - The Wheel",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_WHEEL_D4_COUNT|1+floor(SPHERES_CL_FATE/10)",
+      "DEFINE:SPHERES_FATE_WHEEL_BONUS_PER_RESULT|1+floor(SPHERES_CL_FATE/10)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4782,7 +4896,9 @@
     "key": "Fate - Bargain",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_BARGAIN_ROUNDS|max(1,floor(SPHERES_CL_FATE/2))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -4881,7 +4997,9 @@
     "key": "Fate - Harm",
     "sphere": "Fate",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FATE_HARM_DAMAGE|max(1,floor(SPHERES_CL_FATE/2))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
     ]
@@ -7424,7 +7542,10 @@
     "key": "Protection - Buttressing",
     "sphere": "Protection",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_PROTECTION_BARRIER_REPAIR_HP|2*SPHERES_PROTECTION_WARD_CL",
+      "DEFINE:SPHERES_PROTECTION_BARRIER_REGEN_HP|1+floor(SPHERES_PROTECTION_WARD_CL/2)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ]
@@ -7460,7 +7581,9 @@
     "key": "Protection - Durable Barrier",
     "sphere": "Protection",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_PROTECTION_BARRIER_DAMAGE_REDUCTION|max(1,floor(SPHERES_PROTECTION_WARD_CL/2))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ]
@@ -7469,7 +7592,9 @@
     "key": "Protection - Enduring Protection",
     "sphere": "Protection",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_PROTECTION_ENDURING|1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ]
@@ -7505,7 +7630,13 @@
     "key": "Protection - Greater Barrier",
     "sphere": "Protection",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_PROTECTION_GREATER_BARRIER|1",
+      "DEFINE:SPHERES_PROTECTION_GREATER_BARRIER_HP|10*SPHERES_PROTECTION_WARD_CL",
+      "DEFINE:SPHERES_PROTECTION_GREATER_BARRIER_BREAK_DC|25+floor(SPHERES_PROTECTION_WARD_CL/2)",
+      "DEFINE:SPHERES_PROTECTION_GREATER_BARRIER_WEIGHT_LB|2*(2400+250*SPHERES_PROTECTION_WARD_CL)",
+      "DEFINE:SPHERES_PROTECTION_GREATER_BARRIER_SQUARES|SPHERES_PROTECTION_WARD_CL"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ]
@@ -7541,7 +7672,10 @@
     "key": "Protection - Mass Aegis",
     "sphere": "Protection",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_PROTECTION_MASS_ADDITIONAL_TARGETS|max(1,floor(SPHERES_CL_PROTECTION/2))",
+      "DEFINE:SPHERES_PROTECTION_MASS_DURATION_MINUTES|10*SPHERES_CL_PROTECTION"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ]
@@ -7577,7 +7711,10 @@
     "key": "Protection - Shaped Ward",
     "sphere": "Protection",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_PROTECTION_SHAPED_CUBES|2*SPHERES_PROTECTION_WARD_CL",
+      "DEFINE:SPHERES_PROTECTION_SHAPED_CUBE_HP|if(SPHERES_PROTECTION_GREATER_BARRIER,4+SPHERES_PROTECTION_WARD_CL,5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ]
@@ -7622,7 +7759,9 @@
     "key": "Protection - Ablating",
     "sphere": "Protection",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_PROTECTION_INITIAL_ABLATION_PERCENT|min(50,20+5*floor(SPHERES_CL_PROTECTION/3))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ]
@@ -7829,7 +7968,9 @@
     "key": "Protection - Painful Aegis",
     "sphere": "Protection",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_PROTECTION_PAINFUL_NONLETHAL_DAMAGE|max(1,floor(SPHERES_CL_PROTECTION/2))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ]
@@ -7865,7 +8006,9 @@
     "key": "Protection - Ray Deflection",
     "sphere": "Protection",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_PROTECTION_RAY_DEFLECTION_PERCENT|min(50,20+5*floor(SPHERES_CL_PROTECTION/5))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ]
@@ -8045,7 +8188,10 @@
     "key": "Telekinesis - Dampening Field",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_OBJECT_DEFENSE|1+floor(SPHERES_CL_TELEKINESIS/5)",
+      "DEFINE:SPHERES_TELEKINESIS_DAMPENING_DR|floor(SPHERES_CL_TELEKINESIS/2)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8054,7 +8200,9 @@
     "key": "Telekinesis - Dancing Weapon",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_BLUDGEON_DAMAGE_BONUS|SPHERES_CASTING_ABILITY"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8063,7 +8211,10 @@
     "key": "Telekinesis - Divided Mind",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_LIFT_TARGETS|1+SPHERES_CL_TELEKINESIS",
+      "DEFINE:SPHERES_TELEKINESIS_MANEUVER_EXTRA_TARGETS|max(1,floor(SPHERES_CL_TELEKINESIS/2))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8081,7 +8232,10 @@
     "key": "Telekinesis - Finesse",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_FINESSE_PENALTY|-5",
+      "BONUS:VAR|SPHERES_TELEKINESIS_FINESSE_PENALTY|5|PREFEAT:1,Skillful Force"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8090,7 +8244,9 @@
     "key": "Telekinesis - Flight",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_FLIGHT_SPEED|SPHERES_TELEKINESIS_SPEED"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8108,7 +8264,10 @@
     "key": "Telekinesis - Forceful Telekinesis",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_TELEKINESIS_FORCEFUL|1",
+      "DEFINE:SPHERES_TELEKINESIS_BLUDGEON_SIZE_INCREASE|1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8117,7 +8276,9 @@
     "key": "Telekinesis - Gravity Shift",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_GRAVITY_SHIFT_RADIUS|10+5*floor(SPHERES_CL_TELEKINESIS/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8126,7 +8287,11 @@
     "key": "Telekinesis - Gravity Ward/Well",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_GRAVITY_RADIUS|10+5*floor(SPHERES_CL_TELEKINESIS/5)",
+      "DEFINE:SPHERES_TELEKINESIS_GRAVITY_CMB|SPHERES_CL_TELEKINESIS+SPHERES_CASTING_ABILITY+2*SPHERES_TELEKINESIS_FORCEFUL",
+      "DEFINE:SPHERES_TELEKINESIS_GRAVITY_ESCAPE_CMD|10+SPHERES_TELEKINESIS_GRAVITY_CMB"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8135,7 +8300,9 @@
     "key": "Telekinesis - Greater Speed",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_TELEKINESIS_GREATER_SPEED|1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8144,7 +8311,9 @@
     "key": "Telekinesis - Homing",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_HOMING_ROUNDS|SPHERES_CL_TELEKINESIS"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8181,7 +8350,10 @@
     "key": "Telekinesis - Kinetic Sense",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_BLINDSENSE_FEET|30",
+      "DEFINE:SPHERES_TELEKINESIS_BLINDSENSE_MINUTES|SPHERES_CL_TELEKINESIS"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8208,7 +8380,10 @@
     "key": "Telekinesis - Pantomime Cage",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_CAGE_ROUNDS|SPHERES_CL_TELEKINESIS",
+      "DEFINE:SPHERES_TELEKINESIS_CAGE_ESCAPE_DC|SPHERES_DC_TELEKINESIS"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8226,7 +8401,9 @@
     "key": "Telekinesis - Powerful Telekinesis",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "BONUS:VAR|SPHERES_TELEKINESIS_POWERFUL|1"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8235,7 +8412,9 @@
     "key": "Telekinesis - Quick Reactions",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_CATCH_FIELD_ROUNDS|if(SPHERES_TELEKINESIS_KINETICFIELD_COUNT,max(1,floor(SPHERES_CL_TELEKINESIS/3)),0)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8262,7 +8441,11 @@
     "key": "Telekinesis - Steal",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_STEAL_PENALTY|-5",
+      "BONUS:VAR|SPHERES_TELEKINESIS_STEAL_PENALTY|5|PREFEAT:1,Skillful Force",
+      "DEFINE:SPHERES_TELEKINESIS_STEAL_CMB|SPHERES_CL_TELEKINESIS+SPHERES_CASTING_ABILITY+2*SPHERES_TELEKINESIS_FORCEFUL"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8280,7 +8463,9 @@
     "key": "Telekinesis - Telekinetic Crush",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_CRUSH_D6|1+floor(SPHERES_CL_TELEKINESIS/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8289,7 +8474,10 @@
     "key": "Telekinesis - Telekinetic Maneuver",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_MANEUVER_CMB|SPHERES_CL_TELEKINESIS+SPHERES_CASTING_ABILITY+2*SPHERES_TELEKINESIS_FORCEFUL",
+      "DEFINE:SPHERES_TELEKINESIS_GRAPPLE_CMD|10+SPHERES_TELEKINESIS_MANEUVER_CMB"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8298,7 +8486,11 @@
     "key": "Telekinesis - Telekinetic Push",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_PUSH_SPEED_BONUS|SPHERES_TELEKINESIS_SPEED/2",
+      "DEFINE:SPHERES_TELEKINESIS_PUSH_SIZE_INCREASE|1+floor(SPHERES_CL_TELEKINESIS/5)",
+      "DEFINE:SPHERES_TELEKINESIS_PUSH_FALLING_D6|1+floor(SPHERES_CL_TELEKINESIS/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8307,7 +8499,10 @@
     "key": "Telekinesis - Telekinetic Tools",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_TOOL_BONUS|0",
+      "BONUS:VAR|SPHERES_TELEKINESIS_TOOL_BONUS|2|PREFEAT:1,Skillful Force"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8316,7 +8511,11 @@
     "key": "Telekinesis - Tether",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_TETHER_FEET|30",
+      "DEFINE:SPHERES_TELEKINESIS_TETHER_LINGER_ROUNDS|SPHERES_CL_TELEKINESIS",
+      "DEFINE:SPHERES_TELEKINESIS_TETHER_BREAK_DC|SPHERES_DC_TELEKINESIS"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8325,7 +8524,9 @@
     "key": "Telekinesis - Whirlwind Assembly",
     "sphere": "Telekinesis",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TELEKINESIS_ASSEMBLY_RETRIEVAL_FEET|20+5*floor(SPHERES_CL_TELEKINESIS/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere"
     ]
@@ -8334,7 +8535,9 @@
     "key": "Time - Augment Healing",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_HASTE_FAST_HEALING|1+floor(SPHERES_CL_TIME/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8370,7 +8573,9 @@
     "key": "Time - Lingering Time",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_LINGER_ROUNDS|2"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8379,7 +8584,9 @@
     "key": "Time - Mass Time",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_MASS_ADDITIONAL_TARGETS|max(1,floor(SPHERES_CL_TIME/2))"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8397,7 +8604,10 @@
     "key": "Time - Retroactive Preparation",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_RETROACTIVE_VALUE_EXCLUSIVE|100*SPHERES_CL_TIME",
+      "DEFINE:SPHERES_TIME_RETROACTIVE_VISIT_WEEKS|SPHERES_CL_TIME"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8433,7 +8643,10 @@
     "key": "Time - Time Zone",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_ZONE_GLOBE_RADIUS_MAX|10+5*floor(SPHERES_CL_TIME/2)",
+      "DEFINE:SPHERES_TIME_ZONE_WALL_CUBES_MAX|3+SPHERES_CL_TIME"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8442,7 +8655,10 @@
     "key": "Time - After Image",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_AFTER_IMAGE_MISS_CHANCE|min(50,20+5*floor(SPHERES_CL_TIME/3))",
+      "DEFINE:SPHERES_TIME_AFTER_IMAGE_RELEASED_MINUTES|SPHERES_CL_TIME"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8451,7 +8667,10 @@
     "key": "Time - Age",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_AGE_CATEGORY_LIMIT|1+floor(SPHERES_CL_TIME/5)",
+      "DEFINE:SPHERES_TIME_AGE_RELEASED_MINUTES|SPHERES_CL_TIME"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8469,7 +8688,9 @@
     "key": "Time - Causality",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_CAUSALITY_DAMAGE_D8|floor(SPHERES_CL_TIME/2)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8496,7 +8717,10 @@
     "key": "Time - Fast Time",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_FAST_RADIUS|10+5*floor(SPHERES_CL_TIME/5)",
+      "DEFINE:SPHERES_TIME_FAST_REDUCED_ROUNDS|SPHERES_CL_TIME"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8560,7 +8784,10 @@
     "key": "Time - Stretch Time",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_STRETCH_RADIUS|10+5*floor(SPHERES_CL_TIME/5)",
+      "DEFINE:SPHERES_TIME_STRETCH_ADDED_ROUNDS_MAX|SPHERES_CL_TIME"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8569,7 +8796,11 @@
     "key": "Time - Time Bubble",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_BUBBLE_RADIUS_MAX|15+5*floor(SPHERES_CL_TIME/5)",
+      "DEFINE:SPHERES_TIME_BUBBLE_DAMAGE_D8|floor(SPHERES_CL_TIME/2)",
+      "DEFINE:SPHERES_TIME_BUBBLE_ROUNDS|SPHERES_CL_TIME"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]
@@ -8578,7 +8809,9 @@
     "key": "Time - Time Freeze",
     "sphere": "Time",
     "repeat_limit": 1,
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_TIME_FREEZE_RADIUS|10+5*floor(SPHERES_CL_TIME/5)"
+    ],
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
     ]

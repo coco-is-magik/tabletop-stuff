@@ -10,7 +10,7 @@ from pcgen_class_catalog import fixture
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('class_name', choices=('mageknight', 'symbiat', 'thaumaturge'))
+    parser.add_argument('class_name', choices=('mageknight', 'shifter', 'symbiat', 'thaumaturge'))
     parser.add_argument('gate', choices=('save', 'reload'))
     parser.add_argument('--level', type=int, choices=range(1, 21), default=2)
     parser.add_argument('--work', type=Path)

@@ -39,6 +39,9 @@ def option_tags(title):
         tags += ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE", "BONUS:VAR|SPHERES_ARMORIST_ARMOR_TRAINING|1"]
     elif name == "Additional Binding":
         tags.append("BONUS:VAR|SPHERES_ARMORIST_BOUND_ITEMS|1")
+    elif name == "Customized Bond":
+        tags.extend(["PREABILITY:1,CATEGORY=Special Ability,Armiger Talents Per Customized Weapon (Reference)",
+                     "ABILITY:FEAT|AUTOMATIC|Customized Bond"])
     return tags
 
 

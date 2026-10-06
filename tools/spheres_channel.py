@@ -18,4 +18,7 @@ def dice_prerequisite(dice):
     alternatives.append("[PREMULT:2,[PREABILITY:1,CATEGORY=Soul Weaver Channel,"
                         "Soul Weaver Positive Channel,Soul Weaver Negative Channel],"
                         f"[PREVARGTEQ:SPHERES_SOUL_WEAVER_CHANNEL_DICE,{dice}]]")
+    from spheres_covenant import channel_prerequisite, PREFIX
+    alternatives.append("[PREMULT:3,[" + channel_prerequisite() + "],"
+                        f"[PREVARGTEQ:{PREFIX}DICE,{dice}],[PREVAREQ:{PREFIX}DIE_SIZE,6]]")
     return "PREMULT:1," + ",".join(alternatives)

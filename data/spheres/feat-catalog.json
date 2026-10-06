@@ -54,11 +54,10 @@
     ],
     "key": "Abundant Adrenaline",
     "prerequisites": [
+      "PRERACE:1,RACETYPE=Construct,RACESUBTYPE=Construct",
       "PRELEVEL:MIN=3"
     ],
-    "unresolved_prerequisites": [
-      "Construct type or subtype"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -161,13 +160,13 @@
     ],
     "key": "Adrenaline-Fueled Frenzy",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Berserker Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Berserker - Absolute Determination,Berserker - Dreadnought,Berserker - Executioner,Berserker - Juggernaut,Berserker - Marauder,Berserker - Promethean,Berserker - Specter",
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Duelist Sphere",
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Duelist - Bloodied Shark’s Frenzy",
       "PREATT:3"
     ],
-    "unresolved_prerequisites": [
-      "Berserker sphere (any (adrenaline) talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -225,10 +224,10 @@
       "https://spheresofpower.wikidot.com/general-feats#toc1"
     ],
     "key": "Aeolian Flautist",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Bardic performance or raging song class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance,TYPE=SkaldRagingSong"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -322,6 +321,7 @@
     "heading": "Agonizing Defiling (Defiler, Drawback) [Cata. HB]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
     "text": "Your powers drain the energies of those around you.\nPrerequisites: Terrain Casting drawback, non-good alignment.\nBenefit: Whenever you blight, corrupt, or drain an area of its nutrients with the Terrain Casting drawback, you may choose to weaken all creatures caught inside the defiled area. Creatures other than yourself inside the corrupted area become sickened for one round per caster level (Fortitude save negates, DC 10 + 1/2 your character level + your casting ability modifier).\nFour Defiler Feats: Any creatures that fail their saving throw against this feat are nauseated for 1 round in addition to being sickened.",
@@ -334,8 +334,13 @@
       "!PREALIGN:LG,NG,CG"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Airborne Aethermancer",
@@ -393,11 +398,10 @@
     ],
     "key": "Aligned Attacks",
     "prerequisites": [
+      "!PREALIGN:TN",
       "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
     ],
-    "unresolved_prerequisites": [
-      "Non-neutral alignment"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -501,9 +505,10 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc2"
     ],
     "key": "Alraun Nose",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRERACE:1,RACESUBTYPE=Plant"
+    ],
     "unresolved_prerequisites": [
-      "Plant subtype",
       "blood sense racial trait"
     ],
     "mechanics": [],
@@ -543,13 +548,18 @@
     ],
     "key": "Amateur Striker",
     "prerequisites": [
-      "PRESTAT:1,CON=13"
+      "PRESTAT:1,CON=13",
+      "!PRECLASS:1,Striker=1"
     ],
-    "unresolved_prerequisites": [
-      "No levels in a class that has the tension class feature"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_AMATEUR_STRIKER_CAPACITY|0",
+      "DEFINE:SPHERES_EXTRA_STRIKER_OPTIONS|0",
+      "BONUS:VAR|SPHERES_AMATEUR_STRIKER_CAPACITY|max(0,CON)|!PRECLASS:1,Striker=1",
+      "BONUS:ABILITYPOOL|Amateur Striker Method|1|!PRECLASS:1,Striker=1",
+      "BONUS:ABILITYPOOL|Amateur Striker Technique|1|!PRECLASS:1,Striker=1"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "status": "mechanics-added"
   },
   {
     "name": "Amplifying Adjustment",
@@ -563,9 +573,11 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc9"
     ],
     "key": "Amplifying Adjustment",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Arcanodynamics,Mana - Elemental Enhancement,Mana - Energy Modification,Mana - Heightened Magic,Mana - Initiate’s Training,Mana - Intelligent Interactions,Mana - Power Dynamics,Mana - Spell Mastery,Mana - Visual Dynamics"
+    ],
     "unresolved_prerequisites": [
-      "Mana sphere (any (amp) talent)",
       "Spellhacking sphere"
     ],
     "mechanics": [],
@@ -591,8 +603,10 @@
       "PREVARGTEQ:max(SPHERES_CL_DIVINATION,SPHERES_CL_MANA),9"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:SITUATION|Spellcraft=Determine casting tradition with Detect Spellcaster|5"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Anathema",
@@ -776,11 +790,10 @@
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Berserker Sphere",
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Berserker - Advancing Carnage",
       "PREFEAT:1,Spell Attack",
-      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Transforming Strike,Blood - Exsanguinating Strike,Creation - Transmuting Strike,Dark - Shadow Strike,Death - Cryptic Strike,Destruction - Energy Strike,Divination - Revealing Strike,Enhancement - Crippling Strike,Fallen Fey - Feytouch Strike,Fate - Shrieking Strike,Illusion - Aggrandizing Strike,Life - Clarified Strike,Light - Solar Strike,Mana - Manasurge Strike,Mind - Charming Strike,Nature - Elemental Strike,Telekinesis - Seizing Strike,Time - Time Strike,Warp - Warping Strike,Weather - Weather Strike,Technomancy - Slicer’s Strike,Veilweaving - Essence Strike"
     ],
-    "unresolved_prerequisites": [
-      "any talent with the strike descriptor"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -943,11 +956,11 @@
     ],
     "key": "Area Bypass",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War - Aggressive Momentum,War - Cooperative Momentum,War - Damaging Momentum,War - Demoralizing Momentum,War - Disrupting Momentum,War - Favorable Momentum,War - Focusing Momentum,War - Marauding Momentum,War - Resilient Momentum,War - Revitalizing Momentum,War - Tactical Momentum,War - Threatening Momentum"
     ],
-    "unresolved_prerequisites": [
-      "War Sphere (any momentum talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1233,11 +1246,10 @@
     ],
     "key": "Augmented Modulation",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Mental Focus"
+      "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Mental Focus",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere]"
     ],
-    "unresolved_prerequisites": [
-      "Enhancement or Protection Sphere"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1551,8 +1563,14 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Bard of Booze",
@@ -1632,11 +1650,10 @@
     ],
     "key": "Battle Fanfare",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance,TYPE=SkaldRagingSong"
     ],
-    "unresolved_prerequisites": [
-      "bardic performance or raging song class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -1817,8 +1834,15 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_BETWEEN_TWO_WORLDS_ROUNDS|SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Biochemical Brews",
@@ -1916,7 +1940,7 @@
     "key": "Blessing/Blight Mastery",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Special Ability,Soul Weaver Blessing,Soul Weaver Blight",
-      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive,Hedgewitch Covenant Negative]]"
     ],
     "unresolved_prerequisites": [],
     "mechanics": [],
@@ -1936,7 +1960,7 @@
     "key": "Blessing/Blight Versatility",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Special Ability,Soul Weaver Blessing,Soul Weaver Blight",
-      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive,Hedgewitch Covenant Negative]]"
     ],
     "unresolved_prerequisites": [
       "Versatile Channeler"
@@ -1981,8 +2005,13 @@
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_BLOOD_DAMPENING_BURN|2-if(SPHERES_WILD_MAGIC_FEAT_COUNT>=6,1,0)",
+      "DEFINE:SPHERES_BLOOD_DAMPENING_MAJOR_BURN|if(SPHERES_WILD_MAGIC_FEAT_COUNT>=4,4-if(SPHERES_WILD_MAGIC_FEAT_COUNT>=6,1,0),0)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Blood Potion",
@@ -2317,6 +2346,7 @@
     "heading": "Broken Earth (Defiler, Drawback) [Cata. HB]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
     "text": "Your magic shatters the ground, transforming into hazardous terrain.\nPrerequisite: Terrain Casting drawback.\nBenefit: Whenever you blight, corrupt, or drain an area of its nutrients with the Terrain Casting drawback, you may cause any affected area to become difficult terrain for all creatures.\nFour Defiler Feats: Creatures moving through terrain you have defiled take 1d4 points of piercing damage for each 5 feet of movement through the spiked area.",
@@ -2328,8 +2358,13 @@
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Bruinous Temper",
@@ -2404,7 +2439,7 @@
     ],
     "key": "Buffeting Channel",
     "prerequisites": [
-      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive,Hedgewitch Covenant Negative]]"
     ],
     "unresolved_prerequisites": [],
     "mechanics": [],
@@ -2422,10 +2457,11 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc20"
     ],
     "key": "Building Performance",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREMULT:1,[PRECLASS:1,Striker=1],[PREFEAT:1,Amateur Striker]"
+    ],
     "unresolved_prerequisites": [
-      "Performance sphere",
-      "tension pool"
+      "Performance sphere"
     ],
     "mechanics": [],
     "status": "partial"
@@ -2624,8 +2660,12 @@
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_CAREFUL_CASTER_REDUCTION|min(50,25+5*(SPHERES_WILD_MAGIC_FEAT_COUNT-1))"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Careful Magic",
@@ -2645,8 +2685,10 @@
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Extended Casting"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_CAREFUL_MAGIC_DISPEL_MSD_BONUS|max(1,SPHERES_CASTING_ABILITY)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Cascade Spell",
@@ -2868,7 +2910,7 @@
     "key": "Channel Destruction",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
-      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive,Hedgewitch Covenant Negative]]"
     ],
     "unresolved_prerequisites": [],
     "mechanics": [],
@@ -2889,7 +2931,7 @@
     "key": "Channel Life",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
-      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive,Hedgewitch Covenant Negative]]"
     ],
     "unresolved_prerequisites": [],
     "mechanics": [],
@@ -2910,7 +2952,7 @@
     ],
     "key": "Channel Luck",
     "prerequisites": [
-      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive,Hedgewitch Covenant Negative]]"
     ],
     "unresolved_prerequisites": [],
     "mechanics": [],
@@ -2932,8 +2974,11 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "ABILITY:Special Ability|AUTOMATIC|Channel Resistance",
+      "BONUS:VAR|ChannelResistance|2"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Channel Resolve",
@@ -2948,7 +2993,7 @@
     ],
     "key": "Channel Resolve",
     "prerequisites": [
-      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive,Hedgewitch Covenant Negative]]"
     ],
     "unresolved_prerequisites": [],
     "mechanics": [],
@@ -2969,7 +3014,7 @@
     "key": "Channeled Detonation",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
-      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel Negative Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Negative Channel]",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel Negative Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Negative Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Negative]]",
       "PREVARGTEQ:SPHERES_CL_DEATH,5"
     ],
     "unresolved_prerequisites": [],
@@ -2992,7 +3037,12 @@
     "unresolved_prerequisites": [
       "Counterspell or the ability to cast dispel magic"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_CHAOTIC_COUNTER_INCREASE|min(100,50+10*SPHERES_WILD_MAGIC_FEAT_COUNT)",
+      "BONUS:VAR|SPHERES_COUNTERSPELL_CHECK_BONUS|1"
+    ],
     "status": "partial"
   },
   {
@@ -3000,6 +3050,7 @@
     "heading": "Charged Despoilation (Defiler, Drawback) [Cata. HB]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
     "text": "You are capable of keeping your ruinous powers hidden.\nPrerequisites: Charged Spells drawback, Terrain Casting drawback.\nBenefit: When you prepare a spell charge, you may choose to blight the area around you as if you had cast a spell with the Terrain Casting drawback. If you do, you do not blight the terrain around you when you cast the charged effect even if you do not spend additional spell points or increase the casting time.",
@@ -3012,8 +3063,13 @@
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Charming",
@@ -3259,8 +3315,17 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "BONUS:VAR|ColdResistanceBonus,ElectricityResistanceBonus|10|TYPE=Resistance|PREVARGTEQ:SPHERES_NECROSIS_FEAT_COUNT,4",
+      "DEFINE:SPHERES_COLD_HEART_ACTIVE_RESISTANCE|5*SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_COLD_HEART_ACTIVE_ROUNDS|SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Collective Intensity",
@@ -3374,8 +3439,10 @@
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Galvanized"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "SERVESAS:ABILITY=FEAT|Combat Casting"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Combatant’s Alignment",
@@ -3556,8 +3623,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Animate Object"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_ANIMATED_OBJECT_EXTRA_CONSTRUCTION_POINTS|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Complex Harmony",
@@ -3572,11 +3641,10 @@
     ],
     "key": "Complex Harmony",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance",
       "PRELEVEL:MIN=10"
     ],
-    "unresolved_prerequisites": [
-      "Bardic performance class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -4410,10 +4478,11 @@
       "https://spheresofpower.wikidot.com/creation#toc68"
     ],
     "key": "Creation Mastery",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Creation sphere (any (material) talent)"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Acidic Creation,Creation - Alchemical Creation,Creation - Expanded Materials,Creation - Gaseous Generation,Creation - Object Of Force,Creation - Plasma Production"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -4430,11 +4499,10 @@
     ],
     "key": "Crescendo",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance,TYPE=SkaldRagingSong"
     ],
-    "unresolved_prerequisites": [
-      "bardic performance or raging song class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -4702,11 +4770,11 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc25"
     ],
     "key": "Customized Bond",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Bound equipment class feature",
-      "customized weapons class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Armorist Bound Items (Reference)",
+      "PREABILITY:1,CATEGORY=Special Ability,Armiger Talents Per Customized Weapon (Reference)"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -4872,7 +4940,13 @@
     ],
     "unresolved_prerequisites": [],
     "mechanics": [
-      "BONUS:VAR|SPHERES_SPELL_POINTS|1"
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "BONUS:COMBAT|AC|floor(SPHERES_NECROSIS_FEAT_COUNT/2)|TYPE=NaturalArmor|PREVARGTEQ:SPHERES_NECROSIS_FEAT_COUNT,4",
+      "DR:floor(SPHERES_NECROSIS_FEAT_COUNT*0.5)/-|PREVARGTEQ:SPHERES_NECROSIS_FEAT_COUNT,4",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
     ],
     "status": "mechanics-added"
   },
@@ -4916,8 +4990,17 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_DEATHKNIGHT_PURCHASE_D6|SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_DEATHKNIGHT_PURCHASE_FLAT|floor(TL/2)",
+      "DEFINE:SPHERES_DEATHKNIGHT_PURCHASE_MINUTES|SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Debasing Exultation",
@@ -4990,11 +5073,10 @@
     ],
     "key": "Deduction",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREMULT:1,[PREVARGTEQ:InvestigatorStudiedCombatBonus,1],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Font Of Inspiration],[PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,5]]"
     ],
-    "unresolved_prerequisites": [
-      "studied combat class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5053,11 +5135,10 @@
     "key": "Defender’s Bonds",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Beastmastery Sphere",
+      "PREMULT:1,[PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Paladin ~ Lay on Hands],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive]]],[PREABILITY:1,CATEGORY=Special Ability,Sentinel Reserve Points (Reference)]",
       "PRELEVEL:MIN=3"
     ],
-    "unresolved_prerequisites": [
-      "lay on hands or sentinel’s reserve class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5148,6 +5229,7 @@
     "level": 3,
     "types": [
       "Channeling",
+      "Defiler",
       "Drawback"
     ],
     "text": "You draw life energy directly from your environment.\nPrerequisites: Terrain Casting drawback, channel energy 3d6.\nBenefit: Whenever you channel energy, you may drain an area of its nutrients as per the Terrain Casting drawback. If you do, the number of dice used with your channel energy increases by 2.\nFour Defiler Feats: The number of dice increases by 4 rather than 2.",
@@ -5158,11 +5240,16 @@
     "key": "Defiler’s Channel",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting",
-      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Positive Energy],[PREVARGTEQ:ClericChannelPositiveEnergyDice,3],[PREVAREQ:ClericChannelPositiveEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Negative Energy],[PREVARGTEQ:ClericChannelNegativeEnergyDice,3],[PREVAREQ:ClericChannelNegativeEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Paladin ~ Channel Positive Energy],[PREVARGTEQ:PaladinChannelDice,3],[PREVAREQ:PaladinChannelDieSize,6]],[PREMULT:2,[PREABILITY:1,CATEGORY=Special Ability,Incanter Positive Channel,Incanter Negative Channel],[PREVARGTEQ:SPHERES_CHANNEL_DICE,3]],[PREMULT:2,[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREVARGTEQ:SPHERES_SOUL_WEAVER_CHANNEL_DICE,3]]"
+      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Positive Energy],[PREVARGTEQ:ClericChannelPositiveEnergyDice,3],[PREVAREQ:ClericChannelPositiveEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Negative Energy],[PREVARGTEQ:ClericChannelNegativeEnergyDice,3],[PREVAREQ:ClericChannelNegativeEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Paladin ~ Channel Positive Energy],[PREVARGTEQ:PaladinChannelDice,3],[PREVAREQ:PaladinChannelDieSize,6]],[PREMULT:2,[PREABILITY:1,CATEGORY=Special Ability,Incanter Positive Channel,Incanter Negative Channel],[PREVARGTEQ:SPHERES_CHANNEL_DICE,3]],[PREMULT:2,[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREVARGTEQ:SPHERES_SOUL_WEAVER_CHANNEL_DICE,3]],[PREMULT:3,[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive,Hedgewitch Covenant Negative]],[PREVARGTEQ:SPHERES_HEDGEWITCH_COVENANT_DICE,3],[PREVAREQ:SPHERES_HEDGEWITCH_COVENANT_DIE_SIZE,6]]"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Defy Fate",
@@ -5334,10 +5421,11 @@
       "https://spheresofpower.wikidot.com/creation#toc69"
     ],
     "key": "Destructive Counter",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Creation sphere (any (material) talent)"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Acidic Creation,Creation - Alchemical Creation,Creation - Expanded Materials,Creation - Gaseous Generation,Creation - Object Of Force,Creation - Plasma Production"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -5427,6 +5515,7 @@
     "heading": "Devouring Defiling (Defiler, Drawback) [SM—]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
     "text": "Source: Baron’s Secluded Library\nPrerequisites: Terrain Casting drawback, one of Agonizing Defiling, Ruinous Defiling, or Spellburn Defiling\nBenefit: When you use Agonizing Defiling, Ruinous Defiling, or Spellburn Defiling, if at least five different creatures fail their saving throws against any of these feats, the terrain is not blighted, corrupted, or drained of its nutrients.\nFour Defiler Feats: If at least three different creatures fail their saving throws against any of these feats, the terrain is not blighted, corrupted, or drained of its nutrients.",
@@ -5439,8 +5528,13 @@
       "PREMULT:1,[PREFEAT:1,Agonizing Defiling],[PREFEAT:1,Ruinous Defiling],[PREFEAT:1,Spellburn Defiling]"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Devouring Finish",
@@ -5739,6 +5833,7 @@
     "heading": "Distant Defiling (Defiler, Drawback) [Cata. HB]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
     "text": "You can draw magic beyond that which is around you.\nPrerequisites: Terrain Casting drawback.\nBenefits: Whenever you would blight, corrupt, or drain an area of its nutrients with the Terrain Casting drawback, you may choose to center the blight effect on a space within close range of you rather than in your space.\nFour Defiler Feats: You can create magic effects in blighted terrain so long as you blight an area within close range of you when casting. The area you blight cannot overlap with any already- blighted terrain.",
@@ -5750,8 +5845,13 @@
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Distill Compound",
@@ -5942,9 +6042,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc33"
     ],
     "key": "Dramatic Intensity",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREMULT:1,[PRECLASS:1,Striker=1],[PREFEAT:1,Amateur Striker]"
+    ],
     "unresolved_prerequisites": [
-      "tension pool",
       "one of a grit, luck, or panache pool"
     ],
     "mechanics": [],
@@ -6111,8 +6212,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Animate Object"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_ANIMATED_OBJECT_DURABLE|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Dynamic Wallcrafter",
@@ -6448,9 +6551,10 @@
       "https://spheresofpower.wikidot.com/general-feats#toc24"
     ],
     "key": "Embraced By Kindred",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRERACE:2,RACETYPE=Outsider,RACESUBTYPE=Native"
+    ],
     "unresolved_prerequisites": [
-      "Outsider with the native subtype",
       "alignment matching either an extraplanar ancestor or a patron"
     ],
     "mechanics": [],
@@ -6528,14 +6632,18 @@
     "key": "Emulation Expert",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Manipulate Aura"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Manipulate Aura",
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Shadow Infusion]],[PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadow Points (Reference)],[PREFEAT:1,Entranced in Unreality,Gather Shadowstuff,Greater Shadowmark,Gulf in Reality,Improved Shadow Shield,Shadow Magic,Shadow Shield,Shadowblast,Shadowstuff Armament,Shadowy Slay,Surreal Strike,Violent Shadow]]",
+      "PREMULT:1,[PREFEAT:1,Shadow Magic],[PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresCreateReality]"
     ],
-    "unresolved_prerequisites": [
-      "Illusion sphere (Shadow Infusion) or shadow pool",
-      "Shadow Magic or create reality class feature"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "status": "mechanics-added"
   },
   {
     "name": "Enchanted Animation",
@@ -6571,11 +6679,10 @@
     "key": "Enchanting Performance",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
-      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey - Beckoning Call],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey - Enchanting Music]"
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey - Beckoning Call],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey - Enchanting Music]",
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance,TYPE=SkaldRagingSong"
     ],
-    "unresolved_prerequisites": [
-      "bardic performance or raging song class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -6693,7 +6800,7 @@
     ],
     "key": "Energized Spell",
     "prerequisites": [
-      "PREMULT:1,[PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel Positive Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel]],[PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel Negative Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Negative Channel]]"
+      "PREMULT:1,[PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel Positive Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive]]],[PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel Negative Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Negative Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Negative]]]"
     ],
     "unresolved_prerequisites": [],
     "mechanics": [
@@ -6781,7 +6888,12 @@
     "unresolved_prerequisites": [
       "Destruction sphere or at least 2 evocation spells known"
     ],
-    "mechanics": [],
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_ENERGY_SHIFT_INCREASE|50",
+      "DEFINE:SPHERES_ENERGY_SHIFT_FORCE_INCREASE|100"
+    ],
     "status": "partial"
   },
   {
@@ -6959,11 +7071,10 @@
     ],
     "key": "Enmity Ward",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,Ranger ~ Favored Enemy,TYPE=FavoredEnemy"
     ],
-    "unresolved_prerequisites": [
-      "favored enemy class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7021,8 +7132,13 @@
     "key": "Entranced in Unreality",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Environment Charge",
@@ -7216,11 +7332,11 @@
     ],
     "key": "Exceptional Ally",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Alter Movement,Enhancement - Animate Object,Enhancement - Bestow Intelligence,Enhancement - Cripple,Enhancement - Deadly Weapon,Enhancement - Emphasize Belief,Enhancement - Energize Body,Enhancement - Energy Enhancement,Enhancement - Enhance Focus,Enhancement - Enhance Potency,Enhancement - Harden/Weaken,Enhancement - Improved Flexibility,Enhancement - Lighten,Enhancement - Magic Sink,Enhancement - Mental Enhancement,Enhancement - Physical Enhancement,Enhancement - Ragged Edges,Enhancement - Ravenous Weapon,Enhancement - Spectral Enhancement,Enhancement - Staunch Resistance,Enhancement - Steal Senses,Enhancement - Steal Capacity,Enhancement - Superior Poison,Enhancement - Superior Reflexes,Enhancement - Supply Vigor,Enhancement - Traveling Weapon"
     ],
-    "unresolved_prerequisites": [
-      "Enhancement sphere (at least one (enhance) talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7280,12 +7396,17 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc40"
     ],
     "key": "Expanded Tension Technique",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "tension pool"
+    "prerequisites": [
+      "PREMULT:1,[PRECLASS:1,Striker=1],[PREFEAT:1,Amateur Striker]"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Expanded Tension Technique|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Expanding Presence",
@@ -7361,9 +7482,11 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc38"
     ],
     "key": "Explosive Chorus",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Acid Blast,Destruction - Adhesive Blast,Destruction - Air Blast,Destruction - Alkali Blast,Destruction - Alternyating Current,Destruction - Attracting Blast,Destruction - Battering Blast,Destruction - Blinding Blast,Destruction - Blistering Blast,Destruction - Corrosive Blast,Destruction - Crystal Blast,Destruction - Drenching Blast,Destruction - Drowning Blast,Destruction - Electric Blast,Destruction - Fire Blast,Destruction - Force Blast,Destruction - Freezing Blast,Destruction - Frost Blast,Destruction - Gale Blast,Destruction - Gloom Blast,Destruction - Gore Blast,Destruction - Hurricane Blast,Destruction - Incandescent Blast,Destruction - Invigorating Blast,Destruction - Living Crystal Blast,Destruction - Mana Siphon,Destruction - Nether Blast,Destruction - Numbing Blast,Destruction - Paradigm Blast,Destruction - Radiant Blast,Destruction - Razor Blast,Destruction - Resonating Blast,Destruction - Reverberating Blast,Searing Blast,Destruction - Shattering Blast,Destruction - Shock Blast,Destruction - Shrapnel Blast,Destruction - Smiting Blast,Destruction - Static Blast,Destruction - Stone Blast,Destruction - Sweltering Blast,Destruction - Tenebrous Blast,Destruction - Thunder Blast,Destruction - Vacuum Blast"
+    ],
     "unresolved_prerequisites": [
-      "Destruction Sphere (any (blast type) talent)",
       "Warleader Sphere (resonating chorus)"
     ],
     "mechanics": [],
@@ -7421,10 +7544,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc41"
     ],
     "key": "Extend Stance",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Any (stance) talent"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy - Dynamite Throwing Form,Alchemy - Virulent Basilisk’s Cloak,Athletics - Lashing Serpent,Athletics - Stable Positioning,Barrage - 100000 Arrows,Barroom - Improvised Martial Arts,Beastmastery - Two As One,Berserker - Sword Eater,Boxing - Elongated Step,Boxing - Floating Butterfly,Brute - Giant Physique,Brute - Ornery Ox,Dual Wielding - Gemini Dancer,Dual Wielding - Snapping Crab,Duelist - Vengeful Scorpion,Equipment - Cloth Snake Puppetry,Equipment - Heft Armaments,Equipment - Spiked Defense,Equipment - Versatile Fighter,Fencing - Darting Crane,Guardian - Defiant Boar,Lancer - Defensive Leverage,Open Hand - Featherlight Positioning,Open Hand - Leopard’s Gambit,Scoundrel - Crouching Tiger,Scoundrel - Vagabond Nick,Scout - Hidden Dragon,Shield - Snapping Tortoise,Sniper - Retaliating Fire,Trap - Fool’s Retreat,Warleader - Marauding Monkey,Wrestling - Embracing Bear,Tech - Momentum Transfer"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -7500,11 +7623,18 @@
     ],
     "key": "Extra Battlefield Specialization",
     "prerequisites": [
-      "PRECLASS:1,Commander=5"
+      "PRECLASS:1,Commander=5",
+      "PREVARLT:SPHERES_EXTRA_COMMANDER_OPTIONS,if(SPHERES_COMMANDER_LEVEL>=5,1,0)+if(SPHERES_COMMANDER_LEVEL>=11,1,0)+if(SPHERES_COMMANDER_LEVEL>=17,1,0)"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_EXTRA_COMMANDER_OPTIONS|1",
+      "BONUS:ABILITYPOOL|Commander Battlefield Specialist|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Bestial Trait",
@@ -7518,12 +7648,17 @@
       "https://spheresofpower.wikidot.com/extra-feats#toc1"
     ],
     "key": "Extra Bestial Trait",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Bestial trait class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresBestialTrait"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Shifter Bestial Trait|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Blended Training Talent",
@@ -7826,9 +7961,10 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc18"
     ],
     "key": "Extra Planar Balancer",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRERACE:1,RACETYPE=Fey,RACESUBTYPE=Fey"
+    ],
     "unresolved_prerequisites": [
-      "Fey type or subtype",
       "planar balancer racial trait"
     ],
     "mechanics": [],
@@ -7847,11 +7983,18 @@
     ],
     "key": "Extra Prowess",
     "prerequisites": [
-      "PRECLASS:1,Armiger=5"
+      "PRECLASS:1,Armiger=5",
+      "PREVARLT:SPHERES_EXTRA_ARMIGER_OPTIONS,if(SPHERES_ARMIGER_LEVEL>=5,1,0)+if(SPHERES_ARMIGER_LEVEL>=11,1,0)+if(SPHERES_ARMIGER_LEVEL>=17,1,0)"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_EXTRA_ARMIGER_OPTIONS|1",
+      "BONUS:ABILITYPOOL|Armiger Prowess|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Psionics",
@@ -7909,11 +8052,18 @@
     ],
     "key": "Extra Scholar’s Knack",
     "prerequisites": [
-      "PRECLASS:1,Scholar=7"
+      "PRECLASS:1,Scholar=7",
+      "PREVARLT:SPHERES_EXTRA_SCHOLAR_OPTIONS,if(SPHERES_SCHOLAR_LEVEL>=7,1,0)+if(SPHERES_SCHOLAR_LEVEL>=15,1,0)"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_EXTRA_SCHOLAR_OPTIONS|1",
+      "BONUS:ABILITYPOOL|Scholar Scholar'S Knack|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Secret",
@@ -7927,12 +8077,17 @@
       "https://spheresofpower.wikidot.com/extra-feats#toc13"
     ],
     "key": "Extra Secret",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Secrets class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresHedgewitchSecrets"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:ABILITYPOOL|Hedgewitch Secret|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Shadowstuff",
@@ -7971,11 +8126,18 @@
     ],
     "key": "Extra Smithing Insight",
     "prerequisites": [
-      "PRECLASS:1,Blacksmith=7"
+      "PRECLASS:1,Blacksmith=7",
+      "PREVARLT:SPHERES_EXTRA_BLACKSMITH_OPTIONS,if(SPHERES_BLACKSMITH_LEVEL>=7,1,0)+if(SPHERES_BLACKSMITH_LEVEL>=15,1,0)"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_EXTRA_BLACKSMITH_OPTIONS|1",
+      "BONUS:ABILITYPOOL|Blacksmith Smithing Insight|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Spell Points",
@@ -8009,11 +8171,17 @@
     ],
     "key": "Extra Striker Art",
     "prerequisites": [
-      "PRECLASS:1,Striker=5"
+      "PREMULT:1,[PREMULT:2,[PREMULT:1,[PRECLASS:1,Striker=5],[PREMULT:2,[PREFEAT:1,Amateur Striker],[PREATT:5]]],[PREVARLT:SPHERES_EXTRA_STRIKER_OPTIONS,1]],[PREMULT:2,[PREMULT:1,[PRECLASS:1,Striker=11],[PREMULT:2,[PREFEAT:1,Amateur Striker],[PREATT:11]]],[PREVARLT:SPHERES_EXTRA_STRIKER_OPTIONS,2]],[PREMULT:2,[PREMULT:1,[PRECLASS:1,Striker=17],[PREMULT:2,[PREFEAT:1,Amateur Striker],[PREATT:17]]],[PREVARLT:SPHERES_EXTRA_STRIKER_OPTIONS,3]]"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_EXTRA_STRIKER_OPTIONS|1",
+      "BONUS:ABILITYPOOL|Striker Striker Art|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Swarm Enhancement",
@@ -8066,11 +8234,18 @@
     ],
     "key": "Extra Technical Insight",
     "prerequisites": [
-      "PRECLASS:1,Technician=5"
+      "PRECLASS:1,Technician=5",
+      "PREVARLT:SPHERES_EXTRA_TECHNICIAN_OPTIONS,if(SPHERES_TECHNICIAN_LEVEL>=5,1,0)+if(SPHERES_TECHNICIAN_LEVEL>=11,1,0)+if(SPHERES_TECHNICIAN_LEVEL>=17,1,0)"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "MULT:YES",
+      "STACK:YES",
+      "CHOOSE:NOCHOICE",
+      "BONUS:VAR|SPHERES_EXTRA_TECHNICIAN_OPTIONS|1",
+      "BONUS:ABILITYPOOL|Technician Technical Insight|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Extra Unseen Augmentation",
@@ -8424,11 +8599,11 @@
     ],
     "key": "Favorite Boost",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Arcanodynamics,Mana - Elemental Enhancement,Mana - Energy Modification,Mana - Heightened Magic,Mana - Initiate’s Training,Mana - Intelligent Interactions,Mana - Power Dynamics,Mana - Spell Mastery,Mana - Visual Dynamics",
       "PREVARGTEQ:SPHERES_CL_MANA,9"
     ],
-    "unresolved_prerequisites": [
-      "Mana sphere (at least one (amp) talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -8523,12 +8698,15 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc20"
     ],
     "key": "Fey Interference",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Fey type or subtype"
+    "prerequisites": [
+      "PRERACE:1,RACETYPE=Fey,RACESUBTYPE=Fey"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FEY_INTERFERENCE_USES|floor(TL/2)",
+      "DEFINE:SPHERES_FEY_INTERFERENCE_RANGE|30"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Fey Melodies",
@@ -8566,10 +8744,10 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc21"
     ],
     "key": "Feylignment",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Fey type or subtype"
+    "prerequisites": [
+      "PRERACE:1,RACETYPE=Fey,RACESUBTYPE=Fey"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -9286,13 +9464,15 @@
     ],
     "key": "Forest Roots",
     "prerequisites": [
+      "PRERACE:1,RACETYPE=Plant,RACESUBTYPE=Plant",
       "PREFEAT:1,Vegetalker"
     ],
-    "unresolved_prerequisites": [
-      "Plant type or subtype"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FOREST_ROOTS_RANGE|100+10*TL",
+      "DEFINE:SPHERES_FOREST_ROOTS_RADIUS|50"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "status": "mechanics-added"
   },
   {
     "name": "Forge Charm",
@@ -9533,11 +9713,11 @@
     ],
     "key": "Furious Flare",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Berserker Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Berserker Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Acid Blast,Destruction - Adhesive Blast,Destruction - Air Blast,Destruction - Alkali Blast,Destruction - Alternyating Current,Destruction - Attracting Blast,Destruction - Battering Blast,Destruction - Blinding Blast,Destruction - Blistering Blast,Destruction - Corrosive Blast,Destruction - Crystal Blast,Destruction - Drenching Blast,Destruction - Drowning Blast,Destruction - Electric Blast,Destruction - Fire Blast,Destruction - Force Blast,Destruction - Freezing Blast,Destruction - Frost Blast,Destruction - Gale Blast,Destruction - Gloom Blast,Destruction - Gore Blast,Destruction - Hurricane Blast,Destruction - Incandescent Blast,Destruction - Invigorating Blast,Destruction - Living Crystal Blast,Destruction - Mana Siphon,Destruction - Nether Blast,Destruction - Numbing Blast,Destruction - Paradigm Blast,Destruction - Radiant Blast,Destruction - Razor Blast,Destruction - Resonating Blast,Destruction - Reverberating Blast,Searing Blast,Destruction - Shattering Blast,Destruction - Shock Blast,Destruction - Shrapnel Blast,Destruction - Smiting Blast,Destruction - Static Blast,Destruction - Stone Blast,Destruction - Sweltering Blast,Destruction - Tenebrous Blast,Destruction - Thunder Blast,Destruction - Vacuum Blast"
     ],
-    "unresolved_prerequisites": [
-      "Destruction sphere (any (blast type) talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -9594,12 +9774,17 @@
       "https://spheresofpower.wikidot.com/illusion#toc86"
     ],
     "key": "Gather Shadowstuff",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Shadowmark class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadowmark Dice (Reference)"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Generative Admixture",
@@ -9702,11 +9887,10 @@
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Boxing Sphere",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Battlefield Sense,Divination - Blindfolded Oracle,Divination - Detect Scrying,Divination - Discern Individual,Divination - Foreshadow,Divination - Ghost Sight,Divination - Logos,Divination - Nature Sense,Divination - Prescience,Divination - Prying Sight,Divination - Scent,Divination - See Hazard,Divination - Sense Magic,Divination - Sense Presence,Divination - Shared Perception,Divination - Sniper’s Eye,Divination - Tremorsense,Divination - Unhooded Sight",
       "PREVARGTEQ:SPHERES_CL_DIVINATION,6"
     ],
-    "unresolved_prerequisites": [
-      "Divination sphere (any (sense) talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -9769,8 +9953,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_GRAPHOMANCY|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Grappling Caster",
@@ -9916,9 +10102,11 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc25"
     ],
     "key": "Greater Created",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRERACE:1,RACESUBTYPE=Construct"
+    ],
     "unresolved_prerequisites": [
-      "Construct subtype"
+      "Only selectable at character creation"
     ],
     "mechanics": [],
     "status": "partial"
@@ -10008,7 +10196,11 @@
     ],
     "unresolved_prerequisites": [],
     "mechanics": [
-      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_DIE_SIZE|2"
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_DIE_SIZE|2",
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
     ],
     "status": "mechanics-added"
   },
@@ -10194,8 +10386,13 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Suppression"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Gunsmithing",
@@ -10435,11 +10632,10 @@
       "PREFEAT:1,Imbued Strike",
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus",
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
-      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1",
+      "!PREALIGN:TN"
     ],
-    "unresolved_prerequisites": [
-      "non-neutral alignment"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -10577,8 +10773,12 @@
       "PREFEAT:1,TYPE=Metamagic"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_HEEDLESS_METAMAGIC_INCREASE_PER_FEAT|50"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Helping",
@@ -10635,8 +10835,16 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_HEMOMANCY_BLEEDING_BLINDSENSE|15*SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_HEMOMANCY_ACTIVE_ROUNDS|SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Hemothermia",
@@ -10842,11 +11050,11 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc64"
     ],
     "key": "Hold the Note",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "tension pool",
-      "one of bardic performance, psionics, or raging song"
+    "prerequisites": [
+      "PREMULT:1,[PRECLASS:1,Striker=1],[PREFEAT:1,Amateur Striker]",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance],[PREABILITY:1,CATEGORY=Special Ability,Symbiat Psionics Rounds (Reference)],[PREABILITY:1,CATEGORY=Special Ability,TYPE=SkaldRagingSong]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -11182,11 +11390,11 @@
     ],
     "key": "Illusionary Blast",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREVARGTEQ:SPHERES_ILLUSION_ILLUSIONARYTOUCH_COUNT,2"
     ],
-    "unresolved_prerequisites": [
-      "Illusion sphere (Illusionary Touch (sensory, touch) x2)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -11823,8 +12031,15 @@
       "PREFEAT:1,Shadow Shield"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_SHADOW_SHIELD_HP_BONUS|TL|PREFEAT:1,Shadow Shield",
+      "BONUS:VAR|SPHERES_SHADOW_SHIELD_ALL_DAMAGE|1|PREFEAT:1,Shadow Shield",
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Improved Spell Combat",
@@ -11839,11 +12054,10 @@
     ],
     "key": "Improved Spell Combat",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Transforming Strike,Blood - Exsanguinating Strike,Creation - Transmuting Strike,Dark - Shadow Strike,Death - Cryptic Strike,Destruction - Energy Strike,Divination - Revealing Strike,Enhancement - Crippling Strike,Fallen Fey - Feytouch Strike,Fate - Shrieking Strike,Illusion - Aggrandizing Strike,Life - Clarified Strike,Light - Solar Strike,Mana - Manasurge Strike,Mind - Charming Strike,Nature - Elemental Strike,Telekinesis - Seizing Strike,Time - Time Strike,Warp - Warping Strike,Weather - Weather Strike,Technomancy - Slicer’s Strike,Veilweaving - Essence Strike"
     ],
-    "unresolved_prerequisites": [
-      "any talent with the strike descriptor"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -11995,6 +12209,7 @@
     "heading": "Inhuman Defiler (Defiler, Drawback, Necrosis) [Cata. HB]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback",
       "Necrosis"
     ],
@@ -12011,8 +12226,14 @@
       "!PREALIGN:LG,NG,CG"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|floor(SPHERES_NECROSIS_FEAT_COUNT/2)|PREVARGTEQ:SPHERES_NECROSIS_FEAT_COUNT,4",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Inkbound Portents",
@@ -12112,8 +12333,12 @@
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_INSPIRED_SURGE_TALENTS|1+floor(SPHERES_WILD_MAGIC_FEAT_COUNT/5)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Instinctive Stance",
@@ -12178,6 +12403,7 @@
     "heading": "Intense Defiling (Defiler, Drawback) [Cata. HB]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
     "text": "You enlarge the area of your despoilation to amplify its effects.\nPrerequisite: Terrain Casting drawback.\nBenefit: Whenever you blight, corrupt, or drain an area of its nutrients with the Terrain Casting drawback, you may extend the radius of area corrupted by 5 feet + 5 feet for every 5 caster levels you possess. If you do, increase the DC of the blighting effect by 1. If you possess any feats that force saving throws from creatures in the blighted area (such as Agonizing Defiling), you increase their DC by the same amount.\nFour Defiler Feats: The DC is increased by 2 rather than 1.",
@@ -12189,8 +12415,13 @@
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Terrain Casting"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Intense Metamagic",
@@ -12205,11 +12436,10 @@
     ],
     "key": "Intense Metamagic",
     "prerequisites": [
+      "PREMULT:1,[PRECLASS:1,Striker=1],[PREFEAT:1,Amateur Striker]",
       "PREFEAT:1,TYPE=Metamagic"
     ],
-    "unresolved_prerequisites": [
-      "tension pool"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12368,10 +12598,10 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc28"
     ],
     "key": "Jumbled Organs",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Construct type or subtype"
+    "prerequisites": [
+      "PRERACE:1,RACETYPE=Construct,RACESUBTYPE=Construct"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12609,8 +12839,10 @@
     "key": "Liberating Triumph",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "SERVESAS:ABILITY=FEAT|Great Fortitude|Lightning Reflexes|Iron Will"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Life Conversion",
@@ -12710,11 +12942,10 @@
     ],
     "key": "Lightshow",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance"
     ],
-    "unresolved_prerequisites": [
-      "bardic performance class ability"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -12811,10 +13042,10 @@
       "https://spheresofpower.wikidot.com/general-feats#toc46"
     ],
     "key": "Localized Arcana",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Favored Terrain class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=FavoredTerrain"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -13315,12 +13546,16 @@
       "https://spheresofpower.wikidot.com/wild-magic-feats#toc6"
     ],
     "key": "Manipulate Result",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Spell point pool or casting class feature"
+    "prerequisites": [
+      "PREMULT:1,[PREVARGTEQ:SPHERES_SPELL_POINTS,1],[PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core]"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_MANIPULATE_RESULT_USES|SPHERES_WILD_MAGIC_FEAT_COUNT"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Mantled Caster",
@@ -13845,10 +14080,11 @@
       "https://spheresofpower.wikidot.com/enhancement#toc78"
     ],
     "key": "Might Of The Grave",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
+    ],
     "unresolved_prerequisites": [
-      "Death sphere (reanimate ability)",
-      "Enhancement sphere (any (enhance) ability)"
+      "Death sphere (reanimate ability)"
     ],
     "mechanics": [],
     "status": "partial"
@@ -14211,9 +14447,10 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc67"
     ],
     "key": "Morphic Disguise",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere]"
+    ],
     "unresolved_prerequisites": [
-      "Alteration or Illusion sphere",
       "Subterfuge sphere"
     ],
     "mechanics": [],
@@ -14334,11 +14571,10 @@
     ],
     "key": "Mutagenic Enhancements",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Enhancement sphere (any (enhance) ability)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14485,11 +14721,11 @@
     ],
     "key": "Nature’s Enhancement",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Aquatic Adept,Nature - Destroy Element,Nature - Dragonlung,Nature - Friend To Wildlife,Nature - Master Of Elements,Nature - Nature’s Carapace,Nature - Nature’s Movement,Nature - Nature’s Weapon,Nature - Nature Sight,Nature - Rejuvenation,Nature - Resist Elements,Nature - Ride The Elements,Nature - Speak With The Elements,Nature - Speak With Wildlife,Nature - Wreath Of Elements"
     ],
-    "unresolved_prerequisites": [
-      "Nature sphere (any (spirit) talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14532,8 +14768,13 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Network of Bonds",
@@ -14677,7 +14918,11 @@
     ],
     "unresolved_prerequisites": [],
     "mechanics": [
-      "BONUS:VAR|SPHERES_SPELL_POINTS|1"
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
     ],
     "status": "mechanics-added"
   },
@@ -14695,11 +14940,10 @@
     "key": "Object Familiar",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Animate Object"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Animate Object",
+      "PREVARGTEQ:FamiliarMasterLVL,1"
     ],
-    "unresolved_prerequisites": [
-      "ability to acquire a familiar"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -14915,8 +15159,12 @@
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_OVERPOWER_RESISTANCE_BONUS|2+floor(SPHERES_WILD_MAGIC_FEAT_COUNT/2)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Overwatch",
@@ -14954,11 +15202,10 @@
     "key": "Pacified Strike",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Transforming Strike,Blood - Exsanguinating Strike,Creation - Transmuting Strike,Dark - Shadow Strike,Death - Cryptic Strike,Destruction - Energy Strike,Divination - Revealing Strike,Enhancement - Crippling Strike,Fallen Fey - Feytouch Strike,Fate - Shrieking Strike,Illusion - Aggrandizing Strike,Life - Clarified Strike,Light - Solar Strike,Mana - Manasurge Strike,Mind - Charming Strike,Nature - Elemental Strike,Telekinesis - Seizing Strike,Time - Time Strike,Warp - Warping Strike,Weather - Weather Strike,Technomancy - Slicer’s Strike,Veilweaving - Essence Strike",
       "PREVARGTEQ:SPHERES_CASTER_LEVEL,3"
     ],
-    "unresolved_prerequisites": [
-      "one talent from any sphere that has the strike descriptor"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -15448,11 +15695,11 @@
     ],
     "key": "Planar Strike",
     "prerequisites": [
+      "PRERACE:1,RACETYPE=Fey,RACESUBTYPE=Fey",
       "PREFEAT:1,Arcane Strike",
       "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
     ],
     "unresolved_prerequisites": [
-      "Fey type or subtype",
       "planar balancer racial trait"
     ],
     "mechanics": [],
@@ -15471,9 +15718,10 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc34"
     ],
     "key": "Planar Swing",
-    "prerequisites": [],
+    "prerequisites": [
+      "PRERACE:1,RACETYPE=Fey,RACESUBTYPE=Fey"
+    ],
     "unresolved_prerequisites": [
-      "Fey type or subtype",
       "planar balancer racial trait"
     ],
     "mechanics": [],
@@ -15983,10 +16231,11 @@
       "https://spheresofpower.wikidot.com/creation#toc79"
     ],
     "key": "Precocious Creation",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Creation sphere (any (material) talent)"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Acidic Creation,Creation - Alchemical Creation,Creation - Expanded Materials,Creation - Gaseous Generation,Creation - Object Of Force,Creation - Plasma Production"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16003,12 +16252,15 @@
       "https://spheresofpower.wikidot.com/divination#toc116"
     ],
     "key": "Precogniscent Protection",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Divination sphere (one or more (sense) talents or abilities)"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ACTIVE_DIVINATION_SENSES|0",
+      "BONUS:COMBAT|AC|min(SPHERES_ACTIVE_DIVINATION_SENSES,1+floor(TL/5))|TYPE=Insight"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Precogniscent Resistance",
@@ -16023,12 +16275,15 @@
       "https://spheresofpower.wikidot.com/divination#toc117"
     ],
     "key": "Precogniscent Resistance",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Divination sphere (one or more (sense) talents or abilities)"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ACTIVE_DIVINATION_SENSES|0",
+      "BONUS:SAVE|ALL|min(SPHERES_ACTIVE_DIVINATION_SENSES,1+floor(TL/4))|TYPE=Resistance"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Precogniscent Smite",
@@ -16043,12 +16298,16 @@
       "https://spheresofpower.wikidot.com/divination#toc118"
     ],
     "key": "Precogniscent Smite",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Divination sphere (one or more (sense) talents or abilities)"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_ACTIVE_DIVINATION_SENSES|0",
+      "BONUS:COMBAT|TOHIT,DAMAGE|min(SPHERES_ACTIVE_DIVINATION_SENSES,1+floor(TL/5))|TYPE=Insight",
+      "DEFINE:SPHERES_PRECOGNISCENT_SMITE_MISS_CHANCE|5+5*floor(TL/5)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Prepared Counter",
@@ -16227,11 +16486,13 @@
       "https://spheresofpower.wikidot.com/nature#toc93"
     ],
     "key": "Primal Blast",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Destruction sphere (any (blast type) talent)",
-      "Nature sphere (any package)"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Acid Blast,Destruction - Adhesive Blast,Destruction - Air Blast,Destruction - Alkali Blast,Destruction - Alternyating Current,Destruction - Attracting Blast,Destruction - Battering Blast,Destruction - Blinding Blast,Destruction - Blistering Blast,Destruction - Corrosive Blast,Destruction - Crystal Blast,Destruction - Drenching Blast,Destruction - Drowning Blast,Destruction - Electric Blast,Destruction - Fire Blast,Destruction - Force Blast,Destruction - Freezing Blast,Destruction - Frost Blast,Destruction - Gale Blast,Destruction - Gloom Blast,Destruction - Gore Blast,Destruction - Hurricane Blast,Destruction - Incandescent Blast,Destruction - Invigorating Blast,Destruction - Living Crystal Blast,Destruction - Mana Siphon,Destruction - Nether Blast,Destruction - Numbing Blast,Destruction - Paradigm Blast,Destruction - Radiant Blast,Destruction - Razor Blast,Destruction - Resonating Blast,Destruction - Reverberating Blast,Searing Blast,Destruction - Shattering Blast,Destruction - Shock Blast,Destruction - Shrapnel Blast,Destruction - Smiting Blast,Destruction - Static Blast,Destruction - Stone Blast,Destruction - Sweltering Blast,Destruction - Tenebrous Blast,Destruction - Thunder Blast,Destruction - Vacuum Blast",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Nature Package,Nature Package - Air,Nature Package - Earth,Nature Package - Fire,Nature Package - Metal,Nature Package - Plant,Nature Package - Water"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16442,7 +16703,7 @@
     ],
     "key": "Pulsing Channel",
     "prerequisites": [
-      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Positive Energy],[PREVARGTEQ:ClericChannelPositiveEnergyDice,4],[PREVAREQ:ClericChannelPositiveEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Negative Energy],[PREVARGTEQ:ClericChannelNegativeEnergyDice,4],[PREVAREQ:ClericChannelNegativeEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Paladin ~ Channel Positive Energy],[PREVARGTEQ:PaladinChannelDice,4],[PREVAREQ:PaladinChannelDieSize,6]],[PREMULT:2,[PREABILITY:1,CATEGORY=Special Ability,Incanter Positive Channel,Incanter Negative Channel],[PREVARGTEQ:SPHERES_CHANNEL_DICE,4]],[PREMULT:2,[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREVARGTEQ:SPHERES_SOUL_WEAVER_CHANNEL_DICE,4]]"
+      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Positive Energy],[PREVARGTEQ:ClericChannelPositiveEnergyDice,4],[PREVAREQ:ClericChannelPositiveEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Cleric ~ Channel Negative Energy],[PREVARGTEQ:ClericChannelNegativeEnergyDice,4],[PREVAREQ:ClericChannelNegativeEnergyDieSize,6]],[PREMULT:3,[PREABILITY:1,CATEGORY=Special Ability,Paladin ~ Channel Positive Energy],[PREVARGTEQ:PaladinChannelDice,4],[PREVAREQ:PaladinChannelDieSize,6]],[PREMULT:2,[PREABILITY:1,CATEGORY=Special Ability,Incanter Positive Channel,Incanter Negative Channel],[PREVARGTEQ:SPHERES_CHANNEL_DICE,4]],[PREMULT:2,[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREVARGTEQ:SPHERES_SOUL_WEAVER_CHANNEL_DICE,4]],[PREMULT:3,[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive,Hedgewitch Covenant Negative]],[PREVARGTEQ:SPHERES_HEDGEWITCH_COVENANT_DICE,4],[PREVAREQ:SPHERES_HEDGEWITCH_COVENANT_DIE_SIZE,6]]"
     ],
     "unresolved_prerequisites": [],
     "mechanics": [],
@@ -16474,6 +16735,7 @@
     "heading": "Purging Despoilation (Defiler, Drawback) [Cata. HB]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
     "text": "Your destructive magics nullify magical workings.\nPrerequisites: Terrain Casting drawback, Counterspell, Improved Counterspell, casting class feature, magic skill bonus +5.\nBenefit: Whenever you blight, corrupt, or drain an area of its nutrients with the Terrain Casting drawback, you may use Counterspell or Improved Counterspell as a free action as part of casting. You may only target effects within your blighted area.\nFour Defiler Feats: You may use Greater Counterspell (if you have the feat) as a free action as part of casting, targeting effects within your blighted area as normal. The spell point cost of any counterspell used as part of blighting is reduced by 1 (minimum 0).",
@@ -16489,8 +16751,13 @@
       "PREVARGTEQ:SPHERES_MAGIC_SKILL_BONUS,5"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Purrging Transformation",
@@ -16586,11 +16853,10 @@
     "key": "Rage Of The Grave",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=Rage",
       "PREMULT:1,[PREVARGTEQ:SPHERES_CL_DEATH,6],[PREATT:6]"
     ],
-    "unresolved_prerequisites": [
-      "rage class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -16959,11 +17225,11 @@
     ],
     "key": "Refined Amplification",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Arcanodynamics,Mana - Elemental Enhancement,Mana - Energy Modification,Mana - Heightened Magic,Mana - Initiate’s Training,Mana - Intelligent Interactions,Mana - Power Dynamics,Mana - Spell Mastery,Mana - Visual Dynamics",
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Skilled Casting"
     ],
-    "unresolved_prerequisites": [
-      "Mana Sphere (any (amp) talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17226,8 +17492,10 @@
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Anemic"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:COMBAT|AC|1+floor(SPHERES_MAGIC_SKILL_BONUS/5)|TYPE=NaturalArmor"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Resolute Expertise",
@@ -17298,10 +17566,11 @@
       "https://spheresofpower.wikidot.com/life#toc78"
     ],
     "key": "Revitalizing Grasp",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Paladin ~ Lay on Hands],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive]]"
+    ],
     "unresolved_prerequisites": [
-      "Life sphere (at least one (vitality) talent)",
-      "lay on hands class feature"
+      "Life sphere (at least one (vitality) talent)"
     ],
     "mechanics": [],
     "status": "partial"
@@ -17323,8 +17592,12 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_RHYTHMIC_CHAOS_INCREASE|min(60,20+10*SPHERES_WILD_MAGIC_FEAT_COUNT)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Rigorous Defense",
@@ -17339,11 +17612,10 @@
     ],
     "key": "Rigorous Defense",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREMULT:1,[PREVARGTEQ:InvestigatorInspirationDice,1],[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Font Of Inspiration]"
     ],
-    "unresolved_prerequisites": [
-      "inspiration class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17400,8 +17672,13 @@
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_RISK_MANAGEMENT_ROLLS|if(SPHERES_WILD_MAGIC_FEAT_COUNT>=4,1,2)",
+      "DEFINE:SPHERES_RISK_MANAGEMENT_MAJOR_ROLLS|if(SPHERES_WILD_MAGIC_FEAT_COUNT>=6,4,0)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Ritual Caster",
@@ -17515,13 +17792,16 @@
       "https://spheresofpower.wikidot.com/general-feats#toc61"
     ],
     "key": "Roiling Anger",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Ki pool class feature",
-      "rage class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=Ki Pool",
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=Rage"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "BONUS:VAR|KiPoints|1",
+      "BONUS:VAR|RageDuration|3|PREABILITY:1,CATEGORY=Special Ability,Standard Rage"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Roll Redemption",
@@ -17585,7 +17865,11 @@
     ],
     "unresolved_prerequisites": [],
     "mechanics": [
-      "BONUS:VAR|SPHERES_SPELL_POINTS|1"
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
     ],
     "status": "mechanics-added"
   },
@@ -17594,6 +17878,7 @@
     "heading": "Ruinous Defiling (Defiler, Drawback) [Cata. HB]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
     "text": "Your despoilation inflicts pain on those caught in your path.\nPrerequisites: Terrain Casting drawback, non-good alignment.\nBenefit: Whenever you blight, corrupt, or drain an area of its nutrients with the Terrain Casting drawback, you may choose to damage all creatures caught inside the defiled area. Creatures other than yourself inside the corrupted area take 1 point of negative energy damage per caster level (Will save negates, DC 10 + 1/2 your character level + your casting ability modifier). This damage does not heal creatures which would be healed by negative energy.\nFour Defiler Feats: The damage from this feat increases to 2 points of negative energy per caster level.",
@@ -17606,8 +17891,13 @@
       "!PREALIGN:LG,NG,CG"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Rumbling",
@@ -17743,11 +18033,10 @@
     ],
     "key": "Sacrosanct Firewall",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere"
     ],
-    "unresolved_prerequisites": [
-      "Fate sphere (Hallow (word))"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17763,10 +18052,10 @@
       "https://spheresofpower.wikidot.com/blood#toc74"
     ],
     "key": "Salvaging Execution",
-    "prerequisites": [
-      "PREMULT:1,[PREMULT:3,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Shroud]],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere]"
+    "prerequisites": [],
+    "unresolved_prerequisites": [
+      "Blood sphere, Death sphere (Shroud (dominion)), or Telekinesis sphere"
     ],
-    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17784,11 +18073,11 @@
     ],
     "key": "Sanctified Vigilance",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War - Absorb,War - Counterattack,War - Empower,War - Engage,War - Finish,War - Intercept,War - Position,War - Replenish,War - Retribution,War - Safety,War - Strike"
     ],
-    "unresolved_prerequisites": [
-      "War sphere (any (rally) talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -17910,8 +18199,11 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:SKILL|Knowledge (History)|if(skillinfo(\"TOTALRANK\",\"Knowledge (History)\")>=10,4,2)",
+      "DEFINE:SPHERES_SCHOLAR_DIVINE_CL_BONUS|max(0,min(ceil(skillinfo(\"TOTALRANK\",\"Knowledge (History)\")/2),TL-SPHERES_CL_DIVINATION))"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Scorched Path",
@@ -18251,12 +18543,21 @@
       "https://spheresofpower.wikidot.com/illusion#toc88"
     ],
     "key": "Shadow Magic",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Illusion sphere (Shadow Infusion) or shadow pool"
+    "prerequisites": [
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Shadow Infusion]],[PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadow Points (Reference)],[PREFEAT:1,Emulation Expert,Entranced in Unreality,Gather Shadowstuff,Greater Shadowmark,Gulf in Reality,Improved Shadow Shield,Shadow Shield,Shadowblast,Shadowstuff Armament,Shadowy Slay,Surreal Strike,Violent Shadow]]"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_CL_ILLUSION|SPHERES_CASTER_LEVEL",
+      "DEFINE:SPHERES_HEDGEWITCH_SHADOW_MAGIC_CL_BONUS|0",
+      "DEFINE:SPHERES_SHADOW_MAGIC_TALENT_CAPACITY|1+floor(SPHERES_SURREAL_FEAT_COUNT/5)",
+      "DEFINE:SPHERES_SHADOW_MAGIC_EFFECT_CL|max(1,SPHERES_CL_ILLUSION-2+SPHERES_HEDGEWITCH_SHADOW_MAGIC_CL_BONUS)",
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Shadow Shield",
@@ -18273,8 +18574,19 @@
     "key": "Shadow Shield",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_SHADOW_SHIELD_DICE|TL",
+      "DEFINE:SPHERES_SHADOW_SHIELD_DIE_SIZE|4",
+      "DEFINE:SPHERES_SHADOW_SHIELD_RANGE|25+5*floor(TL/2)",
+      "DEFINE:SPHERES_SHADOW_SHIELD_REDUCTION|1+floor(TL/5)",
+      "DEFINE:SPHERES_SHADOW_SHIELD_HP_BONUS|0",
+      "DEFINE:SPHERES_SHADOW_SHIELD_ALL_DAMAGE|0",
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Shadow Swap",
@@ -18310,12 +18622,17 @@
       "https://spheresofpower.wikidot.com/illusion#toc91"
     ],
     "key": "Shadowblast",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Shadowmark class feature"
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadowmark Dice (Reference)"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Shadowstuff Armament",
@@ -18332,8 +18649,14 @@
     "key": "Shadowstuff Armament",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_SHADOW_ARMAMENT_OBJECTS|1+floor(TL/5)",
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Shadowy Slay",
@@ -18350,8 +18673,13 @@
     "key": "Shadowy Slay",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Shape Expert",
@@ -18484,12 +18812,17 @@
       "https://spheresofpower.wikidot.com/wild-magic-feats#toc10"
     ],
     "key": "Shift Cost",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Spell point pool"
+    "prerequisites": [
+      "PREVARGTEQ:SPHERES_SPELL_POINTS,1"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_SHIFT_COST_REDUCTION|if(TL>=10,2,1)",
+      "DEFINE:SPHERES_SHIFT_COST_INCREASE|if(TL>=10,100,50)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Shift Effect",
@@ -18503,12 +18836,16 @@
       "https://spheresofpower.wikidot.com/wild-magic-feats#toc11"
     ],
     "key": "Shift Effect",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Spell point pool or casting class feature"
+    "prerequisites": [
+      "PREMULT:1,[PREVARGTEQ:SPHERES_SPELL_POINTS,1],[PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core]"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_SHIFT_EFFECT_MAJOR_ALLOWED|if(SPHERES_WILD_MAGIC_FEAT_COUNT>=6,1,0)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Shifting Disguise",
@@ -18561,11 +18898,10 @@
     ],
     "key": "Shifting Style",
     "prerequisites": [
-      "PREFEAT:1,Transformation"
+      "PREFEAT:1,Transformation",
+      "PREABILITY:1,CATEGORY=Special Ability,Armiger Talents Per Customized Weapon (Reference)"
     ],
-    "unresolved_prerequisites": [
-      "customized weapons class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -18938,11 +19274,11 @@
     ],
     "key": "Solid Illusions",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREVARGTEQ:SPHERES_ILLUSION_ILLUSIONARYTOUCH_COUNT,2"
     ],
-    "unresolved_prerequisites": [
-      "Illusion sphere (Illusionary Touch (sensory, touch) x2)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19175,6 +19511,7 @@
     "heading": "Specialist Defiler (Defiler, Drawback) [Cata. HB]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
     "text": "You draw extra energy from certain environments.\nPrerequisites: Terrain Casting drawback, non-good alignment.\nBenefit: Choose one type of terrain from the ranger’s list of favored terrains. Whenever you use Terrain Casting to blight this terrain, you may increase your caster level for the blight-causing effect by 1. This bonus to caster level is a competence bonus.\nFour Defiler Feats: Rather than 1, your caster level increases by 2.\nSpecial: You can gain this feat multiple times. Its effects do not stack. Each time you take the feat, it applies to a new terrain. You cannot gain this feat if you possess the Terrain Focus feat and vice versa.",
@@ -19188,8 +19525,13 @@
       "!PREFEAT:1,Terrain Focus"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Specialized Wipe",
@@ -19248,8 +19590,12 @@
       "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_SPECTACULAR_SURGE_EVENTS|if(SPHERES_WILD_MAGIC_FEAT_COUNT>=4,2,1)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Spell Absorption",
@@ -19313,11 +19659,10 @@
     ],
     "key": "Spell Attack",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Transforming Strike,Blood - Exsanguinating Strike,Creation - Transmuting Strike,Dark - Shadow Strike,Death - Cryptic Strike,Destruction - Energy Strike,Divination - Revealing Strike,Enhancement - Crippling Strike,Fallen Fey - Feytouch Strike,Fate - Shrieking Strike,Illusion - Aggrandizing Strike,Life - Clarified Strike,Light - Solar Strike,Mana - Manasurge Strike,Mind - Charming Strike,Nature - Elemental Strike,Telekinesis - Seizing Strike,Time - Time Strike,Warp - Warping Strike,Weather - Weather Strike,Technomancy - Slicer’s Strike,Veilweaving - Essence Strike"
     ],
-    "unresolved_prerequisites": [
-      "any talent with the strike descriptor"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19336,11 +19681,11 @@
     "key": "Spell Attack Whirlwind",
     "prerequisites": [
       "PREFEAT:1,Spell Attack",
-      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Transforming Strike,Blood - Exsanguinating Strike,Creation - Transmuting Strike,Dark - Shadow Strike,Death - Cryptic Strike,Destruction - Energy Strike,Divination - Revealing Strike,Enhancement - Crippling Strike,Fallen Fey - Feytouch Strike,Fate - Shrieking Strike,Illusion - Aggrandizing Strike,Life - Clarified Strike,Light - Solar Strike,Mana - Manasurge Strike,Mind - Charming Strike,Nature - Elemental Strike,Telekinesis - Seizing Strike,Time - Time Strike,Warp - Warping Strike,Weather - Weather Strike,Technomancy - Slicer’s Strike,Veilweaving - Essence Strike"
     ],
     "unresolved_prerequisites": [
-      "Whirlwind Attack feat or Whirl of Blows mystic combat",
-      "any talent with the strike descriptor"
+      "Whirlwind Attack feat or Whirl of Blows mystic combat"
     ],
     "mechanics": [],
     "status": "partial"
@@ -19378,12 +19723,12 @@
     "key": "Spell Capacitor Agenda",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War - Aggressive Momentum,War - Cooperative Momentum,War - Damaging Momentum,War - Demoralizing Momentum,War - Disrupting Momentum,War - Favorable Momentum,War - Focusing Momentum,War - Marauding Momentum,War - Resilient Momentum,War - Revitalizing Momentum,War - Tactical Momentum,War - Threatening Momentum",
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Substantial Magic",
       "PREFEAT:1,Spell Capacitor"
     ],
-    "unresolved_prerequisites": [
-      "War Sphere (any momentum talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19501,11 +19846,10 @@
     ],
     "key": "Spell Maneuver",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"
+      "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Transforming Strike,Blood - Exsanguinating Strike,Creation - Transmuting Strike,Dark - Shadow Strike,Death - Cryptic Strike,Destruction - Energy Strike,Divination - Revealing Strike,Enhancement - Crippling Strike,Fallen Fey - Feytouch Strike,Fate - Shrieking Strike,Illusion - Aggrandizing Strike,Life - Clarified Strike,Light - Solar Strike,Mana - Manasurge Strike,Mind - Charming Strike,Nature - Elemental Strike,Telekinesis - Seizing Strike,Time - Time Strike,Warp - Warping Strike,Weather - Weather Strike,Technomancy - Slicer’s Strike,Veilweaving - Essence Strike"
     ],
-    "unresolved_prerequisites": [
-      "any talent with the strike descriptor"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19618,6 +19962,7 @@
     "heading": "Spellburn Defiling (Defiler, Drawback) [SM—]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
     "text": "Source: Baron’s Secluded Library\nPrerequisites: Terrain Casting drawback, Mana sphere\nBenefit: Whenever you blight, corrupt, or drain an area of its nutrients with the Terrain Casting drawback, you may cause all creatures other than yourself caught inside the defiled area to take 1 spell point damage (Will save negates, DC equal to your Mana sphere DC).\nFour Defiler Feats: Any creatures that fail their saving throw against this feat also become spellburned for 1 round.",
@@ -19630,8 +19975,13 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Spells to Life",
@@ -19788,11 +20138,11 @@
     ],
     "key": "Spirit Form",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Aquatic Adept,Nature - Destroy Element,Nature - Dragonlung,Nature - Friend To Wildlife,Nature - Master Of Elements,Nature - Nature’s Carapace,Nature - Nature’s Movement,Nature - Nature’s Weapon,Nature - Nature Sight,Nature - Rejuvenation,Nature - Resist Elements,Nature - Ride The Elements,Nature - Speak With The Elements,Nature - Speak With Wildlife,Nature - Wreath Of Elements"
     ],
-    "unresolved_prerequisites": [
-      "Nature sphere (any (spirit) talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -19830,10 +20180,10 @@
       "https://spheresofpower.wikidot.com/fate#toc116"
     ],
     "key": "Spiteful End",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Death or Fate sphere"
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere]"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20009,10 +20359,10 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc46"
     ],
     "key": "Steel Skeleton",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Construct type or subtype"
+    "prerequisites": [
+      "PRERACE:1,RACETYPE=Construct,RACESUBTYPE=Construct"
     ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20153,8 +20503,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_STUDIED_HEALING|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Studied Scout",
@@ -20169,11 +20521,10 @@
     ],
     "key": "Studied Scout",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Scout Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Scout Sphere",
+      "PREMULT:1,[PREVARGTEQ:SlayerStudiedTargetBonus,1],[PREMULT:1,[PREVARGTEQ:InvestigatorStudiedCombatBonus,1],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Font Of Inspiration],[PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,5]]]"
     ],
-    "unresolved_prerequisites": [
-      "studied target or studied combat class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20208,9 +20559,10 @@
       "https://spheresofpower.wikidot.com/practitioner-feats#toc95"
     ],
     "key": "Style Synthesis",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Alchemy - Dynamite Throwing Form,Alchemy - Virulent Basilisk’s Cloak,Athletics - Lashing Serpent,Athletics - Stable Positioning,Barrage - 100000 Arrows,Barroom - Improvised Martial Arts,Beastmastery - Two As One,Berserker - Sword Eater,Boxing - Elongated Step,Boxing - Floating Butterfly,Brute - Giant Physique,Brute - Ornery Ox,Dual Wielding - Gemini Dancer,Dual Wielding - Snapping Crab,Duelist - Vengeful Scorpion,Equipment - Cloth Snake Puppetry,Equipment - Heft Armaments,Equipment - Spiked Defense,Equipment - Versatile Fighter,Fencing - Darting Crane,Guardian - Defiant Boar,Lancer - Defensive Leverage,Open Hand - Featherlight Positioning,Open Hand - Leopard’s Gambit,Scoundrel - Crouching Tiger,Scoundrel - Vagabond Nick,Scout - Hidden Dragon,Shield - Snapping Tortoise,Sniper - Retaliating Fire,Trap - Fool’s Retreat,Warleader - Marauding Monkey,Wrestling - Embracing Bear,Tech - Momentum Transfer"
+    ],
     "unresolved_prerequisites": [
-      "Any (stance) talent",
       "any style feat"
     ],
     "mechanics": [],
@@ -20229,11 +20581,10 @@
     ],
     "key": "Succor",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Paladin ~ Lay on Hands],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive]]"
     ],
-    "unresolved_prerequisites": [
-      "lay on hands class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20377,11 +20728,10 @@
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Rebuff",
-      "PREFEAT:1,Improved Rebuff"
+      "PREFEAT:1,Improved Rebuff",
+      "PREABILITY:1,CATEGORY=Special Ability,Improved Evasion"
     ],
-    "unresolved_prerequisites": [
-      "improved evasion class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20566,8 +20916,10 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:SITUATION|Heal=Target under your blood control|if(skillinfo(\"TOTALRANK\",\"Heal\")>=10,6,3)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Surging Triumph",
@@ -20602,8 +20954,16 @@
     "key": "Surreal Strike",
     "prerequisites": [],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_SURREAL_STRIKE_LEVEL|0",
+      "BONUS:VAR|SPHERES_SURREAL_STRIKE_LEVEL|max(1,TL-4)",
+      "ABILITY:Special Ability|AUTOMATIC|Fey Adept Shadowmark Dice (Reference)|Fey Adept Shadowmark Die Size (Reference)|Fey Adept Shadowmark Penalty (Reference)",
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Surreinforcement",
@@ -20619,11 +20979,10 @@
     ],
     "key": "Surreinforcement",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREMULT:1,[PREMULT:2,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Shadow Infusion]],[PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresCreateReality]"
     ],
-    "unresolved_prerequisites": [
-      "Illusion sphere (Shadow Infusion) or create reality class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -20997,12 +21356,12 @@
     ],
     "key": "Tactile Illusion",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREVARGTEQ:SPHERES_ILLUSION_ILLUSIONARYTOUCH_COUNT,2",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Finesse"
     ],
-    "unresolved_prerequisites": [
-      "Illusion sphere (Illusionary Touch (sensory, touch) x2)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21096,11 +21455,10 @@
     ],
     "key": "Target Spotting",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Scout Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Scout Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,Ranger ~ Favored Enemy,TYPE=FavoredEnemy"
     ],
-    "unresolved_prerequisites": [
-      "favored enemy class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21552,12 +21910,13 @@
   },
   {
     "name": "Terrain Defiler",
-    "heading": "Terrain Defiler (Drawback)",
+    "heading": "Terrain Defiler (Defiler, Drawback) [Cata. HB]",
     "level": 3,
     "types": [
+      "Defiler",
       "Drawback"
     ],
-    "text": "Prerequisites: Terrain Casting drawback, non-good alignment.\nBenefit: Whenever you blight, corrupt, or drain an area of its nutrients with the Terrain Casting drawback, you may choose to increase the radius of the corrupted area by 10 feet + 5 feet per 5 caster levels of the sphere talent or ability used. Doing so decreases the spell point cost of any metamagic feat by 1 (minimum 0), but also increases the time required for the area to naturally recover to 10 years per caster level of the sphere talent or ability used.\nSpecial: You cannot gain this feat if you possess the Terrain Focus feat.",
+    "text": "You can increase the damage to the land around you to amplify your power.\nPrerequisites: Terrain Casting drawback, non-good alignment.\nBenefit: Whenever you blight, corrupt, or drain an area of its nutrients with the Terrain Casting drawback, you may choose to increase the radius of the corrupted area by 10 feet + 5 feet per 5 caster levels of the sphere talent or ability used. Doing so decreases the spell point cost of any metamagic feat by 1 (minimum 0), but also increases the time required for the area to naturally recover to 10 years per caster level of the sphere talent or ability used.\nFour Defiler Feats: When using this feat, you may choose to increase the radius of the corrupted area by an additional 5 feet per 5 caster levels (minimum 5 feet) to decrease the spell point of cost of any metamagic feat by an additional 1.\nSpecial: You cannot gain this feat if you possess the Terrain Focus feat and vice versa.",
     "sources": [
       "https://spheresofpower.wikidot.com/drawback-feats#toc81",
       "https://spheresofpower.wikidot.com/drawback-feats#toc104"
@@ -21569,8 +21928,13 @@
       "!PREFEAT:1,Terrain Focus"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Terrain Focus",
@@ -21828,11 +22192,10 @@
     ],
     "key": "Thrum Of Rain",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance,TYPE=SkaldRagingSong"
     ],
-    "unresolved_prerequisites": [
-      "bardic performance or raging song class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -21910,9 +22273,10 @@
       "https://spheresofpower.wikidot.com/champion-feats#toc108"
     ],
     "key": "Time-Crossed Plots",
-    "prerequisites": [],
+    "prerequisites": [
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere],[PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere]"
+    ],
     "unresolved_prerequisites": [
-      "Divination or Time sphere",
       "any one [plan] talent"
     ],
     "mechanics": [],
@@ -22078,7 +22442,7 @@
     "key": "Totemic Channeling",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
-      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[PREMULT:2,[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant],[PREABILITY:1,CATEGORY=Hedgewitch Covenant Energy,Hedgewitch Covenant Positive,Hedgewitch Covenant Negative]]"
     ],
     "unresolved_prerequisites": [],
     "mechanics": [],
@@ -22395,11 +22759,10 @@
     ],
     "key": "Triage",
     "prerequisites": [
-      "PRESKILL:1,Heal=1"
+      "PRESKILL:1,Heal=1",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core],[PREABILITY:1,CATEGORY=Special Ability,TYPE=Ki Pool]"
     ],
-    "unresolved_prerequisites": [
-      "casting class feature or ki pool class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -22458,11 +22821,10 @@
     ],
     "key": "Tribal Rhythm",
     "prerequisites": [
-      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere"
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance,TYPE=SkaldRagingSong"
     ],
-    "unresolved_prerequisites": [
-      "bardic performance or raging song class feature"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -22537,11 +22899,11 @@
     ],
     "key": "True Rage",
     "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Berserker Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Berserker - Absolute Determination,Berserker - Dreadnought,Berserker - Executioner,Berserker - Juggernaut,Berserker - Marauder,Berserker - Promethean,Berserker - Specter",
       "PREATT:6"
     ],
-    "unresolved_prerequisites": [
-      "Berserker sphere (any (adrenaline) talent)"
-    ],
+    "unresolved_prerequisites": [],
     "mechanics": [],
     "status": "partial"
   },
@@ -23224,12 +23586,14 @@
       "https://spheresofpower.wikidot.com/skybourne-feats#toc55"
     ],
     "key": "Vegetalker",
-    "prerequisites": [],
-    "unresolved_prerequisites": [
-      "Plant type or subtype"
+    "prerequisites": [
+      "PRERACE:1,RACETYPE=Plant,RACESUBTYPE=Plant"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_VEGETALKER_CL|TL"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Veiled Horror",
@@ -23526,8 +23890,12 @@
       "PREMULT:1,[PREMULT:2,[PRESKILL:1,Perception=5],[PRESKILL:1,Sense Motive=5]],[PREFEAT:1,Alertness]"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:SITUATION|Perception=Target benefiting from a glamer|floor(TL/2)",
+      "BONUS:SITUATION|Sense Motive=Target benefiting from a glamer|floor(TL/2)",
+      "DEFINE:SPHERES_SKEPTIC_FIGMENT_RANGE|5+5*floor(skillinfo(\"TOTALRANK\",\"Perception\")/2)"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Vined Limbs",
@@ -23565,13 +23933,17 @@
     "key": "Violent Shadow",
     "prerequisites": [
       "PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadowmark Dice (Reference)",
-      "PREVARGTEQ:SPHERES_FEY_ADEPT_SHADOWMARK_DICE,3"
+      "PREVARGTEQ:SPHERES_FEY_ADEPT_SHADOWMARK_DICE,3",
+      "PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadow Points (Reference)],[PREFEAT:1,Emulation Expert,Entranced in Unreality,Gather Shadowstuff,Greater Shadowmark,Gulf in Reality,Improved Shadow Shield,Shadow Magic,Shadow Shield,Shadowblast,Shadowstuff Armament,Shadowy Slay,Surreal Strike]"
     ],
-    "unresolved_prerequisites": [
-      "shadow pool"
+    "unresolved_prerequisites": [],
+    "mechanics": [
+      "DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0",
+      "BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1",
+      "DEFINE:SPHERES_SURREAL_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1"
     ],
-    "mechanics": [],
-    "status": "partial"
+    "status": "mechanics-added"
   },
   {
     "name": "Virulent Ailment",
@@ -23747,8 +24119,17 @@
       "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_SPELL_POINTS|1",
+      "DEFINE:SPHERES_PHYLACTERY_HP|5*SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_PHYLACTERY_BREAK_DC|5*SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_PHYLACTERY_HARDNESS|3*SPHERES_NECROSIS_FEAT_COUNT",
+      "DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1",
+      "DEFINE:SPHERES_DEFILER_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "War on Reality",
@@ -23767,8 +24148,12 @@
       "PREABILITY:1,CATEGORY=Custom Casting Drawback,Tradition - Unsettling Casting"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "DEFINE:SPHERES_WILD_MAGIC_FEAT_COUNT|0",
+      "BONUS:VAR|SPHERES_WILD_MAGIC_FEAT_COUNT|1",
+      "DEFINE:SPHERES_WAR_ON_REALITY_STRAIN_REDUCTION|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Warded Bones",
@@ -23849,8 +24234,10 @@
       "PREABILITY:1,CATEGORY=Spheres Combat Talent,Warleader Sphere"
     ],
     "unresolved_prerequisites": [],
-    "mechanics": [],
-    "status": "partial"
+    "mechanics": [
+      "BONUS:VAR|SPHERES_WARDLORD|1"
+    ],
+    "status": "mechanics-added"
   },
   {
     "name": "Warlord Of The Damned",

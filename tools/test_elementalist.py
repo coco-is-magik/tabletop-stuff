@@ -35,7 +35,7 @@ class ElementalistTest(unittest.TestCase):
         self.assertIn("POOL:if(SPHERES_ELEMENTALIST_LEVEL>=3,1,0)", categories)
         abilities = (DATA / "spheres_elementalist.lst").read_text()
         self.assertIn("AUTOMATIC|Destruction Sphere", abilities)
-        self.assertIn("BONUS:VAR|SPHERES_DESTRUCTION_CL_BONUS|SPHERES_ELEMENTALIST_LEVEL-SPHERES_CASTER_LEVEL", abilities)
+        self.assertIn("BONUS:VAR|SPHERES_DESTRUCTION_CL_BONUS|SPHERES_ELEMENTALIST_LEVEL-floor(SPHERES_ELEMENTALIST_LEVEL*3/4)", abilities)
         self.assertIn("BONUS:MOVEADD|TYPE=Walk|SPHERES_ELEMENTALIST_LAND", abilities)
         self.assertIn("DR:10/magic", abilities)
         self.assertNotIn("SPHERES_CONSCRIPT_LEVEL", abilities)

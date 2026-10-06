@@ -60,6 +60,8 @@ def expected(slug, level):
     if source["magic"]:
         result["caster_level"] = source["caster"][level - 1]
         result["spell_points"] = level
+        if slug == "hedgewitch":
+            result["spell_points"] += level // 2
     if slug == "fey-adept" and level == 20:
         for save in ("fortitude", "reflex", "will"):
             result[save] += 2
@@ -118,6 +120,7 @@ def run(slug, level):
              for group, levels in source["choices"].items()}
     if slug == "hedgewitch":
         pools["Hedgewitch Path"] = 2
+        pools["Hedgewitch Secret"] += 1
     if slug == "wraith":
         pools["Wraith Haunt Path"] = 1
     if slug == "armiger":

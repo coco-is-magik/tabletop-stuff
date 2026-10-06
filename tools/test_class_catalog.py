@@ -16,6 +16,343 @@ from spheres_eliciter import emotion_records
 
 
 class ClassCatalogTest(unittest.TestCase):
+    def test_path_feat_secrets_suppress_grants_without_path(self):
+        _, abilities, _, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        for path, secret, pool in (('Academia', 'Metamagic Knowledge', 'Metamagic Knowledge'),
+                                   ('Combat', 'Combat Feat', 'Combat'), ('Combat', 'Tactician', 'Tactician'),
+                                   ('Umbral', 'Touch of Darkness', 'Touch of Darkness'),
+                                   ('Temporal Traveler', 'Grit Feats', 'Grit')):
+            self.assertIn(f'BONUS:ABILITYPOOL|Hedgewitch {pool} Feat|1|PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch {path}',
+                          records[f'Hedgewitch {path} {secret}'])
+        self.assertIn('TACTICIAN_USES|1|PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Combat',
+                      records['Hedgewitch Combat Tactician'])
+        for path, name in (('Academia', 'Extra Spell Points'), ('Academia', 'Scholarship'),
+                           ('Combat', 'Greater Aid'), ('Temporal Traveler', 'Trapfinding')):
+            bonuses = [tag for tag in records[f'Hedgewitch {path} {name}'].split('\t') if tag.startswith('BONUS:')]
+            self.assertTrue(bonuses)
+            for bonus in bonuses:
+                self.assertIn(f'|PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch {path}', bonus)
+
+    def test_covenant_shared_touch_channel_capacity(self):
+        classes, abilities, categories, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        self.assertIn('BONUS:ABILITYPOOL|Hedgewitch Covenant Energy|1', records['Hedgewitch Covenant'])
+        self.assertIn('COVENANT_USES|3+floor(SPHERES_HEDGEWITCH_LEVEL/2)', records['Hedgewitch Covenant'])
+        self.assertIn('COVENANT_DIE_SIZE|if(SPHERES_HEDGEWITCH_LEVEL>=20,8,6)', records['Hedgewitch Covenant'])
+        self.assertIn('PREALIGN:LG,NG,CG,LN,TN,CN', records['Hedgewitch Covenant Positive'])
+        self.assertIn('PREALIGN:LE,NE,CE,LN,TN,CN', records['Hedgewitch Covenant Negative'])
+        self.assertIn('COVENANT_USES|4|PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant', records['Hedgewitch Covenant Extra Healing'])
+        self.assertIn('STACK:YES', records['Hedgewitch Covenant Extra Healing'])
+        smite = records['Hedgewitch Covenant Smite']
+        self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,10', smite)
+        self.assertIn('STACK:YES', smite)
+        self.assertIn('COVENANT_SMITE_USES|1|PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant', smite)
+        self.assertNotIn('BONUS:COMBAT', smite)
+        self.assertIn('DEFINE:SPHERES_HEDGEWITCH_COVENANT_USES|0', classes)
+        self.assertIn('ABILITYCATEGORY:Hedgewitch Covenant Energy', categories)
+        self.assertIn('ABILITYCATEGORY:Hedgewitch Channel Feat', categories)
+        self.assertIn('TYPE:HedgewitchChannelFeat', categories)
+        self.assertIn('STACK:YES', records['Hedgewitch Covenant Channel Feats'])
+        self.assertIn('BONUS:ABILITYPOOL|Hedgewitch Channel Feat|1|PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Covenant', records['Hedgewitch Covenant Channel Feats'])
+
+    def test_temporal_traveler_grit_secret_and_filtered_pool(self):
+        _, abilities, categories, _ = generate('hedgewitch')
+        record = next(line for line in abilities.splitlines()
+                      if line.startswith('Hedgewitch Temporal Traveler Grit Feats\t'))
+        self.assertIn('PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Temporal Traveler', record)
+        self.assertIn('MULT:YES\tSTACK:YES\tCHOOSE:NOCHOICE', record)
+        self.assertIn('BONUS:ABILITYPOOL|Hedgewitch Grit Feat|1', record)
+        category = next(line for line in categories.splitlines()
+                        if line.startswith('ABILITYCATEGORY:Hedgewitch Grit Feat\t'))
+        self.assertIn('CATEGORY:FEAT\tTYPE:Grit.Panache', category)
+        self.assertIn('POOL:0', category)
+
+    def test_umbral_uses_one_shared_shadow_pool(self):
+        _, abilities, _, _ = generate('hedgewitch')
+        umbral = next(line for line in abilities.splitlines() if line.startswith('Hedgewitch Umbral\t'))
+        self.assertIn('BONUS:VAR|SPHERES_HEDGEWITCH_UMBRAL_LEVEL|SPHERES_HEDGEWITCH_LEVEL', umbral)
+        self.assertIn('ABILITY:Special Ability|AUTOMATIC|Fey Adept Shadow Points (Reference)', umbral)
+        _, fey, _, _ = generate('fey-adept')
+        pool = next(line for line in fey.splitlines() if line.startswith('Fey Adept Shadow Points (Reference)\t'))
+        self.assertIn('floor((SPHERES_FEY_ADEPT_LEVEL+SPHERES_HEDGEWITCH_UMBRAL_LEVEL)/2)', pool)
+        self.assertIn('max(3,CHA)', pool)
+        self.assertIn('max(1,CHA+floor(SPHERES_FEY_ADEPT_LEVEL/2))', pool)
+
+    def test_combat_mastery_physical_choices_and_conditional_effects(self):
+        from spheres_hedgewitch import academia_mastery
+        category, records = academia_mastery('Combat')
+        self.assertIn('CATEGORY:Hedgewitch Combat Mastery', category)
+        self.assertEqual(len(records), 3)
+        for record, stat in zip(records, ('STR', 'DEX', 'CON')):
+            self.assertIn('BONUS:STAT|' + stat + '|2|PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,20|PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Combat', record)
+        with self.assertRaises(ValueError):
+            academia_mastery('Unknown')
+
+    def test_hedgewitch_charlatan_scoped_resources(self):
+        classes, abilities, _, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        path = records['Hedgewitch Charlatanism']
+        self.assertIn('BONUS:ABILITYPOOL|Versatile Performance|1', path)
+        self.assertIn('GUILE_SNEAK_DICE|ceil(SPHERES_HEDGEWITCH_LEVEL/2)', path)
+        self.assertNotIn('BONUS:VAR|SneakAttack', path)
+        self.assertIn('DEFINE:SPHERES_HEDGEWITCH_GUILE|0', classes)
+        exceptional = records['Hedgewitch Charlatanism Exceptional Skill']
+        self.assertIn('CHOOSE:NUMCHOICES=1|SKILL|!TYPE=Perform,!TYPE=SkillUse', exceptional)
+        self.assertIn('BONUS:SKILL|Bluff (Perform (Act))|floor(SPHERES_HEDGEWITCH_LEVEL/2)', exceptional)
+        self.assertIn('PREVARGTEQ:HedgewitchExceptional Bluff,1', exceptional)
+        for name in ('Extra Guile', 'Versatile Performance'):
+            self.assertIn('STACK:YES', records['Hedgewitch Charlatanism ' + name])
+        self.assertIn('BONUS:ABILITYPOOL|Versatile Performance|1|PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Charlatanism', records['Hedgewitch Charlatanism Versatile Performance'])
+
+    def test_hedgewitch_inspiration_is_conditional(self):
+        classes, abilities, _, _ = generate('hedgewitch')
+        path = next(line for line in abilities.splitlines() if line.startswith('Hedgewitch Font Of Inspiration\t'))
+        self.assertIn('ABILITY:Spheres Magic Talent|AUTOMATIC|Divination Sphere', path)
+        self.assertIn('STUDIED_BONUS|floor(SPHERES_HEDGEWITCH_LEVEL/2)|PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,5', path)
+        self.assertNotIn('BONUS:COMBAT', path)
+        extra = next(line for line in abilities.splitlines() if line.startswith('Hedgewitch Font Of Inspiration Extra Inspiration\t'))
+        self.assertIn('STACK:YES', extra)
+        self.assertIn('BONUS:VAR|SPHERES_HEDGEWITCH_INSPIRATION|2|PREABILITY:', extra)
+        self.assertIn('DEFINE:SPHERES_HEDGEWITCH_INSPIRATION|0', classes)
+
+    def test_hedgewitch_curse_and_spirit_capacity_not_permanent_talents(self):
+        _, abilities, _, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        for path, secret, variable in (('Black Magic', 'Curses', 'CURSES'), ('Spiritualism', 'Extra Spirit', 'SPIRIT_USES')):
+            self.assertIn('SPHERES_HEDGEWITCH_' + variable + '|3+floor(SPHERES_HEDGEWITCH_LEVEL/2)', records['Hedgewitch ' + path])
+            record = records['Hedgewitch ' + path + ' ' + secret]
+            self.assertIn('STACK:YES', record)
+            self.assertIn('PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch ' + path, record)
+            self.assertNotIn('BONUS:ABILITYPOOL|Spheres', record)
+        self.assertNotIn('ABILITY:Spheres Magic Talent', records['Hedgewitch Spiritualism'])
+
+    def test_herbology_secret_dependencies(self):
+        classes, abilities, _, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        self.assertIn('DEFINE:SPHERES_HEDGEWITCH_CONCOCTION_HOURS|0', classes)
+        self.assertIn('Assassin ~ Poison Use', records['Hedgewitch Herbology'])
+        for name, dependency in (('Instant Poison', 'Swift Poison'), ('Miracle Man', 'Surgeon')):
+            record = records['Hedgewitch Herbology ' + name]
+            self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,10', record)
+            self.assertIn('PREABILITY:1,CATEGORY=Hedgewitch Secret,Hedgewitch Herbology ' + dependency, record)
+            self.assertIn('PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Herbology', record)
+        self.assertIn('SPHERES_HEDGEWITCH_LEVEL-1', records['Hedgewitch Herbology Potent Concoctions'])
+
+    def test_hedgewitch_temporal_and_transmuter_resources(self):
+        _, abilities, _, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        self.assertIn('ABILITY:Spheres Magic Talent|AUTOMATIC|Time Sphere', records['Hedgewitch Temporal Traveler'])
+        self.assertIn('SPHERES_HEDGEWITCH_INSIGHT_CAPACITY|max(1,SPHERES_CASTING_ABILITY)', records['Hedgewitch Temporal Traveler'])
+        self.assertIn('SPHERES_HEDGEWITCH_TRANSMUTATION_DC|10+floor(SPHERES_HEDGEWITCH_LEVEL/2)+SPHERES_CASTING_ABILITY', records['Hedgewitch Transmuter'])
+        self.assertIn('BONUS:VAR|SPHERES_HEDGEWITCH_CREATE_ENABLED|1|PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere', records['Hedgewitch Transmuter'])
+        self.assertNotIn('BONUS:VAR|SPHERES_HEDGEWITCH_CREATE_CL', records['Hedgewitch Transmuter'])
+        self.assertIn('DEFINE:SPHERES_HEDGEWITCH_CREATE_CL|if(SPHERES_HEDGEWITCH_CREATE_ENABLED>0,SPHERES_CL_CREATION+SPHERES_HEDGEWITCH_LEVEL-floor(SPHERES_HEDGEWITCH_LEVEL*3/4),0)', generate('hedgewitch')[0])
+        self.assertNotIn('BONUS:VAR|SPHERES_CL_CREATION|', records['Hedgewitch Transmuter'])
+        self.assertIn('STACK:YES', records['Hedgewitch Transmuter Transformations'])
+        for name in ('Expanded Transformation', 'Greater Transformation', 'New Life'):
+            self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,10', records['Hedgewitch Transmuter ' + name])
+        self.assertIn('TRANSMUTATION_HD_BONUS|1+floor((SPHERES_HEDGEWITCH_LEVEL-10)/3)', records['Hedgewitch Transmuter Greater Transformation'])
+        self.assertNotIn('BONUS:SIZEMOD', records['Hedgewitch Transmuter Practiced Transmutation'])
+        self.assertIn('TYPE=Trapfinding', records['Hedgewitch Temporal Traveler Trapfinding'])
+        self.assertIn('ABILITY:FEAT|AUTOMATIC|Distill Compound', records['Hedgewitch Herbology'])
+        self.assertIn('SPHERES_HEDGEWITCH_CONCOCTION_HEALING_DICE|max(1,floor(SPHERES_HEDGEWITCH_LEVEL/2))', records['Hedgewitch Herbology'])
+        self.assertIn('STACK:YES', records['Hedgewitch Herbology Extra Concoctions'])
+
+    def test_hedgewitch_astrology_known_aura_slots(self):
+        _, abilities, categories, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        self.assertIn('ABILITY:Spheres Magic Talent|AUTOMATIC|Light Sphere', records['Hedgewitch Astrology'])
+        self.assertIn('BONUS:ABILITYPOOL|Hedgewitch Celestial Aura|2', records['Hedgewitch Astrology'])
+        self.assertIn('ABILITYCATEGORY:Hedgewitch Celestial Aura', categories)
+        for name in ('Moon', 'Planet', 'Star', 'Sun'):
+            record = records['Hedgewitch Celestial Aura - ' + name]
+            self.assertIn('PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Astrology', record)
+            self.assertNotIn('BONUS:', record)
+        self.assertIn('PREVARLT:SPHERES_HEDGEWITCH_AURA_REACH_COUNT,2', records["Hedgewitch Astrology Heaven's Reach"])
+        self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,10', records['Hedgewitch Astrology Syzygy'])
+        self.assertIn('SPHERES_HEDGEWITCH_LEVEL+if(SPHERES_HEDGEWITCH_LEVEL>=20,5,0)', records['Hedgewitch Astrology'])
+
+    def test_hedgewitch_path_secret_feat_pools(self):
+        _, abilities, categories, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        for path, name, pool in (('Combat', 'Combat Feat', 'Combat'),
+                                 ('Combat', 'Tactician', 'Tactician'),
+                                 ('Umbral', 'Touch of Darkness', 'Touch of Darkness')):
+            record = records[f'Hedgewitch {path} {name}']
+            self.assertIn(f'PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch {path}', record)
+            self.assertIn('STACK:YES', record)
+            self.assertIn(f'BONUS:ABILITYPOOL|Hedgewitch {pool} Feat|1', record)
+            self.assertIn(f'ABILITYCATEGORY:Hedgewitch {pool} Feat', categories)
+        knowledge = records['Hedgewitch Academia Metamagic Knowledge']
+        self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,10', knowledge)
+        self.assertNotIn('STACK:YES', knowledge)
+        self.assertIn('ABILITY:FEAT|AUTOMATIC|Shadow Magic', records['Hedgewitch Umbral Shadow Sculptor'])
+        for name in ('Venom Immunity', 'Wild Vitality'):
+            self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,10', records['Hedgewitch Green Magic ' + name])
+        self.assertIn('Beastmastery Sphere|Beastmastery - Focusing Connection',
+                      records['Hedgewitch Green Magic Bestial Bonds'])
+        self.assertIn('TYPE=Competence', records['Hedgewitch Academia Scholarship'])
+        self.assertIn('UNENCUMBEREDMOVE:HeavyArmor', records['Hedgewitch Combat Armor Training'])
+
+    def test_shifter_trait_prerequisites_and_persistent_effects(self):
+        from spheres_shifter import option_tags
+        _, abilities, categories, _ = generate('shifter')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        improved = records['Shifter Adaptation - Improved (requires adaptation)']
+        self.assertIn('PREABILITY:1,CATEGORY=Shifter Bestial Trait,Shifter Adaptation (Ex)', improved)
+        greater = records['Shifter Adaptation - Greater (requires adaptation - improved adaptation - shifter 10)']
+        self.assertIn('PREVARGTEQ:SPHERES_SHIFTER_LEVEL,10', greater)
+        self.assertIn('Shifter Adaptation - Improved (requires adaptation)', greater)
+        for name in ('Animal Hide (Ex)', 'Bestial Speed (Ex)', 'Combat Talent', 'Champion', 'Quick Healing (Su)'):
+            self.assertIn('STACK:YES', records['Shifter ' + name])
+        self.assertIn('BONUS:COMBAT|AC|1|TYPE=NaturalArmor.STACK', records['Shifter Animal Hide (Ex)'])
+        self.assertIn('BONUS:MOVEADD|TYPE.All|10', records['Shifter Bestial Speed (Ex)'])
+        self.assertIn('ABILITYCATEGORY:Shifter Champion Feat', categories)
+        self.assertIn('FOLLOWERS:Familiar|1', records['Shifter Animal Advisor (Su)'])
+        self.assertIn('BONUS:VAR|FamiliarMasterLVL|SPHERES_SHIFTER_LEVEL|TYPE=Base.STACK', records['Shifter Animal Advisor (Su)'])
+        self.assertIn('PRESIZEGTEQ:H', records['Shifter Snatch (requires Huge size)'])
+        self.assertIn('ABILITY:FEAT|AUTOMATIC|Snatch', records['Shifter Snatch (requires Huge size)'])
+        self.assertIn('BONUS:COMBAT|TOHIT.Natural,DAMAGE.Natural|1+floor(SPHERES_SHIFTER_LEVEL/5)|TYPE=Enhancement', records['Shifter Magical Attacks (Su)'])
+        improved_attack = records['Shifter Improved Natural Attack (Ex) (requires shifter 6)']
+        self.assertIn('PREVARGTEQ:SPHERES_KNOWLEDGE_OF_MANY_SHAPES,1', records['Shifter Shifting Style'])
+        for tag in ('PREVARGTEQ:SPHERES_SHIFTER_LEVEL,6', 'MULT:YES', 'STACK:NO',
+                    'CHOOSE:WEAPONPROFICIENCY|PC,TYPE=Natural', 'BONUS:WEAPONPROF=%LIST|DAMAGESIZE|1'):
+            self.assertIn(tag, improved_attack)
+        self.assertIn('ABILITY:Spheres Magic Talent|AUTOMATIC|Alteration - Mimicry', records['Shifter Learned Behavior'])
+        fortification = records['Shifter Fortification (Ex) (requires shifter level 6)']
+        self.assertIn('PREVARLT:SPHERES_SHIFTER_FORTIFICATION_COUNT,min(3,floor(SPHERES_SHIFTER_LEVEL/6))', fortification)
+        self.assertIn('BONUS:VAR|SPHERES_SHIFTER_FORTIFICATION_PERCENT|25', fortification)
+        self.assertIn('CHOOSE:NUMCHOICES=5|STRING|Acid|Cold|Electricity|Fire|Sonic', greater)
+        self.assertIn('PREVARGTEQ:ShifterImmunity Acid,1', greater)
+        self.assertIn('MOVE:Fly,30', records['Shifter Flight (Ex) (requires shifter 6)'])
+        self.assertIn('CHOOSE:NUMCHOICES=3|STRING|Flyby Attack|Hover|Wingover', records['Shifter Flight - Skillful (Ex)'])
+        fast = records['Shifter Fast Healing (Ex) (requires quick healing bestial trait - shifter level 10)']
+        self.assertIn('PREVARLT:SPHERES_SHIFTER_FAST_HEALING_COUNT,2', fast)
+        self.assertIn('BONUS:VAR|SPHERES_SHIFTER_FAST_HEALING_COUNT|1', fast)
+        with self.assertRaisesRegex(ValueError, 'Unreviewed Shifter requirement'):
+            option_tags('Unknown (requires invented prerequisite)', [])
+
+    def test_shifter_breath_choices_and_progression(self):
+        classes, abilities, categories, _ = generate('shifter')
+        configs = [line for line in abilities.splitlines() if '\tCATEGORY:Shifter Breath Weapon Configuration\t' in line]
+        self.assertEqual(len(configs), 8)
+        self.assertIn('ABILITYCATEGORY:Shifter Breath Weapon Configuration', categories)
+        self.assertIn('DEFINE:SPHERES_SHIFTER_BREATH_IMPROVED|0', classes)
+        for line in configs:
+            self.assertIn('PREABILITY:1,CATEGORY=Shifter Bestial Trait,Shifter Breath Weapon (Su)', line)
+            self.assertIn('PREVARLT:SPHERES_SHIFTER_BREATH_CONFIGURED,1', line)
+        self.assertIn('floor((SPHERES_SHIFTER_LEVEL+1)/2)', abilities)
+
+    def test_hedgewitch_path_class_skills(self):
+        from spheres_hedgewitch import path_tags
+        _, abilities, _, _ = generate('hedgewitch')
+        paths = [line for line in abilities.splitlines() if '\tCATEGORY:Hedgewitch Path\t' in line]
+        self.assertEqual(len(paths), 21)
+        self.assertTrue(all('\tCSKILL:' in line for line in paths))
+        academia = next(line for line in paths if line.startswith('Hedgewitch Academia\t'))
+        self.assertIn('CSKILL:Knowledge (Geography)|Knowledge (Nature)|Knowledge (Planes)', academia)
+        self.assertIn('BONUS:ABILITYPOOL|Hedgewitch Secret|1', academia)
+        self.assertIn('BONUS:VAR|SPHERES_SPELL_POINTS|floor(SPHERES_HEDGEWITCH_LEVEL/2)', academia)
+        green = next(line for line in paths if line.startswith('Hedgewitch Green Magic\t'))
+        self.assertIn('BONUS:VAR|WildEmpathyLVL|SPHERES_HEDGEWITCH_LEVEL', green)
+        self.assertIn('Druid ~ Woodland Stride', green)
+        lamentation = next(line for line in paths if line.startswith('Hedgewitch Lamentation\t'))
+        self.assertIn('CSKILL:Intimidate|Knowledge (Religion)|Perception', lamentation)
+        with self.assertRaisesRegex(ValueError, 'class-skill block'):
+            path_tags('No skill list')
+        with self.assertRaisesRegex(ValueError, 'Unreviewed'):
+            path_tags('Class Skills: Swim|Fly. Path Benefit: invalid delimiter')
+
+    def test_hedgewitch_academia_mastery(self):
+        _, abilities, categories, _ = generate('hedgewitch')
+        records = [line for line in abilities.splitlines()
+                   if line.startswith('Hedgewitch Academia Mastery - ')]
+        self.assertEqual(len(records), 3)
+        for stat, record in zip(('INT', 'WIS', 'CHA'), records):
+            self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,20', record)
+            self.assertIn('BONUS:STAT|' + stat + '|2|PREVARGTEQ:', record)
+            self.assertEqual(record.count('PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Academia'), 2)
+        self.assertIn('ABILITYCATEGORY:Hedgewitch Academia Mastery', categories)
+
+    def test_hedgewitch_academia_extra_spell_points(self):
+        _, abilities, _, _ = generate('hedgewitch')
+        record = next(line for line in abilities.splitlines()
+                      if line.startswith('Hedgewitch Academia Extra Spell Points\t'))
+        self.assertIn('CATEGORY:Hedgewitch Secret', record)
+        self.assertIn('PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Academia', record)
+        self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,1', record)
+        self.assertIn('MULT:YES\tSTACK:YES\tCHOOSE:NOCHOICE', record)
+        self.assertIn('BONUS:VAR|SPHERES_SPELL_POINTS|2', record)
+
+    def test_hedgewitch_general_secret_grants(self):
+        classes, abilities, categories, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        for name in ('Champion', 'Combat Talent', 'Magical Skill'):
+            self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,1', records['Hedgewitch ' + name])
+            self.assertIn('[PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Academia]', records['Hedgewitch ' + name])
+            self.assertIn('STACK:YES', records['Hedgewitch ' + name])
+        for name in ('Arcane Builder', 'Extra Magic Item', 'Metamagic Master'):
+            self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,10', records['Hedgewitch ' + name])
+        self.assertIn('DEFINE:SPHERES_COMBAT_TALENTS|0', classes)
+        self.assertIn('FOLLOWERS:Familiar|1', records['Hedgewitch Familiar'])
+        self.assertIn('BONUS:VAR|FamiliarMasterLVL|SPHERES_HEDGEWITCH_LEVEL|TYPE=Base.STACK', abilities)
+        self.assertIn('ABILITYCATEGORY:Hedgewitch Champion Feat', categories)
+        master = records['Hedgewitch Metamagic Master']
+        self.assertIn('PREFEAT:1,TYPE=Metamagic', master)
+        self.assertIn('CHOOSE:FEAT|TYPE=Metamagic,PC', master)
+        self.assertIn('MULT:YES\tSTACK:NO', master)
+        builder = records['Hedgewitch Arcane Builder']
+        self.assertIn('MULT:YES\tSTACK:NO', builder)
+        self.assertIn('BONUS:SITUATION|Spellcraft=Craft %LIST|4', builder)
+        self.assertNotIn('BONUS:SKILL|Spellcraft|4', builder)
+
+    def test_shifter_class_feature_grants_use_source_levels(self):
+        classes, abilities, _, _ = generate('shifter')
+        for level, name in ((1, 'Wild Empathy'), (3, 'Endurance'), (7, 'Enhanced Physicality'),
+                            (8, 'Poison Immunity'), (12, 'Disease Immunity')):
+            line = next(line for line in classes.splitlines() if line.startswith(str(level) + '\t'))
+            self.assertIn('ABILITY:Special Ability|AUTOMATIC|Shifter ' + name + ' Mechanics', line)
+        self.assertIn('BONUS:STAT|CON|2+2*floor((SPHERES_SHIFTER_LEVEL-7)/6)|TYPE=Inherent', abilities)
+
+    def test_shifter_natural_attacks_use_size_qualified_abilities(self):
+        from spheres_shifter import natural_weapons
+        text = natural_weapons()
+        _, abilities, _, _ = generate('shifter')
+        for name in ('Bite', 'Claws', 'Gore'):
+            self.assertIn('ABILITY:Special Ability|AUTOMATIC|Shifter ' + name + ' Natural Weapons S|PRESIZEEQ:S', abilities)
+            self.assertIn('Shifter ' + name + ' Natural Weapons S\tCATEGORY:Special Ability\tVISIBLE:NO\tPRESIZEEQ:S', text)
+        self.assertIn('*2,1d4', text)
+        self.assertEqual(text.count('*1,1d6'), 2)
+        self.assertEqual((DATA / 'spheres_shifter_natural_weapons.lst').read_text(), text)
+
+    def test_wraith_ghostly_talents_are_path_restricted(self):
+        classes, abilities, categories, _ = generate('wraith')
+        self.assertIn('DEFINE:SPHERES_WRAITH_GHOSTLY_TALENTS|0', classes)
+        ghostly = next(line for line in abilities.splitlines() if line.startswith('Wraith Ghostly Talent\t'))
+        for tag in ('MULT:YES', 'STACK:YES', 'CHOOSE:NOCHOICE',
+                    'PREABILITY:1,CATEGORY=Wraith Haunt Path,TYPE=SpheresWraithPath',
+                    'BONUS:VAR|SPHERES_WRAITH_GHOSTLY_TALENTS|1'):
+            self.assertIn(tag, ghostly)
+        self.assertNotIn('SPHERES_MAGIC_TALENTS', ghostly)
+        death = next(line for line in categories.splitlines() if line.startswith('ABILITYCATEGORY:Wraith Ghostly Death Talent\t'))
+        self.assertIn('CATEGORY:Spheres Magic Talent\tTYPE:Death', death)
+        self.assertIn('POOL:0', death)
+        path = next(line for line in abilities.splitlines() if line.startswith('Wraith Path of the Despoiler\tCATEGORY:Wraith Haunt Path\t'))
+        self.assertIn('BONUS:ABILITYPOOL|Wraith Ghostly Death Talent|SPHERES_WRAITH_GHOSTLY_TALENTS', path)
+
+    def test_wraith_expanded_paths_match_targets_without_granting_base_features(self):
+        _, abilities, categories, _ = generate('wraith')
+        self.assertIn('ABILITYCATEGORY:Wraith Expanded Path', categories)
+        target = next(line for line in abilities.splitlines() if line.startswith('Wraith Path of the Poltergeist\tCATEGORY:Wraith Expanded Path\t'))
+        self.assertIn('PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere', target)
+        self.assertIn('!PREABILITY:1,CATEGORY=Wraith Haunt Path,Wraith Path of the Poltergeist', target)
+        self.assertNotIn('BONUS:', target)
+        self.assertNotIn('CSKILL:', target)
+        improved = next(line for line in abilities.splitlines() if line.startswith('Wraith Path of the Poltergeist\tCATEGORY:Wraith Improved Expanded Path\t'))
+        self.assertIn('PREVARGTEQ:SPHERES_WRAITH_LEVEL,12', improved)
+        self.assertIn('PREABILITY:1,CATEGORY=Wraith Expanded Path,Wraith Path of the Poltergeist', improved)
+
     def test_wraith_reference_capacities_are_not_permanent_incorporeality(self):
         classes, abilities, _, _ = generate('wraith')
         self.assertIn('3\tABILITY:Special Ability|AUTOMATIC|Wraith Haunts', classes)
@@ -42,7 +379,7 @@ class ClassCatalogTest(unittest.TestCase):
             self.assertIn(f'PREVARGTEQ:SPHERES_WRAITH_LEVEL,{level}', haunt)
             self.assertNotIn('MOVE:', haunt)
         for key, skill in (('Path of the Despoiler', 'Heal'), ('Path of the Anima - Nature', 'Knowledge (Nature)')):
-            path = next(line for line in abilities.splitlines() if line.startswith('Wraith ' + key + '\t'))
+            path = next(line for line in abilities.splitlines() if line.startswith('Wraith ' + key + '\tCATEGORY:Wraith Haunt Path\t'))
             self.assertIn('CSKILL:' + skill, path)
             self.assertIn('SPHERES_WRAITH_LEVEL-floor(SPHERES_WRAITH_LEVEL*3/4)', path)
             self.assertNotIn('SPHERES_WRAITH_LEVEL-SPHERES_CASTER_LEVEL', path)
@@ -120,9 +457,44 @@ class ClassCatalogTest(unittest.TestCase):
         vision = next(line for line in classes.splitlines() if line.startswith('2\t'))
         self.assertIn("VISION:Darkvision (30')", vision)
         self.assertIn('BONUS:VISION|Darkvision|30', vision)
-        self.assertIn('BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|max(1,CHA+floor(SPHERES_FEY_ADEPT_LEVEL/2))', abilities)
-        self.assertIn('BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_PENALTY|1+floor((SPHERES_FEY_ADEPT_LEVEL-1)/6)', abilities)
+        self.assertIn(',max(1,CHA+floor(SPHERES_FEY_ADEPT_LEVEL/2)))', abilities)
+        self.assertIn('BONUS:VAR|SPHERES_FEY_ADEPT_SHADOWMARK_PENALTY|1+floor((max(SPHERES_FEY_ADEPT_LEVEL,SPHERES_HEDGEWITCH_UMBRAL_LEVEL,SPHERES_SURREAL_STRIKE_LEVEL)-1)/6)', abilities)
         self.assertIn('BONUS:VAR|SPHERES_FEY_ADEPT_MASTER_ILLUSIONIST_ROUNDS|max(1,floor(SPHERES_FEY_ADEPT_LEVEL/2))', abilities)
+
+    def test_umbral_shadowmark_and_scoped_secrets(self):
+        classes, abilities, _, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        self.assertIn('Fey Adept Shadowmark Dice (Reference)', records['Hedgewitch Umbral'])
+        eyes = records['Hedgewitch Umbral Eyes of Black']
+        self.assertIn('VISION:Darkvision (SPHERES_HEDGEWITCH_LEVEL*5)|PREABILITY:', eyes)
+        self.assertIn('BONUS:VISION|Darkvision|SPHERES_HEDGEWITCH_LEVEL*5|PREABILITY:', eyes)
+        sculptor = records['Hedgewitch Umbral Improved Shadow Sculptor']
+        self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,10', sculptor)
+        self.assertIn('PREVARLT:SPHERES_HEDGEWITCH_SHADOW_MAGIC_CL_BONUS,2', sculptor)
+        self.assertIn('DEFINE:SPHERES_HEDGEWITCH_SHADOW_MAGIC_CL_BONUS|0', classes)
+        self.assertNotIn('DEFINE:', sculptor)
+        self.assertNotIn('BONUS:VAR|SPHERES_CASTER_LEVEL', sculptor)
+        self.assertIn('ABILITYCATEGORY:Hedgewitch Shadowstuff Feat', generate('hedgewitch')[2])
+        self.assertIn('BONUS:ABILITYPOOL|Hedgewitch Shadowstuff Feat|1', records['Hedgewitch Umbral Shadowstuff'])
+
+    def test_exorcism_capacities_are_not_global_combat_bonuses(self):
+        classes, abilities, _, _ = generate('hedgewitch')
+        records = {line.split('\t')[0]: line for line in abilities.splitlines()}
+        self.assertIn('SPHERES_CASTING_ABILITY+4+2*(SPHERES_HEDGEWITCH_LEVEL-1)', records['Hedgewitch Exorcism'])
+        self.assertIn('DEFINE:SPHERES_HEDGEWITCH_SANCTION_ROUNDS|0', classes)
+        ward = records['Hedgewitch Exorcism Warding Sanction']
+        self.assertIn('PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere', ward)
+        self.assertIn('BONUS:VAR|SPHERES_HEDGEWITCH_WARD_ENABLED|1', ward)
+        self.assertNotIn('BONUS:VAR|SPHERES_HEDGEWITCH_WARD_CL', ward)
+        self.assertIn('DEFINE:SPHERES_HEDGEWITCH_WARD_CL|if(SPHERES_HEDGEWITCH_WARD_ENABLED>0,SPHERES_CL_PROTECTION+SPHERES_HEDGEWITCH_LEVEL-floor(SPHERES_HEDGEWITCH_LEVEL*3/4),0)', generate('hedgewitch')[0])
+        self.assertNotIn('BONUS:VAR|SPHERES_CL_PROTECTION', ward)
+        for name, grand in (('Enduring Exorcism', False), ('Greater Sanction', True), ('Moral High-Ground', True)):
+            record = records['Hedgewitch Exorcism ' + name]
+            self.assertIn('|PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Exorcism', record)
+            self.assertNotIn('BONUS:COMBAT', record)
+            self.assertNotIn('MULT:YES', record)
+            if grand:
+                self.assertIn('PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,10', record)
 
     def test_symbiat_defenses_use_upstream_progression(self):
         classes, _, _, _ = generate('symbiat')
@@ -269,13 +641,21 @@ class ClassCatalogTest(unittest.TestCase):
         self.assertIn('Soul Weaver Bound Souls (Reference)', first)
 
     def test_extra_feat_feature_markers_start_at_second_level(self):
-        for slug, name, feature in (("mageknight", "Mageknight", "Mystic Combat"),):
+        for slug, name, feature in (("mageknight", "Mageknight", "Mystic Combat"),
+                                    ("shifter", "Shifter", "Bestial Trait")):
             classes, abilities, categories, metadata = generate(slug)
             marker = name + " " + feature + " Feature"
             levels = {line.split('\t')[0]: line for line in classes.splitlines()}
             self.assertNotIn(marker, levels['1'])
             self.assertIn('ABILITY:Special Ability|AUTOMATIC|' + marker, levels['2'])
             self.assertIn('TYPE:SpheresClassFeature.Spheres' + feature.replace(' ', ''), abilities)
+
+    def test_sphere_mastery_preserves_other_classes_caster_levels(self):
+        for slug, sphere in (('shifter', 'ALTERATION'), ('eliciter', 'MIND')):
+            abilities = generate(slug)[1]
+            level = 'SPHERES_' + slug.upper() + '_LEVEL'
+            self.assertIn(f'BONUS:VAR|SPHERES_CL_{sphere}|{level}-floor({level}*3/4)', abilities)
+            self.assertNotIn(f'{level}-SPHERES_CASTER_LEVEL', abilities)
 
     def test_armiger_ranged_prowess(self):
         tags = armiger_tags('Ranged Prowess')
@@ -502,7 +882,7 @@ class ClassCatalogTest(unittest.TestCase):
                                      - (slug == "mageknight"), number(row[headers.index("Magic Talents") if "Magic Talents" in headers else headers.index("Talents") if details["magic"] else headers.index("Combat Talents")]))
                     if details["magic"]:
                         self.assertEqual(result["caster_level"], number(row[headers.index("Caster Level")]))
-                        self.assertEqual(result["spell_points"], level)
+                        self.assertEqual(result["spell_points"], level + (level // 2 if slug == 'hedgewitch' else 0))
                     self.assertEqual(fixture(slug, level).count("CLASSABILITIESLEVEL:"), level)
 
     def test_free_sphere_and_choice_boundaries(self):
@@ -609,7 +989,7 @@ class ClassCatalogTest(unittest.TestCase):
             self.assertIn('Illusion Sphere', grant)
             self.assertTrue(any(t.startswith('ABILITY:Spheres Magic Talent|AUTOMATIC|Illusion - ' + talent)
                                 for t in tags))
-        self.assertIn('BONUS:VAR|SPHERES_MAGE_FEINT_CL|max(SPHERES_CASTER_LEVEL,SPHERES_CL_ILLUSION)+'
+        self.assertIn('DEFINE:SPHERES_MAGE_FEINT_CL|max(SPHERES_CASTER_LEVEL,SPHERES_CL_ILLUSION)+'
                       'SPHERES_MAGEKNIGHT_LEVEL-floor(SPHERES_MAGEKNIGHT_LEVEL/2)', option_tags('Weirding Adept'))
         self.assertFalse(any(t.startswith('BONUS:VAR|SPHERES_CL_ILLUSION|') for t in option_tags('Weirding Adept')))
 

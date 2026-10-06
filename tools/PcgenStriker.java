@@ -20,6 +20,35 @@ class PcgenStriker {
         boolean reload = args[4].equals("striker-reload");
         int constitution = pc.getVariableValue("CON", "").intValue();
         try {
+            var feats = gameCategory("FEAT");
+            var expanded = ability(feats, "Expanded Tension Technique");
+            var intense = ability(feats, "Intense Metamagic");
+            var amateur = ability(feats, "Amateur Striker");
+            require(expanded.qualifies(pc, expanded), "Striker owns tension even when level-20 capacity is unlimited");
+            require(!amateur.qualifies(pc, amateur), "Striker cannot take Amateur Striker");
+            require(!intense.qualifies(pc, intense), "Intense Metamagic still requires metamagic");
+            var metamagic = ability(feats, "Extend Spell");
+            var fixture = new pcgen.core.PCTemplate();
+            fixture.setName("Tension metamagic prerequisite regression");
+            require(Globals.getContext().processToken(fixture, "ABILITY", "FEAT|AUTOMATIC|Extend Spell"), "Metamagic fixture parse");
+            Globals.getContext().commit();
+            pc.addTemplate(fixture);
+            pc.calcActiveBonuses();
+            require(pc.hasAbilityKeyed(feats, metamagic.getKeyName()) && intense.qualifies(pc, intense), "Metamagic unlocks tension feat");
+            pc.removeTemplate(fixture);
+            pc.calcActiveBonuses();
+            require(!intense.qualifies(pc, intense), "Lost metamagic prerequisite revokes qualification");
+            var extraArt = ability(feats, "Extra Striker Art");
+            var initialArts = pc.getAvailableAbilityPool(cat);
+            for (int i = 1; i <= cap; i++) {
+                controller.addAbility(feats, extraArt);
+                require(pc.getAvailableAbilityPool(cat).intValue() == initialArts.intValue() + i, "Extra art slot");
+            }
+            require(!extraArt.qualifies(pc, extraArt), "Extra art level-dependent repeat cap");
+            for (int i = cap - 1; i >= 0; i--) {
+                controller.removeAbility(feats, extraArt);
+                require(pc.getAvailableAbilityPool(cat).intValue() == initialArts.intValue() + i, "Extra art partial refund");
+            }
             var combatTalents = gameCategory("Spheres Combat Talent");
             var armored = ability(cat, "Striker Armored Striker");
             var armoredPool = pc.getAvailableAbilityPool(cat);

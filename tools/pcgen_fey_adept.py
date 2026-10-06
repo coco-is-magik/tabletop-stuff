@@ -13,6 +13,7 @@ def main():
     parser.add_argument("gate", choices=("save", "reload"))
     parser.add_argument("--work", type=Path)
     parser.add_argument("--negative", action="store_true")
+    parser.add_argument("--level", type=int, choices=range(1, 21), default=5)
     args = parser.parse_args()
     if (args.gate == "reload") != (args.work is not None):
         parser.error("--work is required only for reload")
@@ -23,7 +24,7 @@ def main():
     source = saved
     if args.gate == "save":
         source = work / "fey.pcg"
-        source.write_text(fixture("symbiat" if args.negative else "fey-adept", 5))
+        source.write_text(fixture("symbiat" if args.negative else "fey-adept", args.level))
         (work / "export.txt").write_text("level=|TOTALLEVELS|\n")
         with (work / "compile.log").open("w") as stream:
             subprocess.run([str(JAVA.with_name("javac")), "--enable-preview", "--release", "16",

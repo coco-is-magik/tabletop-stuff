@@ -18,7 +18,7 @@ SPHERE_CHOICES = {"Sphere Focus", "Combat Sphere Focus", "Combat Sphere Speciali
 TYPES = {t.lower(): t for t in (
     "Combat", "Teamwork", "Metamagic", "ItemCreation", "Admixture", "Anathema",
     "Aristeia", "Champion", "Chance", "Channeling", "Companion", "Counterspell",
-    "Damnation", "Drawback", "DualSphere", "Necrosis", "Plague", "Protokinesis",
+    "Damnation", "Defiler", "Drawback", "DualSphere", "Necrosis", "Plague", "Protokinesis",
     "Proxy", "Purring", "Racial", "Ritual", "Squadron", "Surreal", "Theurge", "WildMagic")}
 # General casting-tradition drawbacks with selectable records; see
 # data/spheres/spheres_traditions.lst. Feat prerequisites cite these as
@@ -80,6 +80,11 @@ def inventory_feats():
             identity = normalize(feat_name)
             if identity in result:
                 result[identity]["sources"].append(source["url"] + "#" + section["anchor"])
+                # The reviewed Cataclysm entry supersedes the earlier drawback-only
+                # duplicate, including its Defiler type and four-feat benefit.
+                if slug == 'drawback-feats' and heading == 'Terrain Defiler (Defiler, Drawback) [Cata. HB]':
+                    result[identity].update(heading=heading, text=body, types=['Defiler', 'Drawback'])
+                    current = result[identity]
                 continue
             types = []
             for group in re.findall(r"[([]([^])]+)[)\]]", heading):
@@ -147,6 +152,7 @@ class Prerequisites:
             "evil alignment": "PREALIGN:LE,NE,CE",
             "non-good alignment": "!PREALIGN:LG,NG,CG",
             "nonlawful": "!PREALIGN:LG,LN,LE",
+            "non-neutral alignment": "!PREALIGN:TN",
         }
         if simple in alignment:
             return [alignment[simple]]
@@ -177,6 +183,27 @@ class Prerequisites:
         skill_family = re.fullmatch(r"any craft or profession ([1-9]\d*) ranks?", simple)
         if skill_family:
             return ["PRESKILL:1,TYPE.Craft=" + skill_family[1] + ",TYPE.Profession=" + skill_family[1]]
+        if simple == "studied target or studied combat class feature":
+            studied = self.clause("studied combat class feature", caster_variable)[0]
+            return ["PREMULT:1,[PREVARGTEQ:SlayerStudiedTargetBonus,1],[" + studied + "]"]
+        if simple == "bardic performance or raging song class feature":
+            return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance,TYPE=SkaldRagingSong"]
+        # This is one racial predicate, not two independently named OR clauses.
+        racial_family = re.fullmatch(r"(construct|fey|plant) type or subtype", simple)
+        if racial_family:
+            name = racial_family[1].title()
+            return [f"PRERACE:1,RACETYPE={name},RACESUBTYPE={name}"]
+        racial_subtype = re.fullmatch(r"(construct|plant) subtype", simple)
+        if racial_subtype:
+            return [f"PRERACE:1,RACESUBTYPE={racial_subtype[1].title()}"]
+        if simple == "outsider with the native subtype":
+            return ["PRERACE:2,RACETYPE=Outsider,RACESUBTYPE=Native"]
+        sphere_alternatives = re.fullmatch(r"([a-z ]+) or ([a-z ]+) sphere", simple)
+        if sphere_alternatives:
+            names = sphere_alternatives.groups()
+            if all(name in self.spheres for name in names):
+                alternatives = [self.clause(name + ' sphere', caster_variable) for name in names]
+                return ['PREMULT:1,' + ','.join('[' + tags[0] + ']' for tags in alternatives)]
         branches = split_alternatives(value)
         if branches is None:
             return None
@@ -189,29 +216,81 @@ class Prerequisites:
             return None
         if simple in ("casting class feature", "spherecasting class feature"):
             return ["PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"]
+        if simple == "ability to acquire a familiar":
+            return ["PREVARGTEQ:FamiliarMasterLVL,1"]
+        if simple in ("bardic performance", "bardic performance class feature", "bardic performance class ability"):
+            return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=BardicPerformance"]
+        if simple in ("raging song", "raging song class feature"):
+            return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=SkaldRagingSong"]
+        if simple == "rage class feature":
+            return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=Rage"]
+        if simple == "ki pool class feature":
+            return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=Ki Pool"]
+        if simple == "favored enemy class feature":
+            return ["PREABILITY:1,CATEGORY=Special Ability,Ranger ~ Favored Enemy,TYPE=FavoredEnemy"]
+        if simple == "favored terrain class feature":
+            return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=FavoredTerrain"]
+        if simple == "improved evasion class feature":
+            return ["PREABILITY:1,CATEGORY=Special Ability,Improved Evasion"]
+        if simple == "psionics":
+            return self.clause("psionics class feature", caster_variable)
+        if simple == "tension pool":
+            # Capacity is zero for the unlimited level-20 pool. Feature ownership,
+            # not the current/capped resource quantity, determines eligibility.
+            return ["PREMULT:1,[PRECLASS:1,Striker=1],[PREFEAT:1,Amateur Striker]"]
+        if simple == "tension class feature":
+            return ["PRECLASS:1,Striker=1"]
+        if simple in ("inspiration class feature", "studied combat class feature"):
+            path = "PREABILITY:1,CATEGORY=Hedgewitch Path,Hedgewitch Font Of Inspiration"
+            if simple == "studied combat class feature":
+                return ["PREMULT:1,[PREVARGTEQ:InvestigatorStudiedCombatBonus,1],"
+                        "[PREMULT:2,[" + path + "],[PREVARGTEQ:SPHERES_HEDGEWITCH_LEVEL,5]]"]
+            return ["PREMULT:1,[PREVARGTEQ:InvestigatorInspirationDice,1],[" + path + "]"]
+        if simple == "no levels in a class that has the tension class feature":
+            return ["!PRECLASS:1,Striker=1"]
+        if simple in ("lay on hands", "lay on hands class feature", "touch of corruption", "touch of corruption class feature"):
+            from spheres_covenant import channel_prerequisite
+            positive = simple.startswith("lay on hands")
+            # Upstream uses the same LayOnHands type for both polarities; exact
+            # keys prevent an antipaladin from satisfying positive healing.
+            feature_key = "Paladin ~ Lay on Hands" if positive else "Antipaladin ~ Touch of Corruption"
+            return ["PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability," + feature_key + "],[" +
+                    channel_prerequisite("Positive" if positive else "Negative") + "]"]
         channel_dice = re.fullmatch(r"channel energy ([1-9]\d*)d6", simple)
         if channel_dice:
             from spheres_channel import dice_prerequisite
             return [dice_prerequisite(int(channel_dice[1]))]
         if simple in ("channel energy", "channel energy class feature"):
+            from spheres_covenant import channel_prerequisite
             return ["PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=ChannelEnergy,TYPE=Channel Energy],"
-                    "[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel]"]
+                    "[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver Positive Channel,Soul Weaver Negative Channel],[" +
+                    channel_prerequisite() + "]"]
         channel = re.fullmatch(r"(?:ability to channel|channel) (positive|negative) energy(?: class feature)?", simple)
         if channel:
+            from spheres_covenant import channel_prerequisite
             energy = channel[1].title()
             return ["PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,TYPE=Channel " + energy + " Energy],"
-                    "[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver " + energy + " Channel]"]
+                    "[PREABILITY:1,CATEGORY=Soul Weaver Channel,Soul Weaver " + energy + " Channel],[" +
+                    channel_prerequisite(energy) + "]"]
         if simple == "combat training class feature":
             return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=SpheresCombatTraining"]
         if simple == "blessing/blight class feature":
             return ["PREABILITY:1,CATEGORY=Special Ability,Soul Weaver Blessing,Soul Weaver Blight"]
         class_features = {"wraith haunt class feature": "SpheresWraithHaunt",
+                          "create reality class feature": "SpheresCreateReality",
+                          "bestial trait class feature": "SpheresBestialTrait",
+                          "secrets class feature": "SpheresHedgewitchSecrets",
                           "mystic combat class feature": "SpheresMysticCombat",
                           "emotion class feature": "SpheresEmotion"}
         if simple in class_features:
             return ["PREABILITY:1,CATEGORY=Special Ability,TYPE=" + class_features[simple]]
         resource_features = {"psionics class feature": "Symbiat Psionics Rounds (Reference)",
+                             "bound equipment class feature": "Armorist Bound Items (Reference)",
+                             "customized weapons class feature": "Armiger Talents Per Customized Weapon (Reference)",
+                             "sentinel’s reserve class feature": "Sentinel Reserve Points (Reference)",
+                             "sentinel's reserve class feature": "Sentinel Reserve Points (Reference)",
                              "shadowstuff class feature": "Fey Adept Shadow Points (Reference)",
+                             "shadowmark class feature": "Fey Adept Shadowmark Dice (Reference)",
                              "forbidden lore class feature": "Thaumaturge Forbidden Lore (Reference)",
                              "bound nexus class feature": "Soul Weaver Bound Souls (Reference)",
                              "invocations class feature": "Thaumaturge Invocation Uses (Reference)"}
@@ -225,8 +304,11 @@ class Prerequisites:
             return ["PREABILITY:1,CATEGORY=Special Ability,Spheres Martial Focus"]
         if simple in ("no casting class feature", "no spherecasting class feature"):
             return ["!PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core"]
-        if simple == "spell pool":
+        if simple in ("spell pool", "spell point pool"):
             return ["PREVARGTEQ:SPHERES_SPELL_POINTS,1"]
+        if simple == "shadow pool":
+            return ["PREMULT:1,[PREABILITY:1,CATEGORY=Special Ability,Fey Adept Shadow Points (Reference)],"
+                    "[PREFEAT:1,TYPE=Surreal]"]
         if simple in ("any metamagic feat", "any item creation feat"):
             return ["PREFEAT:1,TYPE=" + ("Metamagic" if "metamagic" in simple else "ItemCreation")]
         feat_families = {"any one admixture feat": "Admixture",
@@ -236,6 +318,20 @@ class Prerequisites:
                          "at least one metamagic feat": "Metamagic"}
         if simple in feat_families:
             return ["PREFEAT:1,TYPE=" + feat_families[simple]]
+        descriptor_requirements = {
+            "any talent with the strike descriptor": ("power", r"\[strike\]"),
+            "one talent from any sphere that has the strike descriptor": ("power", r"\[strike\]"),
+            "any (stance) talent": ("might", r"\(stance\)"),
+        }
+        if simple in descriptor_requirements:
+            system, pattern = descriptor_requirements[simple]
+            members = [key(row, talent) for row in self.spheres.values()
+                       if row['system'] == system for talent in row['talents']
+                       if re.search(pattern, talent['heading'], re.I)]
+            if not members:
+                return None
+            ability_category = 'Spheres Magic Talent' if system == 'power' else 'Spheres Combat Talent'
+            return ['PREABILITY:1,CATEGORY=' + ability_category + ',' + ','.join(members)]
         sphere_level = re.fullmatch(r"(.+?) sphere caster level ([1-9]\d*)(?:st|nd|rd|th)?", simple)
         if sphere_level:
             row = self.spheres.get(normalize(sphere_level[1]))
@@ -296,6 +392,9 @@ class Prerequisites:
             tags = ["PREABILITY:1,CATEGORY=" + category(row) + "," + row["sphere"] + " Sphere"]
             talents = {normalize(t["name"]): key(row, t) for t in row["talents"]}
             if match[2]:
+                # This reviewed phrase describes base Read Magic, not OR branches.
+                if row['slug'] == 'divination' and match[2].lower() == 'one or more (sense) talents or abilities':
+                    return tags
                 items = split_clauses(match[2])
                 alternatives = split_alternatives(match[2])
                 enumeration = (len(items) > 1 and items[-1].lower().startswith("or ")
@@ -311,7 +410,41 @@ class Prerequisites:
                         choices.append("[PREABILITY:1,CATEGORY=" + category(row) + "," + talents[clean] + "]")
                     return tags + ["PREMULT:1," + ",".join(choices)]
                 for item in items:
+                    # Hallow is a base Fate word, not a separately purchased talent.
+                    if row['slug'] == 'fate' and item.lower() == 'hallow (word)':
+                        continue
+                    # Enhance Equipment is granted by the base sphere; an ability
+                    # requirement is distinct from buying an (enhance) talent.
+                    if row['slug'] == 'enhancement' and item.lower() == 'any (enhance) ability':
+                        continue
+                    if row['slug'] == 'illusion' and item.lower() == 'illusionary touch (sensory, touch) x2':
+                        tags.append('PREVARGTEQ:SPHERES_ILLUSION_ILLUSIONARYTOUCH_COUNT,2')
+                        continue
+                    if row['slug'] == 'enhancement' and item.lower() == 'at least one (enhance) talent':
+                        members = [key(row, talent) for talent in row['talents']
+                                   if '(enhance)' in talent['heading'].lower()]
+                        if not members:
+                            return None
+                        tags.append('PREABILITY:1,CATEGORY=' + category(row) + ',' + ','.join(members))
+                        continue
+                    family = re.fullmatch(r"(?:any|at least one) \(?([a-z]+(?: [a-z]+)?)\)? talent", item, re.I)
+                    reviewed_families = {('creation', 'material'), ('war', 'momentum'), ('war', 'rally'),
+                                         ('berserker', 'adrenaline'), ('destruction', 'blast type'),
+                                          ('nature', 'spirit'), ('mana', 'amp'), ('divination', 'sense')}
+                    if family and (row['slug'], family[1].lower()) in reviewed_families:
+                        descriptor = family[1].lower()
+                        members = [key(row, talent) for talent in row['talents']
+                                   if any(descriptor in [part.strip().lower() for part in group.split(',')]
+                                          for group in re.findall(r'\(([^)]+)\)', talent['heading']))]
+                        if not members:
+                            return None
+                        tags.append('PREABILITY:1,CATEGORY=' + category(row) + ',' + ','.join(members))
+                        continue
                     package = re.fullmatch(r"\(?([a-z ]+)\)? package", item, re.I)
+                    if package and package[1].lower() == 'any' and row['slug'] in PACKAGES:
+                        tags.append('PREABILITY:1,CATEGORY=Spheres ' + row['sphere'] + ' Package,' +
+                                    ','.join(row['sphere'] + ' Package - ' + choice for choice in PACKAGES[row['slug']]))
+                        continue
                     if package and package[1].title() in PACKAGES.get(row["slug"], ()):
                         tags.append("PREABILITY:1,CATEGORY=Spheres " + row["sphere"] + " Package," + row["sphere"] + " Package - " + package[1].title())
                         continue
@@ -320,6 +453,10 @@ class Prerequisites:
                         return None
                     tags.append("PREABILITY:1,CATEGORY=" + category(row) + "," + talents[clean])
             return tags
+        if simple == "skill focus (heal)":
+            # SERVESAS also activates upstream skill bonuses guarded by PREABILITY.
+            # Expand selection prerequisites only; do not imitate the feat globally.
+            return ["PREMULT:1,[PREFEAT:1,Skill Focus (Heal)],[PREFEAT:1,Surgeon’s Trade Secrets]"]
         if simple in self.feats:
             return ["PREFEAT:1," + self.feats[simple]]
         drawback = re.sub(r"\s*drawback$", "", simple)
@@ -350,6 +487,10 @@ class Prerequisites:
         variables = ["SPHERES_CL_" + token(r["sphere"]).upper() for r in spheres]
         caster = variables[0] if len(variables) == 1 else "max(" + ",".join(variables) + ")" if variables else "SPHERES_CASTER_LEVEL"
         if any(re.match(r"or\b", c, re.I) for c in clauses):
+            # A bare Oxford-comma list is ambiguous with AND-branch syntax.
+            # Require explicit "one of" or a semicolon separating branches.
+            if ';' not in requirement and len(clauses) >= 3 and re.match(r'or\b', clauses[-1], re.I):
+                return [], [requirement]
             return self.branches(clauses, requirement, caster)
         tags, unresolved = [], []
         for clause in clauses:
@@ -412,6 +553,11 @@ def build():
     for row in feats:
         row["key"] = row["name"].replace(",", "") + (" (Spheres)" if normalize(row["name"]) in core and row["name"] not in LEGACY else "")
     parser = Prerequisites(feats)
+    channel_requirements = {parser.clause(clause)[0] for clause in
+                            ("channel energy", "channel positive energy", "channel negative energy")}
+    from spheres_channel import dice_prerequisite
+    channel_requirements.update(dice_prerequisite(int(dice)) for row in feats
+                                for dice in re.findall(r"channel energy ([1-9]\d*)d6", row["text"], re.I))
     overrides = json.loads((DATA / "feat-mechanics.json").read_text())
     legacy_overrides = LEGACY.intersection(overrides)
     if legacy_overrides:
@@ -427,8 +573,16 @@ def build():
         override = overrides.get(row["name"], {})
         if "prerequisites" in override:
             prereqs, unresolved = override["prerequisites"], []
+        from spheres_extra_options import rules as extra_option_rules
+        extra_options = extra_option_rules(row['name'])
+        if extra_options is not None:
+            prereqs, unresolved = extra_options[0], []
         prereqs.extend(override.get("additional_prerequisites", []))
         unresolved.extend(override.get("additional_unresolved_prerequisites", []))
+        if row['name'] == 'Greater Created':
+            # Level 1 is not equivalent to character creation. Keep the timing
+            # restriction explicitly reviewed until acquisition history exists.
+            unresolved.append('Only selectable at character creation')
         # A feat cannot supply its own required pre-existing feat family.
         for family in ("Proxy", "Admixture"):
             predicate = "PREFEAT:1,TYPE=" + family
@@ -446,8 +600,42 @@ def build():
                              r'PREVARGTEQ:SPHERES_ALCHEMY_RANKS,\1', tag)
                        for tag in prereqs]
         row["prerequisites"] = prereqs
+        if 'Surreal' in row['types']:
+            others = [other['key'] for other in feats
+                      if 'Surreal' in other['types'] and other['key'] != row['key']]
+            prereqs = [tag.replace('PREFEAT:1,TYPE=Surreal', 'PREFEAT:1,' + ','.join(others))
+                       for tag in prereqs]
+            row['prerequisites'] = prereqs
         row["unresolved_prerequisites"] = unresolved
         row["mechanics"] = list(override.get("tags", []))
+        if 'Necrosis' in row['types']:
+            row['mechanics'].extend(['DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0',
+                                     'BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1'])
+            if 'Defiler' not in row['types']:
+                row['mechanics'].extend(['DEFINE:SPHERES_DEFILER_FEAT_COUNT|0',
+                    'BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler'])
+        if 'Defiler' in row['types']:
+            row['mechanics'].extend(['DEFINE:SPHERES_DEFILER_FEAT_COUNT|0',
+                                     'BONUS:VAR|SPHERES_DEFILER_FEAT_COUNT|1'])
+            if 'Necrosis' not in row['types']:
+                row['mechanics'].extend(['DEFINE:SPHERES_NECROSIS_FEAT_COUNT|0',
+                    'BONUS:VAR|SPHERES_NECROSIS_FEAT_COUNT|1|PREFEAT:1,Inhuman Defiler'])
+        if 'WildMagic' in row['types']:
+            from spheres_wild_magic import feat_tags as wild_magic_tags
+            row['mechanics'].extend(wild_magic_tags(row['name']))
+        if 'Surreal' in row['types']:
+            row['mechanics'].extend(['DEFINE:SPHERES_FEY_ADEPT_SHADOW_POINTS|0',
+                                     'BONUS:VAR|SPHERES_FEY_ADEPT_SHADOW_POINTS|1',
+                                     'DEFINE:SPHERES_SURREAL_FEAT_COUNT|0',
+                                     'BONUS:VAR|SPHERES_SURREAL_FEAT_COUNT|1'])
+        if extra_options is not None:
+            row['mechanics'].extend(extra_options[1])
+        if row['name'] == 'Amateur Striker':
+            from spheres_amateur_striker import feat_tags
+            row['mechanics'].extend(feat_tags())
+        if row['name'] == 'Expanded Tension Technique':
+            from spheres_amateur_striker import expanded_tags
+            row['mechanics'].extend(expanded_tags())
         cost = re.search(r"\bCost: \+(\d+) spell points?\s*$", row["text"], re.M)
         if "Metamagic" in row["types"] and cost:
             row["mechanics"].append("DEFINE:SPHERES_METAMAGIC_" + token(row["name"]).upper() + "_COST|" + cost[1])
@@ -455,10 +643,17 @@ def build():
             row["status"] = "existing"
             continue
         types = row["types"] + ["SpheresFeat"]
+        if any(tag in channel_requirements for tag in prereqs):
+            types.append("HedgewitchChannelFeat")
         # Only a mandatory top-level casting prerequisite certifies this family.
         # An OR branch mentioning casting does not require every applicant to cast.
         if "PREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core" in prereqs:
             types.append("SpheresCasting")
+        magic_spheres = {r["sphere"] + " Sphere" for r in parser.spheres.values() if r["system"] == "power"}
+        if "SpheresCasting" in types or any(
+                tag.startswith("PREABILITY:1,CATEGORY=Spheres Magic Talent,")
+                and set(tag.split(",")[2:]) <= magic_spheres for tag in prereqs):
+            types.append("HedgewitchMagicalSkill")
         # Incanter grants only feats explicitly referring to spheres/spell points,
         # plus metamagic, crafting, and drawback feats (not all magic-adjacent feats).
         requirement = re.search(r"Prerequisites?:\s*(.*?)(?=\n|Benefits?:|$)", row["text"], re.I)
@@ -515,11 +710,18 @@ def build():
             "|PREABILITY:2,CATEGORY=Special Ability,Spheres Casting Core,Spheres Martial Focus",
             "DESC:Allocate one Extra Blended Training Talent selection to the existing "
             + kind.lower() + " talent pool. Remove the purchased talent before refunding its allocation."]))
+    from spheres_amateur_striker import records as amateur_records
+    amateur_abilities, amateur_categories = amateur_records()
+    from spheres_amateur_striker import expanded_records
+    expanded_abilities, expanded_categories = expanded_records()
+    amateur_abilities.extend(expanded_abilities)
+    amateur_categories.extend(expanded_categories)
+    lines.extend(amateur_abilities)
     return {"spheres_feat_catalog.lst": "\n".join(lines) + "\n",
             "spheres_feat_adjudication.lst": "\n".join(approvals) + "\n",
             "spheres_categories_feats.lst": "ABILITYCATEGORY:Spheres Feat Adjudication\tCATEGORY:Spheres Feat Adjudication\tEDITABLE:YES\tEDITPOOL:NO\tPOOL:0\tFRACTIONALPOOL:NO\tVISIBLE:YES\tPLURAL:Manual Feat Prerequisite Approvals\tDISPLAYLOCATION:Spheres\n"
                 "ABILITYCATEGORY:Spheres Basic Magic Sphere\tCATEGORY:Spheres Magic Talent\tTYPE:SpheresBaseSphere\tEDITABLE:YES\tEDITPOOL:NO\tPOOL:0\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPLURAL:Basic Magic Training Sphere\tDISPLAYLOCATION:Spheres\n"
-                "ABILITYCATEGORY:Spheres Blended Talent Allocation\tCATEGORY:Spheres Blended Talent Allocation\tEDITABLE:YES\tEDITPOOL:NO\tPOOL:0\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPLURAL:Blended Training Talent Allocations\tDISPLAYLOCATION:Spheres\n",
+                "ABILITYCATEGORY:Spheres Blended Talent Allocation\tCATEGORY:Spheres Blended Talent Allocation\tEDITABLE:YES\tEDITPOOL:NO\tPOOL:0\tFRACTIONALPOOL:NO\tVISIBLE:QUALIFY\tPLURAL:Blended Training Talent Allocations\tDISPLAYLOCATION:Spheres\n" + '\n'.join(amateur_categories) + '\n',
             "feat-catalog.json": json.dumps(feats, indent=2, ensure_ascii=False) + "\n"}
 
 

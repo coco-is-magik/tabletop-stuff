@@ -17,7 +17,7 @@ def check_package(data=DATA):
     references = []
     for line in records(data / "spheres.pcc"):
         tag, value = line.split(":", 1)
-        if tag in {"ABILITY", "ABILITYCATEGORY", "CLASS"}:
+        if tag in {"ABILITY", "ABILITYCATEGORY", "CLASS", "TEMPLATE"}:
             if Path(value).name != value or not value.endswith(".lst"):
                 raise ValueError("unsafe source reference")
             references.append(value)

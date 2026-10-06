@@ -54,8 +54,7 @@ def option_tags(title):
             "ABILITY:Spheres Magic Talent|AUTOMATIC|Illusion - " + talent + "|PREMULT:1,[" + waiver + "],[" + sphere + "]",
             "ABILITY:FEAT|AUTOMATIC|" + granted_feat + "|PREMULT:1,[" + waiver + "],[" + normal_gate + "]"])
         if name == "Weirding Adept":
-            tags.extend(["DEFINE:SPHERES_MAGE_FEINT_CL|0",
-                         "BONUS:VAR|SPHERES_MAGE_FEINT_CL|max(SPHERES_CASTER_LEVEL,SPHERES_CL_ILLUSION)+"
+            tags.extend(["DEFINE:SPHERES_MAGE_FEINT_CL|max(SPHERES_CASTER_LEVEL,SPHERES_CL_ILLUSION)+"
                          + LEVEL + "-floor(" + LEVEL + "/2)"])
     return tags
 
