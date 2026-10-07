@@ -1,5 +1,10 @@
 # Pathfinder 1e dice-pool experiment
 
+> This repository contains two separate projects. **Part 1** is the dice-pool
+> comparison tool described first. **Part 2** is a verified Spheres of Power/Might
+> dataset for PCGen; jump to
+> [Spheres of Power and Might for PCGen](#spheres-of-power-and-might-for-pcgen).
+
 A standalone **PF1e d20 versus d10-pool scenario comparison tool**. The locked v1
 scope is `/bigdisk/programming/pathfinder1e/docs/scenario-baseline.md`, superseding
 the original plan's PCGen-first requirements. No character builder is required.
@@ -100,7 +105,75 @@ Benchmark writes 3,136 cases plus header to CSV and prints aggregate error and
 pool-size metrics to stderr. Model coefficients are configurable via CLI flags;
 they are experimental and have not been fitted to Pathfinder character careers.
 
+## Spheres of Power and Might for PCGen
+
+A machine-readable, source-backed implementation of **Spheres of Power** and
+**Spheres of Might** for PCGen 6.08.00RC10 (Ultimate-tab rules). It is a PCGen
+campaign dataset, not a character builder, combat simulator or rules engine of its
+own — it emits PCGen records and relies on PCGen to enforce them.
+
+### What exists
+
+- **53 base spheres** (26 Power, 27 Might), generated from pinned source snapshots:
+  **2,330 basic talents** and **411 advanced talents**.
+- **Feats (1,201)** and **traits (161)** with a fail-closed prerequisite compiler;
+  unresolved clauses require an explicit adjudication ability rather than being
+  guessed. Alternate racial traits.
+- **Casting and martial traditions**, **Spellcrafting** recipes, and **base and
+  prestige classes** (Incanter, Conscript, Elementalist, Armorist, Hedgewitch and
+  more, plus five prestige classes) at "thin class" fidelity: progression tables
+  and named features, with per-option mechanics incomplete.
+- **Reference mechanics**: ~800 basic talents expose their scaling quantity
+  (caster level, base attack bonus, practitioner modifier, skill ranks, Hit Dice)
+  as PCGen variables for the sheet to read; **advanced talents compile their
+  published prerequisites into real `PRE` tokens**, and unresolvable clauses are
+  gated behind GM approval.
+
+### Scope
+
+- **In:** Power and Might spheres, basic and advanced talents, feats, traits,
+  casting/martial traditions, Spellcrafting, base and prestige classes, alternate
+  racial traits.
+- **Out:** legendary talents, Original Power rules, archetypes, Guile.
+
+### How it is verified
+
+- Deterministic generators; every generated file is checked for staleness.
+- Offline suites (the Java engine plus 22 Python suites) via `build.py test`.
+- **Live PCGen gates** driven through PCGen's production character controller:
+  selection, effect, removal/refund, and save/reload round trips, plus a
+  reference-variable gate that asserts the value PCGen computes, and an
+  advanced-talent gate that asserts PCGen's own prerequisite check accepts a met
+  set and rejects a missing one. The full sweep is 42 gates.
+
+### What the tests do and do not prove
+
+- They prove the dataset is deterministic, internally consistent, loadable, and
+  that **PCGen honors the prerequisites, variables and pools we encode**.
+- They do **not** prove the mechanics match the printed rules. There is no
+  independent oracle for rules-text-to-mechanic mapping, most talents carry
+  prerequisites and descriptions rather than automated effects, and coverage
+  counters count records, not verified rules. Exact limits:
+  `docs/spheres-current-status.md` and `docs/spheres-depth-audit.md`.
+
+### Requirements and commands
+
+Java 17+ (the build compiles with `--release 17`; JDK 25 works) and Python 3.12+.
+PCGen source is vendored under `vendor/upstream/`; no online access is needed.
+
+```sh
+python3 /bigdisk/programming/pathfinder1e/tools/build.py test
+python3 /bigdisk/programming/pathfinder1e/tools/spheres.py check
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py all
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_catalog_variables.py save
+python3 /bigdisk/programming/pathfinder1e/tools/pcgen_advanced_talents.py save
+```
+
 ## Dependencies and boundaries
+
+The current Spheres work is summarised in
+[Spheres of Power and Might for PCGen](#spheres-of-power-and-might-for-pcgen) above;
+the notes below are the deeper detail and historical record.
 
 ### Incanter class — thin scope
 
@@ -114,7 +187,8 @@ Incanter class acceptance and commands:
 The extended-package inventory below does not define class completion.
 
 The first-party source at `/bigdisk/programming/pathfinder1e/data/spheres`
-contains thin classes and a basic Power/Might catalog. Catalog coverage is 53
+contains thin classes and a Power/Might catalog (basic and advanced talents).
+Catalog coverage is 53
 base spheres, 2,330 basic talents and 411 advanced talents; **full
 talent-specific mechanical automation is incomplete**. Supported behavior and
 remaining requirements:
@@ -134,14 +208,21 @@ specializations, Core domain/bloodline adapters, Admixture, Destruction
 specialization and Sword Birth data. Conscript's thin class is implemented.
 Manual records remain compatible; catalog descriptions do not imply that every
 listed effect is automated.
-On the ThinkPad only, patched offline PCGen source compilation is verified with
-the private JDK at `/home/danbo/.local/lib/jvm/temurin-16.0.2+7`. The targeted
+Offline PCGen source compilation is verified with a JDK 17-compatible toolchain;
+the current machine builds with JDK 25 (`/usr/lib64/openjdk-25`, bytecode released
+at 17) and runs the vendored PCGen 6.08.00RC10 harness with `vendor/jdk16`. If
+`javac`/`java` resolve to a stale eselect VM, select a real one
+(`eselect java-vm set user openjdk-25`, or `export GENTOO_VM=openjdk-25`). The targeted
 Incanter 1/INT18, Incanter 2/INT18 and Incanter 1/INT7 fixtures load Core + Spheres,
 verify two spent talents, and match all ten exports before and after PCGen
 save/reload. Run the smoke command with `all` to check all three.
 Targeted prerequisite enforcement, duplicate rejection, and core Fighter isolation
 also pass via PCGen's production selection controller. Run
 `python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py all`.
+The full live sweep currently passes 42/42 gates; the reference-variable gate
+(`tools/pcgen_catalog_variables.py`) verifies 39 computed values and the
+advanced-talent gate (`tools/pcgen_advanced_talents.py`) verifies prerequisite
+acceptance, rejection, refund and save/reload.
 Broad upstream tests, GUI and packaging are not
 current gates; do not debug `datatest` to proceed. The standalone dice-pool tool
 remains unchanged. Current implementation status, exact compile command,
