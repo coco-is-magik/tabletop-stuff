@@ -6,7 +6,7 @@
 > [Spheres of Power and Might for PCGen](#spheres-of-power-and-might-for-pcgen).
 
 A standalone **PF1e d20 versus d10-pool scenario comparison tool**. The locked v1
-scope is `/bigdisk/programming/pathfinder1e/docs/scenario-baseline.md`, superseding
+scope is `docs/scenario-baseline.md`, superseding
 the original plan's PCGen-first requirements. No character builder is required.
 
 Compare levels 1–20 against low/average/high AC and low/average/high/very-hard DCs,
@@ -44,8 +44,8 @@ is reliable without making high or very-hard checks automatic.
 ### Absolute probability / specialization report
 
 ```sh
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --model tn8-8-4 --report profiles
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --model tn8-8-4 --report profiles --type ATTACK --min-level 16 --max-level 20 --format csv
+python3 tools/build.py run scenarios --model tn8-8-4 --report profiles
+python3 tools/build.py run scenarios --model tn8-8-4 --report profiles --type ATTACK --min-level 16 --max-level 20 --format csv
 ```
 
 This opt-in report groups by profile/difficulty and shows absolute mean/median,
@@ -56,7 +56,7 @@ scenario probabilities, not outcomes of a single roll. Existing row output is un
 The current profiles are synthetic bonus curves, **not validated investment tiers**.
 TN8-8-4 yields LOW/low mean 40.56%, TYPICAL/average 58.38%, HIGH/average 81.32%,
 but these hide substantial type/level differences. Findings and current handoff:
-`/bigdisk/programming/pathfinder1e/docs/profile-analysis.md`.
+`docs/profile-analysis.md`.
 No conversion coefficients were changed and no model is declared balanced.
 
 ### Candidate and raw-row reports
@@ -68,27 +68,27 @@ flags. The original default remains unchanged. Take-10/take-20 contexts are outs
 these experiments; eligibility is assumed, not detected.
 
 ```sh
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --model tn8-7-4 --level 5 --type ATTACK --bonus 11
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --model tn8-8-4 --format csv
+python3 tools/build.py run scenarios --model tn8-7-4 --level 5 --type ATTACK --bonus 11
+python3 tools/build.py run scenarios --model tn8-8-4 --format csv
 ```
 
-Full-corpus findings: `/bigdisk/programming/pathfinder1e/docs/tn8-experiment.md`.
+Full-corpus findings: `docs/tn8-experiment.md`.
 None consistently achieved the earlier parity/direction objective. Raw-row reports
 retain those diagnostics, now secondary to the absolute specialization analysis above.
 
-Requires Java/Javac 17+ and Python 3.12+. Commands may be run from any directory:
+Requires Java/Javac 17+ and Python 3.12+. Run these from the repository root:
 
 ```sh
-python3 /bigdisk/programming/pathfinder1e/tools/build.py test
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --level 5 --type ATTACK --bonus 11
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --level 10 --type SKILL --profile HIGH
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run scenarios --format csv > /bigdisk/programming/pathfinder1e/build/scenario-baseline-v1.csv
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run help
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run match --probability 0.55
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run table
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run simulate --system d20 --type ATTACK --bonus 12 --dc 24 --iterations 100000 --seed 12345
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run simulate --system pool --dice 7 --target 6 --successes 4 --seed 12345
-python3 /bigdisk/programming/pathfinder1e/tools/build.py run benchmark --type ATTACK > /bigdisk/programming/pathfinder1e/build/attack-grid.csv
+python3 tools/build.py test
+python3 tools/build.py run scenarios --level 5 --type ATTACK --bonus 11
+python3 tools/build.py run scenarios --level 10 --type SKILL --profile HIGH
+python3 tools/build.py run scenarios --format csv > build/scenario-baseline-v1.csv
+python3 tools/build.py run help
+python3 tools/build.py run match --probability 0.55
+python3 tools/build.py run table
+python3 tools/build.py run simulate --system d20 --type ATTACK --bonus 12 --dc 24 --iterations 100000 --seed 12345
+python3 tools/build.py run simulate --system pool --dice 7 --target 6 --successes 4 --seed 12345
+python3 tools/build.py run benchmark --type ATTACK > build/attack-grid.csv
 ```
 
 Run the test/build command once before redirecting reports into the build directory.
@@ -160,13 +160,14 @@ own — it emits PCGen records and relies on PCGen to enforce them.
 
 Java 17+ (the build compiles with `--release 17`; JDK 25 works) and Python 3.12+.
 PCGen source is vendored under `vendor/upstream/`; no online access is needed.
+Run these from the repository root:
 
 ```sh
-python3 /bigdisk/programming/pathfinder1e/tools/build.py test
-python3 /bigdisk/programming/pathfinder1e/tools/spheres.py check
-python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py all
-python3 /bigdisk/programming/pathfinder1e/tools/pcgen_catalog_variables.py save
-python3 /bigdisk/programming/pathfinder1e/tools/pcgen_advanced_talents.py save
+python3 tools/build.py test
+python3 tools/spheres.py check
+python3 tools/pcgen_spheres_gates.py all
+python3 tools/pcgen_catalog_variables.py save
+python3 tools/pcgen_advanced_talents.py save
 ```
 
 ## Dependencies and boundaries
@@ -179,25 +180,25 @@ the notes below are the deeper detail and historical record.
 
 Conscript is also available under the same class-only boundary. Implementation,
 manual external-option limits and real-PCGen checks:
-`/bigdisk/programming/pathfinder1e/docs/conscript-class.md`.
+`docs/conscript-class.md`.
 
 The thin classes remain separate from sphere catalog completion.
 Incanter class acceptance and commands:
-`/bigdisk/programming/pathfinder1e/docs/incanter-class.md`.
+`docs/incanter-class.md`.
 The extended-package inventory below does not define class completion.
 
-The first-party source at `/bigdisk/programming/pathfinder1e/data/spheres`
+The first-party source at `data/spheres`
 contains thin classes and a Power/Might catalog (basic and advanced talents).
 Catalog coverage is 53
 base spheres, 2,330 basic talents and 411 advanced talents; **full
 talent-specific mechanical automation is incomplete**. Supported behavior and
 remaining requirements:
-`/bigdisk/programming/pathfinder1e/docs/sphere-catalog.md`.
+`docs/sphere-catalog.md`.
 Power/Might feat records and selected mechanics are also available. This is not
 complete feat automation; unresolved prerequisites require explicit adjudication.
-Coverage, tests and limitations: `/bigdisk/programming/pathfinder1e/docs/spheres-feats.md`.
+Coverage, tests and limitations: `docs/spheres-feats.md`.
 The September 30 continuation inventory, verified fixes and remaining content
-backlog are recorded in `/bigdisk/programming/pathfinder1e/docs/spheres-backlog.md`.
+backlog are recorded in `docs/spheres-backlog.md`.
 Reviewed direct feat-equivalence mappings and Versatile Fighter's active stance
 choices now reuse PCGen's existing mechanisms. Conditional equivalences and
 complete configurable companion/transformation and class mechanics remain open;
@@ -208,17 +209,17 @@ specializations, Core domain/bloodline adapters, Admixture, Destruction
 specialization and Sword Birth data. Conscript's thin class is implemented.
 Manual records remain compatible; catalog descriptions do not imply that every
 listed effect is automated.
-Offline PCGen source compilation is verified with a JDK 17-compatible toolchain;
-the current machine builds with JDK 25 (`/usr/lib64/openjdk-25`, bytecode released
-at 17) and runs the vendored PCGen 6.08.00RC10 harness with `vendor/jdk16`. If
-`javac`/`java` resolve to a stale eselect VM, select a real one
-(`eselect java-vm set user openjdk-25`, or `export GENTOO_VM=openjdk-25`). The targeted
+Offline PCGen source compilation is verified with a JDK 17-compatible toolchain
+(JDK 25 works; the build targets bytecode 17) and the vendored PCGen 6.08.00RC10
+harness runs on the bundled `vendor/jdk16`. If `javac`/`java` resolve to a stale
+eselect VM, point them at a real one (`eselect java-vm set user openjdk-25`, or
+`export GENTOO_VM=openjdk-25`). The targeted
 Incanter 1/INT18, Incanter 2/INT18 and Incanter 1/INT7 fixtures load Core + Spheres,
 verify two spent talents, and match all ten exports before and after PCGen
 save/reload. Run the smoke command with `all` to check all three.
 Targeted prerequisite enforcement, duplicate rejection, and core Fighter isolation
 also pass via PCGen's production selection controller. Run
-`python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_gates.py all`.
+`python3 tools/pcgen_spheres_gates.py all`.
 The full live sweep currently passes 42/42 gates; the reference-variable gate
 (`tools/pcgen_catalog_variables.py`) verifies 39 computed values and the
 advanced-talent gate (`tools/pcgen_advanced_talents.py`) verifies prerequisite
@@ -227,12 +228,12 @@ Broad upstream tests, GUI and packaging are not
 current gates; do not debug `datatest` to proceed. The standalone dice-pool tool
 remains unchanged. Current implementation status, exact compile command,
 acceptance fixtures, and historical extended-package inventory:
-`/bigdisk/programming/pathfinder1e/docs/spheres.md`.
+`docs/spheres.md`.
 
 ```sh
-python3 /bigdisk/programming/pathfinder1e/tools/spheres.py check
-python3 /bigdisk/programming/pathfinder1e/tools/pcgen_spheres_smoke.py incanter1-int18
-python3 /bigdisk/programming/pathfinder1e/tools/build.py test
+python3 tools/spheres.py check
+python3 tools/pcgen_spheres_smoke.py incanter1-int18
+python3 tools/build.py test
 ```
 
 ### Existing comparison-tool baseline
@@ -242,18 +243,18 @@ The default model's 660-case MAE is **17.069 percentage points**, so model tunin
 is still needed. The scope, scenario definitions and output contract are locked by
 tests; the candidate model's balance is not claimed.
 
-- First-party source: `/bigdisk/programming/pathfinder1e/src/`
-- First-party tooling: `/bigdisk/programming/pathfinder1e/tools/`
-- Third-party archive and checksum: `/bigdisk/programming/pathfinder1e/vendor/`
-- Upstream extraction: `/bigdisk/programming/pathfinder1e/vendor/upstream/`
-- Synthetic fixture: `/bigdisk/programming/pathfinder1e/testdata/synthetic-fighter.properties`
-- Architecture and numerical conventions: `/bigdisk/programming/pathfinder1e/docs/architecture.md`
+- First-party source: `src/`
+- First-party tooling: `tools/`
+- Third-party archive and checksum: `vendor/`
+- Upstream extraction: `vendor/upstream/`
+- Synthetic fixture: `testdata/synthetic-fighter.properties`
+- Architecture and numerical conventions: `docs/architecture.md`
 
 PCGen 6.08.00RC10 source is vendored unchanged with original licenses/notices.
 Verify it with:
 
 ```sh
-python3 /bigdisk/programming/pathfinder1e/tools/vendor.py verify
+python3 tools/vendor.py verify
 ```
 
 This is preserved reference material, not a runtime/build requirement. Its
@@ -265,4 +266,4 @@ not depend on that build and does not reimplement character-generation rules.
 Snapshots and their explicitly synthetic fixture remain supported for compatibility.
 Character generation/import, opposed checks, critical models, full combat, and damage
 conversion are outside this baseline. No further PCGen work is needed to use it.
-The current handoff is `/bigdisk/programming/pathfinder1e/docs/implementation-log.md`.
+The current handoff is `docs/implementation-log.md`.
