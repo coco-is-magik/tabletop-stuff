@@ -33,6 +33,7 @@ def build(data=DATA):
 
     catalog = load("catalog")
     review = load("catalog-review")
+    advanced = load("catalog-advanced-review")
     feats = load("feat-catalog")
     traits = load("trait-catalog")
     return {
@@ -41,16 +42,23 @@ def build(data=DATA):
             "Empty mechanics arrays can describe tactical-only effects or unimplemented effects.",
             "Generators also emit mechanics outside these arrays; review source and generated LSTs.",
             "Nonempty mechanics arrays do not prove full implementation or runtime verification.",
-            "Basic talent review excludes four existing Destruction records and all advanced/legendary talents.",
+            "Basic talent review excludes four existing Destruction records; legendary talents are not imported.",
+            "Advanced talents are recorded and separately counted; entries with unresolved prerequisite clauses require GM approval.",
             "Classes, traditions, racial replacements and prestige coverage require separate audits.",
             "Received-effect templates are counted separately; they do not certify talent or casting lifecycle completion.",
         ],
         "spheres_by_system": dict(sorted(Counter(row["system"] for row in catalog).items())),
         "source_basic_talents": sum(len(row["talents"]) for row in catalog),
+        "source_advanced_talents": sum(len(row["advanced"]) for row in catalog),
         "generated_basic_talents": summarize(review),
+        "generated_advanced_talents": summarize(advanced, unresolved=True),
         "talents_by_sphere": {
             sphere: summarize([row for row in review if row["sphere"] == sphere])
             for sphere in sorted({row["sphere"] for row in review})
+        },
+        "advanced_talents_by_sphere": {
+            sphere: summarize([row for row in advanced if row["sphere"] == sphere], unresolved=True)
+            for sphere in sorted({row["sphere"] for row in advanced})
         },
         "feats": summarize(feats, unresolved=True),
         "feat_status_labels": dict(sorted(Counter(row["status"] for row in feats).items())),
@@ -77,7 +85,7 @@ def main():
     elif not REPORT.exists() or REPORT.read_text() != text:
         raise ValueError("Coverage report stale; run tools/spheres_coverage.py --write")
     report = json.loads(text)
-    for name in ("generated_basic_talents", "feats", "traits"):
+    for name in ("generated_basic_talents", "generated_advanced_talents", "feats", "traits"):
         group = report[name]
         print(f"{name}: {group['records']} records; "
               f"{group['records_with_recorded_mechanics']} with recorded mechanics; "

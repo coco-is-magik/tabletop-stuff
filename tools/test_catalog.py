@@ -1,5 +1,6 @@
 """Offline catalog integrity; live controller evidence is pcgen_catalog.py."""
 import json
+import re
 import unittest
 from spheres_catalog import inventory, MANIFEST
 from spheres_catalog_lst import build, DATA, key, repeat_limit, text, PACKAGES
@@ -1053,7 +1054,8 @@ class CatalogTest(unittest.TestCase):
         campaign = (DATA / 'spheres.pcc').read_text()
         for name, content in self.files.items():
             self.assertEqual((DATA / name).read_text(), content, name)
-            self.assertTrue(any(line.endswith(':' + name) for line in campaign.splitlines()))
+            if name.endswith('.lst'):
+                self.assertTrue(any(line.endswith(':' + name) for line in campaign.splitlines()))
 
     def test_keys_and_prerequisites(self):
         keys = set()
@@ -1063,13 +1065,74 @@ class CatalogTest(unittest.TestCase):
             keys.add(record['key'])
             self.assertTrue(any('Sphere' in p for p in record['prerequisites']))
 
-    def test_no_advanced_or_original_import(self):
+    def test_advanced_imported_but_original_and_legendary_excluded(self):
+        advanced = [talent for row in self.rows for talent in row['advanced']]
+        self.assertTrue(advanced)
+        self.assertTrue(any('Advanced' in talent['group'] for talent in advanced))
         for row in self.rows:
-            for talent in row['talents']:
-                self.assertNotIn('Advanced', talent['group'])
+            for talent in row['talents'] + row['advanced']:
+                self.assertNotIn('Original', talent['group'])
                 self.assertNotIn('Legendary', talent['group'])
+                self.assertNotIn('Feats', talent['group'])
         destruction = next(r for r in self.rows if r['slug'] == 'destruction')
         self.assertEqual(key(destruction, {'name': 'Admixture'}), 'Admixture')
+
+    def test_advanced_records_are_gated_and_resolve_to_catalog_lines(self):
+        review = json.loads(self.files['catalog-advanced-review.json'])
+        self.assertEqual(len(review), sum(len(r['advanced']) for r in self.rows))
+        self.assertEqual(len(review), len({r['key'] for r in review}))
+        lines = {}
+        for row in self.rows:
+            for line in self.files[f"spheres_{row['system']}_{row['slug']}.lst"].splitlines():
+                if line.startswith('#'):
+                    continue
+                first = line.split('\t')[0]
+                self.assertNotIn(first, lines, first)
+                lines[first] = line
+        approved = {line.split('\t')[0] for line
+                    in self.files['spheres_advanced_adjudication.lst'].splitlines() if line}
+        for record in review:
+            self.assertNotIn(',', record['key'])
+            line = lines[record['key']]
+            self.assertIn('TYPE:SpheresAdvancedTalent.', line)
+            self.assertIn('PREABILITY:1,CATEGORY=Spheres Magic Talent,' + record['sphere'] + ' Sphere',
+                          line)
+            require_approval = 'Spheres Advanced Talent Adjudication' in line
+            self.assertEqual(bool(record['unresolved_prerequisites']), require_approval, record['key'])
+            self.assertEqual(require_approval, 'Reviewed - ' + record['key'] in approved)
+        self.assertIn('ABILITYCATEGORY:Spheres Advanced Talent Adjudication',
+                      self.files['spheres_categories_advanced.lst'])
+
+    def test_prerequisite_references_resolve_to_campaign_records(self):
+        records = {}
+        for path in DATA.glob('*.lst'):
+            for line in path.read_text(encoding='utf-8', errors='replace').splitlines():
+                match = re.search(r'CATEGORY:(Spheres Magic Talent|Spheres Combat Talent)', line)
+                if line.startswith('#') or '\tCATEGORY:' not in line or not match:
+                    continue
+                records.setdefault(match[1], set()).add(line.split('\t')[0])
+        pattern = re.compile(r'PREABILITY:1,CATEGORY=(Spheres Magic Talent|Spheres Combat Talent),')
+        missing = {}
+        for name, content in self.files.items():
+            if not name.startswith('spheres_') or not name.endswith('.lst'):
+                continue
+            for line in content.splitlines():
+                if line.startswith('#'):
+                    continue
+                for match in pattern.finditer(line):
+                    rest = line[match.end():].split(']')[0].split('\t')[0]
+                    for key in (part.strip() for part in rest.split(',')):
+                        if key and key not in records.get(match[1], set()):
+                            missing.setdefault((match[1], key), line.split('\t')[0])
+        self.assertEqual(missing, {})
+
+    def test_advanced_records_document_gm_permission(self):
+        for row in self.rows:
+            for talent in row['advanced']:
+                line = self.files[f"spheres_{row['system']}_{row['slug']}.lst"]
+                record = next(record for record in line.splitlines()
+                              if record.startswith(key(row, talent) + '\t'))
+                self.assertIn('Advanced talent; the GM decides whether', record)
 
     def test_repeat_detection(self):
         for rule, expected in [('You may take this talent up to two times.', 2),

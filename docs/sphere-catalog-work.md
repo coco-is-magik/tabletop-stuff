@@ -1,7 +1,7 @@
 # Sphere catalog implementation — work record
 
-2026-09-24. Scope: PF1 Power and Might base spheres and basic talents, not
-advanced/legendary talents, Guile, other classes or a combat simulator.
+2026-09-24. Scope: PF1 Power and Might base spheres, basic talents and advanced
+talents, not legendary talents, Guile, other classes or a combat simulator.
 
 Preserve existing class/campaign/ability keys, manual saved choices, distinct magic
 and combat pools, Core isolation, and PCGen as the only runtime rules evaluator.
@@ -22,9 +22,11 @@ name-only list or manually entered text a complete implementation.
 
 Pinned 53 source inventories (26 Power, 27 Might), 2,330 basic talent entries,
 including four preserved Destruction keys; 2,326 additional generated records.
-The source bounds stop before advanced/legendary headings and exclude Original
+The source bounds stop before legendary headings and exclude Original
 tabs, feats, archetypes, and unrelated sections. Generated records contain actual
 rules text, source attribution, basic-sphere prerequisites and separate pool types.
+A later scope extension adds the 411 Ultimate-tab advanced talents in the same
+files, tagged `SpheresAdvancedTalent` with compiled or approval-gated prerequisites.
 The source manifest is not evidence that every talent mechanic is automated.
 
 Live production-controller round trips have exercised each of the 53 base spheres

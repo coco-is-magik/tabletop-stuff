@@ -1,6 +1,7 @@
-"""Compile snapshotted basic sphere sections to a deterministic review manifest.
+"""Compile snapshotted sphere sections to a deterministic review manifest.
 
-Section bounds are explicit: never import Original tabs, feats or advanced talents.
+Section bounds are explicit: import the Ultimate-tab basic and advanced talents,
+but never import Original tabs, sphere feats or legendary talents.
 """
 import argparse
 import json
@@ -26,6 +27,39 @@ def clean_name(heading):
 def clean_intro(text):
     paragraphs = [p for p in text.splitlines() if "FoldUnfold" not in p and p not in ("Ultimate", "Original")]
     return re.sub(r"[^\n]*?\$\d+\.\d{2}\s*", "", "\n".join(paragraphs))
+
+
+def advanced_talents(source, end):
+    """Talents between the advanced heading and the next top-level section.
+
+    The heading at ``end`` names either the advanced talents or, for pages that
+    have none, the legendary talents. Legendary entries are never imported.
+    """
+    sections = source["sections"]
+    heading = sections[end]["heading"]
+    if "Advanced" not in heading:
+        return []
+    start = end + 1 if sections[end]["level"] == 1 else end
+    group = clean_name(heading)
+    talents, by_name = [], {}
+    for section in sections[start:]:
+        if section["level"] == 1:
+            break
+        if section["level"] < 4:
+            group = clean_name(section["heading"])
+            continue
+        if section["level"] > 4:
+            if talents:
+                talents[-1]["text"] += "\n" + section["heading"] + ": " + section["text"]
+            continue
+        key = clean_name(section["heading"])
+        if key in by_name:
+            continue
+        row = {"name": key, "heading": section["heading"], "group": group,
+               "url": source["url"] + "#" + section["anchor"], "text": section["text"]}
+        talents.append(row)
+        by_name[key] = row
+    return talents
 
 
 def inventory(slugs=None):
@@ -71,7 +105,8 @@ def inventory(slugs=None):
             by_name[key] = row
         result.append({"sphere": name, "slug": slug, "system": system,
                        "url": source["url"], "source_sha256": source["sha256"],
-                       "base": "\n".join(base), "talents": talents})
+                       "base": "\n".join(base), "talents": talents,
+                       "advanced": advanced_talents(source, end)})
     return result
 
 
@@ -84,7 +119,8 @@ def main():
         MANIFEST.write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n")
     for row in rows:
         print(f'{row["system"]:5} {row["sphere"]:15} {len(row["talents"]):3} basic talents')
-    print(f'{len(rows)} spheres; {sum(len(r["talents"]) for r in rows)} basic talents')
+    print(f'{len(rows)} spheres; {sum(len(r["talents"]) for r in rows)} basic talents; '
+          f'{sum(len(r["advanced"]) for r in rows)} advanced talents')
 
 
 if __name__ == "__main__":

@@ -146,8 +146,8 @@ Spheres of Power is represented only by a narrow Destruction slice:
 - prototype Destruction variables/export fields.
 
 All other Power spheres are missing. Destruction itself is incomplete; most blast
-types, blast shapes, advanced talents, drawbacks, prerequisites and detailed
-interactions are not yet implemented.
+types, blast shapes, drawbacks, prerequisites and detailed interactions are not
+yet implemented. Advanced talents are catalogued separately from the basic list.
 
 Spheres of Might spheres are **not implemented**. There is no practitioner engine,
 combat talent pool, martial tradition model, Might sphere data, Conscript class,

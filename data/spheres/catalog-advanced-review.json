@@ -1,0 +1,5521 @@
+[
+  {
+    "key": "Alteration - Diffuse Swarm",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Swarm Shape",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Elemental Purity",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Elemental Transformation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,7"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Energy Manipulation",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Alteration - Energy Manipulation"
+    ],
+    "unresolved_prerequisites": [
+      "Alteration sphere (any talent granting energy resistance as a trait option)"
+    ]
+  },
+  {
+    "key": "Alteration - Extreme Changes",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Greater Changes",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Fusion",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Mass Alteration",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Homogenize",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Twisted Shapeshift",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Manipulate Healing",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Vitality",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Mechanical Customization",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Permanent Transformation",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Lingering Transformation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Puppet\u2019s Curse",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Animal Mind",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Object Transformation"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Signature Trait",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Size Mastery",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Size Change",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Star-Spawn Body",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Alteration - Star-Spawn Body"
+    ],
+    "unresolved_prerequisites": [
+      "Alteration sphere (Aberrant Body (body) or Cosmic Body (body))"
+    ]
+  },
+  {
+    "key": "Alteration - Sustaining Shapeshift",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Transform Object",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration - Object Transformation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Alteration - Twist Essence",
+    "sphere": "Alteration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Alteration Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Blood - Cardiovascular Ascension",
+    "sphere": "Blood",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood - Cardiovascular Mastery",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Blood - Drain Lifeblood",
+    "sphere": "Blood",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Blood - Essence Manipulation",
+    "sphere": "Blood",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Combat Talent,Duelist - Ooze Ichor"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Blood - Overclock",
+    "sphere": "Blood",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood - Control Oxygenation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,18"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Blood - Puppet Master",
+    "sphere": "Blood",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood - Blood Puppet",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Blood - Sanguine Minion",
+    "sphere": "Blood",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood - Extract Blood Construct",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood - Lengthened Control",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Blood - Sanguiphilia",
+    "sphere": "Blood",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood - Martyr\u2019s Tithings",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,7"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Blood - Union Of Blood",
+    "sphere": "Blood",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Blood Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Call Planar Creature",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Channel Companion",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Companion Takeover",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Channel Companion",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Project Spirit"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Diagram",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Call Planar Creature",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Entrapping Circle",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Call Planar Creature"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Expendable Summons",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Call The Departed",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Greater Altered Size",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Altered Size",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Greater Healing",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Natural Aspect",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Conjuration - Greater Healing"
+    ],
+    "unresolved_prerequisites": [
+      "companion with 3 Hit Dice or greater"
+    ]
+  },
+  {
+    "key": "Conjuration - Incursion Link",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Link",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Otherworldly Audience",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Conjuration - Incursion Link"
+    ],
+    "unresolved_prerequisites": [
+      "Spell Conduit x2",
+      "Spell-Linked Companion"
+    ]
+  },
+  {
+    "key": "Conjuration - Possessive Companion",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Channel Companion",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Regenerating Companion",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Natural Aspect",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Swarm Companion",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Altered Size"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Troop Companion",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Conjuration - Vanishing Companion",
+    "sphere": "Conjuration",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Conjuration - Camouflaged Companion",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Corp Criadhach",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Duplicate",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Fleshcraft",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Costly Creation",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Creation - Costly Creation"
+    ],
+    "unresolved_prerequisites": [
+      "Creation sphere (Expanded Materials (material), Lengthened Creation, either [Change Material (alter), Forge (alter) and Permanent Change (advanced)] or [Create Materials (advanced)])"
+    ]
+  },
+  {
+    "key": "Creation - Create Materials",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Lengthened Creation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Create Minds Think Alike",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Exquisite Detail",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Bestow Intelligence",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Dissolution",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Potent Alteration"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Duplicate",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Exquisite Detail",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Fabricate",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Forge",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Fleshcraft",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Creation - Fleshcraft"
+    ],
+    "unresolved_prerequisites": [
+      "Creation sphere (any (material) talent)"
+    ]
+  },
+  {
+    "key": "Creation - Imperfect Recreation",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Duplicate",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Exquisite Detail",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Fleshcraft",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Animate Object",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Bestow Intelligence",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Bestow Life",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Integrate Item",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Potent Alteration",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Internal Creation",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Potent Alteration",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Creation - Internal Creation"
+    ],
+    "unresolved_prerequisites": [
+      "Distant Creation [range]"
+    ]
+  },
+  {
+    "key": "Creation - Magma Mastery",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Plasma Production",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Material Body",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Creation - Material Body"
+    ],
+    "unresolved_prerequisites": [
+      "Creation sphere (any (material) talent, Change Material (alter))"
+    ]
+  },
+  {
+    "key": "Creation - Mythical Material Maker",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Creation - Mythical Material Maker"
+    ],
+    "unresolved_prerequisites": [
+      "Creation sphere (any (material) talent)"
+    ]
+  },
+  {
+    "key": "Creation - Ooze Originator",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Acidic Creation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Permanent Change",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Change Material",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Expanded Materials",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Forge",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Plasma Projection",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Plasma Production",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - State Shift",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Change Material",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Creation - Sustenance",
+    "sphere": "Creation",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Creation - Sustenance"
+    ],
+    "unresolved_prerequisites": [
+      "Creation"
+    ]
+  },
+  {
+    "key": "Dark - Animated Shadow",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Shadow Lurk",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - Black And Black Morality",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Gaze Into The Abyss",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - Eternal Darkness",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Lingering Darkness",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - Lightless Penumbra",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Shadowed Mien",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - Melt Into Shadow",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Animated Shadow",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Flowing Darkness",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Shadow Lurk",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - Midnight",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Greater Darkness",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - One With The Void",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Step Through Darkness",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - Pitch Black",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Pure Darkness",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - Precision Shadowwalk",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Shadow Walker",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Step Through Darkness",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - Shadow Double",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Animated Shadow",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Shadow Lurk",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - Shadow Walker",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Step Through Darkness",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Dark - Vanish In Shadow",
+    "sphere": "Dark",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Dark - Hide In Darkness",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Astral Projection",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Project Spirit",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Astral Travel",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Astral Projection",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Project Spirit",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Avasculation",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Corpse Forge",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Corpse Manipulation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,3"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Create Haunt",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Haunting Apparition",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Create Soul Gem",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Cut The Cord",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Soul Trap",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Deadlord\u2019s Reach",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Death - Deadlord\u2019s Reach"
+    ],
+    "unresolved_prerequisites": [
+      "Death sphere (Icy Grip, any one (dominion) talent)"
+    ]
+  },
+  {
+    "key": "Death - Determined End",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Corpse Manipulation"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Enervation",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Drain",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Entwined Ruin",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Death - Entwined Ruin"
+    ],
+    "unresolved_prerequisites": [
+      "no prerequisite clause"
+    ]
+  },
+  {
+    "key": "Death - Evisceration",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Avasculation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Extended Command",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Command Undead",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Sustained Necromancy"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Greater Curse",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Death - Greater Curse"
+    ],
+    "unresolved_prerequisites": [
+      "Curse (ghost strike)"
+    ]
+  },
+  {
+    "key": "Death - Greater Undead",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Sustained Necromancy",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Permanent Undead",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Hollow Body",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Killing Gaze",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Death - Killing Gaze"
+    ],
+    "unresolved_prerequisites": [
+      "no prerequisite clause"
+    ]
+  },
+  {
+    "key": "Death - Mercy Killing",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Death - Mercy Killing"
+    ],
+    "unresolved_prerequisites": [
+      "Death sphere (Corpse Manipulation or Killing Curse)"
+    ]
+  },
+  {
+    "key": "Death - Nothing Shall Bear Your Name",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Soul Trap",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Inception",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Mass Charm",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Powerful Charm",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Permanent Undead",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Sustained Necromancy",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Possession",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Project Spirit",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Project Spirit",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Soul Drain",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Soul Trap",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Summon Spirit",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Temporal Projection",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Astral Projection",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Astral Travel",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Project Spirit",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,20"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Voluble Gravetongue",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Gravetongue"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Death - Written Out Of History",
+    "sphere": "Death",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Cut The Cord",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Nothing Shall Bear Your Name",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Soul Trap",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Inception",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Mass Charm",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Powerful Charm",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Distant Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Timeline Drift",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Time Warp",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - True Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unseeing Teleport",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,20"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Adaptive Admixture",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Admixture"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Blast Array",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Admixture",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Blast Salvo",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Greater Admixture",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Split Blast",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Blast Juggler",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Destruction - Blast Juggler"
+    ],
+    "unresolved_prerequisites": [
+      "Destruction Sphere (Energy Cloud or Energy Sphere)"
+    ]
+  },
+  {
+    "key": "Destruction - Calamity",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Destruction - Calamity"
+    ],
+    "unresolved_prerequisites": [
+      "Destruction sphere (Explosive Orb (blast shape) or Sculpt Blast (blast shape))"
+    ]
+  },
+  {
+    "key": "Destruction - Conflagrant Cluster",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 2,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREVARLT:SPHERES_DESTRUCTION_CONFLAGRANTCLUSTER_COUNT,2"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Crystal Cocoon",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Destruction - Crystal Cocoon"
+    ],
+    "unresolved_prerequisites": [
+      "Destruction sphere (any two (blast type) talents in the crystal blast type group including either Crystal Blast or Living Crystal Blast)"
+    ]
+  },
+  {
+    "key": "Destruction - Detonating Salvo",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Blast Salvo",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Explosive Orb"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Destructive Verticality",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Destruction - Destructive Verticality"
+    ],
+    "unresolved_prerequisites": [
+      "Destruction Sphere (Energy Sphere, Explosive Orb, or Sculpt Blast)"
+    ]
+  },
+  {
+    "key": "Destruction - Disintegrate",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Energy Cloud",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Erratic Blast",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Extreme Range",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Destruction - Extreme Range"
+    ],
+    "unresolved_prerequisites": [
+      "Extended Range [range] x2"
+    ]
+  },
+  {
+    "key": "Destruction - Grandmaster",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Knight\u2019s Blast"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Greater Admixture",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Admixture",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Hounding Sphere",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Energy Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Impact Burst",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Destruction - Impact Burst"
+    ],
+    "unresolved_prerequisites": [
+      "Destruction Sphere (Energy Strike, any (blast shape) talent which can target an area)"
+    ]
+  },
+  {
+    "key": "Destruction - Intractable Blast",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Magnifying Blast",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Destruction - Magnifying Blast"
+    ],
+    "unresolved_prerequisites": [
+      "Energy Strike [strike]"
+    ]
+  },
+  {
+    "key": "Destruction - Penetrating Blast",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Destruction - Radiation Blast",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Destruction - Radiation Blast"
+    ],
+    "unresolved_prerequisites": [
+      "Destruction sphere (any two (blast type) talents in the fire blast type group)"
+    ]
+  },
+  {
+    "key": "Destruction - Split Blast",
+    "sphere": "Destruction",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Admixture",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction - Blast Salvo"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Alternate Divinations Advanced",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Arc of Change",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Assurance of the Future",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Divine Future"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Cartographer\u2019s Divinations",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Detect Patronage",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Detect Spellcaster"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Discern Location",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Dowsing",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Divination - Discern Location"
+    ],
+    "unresolved_prerequisites": [
+      "Greater Divine [range]"
+    ]
+  },
+  {
+    "key": "Divination - Divine Identity",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Discern Individual",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Divine Knowledge",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Read Omens",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Expansive Vision",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Eye in the Sky",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Viewing"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Eyes Of The Cabal",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Prying Sight",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Greater Scrying",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Scrying",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Viewing",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Divination - Greater Scrying"
+    ],
+    "unresolved_prerequisites": [
+      "Greater Divine [range]"
+    ]
+  },
+  {
+    "key": "Divination - Hear Name",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Mechanical Counterintelligence",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Detect Scrying"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Otherworldly Viewing",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Viewing",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Divination - Otherworldly Viewing"
+    ],
+    "unresolved_prerequisites": [
+      "Greater Divine [range]"
+    ]
+  },
+  {
+    "key": "Divination - Penetrating Divination",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Power Of The Name",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Hear Name",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Read Omens",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Remote Casting",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Viewing",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Scrying",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Viewing",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Divination - Scrying"
+    ],
+    "unresolved_prerequisites": [
+      "Greater Divine [range]"
+    ]
+  },
+  {
+    "key": "Divination - Sense Observation",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Detect Scrying"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Sensitive Divinations",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Soulbroker\u2019s Sight",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Divine Treasure",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Speak And I Listen",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Hear Name"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Trapfinding",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - See Hazard",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - True Perception",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Ghost Sight",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Unhooded Sight",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Divination - Unobscured Vision",
+    "sphere": "Divination",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Divination - Ghost Sight",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Alternative Energy",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Energy Enhancement",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Antimagic Aegis",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Magic Sink",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Spell Ward",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Ascetic Control",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Bestow Life",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Animate Object",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Bestow Intelligence",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Critical Climax",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Deadly Weapon",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Give Magic Life",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Bestow Intelligence",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Heart of Hope and Fear",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Normalize",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Hold on Hope"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Inherent Enhancement",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Deep Enhancement",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Mental Enhancement",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Physical Enhancement",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,17"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Normalize",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Referential Enhancements",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Deep Enhancement",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Enhancement - Referential Enhancements"
+    ],
+    "unresolved_prerequisites": [
+      "Mass Enhancement [mass]"
+    ]
+  },
+  {
+    "key": "Enhancement - Reverse Gravity",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Lighten",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Enhancement - Vicious Accuracy",
+    "sphere": "Enhancement",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Enhancement - Deadly Weapon",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Enhancement - Vicious Accuracy"
+    ],
+    "unresolved_prerequisites": [
+      "causing any attack rolls made with the weapon to use a d24 rather than a d20 (if the attack roll would normally use a d16, use a d20 instead. If the attack roll would already use a d24, use a d30 instead)"
+    ]
+  },
+  {
+    "key": "Fallen Fey - Banish to Faerie",
+    "sphere": "Fallen Fey",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Fallen Fey - Banish to Faerie"
+    ],
+    "unresolved_prerequisites": [
+      "8th caster or higher"
+    ]
+  },
+  {
+    "key": "Fallen Fey - Blinding Beauty",
+    "sphere": "Fallen Fey",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fallen Fey - Bound To Nature",
+    "sphere": "Fallen Fey",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fallen Fey - Drowning Kiss",
+    "sphere": "Fallen Fey",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fallen Fey - Fairy Ring Traveler",
+    "sphere": "Fallen Fey",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Fallen Fey - Fairy Ring Traveler"
+    ],
+    "unresolved_prerequisites": [
+      "5th caster or higher"
+    ]
+  },
+  {
+    "key": "Fallen Fey - Fey Initiation",
+    "sphere": "Fallen Fey",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey - Greater Fey-Link",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fallen Fey - Fey Invisibility",
+    "sphere": "Fallen Fey",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey - Fade",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fallen Fey - Steal Skin",
+    "sphere": "Fallen Fey",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fallen Fey Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Atonement",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Cat\u2019s Luck",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Compel Possessor",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Exorcism",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Geas",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Greater Geas",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Mark Of Judgment",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Consecrated Ground",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 2,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Bound Consecration",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREVARLT:SPHERES_FATE_CONSECRATEDGROUND_COUNT,2"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Death",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Fate - Death"
+    ],
+    "unresolved_prerequisites": [
+      "one (motif) talent"
+    ]
+  },
+  {
+    "key": "Fate - Declare Fate",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Elude Fate",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Entropic Aura",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Excise Triumph",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Execration",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Fate - Execration"
+    ],
+    "unresolved_prerequisites": [
+      "at least one [curse] (word) talent"
+    ]
+  },
+  {
+    "key": "Fate - Falsehood",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Flounder",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Geas",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Get a Word In",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Greater Geas",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Geas",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Heroism",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Bless",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - The High Priestess",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Fate - The High Priestess"
+    ],
+    "unresolved_prerequisites": [
+      "one (motif) talent"
+    ]
+  },
+  {
+    "key": "Fate - Hold on Hope",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Mark Of Judgment",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Geas",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate - Greater Geas",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Undying Obstinance",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Fate - Weave The Fates",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Fate - Weave The Fates"
+    ],
+    "unresolved_prerequisites": [
+      "Fate sphere (any one (motif), any one (arcana))"
+    ]
+  },
+  {
+    "key": "Fate - Weight of Command",
+    "sphere": "Fate",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Fate Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Illusion - Advanced Invisibility",
+    "sphere": "Illusion",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Suppression",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Illusion - Deceive Dweomer",
+    "sphere": "Illusion",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Manipulate Aura",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Illusion - Distant Deception",
+    "sphere": "Illusion",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Illusion - Distant Deception"
+    ],
+    "unresolved_prerequisites": [
+      "Ranged Illusion [range] x2"
+    ]
+  },
+  {
+    "key": "Illusion - Expand Illusion",
+    "sphere": "Illusion",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Enlarged Illusion",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Illusion - Impawsible Perspective",
+    "sphere": "Illusion",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Manipulate Aura",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Illusion - Permanent Image",
+    "sphere": "Illusion",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Lingering Illusion",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Illusion - Phantom Mind",
+    "sphere": "Illusion",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Lingering Illusion",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Programmed Illusion",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,8"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Illusion - Phantom Pain",
+    "sphere": "Illusion",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Illusion - Phantom Pain"
+    ],
+    "unresolved_prerequisites": [
+      "no prerequisite clause"
+    ]
+  },
+  {
+    "key": "Illusion - Spell Disruption",
+    "sphere": "Illusion",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Blur",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Illusion - Manipulate Aura",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Feline Good",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Lingering Resilience",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Hypervitalize",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Restore Health",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Revitalize",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Make Whole",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Break Enchantment",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Restore Senses",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Restore Spirit",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Mythbound Sustenance",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Revitalize",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Reincarnation",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resurrection",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resuscitate",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Reincarnation Instant",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Reincarnation",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resurrection",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resuscitate",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Reincarnation Manipulated",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Reincarnation",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resurrection",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resuscitate",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,20"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Resurrection",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resuscitate",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Resurrection Greater",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Break Enchantment",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Make Whole",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Restore Senses",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Restore Spirit",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resurrection",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resuscitate",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Resurrection Supreme",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Break Enchantment",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Make Whole",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Restore Senses",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Restore Spirit",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resurrection",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Resuscitate",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,20",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Life - Resurrection Supreme"
+    ],
+    "unresolved_prerequisites": [
+      "Greater Resurrection (advanced)"
+    ]
+  },
+  {
+    "key": "Life - Soul Consumption",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Death - Create Soul Gem",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Revitalize",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Life - Transfiguration",
+    "sphere": "Life",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Life - Restore Health",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Light - Daylight",
+    "sphere": "Light",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Light - Diffuse Body",
+    "sphere": "Light",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light - Flicker",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,7"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Light - Everglow",
+    "sphere": "Light",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light - Lingering Glow",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Light - Incarnate Glow",
+    "sphere": "Light",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light - Flicker",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Light - Light Speed",
+    "sphere": "Light",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light - Flicker",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light - Incarnate Glow",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Light - Prismatic Radiance",
+    "sphere": "Light",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light - Searing Light",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light - Style",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Light - Radiation",
+    "sphere": "Light",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light - Irradiance",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Light - Star Genesis",
+    "sphere": "Light",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Light - Intensity Control",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Archmagi\u2019s Methods",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Initiate\u2019s Training",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Boosted Shuffle",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Communal Knowledge",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Knowledge Drain",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Manathief",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Conquer",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Imbued Vessel",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Cruel King",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Flow",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Vassalize",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Curse Of Mana",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Essential Shuffle",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Eternal Shackles",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Infinite Bond",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mana - Eternal Shackles"
+    ],
+    "unresolved_prerequisites": [
+      "Ranged Mana x2"
+    ]
+  },
+  {
+    "key": "Mana - Flexible Knowledge",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Transfer",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Flash of Arcana",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Forced Conversion",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Oversaturation Surge",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Gift of Insight",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Gift That Keeps on Giving",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Great Amplification",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 99,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mana - Great Amplification"
+    ],
+    "unresolved_prerequisites": [
+      "at least one (amp) talent"
+    ]
+  },
+  {
+    "key": "Mana - Harness Ambient Knowledge",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mana - Harness Ambient Knowledge"
+    ],
+    "unresolved_prerequisites": [
+      "Counterspell",
+      "magic skill bonus +5"
+    ]
+  },
+  {
+    "key": "Mana - Infinite Bond",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mana - Infinite Bond"
+    ],
+    "unresolved_prerequisites": [
+      "Ranged Mana [range] x2"
+    ]
+  },
+  {
+    "key": "Mana - Intrinsic Shuffle",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Flexible Shuffle",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Knowledge Drain",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Manathief",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Laws Of Absolute Power",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Enlarged Shuffle",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Flexible Shuffle",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,20"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Limited Manifestation",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mana - Limited Manifestation"
+    ],
+    "unresolved_prerequisites": [
+      "at least 3 other spheres known"
+    ]
+  },
+  {
+    "key": "Mana - Magic Replication",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Manathief",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Manifestation",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Limited Manifestation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,20",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mana - Manifestation"
+    ],
+    "unresolved_prerequisites": [
+      "at least 3 other spheres known"
+    ]
+  },
+  {
+    "key": "Mana - Mark Of Incompetency",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mana - Mark Of Incompetency"
+    ],
+    "unresolved_prerequisites": [
+      "no prerequisite clause"
+    ]
+  },
+  {
+    "key": "Mana - Mark of Sudden Competence",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Mark Of Incompetency",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Mark Of Instability",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Mythbleeder",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Permanent Bond",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Magical Conduit",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Permanent Gift",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Flexible Knowledge",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift of Insight",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift That Keeps on Giving",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Reactive Shuffle",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mana - Reactive Shuffle"
+    ],
+    "unresolved_prerequisites": [
+      "no prerequisite clause"
+    ]
+  },
+  {
+    "key": "Mana - Reset Duration",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Runic Magic",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Strip Magical Knowledge",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Knowledge Drain",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Manathief",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Ties That Bind",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Infinite Bond",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Magical Conduit",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mana - Ties That Bind"
+    ],
+    "unresolved_prerequisites": [
+      "Ranged Mana x2"
+    ]
+  },
+  {
+    "key": "Mana - Tradition Override",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Gift Of Knowledge"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Unbind Spell",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Essentialize",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - Vassalize",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Flow",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,7"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mana - What\u2019s Yours Is Ours",
+    "sphere": "Mana",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mana - Soulmate",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Catatonia",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Powerful Charm",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Sleep",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Deadly Vision",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Vision",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Discern Alien Cognition",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Epiphany",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Intuit Knowledge",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Flawless Precision",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Arcane Calculation",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Rapid Processing",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Greater Communication",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Project Thoughts",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Insanity",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Confusion",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Memetic Link",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Enthrall",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Powerful Charm",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Project Thoughts",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mind - Memetic Link"
+    ],
+    "unresolved_prerequisites": [
+      "Mass Charm [mass]"
+    ]
+  },
+  {
+    "key": "Mind - Mind Control",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Enthrall",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Powerful Charm",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Project Thoughts",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Mindscape",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Mindscape Configuration",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Mindscape",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Psychic Backlash",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Psychic Vengeance"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Recondite Stimuli",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Mind - Zeitgeist",
+    "sphere": "Mind",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind - Project Thoughts",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Mind - Zeitgeist"
+    ],
+    "unresolved_prerequisites": [
+      "Mass Charm [mass]"
+    ]
+  },
+  {
+    "key": "Nature - Cyclone",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Manipulate Nature",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Cyclone"
+    ],
+    "unresolved_prerequisites": [
+      "(air) package"
+    ]
+  },
+  {
+    "key": "Nature - Earthquake",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Manipulate Nature",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Earthquake"
+    ],
+    "unresolved_prerequisites": [
+      "(earth) package"
+    ]
+  },
+  {
+    "key": "Nature - Eternal Steel",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Living Steel",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,8",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Eternal Steel"
+    ],
+    "unresolved_prerequisites": [
+      "(metal) package",
+      "(plant) package"
+    ]
+  },
+  {
+    "key": "Nature - Freezing Geyser",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Create Nature",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Temperature",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Freezing Geyser"
+    ],
+    "unresolved_prerequisites": [
+      "(fire) and (water) package"
+    ]
+  },
+  {
+    "key": "Nature - Living Steel",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Living Steel"
+    ],
+    "unresolved_prerequisites": [
+      "(metal) package",
+      "(plant) package"
+    ]
+  },
+  {
+    "key": "Nature - Materials Of Legend",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Metal Mastery",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Materials Of Legend"
+    ],
+    "unresolved_prerequisites": [
+      "(metal) package"
+    ]
+  },
+  {
+    "key": "Nature - Natural Ally",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Friend To Wildlife",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Nature - Peace And Love",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Mind Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Nature - Persistent Fog Cloud",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Deep Nature",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Persistent Fog Cloud"
+    ],
+    "unresolved_prerequisites": [
+      "(water) package"
+    ]
+  },
+  {
+    "key": "Nature - Phoenix Resurgence",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Resist Elements",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Wreath Of Elements",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Phoenix Resurgence"
+    ],
+    "unresolved_prerequisites": [
+      "(fire) package"
+    ]
+  },
+  {
+    "key": "Nature - Rapid Growth",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Create Nature",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Rapid Growth"
+    ],
+    "unresolved_prerequisites": [
+      "(plant) package"
+    ]
+  },
+  {
+    "key": "Nature - Tsunami",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Manipulate Nature",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Tsunami"
+    ],
+    "unresolved_prerequisites": [
+      "(water) package"
+    ]
+  },
+  {
+    "key": "Nature - Volcano",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Manipulate Nature",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Volcano"
+    ],
+    "unresolved_prerequisites": [
+      "(fire) package"
+    ]
+  },
+  {
+    "key": "Nature - Whispering Elements",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Nature - Wildfire",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Nature - Wildfire"
+    ],
+    "unresolved_prerequisites": [
+      "(fire) package",
+      "Ranged Geomancy [range] x2"
+    ]
+  },
+  {
+    "key": "Nature - Zoetic Geomancy",
+    "sphere": "Nature",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature - Deep Nature",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Adaptation",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Energy Resistance",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Antimagic Aura",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Spell Ward",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Automatic Fortification",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Fortifier",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Complex Glyph",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Glyph",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Improved Negation",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Negation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Mobile Ward",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Layered Glyph",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Glyph"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Mage\u2019s Wager",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Glyph",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Complex Glyph",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Permanent Ward",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Enduring Protection",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Pithing Protection",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Spell Selectivity",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Spell Ward",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Planar Refuge",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Preserve Integrity",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Rapid Glyph",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Glyph"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Spell-Eater",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Negation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Spell Selectivity",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Spell Ward",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Stability Bottleneck",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Spell Selectivity",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Spell Ward",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Subtle",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Tripped Glyph",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Glyph",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Rapid Glyph"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - True Protection",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Unanswerable",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Energy Resistance"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Undying",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,7",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Protection - Undying"
+    ],
+    "unresolved_prerequisites": [
+      "Deathless (aegis)"
+    ]
+  },
+  {
+    "key": "Protection - Unplottable",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Resistance",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Protection - Voiding Suppression",
+    "sphere": "Protection",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Spell Selectivity",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Protection - Spell Ward",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Telekinesis - Affix",
+    "sphere": "Telekinesis",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Effortless Telekinesis",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Idle Concentration",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Telekinesis - Astral Affixation",
+    "sphere": "Telekinesis",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Affix",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Effortless Telekinesis",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Idle Concentration",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Telekinesis - Brutalizing Bludgeon",
+    "sphere": "Telekinesis",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Telekinetic Maneuver",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Telekinesis - Choking Grasp",
+    "sphere": "Telekinesis",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Telekinetic Crush",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Telekinesis - Disperse Force",
+    "sphere": "Telekinesis",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Quick Reactions",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Telekinetic Push",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Telekinesis - Effortless Telekinesis",
+    "sphere": "Telekinesis",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Telekinesis - Focused Power",
+    "sphere": "Telekinesis",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Powerful Telekinesis",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Telekinesis - Gravity Manipulation",
+    "sphere": "Telekinesis",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Gravity Shift",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Telekinesis - Linear Acceleration",
+    "sphere": "Telekinesis",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Acceleration",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Greater Speed",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Telekinesis - Puppet",
+    "sphere": "Telekinesis",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Finesse",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Telekinesis - Telekinetic Maneuver",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Advanced Rewind",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time - Age",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Combo Breaker",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time - Eject"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Divergent Retry",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time - Retry"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Grey Hawk\u2019s Gambit",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time - Shuffle Time"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Improved Eject",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time - Eject",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,17"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Interlocutor Across Time",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time - Witness Across Time",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Past Sight",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Query Self",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Reversion",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Reversion Complete",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time - Reversion",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Shuffle Time",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Temporal Haste",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time - Improved Haste",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,9"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Temporal Stasis",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Time Clone",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Timeless Crane\u2019s Hourglass",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Time - Witness Across Time",
+    "sphere": "Time",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "War - Carry The Flag",
+    "sphere": "War",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "War - Commander",
+    "sphere": "War",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "War - Monument",
+    "sphere": "War",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "War - Penetrating Totems",
+    "sphere": "War",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "War - Totem Of Tenuous Mortality",
+    "sphere": "War",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,War Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Brain Preservation",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Organ Detachment",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Brutalizing Shunt",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Warp - Brutalizing Shunt"
+    ],
+    "unresolved_prerequisites": [
+      "Warp sphere (Create Gap (space) or Unseeing Teleport)"
+    ]
+  },
+  {
+    "key": "Warp - Create Demiplane",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Extradimensional Room",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Creation - Expanded Materials",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Dimensional Lock",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Plane Manipulator",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Dimensional Tracery",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Warp - Dimensional Tracery"
+    ],
+    "unresolved_prerequisites": [
+      "Warp Sphere (teleport beacon or warp link)"
+    ]
+  },
+  {
+    "key": "Warp - Enduring Portal",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Portal",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Teleport Beacon",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unwilling Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Wormhole",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Warp - Enduring Portal"
+    ],
+    "unresolved_prerequisites": [
+      "Mass Teleport [mass]"
+    ]
+  },
+  {
+    "key": "Warp - Extradimensional Capacity",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 99,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Extradimensional Storage"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Extradimensional Torpor",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 2,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Extradimensional Storage",
+      "PREVARLT:SPHERES_WARP_EXTRADIMENSIONALTORPOR_COUNT,2"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Flawless Teleport",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Distant Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - True Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unseeing Teleport",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Greater Planar Zone",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Manifest Planar Zone",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Group Teleport",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Warp - Group Teleport"
+    ],
+    "unresolved_prerequisites": [
+      "Mass Teleport [mass]",
+      "Ranged Warp [range]"
+    ]
+  },
+  {
+    "key": "Warp - Lethal Teleport",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unwilling Teleport",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Manifest Planar Zone",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 99,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Organ Detachment",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Planeshift",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Distant Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - True Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unseeing Teleport",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Planting Warp",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Teleport Object",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unwilling Teleport"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Portal",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Wormhole",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Warp - Portal"
+    ],
+    "unresolved_prerequisites": [
+      "Mass Teleport [mass]"
+    ]
+  },
+  {
+    "key": "Warp - Portal Interstice",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Extradimensional Room",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Portal",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Wormhole",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Warp - Portal Interstice"
+    ],
+    "unresolved_prerequisites": [
+      "Mass Teleport [mass]"
+    ]
+  },
+  {
+    "key": "Warp - Portal Network",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Enduring Portal",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Portal",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Teleport Beacon",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unwilling Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Wormhole",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Warp - Portal Network"
+    ],
+    "unresolved_prerequisites": [
+      "Mass Teleport [mass]"
+    ]
+  },
+  {
+    "key": "Warp - Portal Security",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Randomized Planeshift",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unseeing Teleport",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Repel The Unnatural",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Plane Manipulator"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Store Structure",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Extradimensional Storage",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Teleport Structure",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Teleport Object",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Time Warp",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Time Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Distant Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - True Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unseeing Teleport",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,20"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Timeline Drift",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Distant Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unseeing Teleport",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - True Teleport",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Distant Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unseeing Teleport",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Universal Teleport",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Distant Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Flawless Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - True Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unseeing Teleport",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,17"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Warp Manipulator",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Plane Manipulator",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Unwilling Teleport",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Warp - Warping Frenzy",
+    "sphere": "Warp",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Pouncing Teleport",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Warp - Segmented Warp",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Biohazard",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Radiation Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Boiling Lord",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Cacophonic Clap",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Storm Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Climate",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Weather - Climate"
+    ],
+    "unresolved_prerequisites": [
+      "Greater Size [range]"
+    ]
+  },
+  {
+    "key": "Weather - Climatic Shift",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Lengthened Weather",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Cold Lord",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Contaminated Blows",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Radiation Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Contamination Lord",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Radiation Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Dehydration Pulse",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Desert Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Desert Lord",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Fire Tornadoes",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Wind Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Weather - Fire Tornadoes"
+    ],
+    "unresolved_prerequisites": [
+      "(fire) package"
+    ]
+  },
+  {
+    "key": "Weather - Heat Lord",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Interference Cloud",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Radiation Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Melt Skin",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Radiation Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Radiation Lord",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Radiotherapy",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Destruction Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Radiation Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Rain Bomb",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Rain Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Rain Lord",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Tornado Lord",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather - Wind Lord",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Weather - Volcano Lord",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Nature Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Weather - Volcano Lord"
+    ],
+    "unresolved_prerequisites": [
+      "(earth) package",
+      "(fire) package"
+    ]
+  },
+  {
+    "key": "Weather - Wind Lord",
+    "sphere": "Weather",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Weather Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,1"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Bear - Antarctic Circle",
+    "sphere": "Bear",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Bear Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Bear - Antarctic Circle"
+    ],
+    "unresolved_prerequisites": [
+      "5th caster level or higher"
+    ]
+  },
+  {
+    "key": "Bear - Arctic Circle",
+    "sphere": "Bear",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Bear Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Bear - Arctic Circle"
+    ],
+    "unresolved_prerequisites": [
+      "Antarctic Circle",
+      "10th caster level or higher"
+    ]
+  },
+  {
+    "key": "Bear - Arm Bears",
+    "sphere": "Bear",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Bear Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - AI Transformation",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - AI Transformation Greater",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy - AI Transformation",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,15"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - Autopilot",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - Charge Vampirism",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy - Power"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - Eternal Sprite",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy - Lingering Sprite",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - Expel AI",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy - Consume Sprite",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - Glitch Manipulation",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy - Glitch-Prone Sprites"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - Glitch-Prone Sprites",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - Power",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - Relic Manipulation",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Technomancy - Sprite Targeting",
+    "sphere": "Technomancy",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Technomancy Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Veilweaving - Bloodbinder",
+    "sphere": "Veilweaving",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Veilweaving Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,12",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Veilweaving - Bloodbinder"
+    ],
+    "unresolved_prerequisites": [
+      "Bind Obscure Chakra",
+      "ability to bind Blood veils"
+    ]
+  },
+  {
+    "key": "Veilweaving - Essence Charge",
+    "sphere": "Veilweaving",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Veilweaving Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Veilweaving - Improved Shift Veil",
+    "sphere": "Veilweaving",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Veilweaving Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,10",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Veilweaving - Improved Shift Veil"
+    ],
+    "unresolved_prerequisites": [
+      "Shift Veil",
+      "must be able to bind veils to a chakra slot"
+    ]
+  },
+  {
+    "key": "Veilweaving - Twin Veil",
+    "sphere": "Veilweaving",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Veilweaving Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,9"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Veilweaving - Daevic\u2019s Tradition",
+    "sphere": "Veilweaving",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Veilweaving Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Veilweaving - Guru\u2019s Tradition",
+    "sphere": "Veilweaving",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Veilweaving Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Veilweaving - Vizier\u2019s Tradition",
+    "sphere": "Veilweaving",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Veilweaving Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,5"
+    ],
+    "unresolved_prerequisites": []
+  },
+  {
+    "key": "Veilweaving - Obscure Chakra",
+    "sphere": "Veilweaving",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Veilweaving Sphere",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Veilweaving - Obscure Chakra"
+    ],
+    "unresolved_prerequisites": [
+      "Any (tradition) Veilweaving talent"
+    ]
+  },
+  {
+    "key": "Veilweaving - Bind Obscure Chakra",
+    "sphere": "Veilweaving",
+    "advanced": true,
+    "repeat_limit": 1,
+    "mechanics": [],
+    "prerequisites": [
+      "PREABILITY:1,CATEGORY=Spheres Magic Talent,Veilweaving Sphere",
+      "PREVARGTEQ:SPHERES_CASTER_LEVEL,11",
+      "PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication,Reviewed - Veilweaving - Bind Obscure Chakra"
+    ],
+    "unresolved_prerequisites": [
+      "Obscure Chakra"
+    ]
+  }
+]

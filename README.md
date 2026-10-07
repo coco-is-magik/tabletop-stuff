@@ -115,8 +115,9 @@ The extended-package inventory below does not define class completion.
 
 The first-party source at `/bigdisk/programming/pathfinder1e/data/spheres`
 contains thin classes and a basic Power/Might catalog. Catalog coverage is 53
-base spheres and 2,330 basic talents; **full talent-specific mechanical automation
-is incomplete**. Supported behavior and remaining requirements:
+base spheres, 2,330 basic talents and 411 advanced talents; **full
+talent-specific mechanical automation is incomplete**. Supported behavior and
+remaining requirements:
 `/bigdisk/programming/pathfinder1e/docs/sphere-catalog.md`.
 Power/Might feat records and selected mechanics are also available. This is not
 complete feat automation; unresolved prerequisites require explicit adjudication.

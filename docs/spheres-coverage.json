@@ -4,7 +4,8 @@
     "Empty mechanics arrays can describe tactical-only effects or unimplemented effects.",
     "Generators also emit mechanics outside these arrays; review source and generated LSTs.",
     "Nonempty mechanics arrays do not prove full implementation or runtime verification.",
-    "Basic talent review excludes four existing Destruction records and all advanced/legendary talents.",
+    "Basic talent review excludes four existing Destruction records; legendary talents are not imported.",
+    "Advanced talents are recorded and separately counted; entries with unresolved prerequisite clauses require GM approval.",
     "Classes, traditions, racial replacements and prestige coverage require separate audits.",
     "Received-effect templates are counted separately; they do not certify talent or casting lifecycle completion."
   ],
@@ -13,6 +14,7 @@
     "power": 26
   },
   "source_basic_talents": 2330,
+  "source_advanced_talents": 411,
   "generated_basic_talents": {
     "records": 2326,
     "records_with_recorded_mechanics": 804,
@@ -1540,6 +1542,670 @@
       "Wrestling - Twin Tie-Up",
       "Wrestling - Vicious Grappler"
     ]
+  },
+  "generated_advanced_talents": {
+    "records": 411,
+    "records_with_recorded_mechanics": 0,
+    "records_without_recorded_mechanics": [
+      "Alteration - Diffuse Swarm",
+      "Alteration - Elemental Purity",
+      "Alteration - Energy Manipulation",
+      "Alteration - Extreme Changes",
+      "Alteration - Fusion",
+      "Alteration - Homogenize",
+      "Alteration - Manipulate Healing",
+      "Alteration - Mechanical Customization",
+      "Alteration - Permanent Transformation",
+      "Alteration - Puppet’s Curse",
+      "Alteration - Signature Trait",
+      "Alteration - Size Mastery",
+      "Alteration - Star-Spawn Body",
+      "Alteration - Sustaining Shapeshift",
+      "Alteration - Transform Object",
+      "Alteration - Twist Essence",
+      "Bear - Antarctic Circle",
+      "Bear - Arctic Circle",
+      "Bear - Arm Bears",
+      "Blood - Cardiovascular Ascension",
+      "Blood - Drain Lifeblood",
+      "Blood - Essence Manipulation",
+      "Blood - Overclock",
+      "Blood - Puppet Master",
+      "Blood - Sanguine Minion",
+      "Blood - Sanguiphilia",
+      "Blood - Union Of Blood",
+      "Conjuration - Call Planar Creature",
+      "Conjuration - Channel Companion",
+      "Conjuration - Companion Takeover",
+      "Conjuration - Diagram",
+      "Conjuration - Entrapping Circle",
+      "Conjuration - Expendable Summons",
+      "Conjuration - Greater Altered Size",
+      "Conjuration - Greater Healing",
+      "Conjuration - Incursion Link",
+      "Conjuration - Possessive Companion",
+      "Conjuration - Regenerating Companion",
+      "Conjuration - Swarm Companion",
+      "Conjuration - Troop Companion",
+      "Conjuration - Vanishing Companion",
+      "Creation - Corp Criadhach",
+      "Creation - Costly Creation",
+      "Creation - Create Materials",
+      "Creation - Create Minds Think Alike",
+      "Creation - Dissolution",
+      "Creation - Duplicate",
+      "Creation - Fabricate",
+      "Creation - Fleshcraft",
+      "Creation - Imperfect Recreation",
+      "Creation - Integrate Item",
+      "Creation - Internal Creation",
+      "Creation - Magma Mastery",
+      "Creation - Material Body",
+      "Creation - Mythical Material Maker",
+      "Creation - Ooze Originator",
+      "Creation - Permanent Change",
+      "Creation - Plasma Projection",
+      "Creation - State Shift",
+      "Creation - Sustenance",
+      "Dark - Animated Shadow",
+      "Dark - Black And Black Morality",
+      "Dark - Eternal Darkness",
+      "Dark - Lightless Penumbra",
+      "Dark - Melt Into Shadow",
+      "Dark - Midnight",
+      "Dark - One With The Void",
+      "Dark - Pitch Black",
+      "Dark - Precision Shadowwalk",
+      "Dark - Shadow Double",
+      "Dark - Shadow Walker",
+      "Dark - Vanish In Shadow",
+      "Death - Astral Projection",
+      "Death - Astral Travel",
+      "Death - Avasculation",
+      "Death - Corpse Forge",
+      "Death - Create Haunt",
+      "Death - Create Soul Gem",
+      "Death - Cut The Cord",
+      "Death - Deadlord’s Reach",
+      "Death - Determined End",
+      "Death - Enervation",
+      "Death - Entwined Ruin",
+      "Death - Evisceration",
+      "Death - Extended Command",
+      "Death - Greater Curse",
+      "Death - Greater Undead",
+      "Death - Hollow Body",
+      "Death - Killing Gaze",
+      "Death - Mercy Killing",
+      "Death - Nothing Shall Bear Your Name",
+      "Death - Permanent Undead",
+      "Death - Possession",
+      "Death - Project Spirit",
+      "Death - Soul Drain",
+      "Death - Soul Trap",
+      "Death - Summon Spirit",
+      "Death - Temporal Projection",
+      "Death - Voluble Gravetongue",
+      "Death - Written Out Of History",
+      "Destruction - Adaptive Admixture",
+      "Destruction - Blast Array",
+      "Destruction - Blast Juggler",
+      "Destruction - Calamity",
+      "Destruction - Conflagrant Cluster",
+      "Destruction - Crystal Cocoon",
+      "Destruction - Destructive Verticality",
+      "Destruction - Detonating Salvo",
+      "Destruction - Disintegrate",
+      "Destruction - Energy Cloud",
+      "Destruction - Erratic Blast",
+      "Destruction - Extreme Range",
+      "Destruction - Grandmaster",
+      "Destruction - Greater Admixture",
+      "Destruction - Hounding Sphere",
+      "Destruction - Impact Burst",
+      "Destruction - Intractable Blast",
+      "Destruction - Magnifying Blast",
+      "Destruction - Penetrating Blast",
+      "Destruction - Radiation Blast",
+      "Destruction - Split Blast",
+      "Divination - Alternate Divinations Advanced",
+      "Divination - Arc of Change",
+      "Divination - Assurance of the Future",
+      "Divination - Cartographer’s Divinations",
+      "Divination - Detect Patronage",
+      "Divination - Discern Location",
+      "Divination - Divine Identity",
+      "Divination - Divine Knowledge",
+      "Divination - Expansive Vision",
+      "Divination - Eye in the Sky",
+      "Divination - Eyes Of The Cabal",
+      "Divination - Greater Scrying",
+      "Divination - Hear Name",
+      "Divination - Mechanical Counterintelligence",
+      "Divination - Otherworldly Viewing",
+      "Divination - Penetrating Divination",
+      "Divination - Power Of The Name",
+      "Divination - Read Omens",
+      "Divination - Remote Casting",
+      "Divination - Scrying",
+      "Divination - Sense Observation",
+      "Divination - Sensitive Divinations",
+      "Divination - Soulbroker’s Sight",
+      "Divination - Speak And I Listen",
+      "Divination - Trapfinding",
+      "Divination - True Perception",
+      "Divination - Unobscured Vision",
+      "Enhancement - Alternative Energy",
+      "Enhancement - Antimagic Aegis",
+      "Enhancement - Ascetic Control",
+      "Enhancement - Bestow Life",
+      "Enhancement - Critical Climax",
+      "Enhancement - Give Magic Life",
+      "Enhancement - Heart of Hope and Fear",
+      "Enhancement - Inherent Enhancement",
+      "Enhancement - Normalize",
+      "Enhancement - Referential Enhancements",
+      "Enhancement - Reverse Gravity",
+      "Enhancement - Vicious Accuracy",
+      "Fallen Fey - Banish to Faerie",
+      "Fallen Fey - Blinding Beauty",
+      "Fallen Fey - Bound To Nature",
+      "Fallen Fey - Drowning Kiss",
+      "Fallen Fey - Fairy Ring Traveler",
+      "Fallen Fey - Fey Initiation",
+      "Fallen Fey - Fey Invisibility",
+      "Fallen Fey - Steal Skin",
+      "Fate - Atonement",
+      "Fate - Cat’s Luck",
+      "Fate - Compel Possessor",
+      "Fate - Consecrated Ground",
+      "Fate - Death",
+      "Fate - Declare Fate",
+      "Fate - Elude Fate",
+      "Fate - Entropic Aura",
+      "Fate - Excise Triumph",
+      "Fate - Execration",
+      "Fate - Falsehood",
+      "Fate - Flounder",
+      "Fate - Geas",
+      "Fate - Get a Word In",
+      "Fate - Greater Geas",
+      "Fate - Heroism",
+      "Fate - Hold on Hope",
+      "Fate - Mark Of Judgment",
+      "Fate - The High Priestess",
+      "Fate - Undying Obstinance",
+      "Fate - Weave The Fates",
+      "Fate - Weight of Command",
+      "Illusion - Advanced Invisibility",
+      "Illusion - Deceive Dweomer",
+      "Illusion - Distant Deception",
+      "Illusion - Expand Illusion",
+      "Illusion - Impawsible Perspective",
+      "Illusion - Permanent Image",
+      "Illusion - Phantom Mind",
+      "Illusion - Phantom Pain",
+      "Illusion - Spell Disruption",
+      "Life - Feline Good",
+      "Life - Hypervitalize",
+      "Life - Make Whole",
+      "Life - Mythbound Sustenance",
+      "Life - Reincarnation",
+      "Life - Reincarnation Instant",
+      "Life - Reincarnation Manipulated",
+      "Life - Resurrection",
+      "Life - Resurrection Greater",
+      "Life - Resurrection Supreme",
+      "Life - Soul Consumption",
+      "Life - Transfiguration",
+      "Light - Daylight",
+      "Light - Diffuse Body",
+      "Light - Everglow",
+      "Light - Incarnate Glow",
+      "Light - Light Speed",
+      "Light - Prismatic Radiance",
+      "Light - Radiation",
+      "Light - Star Genesis",
+      "Mana - Archmagi’s Methods",
+      "Mana - Boosted Shuffle",
+      "Mana - Communal Knowledge",
+      "Mana - Conquer",
+      "Mana - Cruel King",
+      "Mana - Curse Of Mana",
+      "Mana - Essential Shuffle",
+      "Mana - Eternal Shackles",
+      "Mana - Flash of Arcana",
+      "Mana - Flexible Knowledge",
+      "Mana - Forced Conversion",
+      "Mana - Gift That Keeps on Giving",
+      "Mana - Gift of Insight",
+      "Mana - Great Amplification",
+      "Mana - Harness Ambient Knowledge",
+      "Mana - Infinite Bond",
+      "Mana - Intrinsic Shuffle",
+      "Mana - Knowledge Drain",
+      "Mana - Laws Of Absolute Power",
+      "Mana - Limited Manifestation",
+      "Mana - Magic Replication",
+      "Mana - Manathief",
+      "Mana - Manifestation",
+      "Mana - Mark Of Incompetency",
+      "Mana - Mark of Sudden Competence",
+      "Mana - Mythbleeder",
+      "Mana - Permanent Bond",
+      "Mana - Permanent Gift",
+      "Mana - Reactive Shuffle",
+      "Mana - Reset Duration",
+      "Mana - Runic Magic",
+      "Mana - Strip Magical Knowledge",
+      "Mana - Ties That Bind",
+      "Mana - Tradition Override",
+      "Mana - Unbind Spell",
+      "Mana - Vassalize",
+      "Mana - What’s Yours Is Ours",
+      "Mind - Catatonia",
+      "Mind - Deadly Vision",
+      "Mind - Discern Alien Cognition",
+      "Mind - Epiphany",
+      "Mind - Flawless Precision",
+      "Mind - Greater Communication",
+      "Mind - Insanity",
+      "Mind - Memetic Link",
+      "Mind - Mind Control",
+      "Mind - Mindscape",
+      "Mind - Mindscape Configuration",
+      "Mind - Psychic Backlash",
+      "Mind - Recondite Stimuli",
+      "Mind - Zeitgeist",
+      "Nature - Cyclone",
+      "Nature - Earthquake",
+      "Nature - Eternal Steel",
+      "Nature - Freezing Geyser",
+      "Nature - Living Steel",
+      "Nature - Materials Of Legend",
+      "Nature - Natural Ally",
+      "Nature - Peace And Love",
+      "Nature - Persistent Fog Cloud",
+      "Nature - Phoenix Resurgence",
+      "Nature - Rapid Growth",
+      "Nature - Tsunami",
+      "Nature - Volcano",
+      "Nature - Whispering Elements",
+      "Nature - Wildfire",
+      "Nature - Zoetic Geomancy",
+      "Protection - Adaptation",
+      "Protection - Antimagic Aura",
+      "Protection - Automatic Fortification",
+      "Protection - Complex Glyph",
+      "Protection - Improved Negation",
+      "Protection - Layered Glyph",
+      "Protection - Mage’s Wager",
+      "Protection - Mobile Ward",
+      "Protection - Permanent Ward",
+      "Protection - Pithing Protection",
+      "Protection - Planar Refuge",
+      "Protection - Preserve Integrity",
+      "Protection - Rapid Glyph",
+      "Protection - Spell Selectivity",
+      "Protection - Spell-Eater",
+      "Protection - Stability Bottleneck",
+      "Protection - Subtle",
+      "Protection - Tripped Glyph",
+      "Protection - True Protection",
+      "Protection - Unanswerable",
+      "Protection - Undying",
+      "Protection - Unplottable",
+      "Protection - Voiding Suppression",
+      "Technomancy - AI Transformation",
+      "Technomancy - AI Transformation Greater",
+      "Technomancy - Autopilot",
+      "Technomancy - Charge Vampirism",
+      "Technomancy - Eternal Sprite",
+      "Technomancy - Expel AI",
+      "Technomancy - Glitch Manipulation",
+      "Technomancy - Glitch-Prone Sprites",
+      "Technomancy - Power",
+      "Technomancy - Relic Manipulation",
+      "Technomancy - Sprite Targeting",
+      "Telekinesis - Affix",
+      "Telekinesis - Astral Affixation",
+      "Telekinesis - Brutalizing Bludgeon",
+      "Telekinesis - Choking Grasp",
+      "Telekinesis - Disperse Force",
+      "Telekinesis - Effortless Telekinesis",
+      "Telekinesis - Focused Power",
+      "Telekinesis - Gravity Manipulation",
+      "Telekinesis - Linear Acceleration",
+      "Telekinesis - Puppet",
+      "Time - Advanced Rewind",
+      "Time - Combo Breaker",
+      "Time - Divergent Retry",
+      "Time - Grey Hawk’s Gambit",
+      "Time - Improved Eject",
+      "Time - Interlocutor Across Time",
+      "Time - Past Sight",
+      "Time - Query Self",
+      "Time - Reversion",
+      "Time - Reversion Complete",
+      "Time - Shuffle Time",
+      "Time - Temporal Haste",
+      "Time - Temporal Stasis",
+      "Time - Time Clone",
+      "Time - Timeless Crane’s Hourglass",
+      "Time - Witness Across Time",
+      "Veilweaving - Bind Obscure Chakra",
+      "Veilweaving - Bloodbinder",
+      "Veilweaving - Daevic’s Tradition",
+      "Veilweaving - Essence Charge",
+      "Veilweaving - Guru’s Tradition",
+      "Veilweaving - Improved Shift Veil",
+      "Veilweaving - Obscure Chakra",
+      "Veilweaving - Twin Veil",
+      "Veilweaving - Vizier’s Tradition",
+      "War - Carry The Flag",
+      "War - Commander",
+      "War - Monument",
+      "War - Penetrating Totems",
+      "War - Totem Of Tenuous Mortality",
+      "Warp - Brain Preservation",
+      "Warp - Brutalizing Shunt",
+      "Warp - Create Demiplane",
+      "Warp - Dimensional Lock",
+      "Warp - Dimensional Tracery",
+      "Warp - Enduring Portal",
+      "Warp - Extradimensional Capacity",
+      "Warp - Extradimensional Torpor",
+      "Warp - Flawless Teleport",
+      "Warp - Greater Planar Zone",
+      "Warp - Group Teleport",
+      "Warp - Lethal Teleport",
+      "Warp - Manifest Planar Zone",
+      "Warp - Organ Detachment",
+      "Warp - Planeshift",
+      "Warp - Planting Warp",
+      "Warp - Portal",
+      "Warp - Portal Interstice",
+      "Warp - Portal Network",
+      "Warp - Portal Security",
+      "Warp - Randomized Planeshift",
+      "Warp - Repel The Unnatural",
+      "Warp - Store Structure",
+      "Warp - Teleport Structure",
+      "Warp - Time Warp",
+      "Warp - Timeline Drift",
+      "Warp - True Teleport",
+      "Warp - Universal Teleport",
+      "Warp - Warp Manipulator",
+      "Warp - Warping Frenzy",
+      "Weather - Biohazard",
+      "Weather - Boiling Lord",
+      "Weather - Cacophonic Clap",
+      "Weather - Climate",
+      "Weather - Climatic Shift",
+      "Weather - Cold Lord",
+      "Weather - Contaminated Blows",
+      "Weather - Contamination Lord",
+      "Weather - Dehydration Pulse",
+      "Weather - Desert Lord",
+      "Weather - Fire Tornadoes",
+      "Weather - Heat Lord",
+      "Weather - Interference Cloud",
+      "Weather - Melt Skin",
+      "Weather - Radiation Lord",
+      "Weather - Radiotherapy",
+      "Weather - Rain Bomb",
+      "Weather - Rain Lord",
+      "Weather - Tornado Lord",
+      "Weather - Volcano Lord",
+      "Weather - Wind Lord"
+    ],
+    "records_with_unresolved_prerequisites": 78,
+    "unresolved_prerequisites": {
+      "Alteration - Energy Manipulation": [
+        "Alteration sphere (any talent granting energy resistance as a trait option)"
+      ],
+      "Alteration - Star-Spawn Body": [
+        "Alteration sphere (Aberrant Body (body) or Cosmic Body (body))"
+      ],
+      "Bear - Antarctic Circle": [
+        "5th caster level or higher"
+      ],
+      "Bear - Arctic Circle": [
+        "Antarctic Circle",
+        "10th caster level or higher"
+      ],
+      "Conjuration - Greater Healing": [
+        "companion with 3 Hit Dice or greater"
+      ],
+      "Conjuration - Incursion Link": [
+        "Spell Conduit x2",
+        "Spell-Linked Companion"
+      ],
+      "Creation - Costly Creation": [
+        "Creation sphere (Expanded Materials (material), Lengthened Creation, either [Change Material (alter), Forge (alter) and Permanent Change (advanced)] or [Create Materials (advanced)])"
+      ],
+      "Creation - Fleshcraft": [
+        "Creation sphere (any (material) talent)"
+      ],
+      "Creation - Internal Creation": [
+        "Distant Creation [range]"
+      ],
+      "Creation - Material Body": [
+        "Creation sphere (any (material) talent, Change Material (alter))"
+      ],
+      "Creation - Mythical Material Maker": [
+        "Creation sphere (any (material) talent)"
+      ],
+      "Creation - Sustenance": [
+        "Creation"
+      ],
+      "Death - Deadlord’s Reach": [
+        "Death sphere (Icy Grip, any one (dominion) talent)"
+      ],
+      "Death - Entwined Ruin": [
+        "no prerequisite clause"
+      ],
+      "Death - Greater Curse": [
+        "Curse (ghost strike)"
+      ],
+      "Death - Killing Gaze": [
+        "no prerequisite clause"
+      ],
+      "Death - Mercy Killing": [
+        "Death sphere (Corpse Manipulation or Killing Curse)"
+      ],
+      "Destruction - Blast Juggler": [
+        "Destruction Sphere (Energy Cloud or Energy Sphere)"
+      ],
+      "Destruction - Calamity": [
+        "Destruction sphere (Explosive Orb (blast shape) or Sculpt Blast (blast shape))"
+      ],
+      "Destruction - Crystal Cocoon": [
+        "Destruction sphere (any two (blast type) talents in the crystal blast type group including either Crystal Blast or Living Crystal Blast)"
+      ],
+      "Destruction - Destructive Verticality": [
+        "Destruction Sphere (Energy Sphere, Explosive Orb, or Sculpt Blast)"
+      ],
+      "Destruction - Extreme Range": [
+        "Extended Range [range] x2"
+      ],
+      "Destruction - Impact Burst": [
+        "Destruction Sphere (Energy Strike, any (blast shape) talent which can target an area)"
+      ],
+      "Destruction - Magnifying Blast": [
+        "Energy Strike [strike]"
+      ],
+      "Destruction - Radiation Blast": [
+        "Destruction sphere (any two (blast type) talents in the fire blast type group)"
+      ],
+      "Divination - Discern Location": [
+        "Greater Divine [range]"
+      ],
+      "Divination - Greater Scrying": [
+        "Greater Divine [range]"
+      ],
+      "Divination - Otherworldly Viewing": [
+        "Greater Divine [range]"
+      ],
+      "Divination - Scrying": [
+        "Greater Divine [range]"
+      ],
+      "Enhancement - Referential Enhancements": [
+        "Mass Enhancement [mass]"
+      ],
+      "Enhancement - Vicious Accuracy": [
+        "causing any attack rolls made with the weapon to use a d24 rather than a d20 (if the attack roll would normally use a d16, use a d20 instead. If the attack roll would already use a d24, use a d30 instead)"
+      ],
+      "Fallen Fey - Banish to Faerie": [
+        "8th caster or higher"
+      ],
+      "Fallen Fey - Fairy Ring Traveler": [
+        "5th caster or higher"
+      ],
+      "Fate - Death": [
+        "one (motif) talent"
+      ],
+      "Fate - Execration": [
+        "at least one [curse] (word) talent"
+      ],
+      "Fate - The High Priestess": [
+        "one (motif) talent"
+      ],
+      "Fate - Weave The Fates": [
+        "Fate sphere (any one (motif), any one (arcana))"
+      ],
+      "Illusion - Distant Deception": [
+        "Ranged Illusion [range] x2"
+      ],
+      "Illusion - Phantom Pain": [
+        "no prerequisite clause"
+      ],
+      "Life - Resurrection Supreme": [
+        "Greater Resurrection (advanced)"
+      ],
+      "Mana - Eternal Shackles": [
+        "Ranged Mana x2"
+      ],
+      "Mana - Great Amplification": [
+        "at least one (amp) talent"
+      ],
+      "Mana - Harness Ambient Knowledge": [
+        "Counterspell",
+        "magic skill bonus +5"
+      ],
+      "Mana - Infinite Bond": [
+        "Ranged Mana [range] x2"
+      ],
+      "Mana - Limited Manifestation": [
+        "at least 3 other spheres known"
+      ],
+      "Mana - Manifestation": [
+        "at least 3 other spheres known"
+      ],
+      "Mana - Mark Of Incompetency": [
+        "no prerequisite clause"
+      ],
+      "Mana - Reactive Shuffle": [
+        "no prerequisite clause"
+      ],
+      "Mana - Ties That Bind": [
+        "Ranged Mana x2"
+      ],
+      "Mind - Memetic Link": [
+        "Mass Charm [mass]"
+      ],
+      "Mind - Zeitgeist": [
+        "Mass Charm [mass]"
+      ],
+      "Nature - Cyclone": [
+        "(air) package"
+      ],
+      "Nature - Earthquake": [
+        "(earth) package"
+      ],
+      "Nature - Eternal Steel": [
+        "(metal) package",
+        "(plant) package"
+      ],
+      "Nature - Freezing Geyser": [
+        "(fire) and (water) package"
+      ],
+      "Nature - Living Steel": [
+        "(metal) package",
+        "(plant) package"
+      ],
+      "Nature - Materials Of Legend": [
+        "(metal) package"
+      ],
+      "Nature - Persistent Fog Cloud": [
+        "(water) package"
+      ],
+      "Nature - Phoenix Resurgence": [
+        "(fire) package"
+      ],
+      "Nature - Rapid Growth": [
+        "(plant) package"
+      ],
+      "Nature - Tsunami": [
+        "(water) package"
+      ],
+      "Nature - Volcano": [
+        "(fire) package"
+      ],
+      "Nature - Wildfire": [
+        "(fire) package",
+        "Ranged Geomancy [range] x2"
+      ],
+      "Protection - Undying": [
+        "Deathless (aegis)"
+      ],
+      "Veilweaving - Bind Obscure Chakra": [
+        "Obscure Chakra"
+      ],
+      "Veilweaving - Bloodbinder": [
+        "Bind Obscure Chakra",
+        "ability to bind Blood veils"
+      ],
+      "Veilweaving - Improved Shift Veil": [
+        "Shift Veil",
+        "must be able to bind veils to a chakra slot"
+      ],
+      "Veilweaving - Obscure Chakra": [
+        "Any (tradition) Veilweaving talent"
+      ],
+      "Warp - Brutalizing Shunt": [
+        "Warp sphere (Create Gap (space) or Unseeing Teleport)"
+      ],
+      "Warp - Dimensional Tracery": [
+        "Warp Sphere (teleport beacon or warp link)"
+      ],
+      "Warp - Enduring Portal": [
+        "Mass Teleport [mass]"
+      ],
+      "Warp - Group Teleport": [
+        "Mass Teleport [mass]",
+        "Ranged Warp [range]"
+      ],
+      "Warp - Portal": [
+        "Mass Teleport [mass]"
+      ],
+      "Warp - Portal Interstice": [
+        "Mass Teleport [mass]"
+      ],
+      "Warp - Portal Network": [
+        "Mass Teleport [mass]"
+      ],
+      "Weather - Climate": [
+        "Greater Size [range]"
+      ],
+      "Weather - Fire Tornadoes": [
+        "(fire) package"
+      ],
+      "Weather - Volcano Lord": [
+        "(earth) package",
+        "(fire) package"
+      ]
+    }
   },
   "talents_by_sphere": {
     "Alchemy": {
@@ -3381,6 +4047,890 @@
         "Wrestling - Twin Tie-Up",
         "Wrestling - Vicious Grappler"
       ]
+    }
+  },
+  "advanced_talents_by_sphere": {
+    "Alteration": {
+      "records": 16,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Alteration - Diffuse Swarm",
+        "Alteration - Elemental Purity",
+        "Alteration - Energy Manipulation",
+        "Alteration - Extreme Changes",
+        "Alteration - Fusion",
+        "Alteration - Homogenize",
+        "Alteration - Manipulate Healing",
+        "Alteration - Mechanical Customization",
+        "Alteration - Permanent Transformation",
+        "Alteration - Puppet’s Curse",
+        "Alteration - Signature Trait",
+        "Alteration - Size Mastery",
+        "Alteration - Star-Spawn Body",
+        "Alteration - Sustaining Shapeshift",
+        "Alteration - Transform Object",
+        "Alteration - Twist Essence"
+      ],
+      "records_with_unresolved_prerequisites": 2,
+      "unresolved_prerequisites": {
+        "Alteration - Energy Manipulation": [
+          "Alteration sphere (any talent granting energy resistance as a trait option)"
+        ],
+        "Alteration - Star-Spawn Body": [
+          "Alteration sphere (Aberrant Body (body) or Cosmic Body (body))"
+        ]
+      }
+    },
+    "Bear": {
+      "records": 3,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Bear - Antarctic Circle",
+        "Bear - Arctic Circle",
+        "Bear - Arm Bears"
+      ],
+      "records_with_unresolved_prerequisites": 2,
+      "unresolved_prerequisites": {
+        "Bear - Antarctic Circle": [
+          "5th caster level or higher"
+        ],
+        "Bear - Arctic Circle": [
+          "Antarctic Circle",
+          "10th caster level or higher"
+        ]
+      }
+    },
+    "Blood": {
+      "records": 8,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Blood - Cardiovascular Ascension",
+        "Blood - Drain Lifeblood",
+        "Blood - Essence Manipulation",
+        "Blood - Overclock",
+        "Blood - Puppet Master",
+        "Blood - Sanguine Minion",
+        "Blood - Sanguiphilia",
+        "Blood - Union Of Blood"
+      ],
+      "records_with_unresolved_prerequisites": 0,
+      "unresolved_prerequisites": {}
+    },
+    "Conjuration": {
+      "records": 14,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Conjuration - Call Planar Creature",
+        "Conjuration - Channel Companion",
+        "Conjuration - Companion Takeover",
+        "Conjuration - Diagram",
+        "Conjuration - Entrapping Circle",
+        "Conjuration - Expendable Summons",
+        "Conjuration - Greater Altered Size",
+        "Conjuration - Greater Healing",
+        "Conjuration - Incursion Link",
+        "Conjuration - Possessive Companion",
+        "Conjuration - Regenerating Companion",
+        "Conjuration - Swarm Companion",
+        "Conjuration - Troop Companion",
+        "Conjuration - Vanishing Companion"
+      ],
+      "records_with_unresolved_prerequisites": 2,
+      "unresolved_prerequisites": {
+        "Conjuration - Greater Healing": [
+          "companion with 3 Hit Dice or greater"
+        ],
+        "Conjuration - Incursion Link": [
+          "Spell Conduit x2",
+          "Spell-Linked Companion"
+        ]
+      }
+    },
+    "Creation": {
+      "records": 19,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Creation - Corp Criadhach",
+        "Creation - Costly Creation",
+        "Creation - Create Materials",
+        "Creation - Create Minds Think Alike",
+        "Creation - Dissolution",
+        "Creation - Duplicate",
+        "Creation - Fabricate",
+        "Creation - Fleshcraft",
+        "Creation - Imperfect Recreation",
+        "Creation - Integrate Item",
+        "Creation - Internal Creation",
+        "Creation - Magma Mastery",
+        "Creation - Material Body",
+        "Creation - Mythical Material Maker",
+        "Creation - Ooze Originator",
+        "Creation - Permanent Change",
+        "Creation - Plasma Projection",
+        "Creation - State Shift",
+        "Creation - Sustenance"
+      ],
+      "records_with_unresolved_prerequisites": 6,
+      "unresolved_prerequisites": {
+        "Creation - Costly Creation": [
+          "Creation sphere (Expanded Materials (material), Lengthened Creation, either [Change Material (alter), Forge (alter) and Permanent Change (advanced)] or [Create Materials (advanced)])"
+        ],
+        "Creation - Fleshcraft": [
+          "Creation sphere (any (material) talent)"
+        ],
+        "Creation - Internal Creation": [
+          "Distant Creation [range]"
+        ],
+        "Creation - Material Body": [
+          "Creation sphere (any (material) talent, Change Material (alter))"
+        ],
+        "Creation - Mythical Material Maker": [
+          "Creation sphere (any (material) talent)"
+        ],
+        "Creation - Sustenance": [
+          "Creation"
+        ]
+      }
+    },
+    "Dark": {
+      "records": 12,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Dark - Animated Shadow",
+        "Dark - Black And Black Morality",
+        "Dark - Eternal Darkness",
+        "Dark - Lightless Penumbra",
+        "Dark - Melt Into Shadow",
+        "Dark - Midnight",
+        "Dark - One With The Void",
+        "Dark - Pitch Black",
+        "Dark - Precision Shadowwalk",
+        "Dark - Shadow Double",
+        "Dark - Shadow Walker",
+        "Dark - Vanish In Shadow"
+      ],
+      "records_with_unresolved_prerequisites": 0,
+      "unresolved_prerequisites": {}
+    },
+    "Death": {
+      "records": 28,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Death - Astral Projection",
+        "Death - Astral Travel",
+        "Death - Avasculation",
+        "Death - Corpse Forge",
+        "Death - Create Haunt",
+        "Death - Create Soul Gem",
+        "Death - Cut The Cord",
+        "Death - Deadlord’s Reach",
+        "Death - Determined End",
+        "Death - Enervation",
+        "Death - Entwined Ruin",
+        "Death - Evisceration",
+        "Death - Extended Command",
+        "Death - Greater Curse",
+        "Death - Greater Undead",
+        "Death - Hollow Body",
+        "Death - Killing Gaze",
+        "Death - Mercy Killing",
+        "Death - Nothing Shall Bear Your Name",
+        "Death - Permanent Undead",
+        "Death - Possession",
+        "Death - Project Spirit",
+        "Death - Soul Drain",
+        "Death - Soul Trap",
+        "Death - Summon Spirit",
+        "Death - Temporal Projection",
+        "Death - Voluble Gravetongue",
+        "Death - Written Out Of History"
+      ],
+      "records_with_unresolved_prerequisites": 5,
+      "unresolved_prerequisites": {
+        "Death - Deadlord’s Reach": [
+          "Death sphere (Icy Grip, any one (dominion) talent)"
+        ],
+        "Death - Entwined Ruin": [
+          "no prerequisite clause"
+        ],
+        "Death - Greater Curse": [
+          "Curse (ghost strike)"
+        ],
+        "Death - Killing Gaze": [
+          "no prerequisite clause"
+        ],
+        "Death - Mercy Killing": [
+          "Death sphere (Corpse Manipulation or Killing Curse)"
+        ]
+      }
+    },
+    "Destruction": {
+      "records": 21,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Destruction - Adaptive Admixture",
+        "Destruction - Blast Array",
+        "Destruction - Blast Juggler",
+        "Destruction - Calamity",
+        "Destruction - Conflagrant Cluster",
+        "Destruction - Crystal Cocoon",
+        "Destruction - Destructive Verticality",
+        "Destruction - Detonating Salvo",
+        "Destruction - Disintegrate",
+        "Destruction - Energy Cloud",
+        "Destruction - Erratic Blast",
+        "Destruction - Extreme Range",
+        "Destruction - Grandmaster",
+        "Destruction - Greater Admixture",
+        "Destruction - Hounding Sphere",
+        "Destruction - Impact Burst",
+        "Destruction - Intractable Blast",
+        "Destruction - Magnifying Blast",
+        "Destruction - Penetrating Blast",
+        "Destruction - Radiation Blast",
+        "Destruction - Split Blast"
+      ],
+      "records_with_unresolved_prerequisites": 8,
+      "unresolved_prerequisites": {
+        "Destruction - Blast Juggler": [
+          "Destruction Sphere (Energy Cloud or Energy Sphere)"
+        ],
+        "Destruction - Calamity": [
+          "Destruction sphere (Explosive Orb (blast shape) or Sculpt Blast (blast shape))"
+        ],
+        "Destruction - Crystal Cocoon": [
+          "Destruction sphere (any two (blast type) talents in the crystal blast type group including either Crystal Blast or Living Crystal Blast)"
+        ],
+        "Destruction - Destructive Verticality": [
+          "Destruction Sphere (Energy Sphere, Explosive Orb, or Sculpt Blast)"
+        ],
+        "Destruction - Extreme Range": [
+          "Extended Range [range] x2"
+        ],
+        "Destruction - Impact Burst": [
+          "Destruction Sphere (Energy Strike, any (blast shape) talent which can target an area)"
+        ],
+        "Destruction - Magnifying Blast": [
+          "Energy Strike [strike]"
+        ],
+        "Destruction - Radiation Blast": [
+          "Destruction sphere (any two (blast type) talents in the fire blast type group)"
+        ]
+      }
+    },
+    "Divination": {
+      "records": 27,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Divination - Alternate Divinations Advanced",
+        "Divination - Arc of Change",
+        "Divination - Assurance of the Future",
+        "Divination - Cartographer’s Divinations",
+        "Divination - Detect Patronage",
+        "Divination - Discern Location",
+        "Divination - Divine Identity",
+        "Divination - Divine Knowledge",
+        "Divination - Expansive Vision",
+        "Divination - Eye in the Sky",
+        "Divination - Eyes Of The Cabal",
+        "Divination - Greater Scrying",
+        "Divination - Hear Name",
+        "Divination - Mechanical Counterintelligence",
+        "Divination - Otherworldly Viewing",
+        "Divination - Penetrating Divination",
+        "Divination - Power Of The Name",
+        "Divination - Read Omens",
+        "Divination - Remote Casting",
+        "Divination - Scrying",
+        "Divination - Sense Observation",
+        "Divination - Sensitive Divinations",
+        "Divination - Soulbroker’s Sight",
+        "Divination - Speak And I Listen",
+        "Divination - Trapfinding",
+        "Divination - True Perception",
+        "Divination - Unobscured Vision"
+      ],
+      "records_with_unresolved_prerequisites": 4,
+      "unresolved_prerequisites": {
+        "Divination - Discern Location": [
+          "Greater Divine [range]"
+        ],
+        "Divination - Greater Scrying": [
+          "Greater Divine [range]"
+        ],
+        "Divination - Otherworldly Viewing": [
+          "Greater Divine [range]"
+        ],
+        "Divination - Scrying": [
+          "Greater Divine [range]"
+        ]
+      }
+    },
+    "Enhancement": {
+      "records": 12,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Enhancement - Alternative Energy",
+        "Enhancement - Antimagic Aegis",
+        "Enhancement - Ascetic Control",
+        "Enhancement - Bestow Life",
+        "Enhancement - Critical Climax",
+        "Enhancement - Give Magic Life",
+        "Enhancement - Heart of Hope and Fear",
+        "Enhancement - Inherent Enhancement",
+        "Enhancement - Normalize",
+        "Enhancement - Referential Enhancements",
+        "Enhancement - Reverse Gravity",
+        "Enhancement - Vicious Accuracy"
+      ],
+      "records_with_unresolved_prerequisites": 2,
+      "unresolved_prerequisites": {
+        "Enhancement - Referential Enhancements": [
+          "Mass Enhancement [mass]"
+        ],
+        "Enhancement - Vicious Accuracy": [
+          "causing any attack rolls made with the weapon to use a d24 rather than a d20 (if the attack roll would normally use a d16, use a d20 instead. If the attack roll would already use a d24, use a d30 instead)"
+        ]
+      }
+    },
+    "Fallen Fey": {
+      "records": 8,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Fallen Fey - Banish to Faerie",
+        "Fallen Fey - Blinding Beauty",
+        "Fallen Fey - Bound To Nature",
+        "Fallen Fey - Drowning Kiss",
+        "Fallen Fey - Fairy Ring Traveler",
+        "Fallen Fey - Fey Initiation",
+        "Fallen Fey - Fey Invisibility",
+        "Fallen Fey - Steal Skin"
+      ],
+      "records_with_unresolved_prerequisites": 2,
+      "unresolved_prerequisites": {
+        "Fallen Fey - Banish to Faerie": [
+          "8th caster or higher"
+        ],
+        "Fallen Fey - Fairy Ring Traveler": [
+          "5th caster or higher"
+        ]
+      }
+    },
+    "Fate": {
+      "records": 22,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Fate - Atonement",
+        "Fate - Cat’s Luck",
+        "Fate - Compel Possessor",
+        "Fate - Consecrated Ground",
+        "Fate - Death",
+        "Fate - Declare Fate",
+        "Fate - Elude Fate",
+        "Fate - Entropic Aura",
+        "Fate - Excise Triumph",
+        "Fate - Execration",
+        "Fate - Falsehood",
+        "Fate - Flounder",
+        "Fate - Geas",
+        "Fate - Get a Word In",
+        "Fate - Greater Geas",
+        "Fate - Heroism",
+        "Fate - Hold on Hope",
+        "Fate - Mark Of Judgment",
+        "Fate - The High Priestess",
+        "Fate - Undying Obstinance",
+        "Fate - Weave The Fates",
+        "Fate - Weight of Command"
+      ],
+      "records_with_unresolved_prerequisites": 4,
+      "unresolved_prerequisites": {
+        "Fate - Death": [
+          "one (motif) talent"
+        ],
+        "Fate - Execration": [
+          "at least one [curse] (word) talent"
+        ],
+        "Fate - The High Priestess": [
+          "one (motif) talent"
+        ],
+        "Fate - Weave The Fates": [
+          "Fate sphere (any one (motif), any one (arcana))"
+        ]
+      }
+    },
+    "Illusion": {
+      "records": 9,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Illusion - Advanced Invisibility",
+        "Illusion - Deceive Dweomer",
+        "Illusion - Distant Deception",
+        "Illusion - Expand Illusion",
+        "Illusion - Impawsible Perspective",
+        "Illusion - Permanent Image",
+        "Illusion - Phantom Mind",
+        "Illusion - Phantom Pain",
+        "Illusion - Spell Disruption"
+      ],
+      "records_with_unresolved_prerequisites": 2,
+      "unresolved_prerequisites": {
+        "Illusion - Distant Deception": [
+          "Ranged Illusion [range] x2"
+        ],
+        "Illusion - Phantom Pain": [
+          "no prerequisite clause"
+        ]
+      }
+    },
+    "Life": {
+      "records": 12,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Life - Feline Good",
+        "Life - Hypervitalize",
+        "Life - Make Whole",
+        "Life - Mythbound Sustenance",
+        "Life - Reincarnation",
+        "Life - Reincarnation Instant",
+        "Life - Reincarnation Manipulated",
+        "Life - Resurrection",
+        "Life - Resurrection Greater",
+        "Life - Resurrection Supreme",
+        "Life - Soul Consumption",
+        "Life - Transfiguration"
+      ],
+      "records_with_unresolved_prerequisites": 1,
+      "unresolved_prerequisites": {
+        "Life - Resurrection Supreme": [
+          "Greater Resurrection (advanced)"
+        ]
+      }
+    },
+    "Light": {
+      "records": 8,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Light - Daylight",
+        "Light - Diffuse Body",
+        "Light - Everglow",
+        "Light - Incarnate Glow",
+        "Light - Light Speed",
+        "Light - Prismatic Radiance",
+        "Light - Radiation",
+        "Light - Star Genesis"
+      ],
+      "records_with_unresolved_prerequisites": 0,
+      "unresolved_prerequisites": {}
+    },
+    "Mana": {
+      "records": 37,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Mana - Archmagi’s Methods",
+        "Mana - Boosted Shuffle",
+        "Mana - Communal Knowledge",
+        "Mana - Conquer",
+        "Mana - Cruel King",
+        "Mana - Curse Of Mana",
+        "Mana - Essential Shuffle",
+        "Mana - Eternal Shackles",
+        "Mana - Flash of Arcana",
+        "Mana - Flexible Knowledge",
+        "Mana - Forced Conversion",
+        "Mana - Gift That Keeps on Giving",
+        "Mana - Gift of Insight",
+        "Mana - Great Amplification",
+        "Mana - Harness Ambient Knowledge",
+        "Mana - Infinite Bond",
+        "Mana - Intrinsic Shuffle",
+        "Mana - Knowledge Drain",
+        "Mana - Laws Of Absolute Power",
+        "Mana - Limited Manifestation",
+        "Mana - Magic Replication",
+        "Mana - Manathief",
+        "Mana - Manifestation",
+        "Mana - Mark Of Incompetency",
+        "Mana - Mark of Sudden Competence",
+        "Mana - Mythbleeder",
+        "Mana - Permanent Bond",
+        "Mana - Permanent Gift",
+        "Mana - Reactive Shuffle",
+        "Mana - Reset Duration",
+        "Mana - Runic Magic",
+        "Mana - Strip Magical Knowledge",
+        "Mana - Ties That Bind",
+        "Mana - Tradition Override",
+        "Mana - Unbind Spell",
+        "Mana - Vassalize",
+        "Mana - What’s Yours Is Ours"
+      ],
+      "records_with_unresolved_prerequisites": 9,
+      "unresolved_prerequisites": {
+        "Mana - Eternal Shackles": [
+          "Ranged Mana x2"
+        ],
+        "Mana - Great Amplification": [
+          "at least one (amp) talent"
+        ],
+        "Mana - Harness Ambient Knowledge": [
+          "Counterspell",
+          "magic skill bonus +5"
+        ],
+        "Mana - Infinite Bond": [
+          "Ranged Mana [range] x2"
+        ],
+        "Mana - Limited Manifestation": [
+          "at least 3 other spheres known"
+        ],
+        "Mana - Manifestation": [
+          "at least 3 other spheres known"
+        ],
+        "Mana - Mark Of Incompetency": [
+          "no prerequisite clause"
+        ],
+        "Mana - Reactive Shuffle": [
+          "no prerequisite clause"
+        ],
+        "Mana - Ties That Bind": [
+          "Ranged Mana x2"
+        ]
+      }
+    },
+    "Mind": {
+      "records": 14,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Mind - Catatonia",
+        "Mind - Deadly Vision",
+        "Mind - Discern Alien Cognition",
+        "Mind - Epiphany",
+        "Mind - Flawless Precision",
+        "Mind - Greater Communication",
+        "Mind - Insanity",
+        "Mind - Memetic Link",
+        "Mind - Mind Control",
+        "Mind - Mindscape",
+        "Mind - Mindscape Configuration",
+        "Mind - Psychic Backlash",
+        "Mind - Recondite Stimuli",
+        "Mind - Zeitgeist"
+      ],
+      "records_with_unresolved_prerequisites": 2,
+      "unresolved_prerequisites": {
+        "Mind - Memetic Link": [
+          "Mass Charm [mass]"
+        ],
+        "Mind - Zeitgeist": [
+          "Mass Charm [mass]"
+        ]
+      }
+    },
+    "Nature": {
+      "records": 16,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Nature - Cyclone",
+        "Nature - Earthquake",
+        "Nature - Eternal Steel",
+        "Nature - Freezing Geyser",
+        "Nature - Living Steel",
+        "Nature - Materials Of Legend",
+        "Nature - Natural Ally",
+        "Nature - Peace And Love",
+        "Nature - Persistent Fog Cloud",
+        "Nature - Phoenix Resurgence",
+        "Nature - Rapid Growth",
+        "Nature - Tsunami",
+        "Nature - Volcano",
+        "Nature - Whispering Elements",
+        "Nature - Wildfire",
+        "Nature - Zoetic Geomancy"
+      ],
+      "records_with_unresolved_prerequisites": 12,
+      "unresolved_prerequisites": {
+        "Nature - Cyclone": [
+          "(air) package"
+        ],
+        "Nature - Earthquake": [
+          "(earth) package"
+        ],
+        "Nature - Eternal Steel": [
+          "(metal) package",
+          "(plant) package"
+        ],
+        "Nature - Freezing Geyser": [
+          "(fire) and (water) package"
+        ],
+        "Nature - Living Steel": [
+          "(metal) package",
+          "(plant) package"
+        ],
+        "Nature - Materials Of Legend": [
+          "(metal) package"
+        ],
+        "Nature - Persistent Fog Cloud": [
+          "(water) package"
+        ],
+        "Nature - Phoenix Resurgence": [
+          "(fire) package"
+        ],
+        "Nature - Rapid Growth": [
+          "(plant) package"
+        ],
+        "Nature - Tsunami": [
+          "(water) package"
+        ],
+        "Nature - Volcano": [
+          "(fire) package"
+        ],
+        "Nature - Wildfire": [
+          "(fire) package",
+          "Ranged Geomancy [range] x2"
+        ]
+      }
+    },
+    "Protection": {
+      "records": 23,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Protection - Adaptation",
+        "Protection - Antimagic Aura",
+        "Protection - Automatic Fortification",
+        "Protection - Complex Glyph",
+        "Protection - Improved Negation",
+        "Protection - Layered Glyph",
+        "Protection - Mage’s Wager",
+        "Protection - Mobile Ward",
+        "Protection - Permanent Ward",
+        "Protection - Pithing Protection",
+        "Protection - Planar Refuge",
+        "Protection - Preserve Integrity",
+        "Protection - Rapid Glyph",
+        "Protection - Spell Selectivity",
+        "Protection - Spell-Eater",
+        "Protection - Stability Bottleneck",
+        "Protection - Subtle",
+        "Protection - Tripped Glyph",
+        "Protection - True Protection",
+        "Protection - Unanswerable",
+        "Protection - Undying",
+        "Protection - Unplottable",
+        "Protection - Voiding Suppression"
+      ],
+      "records_with_unresolved_prerequisites": 1,
+      "unresolved_prerequisites": {
+        "Protection - Undying": [
+          "Deathless (aegis)"
+        ]
+      }
+    },
+    "Technomancy": {
+      "records": 11,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Technomancy - AI Transformation",
+        "Technomancy - AI Transformation Greater",
+        "Technomancy - Autopilot",
+        "Technomancy - Charge Vampirism",
+        "Technomancy - Eternal Sprite",
+        "Technomancy - Expel AI",
+        "Technomancy - Glitch Manipulation",
+        "Technomancy - Glitch-Prone Sprites",
+        "Technomancy - Power",
+        "Technomancy - Relic Manipulation",
+        "Technomancy - Sprite Targeting"
+      ],
+      "records_with_unresolved_prerequisites": 0,
+      "unresolved_prerequisites": {}
+    },
+    "Telekinesis": {
+      "records": 10,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Telekinesis - Affix",
+        "Telekinesis - Astral Affixation",
+        "Telekinesis - Brutalizing Bludgeon",
+        "Telekinesis - Choking Grasp",
+        "Telekinesis - Disperse Force",
+        "Telekinesis - Effortless Telekinesis",
+        "Telekinesis - Focused Power",
+        "Telekinesis - Gravity Manipulation",
+        "Telekinesis - Linear Acceleration",
+        "Telekinesis - Puppet"
+      ],
+      "records_with_unresolved_prerequisites": 0,
+      "unresolved_prerequisites": {}
+    },
+    "Time": {
+      "records": 16,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Time - Advanced Rewind",
+        "Time - Combo Breaker",
+        "Time - Divergent Retry",
+        "Time - Grey Hawk’s Gambit",
+        "Time - Improved Eject",
+        "Time - Interlocutor Across Time",
+        "Time - Past Sight",
+        "Time - Query Self",
+        "Time - Reversion",
+        "Time - Reversion Complete",
+        "Time - Shuffle Time",
+        "Time - Temporal Haste",
+        "Time - Temporal Stasis",
+        "Time - Time Clone",
+        "Time - Timeless Crane’s Hourglass",
+        "Time - Witness Across Time"
+      ],
+      "records_with_unresolved_prerequisites": 0,
+      "unresolved_prerequisites": {}
+    },
+    "Veilweaving": {
+      "records": 9,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Veilweaving - Bind Obscure Chakra",
+        "Veilweaving - Bloodbinder",
+        "Veilweaving - Daevic’s Tradition",
+        "Veilweaving - Essence Charge",
+        "Veilweaving - Guru’s Tradition",
+        "Veilweaving - Improved Shift Veil",
+        "Veilweaving - Obscure Chakra",
+        "Veilweaving - Twin Veil",
+        "Veilweaving - Vizier’s Tradition"
+      ],
+      "records_with_unresolved_prerequisites": 4,
+      "unresolved_prerequisites": {
+        "Veilweaving - Bind Obscure Chakra": [
+          "Obscure Chakra"
+        ],
+        "Veilweaving - Bloodbinder": [
+          "Bind Obscure Chakra",
+          "ability to bind Blood veils"
+        ],
+        "Veilweaving - Improved Shift Veil": [
+          "Shift Veil",
+          "must be able to bind veils to a chakra slot"
+        ],
+        "Veilweaving - Obscure Chakra": [
+          "Any (tradition) Veilweaving talent"
+        ]
+      }
+    },
+    "War": {
+      "records": 5,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "War - Carry The Flag",
+        "War - Commander",
+        "War - Monument",
+        "War - Penetrating Totems",
+        "War - Totem Of Tenuous Mortality"
+      ],
+      "records_with_unresolved_prerequisites": 0,
+      "unresolved_prerequisites": {}
+    },
+    "Warp": {
+      "records": 30,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Warp - Brain Preservation",
+        "Warp - Brutalizing Shunt",
+        "Warp - Create Demiplane",
+        "Warp - Dimensional Lock",
+        "Warp - Dimensional Tracery",
+        "Warp - Enduring Portal",
+        "Warp - Extradimensional Capacity",
+        "Warp - Extradimensional Torpor",
+        "Warp - Flawless Teleport",
+        "Warp - Greater Planar Zone",
+        "Warp - Group Teleport",
+        "Warp - Lethal Teleport",
+        "Warp - Manifest Planar Zone",
+        "Warp - Organ Detachment",
+        "Warp - Planeshift",
+        "Warp - Planting Warp",
+        "Warp - Portal",
+        "Warp - Portal Interstice",
+        "Warp - Portal Network",
+        "Warp - Portal Security",
+        "Warp - Randomized Planeshift",
+        "Warp - Repel The Unnatural",
+        "Warp - Store Structure",
+        "Warp - Teleport Structure",
+        "Warp - Time Warp",
+        "Warp - Timeline Drift",
+        "Warp - True Teleport",
+        "Warp - Universal Teleport",
+        "Warp - Warp Manipulator",
+        "Warp - Warping Frenzy"
+      ],
+      "records_with_unresolved_prerequisites": 7,
+      "unresolved_prerequisites": {
+        "Warp - Brutalizing Shunt": [
+          "Warp sphere (Create Gap (space) or Unseeing Teleport)"
+        ],
+        "Warp - Dimensional Tracery": [
+          "Warp Sphere (teleport beacon or warp link)"
+        ],
+        "Warp - Enduring Portal": [
+          "Mass Teleport [mass]"
+        ],
+        "Warp - Group Teleport": [
+          "Mass Teleport [mass]",
+          "Ranged Warp [range]"
+        ],
+        "Warp - Portal": [
+          "Mass Teleport [mass]"
+        ],
+        "Warp - Portal Interstice": [
+          "Mass Teleport [mass]"
+        ],
+        "Warp - Portal Network": [
+          "Mass Teleport [mass]"
+        ]
+      }
+    },
+    "Weather": {
+      "records": 21,
+      "records_with_recorded_mechanics": 0,
+      "records_without_recorded_mechanics": [
+        "Weather - Biohazard",
+        "Weather - Boiling Lord",
+        "Weather - Cacophonic Clap",
+        "Weather - Climate",
+        "Weather - Climatic Shift",
+        "Weather - Cold Lord",
+        "Weather - Contaminated Blows",
+        "Weather - Contamination Lord",
+        "Weather - Dehydration Pulse",
+        "Weather - Desert Lord",
+        "Weather - Fire Tornadoes",
+        "Weather - Heat Lord",
+        "Weather - Interference Cloud",
+        "Weather - Melt Skin",
+        "Weather - Radiation Lord",
+        "Weather - Radiotherapy",
+        "Weather - Rain Bomb",
+        "Weather - Rain Lord",
+        "Weather - Tornado Lord",
+        "Weather - Volcano Lord",
+        "Weather - Wind Lord"
+      ],
+      "records_with_unresolved_prerequisites": 3,
+      "unresolved_prerequisites": {
+        "Weather - Climate": [
+          "Greater Size [range]"
+        ],
+        "Weather - Fire Tornadoes": [
+          "(fire) package"
+        ],
+        "Weather - Volcano Lord": [
+          "(earth) package",
+          "(fire) package"
+        ]
+      }
     }
   },
   "feats": {

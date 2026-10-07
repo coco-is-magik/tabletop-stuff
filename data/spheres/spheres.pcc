@@ -106,6 +106,8 @@ ABILITYCATEGORY:spheres_technician_categories.lst
 ABILITYCATEGORY:spheres_categories_conscript.lst
 ABILITY:spheres_conscript.lst
 ABILITYCATEGORY:spheres_categories_catalog.lst
+ABILITYCATEGORY:spheres_categories_advanced.lst
+ABILITY:spheres_advanced_adjudication.lst
 ABILITY:spheres_catalog_packages.lst
 ABILITY:spheres_power_alteration.lst
 ABILITY:spheres_power_blood.lst

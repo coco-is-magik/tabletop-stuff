@@ -65,6 +65,42 @@ trap/trigger resolution, charm/compulsion application and companion construction
 remain manual. The remaining prestige snapshots lack pinned class-skill/HD detail,
 so they stay unstarted rather than guessed.
 
+## Advanced-talent scope extension
+
+Advanced talents moved from excluded scope to in-scope. `tools/spheres_catalog.py`
+now extracts the Ultimate-tab advanced block for each sphere (`advanced` field on
+each catalog row); the heading that formerly bounded the basic list must name
+either the advanced or the legendary section, and legendary sections are still
+skipped. 411 advanced talents across the 26 Power spheres are generated; the Might
+pages publish no advanced section.
+
+`tools/spheres_advanced_talents.py` compiles each source prerequisite clause into
+real `PRE` tokens (base sphere, named talents, `caster level N`, `character level
+N`). Clause parts it cannot resolve — alternatives such as "any", "or", unknown
+talent names, and non-modelled requirements — are reported as unresolved and the
+record additionally requires a `Spheres Advanced Talent Adjudication` approval,
+mirroring the trait adjudication pattern. Of the 411 records, 333 compile fully and
+78 require approval. Records stay selectable in the normal talent pool; the GM
+still decides whether advanced talents are available, as the source states.
+`caster level N` clauses compile to `PREVARGTEQ:SPHERES_CASTER_LEVEL,N`, matching
+the existing basic-talent parser's treatment of general sphere caster level rather
+than per-sphere caster level.
+
+New invariants: `tools/test_catalog.py::test_prerequisite_references_resolve_to_campaign_records`
+proves every generated `PREABILITY` key names a real record (0 unresolved), and
+`test_advanced_records_are_gated_and_resolve_to_catalog_lines` proves each advanced
+record carries its sphere requirement and an approval exactly when a clause is
+unresolved. `tools/test_advanced_talents.py` unit-tests the clause compiler.
+
+`tools/pcgen_advanced_talents.py` (`tools/PcgenAdvancedTalents.java`) is the live
+acceptance gate: it adds a base sphere and any prerequisite talent, asserts PCGen's
+own `qualifies` check accepts a met prerequisite set and rejects a missing one, that
+the sphere talent counter includes the advanced talent, that removal refunds the
+pool, and that a selectable case survives save/reload. Both phases pass:
+`advanced-save` and `advanced-reload`, 7 cases, reload `exit 0` (4 selectable
+cases with counter assertions, 3 rejected cases: one with an unmet compiled
+prerequisite and two approval-gated).
+
 `tools/test_feats.py::test_all_mechanics_overrides_resolve_to_feats` and
 `tools/test_traits.py::test_all_mechanics_overrides_resolve_to_traits` now require
 every `feat-mechanics.json` / `trait-mechanics.json` key to name a real catalog
@@ -340,6 +376,8 @@ The normal build tests check that report for staleness.
 | Power / Might spheres | 26 / 27 | Basic catalog scope |
 | Generated basic talent review records | 2,326 | Excludes four pre-existing Destruction talents |
 | Generated talent records with recorded mechanics | 804 | Review-array contents, not all generator-emitted mechanics |
+| Advanced talents imported | 411 | Ultimate-tab; 333 with compiled prerequisites, 78 approval-gated |
+| Advanced talents with unresolved prerequisite clauses | 78 | Require `Spheres Advanced Talent Adjudication` approval |
 | Feats | 1,201 | Catalog entries |
 | Feats with unresolved prerequisite clauses | 297 | Require adjudication; exact keys/clauses are in the report |
 | Feats with recorded mechanics | 224 | Includes reference variables and partial effects |

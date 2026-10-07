@@ -225,7 +225,7 @@ live validation recorded below.
 | Feats | Catalog and reviewed prerequisite/effect compiler | Resolve remaining prerequisites using loaded systems and audit persistent effects individually |
 | Traits | Shared PCGen Traits pool | Remaining prerequisites/effects, category and prerequisite-loss checks |
 | Alternate racial traits | Not loaded by this campaign | Source inventory, reuse upstream racial replacement categories, enforce replacement conflicts and refunds |
-| Spheres | 53 sphere catalogs plus reviewed mechanics | Advanced/legendary talents, persistent effects, packages, companion/equipment integration |
+| Spheres | 53 sphere catalogs plus reviewed mechanics | Legendary talents, persistent effects, packages, companion/equipment integration |
 | Base classes | Progressions and selected option mechanics | Remaining option gates, grants, resources and existing subsystem integrations |
 | Prestige classes | No campaign records | Source inventory, entry requirements, class-specific advancement and multiclass round trips |
 
@@ -286,9 +286,11 @@ source inventories and adapters to existing PCGen mechanisms.
   expansion. Focused and live verification of that expansion follows separately.
 
 The entire backlog is not complete. In particular, aligned-class advancement,
-advanced/legendary talents, remaining persistent feat/trait/class effects,
+legendary talents, remaining persistent feat/trait/class effects,
 named casting traditions and Spellcrafting lifecycle work remain open. Do not
 interpret imported source snapshots or descriptions as implemented mechanics.
+Advanced talents are now imported, but each still needs per-talent mechanical
+automation; only their source prerequisites are compiled.
 
 ### Further lifecycle verification and racial expansion
 

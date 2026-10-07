@@ -137,7 +137,7 @@ The build test target separately passed 6 spellcrafting tests, 34 Spheres tests,
 | Feats | 487 unresolved prerequisite sets plus descriptive-only feat effects; unknown clauses must remain fail-closed. |
 | Spellcrafting | Spellbook Mastery book-casting path, mishaps, forgetting/acquisition lifecycle and prerequisite-change handling. |
 | Martial focus | Encounter-state expenditure/recovery and non-class talent-progression conversions are not automated. |
-| Scope extensions | Advanced/legendary imports need permission and prerequisite handling. Archetypes and Guile are excluded by the existing dataset scope, not completed implementations. |
+| Scope extensions | Advanced talents are imported with compiled or approval-gated prerequisites. Legendary talents, archetypes and Guile remain excluded by the dataset scope, not completed implementations. |
 
 The next passes must preserve core-character isolation, paid versus free talent
 pools, refunds and save/reload. Source descriptions alone are not acceptance

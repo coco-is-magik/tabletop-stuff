@@ -64,10 +64,15 @@ class CoverageTests(unittest.TestCase):
     def test_partition_and_determinism(self):
         report = build()
         self.assertEqual(render(), render())
-        for name in ("generated_basic_talents", "feats", "traits"):
+        for name in ("generated_basic_talents", "generated_advanced_talents", "feats", "traits"):
             group = report[name]
             self.assertEqual(group["records"], group["records_with_recorded_mechanics"]
                              + len(group["records_without_recorded_mechanics"]))
+        self.assertEqual(report["generated_advanced_talents"]["records"],
+                         len(json.loads((DATA / "catalog-advanced-review.json").read_text())))
+        self.assertEqual(report["source_advanced_talents"],
+                         sum(len(row["advanced"]) for row in
+                             json.loads((DATA / "catalog.json").read_text())))
         self.assertEqual(sum(g["records"] for g in report["talents_by_sphere"].values()),
                          report["generated_basic_talents"]["records"])
         feats = json.loads((DATA / "feat-catalog.json").read_text())

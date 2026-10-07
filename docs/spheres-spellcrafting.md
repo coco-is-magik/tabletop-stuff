@@ -86,7 +86,8 @@ including if such records are later added to the campaign.
 - Duration compatibility, actual casting-time steps, research days, special
   alignment/CL/package prerequisites and tactical effects require review. Do not
   encode spells with unsupported extra prerequisites as if fully enforced.
-- Advanced talents are not in the existing catalog, so such recipes are rejected.
+- Advanced talents are now catalogued as `SpheresAdvancedTalent` records, but
+  spellcrafting recipes still reject them: recipes use basic talents only.
 - Temporary talents, physical book inventories, automatic access updates,
   actual casting and mishap resolution are not automated.
 - Acquisition/forgetting and post-selection invalidation need stronger lifecycle

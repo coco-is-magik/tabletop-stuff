@@ -24,7 +24,7 @@ def main():
     run(["javac", "--release", "17", "-Xlint:all", "-Werror", "-d", str(CLASSES),
          *map(str, sources)])
     if action == "test":
-        for suite in ("movement_fix", "natural_equipment_fix", "bonus_cache_fix", "temp_filter_fix", "coverage", "associated_feats", "custom_training", "alternative_brew", "catalog", "class_catalog", "class_tokens", "conscript", "elementalist", "feats",
+        for suite in ("movement_fix", "natural_equipment_fix", "bonus_cache_fix", "temp_filter_fix", "coverage", "associated_feats", "custom_training", "alternative_brew", "catalog", "advanced_talents", "class_catalog", "class_tokens", "conscript", "elementalist", "feats",
                       "spellcrafting", "spheres", "traditions", "martial_traditions", "traits", "racial", "prestige"):
             run([sys.executable, str(ROOT / "tools" / f"test_{suite}.py")])
         run(["java", "-ea", "-cp", str(CLASSES), "dicepool.ProfileTest"])

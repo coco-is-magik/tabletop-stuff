@@ -8,8 +8,11 @@ The campaign loads 53 base spheres: 26 Power and 27 Might, including the separat
 listed supplemental spheres. There are 2,330 basic talent entries, of which four
 retain their existing Destruction records and 2,326 are new generated records.
 Names are sphere-qualified to avoid collisions. Existing character/class keys and
-manual records remain unchanged. Advanced/legendary talents, Original Power rules,
-feats, archetypes and Guile catalogs are not imported.
+manual records remain unchanged. 411 Ultimate-tab advanced talents are imported as
+separate `SpheresAdvancedTalent` records whose source prerequisites compile to real
+`PRE` tokens; clauses that cannot be resolved require GM approval through the
+`Spheres Advanced Talent Adjudication` category. Legendary talents, Original Power
+rules, feats, archetypes and Guile catalogs are not imported.
 
 Each new talent has its source rules description, source attribution, base-sphere
 prerequisite and the appropriate magic/combat selection category. Tactical actions

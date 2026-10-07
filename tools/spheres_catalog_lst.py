@@ -10,6 +10,7 @@ import re
 from spheres_catalog import inventory
 from spheres_catalog_source import ROOT, SNAPSHOTS
 from spheres_associated_feats import equivalence_tags
+from spheres_advanced_talents import indexes, prerequisites
 
 DATA = ROOT / "data/spheres"
 LEGACY = {"Admixture", "Searing Blast", "Epicenter", "Gather Energy"}
@@ -81,7 +82,8 @@ def build():
     rows = inventory()
     overrides = json.loads((DATA / "catalog-mechanics.json").read_text())
     categories, packages, output = [], [], {}
-    review = []
+    review, advanced_review, approval = [], [], []
+    spheres_index, talent_index = indexes(rows)
     for row in rows:
         name, slug, cat = row["sphere"], row["slug"], category(row)
         ident = token(name)
@@ -95,7 +97,7 @@ def build():
         # Repeated selections must not own DEFINEs: removing one selection
         # otherwise undefines the counter while other selections still exist.
         counters = ["DEFINE:" + prefix + "_" + token(t["name"]).upper() + "_COUNT|0"
-                    for t in row["talents"] if repeat_limit(t) > 1
+                    for t in row["talents"] + row["advanced"] if repeat_limit(t) > 1
                     and not any(tag.startswith("MULT:") for tag in overrides.get(key(row, t), []))]
         base_tags.extend(counters)
         if row["system"] == "power" and slug != "destruction":
@@ -228,6 +230,41 @@ def build():
             review.append({"key": name_key, "sphere": name, "repeat_limit": limit,
                            "mechanics": overrides.get(name_key, []),
                            "prerequisites": [t for t in tags if t.startswith("PRE")]})
+        for talent in row["advanced"]:
+            name_key = key(row, talent)
+            parsed, unresolved = prerequisites(row["system"], talent["text"],
+                                               spheres_index, talent_index)
+            own = "PREABILITY:1,CATEGORY=" + cat + "," + base
+            parsed = [tag for tag in parsed if tag != own]
+            tags = [name_key, "CATEGORY:" + cat, "TYPE:SpheresAdvancedTalent." + ident,
+                    own, "BONUS:VAR|" + prefix + "_TALENTS|1", *parsed]
+            if unresolved:
+                approved = "Reviewed - " + name_key
+                tags.append("PREABILITY:1,CATEGORY=Spheres Advanced Talent Adjudication," + approved)
+                approval.append("\t".join([
+                    approved, "CATEGORY:Spheres Advanced Talent Adjudication", "COST:0",
+                    "DESC:GM approval required; unresolved prerequisites: " + "; ".join(unresolved)]))
+            limit = repeat_limit(talent)
+            if limit > 1:
+                counter = prefix + "_" + token(talent["name"]).upper() + "_COUNT"
+                tags += ["MULT:YES", "STACK:YES", "CHOOSE:NOCHOICE",
+                         "BONUS:VAR|" + counter + "|1"]
+                if limit < 99:
+                    tags += ["PREVARLT:" + counter + "," + str(limit)]
+            if slug == "equipment-sphere":
+                tags[2] += ".EquipmentTalent"
+            tags += overrides.get(name_key, [])
+            tags += equivalence_tags(name_key)
+            tags += ["DESC:" + text(talent["text"]) + " Advanced talent; the GM decides whether"
+                     " advanced talents are available. Automation is partial; consult"
+                     " docs/sphere-catalog.md. Unautomated rules must be applied manually.",
+                     "SOURCEPAGE:" + talent["url"]]
+            lines.append("\t".join(tags))
+            advanced_review.append({"key": name_key, "sphere": name, "advanced": True,
+                                    "repeat_limit": limit,
+                                    "mechanics": overrides.get(name_key, []),
+                                    "prerequisites": [t for t in tags if t.startswith("PRE")],
+                                    "unresolved_prerequisites": unresolved})
         output[f"spheres_{row['system']}_{slug}.lst"] = "\n".join(lines) + "\n"
     stance_category = 'Spheres Versatile Fighter Stance'
     categories.append('\t'.join([
@@ -255,6 +292,13 @@ def build():
     categories.append(brew_category)
     packages.extend(brew_choices)
     output["spheres_categories_catalog.lst"] = "\n".join(categories) + "\n"
+    output["spheres_categories_advanced.lst"] = "\t".join([
+        "ABILITYCATEGORY:Spheres Advanced Talent Adjudication",
+        "CATEGORY:Spheres Advanced Talent Adjudication", "EDITABLE:YES", "EDITPOOL:NO",
+        "POOL:0", "FRACTIONALPOOL:NO", "VISIBLE:YES",
+        "PLURAL:Manual Advanced Talent Approvals", "DISPLAYLOCATION:Spheres"]) + "\n"
+    output["spheres_advanced_adjudication.lst"] = "\n".join(approval) + "\n"
+    output["catalog-advanced-review.json"] = json.dumps(advanced_review, indent=2) + "\n"
     output["spheres_catalog_packages.lst"] = "\n".join(packages) + "\n"
     from spheres_enhancement_effects import templates
     output["spheres_enhancement_effects.lst"] = templates()
@@ -284,7 +328,8 @@ def main():
         for name, content in files.items():
             if (DATA / name).read_text() != content:
                 raise ValueError("Generated file differs: " + name)
-    print(f"PASS: {len(files)} deterministic catalog files; {len(review)} additional talents")
+    print(f"PASS: {len(files)} deterministic catalog files; {len(review)} additional talents; "
+          f"{len(json.loads(files['catalog-advanced-review.json']))} advanced talents")
 
 
 if __name__ == "__main__":
