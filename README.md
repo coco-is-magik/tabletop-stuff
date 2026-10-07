@@ -168,6 +168,7 @@ python3 tools/spheres.py check
 python3 tools/pcgen_spheres_gates.py all
 python3 tools/pcgen_catalog_variables.py save
 python3 tools/pcgen_advanced_talents.py save
+python3 tools/spheres_gui.py            # open the PCGen GUI with the campaign loaded
 ```
 
 ## Dependencies and boundaries
