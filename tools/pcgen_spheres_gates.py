@@ -7,6 +7,7 @@ from spheres_progression_fixtures import fixture as progression_fixture
 
 FEATURE_GATES = (
     "incanter1", "incanter20", "specializations3", "specializations20",
+    "spherespec1", "spherespec3", "spherespec20", "spherespec-owned",
     "domains1", "domains20", "domains-save", "bloodline1", "bloodline20", "bloodline-save", "healer-save",
     "destruction1", "destruction3", "destruction8", "destruction20",
     "sword1", "sword5", "sword20", "sword-save", "human-favored", "half-elf-favored", "human-favored-save", "elf-favored", "dwarf-favored", "aasimar-favored", "aasimar-favored-save", "tiefling-favored", "tiefling-favored-save", "gnome-favored", "gnome-favored-save", "halfling-favored", "halfling-favored-save", "halfling-burst", "halfling-burst-save", "orc-burst", "orc-burst-save", "orc-air-favored", "orc-air-favored-save", "half-orc-favored", "half-orc-favored-save",
@@ -113,6 +114,21 @@ def run_gate(gate):
         text = progression_fixture(level)
         for name in ("Channel Energy", "Merciful Healer", "Familiar"):
             text += f"ABILITY:Incanter Specialization|TYPE:NORMAL|CATEGORY:Incanter Specialization|KEY:{name}\n"
+        fixture.write_text(text, encoding="utf-8")
+    elif gate == "spherespec-owned":
+        fixture = work / "spherespec-owned.pcg"
+        text = progression_fixture(1)
+        text += ("ABILITY:Spheres Magic Talent|TYPE:NORMAL|CATEGORY:Spheres Magic Talent"
+                 "|KEY:Protection Sphere\n")
+        text += ("ABILITY:Incanter Specialization|TYPE:NORMAL|CATEGORY:Incanter Specialization"
+                 "|KEY:Sphere Specialization (Protection) - Already Known\n")
+        fixture.write_text(text, encoding="utf-8")
+    elif gate.startswith("spherespec"):
+        level = int(gate.removeprefix("spherespec"))
+        fixture = work / "spherespec.pcg"
+        text = progression_fixture(level)
+        text += ("ABILITY:Incanter Specialization|TYPE:NORMAL|CATEGORY:Incanter Specialization"
+                 "|KEY:Sphere Specialization (Nature)\n")
         fixture.write_text(text, encoding="utf-8")
     elif gate.startswith("incanter"):
         fixture = work / "incanter.pcg"
@@ -265,6 +281,9 @@ def main():
         if args.gate.startswith("specializations"):
             run_gate(args.gate)
             print(f"PASS: {args.gate} activation, scaling and choice restrictions")
+        if args.gate.startswith("spherespec"):
+            run_gate(args.gate)
+            print(f"PASS: {args.gate} generated sphere specialization grants, level gates and removal")
         if args.gate.startswith("incanter"):
             run_gate(args.gate)
             print(f"PASS: {args.gate} bonus feats and resource grants")

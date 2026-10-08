@@ -3,11 +3,13 @@ GAMEMODE:Pathfinder
 GENRE:Fantasy
 BOOKTYPE:Homebrew
 TYPE:Homebrew.SpheresPrototype
+SHOWINMENU:YES
 SOURCELONG:Spheres PF1e Architecture Prototype
 SOURCESHORT:SPROT
 INFOTEXT:Power and Might base classes with source-table progressions and partial class features. Load alongside Pathfinder Core Rulebook. Class-specific combat effects, prerequisites and many options require manual adjudication; see docs/spheres-classes.md.
 ABILITYCATEGORY:spheres_categories.lst
 ABILITYCATEGORY:spheres_categories_incanter.lst
+ABILITYCATEGORY:spheres_categories_incanter_specializations.lst
 ABILITY:spheres_core.lst
 SKILL:spheres_skills.lst
 TEMPLATE:spheres_enhancement_effects.lst
@@ -19,8 +21,10 @@ ABILITYCATEGORY:spheres_categories_spellcrafting.lst
 ABILITY:spheres_spellcrafting_feats.lst
 ABILITY:spheres_custom_spells.lst
 ABILITYCATEGORY:spheres_categories_traditions.lst
+ABILITYCATEGORY:spheres_categories_sphere_drawbacks.lst
 ABILITY:spheres_traditions.lst
 ABILITY:spheres_casting_options.lst
+ABILITY:spheres_sphere_drawbacks.lst
 ABILITYCATEGORY:spheres_categories_martial_traditions.lst
 ABILITY:spheres_martial_traditions.lst
 ABILITY:spheres_alternate_racial_traits.lst
@@ -30,6 +34,7 @@ ABILITY:spheres_traits.lst
 ABILITY:spheres_trait_drawbacks.lst
 ABILITY:spheres_destruction.lst
 ABILITY:spheres_incanter.lst
+ABILITY:spheres_incanter_sphere_specializations.lst
 ABILITY:spheres_incanter_sword.lst
 ABILITY:spheres_incanter_favored.lst
 ABILITY:spheres_incanter_domains.lst

@@ -291,6 +291,106 @@ class PcgenSpheresGates {
         }
     }
 
+    static void sphereSpecOwned(PlayerCharacter pc) {
+        var game = SettingsHandler.getGameAsProperty().get();
+        var magic = game.getAbilityCategory("Spheres Magic Talent");
+        var pool = game.getAbilityCategory("Incanter Protection Specialization Talent");
+        var facade = CharacterManager.getCharacters().iterator().next();
+        var messages = new Messages();
+        var controller = new CharacterAbilities(pc, messages, facade.getDataSet(), new TodoManager());
+        try {
+            // The character already possessed Protection before taking the specialization.
+            require(pc.hasAbilityKeyed(magic, "Protection Sphere"), "Fixture must know Protection");
+            require(pc.getAvailableAbilityPool(pool).intValue() == 1,
+                    "Already possessing the sphere must grant one talent of it instead");
+            require(pc.getVariableValue("SPHERES_CL_PROTECTION", "").intValue() == 2,
+                    "The specialization must still add one caster level with the sphere");
+            require(ability(magic, "Protection - Buttressing").qualifies(pc,
+                    ability(magic, "Protection - Buttressing")),
+                    "The replacement talent must come from that sphere");
+            require(!ability(magic, "Nature - Deep Nature").qualifies(pc,
+                    ability(magic, "Nature - Deep Nature")),
+                    "The replacement talent pool must be restricted to that sphere");
+            System.out.println("SPHERES_GATES_OK: spherespec-owned");
+        } finally {
+            controller.closeCharacter();
+        }
+    }
+
+    static void sphereSpec(PlayerCharacter pc, int level) {
+        var game = SettingsHandler.getGameAsProperty().get();
+        var active = game.getAbilityCategory("Incanter Active Specialization");
+        var specs = game.getAbilityCategory("Incanter Specialization");
+        var magic = game.getAbilityCategory("Spheres Magic Talent");
+        var special = game.getAbilityCategory("Special Ability");
+        var facade = CharacterManager.getCharacters().iterator().next();
+        var messages = new Messages();
+        var controller = new CharacterAbilities(pc, messages, facade.getDataSet(), new TodoManager());
+        try {
+            var natureTalent = ability(magic, "Nature - Deep Nature");
+            // Taking the specialization grants the sphere and its caster level, so the
+            // sphere's talents satisfy their prerequisites immediately.
+            require(pc.hasAbilityKeyed(magic, "Nature Sphere"),
+                    "Taking the specialization must grant its sphere as a magic talent");
+            require(natureTalent.qualifies(pc, natureTalent),
+                    "Granted sphere must satisfy its talents' sphere prerequisite");
+            require(pc.getVariableValue("SPHERES_CL_NATURE", "").intValue() == level + 1,
+                    "Taking the specialization must add one caster level with its sphere");
+            require(pc.getVariableValue("SPHERES_CASTER_LEVEL", "").intValue() == level,
+                    "Sphere caster level bonus leaked to general caster level");
+            require(pc.getAvailableAbilityPool(specs).intValue() == 2,
+                    "Three-point specialization must consume three of the five points");
+            require(pc.getAvailableAbilityPool(
+                    game.getAbilityCategory("Incanter Nature Specialization Talent")).signum() == 0,
+                    "Gaining the sphere must not also grant a free talent");
+            var budget = pc.getAvailableAbilityPool(magic);
+            // Activating it only brings its specialization abilities into effect.
+            var choice = ability(active, "Active Sphere Specialization (Nature)");
+            controller.addAbility(active, choice);
+            require(messages.errors.isEmpty(), "Generated Nature specialization failed to activate");
+            require(pc.getAvailableAbilityPool(magic).equals(budget),
+                    "Bonus specialization sphere must not spend a normal talent");
+            require(pc.hasAbilityKeyed(special, "Incanter Nature Animal Companion") == (level >= 3),
+                    "Nature level 3 ability gate");
+            require(pc.hasAbilityKeyed(special, "Incanter Nature Empower Companion") == (level >= 8),
+                    "Nature level 8 ability gate");
+            require(pc.hasAbilityKeyed(special, "Incanter Nature Life Connection") == (level >= 20),
+                    "Nature level 20 ability gate");
+            controller.removeAbility(active, choice);
+            require(!pc.hasAbilityKeyed(special, "Incanter Nature Animal Companion"),
+                    "Nature ability removal failed");
+            require(pc.hasAbilityKeyed(magic, "Nature Sphere")
+                    && pc.getVariableValue("SPHERES_CL_NATURE", "").intValue() == level + 1,
+                    "Sphere and its caster level belong to the taken specialization");
+            // Switching away must remove the sphere and its caster level. Specializations
+            // are a 1st-level choice (PREVAREQ:SPHERES_INCANTER_LEVEL,1), so the switch
+            // can only be exercised at level 1.
+            controller.removeAbility(specs, ability(specs, "Sphere Specialization (Nature)"));
+            require(!pc.hasAbilityKeyed(magic, "Nature Sphere"),
+                    "Switching away must remove the sphere");
+            require(!natureTalent.qualifies(pc, natureTalent),
+                    "Removed sphere must not satisfy talent prerequisites");
+            require(pc.getVariableValue("SPHERES_CL_NATURE", "").intValue() == 0,
+                    "Switching away must remove the sphere caster level");
+            require(pc.getAvailableAbilityPool(specs).intValue() == 5, "Specialization refund failed");
+            if (level == 1) {
+                // Switching to another sphere grants that one instead.
+                var alterationTalent = ability(magic, "Alteration - Agile");
+                controller.addAbility(specs, ability(specs, "Sphere Specialization (Alteration)"));
+                require(messages.errors.isEmpty(), "Switching specializations failed: " + messages.errors);
+                require(pc.hasAbilityKeyed(magic, "Alteration Sphere"),
+                        "Switching must grant the new specialization's sphere");
+                require(alterationTalent.qualifies(pc, alterationTalent),
+                        "Switched sphere must satisfy its talents' prerequisite");
+                require(pc.getVariableValue("SPHERES_CL_ALTERATION", "").intValue() == level + 1,
+                        "Switched sphere must gain its caster level");
+            }
+            System.out.println("SPHERES_GATES_OK: spherespec" + level);
+        } finally {
+            controller.closeCharacter();
+        }
+    }
+
     static void bloodline(PlayerCharacter pc, int level) {
         var game = SettingsHandler.getGameAsProperty().get();
         var active = game.getAbilityCategory("Incanter Active Specialization");
@@ -920,7 +1020,10 @@ class PcgenSpheresGates {
         var messages = new Messages();
         var controller = new CharacterAbilities(pc, messages, facade.getDataSet(), new TodoManager());
         try {
-            require(!pc.hasAbilityKeyed(magic, "Destruction Sphere"), "Fixture must not already know Destruction");
+            require(pc.hasAbilityKeyed(magic, "Destruction Sphere"),
+                    "Taking the specialization must grant its sphere");
+            require(pc.getVariableValue("SPHERES_CL_DESTRUCTION", "").intValue() == level + 1,
+                    "Taking the specialization must add one caster level with its sphere");
             var budget = pc.getAvailableAbilityPool(magic);
             var choice = ability(active, "Active Sphere Specialization (Destruction)");
             controller.addAbility(active, choice);
@@ -946,7 +1049,14 @@ class PcgenSpheresGates {
             require(!pc.hasAbilityKeyed(special, "Incanter Indestructible"), "Original-only Indestructible granted");
             rejected(controller, messages, active, choice, "InfoAbility.Messages.Duplicate");
             controller.removeAbility(active, choice);
-            require(!pc.hasAbilityKeyed(magic, "Destruction Sphere"), "Bonus sphere removal failed");
+            require(pc.hasAbilityKeyed(magic, "Destruction Sphere"),
+                    "Sphere must persist with the taken specialization");
+            require(pc.getVariableValue("SPHERES_CL_DESTRUCTION", "").intValue() == level + 1,
+                    "Caster level must persist with the taken specialization");
+            var specs = game.getAbilityCategory("Incanter Specialization");
+            controller.removeAbility(specs, ability(specs, "Sphere Specialization (Destruction)"));
+            require(!pc.hasAbilityKeyed(magic, "Destruction Sphere"),
+                    "Sphere must leave with its specialization");
             require(pc.getVariableValue("SPHERES_CL_DESTRUCTION", "").intValue() == level, "CL removal failed");
             require(!pc.hasAbilityKeyed(special, "Incanter Intense Magic"), "Intense Magic removal failed");
             require(!pc.hasAbilityKeyed(special, "Incanter Movement Burst"), "Movement Burst removal failed");
@@ -1087,6 +1197,10 @@ class PcgenSpheresGates {
             case "incanter20": incanter(pc, 20); break;
             case "specializations3": specializations(pc, 3); break;
             case "specializations20": specializations(pc, 20); break;
+            case "spherespec-owned": sphereSpecOwned(pc); break;
+            case "spherespec1": sphereSpec(pc, 1); break;
+            case "spherespec3": sphereSpec(pc, 3); break;
+            case "spherespec20": sphereSpec(pc, 20); break;
             case "domains1": domains(pc, 1); break;
             case "domains20": domains(pc, 20); break;
             case "bloodline1": bloodline(pc, 1); break;

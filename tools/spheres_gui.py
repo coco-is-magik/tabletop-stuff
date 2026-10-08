@@ -5,19 +5,28 @@ Java/JavaFX toolchain and the same campaign data path as the headless gates, but
 starts PCGen's JavaFX GUI and points it at this repository's `data/` so the
 Spheres campaign and its Core dependency appear in the Sources list.
 
-On first launch PCGen shows its Source Selection dialog: pick "Core Rulebook"
-(or "Pathfinder RPG for Players") and "Spheres PF1e - Architecture Prototype",
-then Load. PCGen remembers the choice in the settings directory below, so later
-launches start faster.
+On launch PCGen shows its Source Selection dialog on the "Advanced" tab, with the
+"Pathfinder" game mode and "Spheres PF1e - Architecture Prototype" + "Core Rulebook"
+already selected — click Load. PCGen remembers the choice in the settings directory
+below, so later launches start faster.
+
+Notes on PCGen's own options, which this wrapper works around:
+- `--settingsdir` and `--character` are declared with argparse4j `nargs(1)`, so
+  `args.getString(...)`/`args.get(...)` return the list form (`[value]`); PCGen
+  then uses a bogus bracketed settings directory and never reads `options.ini`.
+  The wrapper therefore configures the settings directory through `config.ini`
+  (`settingsPath`, via `-Dpcgen.config`) instead of `--settingsdir`.
+- Auto-load and `-m` match campaigns by name, and three pcc files are named
+  "Core Rulebook", so they load Core Rulebook twice, which aborts the load. The
+  wrapper therefore does not auto-load; pick the sources in the dialog.
+
+Requirement: the campaign declares SHOWINMENU:YES so PCGen lists it at all;
+tools/pcgen_campaign_listing.py guards that.
 
 Examples:
-    python3 tools/spheres_gui.py                     # GUI, opens the sample character
-    python3 tools/spheres_gui.py --no-character      # GUI with no character open
-    python3 tools/spheres_gui.py --tab Abilities     # start on a tab
-    python3 tools/spheres_gui.py --dry-run           # print the launch command only
-    python3 tools/spheres_gui.py --party myparty.pcp # open a party file
-
-Extra arguments after `--` are forwarded to PCGen unchanged.
+    python3 tools/spheres_gui.py               # GUI with the campaign pre-selected
+    python3 tools/spheres_gui.py --dry-run     # print the launch command only
+    python3 tools/spheres_gui.py -- <pcgen args>   # forward extra args to PCGen
 """
 import argparse
 import os
@@ -28,8 +37,9 @@ from pcgen_spheres_smoke import CACHE, JAVA, PCGEN, ROOT
 
 JAR = PCGEN / "build/libs/pcgen-6.09.06.jar"
 JAVAFX_MODULES = ("base", "graphics", "controls", "media", "fxml", "swing", "web")
-SETTINGS = ROOT / "build/pcgen-gui"
-DEFAULT_CHARACTER = ROOT / "testdata/spheres/incanter1-int18.pcg"
+# Keep settings out of the repository. PCGen writes options.ini/config.ini here.
+SETTINGS = Path(os.environ.get("XDG_DATA_HOME", Path.home() / ".local/share")) / \
+    "tabletop-stuff/pcgen-gui"
 
 
 def javafx_jars():
@@ -42,33 +52,64 @@ def javafx_jars():
     return jars
 
 
-def settings_dir():
+def upsert(path, wanted):
+    """Set keys in a Java properties file, replacing any existing values."""
+    lines = []
+    if path.is_file():
+        lines = [line for line in path.read_text(encoding="utf-8").splitlines()
+                 if line.split("=", 1)[0] not in wanted]
+    lines += [f"{key}={value}" for key, value in wanted.items()]
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def seed_settings(settings):
+    """Prepare the GUI source dialog for the Spheres campaign.
+
+    - Open on the Advanced tab (homebrew campaigns are only listed there).
+    - Default the game mode to Pathfinder.
+    - Pre-select Core Rulebook + Spheres so the dialog is ready to Load.
+    - Avoid auto-load and `-m`: they match campaigns by name and three pcc files
+      are named "Core Rulebook", so they load Core Rulebook twice, aborting the
+      load. Pre-selection matches with a break, so it adds Core only once.
+    """
+    upsert(settings / "UIConfig.v2.ini", {
+        "SourceSelectionDialog.useBasic": "false",
+        "advancedSourceSelectionPanel.selectedGame": "Pathfinder_RPG",
+        "advancedSourceSelectionPanel.selectedSources.Pathfinder_RPG":
+            "Core Rulebook|Spheres PF1e - Architecture Prototype",
+    })
+
+
+
+def settings_dir(override=None):
     """Persistent settings so the GUI remembers characters and preferences."""
-    SETTINGS.mkdir(parents=True, exist_ok=True)
-    config = SETTINGS / "config.ini"
+    settings = Path(override) if override else SETTINGS
+    settings.mkdir(parents=True, exist_ok=True)
+    config = settings / "config.ini"
     if not config.is_file():
         config.write_text(
-            f"settingsPath={SETTINGS}\nsystemsPath={PCGEN / 'system'}\n"
+            f"settingsPath={settings}\nsystemsPath={PCGEN / 'system'}\n"
             f"pluginsPath={PCGEN / 'plugins'}\npccFilesPath={PCGEN / 'data'}\n"
             f"osPath={PCGEN / 'outputsheets'}\npreviewPath={PCGEN / 'preview'}\n",
             encoding="utf-8")
-    options = SETTINGS / "options.ini"
+    options = settings / "options.ini"
     if not options.is_file():
         options.write_text(
             f"pcgen.files.homebrewdataPath={ROOT / 'data'}\n"
-            f"pcgen.files.characters={SETTINGS / 'characters'}\n"
-            f"pcgen.files.customPath={SETTINGS / 'custom'}\n"
-            f"pcgen.files.vendordataPath={SETTINGS / 'vendor'}\n",
+            f"pcgen.files.characters={settings / 'characters'}\n"
+            f"pcgen.files.customPath={settings / 'custom'}\n"
+            f"pcgen.files.vendordataPath={settings / 'vendor'}\n",
             encoding="utf-8")
-    return SETTINGS
+    seed_settings(settings)
+    return settings
 
 
-def launch_command(character, tab, party, extra):
+def launch_command(extra, settings=None):
     if not JAVA.is_file():
         raise SystemExit(f"Java runtime not found: {JAVA}")
     if not JAR.is_file():
         raise SystemExit(f"Vendored PCGen JAR not found: {JAR}")
-    work = settings_dir()
+    work = settings_dir(settings)
     args = [str(JAVA), "--enable-preview",
             "--module-path", os.pathsep.join(map(str, javafx_jars())),
             "--add-modules", "javafx.controls,javafx.web,javafx.swing,javafx.fxml",
@@ -78,39 +119,23 @@ def launch_command(character, tab, party, extra):
             f"-Dpcgen.config={work}",
             "-Djava.awt.headless=false",
             "-cp", str(JAR),
-            "pcgen.system.Main",
-            "--settingsdir", str(work)]
-    if tab:
-        args += ["--tab", tab]
-    if party:
-        args += ["--party", str(party)]
-    if character:
-        args += ["--character", str(character)]
+            "pcgen.system.Main"]
     return args + list(extra)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--character", type=Path,
-                        help="character file to open (default: the sample Incanter fixture)")
-    parser.add_argument("--no-character", action="store_true",
-                        help="start with no character open")
-    parser.add_argument("--party", type=Path, help="party file to open")
-    parser.add_argument("--tab", help="tab to open, e.g. Summary, Abilities, Inventory")
+    parser.add_argument("--settings-dir", type=Path,
+                        help="settings directory (default: a directory under the user data "
+                             "directory). PCGen writes and reloads options.ini here.")
     parser.add_argument("--dry-run", action="store_true", help="print the command and exit")
     parser.add_argument("--force", action="store_true",
                         help="launch even without a detected display")
     parser.add_argument("extra", nargs="*", help="arguments forwarded to PCGen")
     args = parser.parse_args()
 
-    character = None if args.no_character else (args.character or DEFAULT_CHARACTER)
-    if character and not Path(character).is_file():
-        parser.error(f"character file not found: {character}")
-    if args.party and not args.party.is_file():
-        parser.error(f"party file not found: {args.party}")
-
-    command = launch_command(character, args.tab, args.party, args.extra)
+    command = launch_command(args.extra, args.settings_dir)
     if args.dry_run:
         print(" ".join(command))
         return
@@ -120,11 +145,10 @@ def main():
                          "session (or reuse --force if the display is provided some other way).\n"
                          "Command was:\n  " + " ".join(command))
 
-    print(f"PCGen settings directory: {SETTINGS}", flush=True)
+    settings = args.settings_dir or SETTINGS
+    print(f"PCGen settings directory: {settings}", flush=True)
     print(f"Campaign data directory:  {ROOT / 'data'}", flush=True)
-    if character:
-        print(f"Opening character:        {character}", flush=True)
-    subprocess.run(command, cwd=SETTINGS)
+    subprocess.run(command, cwd=settings)
 
 
 if __name__ == "__main__":

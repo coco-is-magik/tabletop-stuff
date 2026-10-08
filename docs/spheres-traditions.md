@@ -32,11 +32,36 @@ This is **partial** coverage. Charged Spells now supplies its additional
 boon-only credit. Boon purchases use that credit before ordinary credits;
 unused boon-only credits never increase spell points.
 Prepared Caster and Charged Spells are now mutually exclusive in either
-selection order. The other general drawbacks and boons, other doubled
-drawbacks and repeats, sphere-specific
-drawbacks, other casting modifiers, source incompatibilities, GM approval,
-concentration/action restrictions, and bonus effects of listed boons are not
-automated. Do not use these records to represent an unsupported combination;
+selection order.
+
+**Sphere-specific drawbacks** (2026-10-07) are generated from the same pinned source
+by `tools/spheres_traditions.py` into `spheres_sphere_drawbacks.lst` and
+`spheres_categories_sphere_drawbacks.lst`: 161 records across 24 spheres. Each record
+requires its base sphere (`PREABILITY:...Spheres Magic Talent,<Sphere> Sphere`) and
+grants one talent restricted to that sphere through a generated per-sphere pool
+(`Custom <Sphere> Drawback Talent`, `TYPE:SpheresBasicTalent.<Sphere>`), so the
+granted talent cannot be spent on another sphere. Declared incompatibilities are
+compiled to symmetric `!PREABILITY` tags when their names resolve to another
+generated drawback; incompatibility prose that names no record (for example "Any
+Conjuration drawback that affects the summon ability") is left to the table rather
+than guessed. `Striker` is deferred: it grants a specific talent chosen by a sphere
+the character already has, which needs a choose-sphere mechanic.
+
+Boons are now complete against the source (all 20 publish a record, including the
+newly added Bound Creature, which grants the Conjuration sphere, and Wild Will,
+which is repeatable with a chosen environment). **Oathbound Casting** is modeled
+through its pinned Oaths: the drawback itself is a free wrapper (`COST:0`) and
+each of the five named Oaths is a costed drawback selection whose `COST`, boon
+credit and drawback count equal its published oath-point value — Oath against
+Harm 4, Oath against Mercy 2, Oath of Loyalty 1, Oath of Secrecy 1, Oath of
+Silence 2 (`tools/spheres_traditions.py::oaths`, pinned from the Oaths page).
+The values are read from the snapshot rather than hard-coded, so a changed
+source raises rather than silently drifting. Three general drawbacks remain
+deliberately excluded because their mechanics need subsystems rather than a record:
+Card Casting (deck allocation), Singular Pool
+(pool coupling) and Catastrophic Failure (reroll denial plus an eligibility check).
+Other casting modifiers, GM approval, concentration/action restrictions, and bonus
+effects of listed boons remain rules text. Do not use these records to represent an unsupported combination;
 record and adjudicate it with your GM instead. Tradition choices belong at
 first casting-class level under the source rules; the PCGen record does not
 enforce the timing of a later respec. The builder is capped at five points,
@@ -96,9 +121,10 @@ drawbacks, seven second selections, conditional boons, symmetric incompatibiliti
 weighted Addictive/Vampiric Casting, Benefactor and Spell Stand-In grants, and
 Fortified Casting's higher-Constitution modifier. The repeatable Drawback Feat
 boon opens a separate pool of existing drawback feats, retaining prerequisites.
-Card Casting, Oathbound Casting, Singular Pool and Catastrophic Failure remain
-excluded until their variable credits or eligibility checks are represented.
-Conditional boon effects and casting action restrictions remain table rules.
+Oathbound Casting selects one of its five pinned Oaths, each carrying its own
+published drawback-point weight. Card Casting, Singular Pool and Catastrophic
+Failure remain excluded until their variable credits or eligibility checks are
+represented. Conditional boon effects and casting action restrictions remain table rules.
 
 Live power gates passed in
 `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-yuyst9o3` and martial gates in

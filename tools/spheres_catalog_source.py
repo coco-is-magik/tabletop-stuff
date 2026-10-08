@@ -82,7 +82,7 @@ class Page(HTMLParser):
 
 
 def fetch(slug):
-    if slug not in POWER + MIGHT + FEATS + CLASSES + PRESTIGE + ["alternate-racial-traits", "spellcrafting", "traits", "practitioner-traits", "casting-traditions", "martial-traditions", "legal:start", "using-spheres-of-might", "using-spheres-of-power"]:
+    if slug not in POWER + MIGHT + FEATS + CLASSES + PRESTIGE + ["alternate-racial-traits", "spellcrafting", "traits", "practitioner-traits", "casting-traditions", "martial-traditions", "incanter", "oaths", "legal:start", "using-spheres-of-might", "using-spheres-of-power"]:
         raise ValueError("Not a catalog source")
     url = "https://spheresofpower.wikidot.com/" + slug
     request = urllib.request.Request(url, headers={"User-Agent": "PF1-PCGen-catalog/1.0"})

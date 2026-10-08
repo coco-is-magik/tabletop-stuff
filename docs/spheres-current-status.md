@@ -65,6 +65,55 @@ trap/trigger resolution, charm/compulsion application and companion construction
 remain manual. The remaining prestige snapshots lack pinned class-skill/HD detail,
 so they stay unstarted rather than guessed.
 
+## GUI campaign visibility
+
+The Spheres campaign is homebrew, so it only appears in the GUI's Source Selection
+dialog on the **Advanced** tab. Two things are required for it to appear there:
+
+- The campaign must declare `SHOWINMENU:YES`. `ObjectKey.SHOW_IN_MENU` defaults to
+  false, so without the line the campaign is absent from the GUI lists even though
+  it loads fine headlessly (the gates resolve campaigns by name).
+- PCGen must actually read our `options.ini`, which carries
+  `pcgen.files.homebrewdataPath`. PCGen declares `--settingsdir` and `--character`
+  with argparse4j `nargs(1)`, so `args.getString(...)`/`args.get(...)` return the
+  list form (`[value]`). Passing `--settingsdir DIR` therefore makes PCGen use the
+  literal settings directory `[DIR]` (a bogus sibling), so `options.ini` is never
+  read and no homebrew campaign is scanned. `tools/spheres_gui.py` avoids the
+  broken option: it points PCGen at the settings directory through `config.ini`
+  (`settingsPath`, reached via `-Dpcgen.config`) and defaults the dialog to the
+  Advanced tab. Auto-load and `-m` are unusable for this dataset because they match
+  campaigns by name and three pcc files are named "Core Rulebook", so they load
+  Core Rulebook twice, which aborts the load (the Spheres data redefines Core's
+  FACTs).
+
+`tools/pcgen_campaign_listing.py` (`tools/PcgenGuiSources.java`) guards this: it
+runs PCGen's `FacadeFactory` — the exact facades the Source Selection dialog uses —
+and asserts the Spheres campaign is offered by the Advanced tab
+(`getSupportedCampaigns`, game-mode matched) and by the Basic quick-source list
+(`getDisplayedSourceSelections`, SHOWINMENU).
+
+## Pinned Incanter and Oaths sources
+
+Two sources were pinned with `tools/spheres_catalog_source.py`:
+
+- `testdata/spheres/catalog-source/incanter.json` — the Incanter page.
+  `tools/spheres_incanter_specializations.py` generates every Power sphere
+  specialization (24 generated; Destruction stays hand-written) into
+  `data/spheres/spheres_incanter_sphere_specializations.lst`: taking the
+  specialization grants the sphere and its +1 caster level with that sphere, and
+  activating it brings the named abilities into effect, gated at their published
+  Incanter levels (removing it removes both again). Already possessing the sphere
+  is handled by a paired `- Already Known` record that grants one talent of that
+  sphere instead — a mutual choice, because PCGen evaluates a conditional grant
+  against the post-grant state and so cannot detect it automatically. Guarded by
+  `tools/test_incanter_specializations.py` and the live
+  `spherespec1`/`spherespec3`/`spherespec20`/`spherespec-owned` gates.
+- `testdata/spheres/catalog-source/oaths.json` — the Oaths page. Oathbound Casting
+  compiles its five named Oaths (Harm 4, Mercy 2, Loyalty 1, Secrecy 1, Silence 2)
+  as costed drawback selections; the values are read from the snapshot so a source
+  change raises instead of drifting. Guarded by `tools/test_traditions.py` and the
+  live `pcgen_traditions.py power` gate.
+
 ## Advanced-talent scope extension
 
 Advanced talents moved from excluded scope to in-scope. `tools/spheres_catalog.py`

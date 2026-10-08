@@ -122,7 +122,16 @@ own — it emits PCGen records and relies on PCGen to enforce them.
 - **Casting and martial traditions**, **Spellcrafting** recipes, and **base and
   prestige classes** (Incanter, Conscript, Elementalist, Armorist, Hedgewitch and
   more, plus five prestige classes) at "thin class" fidelity: progression tables
-  and named features, with per-option mechanics incomplete.
+  and named features, with per-option mechanics incomplete. Custom-casting
+  traditions model general drawbacks and boons, all sphere-specific drawbacks, and
+  Oathbound Casting through its five pinned Oaths (each worth its published
+  drawback points). The Incanter's sphere specializations are generated for every
+  Power sphere: taking one grants the sphere and its +1 sphere caster level (so
+  its talents become selectable), activating brings its level-gated abilities into
+  effect, and removing it takes the sphere and caster level away again. If the
+  character already had the sphere, the `- Already Known` record grants one talent
+  of that sphere instead (a mutual choice, since PCGen cannot test for a sphere a
+  record also grants).
 - **Reference mechanics**: ~800 basic talents expose their scaling quantity
   (caster level, base attack bonus, practitioner modifier, skill ranks, Hit Dice)
   as PCGen variables for the sheet to read; **advanced talents compile their
@@ -168,8 +177,18 @@ python3 tools/spheres.py check
 python3 tools/pcgen_spheres_gates.py all
 python3 tools/pcgen_catalog_variables.py save
 python3 tools/pcgen_advanced_talents.py save
-python3 tools/spheres_gui.py            # open the PCGen GUI with the campaign loaded
+python3 tools/pcgen_campaign_listing.py    # GUI source lists include the campaign
+python3 tools/spheres_gui.py               # open the PCGen GUI with the campaign
 ```
+
+The GUI helper points PCGen at its settings directory through `config.ini`
+(`-Dpcgen.config`), because PCGen's `--settingsdir` is ignored (argparse4j `nargs(1)`
+makes `args.getString` return `[value]`, so PCGen reads `options.ini` from a bogus
+`[value]` directory and never scans the homebrew data path). The helper also opens
+the source dialog on the Advanced tab with "Core Rulebook" + "Spheres PF1e -
+Architecture Prototype" pre-selected, so you only need to click Load. It cannot
+auto-load for you: PCGen's auto-load and `-m` match campaigns by name and three pcc
+files are named "Core Rulebook", which loads Core twice and aborts the load.
 
 ## Dependencies and boundaries
 

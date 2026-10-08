@@ -60,16 +60,36 @@ putting these effects in a description is insufficient.
 
 ## Sphere specialization inventory
 
-Only **Destruction** has a partial specialization implementation. The following
-names are taken from the Ultimate page contents; their actual abilities,
-prerequisites, replacement rules and sphere prerequisites still need individual
-rules audits and PCGen gates. Listing a name does not imply an implemented base
-sphere or a functioning specialization.
+Every Power sphere specialization is generated from the pinned Incanter page by
+`tools/spheres_incanter_specializations.py` into
+`data/spheres/spheres_incanter_sphere_specializations.lst`. **Taking** a
+specialization grants the sphere and its +1 caster level with that sphere outright
+(both prerequisite-bearing permanent characteristics, so the sphere's talents
+become selectable); **activating** it brings the published ability names into
+effect in specialization order, gated at their Incanter levels (the ability *text*
+stays rules text). Removing the specialization removes the sphere and its caster
+level, so switching specializations is clean. The choice is 1st-level only
+(`PREVAREQ:SPHERES_INCANTER_LEVEL,1`), matching the source.
+
+The published alternative — *"If a character gains a bonus sphere or talent that
+they already possess … they instead gain one talent of their choice from that
+sphere"* — is a **paired choice**, not an automatic test. PCGen evaluates a
+conditional grant against the post-grant state (verified live: a record that both
+grants a sphere and tests for its absence never grants it), so "do I already have
+this sphere?" cannot be detected by the record that grants it. Each sphere
+therefore has a base record that grants the sphere and a mutually exclusive
+`Sphere Specialization (<Sphere>) - Already Known` record that grants one talent
+from that sphere instead; both cost 3 points, both keep the +1 sphere caster
+level, and the Active record accepts either via `PREMULT`. This mirrors the
+existing "Second Selection" record pattern. **Destruction** is hand-written in
+`spheres_incanter.lst` under the same policy and is skipped by the generator.
+Sub-specializations are listed on their parent specialization; their traded
+abilities are not yet individually modeled.
 
 | Group | Options | State |
 | --- | --- | --- |
-| Main sphere specializations | Alteration, Bear, Blood, Conjuration, Creation, Dark, Death, Divination, Enhancement, Fallen Fey, Fate, Illusion, Life, Light, Mana, Mind, Nature, Protection, Technomancy [LG], Telekinesis, Time, War, Warp, Weather | Missing |
-| Existing partial specialization | Destruction | Partial: grants, level gates and removal tested; underlying Destruction catalog incomplete. |
+| Main sphere specializations (generated) | Alteration, Bear, Blood, Conjuration, Creation, Dark, Death, Divination, Enhancement, Fallen Fey, Fate, Illusion, Life, Light, Mana, Mind, Nature, Protection, Technomancy [LG], Telekinesis, Time, War, Warp, Weather | Generated: sphere grant, +1 sphere caster level and level-gated named abilities; ability effects are rules text. Live `spherespec3`/`spherespec20` gate. |
+| Existing partial specialization | Destruction | Partial: grants, level gates and removal tested with modeled variables; underlying Destruction catalog incomplete. |
 | Guide of the Dead explanatory section | Lingering Spirits and Housed Souls | Audit as part of Guide of the Dead, not a separately purchasable specialization. |
 | Alteration variant | Bioreaver [EO3] | Missing |
 | Death variant | Guide of the Dead [Gravecaller's HB] | Missing |

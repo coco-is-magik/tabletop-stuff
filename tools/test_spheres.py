@@ -176,6 +176,7 @@ class SpheresToolTest(unittest.TestCase):
         self.assertEqual(len(FEATURE_GATES), len(set(FEATURE_GATES)))
         self.assertEqual(FEATURE_GATES, (
             "incanter1", "incanter20", "specializations3", "specializations20",
+            "spherespec1", "spherespec3", "spherespec20", "spherespec-owned",
             "domains1", "domains20", "domains-save", "bloodline1", "bloodline20", "bloodline-save", "healer-save",
             "destruction1", "destruction3", "destruction8", "destruction20",
             "sword1", "sword5", "sword20", "sword-save", "human-favored", "half-elf-favored", "human-favored-save", "elf-favored", "dwarf-favored", "aasimar-favored", "aasimar-favored-save", "tiefling-favored", "tiefling-favored-save", "gnome-favored", "gnome-favored-save", "halfling-favored", "halfling-favored-save", "halfling-burst", "halfling-burst-save", "orc-burst", "orc-burst-save", "orc-air-favored", "orc-air-favored-save", "half-orc-favored", "half-orc-favored-save",
@@ -225,7 +226,18 @@ class SpheresToolTest(unittest.TestCase):
         active = next(line for line in records if line.startswith("Active Sphere Specialization (Destruction)\t"))
         self.assertIn("COST:3", purchase)
         self.assertIn("COST:2", active)
-        self.assertIn("ABILITY:Spheres Magic Talent|AUTOMATIC|Destruction Sphere", active)
+        # Taking the specialization grants the sphere and its caster level; the paired
+        # "- Already Known" variant grants a talent instead. Activation only brings the
+        # specialization abilities into effect.
+        self.assertIn("ABILITY:Spheres Magic Talent|AUTOMATIC|Destruction Sphere", purchase)
+        self.assertIn("BONUS:VAR|SPHERES_CL_DESTRUCTION|1", purchase)
+        self.assertIn("Sphere Specialization (Destruction) - Already Known", purchase)
+        known = next(line for line in records
+                     if line.startswith("Sphere Specialization (Destruction) - Already Known\t"))
+        self.assertIn("BONUS:ABILITYPOOL|Incanter Destruction Specialization Talent|1", known)
+        self.assertNotIn("ABILITY:Spheres Magic Talent|AUTOMATIC|Destruction Sphere", known)
+        self.assertNotIn("ABILITY:Spheres Magic Talent|AUTOMATIC|Destruction Sphere", active)
+        self.assertNotIn("BONUS:VAR", active)
         self.assertIn("Incanter Intense Magic|Incanter Movement Burst", active)
         self.assertIn("Incanter Elemental Wall|PREVARGTEQ:SPHERES_INCANTER_LEVEL,8", active)
         self.assertNotIn("Incanter Penetrating Blast", active)
