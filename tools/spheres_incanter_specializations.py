@@ -98,6 +98,7 @@ def build():
             'Sphere Specialization (' + sphere + ')',
             'CATEGORY:Incanter Specialization', 'TYPE:IncanterSpecialization', 'COST:3',
             'PREVAREQ:SPHERES_INCANTER_LEVEL,1',
+            '!PREABILITY:1,CATEGORY=Spheres Magic Talent,' + sphere + ' Sphere',
             '!PREABILITY:1,CATEGORY=Incanter Specialization,Sphere Specialization ('
             + sphere + ') - Already Known',
             'BONUS:VAR|SPHERES_INCANTER_SPECIALIZATION_POINTS|3',
@@ -111,6 +112,9 @@ def build():
             'Sphere Specialization (' + sphere + ') - Already Known',
             'CATEGORY:Incanter Specialization', 'TYPE:IncanterSpecialization', 'COST:3',
             'PREVAREQ:SPHERES_INCANTER_LEVEL,1',
+            # Only offered when the sphere is already possessed. This one never grants
+            # the sphere, so the test is stable.
+            'PREABILITY:1,CATEGORY=Spheres Magic Talent,' + sphere + ' Sphere',
             '!PREABILITY:1,CATEGORY=Incanter Specialization,Sphere Specialization ('
             + sphere + ')',
             'BONUS:VAR|SPHERES_INCANTER_SPECIALIZATION_POINTS|3',

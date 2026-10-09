@@ -291,8 +291,65 @@ class PcgenSpheresGates {
         }
     }
 
+    static void sphereDrawback(PlayerCharacter pc) {
+        var game = SettingsHandler.getGameAsProperty().get();
+        var drawbacks = game.getAbilityCategory("Custom Sphere Drawback");
+        var pool = game.getAbilityCategory("Custom Alteration Drawback Talent");
+        var magic = game.getAbilityCategory("Spheres Magic Talent");
+        var facade = CharacterManager.getCharacters().iterator().next();
+        var messages = new Messages();
+        var controller = new CharacterAbilities(pc, messages, facade.getDataSet(), new TodoManager());
+        try {
+            require(pc.getAvailableAbilityPool(pool).signum() == 0,
+                    "Drawback talent pool must start empty");
+            var beast = ability(drawbacks, "Sphere Drawback - Beast Soul");
+            require(beast.qualifies(pc, beast), "Alteration drawback must qualify with its sphere");
+            controller.addAbility(drawbacks, beast);
+            require(messages.errors.isEmpty(), "Drawback rejected: " + messages.errors);
+            require(pc.getVariableValue("SPHERES_SPHERE_DRAWBACKS", "").intValue() == 1,
+                    "Drawback must count toward the drawback total");
+            require(pc.getAvailableAbilityPool(pool).intValue() == 1,
+                    "Sphere drawback must grant one talent from its sphere");
+            var agile = ability(magic, "Alteration - Agile");
+            controller.addAbility(pool, agile);
+            require(messages.errors.isEmpty(), "Granted talent rejected: " + messages.errors);
+            require(pc.hasAbilityKeyed(magic, "Alteration - Agile"),
+                    "Granted talent was not applied");
+            require(pc.getAvailableAbilityPool(pool).signum() == 0,
+                    "Granted talent must consume the drawback's own credit");
+            controller.removeAbility(pool, agile);
+            controller.removeAbility(drawbacks, beast);
+            require(pc.getAvailableAbilityPool(pool).signum() == 0, "Drawback refund failed");
+            // A drawback that pins its bonus talent grants that talent instead of a pick.
+            var brew = ability(drawbacks, "Sphere Drawback - Transformative Brew");
+            controller.addAbility(drawbacks, brew);
+            require(messages.errors.isEmpty(), "Pinned drawback rejected: " + messages.errors);
+            require(pc.hasAbilityKeyed(magic, "Alteration - Instill Shapeshift"),
+                    "Pinned drawback must grant its fixed talent");
+            require(pc.getAvailableAbilityPool(pool).signum() == 0,
+                    "Pinned drawback must not leave a free pick");
+            controller.removeAbility(drawbacks, brew);
+            require(!pc.hasAbilityKeyed(magic, "Alteration - Instill Shapeshift"),
+                    "Pinned drawback refund failed");
+            // A drawback that forbids named talents must block them while held.
+            var lycan = ability(drawbacks, "Sphere Drawback - Lycanthropic");
+            var mass = ability(magic, "Alteration - Mass Alteration");
+            require(mass.qualifies(pc, mass), "Mass Alteration must qualify beforehand");
+            controller.addAbility(drawbacks, lycan);
+            require(messages.errors.isEmpty(), "Restriction drawback rejected: " + messages.errors);
+            require(!mass.qualifies(pc, mass), "Drawback must forbid the named talent");
+            rejected(controller, messages, magic, mass, "InfoAbility.Messages.NotQualified");
+            controller.removeAbility(drawbacks, lycan);
+            require(mass.qualifies(pc, mass), "Removing the drawback must restore the talent");
+            System.out.println("SPHERES_GATES_OK: spheredraw");
+        } finally {
+            controller.closeCharacter();
+        }
+    }
+
     static void sphereSpecOwned(PlayerCharacter pc) {
         var game = SettingsHandler.getGameAsProperty().get();
+        var specs = game.getAbilityCategory("Incanter Specialization");
         var magic = game.getAbilityCategory("Spheres Magic Talent");
         var pool = game.getAbilityCategory("Incanter Protection Specialization Talent");
         var facade = CharacterManager.getCharacters().iterator().next();
@@ -301,6 +358,9 @@ class PcgenSpheresGates {
         try {
             // The character already possessed Protection before taking the specialization.
             require(pc.hasAbilityKeyed(magic, "Protection Sphere"), "Fixture must know Protection");
+            require(!ability(specs, "Sphere Specialization (Protection)").qualifies(pc,
+                    ability(specs, "Sphere Specialization (Protection)")),
+                    "The base variant must be hidden once the sphere is possessed");
             require(pc.getAvailableAbilityPool(pool).intValue() == 1,
                     "Already possessing the sphere must grant one talent of it instead");
             require(pc.getVariableValue("SPHERES_CL_PROTECTION", "").intValue() == 2,
@@ -328,6 +388,11 @@ class PcgenSpheresGates {
         var controller = new CharacterAbilities(pc, messages, facade.getDataSet(), new TodoManager());
         try {
             var natureTalent = ability(magic, "Nature - Deep Nature");
+            var alreadyKnown = ability(specs, "Sphere Specialization (Nature) - Already Known");
+            require(!alreadyKnown.qualifies(pc, alreadyKnown),
+                    "'Already Known' must require the sphere it replaces");
+            require(pc.hasAbilityKeyed(specs, "Sphere Specialization (Nature)"),
+                    "The taken specialization must stay selected once the sphere is granted");
             // Taking the specialization grants the sphere and its caster level, so the
             // sphere's talents satisfy their prerequisites immediately.
             require(pc.hasAbilityKeyed(magic, "Nature Sphere"),
@@ -1197,6 +1262,7 @@ class PcgenSpheresGates {
             case "incanter20": incanter(pc, 20); break;
             case "specializations3": specializations(pc, 3); break;
             case "specializations20": specializations(pc, 20); break;
+            case "spheredraw": sphereDrawback(pc); break;
             case "spherespec-owned": sphereSpecOwned(pc); break;
             case "spherespec1": sphereSpec(pc, 1); break;
             case "spherespec3": sphereSpec(pc, 3); break;

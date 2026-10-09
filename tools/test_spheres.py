@@ -176,7 +176,7 @@ class SpheresToolTest(unittest.TestCase):
         self.assertEqual(len(FEATURE_GATES), len(set(FEATURE_GATES)))
         self.assertEqual(FEATURE_GATES, (
             "incanter1", "incanter20", "specializations3", "specializations20",
-            "spherespec1", "spherespec3", "spherespec20", "spherespec-owned",
+            "spherespec1", "spherespec3", "spherespec20", "spherespec-owned", "spheredraw",
             "domains1", "domains20", "domains-save", "bloodline1", "bloodline20", "bloodline-save", "healer-save",
             "destruction1", "destruction3", "destruction8", "destruction20",
             "sword1", "sword5", "sword20", "sword-save", "human-favored", "half-elf-favored", "human-favored-save", "elf-favored", "dwarf-favored", "aasimar-favored", "aasimar-favored-save", "tiefling-favored", "tiefling-favored-save", "gnome-favored", "gnome-favored-save", "halfling-favored", "halfling-favored-save", "halfling-burst", "halfling-burst-save", "orc-burst", "orc-burst-save", "orc-air-favored", "orc-air-favored-save", "half-orc-favored", "half-orc-favored-save",

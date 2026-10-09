@@ -22,6 +22,7 @@ ABILITY:spheres_spellcrafting_feats.lst
 ABILITY:spheres_custom_spells.lst
 ABILITYCATEGORY:spheres_categories_traditions.lst
 ABILITYCATEGORY:spheres_categories_sphere_drawbacks.lst
+ABILITY:spheres_sphere_drawback_restrictions.lst
 ABILITY:spheres_traditions.lst
 ABILITY:spheres_casting_options.lst
 ABILITY:spheres_sphere_drawbacks.lst

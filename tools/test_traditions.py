@@ -5,7 +5,8 @@ from spheres import DATA, records
 from spheres_traditions import (build, OUTPUT, sections, LEGACY, DEFERRED, CONFLICTS,
                                 build_sphere_drawbacks, sphere_drawbacks, sphere_drawback_key,
                                 strip_tags, SPHERE_DRAW_OUTPUT, SPHERE_DRAW_CATEGORIES,
-                                SPHERE_DRAW_DEFERRED, oaths, oath_rows, OATHS_NAMED, OATH_DRAW)
+                                SPHERE_DRAW_DEFERRED, SPHERE_DRAW_RESTRICTIONS, oaths, oath_rows,
+                                OATHS_NAMED, OATH_DRAW)
 
 
 class TraditionTests(unittest.TestCase):
@@ -97,7 +98,7 @@ class SphereDrawbackTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.generate, cls.categories = build_sphere_drawbacks()
+        cls.generate, cls.categories, cls.restrictions = build_sphere_drawbacks()
         cls.rows = {}
         for line in cls.generate.splitlines():
             if '\t' in line:
@@ -108,6 +109,7 @@ class SphereDrawbackTests(unittest.TestCase):
     def test_generated_files_are_current(self):
         self.assertEqual(SPHERE_DRAW_OUTPUT.read_text(), self.generate)
         self.assertEqual(SPHERE_DRAW_CATEGORIES.read_text(), self.categories)
+        self.assertEqual(SPHERE_DRAW_RESTRICTIONS.read_text(), self.restrictions)
 
     def test_every_drawback_requires_its_sphere_and_grants_one_talent(self):
         for sphere, entries in self.grouped.items():
@@ -118,9 +120,50 @@ class SphereDrawbackTests(unittest.TestCase):
                     continue
                 tags = self.rows[sphere_drawback_key(row['heading'])]
                 self.assertIn(f'PREABILITY:1,CATEGORY=Spheres Magic Talent,{sphere} Sphere', tags)
+                # Either a free talent from the sphere, or - when the source pins the
+                # bonus talent - that exact talent granted automatically.
                 paddings = [tag for tag in tags if tag.startswith('BONUS:ABILITYPOOL|')]
-                self.assertEqual(paddings, [f'BONUS:ABILITYPOOL|Custom {sphere} Drawback Talent|1'])
+                pinned = [tag for tag in tags if tag.startswith('ABILITY:Spheres Magic Talent')]
+                self.assertEqual(len(paddings) + len(pinned), 1, sphere)
+                if paddings:
+                    self.assertEqual(paddings,
+                                     [f'BONUS:ABILITYPOOL|Custom {sphere} Drawback Talent|1'])
+                else:
+                    self.assertTrue(pinned[0].startswith(
+                        f'ABILITY:Spheres Magic Talent|AUTOMATIC|{sphere} - '), pinned)
                 self.assertFalse(any(tag.startswith('DEFINE:') for tag in tags))
+
+    def test_forbidden_talents_resolve_to_real_records(self):
+        campaign = set()
+        for path in sorted(DATA.glob('*.lst')):
+            campaign.update(line.split('\t')[0] for line in records(path))
+        self.assertTrue(self.restrictions)
+        for line in self.restrictions.splitlines():
+            if not line or line.startswith('#'):
+                continue
+            key = line.split('\t')[0]
+            self.assertTrue(key.endswith('.MOD'), key)
+            self.assertTrue(key.startswith('CATEGORY=Spheres Magic Talent|'), key)
+            target = key.removesuffix('.MOD').split('|', 1)[1]
+            self.assertIn(target, campaign, key)
+            blockers = [tag for tag in line.split('\t') if tag.startswith('!PREABILITY:')]
+            self.assertEqual(len(blockers), 1, key)
+            self.assertIn(blockers[0].split(',')[-1], self.rows, key)
+
+    def test_pinned_bonus_talents_resolve_to_that_sphere(self):
+        campaign = set()
+        for path in sorted(DATA.glob('*.lst')):
+            campaign.update(line.split('\t')[0] for line in records(path))
+        for key, tags in self.rows.items():
+            sphere = next(tag.split(',')[-1].removesuffix(' Sphere')
+                          for tag in tags
+                          if tag.startswith('PREABILITY:1,CATEGORY=Spheres Magic Talent,'))
+            for tag in tags:
+                if not tag.startswith('ABILITY:Spheres Magic Talent|AUTOMATIC|'):
+                    continue
+                talent = tag.rsplit('|', 1)[-1]
+                self.assertIn(talent, campaign, key)
+                self.assertEqual(talent.split(' - ')[0], sphere, key)
 
     def test_drawback_talent_pools_are_sphere_restricted(self):
         for sphere in self.grouped:
@@ -139,6 +182,14 @@ class SphereDrawbackTests(unittest.TestCase):
             for tag in tags:
                 if tag.startswith('!PREABILITY:1,CATEGORY=Custom Sphere Drawback,'):
                     self.assertIn(tag.split(',')[-1], self.rows, key)
+
+    def test_incompatibilities_are_symmetric(self):
+        blocking = {key: {tag.split(',')[-1] for tag in tags
+                          if tag.startswith('!PREABILITY:1,CATEGORY=Custom Sphere Drawback,')}
+                    for key, tags in self.rows.items()}
+        for key, targets in blocking.items():
+            for target in targets:
+                self.assertIn(key, blocking.get(target, set()), f'{key} <-> {target}')
 
     def test_unresolvable_incompatibility_text_is_not_encoded(self):
         # "Any Conjuration drawback that affects the summon ability" is prose, not a key.

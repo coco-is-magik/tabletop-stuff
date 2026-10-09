@@ -130,8 +130,10 @@ own — it emits PCGen records and relies on PCGen to enforce them.
   its talents become selectable), activating brings its level-gated abilities into
   effect, and removing it takes the sphere and caster level away again. If the
   character already had the sphere, the `- Already Known` record grants one talent
-  of that sphere instead (a mutual choice, since PCGen cannot test for a sphere a
-  record also grants).
+  of that sphere instead; each of the pair is shown only when it applies. Sphere-
+  specific drawbacks grant a talent of their sphere — or the exact talent the source
+  pins — prohibit named talents, and exclude incompatible drawbacks in both
+  directions.
 - **Reference mechanics**: ~800 basic talents expose their scaling quantity
   (caster level, base attack bonus, practitioner modifier, skill ranks, Hit Dice)
   as PCGen variables for the sheet to read; **advanced talents compile their

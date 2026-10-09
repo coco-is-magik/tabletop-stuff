@@ -77,10 +77,15 @@ sphere"* — is a **paired choice**, not an automatic test. PCGen evaluates a
 conditional grant against the post-grant state (verified live: a record that both
 grants a sphere and tests for its absence never grants it), so "do I already have
 this sphere?" cannot be detected by the record that grants it. Each sphere
-therefore has a base record that grants the sphere and a mutually exclusive
+therefore has a base record that grants the sphere and a
 `Sphere Specialization (<Sphere>) - Already Known` record that grants one talent
 from that sphere instead; both cost 3 points, both keep the +1 sphere caster
-level, and the Active record accepts either via `PREMULT`. This mirrors the
+level, and the Active record accepts either via `PREMULT`. Both records are gated:
+the `- Already Known` record requires `PREABILITY:...Spheres Magic Talent,
+<Sphere> Sphere`, and the base record requires its absence. A record-level
+prerequisite is evaluated when the choice is made, so the base record's own sphere
+grant does not invalidate it — verified live (the sphere is still granted, the
+caster level is still +1, and the selection survives). This mirrors the
 existing "Second Selection" record pattern. **Destruction** is hand-written in
 `spheres_incanter.lst` under the same policy and is skipped by the generator.
 Sub-specializations are listed on their parent specialization; their traded

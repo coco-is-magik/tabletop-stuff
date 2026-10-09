@@ -104,10 +104,12 @@ Two sources were pinned with `tools/spheres_catalog_source.py`:
   activating it brings the named abilities into effect, gated at their published
   Incanter levels (removing it removes both again). Already possessing the sphere
   is handled by a paired `- Already Known` record that grants one talent of that
-  sphere instead — a mutual choice, because PCGen evaluates a conditional grant
-  against the post-grant state and so cannot detect it automatically. Guarded by
+  sphere instead; both records are gated on whether the sphere is held. Sphere-
+  specific drawbacks grant a talent of their sphere (or the exact talent the source
+  pins), prohibit named talents ("cannot/may not gain, take or select …"), and
+  exclude incompatible drawbacks symmetrically. Guarded by
   `tools/test_incanter_specializations.py` and the live
-  `spherespec1`/`spherespec3`/`spherespec20`/`spherespec-owned` gates.
+  `spherespec1`/`spherespec3`/`spherespec20`/`spherespec-owned`/`spheredraw` gates.
 - `testdata/spheres/catalog-source/oaths.json` — the Oaths page. Oathbound Casting
   compiles its five named Oaths (Harm 4, Mercy 2, Loyalty 1, Secrecy 1, Silence 2)
   as costed drawback selections; the values are read from the snapshot so a source

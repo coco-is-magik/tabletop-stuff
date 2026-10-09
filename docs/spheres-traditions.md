@@ -40,12 +40,31 @@ by `tools/spheres_traditions.py` into `spheres_sphere_drawbacks.lst` and
 requires its base sphere (`PREABILITY:...Spheres Magic Talent,<Sphere> Sphere`) and
 grants one talent restricted to that sphere through a generated per-sphere pool
 (`Custom <Sphere> Drawback Talent`, `TYPE:SpheresBasicTalent.<Sphere>`), so the
-granted talent cannot be spent on another sphere. Declared incompatibilities are
+granted talent cannot be spent on another sphere. Where the source *pins* the bonus
+talent ("you must select the Hemokinesis talent with the bonus talent"), the
+drawback grants that exact talent automatically instead of leaving a free pick.
+Declared incompatibilities are
 compiled to symmetric `!PREABILITY` tags when their names resolve to another
 generated drawback; incompatibility prose that names no record (for example "Any
 Conjuration drawback that affects the summon ability") is left to the table rather
 than guessed. `Striker` is deferred: it grants a specific talent chosen by a sphere
 the character already has, which needs a choose-sphere mechanic.
+
+Drawbacks that forbid acquiring talents ("you cannot take the Ranged Enhancement
+talent", "you may not select … Undead Whisperer or Master's Presence") are
+enforced: `tools/spheres_traditions.py` scans each drawback's pinned text for
+clauses containing an acquisition denial (*cannot / can not / may not / nor can you*
++ *gain / take / select / choose / learn*), matches them against the catalog's real
+talent names for that sphere, and emits
+`CATEGORY=Spheres Magic Talent|<Sphere> - <Talent>.MOD` lines carrying the
+`!PREABILITY` blocking tag (`spheres_sphere_drawback_restrictions.lst`). Only names
+that resolve to a real record are encoded, so tag-based and prose restrictions
+("[space] talent", "talents that alter an aspect of weather", "only [cognition]
+talents") stay rules text.
+
+Incompatibility is symmetric: every declared `Incompatible:` pair is emitted in
+**both** directions (`tools/test_traditions.py::test_incompatibilities_are_symmetric`),
+so a drawback is excluded whether the character takes it first or second.
 
 Boons are now complete against the source (all 20 publish a record, including the
 newly added Bound Creature, which grants the Conjuration sphere, and Wild Will,

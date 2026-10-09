@@ -67,12 +67,19 @@ class IncanterSpecializationTests(unittest.TestCase):
                 continue
             base = self.rows['Sphere Specialization (' + sphere + ')']
             known = self.rows['Sphere Specialization (' + sphere + ') - Already Known']
-            # PCGen evaluates a conditional grant against the post-grant state, so the
-            # alternative is an explicit, mutually exclusive pair rather than a test
-            # of whether the sphere is already present.
+            # The alternative is an explicit, mutually exclusive pair. Both records are
+            # hidden when the other applies, and the base record is also hidden once the
+            # sphere is held - a selection prerequisite is checked when the choice is
+            # made, so it is not broken by the record's own sphere grant.
+            self.assertIn('!PREABILITY:1,CATEGORY=Spheres Magic Talent,' + sphere + ' Sphere',
+                          base)
             self.assertIn('!PREABILITY:1,CATEGORY=Incanter Specialization,Sphere'
                           ' Specialization (' + sphere + ') - Already Known', base)
             self.assertNotIn('ABILITY:Spheres Magic Talent|AUTOMATIC|' + sphere + ' Sphere', known)
+            # Only offered when the sphere is already possessed (never grants it, so the
+            # test is stable); the base record stays available either way, because PCGen
+            # evaluates a grant against the post-grant state.
+            self.assertIn('PREABILITY:1,CATEGORY=Spheres Magic Talent,' + sphere + ' Sphere', known)
             self.assertIn('!PREABILITY:1,CATEGORY=Incanter Specialization,Sphere'
                           ' Specialization (' + sphere + ')', known)
             self.assertIn('BONUS:ABILITYPOOL|' + pool_key(sphere) + '|1', known)
