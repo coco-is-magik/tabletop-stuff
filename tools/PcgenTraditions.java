@@ -20,7 +20,11 @@ class PcgenTraditions {
         boolean reload = args[4].equals("tradition-reload");
         boolean magic = args[6].equals("power");
         try {
-            if (args[6].equals("drawback-martial")) {
+            if (args[6].equals("boons")) {
+                boons(pc, controller, messages, game, reload);
+            } else if (args[6].equals("oaths")) {
+                oaths(pc, controller, messages, game, reload);
+            } else if (args[6].equals("drawback-martial")) {
                 var tradition = game.getAbilityCategory("Conscript Martial Tradition");
                 var talents = game.getAbilityCategory("Spheres Combat Talent");
                 var special = game.getAbilityCategory("Special Ability");
@@ -98,35 +102,39 @@ class PcgenTraditions {
                 require(!verbal.qualifies(pc, verbal), "Drawback without tradition");
                 controller.addAbility(tradition, choice);
                 rejected(controller, messages, tradition, choice, "InfoAbility.Messages.Duplicate");
-                require(pc.getAvailableAbilityPool(drawback).intValue() == 5, "Drawback capacity");
+                // General drawbacks are uncapped: the pool exceeds the published total.
+                int capacity = pc.getAvailableAbilityPool(drawback).intValue();
+                require(capacity >= 70, "Drawback capacity must cover every published drawback");
                 require(pc.getAvailableAbilityPool(boon).intValue() == 0, "Boon available without drawbacks");
                 rejected(controller, messages, boon, easy, "InfoAbility.Messages.NoPoints");
                 // Oathbound Casting: a free wrapper whose chosen Oath consumes its
                 // published oath-point value as drawbacks.
                 var oathbound = ability(drawback, "Tradition - Oathbound Casting");
-                var oathHarm = ability(drawback, "Oathbound Oath - Oath against Harm");
-                var oathLoyalty = ability(drawback, "Oathbound Oath - Oath of Loyalty");
+                var oathHarm = ability(drawback, "Tradition - Oathbound Casting: Oath against Harm (4 drawback points)");
+                var oathLoyalty = ability(drawback, "Tradition - Oathbound Casting: Oath of Loyalty (1 drawback point)");
                 require(!oathHarm.qualifies(pc, oathHarm), "Oath without Oathbound Casting");
                 controller.addAbility(drawback, oathbound);
-                require(pc.getAvailableAbilityPool(drawback).intValue() == 5,
+                require(pc.getAvailableAbilityPool(drawback).intValue() == capacity,
                     "Oathbound Casting itself is worth no drawback points");
                 require(pc.getAvailableAbilityPool(boon).intValue() == 0,
                     "Oathbound Casting alone unlocks no boons");
                 controller.addAbility(drawback, oathHarm);
-                require(pc.getAvailableAbilityPool(drawback).intValue() == 1,
-                    "Oath against Harm must consume four drawback points");
+                require(pc.getAvailableAbilityPool(drawback).intValue() == capacity,
+                    "An Oath must not consume drawback points");
                 require(pc.getVariableValue("SPHERES_TRADITION_DRAWBACKS", "").intValue() == 4,
                     "Oath against Harm must count as four drawbacks");
+                require(pc.getAvailableAbilityPool(boon).intValue() == 4,
+                    "Oath against Harm must grant four boon credits");
                 controller.removeAbility(drawback, oathHarm);
-                require(pc.getAvailableAbilityPool(drawback).intValue() == 5, "Oath refund");
+                require(pc.getAvailableAbilityPool(drawback).intValue() == capacity, "Oath refund");
                 controller.addAbility(drawback, oathLoyalty);
-                require(pc.getAvailableAbilityPool(drawback).intValue() == 4,
-                    "Oath of Loyalty must consume one drawback point");
+                require(pc.getAvailableAbilityPool(drawback).intValue() == capacity,
+                    "Oath of Loyalty must not consume drawback points");
                 require(pc.getVariableValue("SPHERES_TRADITION_DRAWBACKS", "").intValue() == 1,
                     "Oath of Loyalty must count as one drawback");
                 controller.removeAbility(drawback, oathLoyalty);
                 controller.removeAbility(drawback, oathbound);
-                require(pc.getAvailableAbilityPool(drawback).intValue() == 5, "Oathbound refund");
+                require(pc.getAvailableAbilityPool(drawback).intValue() == capacity, "Oathbound refund");
                 require(pc.getVariableValue("SPHERES_TRADITION_DRAWBACKS", "").intValue() == 0,
                     "Oathbound teardown");
                 require(!fortified.qualifies(pc, fortified), "Fortified without Draining Casting");
@@ -147,8 +155,10 @@ class PcgenTraditions {
                 controller.addAbility(drawback, prepared);
                 require(pc.getVariableValue("SPHERES_SPELL_POINTS", "").intValue() == original + 10,
                     "Five-point spell pool");
-                rejected(controller, messages, drawback, ability(drawback, "Tradition - Draining Casting"),
-                    "InfoAbility.Messages.NoPoints");
+                // General drawbacks are uncapped in the source; only the spell-point
+                // chart stops at five, so five points must not exhaust the pool.
+                require(pc.getAvailableAbilityPool(drawback).signum() > 0,
+                    "Drawbacks must not be capped at five points");
                 controller.removeAbility(drawback, prepared);
                 controller.removeAbility(drawback, signs);
                 controller.removeAbility(drawback, focus);
@@ -163,19 +173,19 @@ class PcgenTraditions {
                 require(!extendedSecond.qualifies(pc, extendedSecond), "Second extended requires first");
                 rejected(controller, messages, drawback, extendedSecond, "InfoAbility.Messages.NotQualified");
                 controller.addAbility(drawback, extended);
-                require(pc.getAvailableAbilityPool(drawback).intValue() == 3, "Extended costs two points");
+                require(pc.getAvailableAbilityPool(drawback).intValue() == capacity - 2, "Extended costs two points");
                 require(pc.getAvailableAbilityPool(boon).intValue() == 2, "Extended grants two boon points");
                 require(pc.getVariableValue("SPHERES_SPELL_POINTS", "").intValue() == original + 4,
                     "Extended counts as two spell-point drawbacks");
                 controller.addAbility(drawback, extendedSecond);
-                require(pc.getAvailableAbilityPool(drawback).intValue() == 1, "Double extended costs four points");
+                require(pc.getAvailableAbilityPool(drawback).intValue() == capacity - 4, "Double extended costs four points");
                 require(pc.getVariableValue("SPHERES_SPELL_POINTS", "").intValue() == original + 7,
                     "Double extended counts as four drawbacks");
                 controller.removeAbility(drawback, extendedSecond);
                 require(pc.getVariableValue("SPHERES_TRADITION_DRAWBACKS", "").intValue() == 2,
                     "Partial extended removal retains first award");
                 controller.removeAbility(drawback, extended);
-                require(pc.getAvailableAbilityPool(drawback).intValue() == 5, "Weighted refund");
+                require(pc.getAvailableAbilityPool(drawback).intValue() == capacity, "Weighted refund");
                 controller.addAbility(drawback, somatic);
                 controller.addAbility(drawback, somaticSecond);
                 require(pc.getVariableValue("SPHERES_TRADITION_DRAWBACKS", "").intValue() == 2,
@@ -211,7 +221,7 @@ class PcgenTraditions {
                 controller.removeAbility(drawback, witchmarked);
                 var addictive = ability(drawback, "Tradition - Addictive Casting");
                 controller.addAbility(drawback, addictive);
-                require(pc.getAvailableAbilityPool(drawback).intValue() == 3, "Addictive weighted cost");
+                require(pc.getAvailableAbilityPool(drawback).intValue() == capacity - 2, "Addictive weighted cost");
                 require(pc.getAvailableAbilityPool(boon).intValue() == 2, "Addictive weighted boon award");
                 require(pc.getVariableValue("SPHERES_TRADITION_DRAWBACKS", "").intValue() == 2,
                     "Addictive weighted spell points");
@@ -658,5 +668,101 @@ class PcgenTraditions {
         }
         System.out.println("SPHERES_GATES_OK: " + args[4]);
         System.exit(0);
+    }
+
+    /** Boons must be selectable repeatedly, two drawback points each. */
+    static void boons(pcgen.core.PlayerCharacter pc, CharacterAbilities controller,
+            Messages messages, pcgen.core.GameMode game, boolean reload) {
+        var tradition = game.getAbilityCategory("Custom Casting Tradition");
+        var drawback = game.getAbilityCategory("Custom Casting Drawback");
+        var boon = game.getAbilityCategory("Custom Casting Boon");
+        var choice = ability(tradition, "Custom Casting Tradition");
+        if (reload) {
+            require(pc.hasAbilityKeyed(boon, "Tradition - Easy Focus"), "First boon reload");
+            require(pc.hasAbilityKeyed(boon, "Tradition - Alien Source"), "Second boon reload");
+            controller.removeAbility(boon, ability(boon, "Tradition - Alien Source"));
+            controller.removeAbility(boon, ability(boon, "Tradition - Easy Focus"));
+            controller.removeAbility(drawback, ability(drawback, "Tradition - Extended Casting"));
+            controller.removeAbility(drawback, ability(drawback, "Tradition - Somatic Casting"));
+            controller.removeAbility(drawback, ability(drawback, "Tradition - Verbal Casting"));
+            controller.removeAbility(tradition, choice);
+            return;
+        }
+        controller.addAbility(tradition, choice);
+        require(messages.errors.isEmpty(), "Tradition rejected: " + messages.errors);
+        controller.addAbility(drawback, ability(drawback, "Tradition - Verbal Casting"));
+        controller.addAbility(drawback, ability(drawback, "Tradition - Somatic Casting"));
+        controller.addAbility(drawback, ability(drawback, "Tradition - Extended Casting"));
+        require(pc.getAvailableAbilityPool(boon).intValue() == 4,
+                "Four drawback points must be awarded");
+        controller.addAbility(boon, ability(boon, "Tradition - Easy Focus"));
+        require(messages.errors.isEmpty(), "First boon rejected: " + messages.errors);
+        require(pc.getAvailableAbilityPool(boon).intValue() == 2,
+                "One boon must consume two drawback points");
+        controller.addAbility(boon, ability(boon, "Tradition - Alien Source"));
+        require(messages.errors.isEmpty(), "Second boon rejected: " + messages.errors);
+        require(pc.getAvailableAbilityPool(boon).signum() == 0,
+                "Two boons must consume four drawback points");
+    }
+
+    /** Oaths are drawback selections that cost their published oath points. */
+    static void oaths(pcgen.core.PlayerCharacter pc, CharacterAbilities controller,
+            Messages messages, pcgen.core.GameMode game, boolean reload) {
+        var tradition = game.getAbilityCategory("Custom Casting Tradition");
+        var drawback = game.getAbilityCategory("Custom Casting Drawback");
+        var choice = ability(tradition, "Custom Casting Tradition");
+        var oathbound = ability(drawback, "Tradition - Oathbound Casting");
+        var harm = ability(drawback, "Tradition - Oathbound Casting: Oath against Harm (4 drawback points)");
+        var loyalty = ability(drawback, "Tradition - Oathbound Casting: Oath of Loyalty (1 drawback point)");
+        if (reload) {
+            require(pc.hasAbilityKeyed(drawback, "Tradition - Oathbound Casting"), "Oathbound reload");
+            require(pc.hasAbilityKeyed(drawback, "Tradition - Oathbound Casting: Oath against Harm (4 drawback points)"), "Oath reload");
+            controller.removeAbility(drawback, harm);
+            controller.removeAbility(drawback, oathbound);
+            controller.removeAbility(tradition, choice);
+            return;
+        }
+        controller.addAbility(tradition, choice);
+        require(!harm.qualifies(pc, harm), "An Oath must require the Oathbound Casting drawback");
+        controller.addAbility(drawback, oathbound);
+        require(messages.errors.isEmpty(), "Oathbound Casting rejected: " + messages.errors);
+        require(harm.qualifies(pc, harm), "The Oaths must be selectable once Oathbound is taken");
+        int capacity = pc.getAvailableAbilityPool(drawback).intValue();
+        require(capacity >= 70, "Drawback capacity must cover every published drawback");
+        var boon = game.getAbilityCategory("Custom Casting Boon");
+        controller.addAbility(drawback, harm);
+        require(messages.errors.isEmpty(), "Oath rejected: " + messages.errors);
+        require(pc.getVariableValue("SPHERES_TRADITION_DRAWBACKS", "").intValue() == 4,
+                "Oath against Harm must count as four drawbacks");
+        require(pc.getAvailableAbilityPool(drawback).intValue() == capacity,
+                "An Oath must not consume drawback points");
+        require(pc.getAvailableAbilityPool(boon).intValue() == 4,
+                "Oath against Harm must grant four boon credits");
+        require(!loyalty.qualifies(pc, loyalty), "Only one Oath may be sworn");
+        controller.removeAbility(drawback, harm);
+        require(pc.getAvailableAbilityPool(boon).signum() == 0, "Oath credit refund failed");
+        controller.addAbility(drawback, loyalty);
+        require(pc.getVariableValue("SPHERES_TRADITION_DRAWBACKS", "").intValue() == 1,
+                "Oath of Loyalty must count as one drawback");
+        require(pc.getAvailableAbilityPool(boon).intValue() == 1,
+                "Oath of Loyalty must grant one boon credit");
+        controller.removeAbility(drawback, loyalty);
+        require(pc.getAvailableAbilityPool(drawback).intValue() == capacity, "Oath refund failed");
+        // Oaths the drawback does not name need explicit GM approval.
+        var approval = game.getAbilityCategory("Spheres Oath Adjudication");
+        var humility = ability(drawback, "Tradition - Oathbound Casting: Oath of Humility (1 drawback point)");
+        require(!humility.qualifies(pc, humility), "Unnamed Oath must require GM approval");
+        controller.addAbility(approval, ability(approval, "Reviewed - Oath of Humility"));
+        require(messages.errors.isEmpty(), "Approval rejected: " + messages.errors);
+        require(humility.qualifies(pc, humility), "Approved Oath must become selectable");
+        controller.addAbility(drawback, humility);
+        require(messages.errors.isEmpty(), "Approved Oath rejected: " + messages.errors);
+        require(pc.getVariableValue("SPHERES_TRADITION_DRAWBACKS", "").intValue() == 1,
+                "Oath of Humility must count as one drawback");
+        require(pc.getAvailableAbilityPool(boon).intValue() == 1,
+                "Oath of Humility must grant one boon credit");
+        controller.removeAbility(drawback, humility);
+        // Leave a valid selection for the saved character to round-trip.
+        controller.addAbility(drawback, harm);
     }
 }

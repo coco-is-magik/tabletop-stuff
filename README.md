@@ -124,8 +124,12 @@ own — it emits PCGen records and relies on PCGen to enforce them.
   more, plus five prestige classes) at "thin class" fidelity: progression tables
   and named features, with per-option mechanics incomplete. Custom-casting
   traditions model general drawbacks and boons, all sphere-specific drawbacks, and
-  Oathbound Casting through its five pinned Oaths (each worth its published
-  drawback points). The Incanter's sphere specializations are generated for every
+  Oathbound Casting through the complete pinned Oath list, each Oath named with its
+  value — `Tradition - Oathbound Casting: Oath of Poverty (10 drawback points)` —
+  and granting that many drawback points (an Oath counts as that many drawbacks and
+  costs none); the five the drawback names are free and the rest need GM approval. General drawbacks are uncapped — the source caps only the
+  spell-point benefit at five — and boons cost two points each, so any number can
+  be taken while points remain. The Incanter's sphere specializations are generated for every
   Power sphere: taking one grants the sphere and its +1 sphere caster level (so
   its talents become selectable), activating brings its level-gated abilities into
   effect, and removing it takes the sphere and caster level away again. If the

@@ -58,7 +58,7 @@ def run(system, gate="all", work=None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("system", choices=("power", "might", "drawback-martial", "ace", "medic", "liturgist", "brew", "racial", "halfling", "half-orc", "elf"))
+    parser.add_argument("system", choices=("power", "might", "drawback-martial", "ace", "medic", "liturgist", "brew", "racial", "halfling", "half-orc", "elf", "boons", "oaths"))
     parser.add_argument("gate", nargs="?", default="all", choices=("all", "save", "reload"))
     parser.add_argument("--work", type=Path, help="existing workspace for the reload gate")
     args = parser.parse_args()

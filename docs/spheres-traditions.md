@@ -69,12 +69,21 @@ so a drawback is excluded whether the character takes it first or second.
 Boons are now complete against the source (all 20 publish a record, including the
 newly added Bound Creature, which grants the Conjuration sphere, and Wild Will,
 which is repeatable with a chosen environment). **Oathbound Casting** is modeled
-through its pinned Oaths: the drawback itself is a free wrapper (`COST:0`) and
-each of the five named Oaths is a costed drawback selection whose `COST`, boon
-credit and drawback count equal its published oath-point value — Oath against
-Harm 4, Oath against Mercy 2, Oath of Loyalty 1, Oath of Secrecy 1, Oath of
-Silence 2 (`tools/spheres_traditions.py::oaths`, pinned from the Oaths page).
-The values are read from the snapshot rather than hard-coded, so a changed
+through the complete pinned Oath list, not just the five it names inline: the
+wrapper is the drawback itself (`COST:0`), and all 24 published Oaths **grant**
+drawback points equal to their oath-point value — from Oath of Loyalty (1) and
+Oath against Mercy (2) up to Oath of Offerings (7) and Oath of Poverty (10).
+`Forbidden Knowledge`, whose value is "2 or 4 by severance", is emitted as two
+records. An Oath counts as that many drawbacks ("counts as a number of drawbacks
+equal to the number of oath points they are usually worth"), so it adds to the
+drawback total and to the boon credits; it never *costs* drawback points. The
+Oaths are mutually exclusive, since exactly one Oath is sworn. The five the
+drawback names (Harm, Mercy, Loyalty, Secrecy, Silence) are freely selectable; the
+other 19 require a `Reviewed - <Oath>` record in `Spheres Oath Adjudication`,
+matching the source's "With GM permission, other Oaths or paladin/antipaladin codes
+can be selected as well." Values come from
+`tools/spheres_traditions.py::oaths`, pinned from the Oaths page rather than
+hard-coded, so a changed
 source raises rather than silently drifting. Three general drawbacks remain
 deliberately excluded because their mechanics need subsystems rather than a record:
 Card Casting (deck allocation), Singular Pool
@@ -83,8 +92,12 @@ Other casting modifiers, GM approval, concentration/action restrictions, and bon
 effects of listed boons remain rules text. Do not use these records to represent an unsupported combination;
 record and adjudicate it with your GM instead. Tradition choices belong at
 first casting-class level under the source rules; the PCGen record does not
-enforce the timing of a later respec. The builder is capped at five points,
-not a full modeling of all source traditions. Remove second-tier selections
+enforce the timing of a later respec. General drawbacks are **not capped**: the
+selection pool is larger than the total published drawback cost, because the
+source caps only the *spell-point benefit* at five drawbacks, not the number a
+caster may take. Boons cost two drawback points each and any number may be taken
+while points remain. This is not a full modeling of all source traditions. Remove
+second-tier selections
 before their first tiers; prerequisite loss does not delete dependent choices.
 
 ## Martial
@@ -140,10 +153,18 @@ drawbacks, seven second selections, conditional boons, symmetric incompatibiliti
 weighted Addictive/Vampiric Casting, Benefactor and Spell Stand-In grants, and
 Fortified Casting's higher-Constitution modifier. The repeatable Drawback Feat
 boon opens a separate pool of existing drawback feats, retaining prerequisites.
-Oathbound Casting selects one of its five pinned Oaths, each carrying its own
-published drawback-point weight. Card Casting, Singular Pool and Catastrophic
-Failure remain excluded until their variable credits or eligibility checks are
-represented. Conditional boon effects and casting action restrictions remain table rules.
+Oathbound Casting selects one of the complete pinned Oath list, named
+`Tradition - Oathbound Casting: <Oath> (<N> drawback point[s])` so the value is
+visible in the ability list and the choices sort beside their wrapper. The
+description also leads with the grant, e.g. "Grants 10 drawback points (counts as
+10 drawbacks and costs none)". Each Oath grants its published number of drawback
+points (it costs none) and the Oaths are mutually exclusive. The five the drawback
+names are freely
+selectable; the other 19 require GM approval through a `Reviewed - <Oath>` record
+in `Spheres Oath Adjudication`. Card Casting,
+Singular Pool and Catastrophic Failure remain excluded until their variable credits
+or eligibility checks are represented. Conditional boon effects and casting action
+restrictions remain table rules.
 
 Live power gates passed in
 `/bigdisk/programming/pathfinder1e/build/pcgen-spheres-yuyst9o3` and martial gates in

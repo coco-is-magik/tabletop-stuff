@@ -1,4 +1,5 @@
 """Regression checks for weighted tradition choices using existing PCGen pools."""
+import re
 import unittest
 
 from spheres import DATA, records
@@ -6,10 +7,28 @@ from spheres_traditions import (build, OUTPUT, sections, LEGACY, DEFERRED, CONFL
                                 build_sphere_drawbacks, sphere_drawbacks, sphere_drawback_key,
                                 strip_tags, SPHERE_DRAW_OUTPUT, SPHERE_DRAW_CATEGORIES,
                                 SPHERE_DRAW_DEFERRED, SPHERE_DRAW_RESTRICTIONS, oaths, oath_rows,
-                                OATHS_NAMED, OATH_DRAW)
+                                OATHS_CORE, OATH_DRAW, OATH_ADJUDICATION, OATH_CATEGORIES, oath_key)
 
 
 class TraditionTests(unittest.TestCase):
+    def test_drawback_pool_is_not_capped_below_the_published_total(self):
+        # The source caps the spell-point benefit at five drawbacks, not the number of
+        # drawbacks a caster may take, so the selection pool must cover the total cost.
+        costs = 0
+        for path in (DATA / 'spheres_traditions.lst', OUTPUT):
+            for line in records(path):
+                cells = line.split('\t')
+                if 'CATEGORY:Custom Casting Drawback' not in cells:
+                    continue
+                cost = next((cell for cell in cells if cell.startswith('COST:')), None)
+                if cost:
+                    costs += int(cost.split(':')[1])
+        row = next(line for line in records(DATA / 'spheres_traditions.lst')
+                   if line.startswith('Custom Casting Tradition\t'))
+        match = re.search(r'BONUS:ABILITYPOOL\|Custom Casting Drawback\|(\d+)', row)
+        self.assertIsNotNone(match, 'drawback pool grant missing')
+        self.assertGreaterEqual(int(match.group(1)), costs)
+
     def test_feat_casters_qualify_for_custom_tradition(self):
         self.assertIn('CATEGORY=Custom Casting Tradition|Custom Casting Tradition.MOD\t'
                       'PRE:.CLEAR\tPREABILITY:1,CATEGORY=Special Ability,Spheres Casting Core', build())
@@ -224,21 +243,68 @@ class SphereDrawbackTests(unittest.TestCase):
         output = build()
         self.assertIn(OATH_DRAW + '\tCATEGORY:Custom Casting Drawback\tCOST:0', output)
         pinned = oaths()
-        self.assertEqual(set(pinned), set(OATHS_NAMED))
-        for oath in OATHS_NAMED:
-            self.assertIn('Oathbound Oath - ' + oath + '\t', output)
+        self.assertTrue(set(OATHS_CORE).issubset(pinned))
+        self.assertTrue(len(pinned) > len(OATHS_CORE),
+                        "the source publishes far more Oaths than the drawback names")
+        for oath in pinned:
+            self.assertIn('Tradition - Oathbound Casting: ' + oath + ' (', output)
 
-    def test_each_oath_carries_its_published_point_value(self):
+    def test_only_the_named_oaths_are_free_and_the_rest_need_gm_approval(self):
+        rows = {row.split('\t')[0]: row.split('\t')[1:]
+                for row in build().splitlines()
+                if row.startswith('Tradition - Oathbound Casting: ')}
+        gate = 'PREABILITY:1,CATEGORY=Spheres Oath Adjudication,'
+        approvals = {line.split('\t')[0] for line in records(OATH_ADJUDICATION)}
+        for oath, (points, _row) in oaths().items():
+            tags = rows[oath_key(oath, points)]
+            if oath in OATHS_CORE:
+                self.assertNotIn(gate, ' '.join(tags), oath)
+                continue
+            approval = [tag for tag in tags if tag.startswith(gate)]
+            self.assertEqual(len(approval), 1, oath)
+            self.assertIn(approval[0].split(gate)[1], approvals, oath)
+
+    def test_oath_names_show_their_point_values(self):
+        rows = {row.split('\t')[0]: row.split('\t')[1:]
+                for row in build().splitlines()
+                if row.startswith('Tradition - Oathbound Casting: ')}
+        for oath, (points, _row) in oaths().items():
+            unit = 'drawback point' if points == 1 else 'drawback points'
+            tags = rows[oath_key(oath, points)]
+            # The value is in the name and at the front of the description.
+            self.assertIn(oath_key(oath, points), rows)
+            desc = next(tag for tag in tags if tag.startswith('DESC:'))
+            self.assertTrue(desc.startswith(f'DESC:Grants {points} {unit} ('), desc[:80])
+
+    def test_oath_approval_category_is_declared(self):
+        self.assertIn('ABILITYCATEGORY:Spheres Oath Adjudication',
+                      OATH_CATEGORIES.read_text())
+
+    def test_each_oath_grants_its_published_point_value(self):
         pinned = oaths()
         rows = {row.split('\t')[0]: row.split('\t')[1:]
-                for row in build().splitlines() if row.startswith('Oathbound Oath - ')}
+                for row in build().splitlines()
+                if row.startswith('Tradition - Oathbound Casting: ')}
         for oath, (points, _row) in pinned.items():
-            tags = rows['Oathbound Oath - ' + oath]
-            self.assertIn('COST:' + str(points), tags, oath)
+            tags = rows[oath_key(oath, points)]
+            # An Oath counts as that many drawbacks: it grants points, never costs them.
+            self.assertIn('COST:0', tags, oath)
             self.assertIn('BONUS:ABILITYPOOL|Custom Casting Boon|' + str(points), tags, oath)
             self.assertIn('BONUS:VAR|SPHERES_TRADITION_DRAWBACKS|' + str(points), tags, oath)
         # The published values differ, so the differentiation is real.
-        self.assertEqual({oaths()[name][0] for name in OATHS_NAMED}, {1, 2, 4})
+        self.assertEqual({oaths()[name][0] for name in OATHS_CORE}, {1, 2, 4})
+
+    def test_oaths_are_mutually_exclusive(self):
+        rows = {row.split('\t')[0]: row.split('\t')[1:]
+                for row in build().splitlines()
+                if row.startswith('Tradition - Oathbound Casting: ')}
+        self.assertEqual(len(rows), len(oaths()))
+        for oath in rows:
+            for other in rows:
+                if other == oath:
+                    continue
+                self.assertIn('!PREABILITY:1,CATEGORY=Custom Casting Drawback,' + other,
+                              rows[oath], oath)
 
     def test_oaths_require_the_oathbound_drawback(self):
         for tags in oath_rows():

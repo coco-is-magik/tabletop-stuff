@@ -111,10 +111,17 @@ Two sources were pinned with `tools/spheres_catalog_source.py`:
   `tools/test_incanter_specializations.py` and the live
   `spherespec1`/`spherespec3`/`spherespec20`/`spherespec-owned`/`spheredraw` gates.
 - `testdata/spheres/catalog-source/oaths.json` — the Oaths page. Oathbound Casting
-  compiles its five named Oaths (Harm 4, Mercy 2, Loyalty 1, Secrecy 1, Silence 2)
-  as costed drawback selections; the values are read from the snapshot so a source
-  change raises instead of drifting. Guarded by `tools/test_traditions.py` and the
-  live `pcgen_traditions.py power` gate.
+  compiles the **complete** pinned Oath list (24 records: 22 published Oaths plus
+  `Forbidden Knowledge` as its lesser/greater severances), named
+  `Tradition - Oathbound Casting: <Oath> (<N> drawback point[s])` so the value is
+  visible in the list, mutually exclusive, each **granting**
+  its published number of drawback points (they cost none). The five the drawback
+  names are free; the other 19 need a `Reviewed - <Oath>` record in
+  `Spheres Oath Adjudication` (GM approval). Values are read from the snapshot so a
+  source change raises instead of drifting.
+  General drawbacks are uncapped (the source caps only the spell-point benefit at
+  five) and boons cost two points each. Guarded by `tools/test_traditions.py` and
+  the live `pcgen_traditions.py power`/`boons`/`oaths` gates.
 
 ## Advanced-talent scope extension
 
